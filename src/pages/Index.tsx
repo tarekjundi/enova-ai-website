@@ -32,6 +32,69 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Companies Who Trust Us Section */}
+      <section className="py-16 bg-darkTeal/70">
+        <div className="container mx-auto px-4">
+          <FadeInSection>
+            <div className="text-center mb-12">
+              <h2 className="text-3xl font-bold mb-4">Companies Who Trust Us</h2>
+              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+                Join the leading organizations that have transformed their operations with ENOVA.
+              </p>
+            </div>
+            
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 items-center justify-items-center">
+              {/* Company logos - using opacity and hover effects for a clean look */}
+              <div className="w-32 h-16 flex items-center justify-center opacity-70 hover:opacity-100 transition-opacity">
+                <svg viewBox="0 0 100 40" xmlns="http://www.w3.org/2000/svg" className="w-full h-full fill-current text-white">
+                  <path d="M20 5h60v30H20z"/>
+                  <text x="50" y="25" textAnchor="middle" dominantBaseline="middle" fontSize="14" fill="#111927">ACME Corp</text>
+                </svg>
+              </div>
+              
+              <div className="w-32 h-16 flex items-center justify-center opacity-70 hover:opacity-100 transition-opacity">
+                <svg viewBox="0 0 100 40" xmlns="http://www.w3.org/2000/svg" className="w-full h-full fill-current text-white">
+                  <path d="M20 5h60v30H20z"/>
+                  <text x="50" y="25" textAnchor="middle" dominantBaseline="middle" fontSize="14" fill="#111927">TechGiant</text>
+                </svg>
+              </div>
+              
+              <div className="w-32 h-16 flex items-center justify-center opacity-70 hover:opacity-100 transition-opacity">
+                <svg viewBox="0 0 100 40" xmlns="http://www.w3.org/2000/svg" className="w-full h-full fill-current text-white">
+                  <path d="M20 5h60v30H20z"/>
+                  <text x="50" y="25" textAnchor="middle" dominantBaseline="middle" fontSize="14" fill="#111927">Innovex</text>
+                </svg>
+              </div>
+              
+              <div className="w-32 h-16 flex items-center justify-center opacity-70 hover:opacity-100 transition-opacity">
+                <svg viewBox="0 0 100 40" xmlns="http://www.w3.org/2000/svg" className="w-full h-full fill-current text-white">
+                  <path d="M20 5h60v30H20z"/>
+                  <text x="50" y="25" textAnchor="middle" dominantBaseline="middle" fontSize="14" fill="#111927">GlobalCorp</text>
+                </svg>
+              </div>
+              
+              <div className="w-32 h-16 flex items-center justify-center opacity-70 hover:opacity-100 transition-opacity">
+                <svg viewBox="0 0 100 40" xmlns="http://www.w3.org/2000/svg" className="w-full h-full fill-current text-white">
+                  <path d="M20 5h60v30H20z"/>
+                  <text x="50" y="25" textAnchor="middle" dominantBaseline="middle" fontSize="14" fill="#111927">FutureTech</text>
+                </svg>
+              </div>
+              
+              <div className="w-32 h-16 flex items-center justify-center opacity-70 hover:opacity-100 transition-opacity">
+                <svg viewBox="0 0 100 40" xmlns="http://www.w3.org/2000/svg" className="w-full h-full fill-current text-white">
+                  <path d="M20 5h60v30H20z"/>
+                  <text x="50" y="25" textAnchor="middle" dominantBaseline="middle" fontSize="14" fill="#111927">Nexus Inc</text>
+                </svg>
+              </div>
+            </div>
+            
+            <div className="text-center mt-10">
+              <p className="text-gray-400">Trusted by 500+ companies worldwide</p>
+            </div>
+          </FadeInSection>
+        </div>
+      </section>
+
       {/* Stats Section */}
       <section className="bg-darkTeal/80 py-16">
         <div className="container mx-auto px-4">
