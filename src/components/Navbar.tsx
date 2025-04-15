@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
 import { Link } from "react-router-dom";
@@ -13,7 +12,7 @@ const Navbar = () => {
   return (
     <nav className="container mx-auto py-6 px-4">
       <div className="flex justify-between items-center">
-        <Link to="/" className="text-2xl font-bold text-neonGreen">AutomateX</Link>
+        <Link to="/" className="text-2xl font-bold text-neonGreen">ENOVA</Link>
         
         {/* Desktop Menu */}
         <div className="hidden md:flex space-x-8">

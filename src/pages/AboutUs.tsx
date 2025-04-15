@@ -1,4 +1,3 @@
-
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import FadeInSection from "@/components/FadeInSection";
@@ -12,7 +11,7 @@ const AboutUs = () => {
       {/* Hero Section */}
       <section className="container mx-auto py-20 px-4">
         <div className="max-w-3xl mx-auto text-center">
-          <h1 className="text-4xl md:text-6xl font-bold mb-6">About <span className="text-neonGreen">AutomateX</span></h1>
+          <h1 className="text-4xl md:text-6xl font-bold mb-6">About <span className="text-neonGreen">ENOVA</span></h1>
           <p className="text-xl text-gray-300 mb-8">
             Transforming businesses through intelligent automation since 2020.
           </p>
@@ -26,7 +25,7 @@ const AboutUs = () => {
             <div className="max-w-4xl mx-auto">
               <h2 className="text-3xl font-bold mb-8 text-center">Our Mission</h2>
               <p className="text-xl mb-6">
-                At AutomateX, we believe that automation is the key to unlocking human potential. Our mission is to empower businesses of all sizes to streamline operations, reduce costs, and free up their teams to focus on innovation and growth.
+                At ENOVA, we believe that automation is the key to unlocking human potential. Our mission is to empower businesses of all sizes to streamline operations, reduce costs, and free up their teams to focus on innovation and growth.
               </p>
               <p className="text-xl">
                 We're committed to developing cutting-edge automation solutions that are accessible, intuitive, and effective. By harnessing the power of artificial intelligence and machine learning, we're helping businesses around the world transform their operations and achieve more than they ever thought possible.

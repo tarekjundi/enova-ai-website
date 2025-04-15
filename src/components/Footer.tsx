@@ -1,4 +1,3 @@
-
 import { Link } from "react-router-dom";
 
 const Footer = () => {
@@ -7,7 +6,7 @@ const Footer = () => {
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-10">
           <div>
-            <h3 className="text-xl font-bold text-neonGreen mb-4">AutomateX</h3>
+            <h3 className="text-xl font-bold text-neonGreen mb-4">ENOVA</h3>
             <p className="text-gray-300">
               Transforming businesses through intelligent automation solutions.
             </p>
@@ -61,7 +60,7 @@ const Footer = () => {
           </div>
         </div>
         <div className="border-t border-gray-600 pt-8 text-center text-gray-400">
-          <p>&copy; 2025 AutomateX. All rights reserved.</p>
+          <p>&copy; 2025 ENOVA. All rights reserved.</p>
         </div>
       </div>
     </footer>
