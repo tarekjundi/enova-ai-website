@@ -1,4 +1,6 @@
 
+import { Link } from "react-router-dom";
+
 const Footer = () => {
   return (
     <footer className="bg-darkTeal/90 py-10">
@@ -13,19 +15,19 @@ const Footer = () => {
           <div>
             <h3 className="text-xl font-bold text-white mb-4">Solutions</h3>
             <ul className="space-y-2 text-gray-300">
-              <li><a href="#" className="hover:text-neonGreen">Process Automation</a></li>
-              <li><a href="#" className="hover:text-neonGreen">Workflow Optimization</a></li>
-              <li><a href="#" className="hover:text-neonGreen">Decision Intelligence</a></li>
-              <li><a href="#" className="hover:text-neonGreen">Customer Engagement</a></li>
+              <li><Link to="/solutions" className="hover:text-neonGreen">Process Automation</Link></li>
+              <li><Link to="/solutions" className="hover:text-neonGreen">Workflow Optimization</Link></li>
+              <li><Link to="/solutions" className="hover:text-neonGreen">Decision Intelligence</Link></li>
+              <li><Link to="/solutions" className="hover:text-neonGreen">Customer Engagement</Link></li>
             </ul>
           </div>
           <div>
             <h3 className="text-xl font-bold text-white mb-4">Company</h3>
             <ul className="space-y-2 text-gray-300">
-              <li><a href="#" className="hover:text-neonGreen">About Us</a></li>
-              <li><a href="#" className="hover:text-neonGreen">Careers</a></li>
-              <li><a href="#" className="hover:text-neonGreen">Blog</a></li>
-              <li><a href="#" className="hover:text-neonGreen">Contact</a></li>
+              <li><Link to="/about" className="hover:text-neonGreen">About Us</Link></li>
+              <li><Link to="/careers" className="hover:text-neonGreen">Careers</Link></li>
+              <li><Link to="/blog" className="hover:text-neonGreen">Blog</Link></li>
+              <li><Link to="/contact" className="hover:text-neonGreen">Contact</Link></li>
             </ul>
           </div>
           <div>

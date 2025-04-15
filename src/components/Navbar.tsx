@@ -1,6 +1,7 @@
 
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -12,14 +13,15 @@ const Navbar = () => {
   return (
     <nav className="container mx-auto py-6 px-4">
       <div className="flex justify-between items-center">
-        <div className="text-2xl font-bold text-neonGreen">AutomateX</div>
+        <Link to="/" className="text-2xl font-bold text-neonGreen">AutomateX</Link>
         
         {/* Desktop Menu */}
         <div className="hidden md:flex space-x-8">
-          <a href="#features" className="hover:text-neonGreen transition-colors">Features</a>
-          <a href="#how-it-works" className="hover:text-neonGreen transition-colors">How It Works</a>
-          <a href="#pricing" className="hover:text-neonGreen transition-colors">Pricing</a>
-          <a href="#contact" className="hover:text-neonGreen transition-colors">Contact</a>
+          <Link to="/solutions" className="hover:text-neonGreen transition-colors">Solutions</Link>
+          <Link to="/about" className="hover:text-neonGreen transition-colors">About Us</Link>
+          <Link to="/careers" className="hover:text-neonGreen transition-colors">Careers</Link>
+          <Link to="/blog" className="hover:text-neonGreen transition-colors">Blog</Link>
+          <Link to="/contact" className="hover:text-neonGreen transition-colors">Contact</Link>
         </div>
         
         <div className="hidden md:block">
@@ -51,34 +53,41 @@ const Navbar = () => {
       {mobileMenuOpen && (
         <div className="md:hidden mt-4 py-4 px-2 bg-darkTeal/90 rounded-lg">
           <div className="flex flex-col space-y-4">
-            <a 
-              href="#features" 
+            <Link 
+              to="/solutions" 
               className="hover:text-neonGreen transition-colors py-2"
               onClick={() => setMobileMenuOpen(false)}
             >
-              Features
-            </a>
-            <a 
-              href="#how-it-works" 
+              Solutions
+            </Link>
+            <Link 
+              to="/about" 
               className="hover:text-neonGreen transition-colors py-2"
               onClick={() => setMobileMenuOpen(false)}
             >
-              How It Works
-            </a>
-            <a 
-              href="#pricing" 
+              About Us
+            </Link>
+            <Link 
+              to="/careers" 
               className="hover:text-neonGreen transition-colors py-2"
               onClick={() => setMobileMenuOpen(false)}
             >
-              Pricing
-            </a>
-            <a 
-              href="#contact" 
+              Careers
+            </Link>
+            <Link 
+              to="/blog" 
+              className="hover:text-neonGreen transition-colors py-2"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              Blog
+            </Link>
+            <Link 
+              to="/contact" 
               className="hover:text-neonGreen transition-colors py-2"
               onClick={() => setMobileMenuOpen(false)}
             >
               Contact
-            </a>
+            </Link>
             <Button 
               className="bg-neonGreen text-darkTeal hover:bg-neonGreen/90 w-full"
               onClick={() => setMobileMenuOpen(false)}
