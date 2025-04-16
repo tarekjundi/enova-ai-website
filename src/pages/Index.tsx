@@ -22,9 +22,16 @@ const Index = () => {
             Streamline your business processes and increase productivity with our cutting-edge automation solutions.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
-            <Button className="bg-neonGreen text-darkTeal hover:bg-neonGreen/90 text-lg px-8 py-6">
-              Start Automating
-            </Button>
+<a
+  href="https://cal.com/tareqjundi/demo-call"
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  <Button className="bg-neonGreen text-darkTeal hover:bg-neonGreen/90 text-lg px-8 py-6">
+    Start Automating
+  </Button>
+</a>
+
           </div>
         </div>
       </section>
