@@ -1,0 +1,14 @@
+
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+# This ensures that all routes are handled by the index.html file for SPA routing
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+# Enable the Netlify Visual Editor
+[build.environment]
+  NETLIFY_USE_EDGE = "true"
