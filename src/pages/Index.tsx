@@ -25,73 +25,7 @@ const Index = () => {
             <Button className="bg-neonGreen text-darkTeal hover:bg-neonGreen/90 text-lg px-8 py-6">
               Start Automating
             </Button>
-            <Button variant="outline" className="border-neonGreen text-neonGreen hover:bg-neonGreen/10 text-lg px-8 py-6">
-              Schedule Demo
-            </Button>
           </div>
-        </div>
-      </section>
-
-      {/* Companies Who Trust Us Section */}
-      <section className="py-16 bg-darkTeal/70">
-        <div className="container mx-auto px-4">
-          <FadeInSection>
-            <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold mb-4">Companies Who Trust Us</h2>
-              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                Join the leading organizations that have transformed their operations with ENOVA.
-              </p>
-            </div>
-            
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 items-center justify-items-center">
-              {/* Company logos - using opacity and hover effects for a clean look */}
-              <div className="w-32 h-16 flex items-center justify-center opacity-70 hover:opacity-100 transition-opacity">
-                <svg viewBox="0 0 100 40" xmlns="http://www.w3.org/2000/svg" className="w-full h-full fill-current text-white">
-                  <path d="M20 5h60v30H20z"/>
-                  <text x="50" y="25" textAnchor="middle" dominantBaseline="middle" fontSize="14" fill="#111927">ACME Corp</text>
-                </svg>
-              </div>
-              
-              <div className="w-32 h-16 flex items-center justify-center opacity-70 hover:opacity-100 transition-opacity">
-                <svg viewBox="0 0 100 40" xmlns="http://www.w3.org/2000/svg" className="w-full h-full fill-current text-white">
-                  <path d="M20 5h60v30H20z"/>
-                  <text x="50" y="25" textAnchor="middle" dominantBaseline="middle" fontSize="14" fill="#111927">TechGiant</text>
-                </svg>
-              </div>
-              
-              <div className="w-32 h-16 flex items-center justify-center opacity-70 hover:opacity-100 transition-opacity">
-                <svg viewBox="0 0 100 40" xmlns="http://www.w3.org/2000/svg" className="w-full h-full fill-current text-white">
-                  <path d="M20 5h60v30H20z"/>
-                  <text x="50" y="25" textAnchor="middle" dominantBaseline="middle" fontSize="14" fill="#111927">Innovex</text>
-                </svg>
-              </div>
-              
-              <div className="w-32 h-16 flex items-center justify-center opacity-70 hover:opacity-100 transition-opacity">
-                <svg viewBox="0 0 100 40" xmlns="http://www.w3.org/2000/svg" className="w-full h-full fill-current text-white">
-                  <path d="M20 5h60v30H20z"/>
-                  <text x="50" y="25" textAnchor="middle" dominantBaseline="middle" fontSize="14" fill="#111927">GlobalCorp</text>
-                </svg>
-              </div>
-              
-              <div className="w-32 h-16 flex items-center justify-center opacity-70 hover:opacity-100 transition-opacity">
-                <svg viewBox="0 0 100 40" xmlns="http://www.w3.org/2000/svg" className="w-full h-full fill-current text-white">
-                  <path d="M20 5h60v30H20z"/>
-                  <text x="50" y="25" textAnchor="middle" dominantBaseline="middle" fontSize="14" fill="#111927">FutureTech</text>
-                </svg>
-              </div>
-              
-              <div className="w-32 h-16 flex items-center justify-center opacity-70 hover:opacity-100 transition-opacity">
-                <svg viewBox="0 0 100 40" xmlns="http://www.w3.org/2000/svg" className="w-full h-full fill-current text-white">
-                  <path d="M20 5h60v30H20z"/>
-                  <text x="50" y="25" textAnchor="middle" dominantBaseline="middle" fontSize="14" fill="#111927">Nexus Inc</text>
-                </svg>
-              </div>
-            </div>
-            
-            <div className="text-center mt-10">
-              <p className="text-gray-400">Trusted by 500+ companies worldwide</p>
-            </div>
-          </FadeInSection>
         </div>
       </section>
 
@@ -104,7 +38,7 @@ const Index = () => {
               <p className="text-xl">Reduction in manual tasks</p>
             </div>
             <div className="text-center">
-              <p className="text-5xl font-bold text-neonGreen mb-2">3.5x</p>
+              <p className="text-5xl font-bold text-neonGreen mb-2">7.8x</p>
               <p className="text-xl">Increase in productivity</p>
             </div>
             <div className="text-center">
@@ -121,7 +55,7 @@ const Index = () => {
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-5xl font-bold mb-4">Powerful Automation Features</h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Our platform provides comprehensive tools to automate every aspect of your business.
+              Our company provides comprehensive tools to automate every aspect of your business.
             </p>
           </div>
         </FadeInSection>
@@ -282,164 +216,12 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Pricing Section */}
-      <section id="pricing" className="container mx-auto py-20 px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-5xl font-bold mb-4">Flexible Pricing Options</h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Choose the plan that best fits your business needs and scale as you grow.
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <Card className="bg-darkTeal/50 border-neonGreen/20 text-white">
-            <CardHeader>
-              <CardTitle>Starter</CardTitle>
-              <CardDescription className="text-gray-300">
-                For small businesses
-              </CardDescription>
-              <div className="mt-4">
-                <span className="text-5xl font-bold">$199</span>
-                <span className="text-gray-300">/month</span>
-              </div>
-            </CardHeader>
-            <CardContent className="space-y-4">
-              <ul className="space-y-2">
-                <li className="flex items-center gap-2">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-neonGreen">
-                    <path d="M20 6 9 17l-5-5" />
-                  </svg>
-                  Up to 5 automated workflows
-                </li>
-                <li className="flex items-center gap-2">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-neonGreen">
-                    <path d="M20 6 9 17l-5-5" />
-                  </svg>
-                  Basic reporting
-                </li>
-                <li className="flex items-center gap-2">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-neonGreen">
-                    <path d="M20 6 9 17l-5-5" />
-                  </svg>
-                  Email support
-                </li>
-                <li className="flex items-center gap-2">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-neonGreen">
-                    <path d="M20 6 9 17l-5-5" />
-                  </svg>
-                  1,000 automated actions/month
-                </li>
-              </ul>
-              <Button className="w-full bg-neonGreen text-darkTeal hover:bg-neonGreen/90">Get Started</Button>
-            </CardContent>
-          </Card>
-
-          <Card className="bg-darkTeal border-neonGreen text-white relative">
-            <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-neonGreen text-darkTeal px-4 py-1 rounded-full font-bold">
-              Most Popular
-            </div>
-            <CardHeader>
-              <CardTitle>Professional</CardTitle>
-              <CardDescription className="text-gray-300">
-                For growing businesses
-              </CardDescription>
-              <div className="mt-4">
-                <span className="text-5xl font-bold">$499</span>
-                <span className="text-gray-300">/month</span>
-              </div>
-            </CardHeader>
-            <CardContent className="space-y-4">
-              <ul className="space-y-2">
-                <li className="flex items-center gap-2">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-neonGreen">
-                    <path d="M20 6 9 17l-5-5" />
-                  </svg>
-                  Up to 20 automated workflows
-                </li>
-                <li className="flex items-center gap-2">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-neonGreen">
-                    <path d="M20 6 9 17l-5-5" />
-                  </svg>
-                  Advanced analytics
-                </li>
-                <li className="flex items-center gap-2">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-neonGreen">
-                    <path d="M20 6 9 17l-5-5" />
-                  </svg>
-                  Priority email & chat support
-                </li>
-                <li className="flex items-center gap-2">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-neonGreen">
-                    <path d="M20 6 9 17l-5-5" />
-                  </svg>
-                  10,000 automated actions/month
-                </li>
-                <li className="flex items-center gap-2">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-neonGreen">
-                    <path d="M20 6 9 17l-5-5" />
-                  </svg>
-                  API access
-                </li>
-              </ul>
-              <Button className="w-full bg-neonGreen text-darkTeal hover:bg-neonGreen/90">Get Started</Button>
-            </CardContent>
-          </Card>
-
-          <Card className="bg-darkTeal/50 border-neonGreen/20 text-white">
-            <CardHeader>
-              <CardTitle>Enterprise</CardTitle>
-              <CardDescription className="text-gray-300">
-                For large organizations
-              </CardDescription>
-              <div className="mt-4">
-                <span className="text-5xl font-bold">Custom</span>
-              </div>
-            </CardHeader>
-            <CardContent className="space-y-4">
-              <ul className="space-y-2">
-                <li className="flex items-center gap-2">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-neonGreen">
-                    <path d="M20 6 9 17l-5-5" />
-                  </svg>
-                  Unlimited automated workflows
-                </li>
-                <li className="flex items-center gap-2">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-neonGreen">
-                    <path d="M20 6 9 17l-5-5" />
-                  </svg>
-                  Custom reporting & dashboards
-                </li>
-                <li className="flex items-center gap-2">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-neonGreen">
-                    <path d="M20 6 9 17l-5-5" />
-                  </svg>
-                  24/7 dedicated support
-                </li>
-                <li className="flex items-center gap-2">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-neonGreen">
-                    <path d="M20 6 9 17l-5-5" />
-                  </svg>
-                  Unlimited automated actions
-                </li>
-                <li className="flex items-center gap-2">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-neonGreen">
-                    <path d="M20 6 9 17l-5-5" />
-                  </svg>
-                  Custom integrations
-                </li>
-              </ul>
-              <Button className="w-full bg-neonGreen text-darkTeal hover:bg-neonGreen/90">Contact Sales</Button>
-            </CardContent>
-          </Card>
-        </div>
-      </section>
-
       {/* CTA Section */}
       <section id="contact" className="py-20 bg-neonGreen">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl md:text-5xl font-bold mb-6 text-darkTeal">Ready to Automate Your Business?</h2>
           <p className="text-xl text-darkTeal/80 max-w-3xl mx-auto mb-10">
-            Join thousands of businesses that have transformed their operations with our automation platform.
+            Join thousands of businesses that have transformed their operations with automation platform.
           </p>
           <Button className="bg-darkTeal text-neonGreen hover:bg-darkTeal/90 text-lg px-8 py-6">
             Schedule a Free Consultation

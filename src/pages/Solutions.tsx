@@ -160,38 +160,6 @@ const Solutions = () => {
         </div>
       </section>
       
-      {/* Case Studies Section */}
-      <section className="py-20">
-        <div className="container mx-auto px-4">
-          <FadeInSection>
-            <h2 className="text-3xl font-bold mb-12 text-center">Success Stories</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-              <div className="bg-darkTeal/40 p-8 rounded-lg border border-neonGreen/20">
-                <div className="text-neonGreen mb-4 text-lg font-bold">Manufacturing Industry</div>
-                <h3 className="text-2xl font-bold mb-4">Global Manufacturing Company Reduces Operational Costs by 35%</h3>
-                <p className="mb-6">
-                  By implementing our process automation solutions, a leading manufacturing company streamlined their production workflows, reduced manual errors, and achieved significant cost savings.
-                </p>
-                <Button variant="outline" className="border-neonGreen text-neonGreen hover:bg-neonGreen/10">
-                  Read Case Study
-                </Button>
-              </div>
-              
-              <div className="bg-darkTeal/40 p-8 rounded-lg border border-neonGreen/20">
-                <div className="text-neonGreen mb-4 text-lg font-bold">Financial Services</div>
-                <h3 className="text-2xl font-bold mb-4">Banking Group Improves Customer Satisfaction by 47%</h3>
-                <p className="mb-6">
-                  Our customer engagement platform helped a major banking group automate their customer service processes, resulting in faster response times and dramatically improved satisfaction rates.
-                </p>
-                <Button variant="outline" className="border-neonGreen text-neonGreen hover:bg-neonGreen/10">
-                  Read Case Study
-                </Button>
-              </div>
-            </div>
-          </FadeInSection>
-        </div>
-      </section>
-      
       {/* CTA Section */}
       <section className="py-16 bg-neonGreen">
         <div className="container mx-auto px-4 text-center">

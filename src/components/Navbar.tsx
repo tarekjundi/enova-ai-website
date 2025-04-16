@@ -1,5 +1,4 @@
 
-import { Button } from "@/components/ui/button";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
@@ -19,13 +18,7 @@ const Navbar = () => {
         <div className="hidden md:flex space-x-8">
           <Link to="/solutions" className="hover:text-neonGreen transition-colors">Solutions</Link>
           <Link to="/about" className="hover:text-neonGreen transition-colors">About Us</Link>
-          <Link to="/careers" className="hover:text-neonGreen transition-colors">Careers</Link>
-          <Link to="/blog" className="hover:text-neonGreen transition-colors">Blog</Link>
           <Link to="/contact" className="hover:text-neonGreen transition-colors">Contact</Link>
-        </div>
-        
-        <div className="hidden md:block">
-          <Button className="bg-neonGreen text-darkTeal hover:bg-neonGreen/90">Get Started</Button>
         </div>
         
         {/* Mobile Menu Button */}
@@ -68,32 +61,12 @@ const Navbar = () => {
               About Us
             </Link>
             <Link 
-              to="/careers" 
-              className="hover:text-neonGreen transition-colors py-2"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              Careers
-            </Link>
-            <Link 
-              to="/blog" 
-              className="hover:text-neonGreen transition-colors py-2"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              Blog
-            </Link>
-            <Link 
               to="/contact" 
               className="hover:text-neonGreen transition-colors py-2"
               onClick={() => setMobileMenuOpen(false)}
             >
               Contact
             </Link>
-            <Button 
-              className="bg-neonGreen text-darkTeal hover:bg-neonGreen/90 w-full"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              Get Started
-            </Button>
           </div>
         </div>
       )}
