@@ -225,16 +225,26 @@ const Index = () => {
 
       {/* CTA Section */}
       <section id="contact" className="py-20 bg-neonGreen">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl md:text-5xl font-bold mb-6 text-darkTeal">Ready to Automate Your Business?</h2>
-          <p className="text-xl text-darkTeal/80 max-w-3xl mx-auto mb-10">
-            Join thousands of businesses that have transformed their operations with automation platform.
-          </p>
-          <Button className="bg-darkTeal text-neonGreen hover:bg-darkTeal/90 text-lg px-8 py-6">
-            Schedule a Free Consultation
-          </Button>
-        </div>
-      </section>
+  <div className="container mx-auto px-4 text-center">
+    <h2 className="text-3xl md:text-5xl font-bold mb-6 text-darkTeal">
+      Ready to Automate Your Business?
+    </h2>
+    <p className="text-xl text-darkTeal/80 max-w-3xl mx-auto mb-10">
+      Join thousands of businesses that have transformed their operations with automation platform.
+    </p>
+    
+    <a
+      href="https://cal.com/tareqjundi/demo-call"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <Button className="bg-darkTeal text-neonGreen hover:bg-darkTeal/90 text-lg px-8 py-6">
+        Schedule a Free Consultation
+      </Button>
+    </a>
+  </div>
+</section>
+
 
       {/* Footer */}
       <Footer />
