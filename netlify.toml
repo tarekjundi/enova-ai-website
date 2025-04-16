@@ -12,3 +12,12 @@
 # Enable the Netlify Visual Editor
 [build.environment]
   NETLIFY_USE_EDGE = "true"
+  NETLIFY_NEXT_PLUGIN_SKIP = "true"
+
+# Explicitly set processing for the Visual Editor
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
+  
+# Ensure proper edge function configuration
+[functions]
+  directory = "netlify/functions"
