@@ -161,17 +161,27 @@ const Solutions = () => {
       </section>
       
       {/* CTA Section */}
-      <section className="py-16 bg-neonGreen">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl font-bold mb-6 text-darkTeal">Ready to Transform Your Business?</h2>
-          <p className="text-xl text-darkTeal/80 max-w-3xl mx-auto mb-8">
-            Schedule a consultation with our automation experts to discover the right solutions for your business needs.
-          </p>
-          <Button className="bg-darkTeal text-neonGreen hover:bg-darkTeal/90 text-lg px-8 py-6">
-            Book a Demo
-          </Button>
-        </div>
-      </section>
+     <section className="py-16 bg-neonGreen">
+  <div className="container mx-auto px-4 text-center">
+    <h2 className="text-3xl font-bold mb-6 text-darkTeal">
+      Ready to Transform Your Business?
+    </h2>
+    <p className="text-xl text-darkTeal/80 max-w-3xl mx-auto mb-8">
+      Schedule a consultation with our automation experts to discover the right solutions for your business needs.
+    </p>
+
+    <a
+      href="https://cal.com/tareqjundi/demo-call"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <Button className="bg-darkTeal text-neonGreen hover:bg-darkTeal/90 text-lg px-8 py-6">
+        Book a Demo
+      </Button>
+    </a>
+  </div>
+</section>
+
       
       <Footer />
       <ScrollToTop />
