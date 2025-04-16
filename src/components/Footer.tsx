@@ -21,16 +21,13 @@ const Footer = () => {
               <li><Link to="/solutions#top" className="hover:text-neonGreen">Customer Engagement</Link></li>
             </ul>
           </div>
-         <div id="top"></div> {/* Add this at the top of your page */}
-
-<div>
-  <h3 className="text-xl font-bold text-white mb-4">Agency</h3>
-  <ul className="space-y-2 text-gray-300">
-    <li><Link to="/about#top" className="hover:text-neonGreen">About Us</Link></li>
-    <li><Link to="/contact#top" className="hover:text-neonGreen">Contact</Link></li>
-  </ul>
-</div>
-
+         <div>
+            <h3 className="text-xl font-bold text-white mb-4">Agency</h3>
+            <ul className="space-y-2 text-gray-300">
+              <li><Link to="/about#top" className="hover:text-neonGreen">About Us</Link></li>
+              <li><Link to="/contact#top" className="hover:text-neonGreen">Contact</Link></li>
+            </ul>
+          </div>
           <div>
             <h3 className="text-xl font-bold text-white mb-4">Connect</h3>
             <ul className="space-y-2 text-gray-300">
