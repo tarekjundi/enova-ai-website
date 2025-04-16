@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <footer className="bg-darkTeal/90 py-10">
+    <footer className="bg-darkTeal/90 py-10" id="footer">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
           <div>
@@ -15,17 +15,17 @@ const Footer = () => {
           <div>
             <h3 className="text-xl font-bold text-white mb-4">Solutions</h3>
             <ul className="space-y-2 text-gray-300">
-              <li><Link to="/solutions" className="hover:text-neonGreen">Process Automation</Link></li>
-              <li><Link to="/solutions" className="hover:text-neonGreen">Workflow Optimization</Link></li>
-              <li><Link to="/solutions" className="hover:text-neonGreen">Decision Intelligence</Link></li>
-              <li><Link to="/solutions" className="hover:text-neonGreen">Customer Engagement</Link></li>
+              <li><Link to="/solutions#top" className="hover:text-neonGreen">Process Automation</Link></li>
+              <li><Link to="/solutions#top" className="hover:text-neonGreen">Workflow Optimization</Link></li>
+              <li><Link to="/solutions#top" className="hover:text-neonGreen">Decision Intelligence</Link></li>
+              <li><Link to="/solutions#top" className="hover:text-neonGreen">Customer Engagement</Link></li>
             </ul>
           </div>
           <div>
             <h3 className="text-xl font-bold text-white mb-4">Agency</h3>
             <ul className="space-y-2 text-gray-300">
-              <li><Link to="/about" className="hover:text-neonGreen">About Us</Link></li>
-              <li><Link to="/contact" className="hover:text-neonGreen">Contact</Link></li>
+              <li><Link to="/about#top" className="hover:text-neonGreen">About Us</Link></li>
+              <li><Link to="/contact#top" className="hover:text-neonGreen">Contact</Link></li>
             </ul>
           </div>
         </div>

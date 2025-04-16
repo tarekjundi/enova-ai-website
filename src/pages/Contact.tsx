@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -44,7 +43,7 @@ const Contact = () => {
   };
   
   return (
-    <div className="min-h-screen bg-darkTeal text-white">
+    <div className="min-h-screen bg-darkTeal text-white" id="top">
       <Navbar />
       
       {/* Hero Section */}
@@ -77,7 +76,7 @@ const Contact = () => {
                     </div>
                     <div>
                       <h3 className="text-xl font-bold mb-1">Phone</h3>
-                      <p className="text-gray-300">+1 (555) 123-4567</p>
+                      <p className="text-gray-300">+90 540 350 2010</p>
                     </div>
                   </div>
                   
@@ -90,24 +89,7 @@ const Contact = () => {
                     </div>
                     <div>
                       <h3 className="text-xl font-bold mb-1">Email</h3>
-                      <p className="text-gray-300">info@automatex.com</p>
-                    </div>
-                  </div>
-                  
-                  <div className="flex items-start gap-4">
-                    <div className="text-neonGreen mt-1">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                        <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
-                        <circle cx="12" cy="10" r="3" />
-                      </svg>
-                    </div>
-                    <div>
-                      <h3 className="text-xl font-bold mb-1">Office</h3>
-                      <p className="text-gray-300">
-                        123 Innovation Drive<br />
-                        San Francisco, CA 94103<br />
-                        United States
-                      </p>
+                      <p className="text-gray-300">tareq@enovaagency.com</p>
                     </div>
                   </div>
                 </div>

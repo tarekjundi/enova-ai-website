@@ -8,7 +8,7 @@ import FadeInSection from "@/components/FadeInSection";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-darkTeal text-white">
+    <div className="min-h-screen bg-darkTeal text-white" id="top">
       {/* Navigation */}
       <Navbar />
 
@@ -55,7 +55,7 @@ const Index = () => {
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-5xl font-bold mb-4">Powerful Automation Features</h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Our company provides comprehensive tools to automate every aspect of your business.
+              Our agency provides comprehensive tools to automate every aspect of your business.
             </p>
           </div>
         </FadeInSection>
