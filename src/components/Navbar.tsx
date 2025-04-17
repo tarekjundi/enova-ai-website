@@ -1,6 +1,8 @@
 
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { Button } from "@/components/ui/button";
+import { MessageCircle } from "lucide-react";
 
 const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -15,10 +17,40 @@ const Navbar = () => {
         <Link to="/" className="text-2xl font-bold text-neonGreen">ENOVA</Link>
         
         {/* Desktop Menu */}
-        <div className="hidden md:flex space-x-8">
-          <Link to="/solutions" className="hover:text-neonGreen transition-colors">Solutions</Link>
-          <Link to="/about" className="hover:text-neonGreen transition-colors">About Us</Link>
-          <Link to="/contact" className="hover:text-neonGreen transition-colors">Contact</Link>
+        <div className="hidden md:flex items-center space-x-4">
+          <div className="flex space-x-2">
+            <Link 
+              to="/solutions" 
+              className="px-4 py-2 rounded-md hover:bg-darkTeal/50 transition-colors"
+            >
+              Solutions
+            </Link>
+            <Link 
+              to="/about" 
+              className="px-4 py-2 rounded-md hover:bg-darkTeal/50 transition-colors"
+            >
+              About Us
+            </Link>
+            <Link 
+              to="/contact" 
+              className="px-4 py-2 rounded-md hover:bg-darkTeal/50 transition-colors"
+            >
+              Contact
+            </Link>
+          </div>
+          <a 
+            href="https://cal.com/tareqjundi/free-consultation" 
+            target="_blank" 
+            rel="noopener noreferrer"
+          >
+            <Button 
+              variant="outline" 
+              className="border-neonGreen text-neonGreen hover:bg-neonGreen hover:text-darkTeal transition-colors"
+            >
+              <MessageCircle className="mr-2 h-4 w-4" />
+              Let's Talk
+            </Button>
+          </a>
         </div>
         
         {/* Mobile Menu Button */}
@@ -48,25 +80,40 @@ const Navbar = () => {
           <div className="flex flex-col space-y-4">
             <Link 
               to="/solutions" 
-              className="hover:text-neonGreen transition-colors py-2"
+              className="px-4 py-2 rounded-md hover:bg-darkTeal/50 transition-colors"
               onClick={() => setMobileMenuOpen(false)}
             >
               Solutions
             </Link>
             <Link 
               to="/about" 
-              className="hover:text-neonGreen transition-colors py-2"
+              className="px-4 py-2 rounded-md hover:bg-darkTeal/50 transition-colors"
               onClick={() => setMobileMenuOpen(false)}
             >
               About Us
             </Link>
             <Link 
               to="/contact" 
-              className="hover:text-neonGreen transition-colors py-2"
+              className="px-4 py-2 rounded-md hover:bg-darkTeal/50 transition-colors"
               onClick={() => setMobileMenuOpen(false)}
             >
               Contact
             </Link>
+            <a 
+              href="https://cal.com/tareqjundi/free-consultation" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="px-4 py-2"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              <Button 
+                variant="outline" 
+                className="w-full border-neonGreen text-neonGreen hover:bg-neonGreen hover:text-darkTeal transition-colors"
+              >
+                <MessageCircle className="mr-2 h-4 w-4" />
+                Let's Talk
+              </Button>
+            </a>
           </div>
         </div>
       )}
