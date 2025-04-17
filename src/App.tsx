@@ -9,12 +9,14 @@ import AboutUs from "./pages/AboutUs";
 import Solutions from "./pages/Solutions";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
+import MouseFollower from "./components/MouseFollower";
 
 const queryClient = new QueryClient();
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
+      <MouseFollower />
       <Toaster />
       <Sonner />
       <BrowserRouter>
