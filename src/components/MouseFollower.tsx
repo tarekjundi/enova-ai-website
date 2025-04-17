@@ -27,7 +27,7 @@ const MouseFollower = () => {
 
   return (
     <div
-      className="pointer-events-none fixed z-50 h-8 w-8 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#e0ff4f] opacity-60 blur-sm transition-transform duration-200 ease-out"
+      className="pointer-events-none fixed z-50 h-8 w-8 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#e0ff4f] opacity-80 blur-sm transition-transform duration-200 ease-out"
       style={{
         left: `${position.x}px`,
         top: `${position.y}px`,
