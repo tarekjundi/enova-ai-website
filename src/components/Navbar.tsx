@@ -18,22 +18,22 @@ const Navbar = () => {
         
         {/* Desktop Menu */}
         <div className="hidden md:flex items-center space-x-4">
-          <div className="flex space-x-2">
+          <div className="flex space-x-3">
             <Link 
               to="/solutions" 
-              className="px-4 py-2 rounded-md hover:bg-darkTeal/50 transition-colors"
+              className="px-5 py-3 rounded-lg bg-darkTeal/20 hover:bg-darkTeal/80 transition-colors font-medium"
             >
               Solutions
             </Link>
             <Link 
               to="/about" 
-              className="px-4 py-2 rounded-md hover:bg-darkTeal/50 transition-colors"
+              className="px-5 py-3 rounded-lg bg-darkTeal/20 hover:bg-darkTeal/80 transition-colors font-medium"
             >
               About Us
             </Link>
             <Link 
               to="/contact" 
-              className="px-4 py-2 rounded-md hover:bg-darkTeal/50 transition-colors"
+              className="px-5 py-3 rounded-lg bg-darkTeal/20 hover:bg-darkTeal/80 transition-colors font-medium"
             >
               Contact
             </Link>
@@ -80,21 +80,21 @@ const Navbar = () => {
           <div className="flex flex-col space-y-4">
             <Link 
               to="/solutions" 
-              className="px-4 py-2 rounded-md hover:bg-darkTeal/50 transition-colors"
+              className="px-5 py-3 rounded-lg bg-darkTeal/50 hover:bg-darkTeal transition-colors font-medium"
               onClick={() => setMobileMenuOpen(false)}
             >
               Solutions
             </Link>
             <Link 
               to="/about" 
-              className="px-4 py-2 rounded-md hover:bg-darkTeal/50 transition-colors"
+              className="px-5 py-3 rounded-lg bg-darkTeal/50 hover:bg-darkTeal transition-colors font-medium"
               onClick={() => setMobileMenuOpen(false)}
             >
               About Us
             </Link>
             <Link 
               to="/contact" 
-              className="px-4 py-2 rounded-md hover:bg-darkTeal/50 transition-colors"
+              className="px-5 py-3 rounded-lg bg-darkTeal/50 hover:bg-darkTeal transition-colors font-medium"
               onClick={() => setMobileMenuOpen(false)}
             >
               Contact
