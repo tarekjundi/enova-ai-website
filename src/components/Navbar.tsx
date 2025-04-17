@@ -21,19 +21,19 @@ const Navbar = () => {
           <div className="flex space-x-3">
             <Link 
               to="/solutions" 
-              className="px-5 py-3 rounded-lg bg-darkTeal/20 hover:bg-darkTeal/80 transition-colors font-medium"
+              className="px-5 py-3 rounded-lg bg-darkTeal/20 text-white hover:bg-[#e0ff4f] hover:text-darkTeal transition-colors font-medium"
             >
               Solutions
             </Link>
             <Link 
               to="/about" 
-              className="px-5 py-3 rounded-lg bg-darkTeal/20 hover:bg-darkTeal/80 transition-colors font-medium"
+              className="px-5 py-3 rounded-lg bg-darkTeal/20 text-white hover:bg-[#e0ff4f] hover:text-darkTeal transition-colors font-medium"
             >
               About Us
             </Link>
             <Link 
               to="/contact" 
-              className="px-5 py-3 rounded-lg bg-darkTeal/20 hover:bg-darkTeal/80 transition-colors font-medium"
+              className="px-5 py-3 rounded-lg bg-darkTeal/20 text-white hover:bg-[#e0ff4f] hover:text-darkTeal transition-colors font-medium"
             >
               Contact
             </Link>
@@ -80,21 +80,21 @@ const Navbar = () => {
           <div className="flex flex-col space-y-4">
             <Link 
               to="/solutions" 
-              className="px-5 py-3 rounded-lg bg-darkTeal/50 hover:bg-darkTeal transition-colors font-medium"
+              className="px-5 py-3 rounded-lg bg-darkTeal/50 text-white hover:bg-[#e0ff4f] hover:text-darkTeal transition-colors font-medium"
               onClick={() => setMobileMenuOpen(false)}
             >
               Solutions
             </Link>
             <Link 
               to="/about" 
-              className="px-5 py-3 rounded-lg bg-darkTeal/50 hover:bg-darkTeal transition-colors font-medium"
+              className="px-5 py-3 rounded-lg bg-darkTeal/50 text-white hover:bg-[#e0ff4f] hover:text-darkTeal transition-colors font-medium"
               onClick={() => setMobileMenuOpen(false)}
             >
               About Us
             </Link>
             <Link 
               to="/contact" 
-              className="px-5 py-3 rounded-lg bg-darkTeal/50 hover:bg-darkTeal transition-colors font-medium"
+              className="px-5 py-3 rounded-lg bg-darkTeal/50 text-white hover:bg-[#e0ff4f] hover:text-darkTeal transition-colors font-medium"
               onClick={() => setMobileMenuOpen(false)}
             >
               Contact
