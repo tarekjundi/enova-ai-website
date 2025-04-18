@@ -1,6 +1,7 @@
 
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import { X } from "lucide-react";
 
 const Footer = () => {
   const navigate = useNavigate();
@@ -32,7 +33,6 @@ const Footer = () => {
             <h3 className="text-xl font-bold text-white mb-4">Solutions</h3>
             <ul className="space-y-2 text-gray-300">
               <li><button onClick={() => handleNavigation('/solutions')} className="hover:text-neonGreen text-left">Process Automation</button></li>
-              <li><button onClick={() => handleNavigation('/solutions')} className="hover:text-neonGreen text-left">Workflow Optimization</button></li>
               <li><button onClick={() => handleNavigation('/solutions')} className="hover:text-neonGreen text-left">Decision Intelligence</button></li>
               <li><button onClick={() => handleNavigation('/solutions')} className="hover:text-neonGreen text-left">Customer Engagement</button></li>
             </ul>
@@ -51,9 +51,7 @@ const Footer = () => {
               <li>Phone: +90 540 350 2010</li>
               <li className="flex space-x-4 mt-4">
                 <a href="https://x.com/enovaagency" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-neonGreen">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-twitter">
-                    <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z" />
-                  </svg>
+                  <X />
                 </a>
                 <a href="https://www.linkedin.com/company/enovaagency/m" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-neonGreen">
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-linkedin">
