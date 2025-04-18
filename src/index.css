@@ -96,3 +96,27 @@
     scroll-behavior: smooth;
   }
 }
+
+@media (max-width: 768px) {
+  :root {
+    --background: 222 47% 11%;
+    --foreground: 0 0% 100%;
+    --primary: 72 100% 65%;
+    --primary-foreground: 222 47% 11%;
+    --secondary: 217 32% 17%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 217 32% 17%;
+    --muted-foreground: 215 20% 65%;
+    --accent: 72 100% 65%;
+    --accent-foreground: 222 47% 11%;
+    --border: 217 32% 17%;
+  }
+
+  .glass {
+    @apply bg-black/40 backdrop-blur-md border-white/10;
+  }
+  
+  .card {
+    @apply bg-black/30 backdrop-blur-sm border-white/5;
+  }
+}
