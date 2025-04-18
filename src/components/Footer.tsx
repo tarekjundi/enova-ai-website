@@ -1,7 +1,23 @@
 
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const Footer = () => {
+  const navigate = useNavigate();
+
+  const handleNavigation = (path: string) => {
+    // First navigate to the path if it's different from current path
+    navigate(path);
+    
+    // Then scroll to top after a small delay to ensure navigation completes
+    setTimeout(() => {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
+    }, 100);
+  };
+
   return (
     <footer className="bg-darkTeal/90 py-10" id="footer">
       <div className="container mx-auto px-4">
@@ -15,17 +31,17 @@ const Footer = () => {
           <div>
             <h3 className="text-xl font-bold text-white mb-4">Solutions</h3>
             <ul className="space-y-2 text-gray-300">
-              <li><Link to="/solutions#top" className="hover:text-neonGreen">Process Automation</Link></li>
-              <li><Link to="/solutions#top" className="hover:text-neonGreen">Workflow Optimization</Link></li>
-              <li><Link to="/solutions#top" className="hover:text-neonGreen">Decision Intelligence</Link></li>
-              <li><Link to="/solutions#top" className="hover:text-neonGreen">Customer Engagement</Link></li>
+              <li><button onClick={() => handleNavigation('/solutions')} className="hover:text-neonGreen text-left">Process Automation</button></li>
+              <li><button onClick={() => handleNavigation('/solutions')} className="hover:text-neonGreen text-left">Workflow Optimization</button></li>
+              <li><button onClick={() => handleNavigation('/solutions')} className="hover:text-neonGreen text-left">Decision Intelligence</button></li>
+              <li><button onClick={() => handleNavigation('/solutions')} className="hover:text-neonGreen text-left">Customer Engagement</button></li>
             </ul>
           </div>
           <div>
             <h3 className="text-xl font-bold text-white mb-4">Agency</h3>
             <ul className="space-y-2 text-gray-300">
-              <li><Link to="/about#top" className="hover:text-neonGreen">About Us</Link></li>
-              <li><Link to="/contact#top" className="hover:text-neonGreen">Contact</Link></li>
+              <li><button onClick={() => handleNavigation('/about')} className="hover:text-neonGreen text-left">About Us</button></li>
+              <li><button onClick={() => handleNavigation('/contact')} className="hover:text-neonGreen text-left">Contact</button></li>
             </ul>
           </div>
           <div>
