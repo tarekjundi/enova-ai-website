@@ -1,4 +1,3 @@
-
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { X } from "lucide-react";
@@ -51,7 +50,9 @@ const Footer = () => {
               <li>Phone: +90 540 350 2010</li>
               <li className="flex space-x-4 mt-4">
                 <a href="https://x.com/enovaagency" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-neonGreen">
-                  <X />
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" strokeWidth="0" className="w-6 h-6">
+                    <path d="M18.901 1.153h3.682l-8.04 9.557L24 22.846h-7.406l-5.8-7.584-6.638 7.584H1.448l8.609-9.773L0 1.154h7.594l5.243 6.932L18.901 1.153Zm-1.306 17.545h2.034L6.529 3.268H4.373L17.595 18.698Z"/>
+                  </svg>
                 </a>
                 <a href="https://www.linkedin.com/company/enovaagency/m" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-neonGreen">
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-linkedin">
