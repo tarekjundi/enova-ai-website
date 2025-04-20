@@ -8,12 +8,12 @@ const MouseFollower = () => {
   const isMobile = useIsMobile();
 
   useEffect(() => {
-    // Don't initialize on mobile devices
     if (isMobile) return;
 
-    // Show the follower after a small delay to prevent jumpy behavior on initial load
     const timer = setTimeout(() => {
       setVisible(true);
+      // Add cursor: none to the body when component mounts
+      document.body.style.cursor = 'none';
     }, 500);
 
     const updatePosition = (e: MouseEvent) => {
@@ -25,10 +25,11 @@ const MouseFollower = () => {
     return () => {
       window.removeEventListener('mousemove', updatePosition);
       clearTimeout(timer);
+      // Reset cursor when component unmounts
+      document.body.style.cursor = 'auto';
     };
   }, [isMobile]);
 
-  // Don't render anything on mobile or when not visible
   if (isMobile || !visible) return null;
 
   return (
