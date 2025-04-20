@@ -41,6 +41,7 @@ const Footer = () => {
             <ul className="space-y-2 text-gray-300">
               <li><button onClick={() => handleNavigation('/about')} className="hover:text-neonGreen text-left">About Us</button></li>
               <li><button onClick={() => handleNavigation('/contact')} className="hover:text-neonGreen text-left">Contact</button></li>
+              <li><button onClick={() => handleNavigation('/privacy')} className="hover:text-neonGreen text-left">Privacy Policy</button></li>
             </ul>
           </div>
           <div>
