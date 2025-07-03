@@ -8,7 +8,7 @@ import LanguageSwitcher from "./LanguageSwitcher";
 
 const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
 
   const toggleMobileMenu = () => {
     setMobileMenuOpen(!mobileMenuOpen);
@@ -16,8 +16,8 @@ const Navbar = () => {
 
   return (
     <nav className="container mx-auto py-6 px-4">
-      <div className="flex justify-between items-center">
-        <Link to="/" className="text-2xl font-bold text-neonGreen order-first">ENOVA</Link>
+      <div className={`flex justify-between items-center ${language === 'ar' ? 'flex-row-reverse' : ''}`}>
+        <Link to="/" className={`text-2xl font-bold text-neonGreen ${language === 'ar' ? 'order-last' : 'order-first'}`}>ENOVA</Link>
         
         {/* Desktop Menu */}
         <div className="hidden md:flex items-center space-x-4">
@@ -59,7 +59,7 @@ const Navbar = () => {
         
         {/* Mobile Menu Button */}
         <button 
-          className="md:hidden text-neonGreen order-last"
+          className={`md:hidden text-neonGreen ${language === 'ar' ? 'order-first' : 'order-last'}`}
           onClick={toggleMobileMenu}
           aria-label="Toggle menu"
         >
