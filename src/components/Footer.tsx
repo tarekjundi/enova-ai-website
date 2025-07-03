@@ -1,9 +1,11 @@
+
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
-import { X } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Footer = () => {
   const navigate = useNavigate();
+  const { t } = useLanguage();
 
   const handleNavigation = (path: string) => {
     // First navigate to the path if it's different from current path
@@ -25,30 +27,30 @@ const Footer = () => {
           <div>
             <h3 className="text-xl font-bold text-neonGreen mb-4">ENOVA</h3>
             <p className="text-gray-300">
-              Transforming businesses through intelligent automation solutions.
+              {t('transforming')}
             </p>
           </div>
           <div>
-            <h3 className="text-xl font-bold text-white mb-4">Solutions</h3>
+            <h3 className="text-xl font-bold text-white mb-4">{t('solutions')}</h3>
             <ul className="space-y-2 text-gray-300">
-              <li><button onClick={() => handleNavigation('/solutions')} className="hover:text-neonGreen text-left">Process Automation</button></li>
-              <li><button onClick={() => handleNavigation('/solutions')} className="hover:text-neonGreen text-left">Decision Intelligence</button></li>
-              <li><button onClick={() => handleNavigation('/solutions')} className="hover:text-neonGreen text-left">Customer Engagement</button></li>
+              <li><button onClick={() => handleNavigation('/solutions')} className="hover:text-neonGreen text-left">{t('processAutomation')}</button></li>
+              <li><button onClick={() => handleNavigation('/solutions')} className="hover:text-neonGreen text-left">{t('decisionIntelligence')}</button></li>
+              <li><button onClick={() => handleNavigation('/solutions')} className="hover:text-neonGreen text-left">{t('customerEngagement')}</button></li>
             </ul>
           </div>
           <div>
-            <h3 className="text-xl font-bold text-white mb-4">Agency</h3>
+            <h3 className="text-xl font-bold text-white mb-4">{t('agency')}</h3>
             <ul className="space-y-2 text-gray-300">
-              <li><button onClick={() => handleNavigation('/about')} className="hover:text-neonGreen text-left">About Us</button></li>
-              <li><button onClick={() => handleNavigation('/contact')} className="hover:text-neonGreen text-left">Contact</button></li>
-              <li><button onClick={() => handleNavigation('/privacy')} className="hover:text-neonGreen text-left">Privacy Policy</button></li>
+              <li><button onClick={() => handleNavigation('/about')} className="hover:text-neonGreen text-left">{t('aboutUs')}</button></li>
+              <li><button onClick={() => handleNavigation('/contact')} className="hover:text-neonGreen text-left">{t('contact')}</button></li>
+              <li><button onClick={() => handleNavigation('/privacy')} className="hover:text-neonGreen text-left">{t('privacyPolicy')}</button></li>
             </ul>
           </div>
           <div>
-            <h3 className="text-xl font-bold text-white mb-4">Connect</h3>
+            <h3 className="text-xl font-bold text-white mb-4">{t('connect')}</h3>
             <ul className="space-y-2 text-gray-300">
-              <li>Email: tareq@enovaagency.com</li>
-              <li>Phone: +90 540 350 2010</li>
+              <li>{t('email')}: tareq@enovaagency.com</li>
+              <li>{t('phone')}: +90 540 350 2010</li>
               <li className="flex space-x-4 mt-4">
                 <a href="https://x.com/enovaagency" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-neonGreen">
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" strokeWidth="0" className="w-6 h-6">
@@ -74,7 +76,7 @@ const Footer = () => {
           </div>
         </div>
         <div className="border-t border-gray-600 pt-6 text-center text-gray-400">
-          <p>&copy; 2025 ENOVA. All rights reserved.</p>
+          <p>&copy; 2025 ENOVA. {t('allRightsReserved')}</p>
         </div>
       </div>
     </footer>

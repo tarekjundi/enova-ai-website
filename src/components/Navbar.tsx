@@ -3,9 +3,12 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { MessageCircle } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
+import LanguageSwitcher from "./LanguageSwitcher";
 
 const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const { t } = useLanguage();
 
   const toggleMobileMenu = () => {
     setMobileMenuOpen(!mobileMenuOpen);
@@ -23,21 +26,22 @@ const Navbar = () => {
               to="/solutions" 
               className="px-5 py-3 rounded-lg bg-darkTeal/20 text-white hover:bg-[#e0ff4f] hover:text-darkTeal transition-colors font-medium"
             >
-              Solutions
+              {t('solutions')}
             </Link>
             <Link 
               to="/about" 
               className="px-5 py-3 rounded-lg bg-darkTeal/20 text-white hover:bg-[#e0ff4f] hover:text-darkTeal transition-colors font-medium"
             >
-              About Us
+              {t('aboutUs')}
             </Link>
             <Link 
               to="/contact" 
               className="px-5 py-3 rounded-lg bg-darkTeal/20 text-white hover:bg-[#e0ff4f] hover:text-darkTeal transition-colors font-medium"
             >
-              Contact
+              {t('contact')}
             </Link>
           </div>
+          <LanguageSwitcher />
           <a 
             href="https://cal.com/tareqjundi/free-consultation" 
             target="_blank" 
@@ -48,7 +52,7 @@ const Navbar = () => {
               className="border-neonGreen text-neonGreen hover:bg-neonGreen hover:text-darkTeal transition-colors"
             >
               <MessageCircle className="mr-2 h-4 w-4" />
-              Let's Talk
+              {t('letsTalk')}
             </Button>
           </a>
         </div>
@@ -83,22 +87,25 @@ const Navbar = () => {
               className="px-5 py-3 rounded-lg bg-darkTeal/50 text-white hover:bg-[#e0ff4f] hover:text-darkTeal transition-colors font-medium"
               onClick={() => setMobileMenuOpen(false)}
             >
-              Solutions
+              {t('solutions')}
             </Link>
             <Link 
               to="/about" 
               className="px-5 py-3 rounded-lg bg-darkTeal/50 text-white hover:bg-[#e0ff4f] hover:text-darkTeal transition-colors font-medium"
               onClick={() => setMobileMenuOpen(false)}
             >
-              About Us
+              {t('aboutUs')}
             </Link>
             <Link 
               to="/contact" 
               className="px-5 py-3 rounded-lg bg-darkTeal/50 text-white hover:bg-[#e0ff4f] hover:text-darkTeal transition-colors font-medium"
               onClick={() => setMobileMenuOpen(false)}
             >
-              Contact
+              {t('contact')}
             </Link>
+            <div className="px-4">
+              <LanguageSwitcher />
+            </div>
             <a 
               href="https://cal.com/tareqjundi/free-consultation" 
               target="_blank" 
@@ -111,7 +118,7 @@ const Navbar = () => {
                 className="w-full border-neonGreen text-neonGreen hover:bg-neonGreen hover:text-darkTeal transition-colors"
               >
                 <MessageCircle className="mr-2 h-4 w-4" />
-                Let's Talk
+                {t('letsTalk')}
               </Button>
             </a>
           </div>
