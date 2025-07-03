@@ -17,7 +17,7 @@ const Navbar = () => {
   return (
     <nav className="container mx-auto py-6 px-4">
       <div className="flex justify-between items-center">
-        <Link to="/" className="text-2xl font-bold text-neonGreen">ENOVA</Link>
+        <Link to="/" className="text-2xl font-bold text-neonGreen order-first">ENOVA</Link>
         
         {/* Desktop Menu */}
         <div className="hidden md:flex items-center space-x-4">
@@ -59,7 +59,7 @@ const Navbar = () => {
         
         {/* Mobile Menu Button */}
         <button 
-          className="md:hidden text-neonGreen"
+          className="md:hidden text-neonGreen order-last"
           onClick={toggleMobileMenu}
           aria-label="Toggle menu"
         >
