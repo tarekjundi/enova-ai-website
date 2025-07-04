@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -18,8 +19,13 @@ export default {
       }
     },
     extend: {
+      fontFamily: {
+        'founders': ['Inter', 'system-ui', 'sans-serif'], // Using Inter as fallback for Founders Grotesk
+        'null': ['Inter', 'system-ui', 'sans-serif'], // Using Inter as fallback for Null Regular
+        'sans': ['Inter', 'system-ui', 'sans-serif'],
+      },
       colors: {
-        neonGreen: '#e0ff4f',
+        neonGreen: '#f8ff2c',
         darkTeal: '#00272b',
         border: 'hsl(var(--border))',
         input: 'hsl(var(--input))',
@@ -67,7 +73,7 @@ export default {
         mobile: {
           background: '#1a1f2c',
           foreground: '#ffffff',
-          primary: '#e0ff4f',
+          primary: '#f8ff2c',
           secondary: '#2d3748',
           accent: '#9b87f5',
           muted: '#4a5568',
