@@ -14,7 +14,7 @@ const Navbar = () => {
   return (
     <nav className="container mx-auto py-6 px-4">
       <div className="flex justify-between items-center">
-        <Link to="/" className="text-2xl font-bold text-neonGreen font-founders tracking-tight">
+        <Link to="/" className="text-3xl font-bold text-neonGreen font-founders tracking-tight">
           ENOVA
         </Link>
         
