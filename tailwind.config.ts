@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -20,9 +19,8 @@ export default {
     },
     extend: {
       fontFamily: {
-        'founders': ['Space Grotesk', 'system-ui', 'sans-serif'], // Professional geometric sans-serif
-        'null': ['Inter', 'system-ui', 'sans-serif'], // Clean, readable for body text
-        'sans': ['Space Grotesk', 'system-ui', 'sans-serif'],
+        'inter': ['Inter', 'system-ui', 'sans-serif'], // Inter Medium as primary
+        'sans': ['Inter', 'system-ui', 'sans-serif'], // Default sans-serif
       },
       colors: {
         neonGreen: '#f8ff2c',

@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
@@ -14,7 +13,7 @@ const Navbar = () => {
   return (
     <nav className="container mx-auto py-6 px-4">
       <div className="flex justify-between items-center">
-        <Link to="/" className="text-3xl font-bold text-neonGreen font-founders tracking-tight">
+        <Link to="/" className="text-3xl font-bold text-neonGreen font-inter tracking-tight">
           ENOVA
         </Link>
         
@@ -23,19 +22,19 @@ const Navbar = () => {
           <div className="flex space-x-3">
             <Link 
               to="/solutions" 
-              className="px-5 py-3 rounded-lg bg-darkTeal/20 text-white hover:bg-[#f8ff2c] hover:text-darkTeal transition-colors font-founders font-medium tracking-tight"
+              className="px-5 py-3 rounded-lg bg-darkTeal/20 text-white hover:bg-[#f8ff2c] hover:text-darkTeal transition-colors font-inter font-medium tracking-tight"
             >
               Solutions
             </Link>
             <Link 
               to="/about" 
-              className="px-5 py-3 rounded-lg bg-darkTeal/20 text-white hover:bg-[#f8ff2c] hover:text-darkTeal transition-colors font-founders font-medium tracking-tight"
+              className="px-5 py-3 rounded-lg bg-darkTeal/20 text-white hover:bg-[#f8ff2c] hover:text-darkTeal transition-colors font-inter font-medium tracking-tight"
             >
               About Us
             </Link>
             <Link 
               to="/contact" 
-              className="px-5 py-3 rounded-lg bg-darkTeal/20 text-white hover:bg-[#f8ff2c] hover:text-darkTeal transition-colors font-founders font-medium tracking-tight"
+              className="px-5 py-3 rounded-lg bg-darkTeal/20 text-white hover:bg-[#f8ff2c] hover:text-darkTeal transition-colors font-inter font-medium tracking-tight"
             >
               Contact
             </Link>
@@ -47,7 +46,7 @@ const Navbar = () => {
           >
             <Button 
               variant="outline" 
-              className="border-neonGreen text-neonGreen hover:bg-neonGreen hover:text-darkTeal transition-colors font-founders font-medium"
+              className="border-neonGreen text-neonGreen hover:bg-neonGreen hover:text-darkTeal transition-colors font-inter font-medium"
             >
               <MessageCircle className="mr-2 h-4 w-4" />
               Let's Talk
@@ -82,21 +81,21 @@ const Navbar = () => {
           <div className="flex flex-col space-y-4">
             <Link 
               to="/solutions" 
-              className="px-5 py-3 rounded-lg bg-darkTeal/50 text-white hover:bg-[#f8ff2c] hover:text-darkTeal transition-colors font-founders font-medium tracking-tight"
+              className="px-5 py-3 rounded-lg bg-darkTeal/50 text-white hover:bg-[#f8ff2c] hover:text-darkTeal transition-colors font-inter font-medium tracking-tight"
               onClick={() => setMobileMenuOpen(false)}
             >
               Solutions
             </Link>
             <Link 
               to="/about" 
-              className="px-5 py-3 rounded-lg bg-darkTeal/50 text-white hover:bg-[#f8ff2c] hover:text-darkTeal transition-colors font-founders font-medium tracking-tight"
+              className="px-5 py-3 rounded-lg bg-darkTeal/50 text-white hover:bg-[#f8ff2c] hover:text-darkTeal transition-colors font-inter font-medium tracking-tight"
               onClick={() => setMobileMenuOpen(false)}
             >
               About Us
             </Link>
             <Link 
               to="/contact" 
-              className="px-5 py-3 rounded-lg bg-darkTeal/50 text-white hover:bg-[#f8ff2c] hover:text-darkTeal transition-colors font-founders font-medium tracking-tight"
+              className="px-5 py-3 rounded-lg bg-darkTeal/50 text-white hover:bg-[#f8ff2c] hover:text-darkTeal transition-colors font-inter font-medium tracking-tight"
               onClick={() => setMobileMenuOpen(false)}
             >
               Contact
@@ -110,7 +109,7 @@ const Navbar = () => {
             >
               <Button 
                 variant="outline" 
-                className="w-full border-neonGreen text-neonGreen hover:bg-neonGreen hover:text-darkTeal transition-colors font-founders font-medium"
+                className="w-full border-neonGreen text-neonGreen hover:bg-neonGreen hover:text-darkTeal transition-colors font-inter font-medium"
               >
                 <MessageCircle className="mr-2 h-4 w-4" />
                 Let's Talk

@@ -1,4 +1,3 @@
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -90,7 +89,8 @@
   }
 
   body {
-    @apply bg-background text-foreground font-null;
+    @apply bg-background text-foreground font-inter;
+    font-weight: 500;
     font-feature-settings: "kern" 1, "liga" 1;
     font-optical-sizing: auto;
     text-rendering: optimizeLegibility;
@@ -102,9 +102,9 @@
     scroll-behavior: smooth;
   }
 
-  /* Professional typography hierarchy */
+  /* Professional typography hierarchy with Inter Medium */
   h1, h2, h3, h4, h5, h6 {
-    @apply font-founders font-semibold;
+    @apply font-inter font-semibold;
     letter-spacing: -0.025em;
     line-height: 1.1;
   }
@@ -123,32 +123,31 @@
     @apply text-2xl md:text-3xl font-medium;
   }
 
-  /* Body text optimized for readability */
+  /* Body text optimized for readability with Inter Medium */
   p {
-    @apply font-null leading-relaxed;
+    @apply font-inter font-medium leading-relaxed;
     font-size: 1.125rem;
     line-height: 1.7;
   }
 
   /* Small text elements */
   small, .text-sm, .text-xs {
-    @apply font-null;
-    font-weight: 400;
+    @apply font-inter font-medium;
   }
 
   /* Navigation and buttons */
   nav {
-    @apply font-founders;
+    @apply font-inter font-medium;
   }
 
   button {
-    @apply font-founders font-medium;
+    @apply font-inter font-medium;
     letter-spacing: -0.01em;
   }
 
   /* Card titles */
   .card-title {
-    @apply font-founders font-semibold;
+    @apply font-inter font-semibold;
     letter-spacing: -0.015em;
   }
 
