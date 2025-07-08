@@ -171,7 +171,7 @@ const Solutions = () => {
     </p>
 
     <a
-      href="https://cal.com/tareqjundi/demo"
+      href="https://cal.com/tarek-jundi/free-consultation"
       target="_blank"
       rel="noopener noreferrer"
     >
