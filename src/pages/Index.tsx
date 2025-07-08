@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import Navbar from "@/components/Navbar";
@@ -151,72 +152,78 @@ const Index = () => {
             <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-1 bg-neonGreen/30 -translate-x-1/2"></div>
             
             <div className="space-y-20">
-              <div className="relative grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-                <div className="md:text-right">
-                  <div className="hidden md:block absolute top-0 left-1/2 w-6 h-6 rounded-full bg-neonGreen -translate-x-1/2"></div>
-                  <h3 className="text-2xl font-bold mb-3">1. Analyze</h3>
-                  <p className="text-gray-300">
-                    We analyze your current workflows and identify opportunities for automation, focusing on high-impact areas that will deliver immediate results.
-                  </p>
+              <FadeInSection>
+                <div className="relative grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                  <div className="md:text-right animate-fade-in">
+                    <div className="hidden md:block absolute top-0 left-1/2 w-6 h-6 rounded-full bg-neonGreen -translate-x-1/2 animate-pulse"></div>
+                    <h3 className="text-2xl font-bold mb-3">1. Analyze</h3>
+                    <p className="text-gray-300">
+                      We analyze your current workflows and identify opportunities for automation, focusing on high-impact areas that will deliver immediate results.
+                    </p>
+                  </div>
+                  <div className="bg-darkTeal/40 p-6 rounded-lg border border-neonGreen/20 transform hover:scale-105 transition-all duration-300 hover:shadow-lg hover:shadow-neonGreen/20">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-neonGreen mx-auto mb-4 animate-pulse">
+                      <path d="M3 3v18h18" />
+                      <path d="m7 14 4-4 4 4 6-6" />
+                    </svg>
+                  </div>
                 </div>
-                <div className="bg-darkTeal/40 p-6 rounded-lg border border-neonGreen/20">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-neonGreen mx-auto mb-4">
-                    <path d="M3 3v18h18" />
-                    <path d="m7 14 4-4 4 4 6-6" />
-                  </svg>
-                </div>
-              </div>
+              </FadeInSection>
 
-              <div className="relative grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-                <div className="md:order-2">
-                  <div className="hidden md:block absolute top-0 left-1/2 w-6 h-6 rounded-full bg-neonGreen -translate-x-1/2"></div>
-                  <h3 className="text-2xl font-bold mb-3">2. Implement</h3>
-                  <p className="text-gray-300">
-                    Our experts design and implement custom automation solutions tailored to your specific business needs, integrating with your existing systems.
-                  </p>
+              <FadeInSection>
+                <div className="relative grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                  <div className="md:order-2 animate-fade-in">
+                    <div className="hidden md:block absolute top-0 left-1/2 w-6 h-6 rounded-full bg-neonGreen -translate-x-1/2 animate-pulse"></div>
+                    <h3 className="text-2xl font-bold mb-3">2. Implement</h3>
+                    <p className="text-gray-300">
+                      Our experts design and implement custom automation solutions tailored to your specific business needs, integrating with your existing systems.
+                    </p>
+                  </div>
+                  <div className="bg-darkTeal/40 p-6 rounded-lg border border-neonGreen/20 md:order-1 transform hover:scale-105 transition-all duration-300 hover:shadow-lg hover:shadow-neonGreen/20">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-neonGreen mx-auto mb-4 animate-spin">
+                      <path d="M12 20a8 8 0 1 0 0-16 8 8 0 0 0 0 16Z" />
+                      <path d="M12 14a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z" />
+                      <path d="M12 2v2" />
+                      <path d="M12 22v-2" />
+                      <path d="m17 20.66-1-1.73" />
+                      <path d="M11 10.27 7 3.34" />
+                      <path d="m20.66 17-1.73-1" />
+                      <path d="m3.34 7 1.73 1" />
+                      <path d="M14 12h8" />
+                      <path d="M2 12h2" />
+                      <path d="m20.66 7-1.73 1" />
+                      <path d="m3.34 17 1.73-1" />
+                      <path d="m17 3.34-1 1.73" />
+                      <path d="m7 20.66 1-1.73" />
+                    </svg>
+                  </div>
                 </div>
-                <div className="bg-darkTeal/40 p-6 rounded-lg border border-neonGreen/20 md:order-1">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-neonGreen mx-auto mb-4">
-                    <path d="M12 20a8 8 0 1 0 0-16 8 8 0 0 0 0 16Z" />
-                    <path d="M12 14a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z" />
-                    <path d="M12 2v2" />
-                    <path d="M12 22v-2" />
-                    <path d="m17 20.66-1-1.73" />
-                    <path d="M11 10.27 7 3.34" />
-                    <path d="m20.66 17-1.73-1" />
-                    <path d="m3.34 7 1.73 1" />
-                    <path d="M14 12h8" />
-                    <path d="M2 12h2" />
-                    <path d="m20.66 7-1.73 1" />
-                    <path d="m3.34 17 1.73-1" />
-                    <path d="m17 3.34-1 1.73" />
-                    <path d="m7 20.66 1-1.73" />
-                  </svg>
-                </div>
-              </div>
+              </FadeInSection>
 
-              <div className="relative grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-                <div className="md:text-right">
-                  <div className="hidden md:block absolute top-0 left-1/2 w-6 h-6 rounded-full bg-neonGreen -translate-x-1/2"></div>
-                  <h3 className="text-2xl font-bold mb-3">3. Optimize</h3>
-                  <p className="text-gray-300">
-                    We continuously monitor and optimize your automated processes, ensuring they evolve with your business and deliver maximum ROI.
-                  </p>
+              <FadeInSection>
+                <div className="relative grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                  <div className="md:text-right animate-fade-in">
+                    <div className="hidden md:block absolute top-0 left-1/2 w-6 h-6 rounded-full bg-neonGreen -translate-x-1/2 animate-pulse"></div>
+                    <h3 className="text-2xl font-bold mb-3">3. Optimize</h3>
+                    <p className="text-gray-300">
+                      We continuously monitor and optimize your automated processes, ensuring they evolve with your business and deliver maximum ROI.
+                    </p>
+                  </div>
+                  <div className="bg-darkTeal/40 p-6 rounded-lg border border-neonGreen/20 transform hover:scale-105 transition-all duration-300 hover:shadow-lg hover:shadow-neonGreen/20">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-neonGreen mx-auto mb-4 animate-bounce">
+                      <path d="M12 2v4" />
+                      <path d="M5 5.5 7.5 8" />
+                      <path d="M2 12h4" />
+                      <path d="M5 18.5 7.5 16" />
+                      <path d="M12 22v-4" />
+                      <path d="m16.5 16 2.5 2.5" />
+                      <path d="M22 12h-4" />
+                      <path d="m16.5 8 2.5-2.5" />
+                      <path d="M10 12a2 2 0 1 0 4 0 2 2 0 0 0-4 0Z" />
+                    </svg>
+                  </div>
                 </div>
-                <div className="bg-darkTeal/40 p-6 rounded-lg border border-neonGreen/20">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-neonGreen mx-auto mb-4">
-                    <path d="M12 2v4" />
-                    <path d="M5 5.5 7.5 8" />
-                    <path d="M2 12h4" />
-                    <path d="M5 18.5 7.5 16" />
-                    <path d="M12 22v-4" />
-                    <path d="m16.5 16 2.5 2.5" />
-                    <path d="M22 12h-4" />
-                    <path d="m16.5 8 2.5-2.5" />
-                    <path d="M10 12a2 2 0 1 0 4 0 2 2 0 0 0-4 0Z" />
-                  </svg>
-                </div>
-              </div>
+              </FadeInSection>
             </div>
           </div>
         </div>
