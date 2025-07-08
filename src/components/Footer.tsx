@@ -47,7 +47,7 @@ const Footer = () => {
           <div>
             <h3 className="text-xl font-bold text-white mb-4">Connect</h3>
             <ul className="space-y-2 text-gray-300">
-              <li>Email: tareq@enovaagency.com</li>
+              <li>Email: tarek@enovaagency.com</li>
               <li>Phone: +90 540 350 2010</li>
               <li className="flex space-x-4 mt-4">
                 <a href="https://x.com/enovaagency" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-neonGreen">
