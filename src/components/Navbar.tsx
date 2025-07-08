@@ -41,7 +41,7 @@ const Navbar = () => {
             </Link>
           </div>
           <a 
-            href="https://cal.com/tareqjundi/free-consultation" 
+            href="https://cal.com/tarek-jundi/free-consultation" 
             target="_blank" 
             rel="noopener noreferrer"
           >
@@ -102,7 +102,7 @@ const Navbar = () => {
               Contact
             </Link>
             <a 
-              href="https://cal.com/tareqjundi/free-consultation" 
+              href="https://cal.com/tarek-jundi/free-consultation" 
               target="_blank" 
               rel="noopener noreferrer"
               className="px-4 py-2"
