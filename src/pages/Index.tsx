@@ -23,7 +23,7 @@ const Index = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
 <a
-  href="https://cal.com/tareqjundi/demo"
+  href="https://cal.com/tarek-jundi/free-consultation"
   target="_blank"
   rel="noopener noreferrer"
 >
