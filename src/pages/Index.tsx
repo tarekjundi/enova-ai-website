@@ -234,7 +234,7 @@ const Index = () => {
     </p>
     
     <a
-      href="https://cal.com/tareqjundi/free-consultation"
+      href="https://cal.com/tarek-jundi/free-consultation"
       target="_blank"
       rel="noopener noreferrer"
     >
