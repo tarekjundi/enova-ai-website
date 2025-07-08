@@ -1,10 +1,10 @@
-
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ScrollToTop from "@/components/ScrollToTop";
 import FadeInSection from "@/components/FadeInSection";
+import AnimatedCounter from "@/components/AnimatedCounter";
 
 const Index = () => {
   return (
@@ -15,40 +15,39 @@ const Index = () => {
       {/* Hero Section */}
       <section className="container mx-auto py-20 md:py-32 px-4">
         <div className="max-w-3xl">
-          <h1 className="text-5xl md:text-7xl font-bold mb-6">
-            Automate your workflow with <span className="text-neonGreen">precision</span>
+          <h1 className="text-5xl md:text-7xl font-bold mb-6 animate-fade-in">
+            Automate your workflow with <span className="text-neonGreen animate-pulse">precision</span>
           </h1>
-          <p className="text-xl md:text-2xl mb-10 text-gray-300">
+          <p className="text-xl md:text-2xl mb-10 text-gray-300 animate-fade-in">
             Streamline your business processes and increase productivity with our cutting-edge automation solutions.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4">
-<a
-  href="https://cal.com/tarek-jundi/free-consultation"
-  target="_blank"
-  rel="noopener noreferrer"
->
-  <Button className="bg-neonGreen text-darkTeal hover:bg-neonGreen/90 text-lg px-8 py-6">
-    Start Automating
-  </Button>
-</a>
-
+          <div className="flex flex-col sm:flex-row gap-4 animate-fade-in">
+            <a
+              href="https://cal.com/tarek-jundi/free-consultation"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Button className="bg-neonGreen text-darkTeal hover:bg-neonGreen/90 text-lg px-8 py-6 hover-scale">
+                Start Automating
+              </Button>
+            </a>
           </div>
         </div>
       </section>
 
-      {/* Stats Section */}
+      {/* Stats Section with Animated Counters */}
       <section className="bg-darkTeal/80 py-16">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-            <div className="text-center">
-              <p className="text-5xl font-bold text-neonGreen mb-2">85%</p>
+            <div className="text-center transform hover:scale-105 transition-transform duration-300">
+              <AnimatedCounter end={85} suffix="%" />
               <p className="text-xl">Reduction in manual tasks</p>
             </div>
-            <div className="text-center">
-              <p className="text-5xl font-bold text-neonGreen mb-2">7.8x</p>
+            <div className="text-center transform hover:scale-105 transition-transform duration-300">
+              <AnimatedCounter end={7.8} suffix="x" />
               <p className="text-xl">Increase in productivity</p>
             </div>
-            <div className="text-center">
+            <div className="text-center transform hover:scale-105 transition-transform duration-300">
               <p className="text-5xl font-bold text-neonGreen mb-2">24/7</p>
               <p className="text-xl">Continuous operation</p>
             </div>
@@ -225,26 +224,25 @@ const Index = () => {
 
       {/* CTA Section */}
       <section id="contact" className="py-20 bg-neonGreen">
-  <div className="container mx-auto px-4 text-center">
-    <h2 className="text-3xl md:text-5xl font-bold mb-6 text-darkTeal">
-      Ready to Automate Your Business?
-    </h2>
-    <p className="text-xl text-darkTeal/80 max-w-3xl mx-auto mb-10">
-      Join thousands of businesses that have transformed their operations with automation platform.
-    </p>
-    
-    <a
-      href="https://cal.com/tarek-jundi/free-consultation"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      <Button className="bg-darkTeal text-neonGreen hover:bg-darkTeal/90 text-lg px-8 py-6">
-        Schedule a Free Consultation
-      </Button>
-    </a>
-  </div>
-</section>
-
+        <div className="container mx-auto px-4 text-center">
+          <h2 className="text-3xl md:text-5xl font-bold mb-6 text-darkTeal">
+            Ready to Automate Your Business?
+          </h2>
+          <p className="text-xl text-darkTeal/80 max-w-3xl mx-auto mb-10">
+            Join thousands of businesses that have transformed their operations with automation platform.
+          </p>
+          
+          <a
+            href="https://cal.com/tarek-jundi/free-consultation"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Button className="bg-darkTeal text-neonGreen hover:bg-darkTeal/90 text-lg px-8 py-6 hover-scale">
+              Schedule a Free Consultation
+            </Button>
+          </a>
+        </div>
+      </section>
 
       {/* Footer */}
       <Footer />

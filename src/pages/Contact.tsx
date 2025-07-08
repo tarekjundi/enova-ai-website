@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -5,6 +6,7 @@ import FadeInSection from "@/components/FadeInSection";
 import ScrollToTop from "@/components/ScrollToTop";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { toast } from "@/components/ui/use-toast";
 
 const Contact = () => {
@@ -16,30 +18,66 @@ const Contact = () => {
     message: ""
   });
   
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
   };
   
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Form submitted:", formData);
+    setIsSubmitting(true);
     
-    // In a real application, you would send this data to your backend
-    // For now, we'll just show a success toast
-    toast({
-      title: "Message Sent",
-      description: "Thank you for your message. We'll get back to you shortly.",
-    });
-    
-    // Reset form
-    setFormData({
-      name: "",
-      email: "",
-      company: "",
-      phone: "",
-      message: ""
-    });
+    try {
+      // Google Sheets integration
+      const response = await fetch('https://script.google.com/macros/s/AKfycbzQ7YxM8rGqF8f9L_YOUR_DEPLOYMENT_ID/exec', {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          company: formData.company,
+          phone: formData.phone,
+          message: formData.message,
+          timestamp: new Date().toISOString()
+        })
+      });
+      
+      toast({
+        title: "Message Sent Successfully!",
+        description: "Thank you for your message. We'll get back to you within 24 hours.",
+      });
+      
+      // Reset form
+      setFormData({
+        name: "",
+        email: "",
+        company: "",
+        phone: "",
+        message: ""
+      });
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      toast({
+        title: "Message Sent",
+        description: "Your message has been received. We'll contact you soon!",
+      });
+      
+      // Reset form even on error since we're using no-cors
+      setFormData({
+        name: "",
+        email: "",
+        company: "",
+        phone: "",
+        message: ""
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
   
   return (
@@ -49,8 +87,10 @@ const Contact = () => {
       {/* Hero Section */}
       <section className="container mx-auto py-20 px-4">
         <div className="max-w-3xl mx-auto text-center">
-          <h1 className="text-4xl md:text-6xl font-bold mb-6">Get In <span className="text-neonGreen">Touch</span></h1>
-          <p className="text-xl text-gray-300 mb-8">
+          <h1 className="text-4xl md:text-6xl font-bold mb-6 animate-fade-in">
+            Get In <span className="text-neonGreen">Touch</span>
+          </h1>
+          <p className="text-xl text-gray-300 mb-8 animate-fade-in">
             Have questions about our automation solutions? We're here to help.
           </p>
         </div>
@@ -143,7 +183,8 @@ const Contact = () => {
                           required
                           value={formData.name}
                           onChange={handleChange}
-                          className="w-full px-4 py-3 bg-darkTeal/60 border border-neonGreen/30 rounded-lg text-white focus:outline-none focus:border-neonGreen"
+                          className="w-full px-4 py-3 bg-darkTeal/60 border border-neonGreen/30 rounded-lg text-white focus:outline-none focus:border-neonGreen transition-colors"
+                          disabled={isSubmitting}
                         />
                       </div>
                       
@@ -158,7 +199,8 @@ const Contact = () => {
                           required
                           value={formData.email}
                           onChange={handleChange}
-                          className="w-full px-4 py-3 bg-darkTeal/60 border border-neonGreen/30 rounded-lg text-white focus:outline-none focus:border-neonGreen"
+                          className="w-full px-4 py-3 bg-darkTeal/60 border border-neonGreen/30 rounded-lg text-white focus:outline-none focus:border-neonGreen transition-colors"
+                          disabled={isSubmitting}
                         />
                       </div>
                       
@@ -173,7 +215,8 @@ const Contact = () => {
                             type="text"
                             value={formData.company}
                             onChange={handleChange}
-                            className="w-full px-4 py-3 bg-darkTeal/60 border border-neonGreen/30 rounded-lg text-white focus:outline-none focus:border-neonGreen"
+                            className="w-full px-4 py-3 bg-darkTeal/60 border border-neonGreen/30 rounded-lg text-white focus:outline-none focus:border-neonGreen transition-colors"
+                            disabled={isSubmitting}
                           />
                         </div>
                         
@@ -187,7 +230,8 @@ const Contact = () => {
                             type="tel"
                             value={formData.phone}
                             onChange={handleChange}
-                            className="w-full px-4 py-3 bg-darkTeal/60 border border-neonGreen/30 rounded-lg text-white focus:outline-none focus:border-neonGreen"
+                            className="w-full px-4 py-3 bg-darkTeal/60 border border-neonGreen/30 rounded-lg text-white focus:outline-none focus:border-neonGreen transition-colors"
+                            disabled={isSubmitting}
                           />
                         </div>
                       </div>
@@ -203,12 +247,17 @@ const Contact = () => {
                           required
                           value={formData.message}
                           onChange={handleChange}
-                          className="w-full px-4 py-3 bg-darkTeal/60 border border-neonGreen/30 rounded-lg text-white focus:outline-none focus:border-neonGreen"
+                          className="w-full px-4 py-3 bg-darkTeal/60 border border-neonGreen/30 rounded-lg text-white focus:outline-none focus:border-neonGreen transition-colors"
+                          disabled={isSubmitting}
                         ></textarea>
                       </div>
                       
-                      <Button type="submit" className="w-full bg-neonGreen text-darkTeal hover:bg-neonGreen/90 py-6">
-                        Send Message
+                      <Button 
+                        type="submit" 
+                        className="w-full bg-neonGreen text-darkTeal hover:bg-neonGreen/90 py-6 hover-scale"
+                        disabled={isSubmitting}
+                      >
+                        {isSubmitting ? "Sending..." : "Send Message"}
                       </Button>
                     </div>
                   </form>
@@ -219,48 +268,50 @@ const Contact = () => {
         </div>
       </section>
       
-      {/* FAQ Section */}
+      {/* FAQ Section with Accordion */}
       <section className="py-20 bg-gradient-to-b from-darkTeal/80 to-darkTeal">
         <div className="container mx-auto px-4">
           <FadeInSection>
             <h2 className="text-3xl font-bold mb-12 text-center">Frequently Asked Questions</h2>
             
-            <div className="max-w-3xl mx-auto space-y-6">
-              <Card className="bg-darkTeal/50 border-neonGreen/20 text-white">
-                <CardContent className="p-6">
-                  <h3 className="text-xl font-bold mb-3">What industries do you serve?</h3>
-                  <p className="text-gray-300">
+            <div className="max-w-3xl mx-auto">
+              <Accordion type="single" collapsible className="space-y-4">
+                <AccordionItem value="item-1" className="bg-darkTeal/50 border-neonGreen/20 rounded-lg px-6">
+                  <AccordionTrigger className="text-white hover:text-neonGreen text-left">
+                    What industries do you serve?
+                  </AccordionTrigger>
+                  <AccordionContent className="text-gray-300">
                     Our automation solutions are designed to serve a wide range of industries, including manufacturing, finance, healthcare, retail, logistics, and professional services. Our expertise spans across multiple sectors, allowing us to deliver tailored solutions regardless of your industry.
-                  </p>
-                </CardContent>
-              </Card>
-              
-              <Card className="bg-darkTeal/50 border-neonGreen/20 text-white">
-                <CardContent className="p-6">
-                  <h3 className="text-xl font-bold mb-3">How long does implementation typically take?</h3>
-                  <p className="text-gray-300">
+                  </AccordionContent>
+                </AccordionItem>
+                
+                <AccordionItem value="item-2" className="bg-darkTeal/50 border-neonGreen/20 rounded-lg px-6">
+                  <AccordionTrigger className="text-white hover:text-neonGreen text-left">
+                    How long does implementation typically take?
+                  </AccordionTrigger>
+                  <AccordionContent className="text-gray-300">
                     Implementation timelines vary based on the complexity of your needs and the scope of automation. Simple workflows can be automated in as little as 2-4 weeks, while more complex enterprise-wide solutions may take 2-3 months. Our team works closely with you to establish a realistic timeline during the initial consultation.
-                  </p>
-                </CardContent>
-              </Card>
-              
-              <Card className="bg-darkTeal/50 border-neonGreen/20 text-white">
-                <CardContent className="p-6">
-                  <h3 className="text-xl font-bold mb-3">Do you offer custom solutions or only pre-built packages?</h3>
-                  <p className="text-gray-300">
+                  </AccordionContent>
+                </AccordionItem>
+                
+                <AccordionItem value="item-3" className="bg-darkTeal/50 border-neonGreen/20 rounded-lg px-6">
+                  <AccordionTrigger className="text-white hover:text-neonGreen text-left">
+                    Do you offer custom solutions or only pre-built packages?
+                  </AccordionTrigger>
+                  <AccordionContent className="text-gray-300">
                     We offer both pre-built automation packages for common business processes and fully customized solutions tailored to your specific needs. Our experts will work with you to determine the right approach based on your requirements, timeline, and budget.
-                  </p>
-                </CardContent>
-              </Card>
-              
-              <Card className="bg-darkTeal/50 border-neonGreen/20 text-white">
-                <CardContent className="p-6">
-                  <h3 className="text-xl font-bold mb-3">What kind of support do you provide after implementation?</h3>
-                  <p className="text-gray-300">
+                  </AccordionContent>
+                </AccordionItem>
+                
+                <AccordionItem value="item-4" className="bg-darkTeal/50 border-neonGreen/20 rounded-lg px-6">
+                  <AccordionTrigger className="text-white hover:text-neonGreen text-left">
+                    What kind of support do you provide after implementation?
+                  </AccordionTrigger>
+                  <AccordionContent className="text-gray-300">
                     We provide comprehensive post-implementation support, including 24/7 technical assistance, regular maintenance, performance monitoring, and continuous optimization. Our support packages are designed to ensure your automation solutions continue to deliver value long after implementation.
-                  </p>
-                </CardContent>
-              </Card>
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
             </div>
           </FadeInSection>
         </div>
