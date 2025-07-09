@@ -31,7 +31,7 @@ const Contact = () => {
     
     try {
       // Google Sheets integration
-      const response = await fetch('https://script.google.com/macros/s/AKfycbwhWNTx7S1puVz-XvODTh-0OFqxy3RxtssYxoSiBY8/exec', {
+      const response = await fetch('https://script.google.com/macros/s/AKfycbxdXg5BRalxvy5V_iGOcbavovo0Prp5mhV-7hWrShLhIQV1HkNqrjr2kf_ufGMu4pUP/exec', {
         method: 'POST',
         mode: 'no-cors',
         headers: {
