@@ -38,22 +38,22 @@ const MotionElement: React.FC<MotionElementProps> = ({
   }, [delay, threshold]);
 
   const getAnimationClasses = () => {
-    const baseClasses = `transition-all duration-${duration} ease-out`;
+    const baseClasses = `transition-all duration-${duration} ease-out relative z-auto`;
     
     if (!isVisible) {
       switch (animation) {
         case 'slideUp':
-          return `${baseClasses} opacity-0 translate-y-8`;
+          return `${baseClasses} opacity-0 translate-y-4`;
         case 'slideLeft':
-          return `${baseClasses} opacity-0 -translate-x-8`;
+          return `${baseClasses} opacity-0 -translate-x-4`;
         case 'slideRight':
-          return `${baseClasses} opacity-0 translate-x-8`;
+          return `${baseClasses} opacity-0 translate-x-4`;
         case 'scale':
-          return `${baseClasses} opacity-0 scale-95`;
+          return `${baseClasses} opacity-0 scale-98`;
         case 'rotate':
-          return `${baseClasses} opacity-0 rotate-3 scale-95`;
+          return `${baseClasses} opacity-0 rotate-1 scale-98`;
         case 'bounce':
-          return `${baseClasses} opacity-0 translate-y-4 scale-90`;
+          return `${baseClasses} opacity-0 translate-y-2 scale-98`;
         default:
           return `${baseClasses} opacity-0`;
       }
@@ -74,7 +74,7 @@ interface ParallaxElementProps {
   speed?: number;
 }
 
-const ParallaxElement: React.FC<ParallaxElementProps> = ({ children, speed = 0.5 }) => {
+const ParallaxElement: React.FC<ParallaxElementProps> = ({ children, speed = 0.2 }) => {
   const [offset, setOffset] = useState(0);
   const elementRef = useRef<HTMLDivElement>(null);
 
@@ -88,7 +88,7 @@ const ParallaxElement: React.FC<ParallaxElementProps> = ({ children, speed = 0.5
       }
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, [speed]);
 
@@ -96,7 +96,7 @@ const ParallaxElement: React.FC<ParallaxElementProps> = ({ children, speed = 0.5
     <div
       ref={elementRef}
       style={{ transform: `translateY(${offset}px)` }}
-      className="transition-transform duration-75 ease-out"
+      className="transition-transform duration-100 ease-out will-change-transform"
     >
       {children}
     </div>
@@ -108,7 +108,7 @@ interface FloatingElementProps {
   intensity?: number;
 }
 
-const FloatingElement: React.FC<FloatingElementProps> = ({ children, intensity = 1 }) => {
+const FloatingElement: React.FC<FloatingElementProps> = ({ children, intensity = 0.5 }) => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const elementRef = useRef<HTMLDivElement>(null);
 
@@ -119,14 +119,14 @@ const FloatingElement: React.FC<FloatingElementProps> = ({ children, intensity =
         const centerX = rect.left + rect.width / 2;
         const centerY = rect.top + rect.height / 2;
         
-        const deltaX = (e.clientX - centerX) * intensity * 0.02;
-        const deltaY = (e.clientY - centerY) * intensity * 0.02;
+        const deltaX = (e.clientX - centerX) * intensity * 0.01;
+        const deltaY = (e.clientY - centerY) * intensity * 0.01;
         
         setMousePosition({ x: deltaX, y: deltaY });
       }
     };
 
-    window.addEventListener('mousemove', handleMouseMove);
+    window.addEventListener('mousemove', handleMouseMove, { passive: true });
     return () => window.removeEventListener('mousemove', handleMouseMove);
   }, [intensity]);
 
@@ -136,7 +136,7 @@ const FloatingElement: React.FC<FloatingElementProps> = ({ children, intensity =
       style={{
         transform: `translate(${mousePosition.x}px, ${mousePosition.y}px)`,
       }}
-      className="transition-transform duration-200 ease-out"
+      className="transition-transform duration-300 ease-out will-change-transform"
     >
       {children}
     </div>
