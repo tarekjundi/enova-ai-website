@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import Navbar from "@/components/Navbar";
@@ -177,7 +176,7 @@ const Index = () => {
             <div className="space-y-20 relative z-10">
               <MotionElement animation="slideUp" delay={100} threshold={0.2}>
                 <div className="relative grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-                  <div className="hidden md:block absolute left-1/2 top-8 w-6 h-6 rounded-full bg-neonGreen -translate-x-1/2 animate-pulse z-20"></div>
+                  <div className="hidden md:block absolute left-1/2 top-2 w-6 h-6 rounded-full bg-neonGreen -translate-x-1/2 z-20"></div>
                   <div className="md:text-right relative z-10">
                     <h3 className="text-2xl font-bold mb-3">1. Analyze</h3>
                     <p className="text-gray-300">
@@ -195,7 +194,7 @@ const Index = () => {
 
               <MotionElement animation="slideUp" delay={200} threshold={0.2}>
                 <div className="relative grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-                  <div className="hidden md:block absolute left-1/2 top-8 w-6 h-6 rounded-full bg-neonGreen -translate-x-1/2 animate-pulse z-20"></div>
+                  <div className="hidden md:block absolute left-1/2 top-2 w-6 h-6 rounded-full bg-neonGreen -translate-x-1/2 z-20"></div>
                   <div className="md:order-2 relative z-10">
                     <h3 className="text-2xl font-bold mb-3">2. Implement</h3>
                     <p className="text-gray-300">
@@ -225,7 +224,7 @@ const Index = () => {
 
               <MotionElement animation="slideUp" delay={300} threshold={0.2}>
                 <div className="relative grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-                  <div className="hidden md:block absolute left-1/2 top-8 w-6 h-6 rounded-full bg-neonGreen -translate-x-1/2 animate-pulse z-20"></div>
+                  <div className="hidden md:block absolute left-1/2 top-2 w-6 h-6 rounded-full bg-neonGreen -translate-x-1/2 z-20"></div>
                   <div className="md:text-right relative z-10">
                     <h3 className="text-2xl font-bold mb-3">3. Optimize</h3>
                     <p className="text-gray-300">
