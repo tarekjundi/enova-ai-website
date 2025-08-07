@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -276,39 +275,47 @@ const Contact = () => {
             
             <div className="max-w-3xl mx-auto">
               <Accordion type="single" collapsible className="space-y-4">
-                <AccordionItem value="item-1" className="bg-darkTeal/50 border-neonGreen/20 rounded-lg px-6">
-                  <AccordionTrigger className="text-white hover:text-neonGreen text-left">
+                <AccordionItem value="item-1" className="bg-darkTeal/50 border-neonGreen/20 rounded-lg px-6 transition-all duration-300 ease-in-out hover:bg-darkTeal/60 hover:border-neonGreen/30">
+                  <AccordionTrigger className="text-white hover:text-neonGreen text-left transition-all duration-300 ease-in-out hover:scale-[1.01]">
                     What industries do you serve?
                   </AccordionTrigger>
-                  <AccordionContent className="text-gray-300">
-                    Our automation solutions are designed to serve a wide range of industries, including manufacturing, finance, healthcare, retail, logistics, and professional services. Our expertise spans across multiple sectors, allowing us to deliver tailored solutions regardless of your industry.
+                  <AccordionContent className="text-gray-300 animate-accordion-down">
+                    <div className="transform transition-all duration-500 ease-in-out">
+                      Our automation solutions are designed to serve a wide range of industries, including manufacturing, finance, healthcare, retail, logistics, and professional services. Our expertise spans across multiple sectors, allowing us to deliver tailored solutions regardless of your industry.
+                    </div>
                   </AccordionContent>
                 </AccordionItem>
                 
-                <AccordionItem value="item-2" className="bg-darkTeal/50 border-neonGreen/20 rounded-lg px-6">
-                  <AccordionTrigger className="text-white hover:text-neonGreen text-left">
+                <AccordionItem value="item-2" className="bg-darkTeal/50 border-neonGreen/20 rounded-lg px-6 transition-all duration-300 ease-in-out hover:bg-darkTeal/60 hover:border-neonGreen/30">
+                  <AccordionTrigger className="text-white hover:text-neonGreen text-left transition-all duration-300 ease-in-out hover:scale-[1.01]">
                     How long does implementation typically take?
                   </AccordionTrigger>
-                  <AccordionContent className="text-gray-300">
-                    Implementation timelines vary based on the complexity of your needs and the scope of automation. Simple workflows can be automated in as little as 2-4 weeks, while more complex enterprise-wide solutions may take 2-3 months. Our team works closely with you to establish a realistic timeline during the initial consultation.
+                  <AccordionContent className="text-gray-300 animate-accordion-down">
+                    <div className="transform transition-all duration-500 ease-in-out">
+                      Implementation timelines vary based on the complexity of your needs and the scope of automation. Simple workflows can be automated in as little as 2-4 weeks, while more complex enterprise-wide solutions may take 2-3 months. Our team works closely with you to establish a realistic timeline during the initial consultation.
+                    </div>
                   </AccordionContent>
                 </AccordionItem>
                 
-                <AccordionItem value="item-3" className="bg-darkTeal/50 border-neonGreen/20 rounded-lg px-6">
-                  <AccordionTrigger className="text-white hover:text-neonGreen text-left">
+                <AccordionItem value="item-3" className="bg-darkTeal/50 border-neonGreen/20 rounded-lg px-6 transition-all duration-300 ease-in-out hover:bg-darkTeal/60 hover:border-neonGreen/30">
+                  <AccordionTrigger className="text-white hover:text-neonGreen text-left transition-all duration-300 ease-in-out hover:scale-[1.01]">
                     Do you offer custom solutions or only pre-built packages?
                   </AccordionTrigger>
-                  <AccordionContent className="text-gray-300">
-                    We offer both pre-built automation packages for common business processes and fully customized solutions tailored to your specific needs. Our experts will work with you to determine the right approach based on your requirements, timeline, and budget.
+                  <AccordionContent className="text-gray-300 animate-accordion-down">
+                    <div className="transform transition-all duration-500 ease-in-out">
+                      We offer both pre-built automation packages for common business processes and fully customized solutions tailored to your specific needs. Our experts will work with you to determine the right approach based on your requirements, timeline, and budget.
+                    </div>
                   </AccordionContent>
                 </AccordionItem>
                 
-                <AccordionItem value="item-4" className="bg-darkTeal/50 border-neonGreen/20 rounded-lg px-6">
-                  <AccordionTrigger className="text-white hover:text-neonGreen text-left">
+                <AccordionItem value="item-4" className="bg-darkTeal/50 border-neonGreen/20 rounded-lg px-6 transition-all duration-300 ease-in-out hover:bg-darkTeal/60 hover:border-neonGreen/30">
+                  <AccordionTrigger className="text-white hover:text-neonGreen text-left transition-all duration-300 ease-in-out hover:scale-[1.01]">
                     What kind of support do you provide after implementation?
                   </AccordionTrigger>
-                  <AccordionContent className="text-gray-300">
-                    We provide comprehensive post-implementation support, including 24/7 technical assistance, regular maintenance, performance monitoring, and continuous optimization. Our support packages are designed to ensure your automation solutions continue to deliver value long after implementation.
+                  <AccordionContent className="text-gray-300 animate-accordion-down">
+                    <div className="transform transition-all duration-500 ease-in-out">
+                      We provide comprehensive post-implementation support, including 24/7 technical assistance, regular maintenance, performance monitoring, and continuous optimization. Our support packages are designed to ensure your automation solutions continue to deliver value long after implementation.
+                    </div>
                   </AccordionContent>
                 </AccordionItem>
               </Accordion>
