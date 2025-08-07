@@ -1,4 +1,3 @@
-
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import FadeInSection from "@/components/FadeInSection";
@@ -44,9 +43,9 @@ const Solutions = () => {
                     Streamline repetitive tasks and workflows
                   </CardDescription>
                 </CardHeader>
-                <CardContent className="animate-fade-in">
+                <CardContent className="animate-fade-in pb-6">
                   <p className="mb-4">Our process automation solutions help businesses eliminate manual, repetitive tasks, freeing up time and resources for more valuable work.</p>
-                  <ul className="space-y-2 mb-6">
+                  <ul className="space-y-2">
                     <li className="flex items-start gap-2 animate-slide-in-left">
                       <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-neonGreen mt-1">
                         <path d="M20 6 9 17l-5-5" />
@@ -66,9 +65,6 @@ const Solutions = () => {
                       <span>Task scheduling and monitoring</span>
                     </li>
                   </ul>
-                  <Button variant="outline" className="border-neonGreen text-neonGreen hover:bg-neonGreen/10 w-full animate-scale-in hover-glow transition-all duration-300">
-                    Learn More
-                  </Button>
                 </CardContent>
               </Card>
               
@@ -86,9 +82,9 @@ const Solutions = () => {
                     AI-powered decision automation
                   </CardDescription>
                 </CardHeader>
-                <CardContent className="animate-fade-in">
+                <CardContent className="animate-fade-in pb-6">
                   <p className="mb-4">Our decision intelligence platform uses AI and machine learning to help businesses make better decisions faster and with greater confidence.</p>
-                  <ul className="space-y-2 mb-6">
+                  <ul className="space-y-2">
                     <li className="flex items-start gap-2 animate-slide-in-left">
                       <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-neonGreen mt-1">
                         <path d="M20 6 9 17l-5-5" />
@@ -108,9 +104,6 @@ const Solutions = () => {
                       <span>Automated decision frameworks</span>
                     </li>
                   </ul>
-                  <Button variant="outline" className="border-neonGreen text-neonGreen hover:bg-neonGreen/10 w-full animate-scale-in hover-glow transition-all duration-300">
-                    Learn More
-                  </Button>
                 </CardContent>
               </Card>
               
@@ -130,9 +123,9 @@ const Solutions = () => {
                     Enhanced customer interaction automation
                   </CardDescription>
                 </CardHeader>
-                <CardContent className="animate-fade-in">
+                <CardContent className="animate-fade-in pb-6">
                   <p className="mb-4">Our customer engagement solutions help businesses deliver personalized, timely, and relevant communications to their customers.</p>
-                  <ul className="space-y-2 mb-6">
+                  <ul className="space-y-2">
                     <li className="flex items-start gap-2 animate-slide-in-left">
                       <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-neonGreen mt-1">
                         <path d="M20 6 9 17l-5-5" />
@@ -152,9 +145,6 @@ const Solutions = () => {
                       <span>Customer journey optimization</span>
                     </li>
                   </ul>
-                  <Button variant="outline" className="border-neonGreen text-neonGreen hover:bg-neonGreen/10 w-full animate-scale-in hover-glow transition-all duration-300">
-                    Learn More
-                  </Button>
                 </CardContent>
               </Card>
             </div>
