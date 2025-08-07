@@ -1,3 +1,4 @@
+
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import FadeInSection from "@/components/FadeInSection";
@@ -26,9 +27,9 @@ const Solutions = () => {
       <section className="py-16 bg-darkTeal/80">
         <div className="container mx-auto px-4">
           <FadeInSection>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <Card className="bg-darkTeal/50 border-neonGreen/20 text-white animate-slide-in-left hover-float transition-all duration-300">
-                <CardHeader>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
+              <Card className="bg-darkTeal/50 border-neonGreen/20 text-white animate-slide-in-left hover-float transition-all duration-300 flex flex-col h-full">
+                <CardHeader className="flex-shrink-0">
                   <CardTitle className="flex items-center gap-2 animate-fade-in">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-neonGreen animate-bounce-in">
                       <path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z" />
@@ -43,33 +44,33 @@ const Solutions = () => {
                     Streamline repetitive tasks and workflows
                   </CardDescription>
                 </CardHeader>
-                <CardContent className="animate-fade-in pb-6">
+                <CardContent className="animate-fade-in pb-6 flex-grow flex flex-col justify-between">
                   <p className="mb-4">Our process automation solutions help businesses eliminate manual, repetitive tasks, freeing up time and resources for more valuable work.</p>
                   <ul className="space-y-2">
                     <li className="flex items-start gap-2 animate-slide-in-left">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-neonGreen mt-1">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-neonGreen mt-1 flex-shrink-0">
                         <path d="M20 6 9 17l-5-5" />
                       </svg>
                       <span>Document processing and data extraction</span>
                     </li>
                     <li className="flex items-start gap-2 animate-slide-in-left">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-neonGreen mt-1">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-neonGreen mt-1 flex-shrink-0">
                         <path d="M20 6 9 17l-5-5" />
                       </svg>
                       <span>Workflow optimization and management</span>
                     </li>
                     <li className="flex items-start gap-2 animate-slide-in-left">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-neonGreen mt-1">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-neonGreen mt-1 flex-shrink-0">
                         <path d="M20 6 9 17l-5-5" />
                       </svg>
-                      <span>Task scheduling and monitoring</span>
+                      <span>Task scheduling and monitoring systems</span>
                     </li>
                   </ul>
                 </CardContent>
               </Card>
               
-              <Card className="bg-darkTeal/50 border-neonGreen/20 text-white animate-fade-in hover-float transition-all duration-300">
-                <CardHeader>
+              <Card className="bg-darkTeal/50 border-neonGreen/20 text-white animate-fade-in hover-float transition-all duration-300 flex flex-col h-full">
+                <CardHeader className="flex-shrink-0">
                   <CardTitle className="flex items-center gap-2 animate-fade-in">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-neonGreen animate-bounce-in">
                       <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
@@ -82,23 +83,23 @@ const Solutions = () => {
                     AI-powered decision automation
                   </CardDescription>
                 </CardHeader>
-                <CardContent className="animate-fade-in pb-6">
+                <CardContent className="animate-fade-in pb-6 flex-grow flex flex-col justify-between">
                   <p className="mb-4">Our decision intelligence platform uses AI and machine learning to help businesses make better decisions faster and with greater confidence.</p>
                   <ul className="space-y-2">
                     <li className="flex items-start gap-2 animate-slide-in-left">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-neonGreen mt-1">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-neonGreen mt-1 flex-shrink-0">
                         <path d="M20 6 9 17l-5-5" />
                       </svg>
                       <span>Predictive analytics and forecasting</span>
                     </li>
                     <li className="flex items-start gap-2 animate-slide-in-left">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-neonGreen mt-1">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-neonGreen mt-1 flex-shrink-0">
                         <path d="M20 6 9 17l-5-5" />
                       </svg>
-                      <span>Risk assessment and mitigation</span>
+                      <span>Risk assessment and mitigation tools</span>
                     </li>
                     <li className="flex items-start gap-2 animate-slide-in-left">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-neonGreen mt-1">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-neonGreen mt-1 flex-shrink-0">
                         <path d="M20 6 9 17l-5-5" />
                       </svg>
                       <span>Automated decision frameworks</span>
@@ -107,8 +108,8 @@ const Solutions = () => {
                 </CardContent>
               </Card>
               
-              <Card className="bg-darkTeal/50 border-neonGreen/20 text-white animate-slide-in-right hover-float transition-all duration-300">
-                <CardHeader>
+              <Card className="bg-darkTeal/50 border-neonGreen/20 text-white animate-slide-in-right hover-float transition-all duration-300 flex flex-col h-full">
+                <CardHeader className="flex-shrink-0">
                   <CardTitle className="flex items-center gap-2 animate-fade-in">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-neonGreen animate-bounce-in">
                       <path d="M22 8.5c0 1.5-3 3-3 3m3-3c0-1.5-3-3-3-3m3 3h-6m-7-3C6 7 3 8.5 3 10m3-4.5c2 1.5 2 5 2 5m-5 2c0 1.5 3 3 3 3m-3-3c0-1.5 3-3 3-3m-3 3h6" />
@@ -123,26 +124,26 @@ const Solutions = () => {
                     Enhanced customer interaction automation
                   </CardDescription>
                 </CardHeader>
-                <CardContent className="animate-fade-in pb-6">
+                <CardContent className="animate-fade-in pb-6 flex-grow flex flex-col justify-between">
                   <p className="mb-4">Our customer engagement solutions help businesses deliver personalized, timely, and relevant communications to their customers.</p>
                   <ul className="space-y-2">
                     <li className="flex items-start gap-2 animate-slide-in-left">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-neonGreen mt-1">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-neonGreen mt-1 flex-shrink-0">
                         <path d="M20 6 9 17l-5-5" />
                       </svg>
                       <span>Automated customer service responses</span>
                     </li>
                     <li className="flex items-start gap-2 animate-slide-in-left">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-neonGreen mt-1">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-neonGreen mt-1 flex-shrink-0">
                         <path d="M20 6 9 17l-5-5" />
                       </svg>
                       <span>Personalized marketing campaigns</span>
                     </li>
                     <li className="flex items-start gap-2 animate-slide-in-left">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-neonGreen mt-1">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-neonGreen mt-1 flex-shrink-0">
                         <path d="M20 6 9 17l-5-5" />
                       </svg>
-                      <span>Customer journey optimization</span>
+                      <span>Customer journey optimization tools</span>
                     </li>
                   </ul>
                 </CardContent>

@@ -75,7 +75,7 @@ const Footer = () => {
           </div>
         </div>
         <div className="border-t border-gray-600 pt-6 text-center text-gray-400 transform hover:scale-105 transition-all duration-300">
-          <p className="hover:text-neonGreen transition-colors duration-300">&copy; 2025 ENOVA. All rights reserved.</p>
+          <p className="hover:text-neonGreen transition-colors duration-300">&copy; 2025 ENOVA - AI Automation Agency. Empowering businesses through intelligent automation. All rights reserved.</p>
         </div>
       </div>
     </footer>
