@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { toast } from "@/components/ui/use-toast";
+import { Plus, Minus } from "lucide-react";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -18,6 +19,7 @@ const Contact = () => {
   });
   
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [openAccordion, setOpenAccordion] = useState<string>("");
   
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -274,46 +276,100 @@ const Contact = () => {
             <h2 className="text-3xl font-bold mb-12 text-center">Frequently Asked Questions</h2>
             
             <div className="max-w-3xl mx-auto">
-              <Accordion type="single" collapsible className="space-y-4">
-                <AccordionItem value="item-1" className="bg-darkTeal/50 border-neonGreen/20 rounded-lg px-6 transition-all duration-300 ease-in-out hover:bg-darkTeal/60 hover:border-neonGreen/30">
-                  <AccordionTrigger className="text-white hover:text-neonGreen text-left transition-all duration-300 ease-in-out hover:scale-[1.01]">
-                    What industries do you serve?
+              <Accordion 
+                type="single" 
+                collapsible 
+                className="space-y-4"
+                value={openAccordion}
+                onValueChange={setOpenAccordion}
+              >
+                <AccordionItem 
+                  value="item-1" 
+                  className="bg-darkTeal/50 border-neonGreen/20 rounded-lg px-6 transition-all duration-200 ease-out hover:bg-darkTeal/60 hover:border-neonGreen/30 hover:scale-[1.01]"
+                >
+                  <AccordionTrigger className="text-white text-left transition-all duration-200 ease-out hover:text-neonGreen [&[data-state=open]>svg]:rotate-0 hover:no-underline">
+                    <div className="flex items-center justify-between w-full">
+                      <span>What industries do you serve?</span>
+                      <div className="ml-4 transition-transform duration-200 ease-out">
+                        {openAccordion === "item-1" ? (
+                          <Minus className="h-5 w-5 text-neonGreen" />
+                        ) : (
+                          <Plus className="h-5 w-5 text-neonGreen" />
+                        )}
+                      </div>
+                    </div>
                   </AccordionTrigger>
-                  <AccordionContent className="text-gray-300 animate-accordion-down">
-                    <div className="transform transition-all duration-500 ease-in-out">
+                  <AccordionContent className="text-gray-300 transition-all duration-200 ease-out data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down">
+                    <div className="transform transition-all duration-200 ease-out pt-2">
                       Our automation solutions are designed to serve a wide range of industries, including manufacturing, finance, healthcare, retail, logistics, and professional services. Our expertise spans across multiple sectors, allowing us to deliver tailored solutions regardless of your industry.
                     </div>
                   </AccordionContent>
                 </AccordionItem>
                 
-                <AccordionItem value="item-2" className="bg-darkTeal/50 border-neonGreen/20 rounded-lg px-6 transition-all duration-300 ease-in-out hover:bg-darkTeal/60 hover:border-neonGreen/30">
-                  <AccordionTrigger className="text-white hover:text-neonGreen text-left transition-all duration-300 ease-in-out hover:scale-[1.01]">
-                    How long does implementation typically take?
+                <AccordionItem 
+                  value="item-2" 
+                  className="bg-darkTeal/50 border-neonGreen/20 rounded-lg px-6 transition-all duration-200 ease-out hover:bg-darkTeal/60 hover:border-neonGreen/30 hover:scale-[1.01]"
+                >
+                  <AccordionTrigger className="text-white text-left transition-all duration-200 ease-out hover:text-neonGreen [&[data-state=open]>svg]:rotate-0 hover:no-underline">
+                    <div className="flex items-center justify-between w-full">
+                      <span>How long does implementation typically take?</span>
+                      <div className="ml-4 transition-transform duration-200 ease-out">
+                        {openAccordion === "item-2" ? (
+                          <Minus className="h-5 w-5 text-neonGreen" />
+                        ) : (
+                          <Plus className="h-5 w-5 text-neonGreen" />
+                        )}
+                      </div>
+                    </div>
                   </AccordionTrigger>
-                  <AccordionContent className="text-gray-300 animate-accordion-down">
-                    <div className="transform transition-all duration-500 ease-in-out">
+                  <AccordionContent className="text-gray-300 transition-all duration-200 ease-out data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down">
+                    <div className="transform transition-all duration-200 ease-out pt-2">
                       Implementation timelines vary based on the complexity of your needs and the scope of automation. Simple workflows can be automated in as little as 2-4 weeks, while more complex enterprise-wide solutions may take 2-3 months. Our team works closely with you to establish a realistic timeline during the initial consultation.
                     </div>
                   </AccordionContent>
                 </AccordionItem>
                 
-                <AccordionItem value="item-3" className="bg-darkTeal/50 border-neonGreen/20 rounded-lg px-6 transition-all duration-300 ease-in-out hover:bg-darkTeal/60 hover:border-neonGreen/30">
-                  <AccordionTrigger className="text-white hover:text-neonGreen text-left transition-all duration-300 ease-in-out hover:scale-[1.01]">
-                    Do you offer custom solutions or only pre-built packages?
+                <AccordionItem 
+                  value="item-3" 
+                  className="bg-darkTeal/50 border-neonGreen/20 rounded-lg px-6 transition-all duration-200 ease-out hover:bg-darkTeal/60 hover:border-neonGreen/30 hover:scale-[1.01]"
+                >
+                  <AccordionTrigger className="text-white text-left transition-all duration-200 ease-out hover:text-neonGreen [&[data-state=open]>svg]:rotate-0 hover:no-underline">
+                    <div className="flex items-center justify-between w-full">
+                      <span>Do you offer custom solutions or only pre-built packages?</span>
+                      <div className="ml-4 transition-transform duration-200 ease-out">
+                        {openAccordion === "item-3" ? (
+                          <Minus className="h-5 w-5 text-neonGreen" />
+                        ) : (
+                          <Plus className="h-5 w-5 text-neonGreen" />
+                        )}
+                      </div>
+                    </div>
                   </AccordionTrigger>
-                  <AccordionContent className="text-gray-300 animate-accordion-down">
-                    <div className="transform transition-all duration-500 ease-in-out">
+                  <AccordionContent className="text-gray-300 transition-all duration-200 ease-out data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down">
+                    <div className="transform transition-all duration-200 ease-out pt-2">
                       We offer both pre-built automation packages for common business processes and fully customized solutions tailored to your specific needs. Our experts will work with you to determine the right approach based on your requirements, timeline, and budget.
                     </div>
                   </AccordionContent>
                 </AccordionItem>
                 
-                <AccordionItem value="item-4" className="bg-darkTeal/50 border-neonGreen/20 rounded-lg px-6 transition-all duration-300 ease-in-out hover:bg-darkTeal/60 hover:border-neonGreen/30">
-                  <AccordionTrigger className="text-white hover:text-neonGreen text-left transition-all duration-300 ease-in-out hover:scale-[1.01]">
-                    What kind of support do you provide after implementation?
+                <AccordionItem 
+                  value="item-4" 
+                  className="bg-darkTeal/50 border-neonGreen/20 rounded-lg px-6 transition-all duration-200 ease-out hover:bg-darkTeal/60 hover:border-neonGreen/30 hover:scale-[1.01]"
+                >
+                  <AccordionTrigger className="text-white text-left transition-all duration-200 ease-out hover:text-neonGreen [&[data-state=open]>svg]:rotate-0 hover:no-underline">
+                    <div className="flex items-center justify-between w-full">
+                      <span>What kind of support do you provide after implementation?</span>
+                      <div className="ml-4 transition-transform duration-200 ease-out">
+                        {openAccordion === "item-4" ? (
+                          <Minus className="h-5 w-5 text-neonGreen" />
+                        ) : (
+                          <Plus className="h-5 w-5 text-neonGreen" />
+                        )}
+                      </div>
+                    </div>
                   </AccordionTrigger>
-                  <AccordionContent className="text-gray-300 animate-accordion-down">
-                    <div className="transform transition-all duration-500 ease-in-out">
+                  <AccordionContent className="text-gray-300 transition-all duration-200 ease-out data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down">
+                    <div className="transform transition-all duration-200 ease-out pt-2">
                       We provide comprehensive post-implementation support, including 24/7 technical assistance, regular maintenance, performance monitoring, and continuous optimization. Our support packages are designed to ensure your automation solutions continue to deliver value long after implementation.
                     </div>
                   </AccordionContent>
