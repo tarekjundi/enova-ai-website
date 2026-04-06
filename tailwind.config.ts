@@ -25,8 +25,8 @@ export default {
         'sans': ['Space Grotesk', 'system-ui', 'sans-serif'],
       },
       colors: {
-        neonGreen: '#f8ff2c',
-        darkTeal: '#00272b',
+        neonGreen: '#e1bb80',
+        darkTeal: '#352208',
         border: 'hsl(var(--border))',
         input: 'hsl(var(--input))',
         ring: 'hsl(var(--ring))',

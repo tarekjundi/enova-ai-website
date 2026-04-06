@@ -160,17 +160,17 @@
 
 @media (max-width: 768px) {
   :root {
-    --background: 180 53% 8%;
-    --foreground: 62 100% 59%;
-    --primary: 62 100% 59%;
-    --primary-foreground: 180 53% 8%;
-    --secondary: 182 52% 10%;
-    --secondary-foreground: 62 100% 59%;
-    --muted: 182 52% 10%;
-    --muted-foreground: 215 20% 65%;
-    --accent: 62 100% 59%;
-    --accent-foreground: 180 53% 8%;
-    --border: 62 100% 59%;
+    --background: 30 75% 13%;
+    --foreground: 36 62% 69%;
+    --primary: 36 62% 69%;
+    --primary-foreground: 30 75% 13%;
+    --secondary: 30 60% 17%;
+    --secondary-foreground: 36 62% 69%;
+    --muted: 30 60% 17%;
+    --muted-foreground: 36 40% 55%;
+    --accent: 36 62% 69%;
+    --accent-foreground: 30 75% 13%;
+    --border: 36 62% 69%;
   }
 
   .glass {
