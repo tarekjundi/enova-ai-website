@@ -1,122 +1,114 @@
 
-import { useState } from "react";
-import { Link } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { MessageCircle } from "lucide-react";
+import { ArrowRight, X, Menu } from "lucide-react";
 
 const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const location = useLocation();
 
-  const toggleMobileMenu = () => {
-    setMobileMenuOpen(!mobileMenuOpen);
-  };
+  useEffect(() => {
+    const handleScroll = () => setScrolled(window.scrollY > 20);
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  useEffect(() => {
+    setMobileMenuOpen(false);
+  }, [location]);
+
+  const navLinks = [
+    { to: "/solutions", label: "Solutions" },
+    { to: "/about", label: "About" },
+    { to: "/contact", label: "Contact" },
+  ];
+
+  const isActive = (path: string) => location.pathname === path;
 
   return (
-    <nav className="container mx-auto py-6 px-4">
-      <div className="flex justify-between items-center">
-        <Link 
-          to="/" 
-          className="text-3xl font-bold text-neonGreen font-founders tracking-tight transform hover:scale-110 transition-all duration-300 hover:drop-shadow-lg hover:drop-shadow-neonGreen/30"
+    <nav
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+        scrolled
+          ? "glass-strong py-3 shadow-lg shadow-black/10"
+          : "py-5 bg-transparent"
+      }`}
+    >
+      <div className="container mx-auto px-6 flex justify-between items-center">
+        <Link
+          to="/"
+          className="text-2xl font-bold text-primary font-founders tracking-tight transition-opacity duration-300 hover:opacity-80"
         >
           ENOVA
         </Link>
-        
-        {/* Desktop Menu */}
-        <div className="hidden md:flex items-center space-x-4">
-          <div className="flex space-x-3">
-            <Link 
-              to="/solutions" 
-              className="px-5 py-3 rounded-lg bg-darkTeal/20 text-white hover:bg-[#f8ff2c] hover:text-darkTeal transition-all duration-300 font-founders font-medium tracking-tight transform hover:scale-105 hover:shadow-lg hover:shadow-neonGreen/20 hover:-translate-y-1"
+
+        {/* Desktop */}
+        <div className="hidden md:flex items-center gap-1">
+          {navLinks.map((link) => (
+            <Link
+              key={link.to}
+              to={link.to}
+              className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 ${
+                isActive(link.to)
+                  ? "text-primary bg-primary/10"
+                  : "text-foreground/70 hover:text-primary hover:bg-primary/5"
+              }`}
             >
-              Solutions
+              {link.label}
             </Link>
-            <Link 
-              to="/about" 
-              className="px-5 py-3 rounded-lg bg-darkTeal/20 text-white hover:bg-[#f8ff2c] hover:text-darkTeal transition-all duration-300 font-founders font-medium tracking-tight transform hover:scale-105 hover:shadow-lg hover:shadow-neonGreen/20 hover:-translate-y-1"
-            >
-              About Us
-            </Link>
-            <Link 
-              to="/contact" 
-              className="px-5 py-3 rounded-lg bg-darkTeal/20 text-white hover:bg-[#f8ff2c] hover:text-darkTeal transition-all duration-300 font-founders font-medium tracking-tight transform hover:scale-105 hover:shadow-lg hover:shadow-neonGreen/20 hover:-translate-y-1"
-            >
-              Contact
-            </Link>
-          </div>
-          <a 
-            href="https://cal.com/tarek-jundi/free-consultation" 
-            target="_blank" 
+          ))}
+          <a
+            href="https://cal.com/tarek-jundi/free-consultation"
+            target="_blank"
             rel="noopener noreferrer"
+            className="ml-4"
           >
-            <Button 
-              variant="outline" 
-              className="border-neonGreen text-neonGreen hover:bg-neonGreen hover:text-darkTeal transition-all duration-300 font-founders font-medium transform hover:scale-105 hover:shadow-lg hover:shadow-neonGreen/30 hover:-translate-y-1"
-            >
-              <MessageCircle className="mr-2 h-4 w-4 animate-bounce" />
+            <Button className="bg-primary text-primary-foreground hover:bg-primary/90 rounded-full px-6 text-sm font-medium gap-2 group">
               Let's Talk
+              <ArrowRight className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-0.5" />
             </Button>
           </a>
         </div>
-        
-        {/* Mobile Menu Button */}
-        <button 
-          className="md:hidden text-neonGreen transform hover:scale-110 transition-all duration-300 hover:rotate-180"
-          onClick={toggleMobileMenu}
+
+        {/* Mobile toggle */}
+        <button
+          className="md:hidden text-primary p-2"
+          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           aria-label="Toggle menu"
         >
-          {mobileMenuOpen ? (
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="animate-spin">
-              <line x1="18" y1="6" x2="6" y2="18"></line>
-              <line x1="6" y1="6" x2="18" y2="18"></line>
-            </svg>
-          ) : (
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="animate-pulse">
-              <line x1="4" y1="12" x2="20" y2="12"></line>
-              <line x1="4" y1="6" x2="20" y2="6"></line>
-              <line x1="4" y1="18" x2="20" y2="18"></line>
-            </svg>
-          )}
+          {mobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
         </button>
       </div>
-      
+
       {/* Mobile Menu */}
       {mobileMenuOpen && (
-        <div className="md:hidden mt-4 py-4 px-2 bg-darkTeal/90 rounded-lg animate-fade-in transform animate-scale-in">
-          <div className="flex flex-col space-y-4">
-            <Link 
-              to="/solutions" 
-              className="px-5 py-3 rounded-lg bg-darkTeal/50 text-white hover:bg-[#f8ff2c] hover:text-darkTeal transition-all duration-300 font-founders font-medium tracking-tight transform hover:scale-105 hover:translate-x-2"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              Solutions
-            </Link>
-            <Link 
-              to="/about" 
-              className="px-5 py-3 rounded-lg bg-darkTeal/50 text-white hover:bg-[#f8ff2c] hover:text-darkTeal transition-all duration-300 font-founders font-medium tracking-tight transform hover:scale-105 hover:translate-x-2"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              About Us
-            </Link>
-            <Link 
-              to="/contact" 
-              className="px-5 py-3 rounded-lg bg-darkTeal/50 text-white hover:bg-[#f8ff2c] hover:text-darkTeal transition-all duration-300 font-founders font-medium tracking-tight transform hover:scale-105 hover:translate-x-2"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              Contact
-            </Link>
-            <a 
-              href="https://cal.com/tarek-jundi/free-consultation" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="px-4 py-2"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              <Button 
-                variant="outline" 
-                className="w-full border-neonGreen text-neonGreen hover:bg-neonGreen hover:text-darkTeal transition-all duration-300 font-founders font-medium transform hover:scale-105"
+        <div className="md:hidden glass-strong mt-2 mx-4 rounded-2xl p-6 animate-fade-in">
+          <div className="flex flex-col gap-2">
+            {navLinks.map((link) => (
+              <Link
+                key={link.to}
+                to={link.to}
+                className={`px-4 py-3 rounded-xl text-sm font-medium transition-all duration-300 ${
+                  isActive(link.to)
+                    ? "text-primary bg-primary/10"
+                    : "text-foreground/70 hover:text-primary hover:bg-primary/5"
+                }`}
+                onClick={() => setMobileMenuOpen(false)}
               >
-                <MessageCircle className="mr-2 h-4 w-4 animate-bounce" />
+                {link.label}
+              </Link>
+            ))}
+            <a
+              href="https://cal.com/tarek-jundi/free-consultation"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-2"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              <Button className="w-full bg-primary text-primary-foreground hover:bg-primary/90 rounded-full text-sm font-medium gap-2">
                 Let's Talk
+                <ArrowRight className="h-3.5 w-3.5" />
               </Button>
             </a>
           </div>

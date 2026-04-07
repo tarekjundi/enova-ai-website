@@ -1,288 +1,241 @@
+
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ScrollToTop from "@/components/ScrollToTop";
 import FadeInSection from "@/components/FadeInSection";
 import AnimatedCounter from "@/components/AnimatedCounter";
 import { MotionElement } from "@/components/MotionElements";
-
-import { FloatingElement, ParallaxElement } from "@/components/MotionElements";
+import { ArrowRight, Zap, Brain, Users, BarChart3, Settings, Sparkles } from "lucide-react";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-darkTeal text-white" id="top">
-      {/* Navigation */}
+    <div className="min-h-screen bg-background text-foreground" id="top">
       <Navbar />
 
       {/* Hero Section */}
-      <section className="container mx-auto py-20 md:py-32 px-4">
-        <div className="max-w-3xl">
-          <MotionElement animation="slideUp" delay={200}>
-            <h1 className="text-5xl md:text-7xl font-bold mb-6">
-              Automate your workflow with <FloatingElement intensity={0.5}><span className="text-neonGreen animate-pulse">precision</span></FloatingElement>
-            </h1>
-          </MotionElement>
-          <MotionElement animation="slideUp" delay={400}>
-            <p className="text-xl md:text-2xl mb-10 text-gray-300">
-              Streamline your business processes and increase productivity with our cutting-edge automation solutions.
-            </p>
-          </MotionElement>
-          <MotionElement animation="scale" delay={600}>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <a
-                href="https://cal.com/tarek-jundi/free-consultation"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Button className="bg-neonGreen text-darkTeal hover:bg-neonGreen/90 text-lg px-8 py-6 hover-scale">
-                  Start Automating
-                </Button>
-              </a>
-            </div>
-          </MotionElement>
+      <section className="relative min-h-[90vh] flex items-center pt-20">
+        {/* Subtle radial glow */}
+        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[800px] h-[600px] bg-primary/5 rounded-full blur-[120px] pointer-events-none" />
+        
+        <div className="container mx-auto px-6 relative z-10">
+          <div className="max-w-4xl">
+            <MotionElement animation="slideUp" delay={100}>
+              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass text-xs font-medium text-primary/80 mb-8">
+                <Sparkles className="h-3.5 w-3.5" />
+                AI-Powered Automation Agency
+              </div>
+            </MotionElement>
+            
+            <MotionElement animation="slideUp" delay={200}>
+              <h1 className="mb-6">
+                Automate your workflow
+                <br />
+                with <span className="text-gradient">precision</span>
+              </h1>
+            </MotionElement>
+            
+            <MotionElement animation="slideUp" delay={400}>
+              <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mb-10 leading-relaxed">
+                Streamline your business processes and increase productivity with our cutting-edge automation solutions.
+              </p>
+            </MotionElement>
+            
+            <MotionElement animation="slideUp" delay={600}>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <a
+                  href="https://cal.com/tarek-jundi/free-consultation"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Button className="bg-primary text-primary-foreground hover:bg-primary/90 text-base px-8 py-6 rounded-full font-medium gap-2 group">
+                    Start Automating
+                    <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+                  </Button>
+                </a>
+                <a href="#features">
+                  <Button
+                    variant="outline"
+                    className="border-border text-foreground hover:bg-primary/5 hover:border-primary/30 text-base px-8 py-6 rounded-full font-medium"
+                  >
+                    See How It Works
+                  </Button>
+                </a>
+              </div>
+            </MotionElement>
+          </div>
         </div>
       </section>
 
-      {/* Stats Section with Animated Counters */}
-      <section className="bg-darkTeal/80 py-16">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-            <MotionElement animation="slideLeft" delay={100}>
-              <div className="text-center transform hover:scale-105 transition-transform duration-300">
+      {/* Stats Section */}
+      <section className="py-20 relative">
+        <div className="section-divider mb-20" />
+        <div className="container mx-auto px-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8">
+            <MotionElement animation="slideUp" delay={100}>
+              <div className="text-center">
                 <AnimatedCounter end={85} suffix="%" />
-                <p className="text-xl">Reduction in manual tasks</p>
+                <p className="text-muted-foreground text-sm mt-1">Reduction in manual tasks</p>
               </div>
             </MotionElement>
             <MotionElement animation="slideUp" delay={200}>
-              <div className="text-center transform hover:scale-105 transition-transform duration-300">
+              <div className="text-center">
                 <AnimatedCounter end={7.8} suffix="x" />
-                <p className="text-xl">Increase in productivity</p>
+                <p className="text-muted-foreground text-sm mt-1">Increase in productivity</p>
               </div>
             </MotionElement>
-            <MotionElement animation="slideRight" delay={300}>
-              <div className="text-center transform hover:scale-105 transition-transform duration-300">
-                <p className="text-5xl font-bold text-neonGreen mb-2">24/7</p>
-                <p className="text-xl">Continuous operation</p>
+            <MotionElement animation="slideUp" delay={300}>
+              <div className="text-center">
+                <p className="text-5xl font-bold text-primary mb-2 font-founders">24/7</p>
+                <p className="text-muted-foreground text-sm mt-1">Continuous operation</p>
               </div>
             </MotionElement>
           </div>
         </div>
+        <div className="section-divider mt-20" />
       </section>
 
       {/* Features Section */}
-      <section id="features" className="container mx-auto py-20 px-4 relative">
-        <FadeInSection>
-          <div className="text-center mb-16">
-            <MotionElement animation="slideUp" threshold={0.3}>
-              <h2 className="text-3xl md:text-5xl font-bold mb-4">Powerful Automation Features</h2>
+      <section id="features" className="py-24 relative">
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-16 max-w-2xl mx-auto">
+            <MotionElement animation="slideUp">
+              <p className="text-xs font-semibold uppercase tracking-widest text-primary/60 mb-4">
+                What we offer
+              </p>
+              <h2 className="mb-4">Powerful Automation Features</h2>
             </MotionElement>
-            <MotionElement animation="slideUp" delay={200} threshold={0.3}>
-              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                Our agency provides comprehensive tools to automate every aspect of your business.
+            <MotionElement animation="slideUp" delay={200}>
+              <p className="text-muted-foreground">
+                Comprehensive tools to automate every aspect of your business.
               </p>
             </MotionElement>
           </div>
-        </FadeInSection>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
-          <MotionElement animation="slideUp" delay={100} threshold={0.2}>
-            <Card className="bg-darkTeal/50 border-neonGreen/20 text-white hover:shadow-lg hover:shadow-neonGreen/10 transition-all duration-300 relative">
-              <CardHeader>
-                <CardTitle className="flex items-center gap-2">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-neonGreen">
-                    <rect width="8" height="8" x="8" y="8" rx="2" />
-                    <path d="M4 10a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2" />
-                    <path d="M14 20a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2v-4a2 2 0 0 0-2-2" />
-                    <path d="M4 20a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2" />
-                    <path d="M4 14a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2" />
-                    <path d="M14 4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2" />
-                    <path d="M20 14a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2" />
-                  </svg>
-                  Process Automation
-                </CardTitle>
-                <CardDescription className="text-gray-300">
-                  Automate repetitive business processes
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <p>Streamline workflows by automating manual, repetitive tasks with intelligent process automation that learns and adapts to your business needs.</p>
-              </CardContent>
-            </Card>
-          </MotionElement>
-
-          <MotionElement animation="slideUp" delay={200} threshold={0.2}>
-            <Card className="bg-darkTeal/50 border-neonGreen/20 text-white hover:shadow-lg hover:shadow-neonGreen/10 transition-all duration-300 relative">
-              <CardHeader>
-                <CardTitle className="flex items-center gap-2">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-neonGreen">
-                    <path d="M12 16v-4" />
-                    <path d="M12 8h.01" />
-                    <path d="M3 8a9 9 0 0 1 9-5.5c5 0 9 3.5 9 8.5 0 2.5-2 4.5-4 6.5-2 2-3 5.5-3 5.5H6s-1-3.5-3-5.5C1 15.5 3 8 3 8z" />
-                  </svg>
-                  Smart Decision Making
-                </CardTitle>
-                <CardDescription className="text-gray-300">
-                  AI-powered decision automation
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <p>Let AI analyze data and make intelligent decisions based on your business rules, reducing human error and increasing efficiency.</p>
-              </CardContent>
-            </Card>
-          </MotionElement>
-
-          <MotionElement animation="slideUp" delay={300} threshold={0.2}>
-            <Card className="bg-darkTeal/50 border-neonGreen/20 text-white hover:shadow-lg hover:shadow-neonGreen/10 transition-all duration-300 relative">
-              <CardHeader>
-                <CardTitle className="flex items-center gap-2">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-neonGreen">
-                    <path d="M7 10v12" />
-                    <path d="M15 5.88 14 10h5.83a2 2 0 0 1 1.92 2.56l-2.33 8A2 2 0 0 1 17.5 22H4a2 2 0 0 1-2-2v-8a2 2 0 0 1 2-2h2.76a2 2 0 0 0 1.79-1.11L12 2h0a3.13 3.13 0 0 1 3 3.88Z" />
-                  </svg>
-                  Customer Engagement
-                </CardTitle>
-                <CardDescription className="text-gray-300">
-                  Automated customer interactions
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <p>Enhance customer experience with automated responses, personalized communication, and timely follow-ups that keep customers engaged.</p>
-              </CardContent>
-            </Card>
-          </MotionElement>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {[
+              {
+                icon: <Zap className="h-5 w-5" />,
+                title: "Process Automation",
+                desc: "Automate repetitive business processes",
+                body: "Streamline workflows by automating manual, repetitive tasks with intelligent process automation that learns and adapts to your business needs.",
+              },
+              {
+                icon: <Brain className="h-5 w-5" />,
+                title: "Smart Decision Making",
+                desc: "AI-powered decision automation",
+                body: "Let AI analyze data and make intelligent decisions based on your business rules, reducing human error and increasing efficiency.",
+              },
+              {
+                icon: <Users className="h-5 w-5" />,
+                title: "Customer Engagement",
+                desc: "Automated customer interactions",
+                body: "Enhance customer experience with automated responses, personalized communication, and timely follow-ups that keep customers engaged.",
+              },
+            ].map((feature, i) => (
+              <MotionElement key={i} animation="slideUp" delay={100 + i * 100}>
+                <div className="glass rounded-2xl p-8 h-full hover-lift group">
+                  <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center text-primary mb-5 group-hover:bg-primary/15 transition-colors duration-300">
+                    {feature.icon}
+                  </div>
+                  <h3 className="text-lg font-semibold mb-2">{feature.title}</h3>
+                  <p className="text-muted-foreground text-sm mb-4">{feature.desc}</p>
+                  <p className="text-foreground/80 text-sm leading-relaxed">{feature.body}</p>
+                </div>
+              </MotionElement>
+            ))}
+          </div>
         </div>
       </section>
 
       {/* How It Works Section */}
-      <section id="how-it-works" className="py-20 bg-gradient-to-b from-darkTeal/80 to-darkTeal relative">
-        <div className="container mx-auto px-4">
-          <FadeInSection>
-            <div className="text-center mb-16">
-              <MotionElement animation="slideUp" threshold={0.3}>
-                <h2 className="text-3xl md:text-5xl font-bold mb-4">How Automation Works</h2>
-              </MotionElement>
-              <MotionElement animation="slideUp" delay={200} threshold={0.3}>
-                <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                  Our simple three-step process makes implementing automation seamless.
-                </p>
-              </MotionElement>
-            </div>
-          </FadeInSection>
+      <section className="py-24 relative">
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-16 max-w-2xl mx-auto">
+            <MotionElement animation="slideUp">
+              <p className="text-xs font-semibold uppercase tracking-widest text-primary/60 mb-4">
+                Our Process
+              </p>
+              <h2 className="mb-4">How Automation Works</h2>
+            </MotionElement>
+            <MotionElement animation="slideUp" delay={200}>
+              <p className="text-muted-foreground">
+                Our simple three-step process makes implementing automation seamless.
+              </p>
+            </MotionElement>
+          </div>
 
-          <div className="relative">
-            <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-1 bg-neonGreen/30 -translate-x-1/2 z-0"></div>
-            
-            <div className="space-y-20 relative z-10">
-              <MotionElement animation="slideUp" delay={100} threshold={0.2}>
-                <div className="relative grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-                  <div className="hidden md:block absolute left-1/2 top-2 w-6 h-6 rounded-full bg-neonGreen -translate-x-1/2 z-20"></div>
-                  <div className="md:text-right relative z-10">
-                    <h3 className="text-2xl font-bold mb-3">1. Analyze</h3>
-                    <p className="text-gray-300">
-                      We analyze your current workflows and identify opportunities for automation, focusing on high-impact areas that will deliver immediate results.
-                    </p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            {[
+              {
+                step: "01",
+                icon: <BarChart3 className="h-6 w-6" />,
+                title: "Analyze",
+                desc: "We analyze your current workflows and identify opportunities for automation, focusing on high-impact areas that will deliver immediate results.",
+              },
+              {
+                step: "02",
+                icon: <Settings className="h-6 w-6" />,
+                title: "Implement",
+                desc: "Our experts design and implement custom automation solutions tailored to your specific business needs, integrating with your existing systems.",
+              },
+              {
+                step: "03",
+                icon: <Sparkles className="h-6 w-6" />,
+                title: "Optimize",
+                desc: "We continuously monitor and optimize your automated processes, ensuring they evolve with your business and deliver maximum ROI.",
+              },
+            ].map((item, i) => (
+              <MotionElement key={i} animation="slideUp" delay={100 + i * 150}>
+                <div className="relative glass rounded-2xl p-8 hover-lift group">
+                  <span className="text-6xl font-bold text-primary/[0.06] font-founders absolute top-4 right-6 select-none">
+                    {item.step}
+                  </span>
+                  <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary mb-6 group-hover:bg-primary/15 transition-colors duration-300">
+                    {item.icon}
                   </div>
-                  <div className="bg-darkTeal/40 p-6 rounded-lg border border-neonGreen/20 transform hover:scale-105 transition-all duration-300 hover:shadow-lg hover:shadow-neonGreen/20 relative z-10">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-neonGreen mx-auto mb-4 animate-pulse">
-                      <path d="M3 3v18h18" />
-                      <path d="m7 14 4-4 4 4 6-6" />
-                    </svg>
-                  </div>
+                  <h3 className="text-lg font-semibold mb-3">{item.title}</h3>
+                  <p className="text-muted-foreground text-sm leading-relaxed">{item.desc}</p>
                 </div>
               </MotionElement>
-
-              <MotionElement animation="slideUp" delay={200} threshold={0.2}>
-                <div className="relative grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-                  <div className="hidden md:block absolute left-1/2 top-2 w-6 h-6 rounded-full bg-neonGreen -translate-x-1/2 z-20"></div>
-                  <div className="md:order-2 relative z-10">
-                    <h3 className="text-2xl font-bold mb-3">2. Implement</h3>
-                    <p className="text-gray-300">
-                      Our experts design and implement custom automation solutions tailored to your specific business needs, integrating with your existing systems.
-                    </p>
-                  </div>
-                  <div className="bg-darkTeal/40 p-6 rounded-lg border border-neonGreen/20 md:order-1 transform hover:scale-105 transition-all duration-300 hover:shadow-lg hover:shadow-neonGreen/20 relative z-10">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-neonGreen mx-auto mb-4 animate-spin">
-                      <path d="M12 20a8 8 0 1 0 0-16 8 8 0 0 0 0 16Z" />
-                      <path d="M12 14a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z" />
-                      <path d="M12 2v2" />
-                      <path d="M12 22v-2" />
-                      <path d="m17 20.66-1-1.73" />
-                      <path d="M11 10.27 7 3.34" />
-                      <path d="m20.66 17-1.73-1" />
-                      <path d="m3.34 7 1.73 1" />
-                      <path d="M14 12h8" />
-                      <path d="M2 12h2" />
-                      <path d="m20.66 7-1.73 1" />
-                      <path d="m3.34 17 1.73-1" />
-                      <path d="m17 3.34-1 1.73" />
-                      <path d="m7 20.66 1-1.73" />
-                    </svg>
-                  </div>
-                </div>
-              </MotionElement>
-
-              <MotionElement animation="slideUp" delay={300} threshold={0.2}>
-                <div className="relative grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-                  <div className="hidden md:block absolute left-1/2 top-2 w-6 h-6 rounded-full bg-neonGreen -translate-x-1/2 z-20"></div>
-                  <div className="md:text-right relative z-10">
-                    <h3 className="text-2xl font-bold mb-3">3. Optimize</h3>
-                    <p className="text-gray-300">
-                      We continuously monitor and optimize your automated processes, ensuring they evolve with your business and deliver maximum ROI.
-                    </p>
-                  </div>
-                  <div className="bg-darkTeal/40 p-6 rounded-lg border border-neonGreen/20 transform hover:scale-105 transition-all duration-300 hover:shadow-lg hover:shadow-neonGreen/20 relative z-10">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-neonGreen mx-auto mb-4 animate-bounce">
-                      <path d="M12 2v4" />
-                      <path d="M5 5.5 7.5 8" />
-                      <path d="M2 12h4" />
-                      <path d="M5 18.5 7.5 16" />
-                      <path d="M12 22v-4" />
-                      <path d="m16.5 16 2.5 2.5" />
-                      <path d="M22 12h-4" />
-                      <path d="m16.5 8 2.5-2.5" />
-                      <path d="M10 12a2 2 0 1 0 4 0 2 2 0 0 0-4 0Z" />
-                    </svg>
-                  </div>
-                </div>
-              </MotionElement>
-            </div>
+            ))}
           </div>
         </div>
       </section>
 
       {/* CTA Section */}
-      <section id="contact" className="py-20 bg-neonGreen">
-        <div className="container mx-auto px-4 text-center">
-          <MotionElement animation="bounce" delay={200}>
-            <h2 className="text-3xl md:text-5xl font-bold mb-6 text-darkTeal">
-              Ready to Automate Your Business?
-            </h2>
-          </MotionElement>
-          <MotionElement animation="slideUp" delay={400}>
-            <p className="text-xl text-darkTeal/80 max-w-3xl mx-auto mb-10">
-              Join thousands of businesses that have transformed their operations with automation platform.
-            </p>
-          </MotionElement>
-          
-          <MotionElement animation="scale" delay={600}>
-            <a
-              href="https://cal.com/tarek-jundi/free-consultation"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Button className="bg-darkTeal text-neonGreen hover:bg-darkTeal/90 text-lg px-8 py-6 hover-scale">
-                Schedule a Free Consultation
-              </Button>
-            </a>
+      <section className="py-24 relative">
+        <div className="container mx-auto px-6">
+          <MotionElement animation="slideUp">
+            <div className="relative rounded-3xl overflow-hidden bg-primary p-12 md:p-20 text-center">
+              {/* Decorative circles */}
+              <div className="absolute top-0 right-0 w-64 h-64 bg-primary-foreground/5 rounded-full -translate-y-1/2 translate-x-1/3" />
+              <div className="absolute bottom-0 left-0 w-48 h-48 bg-primary-foreground/5 rounded-full translate-y-1/2 -translate-x-1/3" />
+              
+              <div className="relative z-10">
+                <h2 className="text-primary-foreground mb-4">
+                  Ready to Automate Your Business?
+                </h2>
+                <p className="text-primary-foreground/70 max-w-2xl mx-auto mb-10 text-lg">
+                  Join businesses that have transformed their operations with our automation platform.
+                </p>
+                <a
+                  href="https://cal.com/tarek-jundi/free-consultation"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Button className="bg-primary-foreground text-primary hover:bg-primary-foreground/90 text-base px-8 py-6 rounded-full font-medium gap-2 group">
+                    Schedule a Free Consultation
+                    <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+                  </Button>
+                </a>
+              </div>
+            </div>
           </MotionElement>
         </div>
       </section>
 
-      {/* Footer */}
       <Footer />
-      
-      {/* Scroll to Top Button */}
       <ScrollToTop />
     </div>
   );

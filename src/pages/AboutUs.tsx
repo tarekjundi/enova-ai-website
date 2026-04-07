@@ -1,75 +1,98 @@
 
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import FadeInSection from "@/components/FadeInSection";
 import ScrollToTop from "@/components/ScrollToTop";
+import { MotionElement } from "@/components/MotionElements";
+import { Lightbulb, Globe, Shield, Heart } from "lucide-react";
 
 const AboutUs = () => {
+  const values = [
+    { icon: <Lightbulb className="h-5 w-5" />, num: "01", title: "Innovation", desc: "We're constantly pushing the boundaries of what's possible with automation technology." },
+    { icon: <Globe className="h-5 w-5" />, num: "02", title: "Accessibility", desc: "We believe powerful automation should be accessible to businesses of all sizes." },
+    { icon: <Shield className="h-5 w-5" />, num: "03", title: "Integrity", desc: "We operate with transparency and honesty in everything we do." },
+    { icon: <Heart className="h-5 w-5" />, num: "04", title: "Customer Success", desc: "Your success is our success. We're dedicated to helping you achieve your goals." },
+  ];
+
   return (
-    <div className="min-h-screen bg-darkTeal text-white" id="top">
+    <div className="min-h-screen bg-background text-foreground" id="top">
       <Navbar />
-      
-      {/* Hero Section */}
-      <section className="container mx-auto py-20 px-4">
-        <div className="max-w-3xl mx-auto text-center">
-          <h1 className="text-4xl md:text-6xl font-bold mb-6">About <span className="text-neonGreen">ENOVA</span></h1>
-          <p className="text-xl text-gray-300 mb-8">
-            Transforming businesses through intelligent automation since 2020.
-          </p>
-        </div>
-      </section>
-      
-      {/* Mission Section */}
-      <section className="py-16 bg-darkTeal/80">
-        <div className="container mx-auto px-4">
-          <FadeInSection>
-            <div className="max-w-4xl mx-auto">
-              <h2 className="text-3xl font-bold mb-8 text-center">Our Mission</h2>
-              <p className="text-xl mb-6">
-                At ENOVA, we believe that automation is the key to unlocking human potential. Our mission is to empower businesses of all sizes to streamline operations, reduce costs, and free up their teams to focus on innovation and growth.
+
+      {/* Hero */}
+      <section className="pt-32 pb-20">
+        <div className="container mx-auto px-6">
+          <div className="max-w-3xl mx-auto text-center">
+            <MotionElement animation="slideUp" delay={100}>
+              <p className="text-xs font-semibold uppercase tracking-widest text-primary/60 mb-4">
+                Our Story
               </p>
-              <p className="text-xl">
-                We're committed to developing cutting-edge automation solutions that are accessible, intuitive, and effective. By harnessing the power of artificial intelligence and machine learning, we're helping businesses around the world transform their operations and achieve more than they ever thought possible.
+              <h1 className="mb-6">
+                About <span className="text-gradient">ENOVA</span>
+              </h1>
+            </MotionElement>
+            <MotionElement animation="slideUp" delay={300}>
+              <p className="text-lg text-muted-foreground">
+                Transforming businesses through intelligent automation since 2020.
               </p>
-            </div>
-          </FadeInSection>
+            </MotionElement>
+          </div>
         </div>
       </section>
-      
-      {/* Values Section */}
-      <section className="py-20 bg-gradient-to-b from-darkTeal/80 to-darkTeal">
-        <div className="container mx-auto px-4">
-          <FadeInSection>
-            <h2 className="text-3xl font-bold mb-12 text-center">Our Core Values</h2>
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-              <div className="bg-darkTeal/40 p-8 rounded-lg border border-neonGreen/20">
-                <div className="text-neonGreen mb-4 text-4xl">01</div>
-                <h3 className="text-xl font-bold mb-3">Innovation</h3>
-                <p>We're constantly pushing the boundaries of what's possible with automation technology.</p>
+
+      {/* Mission */}
+      <section className="py-24">
+        <div className="container mx-auto px-6">
+          <div className="max-w-3xl mx-auto">
+            <MotionElement animation="slideUp">
+              <p className="text-xs font-semibold uppercase tracking-widest text-primary/60 mb-4">
+                Our Mission
+              </p>
+              <h2 className="text-2xl md:text-3xl mb-8">
+                Unlocking human potential through automation
+              </h2>
+            </MotionElement>
+            <MotionElement animation="slideUp" delay={200}>
+              <div className="space-y-6 text-foreground/80">
+                <p>
+                  At ENOVA, we believe that automation is the key to unlocking human potential. Our mission is to empower businesses of all sizes to streamline operations, reduce costs, and free up their teams to focus on innovation and growth.
+                </p>
+                <p>
+                  We're committed to developing cutting-edge automation solutions that are accessible, intuitive, and effective. By harnessing the power of artificial intelligence and machine learning, we're helping businesses around the world transform their operations and achieve more than they ever thought possible.
+                </p>
               </div>
-              
-              <div className="bg-darkTeal/40 p-8 rounded-lg border border-neonGreen/20">
-                <div className="text-neonGreen mb-4 text-4xl">02</div>
-                <h3 className="text-xl font-bold mb-3">Accessibility</h3>
-                <p>We believe powerful automation should be accessible to businesses of all sizes.</p>
-              </div>
-              
-              <div className="bg-darkTeal/40 p-8 rounded-lg border border-neonGreen/20">
-                <div className="text-neonGreen mb-4 text-4xl">03</div>
-                <h3 className="text-xl font-bold mb-3">Integrity</h3>
-                <p>We operate with transparency and honesty in everything we do.</p>
-              </div>
-              
-              <div className="bg-darkTeal/40 p-8 rounded-lg border border-neonGreen/20">
-                <div className="text-neonGreen mb-4 text-4xl">04</div>
-                <h3 className="text-xl font-bold mb-3">Customer Success</h3>
-                <p>Your success is our success. We're dedicated to helping you achieve your goals.</p>
-              </div>
-            </div>
-          </FadeInSection>
+            </MotionElement>
+          </div>
         </div>
       </section>
-      
+
+      {/* Values */}
+      <section className="py-24">
+        <div className="container mx-auto px-6">
+          <MotionElement animation="slideUp">
+            <div className="text-center mb-16">
+              <p className="text-xs font-semibold uppercase tracking-widest text-primary/60 mb-4">
+                What drives us
+              </p>
+              <h2>Our Core Values</h2>
+            </div>
+          </MotionElement>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+            {values.map((v, i) => (
+              <MotionElement key={i} animation="slideUp" delay={100 + i * 100}>
+                <div className="glass rounded-2xl p-8 h-full hover-lift group">
+                  <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center text-primary mb-5 group-hover:bg-primary/15 transition-colors duration-300">
+                    {v.icon}
+                  </div>
+                  <span className="text-xs text-primary/40 font-mono">{v.num}</span>
+                  <h3 className="text-lg font-semibold mt-1 mb-3">{v.title}</h3>
+                  <p className="text-muted-foreground text-sm leading-relaxed">{v.desc}</p>
+                </div>
+              </MotionElement>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <Footer />
       <ScrollToTop />
     </div>
