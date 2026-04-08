@@ -7,6 +7,7 @@ interface MotionElementProps {
   delay?: number;
   duration?: number;
   threshold?: number;
+  className?: string;
 }
 
 const MotionElement: React.FC<MotionElementProps> = ({ 
