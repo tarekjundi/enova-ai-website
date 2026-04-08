@@ -21,13 +21,6 @@ const Index = () => {
         <div className="container mx-auto px-6 relative z-10">
           <div className="max-w-4xl">
             <MotionElement animation="slideUp" delay={100}>
-              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass text-xs font-medium text-primary/80 mb-8">
-                <Sparkles className="h-3.5 w-3.5" />
-                AI-Powered Automation Agency
-              </div>
-            </MotionElement>
-            
-            <MotionElement animation="slideUp" delay={200}>
               <h1 className="mb-6">
                 Automate your workflow
                 <br />
