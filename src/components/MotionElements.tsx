@@ -7,6 +7,7 @@ interface MotionElementProps {
   delay?: number;
   duration?: number;
   threshold?: number;
+  className?: string;
 }
 
 const MotionElement: React.FC<MotionElementProps> = ({ 
@@ -14,7 +15,8 @@ const MotionElement: React.FC<MotionElementProps> = ({
   animation = 'slideUp', 
   delay = 0, 
   duration = 800,
-  threshold = 0.1 
+  threshold = 0.1,
+  className = ''
 }) => {
   const [isVisible, setIsVisible] = useState(false);
   const elementRef = useRef<HTMLDivElement>(null);
@@ -63,7 +65,7 @@ const MotionElement: React.FC<MotionElementProps> = ({
   };
 
   return (
-    <div ref={elementRef} className={getAnimationClasses()}>
+    <div ref={elementRef} className={`${getAnimationClasses()} ${className}`}>
       {children}
     </div>
   );
