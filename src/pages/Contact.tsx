@@ -30,7 +30,7 @@ const Contact = () => {
     setIsSubmitting(true);
     try {
       await fetch(
-        "https://script.google.com/macros/s/AKfycbxdXg5BRalxvy5V_iGOcbavovo0Prp5mhV-7hWrShLhIQV1HkNqrjr2kf_ufGMu4pUP/exec",
+        "https://script.google.com/macros/s/AKfycbwwwWkZloxZ6iKjVujFMUTxqh4h_uxVL4uRsm5LKow5TuX1nXsdWideN_mmDuo--UY/exec",
         {
           method: "POST",
           mode: "no-cors",
