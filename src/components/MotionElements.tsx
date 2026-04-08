@@ -65,7 +65,7 @@ const MotionElement: React.FC<MotionElementProps> = ({
   };
 
   return (
-    <div ref={elementRef} className={getAnimationClasses()}>
+    <div ref={elementRef} className={`${getAnimationClasses()} ${className}`}>
       {children}
     </div>
   );
