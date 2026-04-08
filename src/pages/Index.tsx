@@ -179,8 +179,8 @@ const Index = () => {
                 desc: "We continuously monitor and optimize your automated processes, ensuring they evolve with your business and deliver maximum ROI.",
               },
             ].map((item, i) => (
-              <MotionElement key={i} animation="slideUp" delay={100 + i * 150}>
-                <div className="relative glass rounded-2xl p-8 hover-lift group">
+              <MotionElement key={i} animation="slideUp" delay={100 + i * 150} className="h-full">
+                <div className="relative glass rounded-2xl p-8 hover-lift group h-full">
                   <span className="text-6xl font-bold text-primary/[0.06] font-founders absolute top-4 right-6 select-none">
                     {item.step}
                   </span>
