@@ -10,17 +10,17 @@ import { ArrowRight, Zap, Brain, Users, BarChart3, Settings, Sparkles } from "lu
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-background text-foreground" id="top">
+    <div className="min-h-screen bg-background text-foreground overflow-x-hidden" id="top">
       <Navbar />
 
       {/* Hero Section */}
       <section className="relative min-h-[90vh] flex items-center pt-20">
         {/* Subtle radial glow */}
-        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[800px] h-[600px] bg-primary/5 rounded-full blur-[120px] pointer-events-none" />
+        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[min(800px,100vw)] h-[600px] bg-primary/5 rounded-full blur-[120px] pointer-events-none" />
         
         <div className="container mx-auto px-6 relative z-10">
           <div className="max-w-4xl">
-            <MotionElement animation="slideUp" delay={100}>
+             <MotionElement animation="slideUp" delay={0}>
               <h1 className="mb-6">
                 Automate your workflow
                 <br />
@@ -28,13 +28,13 @@ const Index = () => {
               </h1>
             </MotionElement>
             
-            <MotionElement animation="slideUp" delay={400}>
+            <MotionElement animation="slideUp" delay={100}>
               <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mb-10 leading-relaxed">
                 Streamline your business processes and increase productivity with our cutting-edge automation solutions.
               </p>
             </MotionElement>
             
-            <MotionElement animation="slideUp" delay={600}>
+            <MotionElement animation="slideUp" delay={200}>
               <div className="flex flex-col sm:flex-row gap-4">
                 <a
                   href="https://cal.com/tarek-jundi/free-consultation"
