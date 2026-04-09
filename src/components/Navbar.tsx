@@ -38,7 +38,7 @@ const Navbar = () => {
       <div className="container mx-auto px-6 flex justify-between items-center">
         <Link
           to="/"
-          className="text-2xl font-bold text-primary font-founders tracking-tight transition-opacity duration-300 hover:opacity-80"
+          className="text-3xl font-bold text-primary font-founders tracking-tight transition-opacity duration-300 hover:opacity-80"
         >
           ENOVA
         </Link>
