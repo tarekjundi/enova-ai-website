@@ -14,7 +14,7 @@ const AboutUs = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-background text-foreground" id="top">
+    <div className="min-h-screen bg-background text-foreground overflow-x-hidden" id="top">
       <Navbar />
 
       {/* Hero */}
