@@ -50,6 +50,7 @@ const Navbar = () => {
             <Link
               key={link.to}
               to={link.to}
+              onClick={() => window.scrollTo({ top: 0 })}
               className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 ${
                 isActive(link.to)
                   ? "text-primary bg-primary/10"
