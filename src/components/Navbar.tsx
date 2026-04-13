@@ -96,7 +96,7 @@ const Navbar = () => {
                     ? "text-primary bg-primary/10"
                     : "text-foreground/70 hover:text-primary hover:bg-primary/5"
                 }`}
-                onClick={() => setMobileMenuOpen(false)}
+                onClick={() => { setMobileMenuOpen(false); window.scrollTo({ top: 0 }); }}
               >
                 {link.label}
               </Link>
