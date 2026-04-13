@@ -2,12 +2,14 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, X, Menu } from "lucide-react";
+import { ArrowRight, X, Menu, Globe } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
+  const { language, setLanguage, t, isRTL } = useLanguage();
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
@@ -20,12 +22,27 @@ const Navbar = () => {
   }, [location]);
 
   const navLinks = [
-    { to: "/solutions", label: "Solutions" },
-    { to: "/about", label: "About" },
-    { to: "/contact", label: "Contact" },
+    { to: "/solutions", label: t("nav.solutions") },
+    { to: "/about", label: t("nav.about") },
+    { to: "/contact", label: t("nav.contact") },
   ];
 
   const isActive = (path: string) => location.pathname === path;
+
+  const toggleLanguage = () => {
+    setLanguage(language === "en" ? "ar" : "en");
+  };
+
+  const LanguageToggle = ({ className = "" }: { className?: string }) => (
+    <button
+      onClick={toggleLanguage}
+      className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full text-sm font-medium transition-all duration-300 border border-border/50 hover:border-primary/30 hover:bg-primary/5 text-foreground/70 hover:text-primary ${className}`}
+      aria-label="Toggle language"
+    >
+      <Globe className="h-3.5 w-3.5" />
+      <span>{language === "en" ? "AR" : "EN"}</span>
+    </button>
+  );
 
   return (
     <nav
@@ -35,7 +52,7 @@ const Navbar = () => {
           : "py-5 bg-transparent"
       }`}
     >
-      <div className="container mx-auto px-6 flex justify-between items-center">
+      <div className="container mx-auto px-6 flex justify-between items-center" style={{ direction: "ltr" }}>
         <Link
           to="/"
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
@@ -60,15 +77,16 @@ const Navbar = () => {
               {link.label}
             </Link>
           ))}
+          <LanguageToggle className="ml-2" />
           <a
             href="https://cal.com/tarek-jundi/free-consultation"
             target="_blank"
             rel="noopener noreferrer"
-            className="ml-4"
+            className="ml-2"
           >
             <Button className="bg-primary text-primary-foreground hover:bg-primary/90 rounded-full px-6 text-sm font-medium gap-2 group">
-              Let's Talk
-              <ArrowRight className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-0.5" />
+              {t("nav.lets_talk")}
+              <ArrowRight className={`h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-0.5 ${isRTL ? "rotate-180" : ""}`} />
             </Button>
           </a>
         </div>
@@ -87,6 +105,9 @@ const Navbar = () => {
       {mobileMenuOpen && (
         <div className="md:hidden glass-strong mt-2 mx-4 rounded-2xl p-6 animate-fade-in">
           <div className="flex flex-col gap-2">
+            <div className="flex justify-end mb-2">
+              <LanguageToggle />
+            </div>
             {navLinks.map((link) => (
               <Link
                 key={link.to}
@@ -109,8 +130,8 @@ const Navbar = () => {
               onClick={() => setMobileMenuOpen(false)}
             >
               <Button className="w-full bg-primary text-primary-foreground hover:bg-primary/90 rounded-full text-sm font-medium gap-2">
-                Let's Talk
-                <ArrowRight className="h-3.5 w-3.5" />
+                {t("nav.lets_talk")}
+                <ArrowRight className={`h-3.5 w-3.5 ${isRTL ? "rotate-180" : ""}`} />
               </Button>
             </a>
           </div>
