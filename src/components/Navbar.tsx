@@ -38,6 +38,7 @@ const Navbar = () => {
       <div className="container mx-auto px-6 flex justify-between items-center">
         <Link
           to="/"
+          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
           className="text-3xl font-bold text-primary font-founders tracking-tight transition-opacity duration-300 hover:opacity-80"
         >
           ENOVA
@@ -49,6 +50,7 @@ const Navbar = () => {
             <Link
               key={link.to}
               to={link.to}
+              onClick={() => window.scrollTo({ top: 0 })}
               className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 ${
                 isActive(link.to)
                   ? "text-primary bg-primary/10"
@@ -94,7 +96,7 @@ const Navbar = () => {
                     ? "text-primary bg-primary/10"
                     : "text-foreground/70 hover:text-primary hover:bg-primary/5"
                 }`}
-                onClick={() => setMobileMenuOpen(false)}
+                onClick={() => { setMobileMenuOpen(false); window.scrollTo({ top: 0 }); }}
               >
                 {link.label}
               </Link>
