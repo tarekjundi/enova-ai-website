@@ -8,14 +8,12 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { toast } from "@/components/ui/use-toast";
 import { Plus, Minus, Mail, Phone, ArrowRight } from "lucide-react";
 import { MotionElement } from "@/components/MotionElements";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Contact = () => {
+  const { t, isRTL } = useLanguage();
   const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    company: "",
-    phone: "",
-    message: "",
+    name: "", email: "", company: "", phone: "", message: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [openAccordion, setOpenAccordion] = useState<string>("");
@@ -31,17 +29,12 @@ const Contact = () => {
     try {
       await fetch(
         "https://script.google.com/macros/s/AKfycbwwwWkZloxZ6iKjVujFMUTxqh4h_uxVL4uRsm5LKow5TuX1nXsdWideN_mmDuo--UY/exec",
-        {
-          method: "POST",
-          mode: "no-cors",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ ...formData, timestamp: new Date().toISOString() }),
-        }
+        { method: "POST", mode: "no-cors", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ ...formData, timestamp: new Date().toISOString() }) }
       );
-      toast({ title: "Message Sent!", description: "We'll get back to you within 24 hours." });
+      toast({ title: t("contact.form.success_title"), description: t("contact.form.success_desc") });
       setFormData({ name: "", email: "", company: "", phone: "", message: "" });
     } catch {
-      toast({ title: "Message Sent", description: "Your message has been received." });
+      toast({ title: t("contact.form.success_title"), description: t("contact.form.success_desc") });
       setFormData({ name: "", email: "", company: "", phone: "", message: "" });
     } finally {
       setIsSubmitting(false);
@@ -49,77 +42,66 @@ const Contact = () => {
   };
 
   const inputClass =
-    "w-full px-4 py-3 bg-secondary/50 border border-border rounded-xl text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary/50 focus:ring-1 focus:ring-primary/20 transition-all duration-300 text-sm";
+    `w-full px-4 py-3 bg-secondary/50 border border-border rounded-xl text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary/50 focus:ring-1 focus:ring-primary/20 transition-all duration-300 text-sm ${isRTL ? "text-right" : ""}`;
 
   const faqs = [
-    { q: "What industries do you serve?", a: "Our automation solutions are designed to serve a wide range of industries, including manufacturing, finance, healthcare, retail, logistics, and professional services." },
-    { q: "How long does implementation typically take?", a: "Simple workflows can be automated in as little as 2-4 weeks, while more complex enterprise-wide solutions may take 2-3 months." },
-    { q: "Do you offer custom solutions or only pre-built packages?", a: "We offer both pre-built automation packages for common business processes and fully customized solutions tailored to your specific needs." },
-    { q: "What kind of support do you provide after implementation?", a: "We provide comprehensive post-implementation support, including 24/7 technical assistance, regular maintenance, performance monitoring, and continuous optimization." },
+    { q: t("contact.faq1.q"), a: t("contact.faq1.a") },
+    { q: t("contact.faq2.q"), a: t("contact.faq2.a") },
+    { q: t("contact.faq3.q"), a: t("contact.faq3.a") },
+    { q: t("contact.faq4.q"), a: t("contact.faq4.a") },
   ];
 
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden" id="top">
       <Navbar />
 
-      {/* Hero */}
       <section className="pt-32 pb-16">
         <div className="container mx-auto px-6">
           <div className="max-w-3xl mx-auto text-center">
             <MotionElement animation="slideUp" delay={100}>
-              <p className="text-xs font-semibold uppercase tracking-widest text-primary/60 mb-4">
-                Get in touch
-              </p>
+              <p className="text-xs font-semibold uppercase tracking-widest text-primary/60 mb-4">{t("contact.label")}</p>
               <h1 className="mb-6">
-                Let's <span className="text-gradient">Talk</span>
+                {t("contact.title1")} <span className="text-gradient">{t("contact.title_highlight")}</span>
               </h1>
             </MotionElement>
             <MotionElement animation="slideUp" delay={300}>
-              <p className="text-lg text-muted-foreground">
-                Have questions about our automation solutions? We're here to help.
-              </p>
+              <p className="text-lg text-muted-foreground">{t("contact.subtitle")}</p>
             </MotionElement>
           </div>
         </div>
       </section>
 
-      {/* Contact Form + Info */}
       <section className="py-16">
         <div className="container mx-auto px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 max-w-6xl mx-auto">
-            {/* Info */}
-            <div className="lg:col-span-2">
+          <div className={`grid grid-cols-1 lg:grid-cols-5 gap-12 max-w-6xl mx-auto ${isRTL ? "direction-rtl" : ""}`}>
+            <div className={`lg:col-span-2 ${isRTL ? "text-right" : ""}`}>
               <MotionElement animation="slideUp" delay={100}>
-                <h2 className="text-2xl font-semibold mb-6">Contact Information</h2>
-                <p className="text-muted-foreground text-sm mb-10 leading-relaxed">
-                  Fill out the form or contact us directly. Our team is ready to assist you.
-                </p>
+                <h2 className="text-2xl font-semibold mb-6">{t("contact.info.title")}</h2>
+                <p className="text-muted-foreground text-sm mb-10 leading-relaxed">{t("contact.info.subtitle")}</p>
 
                 <div className="space-y-6">
-                  <div className="flex items-start gap-4">
+                  <div className={`flex items-start gap-4 ${isRTL ? "flex-row-reverse" : ""}`}>
                     <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center text-primary flex-shrink-0">
                       <Phone className="h-4 w-4" />
                     </div>
                     <div>
-                      <p className="text-sm font-medium mb-0.5">Phone</p>
-                      <p className="text-muted-foreground text-sm">+90 540 350 2010</p>
+                      <p className="text-sm font-medium mb-0.5">{t("contact.info.phone")}</p>
+                      <p className="text-muted-foreground text-sm" dir="ltr">+90 540 350 2010</p>
                     </div>
                   </div>
-                  <div className="flex items-start gap-4">
+                  <div className={`flex items-start gap-4 ${isRTL ? "flex-row-reverse" : ""}`}>
                     <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center text-primary flex-shrink-0">
                       <Mail className="h-4 w-4" />
                     </div>
                     <div>
-                      <p className="text-sm font-medium mb-0.5">Email</p>
-                      <p className="text-muted-foreground text-sm">tarek@enovaagency.com</p>
+                      <p className="text-sm font-medium mb-0.5">{t("contact.info.email")}</p>
+                      <p className="text-muted-foreground text-sm" dir="ltr">tarek@enovaagency.com</p>
                     </div>
                   </div>
                 </div>
 
                 <div className="mt-12">
-                  <p className="text-xs font-semibold uppercase tracking-widest text-foreground/50 mb-4">
-                    Follow Us
-                  </p>
+                  <p className="text-xs font-semibold uppercase tracking-widest text-foreground/50 mb-4">{t("contact.info.follow")}</p>
                   <div className="flex gap-4">
                     {[
                       { href: "https://www.facebook.com/profile.php?id=61550985059945", icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" /></svg> },
@@ -136,37 +118,36 @@ const Contact = () => {
               </MotionElement>
             </div>
 
-            {/* Form */}
             <div className="lg:col-span-3">
               <MotionElement animation="slideUp" delay={200}>
                 <div className="glass rounded-2xl p-8">
-                  <h2 className="text-xl font-semibold mb-6">Send Us a Message</h2>
+                  <h2 className={`text-xl font-semibold mb-6 ${isRTL ? "text-right" : ""}`}>{t("contact.form.title")}</h2>
                   <form onSubmit={handleSubmit} className="space-y-5">
                     <div>
-                      <label htmlFor="name" className="block text-xs font-medium text-foreground/70 mb-1.5">Full Name *</label>
+                      <label htmlFor="name" className={`block text-xs font-medium text-foreground/70 mb-1.5 ${isRTL ? "text-right" : ""}`}>{t("contact.form.name")}</label>
                       <input id="name" name="name" type="text" required value={formData.name} onChange={handleChange} className={inputClass} disabled={isSubmitting} />
                     </div>
                     <div>
-                      <label htmlFor="email" className="block text-xs font-medium text-foreground/70 mb-1.5">Email Address *</label>
-                      <input id="email" name="email" type="email" required value={formData.email} onChange={handleChange} className={inputClass} disabled={isSubmitting} />
+                      <label htmlFor="email" className={`block text-xs font-medium text-foreground/70 mb-1.5 ${isRTL ? "text-right" : ""}`}>{t("contact.form.email")}</label>
+                      <input id="email" name="email" type="email" required value={formData.email} onChange={handleChange} className={inputClass} disabled={isSubmitting} dir="ltr" />
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                       <div>
-                        <label htmlFor="company" className="block text-xs font-medium text-foreground/70 mb-1.5">Company</label>
+                        <label htmlFor="company" className={`block text-xs font-medium text-foreground/70 mb-1.5 ${isRTL ? "text-right" : ""}`}>{t("contact.form.company")}</label>
                         <input id="company" name="company" type="text" value={formData.company} onChange={handleChange} className={inputClass} disabled={isSubmitting} />
                       </div>
                       <div>
-                        <label htmlFor="phone" className="block text-xs font-medium text-foreground/70 mb-1.5">Phone Number</label>
-                        <input id="phone" name="phone" type="tel" value={formData.phone} onChange={handleChange} className={inputClass} disabled={isSubmitting} />
+                        <label htmlFor="phone" className={`block text-xs font-medium text-foreground/70 mb-1.5 ${isRTL ? "text-right" : ""}`}>{t("contact.form.phone")}</label>
+                        <input id="phone" name="phone" type="tel" value={formData.phone} onChange={handleChange} className={inputClass} disabled={isSubmitting} dir="ltr" />
                       </div>
                     </div>
                     <div>
-                      <label htmlFor="message" className="block text-xs font-medium text-foreground/70 mb-1.5">Message *</label>
+                      <label htmlFor="message" className={`block text-xs font-medium text-foreground/70 mb-1.5 ${isRTL ? "text-right" : ""}`}>{t("contact.form.message")}</label>
                       <textarea id="message" name="message" rows={4} required value={formData.message} onChange={handleChange} className={inputClass} disabled={isSubmitting} />
                     </div>
                     <Button type="submit" className="w-full bg-primary text-primary-foreground hover:bg-primary/90 py-6 rounded-xl font-medium gap-2 group" disabled={isSubmitting}>
-                      {isSubmitting ? "Sending..." : "Send Message"}
-                      {!isSubmitting && <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />}
+                      {isSubmitting ? t("contact.form.submitting") : t("contact.form.submit")}
+                      {!isSubmitting && <ArrowRight className={`h-4 w-4 transition-transform duration-300 group-hover:translate-x-1 ${isRTL ? "rotate-180 group-hover:-translate-x-1" : ""}`} />}
                     </Button>
                   </form>
                 </div>
@@ -176,13 +157,12 @@ const Contact = () => {
         </div>
       </section>
 
-      {/* FAQ */}
       <section className="py-24">
         <div className="container mx-auto px-6">
           <MotionElement animation="slideUp">
             <div className="text-center mb-16">
-              <p className="text-xs font-semibold uppercase tracking-widest text-primary/60 mb-4">FAQ</p>
-              <h2>Frequently Asked Questions</h2>
+              <p className="text-xs font-semibold uppercase tracking-widest text-primary/60 mb-4">{t("contact.faq.label")}</p>
+              <h2>{t("contact.faq.title")}</h2>
             </div>
           </MotionElement>
 
@@ -194,7 +174,7 @@ const Contact = () => {
                     value={`item-${i + 1}`}
                     className="glass rounded-xl px-6 transition-all duration-200 hover:border-primary/20 border border-transparent data-[state=open]:border-primary/15"
                   >
-                    <AccordionTrigger className="text-foreground text-left text-sm font-medium transition-all duration-200 hover:text-primary hover:no-underline [&>svg]:hidden py-5">
+                    <AccordionTrigger className={`text-foreground text-sm font-medium transition-all duration-200 hover:text-primary hover:no-underline [&>svg]:hidden py-5 ${isRTL ? "text-right" : "text-left"}`}>
                       <div className="flex items-center justify-between w-full">
                         <span>{faq.q}</span>
                         <div className="ml-4 flex-shrink-0">
@@ -206,7 +186,7 @@ const Contact = () => {
                         </div>
                       </div>
                     </AccordionTrigger>
-                    <AccordionContent className="text-muted-foreground text-sm leading-relaxed pb-5">
+                    <AccordionContent className={`text-muted-foreground text-sm leading-relaxed pb-5 ${isRTL ? "text-right" : ""}`}>
                       {faq.a}
                     </AccordionContent>
                   </AccordionItem>
