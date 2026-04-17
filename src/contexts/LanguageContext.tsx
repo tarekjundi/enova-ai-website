@@ -9,17 +9,22 @@ interface LanguageContextType {
   isRTL: boolean;
 }
 
-const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
-
-export const useLanguage = () => {
-  const context = useContext(LanguageContext);
-  if (!context) throw new Error("useLanguage must be used within LanguageProvider");
-  return context;
-};
-
 // Import translations
 import { en } from "@/i18n/en";
 import { ar } from "@/i18n/ar";
+
+const translations: Record<Language, Record<string, string>> = { en, ar };
+
+const defaultContext: LanguageContextType = {
+  language: "en",
+  setLanguage: () => {},
+  t: (key: string) => translations.en[key] || key,
+  isRTL: false,
+};
+
+const LanguageContext = createContext<LanguageContextType>(defaultContext);
+
+export const useLanguage = () => useContext(LanguageContext);
 
 const translations: Record<Language, Record<string, string>> = { en, ar };
 
