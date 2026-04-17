@@ -6,9 +6,9 @@ export const en: Record<string, string> = {
   "nav.lets_talk": "Let's Talk",
 
   // Index - Hero
-  "index.hero.title1": "Automate your workflow",
-  "index.hero.title2": "with",
-  "index.hero.title_highlight": "precision",
+  "index.hero.title1": "Turning AI potential",
+  "index.hero.title2": "into",
+  "index.hero.title_highlight": "business performance",
   "index.hero.subtitle": "Streamline your business processes and increase productivity with our cutting-edge automation solutions.",
   "index.hero.cta": "Start Automating",
   "index.hero.cta2": "See How It Works",
