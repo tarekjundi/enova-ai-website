@@ -26,7 +26,6 @@ const LanguageContext = createContext<LanguageContextType>(defaultContext);
 
 export const useLanguage = () => useContext(LanguageContext);
 
-const translations: Record<Language, Record<string, string>> = { en, ar };
 
 export const LanguageProvider = ({ children }: { children: ReactNode }) => {
   const [language, setLanguageState] = useState<Language>(() => {
