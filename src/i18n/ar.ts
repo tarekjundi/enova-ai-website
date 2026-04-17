@@ -6,9 +6,9 @@ export const ar: Record<string, string> = {
   "nav.lets_talk": "لنتحدث",
 
   // Index - Hero
-  "index.hero.title1": "أتمت سير عملك",
-  "index.hero.title2": "بكل",
-  "index.hero.title_highlight": "دقة واحترافية",
+  "index.hero.title1": "نحوّل إمكانات الذكاء الاصطناعي",
+  "index.hero.title2": "إلى",
+  "index.hero.title_highlight": "أداء أعمال متميّز",
   "index.hero.subtitle": "قم بتبسيط عمليات أعمالك وزيادة الإنتاجية من خلال حلول الأتمتة المتقدمة التي نقدمها.",
   "index.hero.cta": "ابدأ الأتمتة",
   "index.hero.cta2": "اكتشف كيف يعمل",
