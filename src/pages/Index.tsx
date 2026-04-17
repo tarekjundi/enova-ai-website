@@ -34,16 +34,11 @@ const Index = () => {
         <div className="container mx-auto px-6 relative z-10">
           <div className={`max-w-4xl ${isRTL ? "mr-0 ml-auto text-right" : ""}`}>
             <MotionElement animation="slideUp" delay={0}>
-              <h1 className="mb-6">
+              <h1 className="mb-10">
                 {t("index.hero.title1")}
                 <br />
                 {t("index.hero.title2")} <span className="text-gradient">{t("index.hero.title_highlight")}</span>
               </h1>
-            </MotionElement>
-            <MotionElement animation="slideUp" delay={100}>
-              <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mb-10 leading-relaxed">
-                {t("index.hero.subtitle")}
-              </p>
             </MotionElement>
             <MotionElement animation="slideUp" delay={200}>
               <div className={`flex flex-col sm:flex-row gap-4 ${isRTL ? "sm:flex-row-reverse justify-end" : ""}`}>
