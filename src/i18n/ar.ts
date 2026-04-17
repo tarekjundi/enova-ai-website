@@ -9,7 +9,7 @@ export const ar: Record<string, string> = {
   "index.hero.title1": "نحوّل إمكانات الذكاء الاصطناعي",
   "index.hero.title2": "إلى",
   "index.hero.title_highlight": "أداء أعمال متميّز",
-  "index.hero.subtitle": "قم بتبسيط عمليات أعمالك وزيادة الإنتاجية من خلال حلول الأتمتة المتقدمة التي نقدمها.",
+  
   "index.hero.cta": "ابدأ الأتمتة",
   "index.hero.cta2": "اكتشف كيف يعمل",
 
