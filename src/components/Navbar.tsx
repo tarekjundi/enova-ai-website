@@ -2,7 +2,7 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, X, Menu, Globe } from "lucide-react";
+import { ArrowRight, X, List, Globe } from "@phosphor-icons/react";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 const Navbar = () => {
