@@ -45,7 +45,7 @@ const Index = () => {
                 <a href="https://cal.com/tarek-jundi/free-consultation" target="_blank" rel="noopener noreferrer">
                   <Button className="bg-primary text-primary-foreground hover:bg-primary/90 text-base px-8 py-6 rounded-full font-medium gap-2 group">
                     {t("index.hero.cta")}
-                    <ArrowRight className={`h-4 w-4 transition-transform duration-300 group-hover:translate-x-1 ${isRTL ? "rotate-180 group-hover:-translate-x-1" : ""}`} />
+                    <ArrowRight size={16} className={`transition-transform duration-300 group-hover:translate-x-1 ${isRTL ? "rotate-180 group-hover:-translate-x-1" : ""}`} />
                   </Button>
                 </a>
                 <a href="#features">
@@ -160,7 +160,7 @@ const Index = () => {
                 <a href="https://cal.com/tarek-jundi/free-consultation" target="_blank" rel="noopener noreferrer">
                   <Button className="bg-primary-foreground text-primary hover:bg-primary-foreground/90 text-base px-8 py-6 rounded-full font-medium gap-2 group">
                     {t("index.cta.button")}
-                    <ArrowRight className={`h-4 w-4 transition-transform duration-300 group-hover:translate-x-1 ${isRTL ? "rotate-180 group-hover:-translate-x-1" : ""}`} />
+                    <ArrowRight size={16} className={`transition-transform duration-300 group-hover:translate-x-1 ${isRTL ? "rotate-180 group-hover:-translate-x-1" : ""}`} />
                   </Button>
                 </a>
               </div>
