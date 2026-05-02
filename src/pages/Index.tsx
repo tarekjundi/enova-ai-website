@@ -6,7 +6,7 @@ import ScrollToTop from "@/components/ScrollToTop";
 import FadeInSection from "@/components/FadeInSection";
 import AnimatedCounter from "@/components/AnimatedCounter";
 import { MotionElement } from "@/components/MotionElements";
-import { ArrowRight, Zap, Brain, Users, BarChart3, Settings, Sparkles } from "lucide-react";
+import { ArrowRight, Lightning, Brain, Users, ChartBar, Gear, Sparkle } from "@phosphor-icons/react";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 const Index = () => {
