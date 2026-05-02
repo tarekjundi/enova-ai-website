@@ -3,17 +3,17 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ScrollToTop from "@/components/ScrollToTop";
 import { MotionElement } from "@/components/MotionElements";
-import { Lightbulb, Globe, Shield, Heart } from "lucide-react";
+import { Lightbulb, Globe, Shield, Heart } from "@phosphor-icons/react";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 const AboutUs = () => {
   const { t, isRTL } = useLanguage();
 
   const values = [
-    { icon: <Lightbulb className="h-5 w-5" />, num: "01", title: t("about.value1.title"), desc: t("about.value1.desc") },
-    { icon: <Globe className="h-5 w-5" />, num: "02", title: t("about.value2.title"), desc: t("about.value2.desc") },
-    { icon: <Shield className="h-5 w-5" />, num: "03", title: t("about.value3.title"), desc: t("about.value3.desc") },
-    { icon: <Heart className="h-5 w-5" />, num: "04", title: t("about.value4.title"), desc: t("about.value4.desc") },
+    { icon: <Lightbulb size={20} />, num: "01", title: t("about.value1.title"), desc: t("about.value1.desc") },
+    { icon: <Globe size={20} />, num: "02", title: t("about.value2.title"), desc: t("about.value2.desc") },
+    { icon: <Shield size={20} />, num: "03", title: t("about.value3.title"), desc: t("about.value3.desc") },
+    { icon: <Heart size={20} />, num: "04", title: t("about.value4.title"), desc: t("about.value4.desc") },
   ];
 
   return (
