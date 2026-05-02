@@ -6,7 +6,7 @@ import ScrollToTop from "@/components/ScrollToTop";
 import { Button } from "@/components/ui/button";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { toast } from "@/components/ui/use-toast";
-import { Plus, Minus, Mail, Phone, ArrowRight } from "lucide-react";
+import { Plus, Minus, Envelope, Phone, ArrowRight, FacebookLogo, XLogo, InstagramLogo, LinkedinLogo } from "@phosphor-icons/react";
 import { MotionElement } from "@/components/MotionElements";
 import { useLanguage } from "@/contexts/LanguageContext";
 
@@ -82,7 +82,7 @@ const Contact = () => {
                 <div className="space-y-6">
                   <div className={`flex items-start gap-4 ${isRTL ? "flex-row-reverse" : ""}`}>
                     <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center text-primary flex-shrink-0">
-                      <Phone className="h-4 w-4" />
+                      <Phone size={16} />
                     </div>
                     <div>
                       <p className="text-sm font-medium mb-0.5">{t("contact.info.phone")}</p>
@@ -91,7 +91,7 @@ const Contact = () => {
                   </div>
                   <div className={`flex items-start gap-4 ${isRTL ? "flex-row-reverse" : ""}`}>
                     <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center text-primary flex-shrink-0">
-                      <Mail className="h-4 w-4" />
+                      <Envelope size={16} />
                     </div>
                     <div>
                       <p className="text-sm font-medium mb-0.5">{t("contact.info.email")}</p>
@@ -104,10 +104,10 @@ const Contact = () => {
                   <p className="text-xs font-semibold uppercase tracking-widest text-foreground/50 mb-4">{t("contact.info.follow")}</p>
                   <div className="flex gap-4">
                     {[
-                      { href: "https://www.facebook.com/profile.php?id=61550985059945", icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" /></svg> },
-                      { href: "https://x.com/enovaagency", icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.901 1.153h3.682l-8.04 9.557L24 22.846h-7.406l-5.8-7.584-6.638 7.584H1.448l8.609-9.773L0 1.154h7.594l5.243 6.932L18.901 1.153Zm-1.306 17.545h2.034L6.529 3.268H4.373L17.595 18.698Z"/></svg> },
-                      { href: "https://www.instagram.com/enovaagency/", icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5" /><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" /><line x1="17.5" x2="17.51" y1="6.5" y2="6.5" /></svg> },
-                      { href: "https://www.linkedin.com/company/enovaagency/", icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" /><rect width="4" height="12" x="2" y="9" /><circle cx="4" cy="4" r="2" /></svg> },
+                      { href: "https://www.facebook.com/profile.php?id=61550985059945", icon: <FacebookLogo size={18} /> },
+                      { href: "https://x.com/enovaagency", icon: <XLogo size={18} /> },
+                      { href: "https://www.instagram.com/enovaagency/", icon: <InstagramLogo size={18} /> },
+                      { href: "https://www.linkedin.com/company/enovaagency/", icon: <LinkedinLogo size={18} /> },
                     ].map((s, i) => (
                       <a key={i} href={s.href} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors duration-300">
                         {s.icon}
@@ -147,7 +147,7 @@ const Contact = () => {
                     </div>
                     <Button type="submit" className="w-full bg-primary text-primary-foreground hover:bg-primary/90 py-6 rounded-xl font-medium gap-2 group" disabled={isSubmitting}>
                       {isSubmitting ? t("contact.form.submitting") : t("contact.form.submit")}
-                      {!isSubmitting && <ArrowRight className={`h-4 w-4 transition-transform duration-300 group-hover:translate-x-1 ${isRTL ? "rotate-180 group-hover:-translate-x-1" : ""}`} />}
+                      {!isSubmitting && <ArrowRight size={16} className={`transition-transform duration-300 group-hover:translate-x-1 ${isRTL ? "rotate-180 group-hover:-translate-x-1" : ""}`} />}
                     </Button>
                   </form>
                 </div>
@@ -179,9 +179,9 @@ const Contact = () => {
                         <span>{faq.q}</span>
                         <div className="ml-4 flex-shrink-0">
                           {openAccordion === `item-${i + 1}` ? (
-                            <Minus className="h-4 w-4 text-primary" />
+                            <Minus size={16} className="text-primary" />
                           ) : (
-                            <Plus className="h-4 w-4 text-primary/50" />
+                            <Plus size={16} className="text-primary/50" />
                           )}
                         </div>
                       </div>

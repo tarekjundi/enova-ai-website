@@ -4,7 +4,7 @@ import Footer from "@/components/Footer";
 import ScrollToTop from "@/components/ScrollToTop";
 import { Button } from "@/components/ui/button";
 import { MotionElement } from "@/components/MotionElements";
-import { ArrowRight, FileText, Box, Headphones, Check } from "lucide-react";
+import { ArrowRight, FileText, Cube, Headphones, Check } from "@phosphor-icons/react";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 const Solutions = () => {
@@ -12,21 +12,21 @@ const Solutions = () => {
 
   const solutions = [
     {
-      icon: <FileText className="h-6 w-6" />,
+      icon: <FileText size={24} />,
       title: t("solutions.sol1.title"),
       desc: t("solutions.sol1.desc"),
       body: t("solutions.sol1.body"),
       features: [t("solutions.sol1.f1"), t("solutions.sol1.f2"), t("solutions.sol1.f3")],
     },
     {
-      icon: <Box className="h-6 w-6" />,
+      icon: <Cube size={24} />,
       title: t("solutions.sol2.title"),
       desc: t("solutions.sol2.desc"),
       body: t("solutions.sol2.body"),
       features: [t("solutions.sol2.f1"), t("solutions.sol2.f2"), t("solutions.sol2.f3")],
     },
     {
-      icon: <Headphones className="h-6 w-6" />,
+      icon: <Headphones size={24} />,
       title: t("solutions.sol3.title"),
       desc: t("solutions.sol3.desc"),
       body: t("solutions.sol3.body"),
@@ -69,7 +69,7 @@ const Solutions = () => {
                   <ul className="space-y-3 mt-auto">
                     {sol.features.map((f, j) => (
                       <li key={j} className={`flex items-start gap-3 text-sm text-foreground/70 ${isRTL ? "flex-row-reverse text-right" : ""}`}>
-                        <Check className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
+                        <Check size={16} className="text-primary mt-0.5 flex-shrink-0" />
                         <span>{f}</span>
                       </li>
                     ))}
@@ -93,7 +93,7 @@ const Solutions = () => {
                 <a href="https://cal.com/tarek-jundi/free-consultation" target="_blank" rel="noopener noreferrer">
                   <Button className="bg-primary-foreground text-primary hover:bg-primary-foreground/90 text-base px-8 py-6 rounded-full font-medium gap-2 group">
                     {t("solutions.cta.button")}
-                    <ArrowRight className={`h-4 w-4 transition-transform duration-300 group-hover:translate-x-1 ${isRTL ? "rotate-180 group-hover:-translate-x-1" : ""}`} />
+                    <ArrowRight size={16} className={`transition-transform duration-300 group-hover:translate-x-1 ${isRTL ? "rotate-180 group-hover:-translate-x-1" : ""}`} />
                   </Button>
                 </a>
               </div>

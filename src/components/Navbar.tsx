@@ -2,7 +2,7 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, X, Menu, Globe } from "lucide-react";
+import { ArrowRight, X, List, Globe } from "@phosphor-icons/react";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 const Navbar = () => {
@@ -39,7 +39,7 @@ const Navbar = () => {
       className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full text-sm font-medium transition-all duration-300 border border-border/50 hover:border-primary/30 hover:bg-primary/5 text-foreground/70 hover:text-primary ${className}`}
       aria-label="Toggle language"
     >
-      <Globe className="h-3.5 w-3.5" />
+      <Globe size={14} />
       <span>{language === "en" ? "AR" : "EN"}</span>
     </button>
   );
@@ -86,7 +86,7 @@ const Navbar = () => {
           >
             <Button className="bg-primary text-primary-foreground hover:bg-primary/90 rounded-full px-6 text-sm font-medium gap-2 group">
               {t("nav.lets_talk")}
-              <ArrowRight className={`h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-0.5 ${isRTL ? "rotate-180" : ""}`} />
+              <ArrowRight size={14} className={`transition-transform duration-300 group-hover:translate-x-0.5 ${isRTL ? "rotate-180" : ""}`} />
             </Button>
           </a>
         </div>
@@ -97,7 +97,7 @@ const Navbar = () => {
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           aria-label="Toggle menu"
         >
-          {mobileMenuOpen ? <X className="h-7 w-7" /> : <Menu className="h-7 w-7" />}
+          {mobileMenuOpen ? <X size={28} /> : <List size={28} />}
         </button>
       </div>
 
@@ -131,7 +131,7 @@ const Navbar = () => {
             >
               <Button className="w-full bg-primary text-primary-foreground hover:bg-primary/90 rounded-full text-sm font-medium gap-2">
                 {t("nav.lets_talk")}
-                <ArrowRight className={`h-3.5 w-3.5 ${isRTL ? "rotate-180" : ""}`} />
+                <ArrowRight size={14} className={isRTL ? "rotate-180" : ""} />
               </Button>
             </a>
           </div>
