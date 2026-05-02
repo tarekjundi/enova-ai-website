@@ -39,7 +39,7 @@ const Navbar = () => {
       className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full text-sm font-medium transition-all duration-300 border border-border/50 hover:border-primary/30 hover:bg-primary/5 text-foreground/70 hover:text-primary ${className}`}
       aria-label="Toggle language"
     >
-      <Globe className="h-3.5 w-3.5" />
+      <Globe size={14} />
       <span>{language === "en" ? "AR" : "EN"}</span>
     </button>
   );
