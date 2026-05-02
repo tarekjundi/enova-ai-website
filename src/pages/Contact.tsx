@@ -6,7 +6,7 @@ import ScrollToTop from "@/components/ScrollToTop";
 import { Button } from "@/components/ui/button";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { toast } from "@/components/ui/use-toast";
-import { Plus, Minus, Mail, Phone, ArrowRight } from "lucide-react";
+import { Plus, Minus, Envelope, Phone, ArrowRight, FacebookLogo, XLogo, InstagramLogo, LinkedinLogo } from "@phosphor-icons/react";
 import { MotionElement } from "@/components/MotionElements";
 import { useLanguage } from "@/contexts/LanguageContext";
 
@@ -82,7 +82,7 @@ const Contact = () => {
                 <div className="space-y-6">
                   <div className={`flex items-start gap-4 ${isRTL ? "flex-row-reverse" : ""}`}>
                     <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center text-primary flex-shrink-0">
-                      <Phone className="h-4 w-4" />
+                      <Phone size={16} />
                     </div>
                     <div>
                       <p className="text-sm font-medium mb-0.5">{t("contact.info.phone")}</p>
@@ -91,7 +91,7 @@ const Contact = () => {
                   </div>
                   <div className={`flex items-start gap-4 ${isRTL ? "flex-row-reverse" : ""}`}>
                     <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center text-primary flex-shrink-0">
-                      <Mail className="h-4 w-4" />
+                      <Envelope size={16} />
                     </div>
                     <div>
                       <p className="text-sm font-medium mb-0.5">{t("contact.info.email")}</p>
@@ -147,7 +147,7 @@ const Contact = () => {
                     </div>
                     <Button type="submit" className="w-full bg-primary text-primary-foreground hover:bg-primary/90 py-6 rounded-xl font-medium gap-2 group" disabled={isSubmitting}>
                       {isSubmitting ? t("contact.form.submitting") : t("contact.form.submit")}
-                      {!isSubmitting && <ArrowRight className={`h-4 w-4 transition-transform duration-300 group-hover:translate-x-1 ${isRTL ? "rotate-180 group-hover:-translate-x-1" : ""}`} />}
+                      {!isSubmitting && <ArrowRight size={16} className={`transition-transform duration-300 group-hover:translate-x-1 ${isRTL ? "rotate-180 group-hover:-translate-x-1" : ""}`} />}
                     </Button>
                   </form>
                 </div>
@@ -179,9 +179,9 @@ const Contact = () => {
                         <span>{faq.q}</span>
                         <div className="ml-4 flex-shrink-0">
                           {openAccordion === `item-${i + 1}` ? (
-                            <Minus className="h-4 w-4 text-primary" />
+                            <Minus size={16} className="text-primary" />
                           ) : (
-                            <Plus className="h-4 w-4 text-primary/50" />
+                            <Plus size={16} className="text-primary/50" />
                           )}
                         </div>
                       </div>
