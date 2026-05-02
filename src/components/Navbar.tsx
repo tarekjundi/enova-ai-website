@@ -131,7 +131,7 @@ const Navbar = () => {
             >
               <Button className="w-full bg-primary text-primary-foreground hover:bg-primary/90 rounded-full text-sm font-medium gap-2">
                 {t("nav.lets_talk")}
-                <ArrowRight className={`h-3.5 w-3.5 ${isRTL ? "rotate-180" : ""}`} />
+                <ArrowRight size={14} className={isRTL ? "rotate-180" : ""} />
               </Button>
             </a>
           </div>
