@@ -13,15 +13,15 @@ const Index = () => {
   const { t, isRTL } = useLanguage();
 
   const features = [
-    { icon: <Zap className="h-5 w-5" />, title: t("index.feature1.title"), desc: t("index.feature1.desc"), body: t("index.feature1.body") },
-    { icon: <Brain className="h-5 w-5" />, title: t("index.feature2.title"), desc: t("index.feature2.desc"), body: t("index.feature2.body") },
-    { icon: <Users className="h-5 w-5" />, title: t("index.feature3.title"), desc: t("index.feature3.desc"), body: t("index.feature3.body") },
+    { icon: <Lightning size={20} />, title: t("index.feature1.title"), desc: t("index.feature1.desc"), body: t("index.feature1.body") },
+    { icon: <Brain size={20} />, title: t("index.feature2.title"), desc: t("index.feature2.desc"), body: t("index.feature2.body") },
+    { icon: <Users size={20} />, title: t("index.feature3.title"), desc: t("index.feature3.desc"), body: t("index.feature3.body") },
   ];
 
   const steps = [
-    { step: "01", icon: <BarChart3 className="h-6 w-6" />, title: t("index.step1.title"), desc: t("index.step1.desc") },
-    { step: "02", icon: <Settings className="h-6 w-6" />, title: t("index.step2.title"), desc: t("index.step2.desc") },
-    { step: "03", icon: <Sparkles className="h-6 w-6" />, title: t("index.step3.title"), desc: t("index.step3.desc") },
+    { step: "01", icon: <ChartBar size={24} />, title: t("index.step1.title"), desc: t("index.step1.desc") },
+    { step: "02", icon: <Gear size={24} />, title: t("index.step2.title"), desc: t("index.step2.desc") },
+    { step: "03", icon: <Sparkle size={24} />, title: t("index.step3.title"), desc: t("index.step3.desc") },
   ];
 
   return (
