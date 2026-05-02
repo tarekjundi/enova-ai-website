@@ -86,7 +86,7 @@ const Footer = () => {
             className="text-primary text-sm font-medium flex items-center gap-1 hover:opacity-80 transition-opacity"
           >
             {t("footer.book")}
-            <ArrowUpRight className="h-3.5 w-3.5" />
+            <ArrowUpRight size={14} />
           </a>
         </div>
       </div>
