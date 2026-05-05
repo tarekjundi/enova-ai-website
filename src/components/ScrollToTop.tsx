@@ -1,22 +1,15 @@
-
 import { useEffect, useState } from "react";
+import { ArrowUp } from "@phosphor-icons/react";
 
 const ScrollToTop = () => {
   const [isVisible, setIsVisible] = useState(false);
 
   const toggleVisibility = () => {
-    if (window.scrollY > 300) {
-      setIsVisible(true);
-    } else {
-      setIsVisible(false);
-    }
+    setIsVisible(window.scrollY > 300);
   };
 
   const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth"
-    });
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   useEffect(() => {
@@ -29,22 +22,10 @@ const ScrollToTop = () => {
       onClick={scrollToTop}
       className={`${
         isVisible ? "opacity-100" : "opacity-0"
-      } fixed bottom-6 right-6 bg-neonGreen text-darkTeal p-3 rounded-full shadow-lg transition-opacity duration-300 hover:bg-neonGreen/90 focus:outline-none`}
+      } fixed bottom-6 right-6 bg-primary text-primary-foreground p-3 rounded-full shadow-lg transition-opacity duration-300 hover:bg-primary/90 focus:outline-none`}
       aria-label="Scroll to top"
     >
-      <svg 
-        xmlns="http://www.w3.org/2000/svg" 
-        width="24" 
-        height="24" 
-        viewBox="0 0 24 24" 
-        fill="none" 
-        stroke="currentColor" 
-        strokeWidth="2" 
-        strokeLinecap="round" 
-        strokeLinejoin="round"
-      >
-        <polyline points="18 15 12 9 6 15"></polyline>
-      </svg>
+      <ArrowUp size={20} weight="light" />
     </button>
   );
 };
