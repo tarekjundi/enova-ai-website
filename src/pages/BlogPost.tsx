@@ -6,6 +6,7 @@ import Footer from "@/components/Footer";
 import ScrollToTop from "@/components/ScrollToTop";
 import { Button } from "@/components/ui/button";
 import { blogPosts } from "@/data/blogPosts";
+import { FacebookLogo, XLogo, LinkedinLogo } from "@phosphor-icons/react";
 
 const BlogPost = () => {
   const { id } = useParams();
