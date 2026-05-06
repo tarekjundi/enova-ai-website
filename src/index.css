@@ -123,9 +123,16 @@
   }
 
   p {
-    @apply font-null leading-relaxed;
+    @apply font-null;
     font-size: 1.0625rem;
-    line-height: 1.7;
+    line-height: 1.75;
+    font-weight: 400;
+  }
+
+  .font-serif-accent {
+    font-family: 'Instrument Serif', 'Times New Roman', serif;
+    font-style: italic;
+    letter-spacing: -0.01em;
   }
 
   small, .text-sm, .text-xs {
