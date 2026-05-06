@@ -20,9 +20,10 @@ export default {
     },
     extend: {
       fontFamily: {
-        'founders': ['Space Grotesk', 'system-ui', 'sans-serif'], // Professional geometric sans-serif
-        'null': ['Inter', 'system-ui', 'sans-serif'], // Clean, readable for body text
-        'sans': ['Space Grotesk', 'system-ui', 'sans-serif'],
+        'founders': ['Instrument Sans', 'system-ui', 'sans-serif'], // Editorial professional sans
+        'null': ['Inter', 'system-ui', 'sans-serif'], // Body text
+        'sans': ['Inter', 'system-ui', 'sans-serif'],
+        'serif-accent': ['Instrument Serif', 'Times New Roman', 'serif'],
       },
       colors: {
         neonGreen: '#e1bb80',

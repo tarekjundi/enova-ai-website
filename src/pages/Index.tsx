@@ -1,194 +1,117 @@
+
 import { Button } from "@/components/ui/button";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ScrollToTop from "@/components/ScrollToTop";
+import FadeInSection from "@/components/FadeInSection";
 import AnimatedCounter from "@/components/AnimatedCounter";
 import { MotionElement } from "@/components/MotionElements";
-import { ArrowRight, ArrowUpRight, Lightning, Brain, Users, ChartBar, Gear, Sparkle } from "@phosphor-icons/react";
+import { ArrowRight, Lightning, Brain, Users, ChartBar, Gear, Sparkle } from "@phosphor-icons/react";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 const Index = () => {
   const { t, isRTL } = useLanguage();
 
   const features = [
-    { icon: <Lightning size={22} weight="light" />, title: t("index.feature1.title"), desc: t("index.feature1.desc"), body: t("index.feature1.body") },
-    { icon: <Brain size={22} weight="light" />, title: t("index.feature2.title"), desc: t("index.feature2.desc"), body: t("index.feature2.body") },
-    { icon: <Users size={22} weight="light" />, title: t("index.feature3.title"), desc: t("index.feature3.desc"), body: t("index.feature3.body") },
+    { icon: <Lightning size={20} />, title: t("index.feature1.title"), desc: t("index.feature1.desc"), body: t("index.feature1.body") },
+    { icon: <Brain size={20} />, title: t("index.feature2.title"), desc: t("index.feature2.desc"), body: t("index.feature2.body") },
+    { icon: <Users size={20} />, title: t("index.feature3.title"), desc: t("index.feature3.desc"), body: t("index.feature3.body") },
   ];
 
   const steps = [
-    { step: "01", icon: <ChartBar size={22} weight="light" />, title: t("index.step1.title"), desc: t("index.step1.desc") },
-    { step: "02", icon: <Gear size={22} weight="light" />, title: t("index.step2.title"), desc: t("index.step2.desc") },
-    { step: "03", icon: <Sparkle size={22} weight="light" />, title: t("index.step3.title"), desc: t("index.step3.desc") },
+    { step: "01", icon: <ChartBar size={24} />, title: t("index.step1.title"), desc: t("index.step1.desc") },
+    { step: "02", icon: <Gear size={24} />, title: t("index.step2.title"), desc: t("index.step2.desc") },
+    { step: "03", icon: <Sparkle size={24} />, title: t("index.step3.title"), desc: t("index.step3.desc") },
   ];
 
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden" id="top">
       <Navbar />
 
-      {/* Hero — asymmetric editorial */}
-      <section className="relative pt-32 pb-24 md:pt-40 md:pb-32">
+      {/* Hero Section */}
+      <section className="relative min-h-[90vh] flex items-center pt-20">
+        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[min(800px,100vw)] h-[600px] bg-primary/5 rounded-full blur-[120px] pointer-events-none" />
         <div className="container mx-auto px-6 relative z-10">
-          <div className="grid grid-cols-12 gap-y-10 md:gap-x-8 items-end">
-            {/* Left meta column */}
-            <div className={`col-span-12 md:col-span-3 ${isRTL ? "md:order-2 text-right" : ""}`}>
-              <MotionElement animation="slideUp">
-                <div className="flex items-center gap-3 mb-3">
-                  <span className="h-px w-8 bg-primary/40" />
-                  <span className="text-[11px] uppercase tracking-[0.2em] text-muted-foreground">
-                    {t("index.features.label")}
-                  </span>
-                </div>
-                <p className="text-sm text-muted-foreground leading-relaxed max-w-[18ch]">
-                  {t("index.features.subtitle")}
-                </p>
-              </MotionElement>
-            </div>
-
-            {/* Headline */}
-            <div className={`col-span-12 md:col-span-9 ${isRTL ? "md:order-1 text-right" : ""}`}>
-              <MotionElement animation="slideUp" delay={120}>
-                <h1 className="leading-[0.95] tracking-[-0.04em]">
-                  <span className="block">{t("index.hero.title1")}</span>
-                  <span className="block">
-                    {t("index.hero.title2")}{" "}
-                    <em className="not-italic text-primary font-light italic" style={{ fontFamily: "'Cormorant Garamond', 'Times New Roman', serif" }}>
-                      {t("index.hero.title_highlight")}
-                    </em>
-                  </span>
-                </h1>
-              </MotionElement>
-            </div>
-          </div>
-
-          {/* CTA row */}
-          <div className="mt-16 md:mt-20 flex flex-col md:flex-row md:items-center md:justify-between gap-8 border-t border-border/40 pt-8">
-            <MotionElement animation="slideUp" delay={240}>
-              <div className={`flex flex-col sm:flex-row gap-3 ${isRTL ? "sm:flex-row-reverse" : ""}`}>
+          <div className={`max-w-4xl ${isRTL ? "mr-0 ml-auto text-right" : ""}`}>
+            <MotionElement animation="slideUp" delay={0}>
+              <h1 className="mb-10">
+                {t("index.hero.title1")}
+                <br />
+                {t("index.hero.title2")}{" "}
+                <span className="font-serif-accent italic font-light text-primary">
+                  {t("index.hero.title_highlight")}
+                </span>
+              </h1>
+            </MotionElement>
+            <MotionElement animation="slideUp" delay={200}>
+              <div className={`flex flex-col sm:flex-row gap-4 ${isRTL ? "sm:flex-row-reverse justify-end" : ""}`}>
                 <a href="https://cal.com/tarek-jundi/free-consultation" target="_blank" rel="noopener noreferrer">
-                  <Button className="bg-primary text-primary-foreground hover:bg-primary/90 text-sm px-7 py-6 rounded-full font-medium gap-2 group">
+                  <Button className="bg-primary text-primary-foreground hover:bg-primary/90 text-base px-8 py-6 rounded-full font-medium gap-2 group">
                     {t("index.hero.cta")}
-                    <ArrowRight size={14} className={`transition-transform duration-300 group-hover:translate-x-1 ${isRTL ? "rotate-180 group-hover:-translate-x-1" : ""}`} />
+                    <ArrowRight size={16} className={`transition-transform duration-300 group-hover:translate-x-1 ${isRTL ? "rotate-180 group-hover:-translate-x-1" : ""}`} />
                   </Button>
                 </a>
                 <a href="#features">
-                  <Button variant="ghost" className="text-foreground/80 hover:text-primary hover:bg-transparent text-sm px-2 py-6 font-medium gap-2 group">
+                  <Button variant="outline" className="border-border text-foreground hover:bg-primary/5 hover:border-primary/30 text-base px-8 py-6 rounded-full font-medium">
                     {t("index.hero.cta2")}
-                    <span className="h-px w-6 bg-current transition-all duration-300 group-hover:w-10" />
                   </Button>
                 </a>
               </div>
             </MotionElement>
-
-            {/* Inline stats — no boxed grid */}
-            <MotionElement animation="slideUp" delay={320}>
-              <div className={`flex items-baseline gap-8 ${isRTL ? "flex-row-reverse" : ""}`}>
-                <div>
-                  <AnimatedCounter end={85} suffix="%" />
-                  <p className="text-[11px] text-muted-foreground/70 uppercase tracking-wider mt-1">{t("index.stats.manual")}</p>
-                </div>
-                <div className="h-10 w-px bg-border/50" />
-                <div>
-                  <AnimatedCounter end={7.8} suffix="x" />
-                  <p className="text-[11px] text-muted-foreground/70 uppercase tracking-wider mt-1">{t("index.stats.productivity")}</p>
-                </div>
-                <div className="h-10 w-px bg-border/50" />
-                <div>
-                  <p className="text-3xl md:text-4xl font-light text-primary font-founders">24/7</p>
-                  <p className="text-[11px] text-muted-foreground/70 uppercase tracking-wider mt-1">{t("index.stats.continuous")}</p>
-                </div>
-              </div>
-            </MotionElement>
           </div>
         </div>
       </section>
 
-      {/* Features — bento asymmetric */}
-      <section id="features" className="py-24 md:py-32">
+      {/* Stats Section */}
+      <section className="py-20 relative">
+        <div className="section-divider mb-20" />
         <div className="container mx-auto px-6">
-          <div className={`grid grid-cols-12 gap-y-12 md:gap-x-12 mb-16 items-end ${isRTL ? "" : ""}`}>
-            <div className={`col-span-12 md:col-span-5 ${isRTL ? "text-right" : ""}`}>
-              <p className="text-[11px] uppercase tracking-[0.2em] text-primary/70 mb-5">
-                — {t("index.features.label")}
-              </p>
-              <h2 className="leading-[1.05] tracking-[-0.03em]">
-                {t("index.features.title")}
-              </h2>
-            </div>
-            <div className={`col-span-12 md:col-span-6 md:col-start-7 ${isRTL ? "text-right md:col-start-1 md:col-end-7" : ""}`}>
-              <p className="text-muted-foreground text-base md:text-lg leading-relaxed">
-                {t("index.features.subtitle")}
-              </p>
-            </div>
-          </div>
-
-          {/* Bento grid: 1 large + 2 small stacked */}
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-5">
-            {/* Large feature */}
-            <MotionElement animation="slideUp" delay={100} className="md:col-span-7 md:row-span-2">
-              <div className={`relative rounded-3xl border border-border/50 bg-card/40 p-10 md:p-12 h-full overflow-hidden group transition-colors duration-500 hover:border-primary/30 ${isRTL ? "text-right" : ""}`}>
-                <div className="absolute -top-20 -right-20 w-72 h-72 bg-primary/[0.04] rounded-full blur-3xl pointer-events-none" />
-                <div className="relative">
-                  <div className="text-primary mb-8">{features[0].icon}</div>
-                  <h3 className="text-2xl md:text-3xl font-medium mb-4 tracking-[-0.02em]">{features[0].title}</h3>
-                  <p className="text-primary/80 text-sm mb-5 font-medium">{features[0].desc}</p>
-                  <p className="text-foreground/70 text-base leading-relaxed max-w-md">{features[0].body}</p>
-                  <div className="mt-10 flex items-center gap-2 text-primary/70 text-sm">
-                    <span className="font-mono text-xs">01 / 03</span>
-                  </div>
-                </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8">
+            <MotionElement animation="slideUp" delay={100}>
+              <div className="text-center">
+                <AnimatedCounter end={85} suffix="%" />
+                <p className="text-muted-foreground text-sm mt-1">{t("index.stats.manual")}</p>
               </div>
             </MotionElement>
-
-            {/* Small features */}
-            {[features[1], features[2]].map((feature, i) => (
-              <MotionElement key={i} animation="slideUp" delay={200 + i * 100} className="md:col-span-5">
-                <div className={`rounded-3xl border border-border/50 bg-card/20 p-8 md:p-9 h-full transition-colors duration-500 hover:border-primary/30 ${isRTL ? "text-right" : ""}`}>
-                  <div className="flex items-start justify-between mb-6">
-                    <div className="text-primary">{feature.icon}</div>
-                    <span className="font-mono text-xs text-muted-foreground/60">0{i + 2} / 03</span>
-                  </div>
-                  <h3 className="text-xl font-medium mb-2 tracking-[-0.02em]">{feature.title}</h3>
-                  <p className="text-primary/70 text-xs uppercase tracking-wider mb-3">{feature.desc}</p>
-                  <p className="text-foreground/65 text-sm leading-relaxed">{feature.body}</p>
-                </div>
-              </MotionElement>
-            ))}
+            <MotionElement animation="slideUp" delay={200}>
+              <div className="text-center">
+                <AnimatedCounter end={7.8} suffix="x" />
+                <p className="text-muted-foreground text-sm mt-1">{t("index.stats.productivity")}</p>
+              </div>
+            </MotionElement>
+            <MotionElement animation="slideUp" delay={300}>
+              <div className="text-center">
+                <p className="text-5xl font-bold text-primary mb-2 font-founders">24/7</p>
+                <p className="text-muted-foreground text-sm mt-1">{t("index.stats.continuous")}</p>
+              </div>
+            </MotionElement>
           </div>
         </div>
+        <div className="section-divider mt-20" />
       </section>
 
-      {/* Process — horizontal numbered list, no cards */}
-      <section className="py-24 md:py-32 border-t border-border/30">
+      {/* Features Section */}
+      <section id="features" className="py-24 relative">
         <div className="container mx-auto px-6">
-          <div className={`mb-20 max-w-2xl ${isRTL ? "ml-auto text-right" : ""}`}>
-            <p className="text-[11px] uppercase tracking-[0.2em] text-primary/70 mb-5">
-              — {t("index.process.label")}
-            </p>
-            <h2 className="leading-[1.05] tracking-[-0.03em] mb-6">{t("index.process.title")}</h2>
-            <p className="text-muted-foreground">{t("index.process.subtitle")}</p>
+          <div className="text-center mb-16 max-w-2xl mx-auto">
+            <MotionElement animation="slideUp">
+              <p className="text-xs font-semibold uppercase tracking-widest text-primary/60 mb-4">{t("index.features.label")}</p>
+              <h2 className="mb-4">{t("index.features.title")}</h2>
+            </MotionElement>
+            <MotionElement animation="slideUp" delay={200}>
+              <p className="text-muted-foreground">{t("index.features.subtitle")}</p>
+            </MotionElement>
           </div>
-
-          <div className="space-y-0">
-            {steps.map((item, i) => (
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {features.map((feature, i) => (
               <MotionElement key={i} animation="slideUp" delay={100 + i * 100}>
-                <div
-                  className={`group grid grid-cols-12 gap-4 md:gap-8 items-baseline py-10 border-t border-border/40 ${
-                    i === steps.length - 1 ? "border-b" : ""
-                  } transition-colors duration-300 hover:bg-primary/[0.02] ${isRTL ? "text-right" : ""}`}
-                >
-                  <div className="col-span-2 md:col-span-1">
-                    <span className="font-mono text-xs text-primary/60">{item.step}</span>
+                <div className={`glass rounded-2xl p-8 h-full hover-lift group ${isRTL ? "text-right" : ""}`}>
+                  <div className={`w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center text-primary mb-5 group-hover:bg-primary/15 transition-colors duration-300 ${isRTL ? "ml-auto" : ""}`}>
+                    {feature.icon}
                   </div>
-                  <div className="col-span-10 md:col-span-4">
-                    <div className="flex items-center gap-3">
-                      <span className="text-primary/80 group-hover:text-primary transition-colors">{item.icon}</span>
-                      <h3 className="text-xl md:text-2xl font-medium tracking-[-0.02em]">{item.title}</h3>
-                    </div>
-                  </div>
-                  <div className="col-span-12 md:col-span-6 md:col-start-7">
-                    <p className="text-muted-foreground text-base leading-relaxed">{item.desc}</p>
-                  </div>
+                  <h3 className="text-lg font-semibold mb-2">{feature.title}</h3>
+                  <p className="text-muted-foreground text-sm mb-4">{feature.desc}</p>
+                  <p className="text-foreground/80 text-sm leading-relaxed">{feature.body}</p>
                 </div>
               </MotionElement>
             ))}
@@ -196,27 +119,52 @@ const Index = () => {
         </div>
       </section>
 
-      {/* CTA — editorial split */}
-      <section className="py-24 md:py-32">
+      {/* How It Works Section */}
+      <section className="py-24 relative">
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-16 max-w-2xl mx-auto">
+            <MotionElement animation="slideUp">
+              <p className="text-xs font-semibold uppercase tracking-widest text-primary/60 mb-4">{t("index.process.label")}</p>
+              <h2 className="mb-4">{t("index.process.title")}</h2>
+            </MotionElement>
+            <MotionElement animation="slideUp" delay={200}>
+              <p className="text-muted-foreground">{t("index.process.subtitle")}</p>
+            </MotionElement>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            {steps.map((item, i) => (
+              <MotionElement key={i} animation="slideUp" delay={100 + i * 150} className="h-full">
+                <div className={`relative glass rounded-2xl p-8 hover-lift group h-full ${isRTL ? "text-right" : ""}`}>
+                  <span className={`text-6xl font-bold text-primary/[0.06] font-founders absolute top-4 select-none ${isRTL ? "left-6" : "right-6"}`}>
+                    {item.step}
+                  </span>
+                  <div className={`w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary mb-6 group-hover:bg-primary/15 transition-colors duration-300 ${isRTL ? "ml-auto" : ""}`}>
+                    {item.icon}
+                  </div>
+                  <h3 className="text-lg font-semibold mb-3">{item.title}</h3>
+                  <p className="text-muted-foreground text-sm leading-relaxed">{item.desc}</p>
+                </div>
+              </MotionElement>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-24 relative">
         <div className="container mx-auto px-6">
           <MotionElement animation="slideUp">
-            <div className={`grid grid-cols-12 gap-8 items-end ${isRTL ? "text-right" : ""}`}>
-              <div className="col-span-12 md:col-span-8">
-                <p className="text-[11px] uppercase tracking-[0.2em] text-primary/60 mb-6">— Let's build</p>
-                <h2 className="text-4xl md:text-6xl lg:text-7xl leading-[0.95] tracking-[-0.04em] font-medium">
-                  {t("index.cta.title")}
-                </h2>
-              </div>
-              <div className={`col-span-12 md:col-span-4 ${isRTL ? "" : ""}`}>
-                <p className="text-muted-foreground mb-6 leading-relaxed">{t("index.cta.subtitle")}</p>
-                <a
-                  href="https://cal.com/tarek-jundi/free-consultation"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-3 text-primary text-lg font-medium border-b border-primary/40 pb-2 hover:gap-5 hover:border-primary transition-all duration-300"
-                >
-                  {t("index.cta.button")}
-                  <ArrowUpRight size={20} weight="light" />
+            <div className="relative rounded-3xl overflow-hidden bg-primary p-12 md:p-20 text-center">
+              <div className="absolute top-0 right-0 w-64 h-64 bg-primary-foreground/5 rounded-full -translate-y-1/2 translate-x-1/3" />
+              <div className="absolute bottom-0 left-0 w-48 h-48 bg-primary-foreground/5 rounded-full translate-y-1/2 -translate-x-1/3" />
+              <div className="relative z-10">
+                <h2 className="text-primary-foreground mb-4">{t("index.cta.title")}</h2>
+                <p className="text-primary-foreground/70 max-w-2xl mx-auto mb-10 text-lg">{t("index.cta.subtitle")}</p>
+                <a href="https://cal.com/tarek-jundi/free-consultation" target="_blank" rel="noopener noreferrer">
+                  <Button className="bg-primary-foreground text-primary hover:bg-primary-foreground/90 text-base px-8 py-6 rounded-full font-medium gap-2 group">
+                    {t("index.cta.button")}
+                    <ArrowRight size={16} className={`transition-transform duration-300 group-hover:translate-x-1 ${isRTL ? "rotate-180 group-hover:-translate-x-1" : ""}`} />
+                  </Button>
                 </a>
               </div>
             </div>
