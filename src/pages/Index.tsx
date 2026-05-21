@@ -31,7 +31,7 @@ const Index = () => {
       {/* Hero Section */}
       <section className="relative min-h-[92vh] flex items-center pt-28 pb-20 overflow-hidden">
         <div className="absolute inset-0 grid-bg pointer-events-none" />
-        <div className="absolute top-1/3 -left-40 w-[520px] h-[520px] bg-primary/[0.06] rounded-full blur-[140px] pointer-events-none" />
+
         <div className="container mx-auto px-6 relative z-10">
           <div className={`grid lg:grid-cols-12 gap-12 lg:gap-16 items-center ${isRTL ? "lg:[direction:rtl]" : ""}`}>
             {/* LEFT */}
