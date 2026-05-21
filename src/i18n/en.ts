@@ -1,17 +1,21 @@
 export const en: Record<string, string> = {
   // Navbar
-  "nav.solutions": "Solutions",
-  "nav.about": "About",
-  "nav.contact": "Contact",
-  "nav.lets_talk": "Let's Talk",
+  "nav.solutions": "Services",
+  "nav.about": "Case Studies",
+  "nav.contact": "Process",
+  "nav.faq": "FAQ",
+  "nav.lets_talk": "Book a Call",
 
   // Index - Hero
-  "index.hero.title1": "Turning AI potential",
-  "index.hero.title2": "into",
-  "index.hero.title_highlight": "business performance",
-  
-  "index.hero.cta": "Start Automating",
-  "index.hero.cta2": "See How It Works",
+  "index.hero.eyebrow": "ENOVA — Operational AI Systems",
+  "index.hero.title1": "AI systems that automate",
+  "index.hero.title2": "the work your team",
+  "index.hero.title_highlight": "hates.",
+  "index.hero.subtitle": "We build AI employees for sales, customer support, operations, and lead generation — deployed into your stack, not bolted on top of it.",
+
+  "index.hero.cta": "Book Strategy Call",
+  "index.hero.cta2": "See Live Demo",
+
 
   // Index - Stats
   "index.stats.manual": "Reduction in manual tasks",
