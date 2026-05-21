@@ -25,7 +25,9 @@ const Navbar = () => {
     { to: "/solutions", label: t("nav.solutions") },
     { to: "/about", label: t("nav.about") },
     { to: "/contact", label: t("nav.contact") },
+    { to: "/#faq", label: t("nav.faq") },
   ];
+
 
   const isActive = (path: string) => location.pathname === path;
 
