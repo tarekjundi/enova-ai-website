@@ -18,39 +18,40 @@ export const en: Record<string, string> = {
 
 
   // Index - Stats
-  "index.stats.manual": "Reduction in manual tasks",
-  "index.stats.productivity": "Increase in productivity",
-  "index.stats.continuous": "Continuous operation",
+  "index.stats.manual": "Manual workload removed across ops, sales & support",
+  "index.stats.productivity": "Faster lead qualification vs. human-only teams",
+  "index.stats.continuous": "Coverage — no shifts, no backlog, no missed follow-ups",
 
   // Index - Features
-  "index.features.label": "What we offer",
-  "index.features.title": "Powerful Automation Features",
-  "index.features.subtitle": "Comprehensive tools to automate every aspect of your business.",
-  "index.feature1.title": "Process Automation",
-  "index.feature1.desc": "Automate repetitive business processes",
-  "index.feature1.body": "Streamline workflows by automating manual, repetitive tasks with intelligent process automation that learns and adapts to your business needs.",
-  "index.feature2.title": "Smart Decision Making",
-  "index.feature2.desc": "AI-powered decision automation",
-  "index.feature2.body": "Let AI analyze data and make intelligent decisions based on your business rules, reducing human error and increasing efficiency.",
-  "index.feature3.title": "Customer Engagement",
-  "index.feature3.desc": "Automated customer interactions",
-  "index.feature3.body": "Enhance customer experience with automated responses, personalized communication, and timely follow-ups that keep customers engaged.",
+  "index.features.label": "Services",
+  "index.features.title": "AI employees, deployed where the work happens.",
+  "index.features.subtitle": "Not chatbots. Not point tools. Operational systems embedded directly into your CRM, inbox, helpdesk and pipelines.",
+  "index.feature1.title": "Sales & Lead Qualification",
+  "index.feature1.desc": "AI SDR + appointment setter",
+  "index.feature1.body": "Inbound leads scored, enriched and replied to in under 60 seconds — meetings dropped straight onto your calendar with full context.",
+  "index.feature2.title": "Customer Support Agent",
+  "index.feature2.desc": "Tier-1 deflection, 24/7",
+  "index.feature2.body": "Resolves 60–80% of tickets across email, chat and WhatsApp using your own docs and historical conversations. Escalates clean handoffs only.",
+  "index.feature3.title": "Operations & CRM Automation",
+  "index.feature3.desc": "Workflow + back-office",
+  "index.feature3.body": "Quote generation, invoice follow-up, data hygiene, hand-offs between tools — the copy-paste work your team should never have been doing.",
 
   // Index - How It Works
-  "index.process.label": "Our Process",
-  "index.process.title": "How Automation Works",
-  "index.process.subtitle": "Our simple three-step process makes implementing automation seamless.",
-  "index.step1.title": "Analyze",
-  "index.step1.desc": "We analyze your current workflows and identify opportunities for automation, focusing on high-impact areas that will deliver immediate results.",
-  "index.step2.title": "Implement",
-  "index.step2.desc": "Our experts design and implement custom automation solutions tailored to your specific business needs, integrating with your existing systems.",
-  "index.step3.title": "Optimize",
-  "index.step3.desc": "We continuously monitor and optimize your automated processes, ensuring they evolve with your business and deliver maximum ROI.",
+  "index.process.label": "Process",
+  "index.process.title": "How we deploy an AI system.",
+  "index.process.subtitle": "Four weeks from kickoff to a working system in production. No multi-quarter \"AI strategy\" engagements.",
+  "index.step1.title": "Audit",
+  "index.step1.desc": "We map your workflows, tools and bottlenecks. Outcome: a ranked list of automations by hours saved and revenue impact.",
+  "index.step2.title": "Design",
+  "index.step2.desc": "We architect the system end-to-end — triggers, models, guardrails, escalation paths and the human-in-the-loop checkpoints that matter.",
+  "index.step3.title": "Deployment",
+  "index.step3.desc": "Built, tested against real data, integrated into your stack and shipped to production with monitoring on day one.",
 
   // Index - CTA
-  "index.cta.title": "Ready to Automate Your Business?",
-  "index.cta.subtitle": "Join businesses that have transformed their operations with our automation platform.",
-  "index.cta.button": "Schedule a Free Consultation",
+  "index.cta.title": "Replace repetitive work with systems that scale.",
+  "index.cta.subtitle": "30-minute call. We review one workflow live and tell you exactly what we'd automate, in what order, and the hours it would return to your team.",
+  "index.cta.button": "Book Strategy Call",
+
 
   // Solutions
   "solutions.label": "What we do",

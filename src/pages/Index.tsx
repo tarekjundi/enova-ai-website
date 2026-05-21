@@ -31,7 +31,7 @@ const Index = () => {
       {/* Hero Section */}
       <section className="relative min-h-[92vh] flex items-center pt-28 pb-20 overflow-hidden">
         <div className="absolute inset-0 grid-bg pointer-events-none" />
-        <div className="absolute top-1/3 -left-40 w-[520px] h-[520px] bg-primary/[0.06] rounded-full blur-[140px] pointer-events-none" />
+
         <div className="container mx-auto px-6 relative z-10">
           <div className={`grid lg:grid-cols-12 gap-12 lg:gap-16 items-center ${isRTL ? "lg:[direction:rtl]" : ""}`}>
             {/* LEFT */}
@@ -78,8 +78,8 @@ const Index = () => {
             <div className="lg:col-span-6">
               <MotionElement animation="slideUp" delay={200}>
                 <div className="relative">
-                  <div className="absolute -inset-4 bg-gradient-to-tr from-primary/10 via-transparent to-transparent blur-2xl rounded-3xl pointer-events-none" />
-                  <div className="relative rounded-2xl border border-border bg-card/80 shadow-[0_30px_80px_-20px_rgba(0,0,0,0.6)] overflow-hidden">
+                  <div className="relative rounded-xl border border-border bg-card/80 shadow-[0_30px_80px_-30px_rgba(0,0,0,0.7)] overflow-hidden">
+
                     {/* window chrome */}
                     <div className="flex items-center justify-between px-4 py-3 border-b border-border bg-secondary/40">
                       <div className="flex items-center gap-1.5">
@@ -150,114 +150,157 @@ const Index = () => {
       </section>
 
 
-      {/* Stats Section */}
-      <section className="py-20 relative">
-        <div className="section-divider mb-20" />
-        <div className="container mx-auto px-6">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8">
-            <MotionElement animation="slideUp" delay={100}>
-              <div className="text-center">
-                <AnimatedCounter end={85} suffix="%" />
-                <p className="text-muted-foreground text-sm mt-1">{t("index.stats.manual")}</p>
-              </div>
+      {/* Stats — editorial band */}
+      <section className="relative border-y border-border/70">
+        <div className="container mx-auto px-6 py-16 md:py-20">
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-6 items-end">
+            <MotionElement animation="slideUp" delay={50} className="md:col-span-5">
+              <p className="text-[10px] uppercase tracking-[0.22em] text-muted-foreground mb-4">By the numbers</p>
+              <h2 className="!text-3xl md:!text-4xl !leading-[1.1] max-w-md">
+                Operational impact, measured the way your CFO measures it.
+              </h2>
             </MotionElement>
-            <MotionElement animation="slideUp" delay={200}>
-              <div className="text-center">
-                <AnimatedCounter end={7.8} suffix="x" />
-                <p className="text-muted-foreground text-sm mt-1">{t("index.stats.productivity")}</p>
-              </div>
+
+            <MotionElement animation="slideUp" delay={150} className="md:col-span-3 md:border-l md:border-border md:pl-6">
+              <AnimatedCounter end={85} suffix="%" />
+              <p className="text-muted-foreground text-sm mt-2 max-w-[18ch]">{t("index.stats.manual")}</p>
             </MotionElement>
-            <MotionElement animation="slideUp" delay={300}>
-              <div className="text-center">
-                <p className="text-5xl font-bold text-primary mb-2 font-founders">24/7</p>
-                <p className="text-muted-foreground text-sm mt-1">{t("index.stats.continuous")}</p>
-              </div>
+
+            <MotionElement animation="slideUp" delay={220} className="md:col-span-2 md:border-l md:border-border md:pl-6">
+              <AnimatedCounter end={7.8} suffix="×" />
+              <p className="text-muted-foreground text-sm mt-2 max-w-[18ch]">{t("index.stats.productivity")}</p>
+            </MotionElement>
+
+            <MotionElement animation="slideUp" delay={290} className="md:col-span-2 md:border-l md:border-border md:pl-6">
+              <p className="text-5xl font-bold text-foreground font-founders tracking-tight">24/7</p>
+              <p className="text-muted-foreground text-sm mt-2 max-w-[18ch]">{t("index.stats.continuous")}</p>
             </MotionElement>
           </div>
         </div>
-        <div className="section-divider mt-20" />
       </section>
 
-      {/* Features Section */}
-      <section id="features" className="py-24 relative">
+      {/* Services — asymmetric editorial */}
+      <section id="features" className="py-28 md:py-40 relative">
         <div className="container mx-auto px-6">
-          <div className="text-center mb-16 max-w-2xl mx-auto">
-            <MotionElement animation="slideUp">
-              <p className="text-xs font-semibold uppercase tracking-widest text-primary/60 mb-4">{t("index.features.label")}</p>
-              <h2 className="mb-4">{t("index.features.title")}</h2>
-            </MotionElement>
-            <MotionElement animation="slideUp" delay={200}>
-              <p className="text-muted-foreground">{t("index.features.subtitle")}</p>
-            </MotionElement>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {features.map((feature, i) => (
-              <MotionElement key={i} animation="slideUp" delay={100 + i * 100}>
-                <div className={`glass rounded-2xl p-8 h-full hover-lift group ${isRTL ? "text-right" : ""}`}>
-                  <div className={`w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center text-primary mb-5 group-hover:bg-primary/15 transition-colors duration-300 ${isRTL ? "ml-auto" : ""}`}>
-                    {feature.icon}
-                  </div>
-                  <h3 className="text-lg font-semibold mb-2">{feature.title}</h3>
-                  <p className="text-muted-foreground text-sm mb-4">{feature.desc}</p>
-                  <p className="text-foreground/80 text-sm leading-relaxed">{feature.body}</p>
-                </div>
+          <div className={`grid md:grid-cols-12 gap-10 md:gap-16 mb-20 md:mb-28 ${isRTL ? "md:[direction:rtl]" : ""}`}>
+            <div className="md:col-span-4">
+              <MotionElement animation="slideUp">
+                <p className="text-[10px] uppercase tracking-[0.22em] text-muted-foreground mb-4">{t("index.features.label")} — 01 / 03</p>
               </MotionElement>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* How It Works Section */}
-      <section className="py-24 relative">
-        <div className="container mx-auto px-6">
-          <div className="text-center mb-16 max-w-2xl mx-auto">
-            <MotionElement animation="slideUp">
-              <p className="text-xs font-semibold uppercase tracking-widest text-primary/60 mb-4">{t("index.process.label")}</p>
-              <h2 className="mb-4">{t("index.process.title")}</h2>
-            </MotionElement>
-            <MotionElement animation="slideUp" delay={200}>
-              <p className="text-muted-foreground">{t("index.process.subtitle")}</p>
-            </MotionElement>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-            {steps.map((item, i) => (
-              <MotionElement key={i} animation="slideUp" delay={100 + i * 150} className="h-full">
-                <div className={`relative glass rounded-2xl p-8 hover-lift group h-full ${isRTL ? "text-right" : ""}`}>
-                  <span className={`text-6xl font-bold text-primary/[0.06] font-founders absolute top-4 select-none ${isRTL ? "left-6" : "right-6"}`}>
-                    {item.step}
-                  </span>
-                  <div className={`w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary mb-6 group-hover:bg-primary/15 transition-colors duration-300 ${isRTL ? "ml-auto" : ""}`}>
-                    {item.icon}
-                  </div>
-                  <h3 className="text-lg font-semibold mb-3">{item.title}</h3>
-                  <p className="text-muted-foreground text-sm leading-relaxed">{item.desc}</p>
-                </div>
-              </MotionElement>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="py-24 relative">
-        <div className="container mx-auto px-6">
-          <MotionElement animation="slideUp">
-            <div className="relative rounded-3xl overflow-hidden bg-primary p-12 md:p-20 text-center">
-              <div className="absolute top-0 right-0 w-64 h-64 bg-primary-foreground/5 rounded-full -translate-y-1/2 translate-x-1/3" />
-              <div className="absolute bottom-0 left-0 w-48 h-48 bg-primary-foreground/5 rounded-full translate-y-1/2 -translate-x-1/3" />
-              <div className="relative z-10">
-                <h2 className="text-primary-foreground mb-4">{t("index.cta.title")}</h2>
-                <p className="text-primary-foreground/70 max-w-2xl mx-auto mb-10 text-lg">{t("index.cta.subtitle")}</p>
-                <a href="https://cal.com/tarek-jundi/free-consultation" target="_blank" rel="noopener noreferrer">
-                  <Button className="bg-primary-foreground text-primary hover:bg-primary-foreground/90 text-base px-8 py-6 rounded-full font-medium gap-2 group">
-                    {t("index.cta.button")}
-                    <ArrowRight size={16} className={`transition-transform duration-300 group-hover:translate-x-1 ${isRTL ? "rotate-180 group-hover:-translate-x-1" : ""}`} />
-                  </Button>
-                </a>
-              </div>
             </div>
-          </MotionElement>
+            <div className="md:col-span-8">
+              <MotionElement animation="slideUp" delay={80}>
+                <h2 className="!text-4xl md:!text-6xl !leading-[1.04] mb-8 max-w-[20ch]">
+                  {t("index.features.title")}
+                </h2>
+              </MotionElement>
+              <MotionElement animation="slideUp" delay={160}>
+                <p className="text-muted-foreground text-lg max-w-2xl">{t("index.features.subtitle")}</p>
+              </MotionElement>
+            </div>
+          </div>
+
+          <div className={`grid md:grid-cols-12 gap-10 md:gap-12 ${isRTL ? "md:[direction:rtl]" : ""}`}>
+            {/* Featured (large) */}
+            <MotionElement animation="slideUp" delay={100} className="md:col-span-7">
+              <div className={`group border-t border-border pt-8 ${isRTL ? "text-right" : ""}`}>
+                <div className="flex items-center gap-3 mb-12 text-muted-foreground">
+                  <span className="text-xs font-mono tracking-wider">01</span>
+                  <span className="h-px flex-1 bg-border" />
+                  <span className="text-xs uppercase tracking-widest">{features[0].desc}</span>
+                </div>
+                <h3 className="!text-2xl md:!text-4xl !leading-tight mb-6 max-w-[18ch]">{features[0].title}</h3>
+                <p className="text-foreground/75 max-w-lg mb-8">{features[0].body}</p>
+                <div className="flex flex-wrap gap-x-6 gap-y-2 text-xs text-muted-foreground font-mono">
+                  <span>+ HubSpot</span><span>+ Salesforce</span><span>+ Pipedrive</span><span>+ Cal.com</span>
+                </div>
+              </div>
+            </MotionElement>
+
+            {/* Two compact stacked */}
+            <div className="md:col-span-5 flex flex-col gap-10">
+              {[features[1], features[2]].map((feature, i) => (
+                <MotionElement key={i} animation="slideUp" delay={160 + i * 80}>
+                  <div className={`group border-t border-border pt-8 ${isRTL ? "text-right" : ""}`}>
+                    <div className="flex items-center gap-3 mb-6 text-muted-foreground">
+                      <span className="text-xs font-mono tracking-wider">0{i + 2}</span>
+                      <span className="h-px flex-1 bg-border" />
+                      <span className="text-xs uppercase tracking-widest">{feature.desc}</span>
+                    </div>
+                    <h3 className="!text-xl md:!text-2xl !leading-tight mb-4">{feature.title}</h3>
+                    <p className="text-muted-foreground text-sm leading-relaxed">{feature.body}</p>
+                  </div>
+                </MotionElement>
+              ))}
+            </div>
+          </div>
         </div>
+      </section>
+
+      {/* Process — horizontal timeline */}
+      <section className="py-24 md:py-32 relative border-t border-border/70">
+        <div className="container mx-auto px-6">
+          <div className={`grid md:grid-cols-12 gap-10 md:gap-16 mb-20 ${isRTL ? "md:[direction:rtl]" : ""}`}>
+            <div className="md:col-span-5">
+              <MotionElement animation="slideUp">
+                <p className="text-[10px] uppercase tracking-[0.22em] text-muted-foreground mb-4">{t("index.process.label")}</p>
+                <h2 className="!text-4xl md:!text-5xl !leading-[1.05] mb-6 max-w-[16ch]">
+                  {t("index.process.title")}
+                </h2>
+              </MotionElement>
+            </div>
+            <div className="md:col-span-6 md:col-start-7 md:pt-6">
+              <MotionElement animation="slideUp" delay={120}>
+                <p className="text-muted-foreground text-lg">{t("index.process.subtitle")}</p>
+              </MotionElement>
+            </div>
+          </div>
+
+          <div className={`grid md:grid-cols-3 gap-px bg-border ${isRTL ? "md:[direction:rtl]" : ""}`}>
+            {steps.map((item, i) => (
+              <MotionElement key={i} animation="slideUp" delay={100 + i * 100}>
+                <div className={`bg-background p-8 md:p-10 h-full ${isRTL ? "text-right" : ""}`}>
+                  <div className="flex items-baseline justify-between mb-10">
+                    <span className="text-xs font-mono text-muted-foreground tracking-widest">{item.step}</span>
+                    <span className="text-xs uppercase tracking-widest text-muted-foreground">{i === 0 ? "Week 1" : i === 1 ? "Week 2" : "Week 3–4"}</span>
+                  </div>
+                  <h3 className="!text-xl md:!text-2xl !leading-tight mb-4">{item.title}</h3>
+                  <p className="text-muted-foreground text-sm leading-relaxed max-w-[36ch]">{item.desc}</p>
+                </div>
+              </MotionElement>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA — editorial split, no rounded gold block */}
+      <section className="py-28 md:py-40 relative border-t border-border/70">
+        <div className="container mx-auto px-6">
+          <div className={`grid md:grid-cols-12 gap-10 md:gap-16 items-end ${isRTL ? "md:[direction:rtl] text-right" : ""}`}>
+            <MotionElement animation="slideUp" className="md:col-span-8">
+              <p className="text-[10px] uppercase tracking-[0.22em] text-muted-foreground mb-6">Next step</p>
+              <h2 className="!text-4xl md:!text-6xl lg:!text-7xl !leading-[1.02] max-w-[18ch]">
+                {t("index.cta.title").split(" systems").map((part, idx, arr) =>
+                  idx === 0 ? (
+                    <span key={idx}>{part}{arr.length > 1 && (<span className="font-serif-accent italic font-light text-primary"> systems</span>)}</span>
+                  ) : (
+                    <span key={idx}>{part}</span>
+                  )
+                )}
+              </h2>
+            </MotionElement>
+            <MotionElement animation="slideUp" delay={120} className="md:col-span-4 md:pb-2">
+              <p className="text-muted-foreground mb-8 max-w-md">{t("index.cta.subtitle")}</p>
+              <a href="https://cal.com/tarek-jundi/free-consultation" target="_blank" rel="noopener noreferrer" className="inline-block">
+                <Button className="bg-primary text-primary-foreground hover:bg-primary/90 text-sm px-7 py-6 rounded-lg font-medium gap-2 group">
+                  {t("index.cta.button")}
+                  <ArrowRight size={14} className={`transition-transform duration-300 group-hover:translate-x-0.5 ${isRTL ? "rotate-180 group-hover:-translate-x-0.5" : ""}`} />
+                </Button>
+              </a>
+            </MotionElement>
+          </div>
+        </div>
+
       </section>
 
       <Footer />
