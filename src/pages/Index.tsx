@@ -78,8 +78,8 @@ const Index = () => {
             <div className="lg:col-span-6">
               <MotionElement animation="slideUp" delay={200}>
                 <div className="relative">
-                  <div className="absolute -inset-4 bg-gradient-to-tr from-primary/10 via-transparent to-transparent blur-2xl rounded-3xl pointer-events-none" />
-                  <div className="relative rounded-2xl border border-border bg-card/80 shadow-[0_30px_80px_-20px_rgba(0,0,0,0.6)] overflow-hidden">
+                  <div className="relative rounded-xl border border-border bg-card/80 shadow-[0_30px_80px_-30px_rgba(0,0,0,0.7)] overflow-hidden">
+
                     {/* window chrome */}
                     <div className="flex items-center justify-between px-4 py-3 border-b border-border bg-secondary/40">
                       <div className="flex items-center gap-1.5">
