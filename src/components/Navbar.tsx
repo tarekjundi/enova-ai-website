@@ -25,7 +25,9 @@ const Navbar = () => {
     { to: "/solutions", label: t("nav.solutions") },
     { to: "/about", label: t("nav.about") },
     { to: "/contact", label: t("nav.contact") },
+    { to: "/#faq", label: t("nav.faq") },
   ];
+
 
   const isActive = (path: string) => location.pathname === path;
 
@@ -56,10 +58,12 @@ const Navbar = () => {
         <Link
           to="/"
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-          className="text-3xl font-bold text-primary font-founders tracking-tight transition-opacity duration-300 hover:opacity-80"
+          className="flex items-baseline gap-2 transition-opacity duration-300 hover:opacity-80"
         >
-          ENOVA
+          <span className="text-2xl font-bold text-foreground font-founders tracking-tight">ENOVA</span>
+          <span className="hidden sm:inline text-[10px] uppercase tracking-[0.18em] text-muted-foreground font-medium">Operational AI Systems</span>
         </Link>
+
 
         {/* Desktop */}
         <div className="hidden md:flex items-center gap-1">

@@ -1,17 +1,21 @@
 export const ar: Record<string, string> = {
   // Navbar
-  "nav.solutions": "الحلول",
-  "nav.about": "من نحن",
-  "nav.contact": "تواصل معنا",
-  "nav.lets_talk": "لنتحدث",
+  "nav.solutions": "الخدمات",
+  "nav.about": "دراسات الحالة",
+  "nav.contact": "آلية العمل",
+  "nav.faq": "الأسئلة الشائعة",
+  "nav.lets_talk": "احجز مكالمة",
 
   // Index - Hero
-  "index.hero.title1": "نحوّل إمكانات الذكاء الاصطناعي",
-  "index.hero.title2": "إلى",
-  "index.hero.title_highlight": "أداء أعمال متميّز",
-  
-  "index.hero.cta": "ابدأ الأتمتة",
-  "index.hero.cta2": "اكتشف كيف يعمل",
+  "index.hero.eyebrow": "إنوفا — أنظمة ذكاء اصطناعي تشغيلية",
+  "index.hero.title1": "أنظمة ذكاء اصطناعي تتولّى",
+  "index.hero.title2": "العمل الذي يكرهه",
+  "index.hero.title_highlight": "فريقك.",
+  "index.hero.subtitle": "نبني موظفين بالذكاء الاصطناعي للمبيعات وخدمة العملاء والعمليات وتوليد العملاء المحتملين — مدمجين داخل أدواتك، لا فوقها.",
+
+  "index.hero.cta": "احجز مكالمة استراتيجية",
+  "index.hero.cta2": "شاهد عرضًا مباشرًا",
+
 
   // Index - Stats
   "index.stats.manual": "تقليل في المهام اليدوية",
