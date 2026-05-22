@@ -173,10 +173,28 @@ const Index = () => {
                         ))}
                       </div>
 
+                      {/* activity feed */}
+                      <div className="mt-4">
+                        <div className="text-[9px] uppercase tracking-[0.18em] text-muted-foreground/60 mb-2 font-mono">Activity · last 60s</div>
+                        <ul className="text-[10px] font-mono space-y-1 text-muted-foreground/85">
+                          {[
+                            { t: "14:02:17", m: "lead.qualify.inbound · scored 9.2 · routed → AE Sara K." },
+                            { t: "14:02:09", m: "support.triage.tier1 · resolved ticket #48217 (refund)" },
+                            { t: "14:01:58", m: "invoice.followup.AR · sent reminder · Acme Co. · $12,400" },
+                            { t: "14:01:42", m: "meeting.book.outbound · 3 meetings confirmed for Thu" },
+                          ].map((a) => (
+                            <li key={a.t} className="flex gap-3">
+                              <span className="text-muted-foreground/50 shrink-0">{a.t}</span>
+                              <span className="truncate">{a.m}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+
                       {/* footer */}
                       <div className="mt-4 pt-3 border-t border-border flex items-center justify-between text-[10px] font-mono text-muted-foreground/70">
-                        <span>5 of 12 shown</span>
-                        <span>region us-east-1 · build 2026.05.18</span>
+                        <span>5 of 12 workflows shown</span>
+                        <span>us-east-1 · build 2026.05.18</span>
                       </div>
                     </div>
                   </div>
