@@ -212,11 +212,10 @@
   }
 
   .hover-lift {
-    @apply transition-all duration-500 ease-out;
+    @apply transition-colors duration-300 ease-out;
   }
   .hover-lift:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 20px 40px -15px hsla(36, 55%, 69%, 0.15);
+    border-color: hsla(36, 55%, 69%, 0.25);
   }
 
   .animate-fade-in {
