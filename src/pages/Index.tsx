@@ -294,16 +294,16 @@ const Index = () => {
             </div>
           </div>
 
-          <div className={`grid md:grid-cols-3 gap-px bg-border ${isRTL ? "md:[direction:rtl]" : ""}`}>
+          <div className={`grid md:grid-cols-3 md:gap-x-12 md:gap-y-0 md:items-start ${isRTL ? "md:[direction:rtl]" : ""}`}>
             {steps.map((item, i) => (
-              <MotionElement key={i} animation="slideUp" delay={100 + i * 100}>
-                <div className={`bg-background p-8 md:p-10 h-full ${isRTL ? "text-right" : ""}`}>
-                  <div className="flex items-baseline justify-between mb-10">
+              <MotionElement key={i} animation="slideUp" delay={100 + i * 100} className={i === 1 ? "md:mt-16" : i === 2 ? "md:mt-8" : ""}>
+                <div className={`border-t border-border pt-8 ${isRTL ? "text-right" : ""}`}>
+                  <div className="flex items-baseline justify-between mb-12">
                     <span className="text-xs font-mono text-muted-foreground tracking-widest">{item.step}</span>
-                    <span className="text-xs uppercase tracking-widest text-muted-foreground">{i === 0 ? "Week 1" : i === 1 ? "Week 2" : "Week 3–4"}</span>
+                    <span className="text-[10px] uppercase tracking-[0.18em] text-muted-foreground/70">{i === 0 ? "Week 1" : i === 1 ? "Week 2" : "Week 3–4"}</span>
                   </div>
-                  <h3 className="!text-xl md:!text-2xl !leading-tight mb-4">{item.title}</h3>
-                  <p className="text-muted-foreground text-sm leading-relaxed max-w-[36ch]">{item.desc}</p>
+                  <h3 className="!text-2xl md:!text-3xl !leading-[1.1] tracking-tight mb-5">{item.title}</h3>
+                  <p className="text-muted-foreground text-[15px] leading-[1.65] max-w-[34ch]">{item.desc}</p>
                 </div>
               </MotionElement>
             ))}
