@@ -60,13 +60,13 @@ const Index = () => {
               <MotionElement animation="slideUp" delay={260}>
                 <div className={`flex flex-col sm:flex-row gap-3 ${isRTL ? "sm:flex-row-reverse justify-end" : ""}`}>
                   <a href="https://cal.com/tarek-jundi/free-consultation" target="_blank" rel="noopener noreferrer">
-                    <Button className="bg-primary text-primary-foreground hover:bg-primary/90 text-sm px-6 py-5 rounded-lg font-medium gap-2 group">
+                    <Button className="bg-primary text-primary-foreground hover:bg-primary/90 text-sm px-6 py-5 rounded-sm font-medium gap-2 group">
                       {t("index.hero.cta")}
                       <ArrowRight size={14} className={`transition-transform duration-300 group-hover:translate-x-0.5 ${isRTL ? "rotate-180 group-hover:-translate-x-0.5" : ""}`} />
                     </Button>
                   </a>
                   <a href="#features">
-                    <Button variant="outline" className="border-border bg-secondary/30 text-foreground hover:bg-secondary/60 hover:border-border text-sm px-6 py-5 rounded-lg font-medium">
+                    <Button variant="outline" className="border-border bg-transparent text-foreground hover:bg-secondary/40 hover:border-border text-sm px-6 py-5 rounded-sm font-medium">
                       {t("index.hero.cta2")}
                     </Button>
                   </a>
