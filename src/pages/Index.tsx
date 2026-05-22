@@ -228,7 +228,7 @@ const Index = () => {
             </div>
             <div className="md:col-span-8">
               <MotionElement animation="slideUp" delay={80}>
-                <h2 className="!text-4xl md:!text-6xl !leading-[1.04] mb-8 max-w-[20ch]">
+                <h2 className="!text-5xl md:!text-7xl !leading-[0.98] tracking-[-0.04em] mb-10 max-w-[16ch]">
                   {t("index.features.title")}
                 </h2>
               </MotionElement>
