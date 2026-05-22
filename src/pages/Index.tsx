@@ -60,13 +60,13 @@ const Index = () => {
               <MotionElement animation="slideUp" delay={260}>
                 <div className={`flex flex-col sm:flex-row gap-3 ${isRTL ? "sm:flex-row-reverse justify-end" : ""}`}>
                   <a href="https://cal.com/tarek-jundi/free-consultation" target="_blank" rel="noopener noreferrer">
-                    <Button className="bg-primary text-primary-foreground hover:bg-primary/90 text-sm px-6 py-5 rounded-lg font-medium gap-2 group">
+                    <Button className="bg-primary text-primary-foreground hover:bg-primary/90 text-sm px-6 py-5 rounded-sm font-medium gap-2 group">
                       {t("index.hero.cta")}
                       <ArrowRight size={14} className={`transition-transform duration-300 group-hover:translate-x-0.5 ${isRTL ? "rotate-180 group-hover:-translate-x-0.5" : ""}`} />
                     </Button>
                   </a>
                   <a href="#features">
-                    <Button variant="outline" className="border-border bg-secondary/30 text-foreground hover:bg-secondary/60 hover:border-border text-sm px-6 py-5 rounded-lg font-medium">
+                    <Button variant="outline" className="border-border bg-transparent text-foreground hover:bg-secondary/40 hover:border-border text-sm px-6 py-5 rounded-sm font-medium">
                       {t("index.hero.cta2")}
                     </Button>
                   </a>
@@ -173,10 +173,28 @@ const Index = () => {
                         ))}
                       </div>
 
+                      {/* activity feed */}
+                      <div className="mt-4">
+                        <div className="text-[9px] uppercase tracking-[0.18em] text-muted-foreground/60 mb-2 font-mono">Activity · last 60s</div>
+                        <ul className="text-[10px] font-mono space-y-1 text-muted-foreground/85">
+                          {[
+                            { t: "14:02:17", m: "lead.qualify.inbound · scored 9.2 · routed → AE Sara K." },
+                            { t: "14:02:09", m: "support.triage.tier1 · resolved ticket #48217 (refund)" },
+                            { t: "14:01:58", m: "invoice.followup.AR · sent reminder · Acme Co. · $12,400" },
+                            { t: "14:01:42", m: "meeting.book.outbound · 3 meetings confirmed for Thu" },
+                          ].map((a) => (
+                            <li key={a.t} className="flex gap-3">
+                              <span className="text-muted-foreground/50 shrink-0">{a.t}</span>
+                              <span className="truncate">{a.m}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+
                       {/* footer */}
                       <div className="mt-4 pt-3 border-t border-border flex items-center justify-between text-[10px] font-mono text-muted-foreground/70">
-                        <span>5 of 12 shown</span>
-                        <span>region us-east-1 · build 2026.05.18</span>
+                        <span>5 of 12 workflows shown</span>
+                        <span>us-east-1 · build 2026.05.18</span>
                       </div>
                     </div>
                   </div>
@@ -294,16 +312,16 @@ const Index = () => {
             </div>
           </div>
 
-          <div className={`grid md:grid-cols-3 gap-px bg-border ${isRTL ? "md:[direction:rtl]" : ""}`}>
+          <div className={`grid md:grid-cols-3 md:gap-x-12 md:gap-y-0 md:items-start ${isRTL ? "md:[direction:rtl]" : ""}`}>
             {steps.map((item, i) => (
-              <MotionElement key={i} animation="slideUp" delay={100 + i * 100}>
-                <div className={`bg-background p-8 md:p-10 h-full ${isRTL ? "text-right" : ""}`}>
-                  <div className="flex items-baseline justify-between mb-10">
+              <MotionElement key={i} animation="slideUp" delay={100 + i * 100} className={i === 1 ? "md:mt-16" : i === 2 ? "md:mt-8" : ""}>
+                <div className={`border-t border-border pt-8 ${isRTL ? "text-right" : ""}`}>
+                  <div className="flex items-baseline justify-between mb-12">
                     <span className="text-xs font-mono text-muted-foreground tracking-widest">{item.step}</span>
-                    <span className="text-xs uppercase tracking-widest text-muted-foreground">{i === 0 ? "Week 1" : i === 1 ? "Week 2" : "Week 3–4"}</span>
+                    <span className="text-[10px] uppercase tracking-[0.18em] text-muted-foreground/70">{i === 0 ? "Week 1" : i === 1 ? "Week 2" : "Week 3–4"}</span>
                   </div>
-                  <h3 className="!text-xl md:!text-2xl !leading-tight mb-4">{item.title}</h3>
-                  <p className="text-muted-foreground text-sm leading-relaxed max-w-[36ch]">{item.desc}</p>
+                  <h3 className="!text-2xl md:!text-3xl !leading-[1.1] tracking-tight mb-5">{item.title}</h3>
+                  <p className="text-muted-foreground text-[15px] leading-[1.65] max-w-[34ch]">{item.desc}</p>
                 </div>
               </MotionElement>
             ))}
@@ -330,7 +348,7 @@ const Index = () => {
             <MotionElement animation="slideUp" delay={120} className="md:col-span-4 md:pb-2">
               <p className="text-muted-foreground mb-8 max-w-md">{t("index.cta.subtitle")}</p>
               <a href="https://cal.com/tarek-jundi/free-consultation" target="_blank" rel="noopener noreferrer" className="inline-block">
-                <Button className="bg-primary text-primary-foreground hover:bg-primary/90 text-sm px-7 py-6 rounded-lg font-medium gap-2 group">
+                <Button className="bg-primary text-primary-foreground hover:bg-primary/90 text-sm px-7 py-6 rounded-sm font-medium gap-2 group">
                   {t("index.cta.button")}
                   <ArrowRight size={14} className={`transition-transform duration-300 group-hover:translate-x-0.5 ${isRTL ? "rotate-180 group-hover:-translate-x-0.5" : ""}`} />
                 </Button>
