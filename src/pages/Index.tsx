@@ -282,7 +282,7 @@ const Index = () => {
             <div className="md:col-span-5">
               <MotionElement animation="slideUp">
                 <p className="text-[10px] uppercase tracking-[0.22em] text-muted-foreground mb-4">{t("index.process.label")}</p>
-                <h2 className="!text-4xl md:!text-5xl !leading-[1.05] mb-6 max-w-[16ch]">
+                <h2 className="!text-5xl md:!text-6xl !leading-[1.0] tracking-[-0.035em] mb-6 max-w-[14ch]">
                   {t("index.process.title")}
                 </h2>
               </MotionElement>
