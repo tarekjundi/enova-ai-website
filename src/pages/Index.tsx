@@ -330,7 +330,7 @@ const Index = () => {
             <MotionElement animation="slideUp" delay={120} className="md:col-span-4 md:pb-2">
               <p className="text-muted-foreground mb-8 max-w-md">{t("index.cta.subtitle")}</p>
               <a href="https://cal.com/tarek-jundi/free-consultation" target="_blank" rel="noopener noreferrer" className="inline-block">
-                <Button className="bg-primary text-primary-foreground hover:bg-primary/90 text-sm px-7 py-6 rounded-lg font-medium gap-2 group">
+                <Button className="bg-primary text-primary-foreground hover:bg-primary/90 text-sm px-7 py-6 rounded-sm font-medium gap-2 group">
                   {t("index.cta.button")}
                   <ArrowRight size={14} className={`transition-transform duration-300 group-hover:translate-x-0.5 ${isRTL ? "rotate-180 group-hover:-translate-x-0.5" : ""}`} />
                 </Button>
