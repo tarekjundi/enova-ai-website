@@ -192,14 +192,14 @@ const Index = () => {
       <section className="relative border-y border-border/70">
         <div className="container mx-auto px-6 py-16 md:py-20">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-6 items-end">
-            <MotionElement animation="slideUp" delay={50} className="md:col-span-5">
-              <p className="text-[10px] uppercase tracking-[0.22em] text-muted-foreground mb-4">By the numbers</p>
-              <h2 className="!text-3xl md:!text-4xl !leading-[1.1] max-w-md">
+            <MotionElement animation="slideUp" delay={50} className="md:col-span-6">
+              <p className="text-[10px] uppercase tracking-[0.22em] text-muted-foreground mb-5">By the numbers</p>
+              <h2 className="!text-4xl md:!text-5xl lg:!text-6xl !leading-[1.02] tracking-[-0.035em] max-w-[14ch]">
                 Operational impact, measured the way your CFO measures it.
               </h2>
             </MotionElement>
 
-            <MotionElement animation="slideUp" delay={150} className="md:col-span-3 md:border-l md:border-border md:pl-6">
+            <MotionElement animation="slideUp" delay={150} className="md:col-span-2 md:border-l md:border-border md:pl-6">
               <AnimatedCounter end={85} suffix="%" />
               <p className="text-muted-foreground text-sm mt-2 max-w-[18ch]">{t("index.stats.manual")}</p>
             </MotionElement>
