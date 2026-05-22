@@ -185,11 +185,11 @@
 
   .grid-bg {
     background-image:
-      linear-gradient(hsla(36, 55%, 69%, 0.04) 1px, transparent 1px),
-      linear-gradient(90deg, hsla(36, 55%, 69%, 0.04) 1px, transparent 1px);
-    background-size: 56px 56px;
-    mask-image: radial-gradient(ellipse 80% 60% at 50% 30%, black 30%, transparent 75%);
-    -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 30%, black 30%, transparent 75%);
+      linear-gradient(hsla(36, 18%, 94%, 0.025) 1px, transparent 1px),
+      linear-gradient(90deg, hsla(36, 18%, 94%, 0.025) 1px, transparent 1px);
+    background-size: 64px 64px;
+    mask-image: linear-gradient(180deg, black 0%, black 40%, transparent 90%);
+    -webkit-mask-image: linear-gradient(180deg, black 0%, black 40%, transparent 90%);
   }
 
 
@@ -212,11 +212,10 @@
   }
 
   .hover-lift {
-    @apply transition-all duration-500 ease-out;
+    @apply transition-colors duration-300 ease-out;
   }
   .hover-lift:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 20px 40px -15px hsla(36, 55%, 69%, 0.15);
+    border-color: hsla(36, 55%, 69%, 0.25);
   }
 
   .animate-fade-in {

@@ -43,7 +43,7 @@ const Index = () => {
                 </div>
               </MotionElement>
               <MotionElement animation="slideUp" delay={100}>
-                <h1 className="mb-8 text-foreground !text-4xl md:!text-6xl lg:!text-[64px] !leading-[1.02]">
+                <h1 className="mb-8 text-foreground !text-5xl md:!text-7xl lg:!text-[80px] !leading-[0.98] tracking-[-0.045em]">
                   {t("index.hero.title1")}
                   <br />
                   {t("index.hero.title2")}{" "}
@@ -77,68 +77,106 @@ const Index = () => {
             {/* RIGHT — Dashboard mockup */}
             <div className="lg:col-span-6">
               <MotionElement animation="slideUp" delay={200}>
-                <div className="relative">
-                  <div className="relative rounded-xl border border-border bg-card/80 shadow-[0_30px_80px_-30px_rgba(0,0,0,0.7)] overflow-hidden">
+                <div className="relative rounded-md border border-border bg-card overflow-hidden">
 
-                    {/* window chrome */}
-                    <div className="flex items-center justify-between px-4 py-3 border-b border-border bg-secondary/40">
-                      <div className="flex items-center gap-1.5">
-                        <span className="w-2.5 h-2.5 rounded-full bg-muted-foreground/30" />
-                        <span className="w-2.5 h-2.5 rounded-full bg-muted-foreground/30" />
-                        <span className="w-2.5 h-2.5 rounded-full bg-muted-foreground/30" />
+                  {/* window chrome */}
+                  <div className="flex items-center justify-between px-4 py-2.5 border-b border-border bg-secondary/30">
+                    <div className="flex items-center gap-3">
+                      <div className="flex items-center gap-1">
+                        <span className="w-2 h-2 rounded-full bg-muted-foreground/25" />
+                        <span className="w-2 h-2 rounded-full bg-muted-foreground/25" />
+                        <span className="w-2 h-2 rounded-full bg-muted-foreground/25" />
                       </div>
-                      <div className="text-[10px] uppercase tracking-[0.16em] text-muted-foreground">enova / workflows</div>
-                      <div className="text-[10px] text-muted-foreground">live</div>
+                      <span className="text-[10px] font-mono text-muted-foreground/70">enova.ops / workflows</span>
+                    </div>
+                    <div className="flex items-center gap-2 text-[10px] font-mono text-muted-foreground">
+                      <span className="w-1.5 h-1.5 rounded-full bg-emerald-400/80" />
+                      <span>synced 12s ago</span>
+                    </div>
+                  </div>
+
+                  <div className="flex" style={{ direction: "ltr" }}>
+                    {/* sidebar */}
+                    <div className="w-36 border-r border-border bg-background/40 py-4 px-3 hidden sm:block">
+                      <p className="text-[9px] uppercase tracking-[0.18em] text-muted-foreground/60 mb-3 px-2">Operations</p>
+                      <ul className="space-y-0.5 text-[11px]">
+                        {[
+                          { label: "Workflows", active: true, count: "12" },
+                          { label: "Agents", count: "7" },
+                          { label: "Integrations", count: "23" },
+                          { label: "Audit log", count: "" },
+                          { label: "Cost & usage", count: "" },
+                        ].map((it) => (
+                          <li key={it.label} className={`flex items-center justify-between px-2 py-1.5 rounded ${it.active ? "bg-secondary/70 text-foreground" : "text-muted-foreground/80"}`}>
+                            <span>{it.label}</span>
+                            {it.count && <span className="text-[9px] font-mono text-muted-foreground/60">{it.count}</span>}
+                          </li>
+                        ))}
+                      </ul>
                     </div>
 
-                    <div className="p-5" style={{ direction: "ltr" }}>
-                      {/* header row */}
-                      <div className="flex items-center justify-between mb-5">
-                        <div>
-                          <div className="text-xs text-muted-foreground mb-1">Active automations</div>
-                          <div className="text-2xl font-semibold font-founders tracking-tight">12 running</div>
-                        </div>
-                        <div className="text-right">
-                          <div className="text-xs text-muted-foreground mb-1">This week</div>
-                          <div className="text-2xl font-semibold font-founders tracking-tight text-primary">+47.2h saved</div>
-                        </div>
+                    {/* main */}
+                    <div className="flex-1 p-4 min-w-0">
+                      {/* breadcrumb */}
+                      <div className="flex items-center gap-1.5 text-[10px] font-mono text-muted-foreground/70 mb-4">
+                        <span>operations</span>
+                        <span>/</span>
+                        <span>workflows</span>
+                        <span>/</span>
+                        <span className="text-foreground/80">active</span>
                       </div>
 
-                      {/* sparkline */}
-                      <div className="h-16 mb-5 rounded-lg border border-border bg-background/60 p-3">
-                        <svg viewBox="0 0 300 40" className="w-full h-full" preserveAspectRatio="none">
-                          <defs>
-                            <linearGradient id="spark" x1="0" x2="0" y1="0" y2="1">
-                              <stop offset="0%" stopColor="hsl(36 55% 69%)" stopOpacity="0.3" />
-                              <stop offset="100%" stopColor="hsl(36 55% 69%)" stopOpacity="0" />
-                            </linearGradient>
-                          </defs>
-                          <path d="M0,30 L25,28 L50,24 L75,26 L100,18 L125,22 L150,14 L175,16 L200,10 L225,12 L250,6 L275,8 L300,4 L300,40 L0,40 Z" fill="url(#spark)" />
-                          <path d="M0,30 L25,28 L50,24 L75,26 L100,18 L125,22 L150,14 L175,16 L200,10 L225,12 L250,6 L275,8 L300,4" fill="none" stroke="hsl(36 55% 69%)" strokeWidth="1.5" />
-                        </svg>
-                      </div>
-
-                      {/* workflow rows */}
-                      <div className="space-y-2">
+                      {/* KPI strip */}
+                      <div className="grid grid-cols-3 gap-px bg-border mb-4 border border-border">
                         {[
-                          { name: "Lead qualification — HubSpot", status: "running", meta: "342 today", dot: "bg-emerald-400" },
-                          { name: "Support triage — Intercom", status: "running", meta: "1.2k today", dot: "bg-emerald-400" },
-                          { name: "Meeting booking — Cal.com", status: "running", meta: "58 today", dot: "bg-emerald-400" },
-                          { name: "Invoice follow-up — Stripe", status: "queued", meta: "12 pending", dot: "bg-primary" },
-                        ].map((row, i) => (
-                          <div key={i} className="flex items-center justify-between px-3 py-2.5 rounded-lg bg-secondary/40 border border-border/60">
-                            <div className="flex items-center gap-3 min-w-0">
-                              <span className={`w-1.5 h-1.5 rounded-full ${row.dot} shrink-0`} />
-                              <span className="text-sm text-foreground/90 truncate">{row.name}</span>
+                          { l: "Runs / 24h", v: "8,412", d: "+12.4%" },
+                          { l: "Success rate", v: "99.42%", d: "+0.08%" },
+                          { l: "p95 latency", v: "1.84s", d: "−210ms" },
+                        ].map((k) => (
+                          <div key={k.l} className="bg-card px-3 py-2.5">
+                            <div className="text-[9px] uppercase tracking-wider text-muted-foreground/70 mb-1">{k.l}</div>
+                            <div className="flex items-baseline gap-1.5">
+                              <span className="text-sm font-semibold font-founders tracking-tight">{k.v}</span>
+                              <span className="text-[9px] text-emerald-400/80 font-mono">{k.d}</span>
                             </div>
-                            <span className="text-xs text-muted-foreground shrink-0 ml-3">{row.meta}</span>
                           </div>
                         ))}
                       </div>
 
-                      <div className="mt-5 pt-4 border-t border-border flex items-center justify-between text-xs text-muted-foreground">
-                        <span>Avg. response · <span className="text-foreground">45s</span></span>
-                        <span>Uptime · <span className="text-foreground">99.98%</span></span>
+                      {/* workflow table */}
+                      <div className="border border-border rounded-sm overflow-hidden">
+                        <div className="grid grid-cols-[1.6fr_0.7fr_0.7fr_0.6fr] gap-2 px-3 py-2 bg-secondary/30 border-b border-border text-[9px] uppercase tracking-wider text-muted-foreground/70 font-mono">
+                          <span>Workflow</span>
+                          <span className="text-right">Runs / hr</span>
+                          <span className="text-right">Success</span>
+                          <span className="text-right">Status</span>
+                        </div>
+                        {[
+                          { name: "lead.qualify.inbound", stack: "HubSpot · OpenAI", runs: "342", ok: "99.7%", s: "live", dot: "bg-emerald-400" },
+                          { name: "support.triage.tier1", stack: "Intercom · Zendesk", runs: "1,284", ok: "98.9%", s: "live", dot: "bg-emerald-400" },
+                          { name: "meeting.book.outbound", stack: "Cal.com · Slack", runs: "58", ok: "100%", s: "live", dot: "bg-emerald-400" },
+                          { name: "invoice.followup.AR", stack: "Stripe · Gmail", runs: "12", ok: "—", s: "queued", dot: "bg-primary/70" },
+                          { name: "contract.review.legal", stack: "Notion · Anthropic", runs: "9", ok: "97.2%", s: "live", dot: "bg-emerald-400" },
+                        ].map((r) => (
+                          <div key={r.name} className="grid grid-cols-[1.6fr_0.7fr_0.7fr_0.6fr] gap-2 px-3 py-2 border-b border-border/60 last:border-b-0 items-center">
+                            <div className="min-w-0">
+                              <div className="text-[11px] font-mono text-foreground/90 truncate">{r.name}</div>
+                              <div className="text-[9px] text-muted-foreground/60 truncate">{r.stack}</div>
+                            </div>
+                            <span className="text-[11px] font-mono text-right text-foreground/80">{r.runs}</span>
+                            <span className="text-[11px] font-mono text-right text-muted-foreground">{r.ok}</span>
+                            <span className="flex items-center justify-end gap-1.5 text-[10px] text-muted-foreground font-mono">
+                              <span className={`w-1.5 h-1.5 rounded-full ${r.dot}`} />
+                              {r.s}
+                            </span>
+                          </div>
+                        ))}
+                      </div>
+
+                      {/* footer */}
+                      <div className="mt-4 pt-3 border-t border-border flex items-center justify-between text-[10px] font-mono text-muted-foreground/70">
+                        <span>5 of 12 shown</span>
+                        <span>region us-east-1 · build 2026.05.18</span>
                       </div>
                     </div>
                   </div>
@@ -154,14 +192,14 @@ const Index = () => {
       <section className="relative border-y border-border/70">
         <div className="container mx-auto px-6 py-16 md:py-20">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-6 items-end">
-            <MotionElement animation="slideUp" delay={50} className="md:col-span-5">
-              <p className="text-[10px] uppercase tracking-[0.22em] text-muted-foreground mb-4">By the numbers</p>
-              <h2 className="!text-3xl md:!text-4xl !leading-[1.1] max-w-md">
+            <MotionElement animation="slideUp" delay={50} className="md:col-span-6">
+              <p className="text-[10px] uppercase tracking-[0.22em] text-muted-foreground mb-5">By the numbers</p>
+              <h2 className="!text-4xl md:!text-5xl lg:!text-6xl !leading-[1.02] tracking-[-0.035em] max-w-[14ch]">
                 Operational impact, measured the way your CFO measures it.
               </h2>
             </MotionElement>
 
-            <MotionElement animation="slideUp" delay={150} className="md:col-span-3 md:border-l md:border-border md:pl-6">
+            <MotionElement animation="slideUp" delay={150} className="md:col-span-2 md:border-l md:border-border md:pl-6">
               <AnimatedCounter end={85} suffix="%" />
               <p className="text-muted-foreground text-sm mt-2 max-w-[18ch]">{t("index.stats.manual")}</p>
             </MotionElement>
@@ -190,7 +228,7 @@ const Index = () => {
             </div>
             <div className="md:col-span-8">
               <MotionElement animation="slideUp" delay={80}>
-                <h2 className="!text-4xl md:!text-6xl !leading-[1.04] mb-8 max-w-[20ch]">
+                <h2 className="!text-5xl md:!text-7xl !leading-[0.98] tracking-[-0.04em] mb-10 max-w-[16ch]">
                   {t("index.features.title")}
                 </h2>
               </MotionElement>
@@ -244,7 +282,7 @@ const Index = () => {
             <div className="md:col-span-5">
               <MotionElement animation="slideUp">
                 <p className="text-[10px] uppercase tracking-[0.22em] text-muted-foreground mb-4">{t("index.process.label")}</p>
-                <h2 className="!text-4xl md:!text-5xl !leading-[1.05] mb-6 max-w-[16ch]">
+                <h2 className="!text-5xl md:!text-6xl !leading-[1.0] tracking-[-0.035em] mb-6 max-w-[14ch]">
                   {t("index.process.title")}
                 </h2>
               </MotionElement>
