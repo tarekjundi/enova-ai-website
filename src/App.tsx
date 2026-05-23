@@ -29,8 +29,11 @@ const App = () => (
             <PageTransition>
               <Routes>
                 <Route path="/" element={<Index />} />
+                <Route path="/services" element={<Services />} />
+                <Route path="/solutions" element={<Services />} />
+                <Route path="/case-studies" element={<CaseStudies />} />
+                <Route path="/process" element={<Process />} />
                 <Route path="/about" element={<AboutUs />} />
-                <Route path="/solutions" element={<Solutions />} />
                 <Route path="/contact" element={<Contact />} />
                 <Route path="/privacy" element={<Privacy />} />
                 {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
