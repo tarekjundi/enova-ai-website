@@ -329,6 +329,39 @@ const Index = () => {
         </div>
       </section>
 
+      {/* FAQ — editorial */}
+      <section id="faq" className="py-24 md:py-32 relative border-t border-border/70">
+        <div className="container mx-auto px-6">
+          <div className={`grid md:grid-cols-12 gap-10 md:gap-16 ${isRTL ? "md:[direction:rtl] text-right" : ""}`}>
+            <div className="md:col-span-4">
+              <MotionElement animation="slideUp">
+                <p className="text-[10px] uppercase tracking-[0.22em] text-muted-foreground mb-4">Common questions</p>
+                <h2 className="!text-4xl md:!text-5xl !leading-[1.02] tracking-[-0.035em] max-w-[14ch]">
+                  Things teams ask before we start.
+                </h2>
+              </MotionElement>
+            </div>
+            <div className="md:col-span-7 md:col-start-6">
+              <dl className="divide-y divide-border/70 border-y border-border/70">
+                {[
+                  { q: "How long until something is in production?", a: "Four weeks from kickoff for a first workflow. Multi-workflow engagements ship in phases — never as a single big-bang launch." },
+                  { q: "Do you replace our team?", a: "No. We replace repetitive work. Operators shift from execution to oversight, exception handling and higher-leverage work the agents can't do." },
+                  { q: "What happens to our data?", a: "Data stays in your stack. We work read/write against your existing systems with scoped credentials, and document every data path during design." },
+                  { q: "What if the agent gets it wrong?", a: "Every workflow ships with confidence scoring, escalation rules and human checkpoints on anything that touches a customer commitment or money. Autonomy is earned against the metrics in the spec." },
+                  { q: "Do we own what you build?", a: "Yes. Architecture, runbooks, prompts, integrations and credentials are handed over. No black boxes, no lock-in to us." },
+                  { q: "Which industries do you work with?", a: "B2B SaaS, financial services, e-commerce operations and professional services. The common thread is operational complexity, not a vertical." },
+                ].map((item, idx) => (
+                  <div key={idx} className="py-6 grid grid-cols-12 gap-4">
+                    <dt className="col-span-12 md:col-span-5 text-foreground font-medium tracking-tight">{item.q}</dt>
+                    <dd className="col-span-12 md:col-span-7 text-muted-foreground leading-relaxed text-[15px]">{item.a}</dd>
+                  </div>
+                ))}
+              </dl>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* CTA — editorial split, no rounded gold block */}
       <section className="py-28 md:py-40 relative border-t border-border/70">
         <div className="container mx-auto px-6">
