@@ -22,10 +22,11 @@ const Navbar = () => {
   }, [location]);
 
   const navLinks = [
-    { to: "/solutions", label: t("nav.solutions") },
+    { to: "/services", label: t("nav.services") },
+    { to: "/case-studies", label: t("nav.case_studies") },
+    { to: "/process", label: t("nav.process") },
     { to: "/about", label: t("nav.about") },
     { to: "/contact", label: t("nav.contact") },
-    { to: "/#faq", label: t("nav.faq") },
   ];
 
 

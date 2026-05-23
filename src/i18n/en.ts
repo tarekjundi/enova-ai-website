@@ -1,10 +1,13 @@
 export const en: Record<string, string> = {
   // Navbar
+  "nav.services": "Services",
+  "nav.case_studies": "Case Studies",
+  "nav.process": "Process",
+  "nav.about": "About",
+  "nav.contact": "Contact",
   "nav.solutions": "Services",
-  "nav.about": "Case Studies",
-  "nav.contact": "Process",
   "nav.faq": "FAQ",
-  "nav.lets_talk": "Book a Call",
+  "nav.lets_talk": "Book a Strategy Call",
 
   // Index - Hero
   "index.hero.eyebrow": "ENOVA — Operational AI Systems",
