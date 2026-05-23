@@ -1,10 +1,13 @@
 export const ar: Record<string, string> = {
   // Navbar
+  "nav.services": "الخدمات",
+  "nav.case_studies": "دراسات الحالة",
+  "nav.process": "آلية العمل",
+  "nav.about": "من نحن",
+  "nav.contact": "تواصل",
   "nav.solutions": "الخدمات",
-  "nav.about": "دراسات الحالة",
-  "nav.contact": "آلية العمل",
   "nav.faq": "الأسئلة الشائعة",
-  "nav.lets_talk": "احجز مكالمة",
+  "nav.lets_talk": "احجز مكالمة استراتيجية",
 
   // Index - Hero
   "index.hero.eyebrow": "إنوفا — أنظمة ذكاء اصطناعي تشغيلية",
