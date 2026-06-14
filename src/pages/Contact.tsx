@@ -4,19 +4,17 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ScrollToTop from "@/components/ScrollToTop";
 import { Button } from "@/components/ui/button";
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { toast } from "@/components/ui/use-toast";
-import { Plus, Minus, Envelope, Phone, ArrowRight, FacebookLogo, XLogo, InstagramLogo, LinkedinLogo } from "@phosphor-icons/react";
+import { ArrowRight } from "@phosphor-icons/react";
 import { MotionElement } from "@/components/MotionElements";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 const Contact = () => {
-  const { t, isRTL } = useLanguage();
+  const { isRTL } = useLanguage();
   const [formData, setFormData] = useState({
     name: "", email: "", company: "", phone: "", message: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [openAccordion, setOpenAccordion] = useState<string>("");
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -31,168 +29,147 @@ const Contact = () => {
         "https://script.google.com/macros/s/AKfycbwwwWkZloxZ6iKjVujFMUTxqh4h_uxVL4uRsm5LKow5TuX1nXsdWideN_mmDuo--UY/exec",
         { method: "POST", mode: "no-cors", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ ...formData, timestamp: new Date().toISOString() }) }
       );
-      toast({ title: t("contact.form.success_title"), description: t("contact.form.success_desc") });
+      toast({ title: "Thanks — we'll be in touch.", description: "We typically respond within one business day." });
       setFormData({ name: "", email: "", company: "", phone: "", message: "" });
     } catch {
-      toast({ title: t("contact.form.success_title"), description: t("contact.form.success_desc") });
+      toast({ title: "Thanks — we'll be in touch.", description: "We typically respond within one business day." });
       setFormData({ name: "", email: "", company: "", phone: "", message: "" });
     } finally {
       setIsSubmitting(false);
     }
   };
 
-  const inputClass =
-    `w-full px-4 py-3 bg-secondary/50 border border-border rounded-xl text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary/50 focus:ring-1 focus:ring-primary/20 transition-all duration-300 text-sm ${isRTL ? "text-right" : ""}`;
-
-  const faqs = [
-    { q: t("contact.faq1.q"), a: t("contact.faq1.a") },
-    { q: t("contact.faq2.q"), a: t("contact.faq2.a") },
-    { q: t("contact.faq3.q"), a: t("contact.faq3.a") },
-    { q: t("contact.faq4.q"), a: t("contact.faq4.a") },
-  ];
+  const fieldClass =
+    `w-full bg-transparent border-0 border-b border-border focus:border-primary/60 focus:outline-none px-0 py-3 text-foreground placeholder:text-muted-foreground/60 text-[15px] transition-colors ${isRTL ? "text-right" : ""}`;
+  const labelClass = `block text-[10px] uppercase tracking-[0.22em] text-muted-foreground mb-2 ${isRTL ? "text-right" : ""}`;
 
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden" id="top">
       <Navbar />
 
-      <section className="pt-32 pb-16">
-        <div className="container mx-auto px-6">
-          <div className="max-w-3xl mx-auto text-center">
-            <MotionElement animation="slideUp" delay={100}>
-              <p className="text-xs font-semibold uppercase tracking-widest text-primary/60 mb-4">{t("contact.label")}</p>
-              <h1 className="mb-6">
-                {t("contact.title1")} <span className="text-gradient">{t("contact.title_highlight")}</span>
-              </h1>
-            </MotionElement>
-            <MotionElement animation="slideUp" delay={300}>
-              <p className="text-lg text-muted-foreground">{t("contact.subtitle")}</p>
-            </MotionElement>
-          </div>
-        </div>
-      </section>
-
-      <section className="py-16">
-        <div className="container mx-auto px-6">
-          <div className={`grid grid-cols-1 lg:grid-cols-5 gap-12 max-w-6xl mx-auto ${isRTL ? "direction-rtl" : ""}`}>
-            <div className={`lg:col-span-2 ${isRTL ? "text-right" : ""}`}>
+      {/* Hero */}
+      <section className="pt-36 pb-20 md:pt-44 md:pb-24">
+        <div className="container mx-auto">
+          <div className={`grid md:grid-cols-12 gap-10 md:gap-16 ${isRTL ? "md:[direction:rtl] text-right" : ""}`}>
+            <div className="md:col-span-4">
+              <MotionElement animation="slideUp">
+                <p className="text-[10px] uppercase tracking-[0.22em] text-muted-foreground mb-4">Contact</p>
+              </MotionElement>
+            </div>
+            <div className="md:col-span-8">
               <MotionElement animation="slideUp" delay={100}>
-                <h2 className="text-2xl font-semibold mb-6">{t("contact.info.title")}</h2>
-                <p className="text-muted-foreground text-sm mb-10 leading-relaxed">{t("contact.info.subtitle")}</p>
-
-                <div className="space-y-6">
-                  <div className={`flex items-start gap-4 ${isRTL ? "flex-row-reverse" : ""}`}>
-                    <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center text-primary flex-shrink-0">
-                      <Phone size={16} />
-                    </div>
-                    <div>
-                      <p className="text-sm font-medium mb-0.5">{t("contact.info.phone")}</p>
-                      <p className="text-muted-foreground text-sm" dir="ltr">+90 540 350 2010</p>
-                    </div>
-                  </div>
-                  <div className={`flex items-start gap-4 ${isRTL ? "flex-row-reverse" : ""}`}>
-                    <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center text-primary flex-shrink-0">
-                      <Envelope size={16} />
-                    </div>
-                    <div>
-                      <p className="text-sm font-medium mb-0.5">{t("contact.info.email")}</p>
-                      <p className="text-muted-foreground text-sm" dir="ltr">tarek@enovaagency.com</p>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="mt-12">
-                  <p className="text-xs font-semibold uppercase tracking-widest text-foreground/50 mb-4">{t("contact.info.follow")}</p>
-                  <div className="flex gap-4">
-                    {[
-                      { href: "https://www.facebook.com/profile.php?id=61550985059945", icon: <FacebookLogo size={18} /> },
-                      { href: "https://x.com/enovaagency", icon: <XLogo size={18} /> },
-                      { href: "https://www.instagram.com/enovaagency/", icon: <InstagramLogo size={18} /> },
-                      { href: "https://www.linkedin.com/company/enovaagency/", icon: <LinkedinLogo size={18} /> },
-                    ].map((s, i) => (
-                      <a key={i} href={s.href} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors duration-300">
-                        {s.icon}
-                      </a>
-                    ))}
-                  </div>
-                </div>
+                <h1 className="!text-5xl md:!text-6xl lg:!text-7xl !leading-[1.02] tracking-[-0.04em] mb-8 max-w-[20ch]">
+                  Tell us about one workflow you'd like to{" "}
+                  <span className="font-serif-accent italic font-light text-primary">automate</span>.
+                </h1>
               </MotionElement>
-            </div>
-
-            <div className="lg:col-span-3">
-              <MotionElement animation="slideUp" delay={200}>
-                <div className="glass rounded-2xl p-8">
-                  <h2 className={`text-xl font-semibold mb-6 ${isRTL ? "text-right" : ""}`}>{t("contact.form.title")}</h2>
-                  <form onSubmit={handleSubmit} className="space-y-5">
-                    <div>
-                      <label htmlFor="name" className={`block text-xs font-medium text-foreground/70 mb-1.5 ${isRTL ? "text-right" : ""}`}>{t("contact.form.name")}</label>
-                      <input id="name" name="name" type="text" required value={formData.name} onChange={handleChange} className={inputClass} disabled={isSubmitting} />
-                    </div>
-                    <div>
-                      <label htmlFor="email" className={`block text-xs font-medium text-foreground/70 mb-1.5 ${isRTL ? "text-right" : ""}`}>{t("contact.form.email")}</label>
-                      <input id="email" name="email" type="email" required value={formData.email} onChange={handleChange} className={inputClass} disabled={isSubmitting} dir="ltr" />
-                    </div>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-                      <div>
-                        <label htmlFor="company" className={`block text-xs font-medium text-foreground/70 mb-1.5 ${isRTL ? "text-right" : ""}`}>{t("contact.form.company")}</label>
-                        <input id="company" name="company" type="text" value={formData.company} onChange={handleChange} className={inputClass} disabled={isSubmitting} />
-                      </div>
-                      <div>
-                        <label htmlFor="phone" className={`block text-xs font-medium text-foreground/70 mb-1.5 ${isRTL ? "text-right" : ""}`}>{t("contact.form.phone")}</label>
-                        <input id="phone" name="phone" type="tel" value={formData.phone} onChange={handleChange} className={inputClass} disabled={isSubmitting} dir="ltr" />
-                      </div>
-                    </div>
-                    <div>
-                      <label htmlFor="message" className={`block text-xs font-medium text-foreground/70 mb-1.5 ${isRTL ? "text-right" : ""}`}>{t("contact.form.message")}</label>
-                      <textarea id="message" name="message" rows={4} required value={formData.message} onChange={handleChange} className={inputClass} disabled={isSubmitting} />
-                    </div>
-                    <Button type="submit" className="w-full bg-primary text-primary-foreground hover:bg-primary/90 py-6 rounded-xl font-medium gap-2 group" disabled={isSubmitting}>
-                      {isSubmitting ? t("contact.form.submitting") : t("contact.form.submit")}
-                      {!isSubmitting && <ArrowRight size={16} className={`transition-transform duration-300 group-hover:translate-x-1 ${isRTL ? "rotate-180 group-hover:-translate-x-1" : ""}`} />}
-                    </Button>
-                  </form>
-                </div>
+              <MotionElement animation="slideUp" delay={180}>
+                <p className="text-foreground/75 text-lg max-w-2xl leading-[1.7]">
+                  We review every inbound personally. Expect a reply within one business day — usually with two or three operational questions before we suggest a call.
+                </p>
               </MotionElement>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="py-24">
-        <div className="container mx-auto px-6">
-          <MotionElement animation="slideUp">
-            <div className="text-center mb-16">
-              <p className="text-xs font-semibold uppercase tracking-widest text-primary/60 mb-4">{t("contact.faq.label")}</p>
-              <h2>{t("contact.faq.title")}</h2>
-            </div>
-          </MotionElement>
+      {/* Form + details */}
+      <section className="border-t border-border/70 py-24 md:py-32">
+        <div className="container mx-auto">
+          <div className={`grid md:grid-cols-12 gap-16 md:gap-20 ${isRTL ? "md:[direction:rtl] text-right" : ""}`}>
+            {/* Details — minimal, no cards */}
+            <div className="md:col-span-4">
+              <MotionElement animation="slideUp">
+                <p className="text-[10px] uppercase tracking-[0.22em] text-muted-foreground mb-6">Direct</p>
+                <div className="space-y-6">
+                  <div>
+                    <p className="text-[11px] uppercase tracking-[0.2em] text-muted-foreground mb-1.5">Email</p>
+                    <a href="mailto:tarek@enovaagency.com" className="text-foreground hover:text-primary transition-colors text-[16px]" dir="ltr">
+                      tarek@enovaagency.com
+                    </a>
+                  </div>
+                  <div>
+                    <p className="text-[11px] uppercase tracking-[0.2em] text-muted-foreground mb-1.5">Phone</p>
+                    <p className="text-foreground text-[16px]" dir="ltr">+90 540 350 2010</p>
+                  </div>
+                  <div>
+                    <p className="text-[11px] uppercase tracking-[0.2em] text-muted-foreground mb-1.5">Strategy call</p>
+                    <a
+                      href="https://cal.com/tarek-jundi/free-consultation"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-primary text-[15px] border-b border-primary/40 hover:border-primary pb-0.5 transition-colors"
+                    >
+                      Book 30 minutes →
+                    </a>
+                  </div>
+                </div>
 
-          <div className="max-w-3xl mx-auto">
-            <Accordion type="single" collapsible className="space-y-3" value={openAccordion} onValueChange={setOpenAccordion}>
-              {faqs.map((faq, i) => (
-                <MotionElement key={i} animation="slideUp" delay={100 + i * 80}>
-                  <AccordionItem
-                    value={`item-${i + 1}`}
-                    className="glass rounded-xl px-6 transition-all duration-200 hover:border-primary/20 border border-transparent data-[state=open]:border-primary/15"
-                  >
-                    <AccordionTrigger className={`text-foreground text-sm font-medium transition-all duration-200 hover:text-primary hover:no-underline [&>svg]:hidden py-5 ${isRTL ? "text-right" : "text-left"}`}>
-                      <div className="flex items-center justify-between w-full">
-                        <span>{faq.q}</span>
-                        <div className="ml-4 flex-shrink-0">
-                          {openAccordion === `item-${i + 1}` ? (
-                            <Minus size={16} className="text-primary" />
-                          ) : (
-                            <Plus size={16} className="text-primary/50" />
-                          )}
-                        </div>
-                      </div>
-                    </AccordionTrigger>
-                    <AccordionContent className={`text-muted-foreground text-sm leading-relaxed pb-5 ${isRTL ? "text-right" : ""}`}>
-                      {faq.a}
-                    </AccordionContent>
-                  </AccordionItem>
-                </MotionElement>
-              ))}
-            </Accordion>
+                <div className="mt-14 pt-8 border-t border-border/60">
+                  <p className="text-[11px] uppercase tracking-[0.2em] text-muted-foreground mb-3">Response time</p>
+                  <p className="text-foreground/75 text-[15px] leading-[1.7]">
+                    Within one business day, Monday–Friday. Calls are typically scheduled the same week.
+                  </p>
+                </div>
+              </MotionElement>
+            </div>
+
+            {/* Form — flat, underline fields */}
+            <div className="md:col-span-7 md:col-start-6">
+              <MotionElement animation="slideUp" delay={120}>
+                <form onSubmit={handleSubmit} className="space-y-8">
+                  <div className="grid md:grid-cols-2 gap-8">
+                    <div>
+                      <label htmlFor="name" className={labelClass}>Full name</label>
+                      <input id="name" name="name" type="text" required value={formData.name} onChange={handleChange} className={fieldClass} disabled={isSubmitting} placeholder="Your name" />
+                    </div>
+                    <div>
+                      <label htmlFor="email" className={labelClass}>Work email</label>
+                      <input id="email" name="email" type="email" required value={formData.email} onChange={handleChange} className={fieldClass} disabled={isSubmitting} dir="ltr" placeholder="you@company.com" />
+                    </div>
+                  </div>
+                  <div className="grid md:grid-cols-2 gap-8">
+                    <div>
+                      <label htmlFor="company" className={labelClass}>Company</label>
+                      <input id="company" name="company" type="text" value={formData.company} onChange={handleChange} className={fieldClass} disabled={isSubmitting} placeholder="Company name" />
+                    </div>
+                    <div>
+                      <label htmlFor="phone" className={labelClass}>Phone <span className="text-muted-foreground/60 normal-case tracking-normal">(optional)</span></label>
+                      <input id="phone" name="phone" type="tel" value={formData.phone} onChange={handleChange} className={fieldClass} disabled={isSubmitting} dir="ltr" placeholder="+1 555 000 0000" />
+                    </div>
+                  </div>
+                  <div>
+                    <label htmlFor="message" className={labelClass}>The workflow you'd like to automate</label>
+                    <textarea
+                      id="message"
+                      name="message"
+                      rows={4}
+                      required
+                      value={formData.message}
+                      onChange={handleChange}
+                      className={fieldClass + " resize-none"}
+                      disabled={isSubmitting}
+                      placeholder="A short description of the process, the team involved and what's broken about it today."
+                    />
+                  </div>
+                  <div className="pt-4">
+                    <Button
+                      type="submit"
+                      disabled={isSubmitting}
+                      className="bg-primary text-primary-foreground hover:bg-primary/90 text-sm px-7 py-6 rounded-sm font-medium gap-2 group"
+                    >
+                      {isSubmitting ? "Sending…" : "Send brief"}
+                      {!isSubmitting && (
+                        <ArrowRight size={14} className={`transition-transform duration-300 group-hover:translate-x-0.5 ${isRTL ? "rotate-180 group-hover:-translate-x-0.5" : ""}`} />
+                      )}
+                    </Button>
+                    <p className="text-muted-foreground text-[12px] mt-4 leading-[1.6]">
+                      By submitting, you agree we may contact you about your inquiry. We never share inbound briefs with third parties.
+                    </p>
+                  </div>
+                </form>
+              </MotionElement>
+            </div>
           </div>
         </div>
       </section>
