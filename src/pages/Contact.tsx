@@ -30,10 +30,10 @@ const Contact = () => {
         { method: "POST", mode: "no-cors", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ ...formData, timestamp: new Date().toISOString() }) }
       );
       toast({ title: "Thanks — we'll be in touch.", description: "We typically respond within one business day." });
-      setFormData({ name: "", email: "", company: "", phone: "", message: "" });
+      setFormData({ name: "", email: "", company: "", budget: "", message: "" });
     } catch {
       toast({ title: "Thanks — we'll be in touch.", description: "We typically respond within one business day." });
-      setFormData({ name: "", email: "", company: "", phone: "", message: "" });
+      setFormData({ name: "", email: "", company: "", budget: "", message: "" });
     } finally {
       setIsSubmitting(false);
     }
