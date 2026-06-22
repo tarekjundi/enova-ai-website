@@ -133,8 +133,14 @@ const Contact = () => {
                       <input id="company" name="company" type="text" value={formData.company} onChange={handleChange} className={fieldClass} disabled={isSubmitting} placeholder="Company name" />
                     </div>
                     <div>
-                      <label htmlFor="phone" className={labelClass}>Phone <span className="text-muted-foreground/60 normal-case tracking-normal">(optional)</span></label>
-                      <input id="phone" name="phone" type="tel" value={formData.phone} onChange={handleChange} className={fieldClass} disabled={isSubmitting} dir="ltr" placeholder="+1 555 000 0000" />
+                      <label htmlFor="budget" className={labelClass}>Estimated budget</label>
+                      <select id="budget" name="budget" value={formData.budget} onChange={handleChange} className={fieldClass} disabled={isSubmitting}>
+                        <option value="" className="bg-card">Select a range</option>
+                        <option value="<25k" className="bg-card">Under $25k</option>
+                        <option value="25-50k" className="bg-card">$25k – $50k</option>
+                        <option value="50-100k" className="bg-card">$50k – $100k</option>
+                        <option value="100k+" className="bg-card">$100k+</option>
+                      </select>
                     </div>
                   </div>
                   <div>
