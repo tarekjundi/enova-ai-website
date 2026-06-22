@@ -7,44 +7,45 @@
 
 @layer base {
   :root {
-    --background: 0 0% 4%;
-    --foreground: 36 18% 94%;
+    /* Luxury AI palette — bg #0B0F19, surface #111827, accent #7C3AED, text #F8FAFC */
+    --background: 222 39% 7%;
+    --foreground: 210 40% 98%;
 
-    --card: 0 0% 6%;
-    --card-foreground: 36 18% 94%;
+    --card: 220 39% 11%;
+    --card-foreground: 210 40% 98%;
 
-    --popover: 0 0% 6%;
-    --popover-foreground: 36 18% 94%;
+    --popover: 220 39% 11%;
+    --popover-foreground: 210 40% 98%;
 
-    --primary: 36 55% 69%;
-    --primary-foreground: 0 0% 4%;
+    --primary: 262 83% 58%;
+    --primary-foreground: 210 40% 98%;
 
-    --secondary: 0 0% 9%;
-    --secondary-foreground: 36 18% 94%;
+    --secondary: 220 39% 13%;
+    --secondary-foreground: 210 40% 98%;
 
-    --muted: 0 0% 11%;
-    --muted-foreground: 36 14% 82%;
+    --muted: 220 30% 16%;
+    --muted-foreground: 215 20% 70%;
 
-    --accent: 36 55% 69%;
-    --accent-foreground: 0 0% 4%;
+    --accent: 262 83% 58%;
+    --accent-foreground: 210 40% 98%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 36 12% 16%;
-    --input: 0 0% 11%;
-    --ring: 36 55% 69%;
+    --border: 220 25% 18%;
+    --input: 220 30% 14%;
+    --ring: 262 83% 58%;
 
-    --radius: 0.75rem;
+    --radius: 0.625rem;
 
-    --sidebar-background: 0 0% 4%;
-    --sidebar-foreground: 36 18% 80%;
-    --sidebar-primary: 36 55% 69%;
-    --sidebar-primary-foreground: 0 0% 4%;
-    --sidebar-accent: 0 0% 9%;
-    --sidebar-accent-foreground: 36 18% 80%;
-    --sidebar-border: 36 12% 16%;
-    --sidebar-ring: 36 55% 69%;
+    --sidebar-background: 222 39% 7%;
+    --sidebar-foreground: 210 30% 88%;
+    --sidebar-primary: 262 83% 58%;
+    --sidebar-primary-foreground: 210 40% 98%;
+    --sidebar-accent: 220 39% 13%;
+    --sidebar-accent-foreground: 210 30% 88%;
+    --sidebar-border: 220 25% 18%;
+    --sidebar-ring: 262 83% 58%;
   }
 
 
