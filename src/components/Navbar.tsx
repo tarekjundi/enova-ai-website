@@ -89,7 +89,7 @@ const Navbar = () => {
             rel="noopener noreferrer"
             className="ml-2"
           >
-            <Button className="bg-primary text-primary-foreground hover:bg-primary/90 rounded-full px-6 text-sm font-medium gap-2 group">
+            <Button className="bg-primary text-primary-foreground hover:bg-primary/90 rounded-md px-5 text-sm font-medium gap-2 group">
               {t("nav.lets_talk")}
               <ArrowRight size={14} className={`transition-transform duration-300 group-hover:translate-x-0.5 ${isRTL ? "rotate-180" : ""}`} />
             </Button>
