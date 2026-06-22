@@ -47,10 +47,11 @@ const Index = () => {
                 </h1>
               </MotionElement>
               <MotionElement animation="slideUp" delay={180}>
-                <p className="text-muted-foreground text-xl leading-relaxed max-w-xl mb-12 font-light">
+                <p className="text-foreground/75 text-lg md:text-xl leading-[1.6] max-w-xl mb-12 font-normal">
                   {t("index.hero.subtitle")}
                 </p>
               </MotionElement>
+
               <MotionElement animation="slideUp" delay={260}>
                 <div className={`flex ${isRTL ? "justify-end" : ""}`}>
                   <a href="https://cal.com/tarek-jundi/free-consultation" target="_blank" rel="noopener noreferrer">
