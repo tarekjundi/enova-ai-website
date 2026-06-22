@@ -55,14 +55,14 @@ const Navbar = () => {
           : "py-5 bg-transparent"
       }`}
     >
-      <div className="container mx-auto px-6 flex justify-between items-center" style={{ direction: "ltr" }}>
+      <div className="container mx-auto px-6 lg:px-10 flex justify-between items-center" style={{ direction: "ltr" }}>
         <Link
           to="/"
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-          className="flex items-baseline gap-2 transition-opacity duration-300 hover:opacity-80"
+          className="flex items-baseline gap-2.5 transition-opacity duration-300 hover:opacity-80"
         >
-          <span className="text-2xl font-bold text-foreground font-founders tracking-tight">ENOVA</span>
-          <span className="hidden sm:inline text-[10px] uppercase tracking-[0.18em] text-muted-foreground font-medium">Operational AI Systems</span>
+          <span className="text-xl font-semibold text-foreground font-founders tracking-tight">ENOVA</span>
+          <span className="hidden sm:inline text-[10px] uppercase tracking-[0.2em] text-muted-foreground font-medium">AI Consultancy</span>
         </Link>
 
 
