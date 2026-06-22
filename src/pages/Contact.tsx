@@ -58,9 +58,8 @@ const Contact = () => {
             </div>
             <div className="md:col-span-8">
               <MotionElement animation="slideUp" delay={100}>
-                <h1 className="!text-5xl md:!text-6xl lg:!text-7xl !leading-[1.02] tracking-[-0.04em] mb-8 max-w-[20ch]">
-                  Tell us about one workflow you'd like to{" "}
-                  <span className="font-serif-accent italic font-light text-primary">automate</span>.
+                <h1 className="!text-5xl md:!text-6xl lg:!text-7xl !leading-[1.05] tracking-[-0.035em] mb-8 max-w-[22ch] font-semibold">
+                  Let's discuss your next <span className="text-primary">AI project</span>.
                 </h1>
               </MotionElement>
               <MotionElement animation="slideUp" delay={180}>
