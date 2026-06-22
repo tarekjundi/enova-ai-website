@@ -21,7 +21,7 @@ export default {
         '2xl': '3rem',
       },
       screens: {
-        '2xl': '1320px'
+        '2xl': '1440px'
       }
     },
     extend: {

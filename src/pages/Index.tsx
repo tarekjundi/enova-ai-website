@@ -1,192 +1,195 @@
-
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ScrollToTop from "@/components/ScrollToTop";
-import FadeInSection from "@/components/FadeInSection";
-import AnimatedCounter from "@/components/AnimatedCounter";
 import { MotionElement } from "@/components/MotionElements";
-import { ArrowRight, Lightning, Brain, Users, ChartBar, Gear, Sparkle } from "@phosphor-icons/react";
+import { ArrowRight, ArrowUpRight } from "@phosphor-icons/react";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 const Index = () => {
-  const { t, isRTL } = useLanguage();
+  const { isRTL } = useLanguage();
 
-  const features = [
-    { icon: <Lightning size={20} />, title: t("index.feature1.title"), desc: t("index.feature1.desc"), body: t("index.feature1.body") },
-    { icon: <Brain size={20} />, title: t("index.feature2.title"), desc: t("index.feature2.desc"), body: t("index.feature2.body") },
-    { icon: <Users size={20} />, title: t("index.feature3.title"), desc: t("index.feature3.desc"), body: t("index.feature3.body") },
+  const services = [
+    {
+      n: "01",
+      title: "AI Automation",
+      desc: "Automate repetitive workflows and business operations end-to-end — from intake to reporting.",
+      meta: "Workflows · Integrations · Ops",
+    },
+    {
+      n: "02",
+      title: "AI Agents",
+      desc: "Custom AI assistants for support, sales and internal teams that act on your systems, not just chat.",
+      meta: "Support · Sales · Internal",
+    },
+    {
+      n: "03",
+      title: "Custom Software",
+      desc: "Tailored web applications powered by modern AI — built for your stack, owned by your team.",
+      meta: "Web apps · APIs · Dashboards",
+    },
+    {
+      n: "04",
+      title: "Data & Analytics",
+      desc: "Turn business data into actionable insights, forecasts and decisions your operators can trust.",
+      meta: "Pipelines · BI · Forecasting",
+    },
   ];
 
-  const steps = [
-    { step: "01", icon: <ChartBar size={24} />, title: t("index.step1.title"), desc: t("index.step1.desc") },
-    { step: "02", icon: <Gear size={24} />, title: t("index.step2.title"), desc: t("index.step2.desc") },
-    { step: "03", icon: <Sparkle size={24} />, title: t("index.step3.title"), desc: t("index.step3.desc") },
+  const cases = [
+    {
+      industry: "B2B SaaS",
+      challenge: "Manual customer support process — 8 hour average first response, growing ticket backlog.",
+      solution: "AI-powered support assistant routing tier-1 tickets with human escalation rules.",
+      result: "67%",
+      resultLabel: "faster response times",
+    },
+    {
+      industry: "Financial services",
+      challenge: "AR team spending 12 hours/week on invoice follow-ups across 400+ accounts.",
+      solution: "Automated collection workflow with tone-aware reminders and payment plan offers.",
+      result: "$182k",
+      resultLabel: "recovered in 90 days",
+    },
+    {
+      industry: "E-commerce ops",
+      challenge: "Inventory forecasting done manually in spreadsheets — frequent stockouts on top SKUs.",
+      solution: "Forecasting pipeline with reorder agents writing back to the ERP.",
+      result: "31%",
+      resultLabel: "stockout reduction",
+    },
   ];
 
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden" id="top">
       <Navbar />
 
-      {/* Hero Section */}
-      <section className="relative min-h-[92vh] flex items-center pt-28 pb-20 overflow-hidden">
+      {/* ============== HERO ============== */}
+      <section className="relative min-h-[94vh] flex items-center pt-32 pb-24 overflow-hidden">
         <div className="absolute inset-0 grid-bg pointer-events-none" />
 
-        <div className="container mx-auto px-6 relative z-10">
-          <div className={`grid lg:grid-cols-12 gap-12 lg:gap-16 items-center ${isRTL ? "lg:[direction:rtl]" : ""}`}>
+        <div className="container mx-auto px-6 lg:px-10 relative z-10">
+          <div className={`grid lg:grid-cols-12 gap-14 lg:gap-20 items-center ${isRTL ? "lg:[direction:rtl]" : ""}`}>
             {/* LEFT */}
             <div className={`lg:col-span-6 ${isRTL ? "text-right" : ""}`}>
-              <MotionElement animation="slideUp" delay={100}>
-                <h1 className="mb-10 text-foreground !text-[56px] sm:!text-[72px] lg:!text-[88px] !leading-[0.95] tracking-[-0.035em] font-bold">
-                  {t("index.hero.title1")}
-                  <br />
-                  {t("index.hero.title2")}{" "}
-                  <span className="font-serif-accent italic font-normal text-primary tracking-normal">
-                    {t("index.hero.title_highlight")}
+              <MotionElement animation="slideUp" delay={60}>
+                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-border bg-card/60 mb-10">
+                  <span className="w-1.5 h-1.5 rounded-full bg-primary" />
+                  <span className="text-[11px] uppercase tracking-[0.18em] text-muted-foreground font-medium">
+                    AI Consultancy · Est. 2024
                   </span>
+                </div>
+              </MotionElement>
+
+              <MotionElement animation="slideUp" delay={120}>
+                <h1 className="mb-8 text-foreground !text-[52px] sm:!text-[64px] lg:!text-[80px] !leading-[1.02] tracking-[-0.035em] font-semibold">
+                  AI Systems That{" "}
+                  <span className="text-primary">Save Time</span>,
+                  Cut Costs, and Scale Operations.
                 </h1>
               </MotionElement>
-              <MotionElement animation="slideUp" delay={180}>
-                <p className="text-foreground/75 text-lg md:text-xl leading-[1.6] max-w-xl mb-12 font-normal">
-                  {t("index.hero.subtitle")}
+
+              <MotionElement animation="slideUp" delay={200}>
+                <p className="text-muted-foreground text-lg md:text-xl leading-[1.65] max-w-2xl mb-12">
+                  We build custom AI solutions, intelligent automations, and software systems
+                  that help businesses operate more efficiently and grow faster.
                 </p>
               </MotionElement>
 
-              <MotionElement animation="slideUp" delay={260}>
-                <div className={`flex ${isRTL ? "justify-end" : ""}`}>
+              <MotionElement animation="slideUp" delay={280}>
+                <div className={`flex flex-wrap items-center gap-4 ${isRTL ? "justify-end" : ""}`}>
                   <a href="https://cal.com/tarek-jundi/free-consultation" target="_blank" rel="noopener noreferrer">
-                    <Button className="bg-primary text-primary-foreground hover:bg-primary/90 text-sm px-7 py-6 rounded-sm font-semibold gap-2 group">
-                      {t("index.hero.cta")}
-                      <ArrowRight size={14} className={`transition-transform duration-300 group-hover:translate-x-0.5 ${isRTL ? "rotate-180 group-hover:-translate-x-0.5" : ""}`} />
+                    <Button className="bg-primary text-primary-foreground hover:bg-primary/90 text-sm px-7 h-12 rounded-md font-medium gap-2 group">
+                      Book a Consultation
+                      <ArrowRight size={14} className={`transition-transform duration-300 group-hover:translate-x-0.5 ${isRTL ? "rotate-180" : ""}`} />
                     </Button>
                   </a>
+                  <Link to="/case-studies">
+                    <Button variant="ghost" className="text-foreground hover:text-primary hover:bg-transparent text-sm px-5 h-12 rounded-md font-medium gap-2 group border border-border hover:border-primary/50">
+                      View Our Work
+                      <ArrowUpRight size={14} className="transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+                    </Button>
+                  </Link>
                 </div>
               </MotionElement>
             </div>
 
-
-            {/* RIGHT — Dashboard mockup */}
+            {/* RIGHT — premium dashboard */}
             <div className="lg:col-span-6">
-              <MotionElement animation="slideUp" delay={200}>
-                <div className="relative rounded-md border border-border bg-card overflow-hidden">
+              <MotionElement animation="slideUp" delay={220}>
+                <div className="relative">
+                  {/* soft accent glow, very subtle */}
+                  <div className="absolute -inset-px rounded-xl bg-gradient-to-br from-primary/15 via-transparent to-transparent blur-2xl opacity-60 pointer-events-none" />
 
-                  {/* window chrome */}
-                  <div className="flex items-center justify-between px-4 py-2.5 border-b border-border bg-secondary/30">
-                    <div className="flex items-center gap-3">
-                      <div className="flex items-center gap-1">
-                        <span className="w-2 h-2 rounded-full bg-muted-foreground/25" />
-                        <span className="w-2 h-2 rounded-full bg-muted-foreground/25" />
-                        <span className="w-2 h-2 rounded-full bg-muted-foreground/25" />
+                  <div className="relative rounded-xl border border-border bg-card overflow-hidden shadow-2xl shadow-black/40">
+                    {/* window chrome */}
+                    <div className="flex items-center justify-between px-4 py-3 border-b border-border bg-secondary/40">
+                      <div className="flex items-center gap-3">
+                        <div className="flex items-center gap-1.5">
+                          <span className="w-2.5 h-2.5 rounded-full bg-muted-foreground/20" />
+                          <span className="w-2.5 h-2.5 rounded-full bg-muted-foreground/20" />
+                          <span className="w-2.5 h-2.5 rounded-full bg-muted-foreground/20" />
+                        </div>
+                        <span className="text-[11px] font-mono text-muted-foreground">enova.ops / operations</span>
                       </div>
-                      <span className="text-[10px] font-mono text-muted-foreground/70">enova.ops / workflows</span>
-                    </div>
-                    <div className="flex items-center gap-2 text-[10px] font-mono text-muted-foreground">
-                      <span className="w-1.5 h-1.5 rounded-full bg-emerald-400/80" />
-                      <span>synced 12s ago</span>
-                    </div>
-                  </div>
-
-                  <div className="flex" style={{ direction: "ltr" }}>
-                    {/* sidebar */}
-                    <div className="w-36 border-r border-border bg-background/40 py-4 px-3 hidden sm:block">
-                      <p className="text-[9px] uppercase tracking-[0.18em] text-muted-foreground/60 mb-3 px-2">Operations</p>
-                      <ul className="space-y-0.5 text-[11px]">
-                        {[
-                          { label: "Workflows", active: true, count: "12" },
-                          { label: "Agents", count: "7" },
-                          { label: "Integrations", count: "23" },
-                          { label: "Audit log", count: "" },
-                          { label: "Cost & usage", count: "" },
-                        ].map((it) => (
-                          <li key={it.label} className={`flex items-center justify-between px-2 py-1.5 rounded ${it.active ? "bg-secondary/70 text-foreground" : "text-muted-foreground/80"}`}>
-                            <span>{it.label}</span>
-                            {it.count && <span className="text-[9px] font-mono text-muted-foreground/60">{it.count}</span>}
-                          </li>
-                        ))}
-                      </ul>
+                      <div className="flex items-center gap-2 text-[10px] font-mono text-muted-foreground">
+                        <span className="w-1.5 h-1.5 rounded-full bg-primary" />
+                        <span>live</span>
+                      </div>
                     </div>
 
-                    {/* main */}
-                    <div className="flex-1 p-4 min-w-0">
-                      {/* breadcrumb */}
-                      <div className="flex items-center gap-1.5 text-[10px] font-mono text-muted-foreground/70 mb-4">
-                        <span>operations</span>
-                        <span>/</span>
-                        <span>workflows</span>
-                        <span>/</span>
-                        <span className="text-foreground/80">active</span>
+                    <div style={{ direction: "ltr" }} className="p-6">
+                      {/* heading */}
+                      <div className="flex items-baseline justify-between mb-6">
+                        <div>
+                          <p className="text-[10px] uppercase tracking-[0.2em] text-muted-foreground mb-1">Overview</p>
+                          <h4 className="text-base font-semibold tracking-tight">Operations · Today</h4>
+                        </div>
+                        <span className="text-[10px] font-mono text-muted-foreground">Jun 22, 2026</span>
                       </div>
 
                       {/* KPI strip */}
-                      <div className="grid grid-cols-3 gap-px bg-border mb-4 border border-border">
+                      <div className="grid grid-cols-3 gap-3 mb-6">
                         {[
-                          { l: "Runs / 24h", v: "8,412", d: "+12.4%" },
-                          { l: "Success rate", v: "99.42%", d: "+0.08%" },
-                          { l: "p95 latency", v: "1.84s", d: "−210ms" },
+                          { l: "Runs", v: "8,412", d: "+12.4%" },
+                          { l: "Success", v: "99.4%", d: "+0.08%" },
+                          { l: "Saved", v: "184h", d: "this week" },
                         ].map((k) => (
-                          <div key={k.l} className="bg-card px-3 py-2.5">
-                            <div className="text-[9px] uppercase tracking-wider text-muted-foreground/70 mb-1">{k.l}</div>
-                            <div className="flex items-baseline gap-1.5">
-                              <span className="text-sm font-semibold font-founders tracking-tight">{k.v}</span>
-                              <span className="text-[9px] text-emerald-400/80 font-mono">{k.d}</span>
-                            </div>
+                          <div key={k.l} className="rounded-md border border-border bg-background/40 px-3.5 py-3">
+                            <div className="text-[9px] uppercase tracking-wider text-muted-foreground mb-1.5">{k.l}</div>
+                            <div className="text-xl font-semibold tracking-tight">{k.v}</div>
+                            <div className="text-[10px] text-primary/80 font-mono mt-1">{k.d}</div>
                           </div>
                         ))}
                       </div>
 
-                      {/* workflow table */}
-                      <div className="border border-border rounded-sm overflow-hidden">
-                        <div className="grid grid-cols-[1.6fr_0.7fr_0.7fr_0.6fr] gap-2 px-3 py-2 bg-secondary/30 border-b border-border text-[9px] uppercase tracking-wider text-muted-foreground/70 font-mono">
+                      {/* workflow rows */}
+                      <div className="rounded-md border border-border overflow-hidden">
+                        <div className="grid grid-cols-[1.8fr_0.7fr_0.6fr] gap-3 px-4 py-2.5 bg-secondary/40 border-b border-border text-[9px] uppercase tracking-wider text-muted-foreground font-mono">
                           <span>Workflow</span>
                           <span className="text-right">Runs / hr</span>
-                          <span className="text-right">Success</span>
                           <span className="text-right">Status</span>
                         </div>
                         {[
-                          { name: "lead.qualify.inbound", stack: "HubSpot · OpenAI", runs: "342", ok: "99.7%", s: "live", dot: "bg-emerald-400" },
-                          { name: "support.triage.tier1", stack: "Intercom · Zendesk", runs: "1,284", ok: "98.9%", s: "live", dot: "bg-emerald-400" },
-                          { name: "meeting.book.outbound", stack: "Cal.com · Slack", runs: "58", ok: "100%", s: "live", dot: "bg-emerald-400" },
-                          { name: "invoice.followup.AR", stack: "Stripe · Gmail", runs: "12", ok: "—", s: "queued", dot: "bg-primary/70" },
-                          { name: "contract.review.legal", stack: "Notion · Anthropic", runs: "9", ok: "97.2%", s: "live", dot: "bg-emerald-400" },
+                          { name: "support.triage.tier1", stack: "Intercom · Zendesk", runs: "1,284", s: "live" },
+                          { name: "lead.qualify.inbound", stack: "HubSpot · OpenAI", runs: "342", s: "live" },
+                          { name: "invoice.followup.AR", stack: "Stripe · Gmail", runs: "58", s: "live" },
+                          { name: "contract.review.legal", stack: "Notion · Anthropic", runs: "12", s: "queued" },
                         ].map((r) => (
-                          <div key={r.name} className="grid grid-cols-[1.6fr_0.7fr_0.7fr_0.6fr] gap-2 px-3 py-2 border-b border-border/60 last:border-b-0 items-center">
+                          <div key={r.name} className="grid grid-cols-[1.8fr_0.7fr_0.6fr] gap-3 px-4 py-3 border-b border-border/60 last:border-b-0 items-center">
                             <div className="min-w-0">
-                              <div className="text-[11px] font-mono text-foreground/90 truncate">{r.name}</div>
-                              <div className="text-[9px] text-muted-foreground/60 truncate">{r.stack}</div>
+                              <div className="text-[12px] font-mono text-foreground truncate">{r.name}</div>
+                              <div className="text-[10px] text-muted-foreground truncate mt-0.5">{r.stack}</div>
                             </div>
-                            <span className="text-[11px] font-mono text-right text-foreground/80">{r.runs}</span>
-                            <span className="text-[11px] font-mono text-right text-muted-foreground">{r.ok}</span>
+                            <span className="text-[12px] font-mono text-right text-foreground/80">{r.runs}</span>
                             <span className="flex items-center justify-end gap-1.5 text-[10px] text-muted-foreground font-mono">
-                              <span className={`w-1.5 h-1.5 rounded-full ${r.dot}`} />
+                              <span className={`w-1.5 h-1.5 rounded-full ${r.s === "live" ? "bg-primary" : "bg-muted-foreground/40"}`} />
                               {r.s}
                             </span>
                           </div>
                         ))}
                       </div>
-
-                      {/* activity feed */}
-                      <div className="mt-4">
-                        <div className="text-[9px] uppercase tracking-[0.18em] text-muted-foreground/60 mb-2 font-mono">Activity · last 60s</div>
-                        <ul className="text-[10px] font-mono space-y-1 text-muted-foreground/85">
-                          {[
-                            { t: "14:02:17", m: "lead.qualify.inbound · scored 9.2 · routed → AE Sara K." },
-                            { t: "14:02:09", m: "support.triage.tier1 · resolved ticket #48217 (refund)" },
-                            { t: "14:01:58", m: "invoice.followup.AR · sent reminder · Acme Co. · $12,400" },
-                            { t: "14:01:42", m: "meeting.book.outbound · 3 meetings confirmed for Thu" },
-                          ].map((a) => (
-                            <li key={a.t} className="flex gap-3">
-                              <span className="text-muted-foreground/50 shrink-0">{a.t}</span>
-                              <span className="truncate">{a.m}</span>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-
-                      {/* footer */}
-                      <div className="mt-4 pt-3 border-t border-border flex items-center justify-between text-[10px] font-mono text-muted-foreground/70">
-                        <span>5 of 12 workflows shown</span>
-                        <span>us-east-1 · build 2026.05.18</span>
-                      </div>
                     </div>
                   </div>
                 </div>
@@ -196,123 +199,77 @@ const Index = () => {
         </div>
       </section>
 
-
-      {/* Stats — editorial band */}
-      <section className="relative border-y border-border/70">
-        <div className="container mx-auto px-6 py-16 md:py-20">
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-6 items-end">
-            <MotionElement animation="slideUp" delay={50} className="md:col-span-6">
-              <p className="text-[10px] uppercase tracking-[0.22em] text-muted-foreground mb-5">By the numbers</p>
-              <h2 className="!text-4xl md:!text-5xl lg:!text-6xl !leading-[1.02] tracking-[-0.035em] max-w-[14ch]">
-                Operational impact, measured the way your CFO measures it.
+      {/* ============== TRUST BAND ============== */}
+      <section className="border-y border-border bg-card/30">
+        <div className="container mx-auto px-6 lg:px-10 py-20 md:py-24">
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-8 items-end">
+            <MotionElement animation="slideUp" className="md:col-span-5">
+              <p className="text-[10px] uppercase tracking-[0.22em] text-muted-foreground mb-5">Proven Results</p>
+              <h2 className="!text-3xl md:!text-4xl lg:!text-5xl !leading-[1.08] tracking-[-0.03em] max-w-[18ch] font-semibold">
+                Built for businesses that measure outcomes.
               </h2>
             </MotionElement>
 
-            <MotionElement animation="slideUp" delay={150} className="md:col-span-2 md:border-l md:border-border md:pl-6">
-              <AnimatedCounter end={85} suffix="%" />
-              <p className="text-muted-foreground text-sm mt-2 max-w-[18ch]">{t("index.stats.manual")}</p>
-            </MotionElement>
-
-            <MotionElement animation="slideUp" delay={220} className="md:col-span-2 md:border-l md:border-border md:pl-6">
-              <AnimatedCounter end={7.8} suffix="×" />
-              <p className="text-muted-foreground text-sm mt-2 max-w-[18ch]">{t("index.stats.productivity")}</p>
-            </MotionElement>
-
-            <MotionElement animation="slideUp" delay={290} className="md:col-span-2 md:border-l md:border-border md:pl-6">
-              <p className="text-5xl font-bold text-foreground font-founders tracking-tight">24/7</p>
-              <p className="text-muted-foreground text-sm mt-2 max-w-[18ch]">{t("index.stats.continuous")}</p>
-            </MotionElement>
-          </div>
-        </div>
-      </section>
-
-      {/* Services — asymmetric editorial */}
-      <section id="features" className="py-28 md:py-40 relative">
-        <div className="container mx-auto px-6">
-          <div className={`grid md:grid-cols-12 gap-10 md:gap-16 mb-20 md:mb-28 ${isRTL ? "md:[direction:rtl]" : ""}`}>
-            <div className="md:col-span-4">
-              <MotionElement animation="slideUp">
-                <p className="text-[10px] uppercase tracking-[0.22em] text-muted-foreground mb-4">{t("index.features.label")} — 01 / 03</p>
-              </MotionElement>
-            </div>
-            <div className="md:col-span-8">
-              <MotionElement animation="slideUp" delay={80}>
-                <h2 className="!text-5xl md:!text-7xl !leading-[0.98] tracking-[-0.04em] mb-10 max-w-[16ch]">
-                  {t("index.features.title")}
-                </h2>
-              </MotionElement>
-              <MotionElement animation="slideUp" delay={160}>
-                <p className="text-muted-foreground text-lg max-w-2xl">{t("index.features.subtitle")}</p>
-              </MotionElement>
-            </div>
-          </div>
-
-          <div className={`grid md:grid-cols-12 gap-10 md:gap-12 ${isRTL ? "md:[direction:rtl]" : ""}`}>
-            {/* Featured (large) */}
-            <MotionElement animation="slideUp" delay={100} className="md:col-span-7">
-              <div className={`group border-t border-border pt-8 ${isRTL ? "text-right" : ""}`}>
-                <div className="flex items-center gap-3 mb-12 text-muted-foreground">
-                  <span className="text-xs font-mono tracking-wider">01</span>
-                  <span className="h-px flex-1 bg-border" />
-                  <span className="text-xs uppercase tracking-widest">{features[0].desc}</span>
-                </div>
-                <h3 className="!text-2xl md:!text-4xl !leading-tight mb-6 max-w-[18ch]">{features[0].title}</h3>
-                <p className="text-foreground/75 max-w-lg mb-8">{features[0].body}</p>
-                <div className="flex flex-wrap gap-x-6 gap-y-2 text-xs text-muted-foreground font-mono">
-                  <span>+ HubSpot</span><span>+ Salesforce</span><span>+ Pipedrive</span><span>+ Cal.com</span>
-                </div>
-              </div>
-            </MotionElement>
-
-            {/* Two compact stacked */}
-            <div className="md:col-span-5 flex flex-col gap-10">
-              {[features[1], features[2]].map((feature, i) => (
-                <MotionElement key={i} animation="slideUp" delay={160 + i * 80}>
-                  <div className={`group border-t border-border pt-8 ${isRTL ? "text-right" : ""}`}>
-                    <div className="flex items-center gap-3 mb-6 text-muted-foreground">
-                      <span className="text-xs font-mono tracking-wider">0{i + 2}</span>
-                      <span className="h-px flex-1 bg-border" />
-                      <span className="text-xs uppercase tracking-widest">{feature.desc}</span>
-                    </div>
-                    <h3 className="!text-xl md:!text-2xl !leading-tight mb-4">{feature.title}</h3>
-                    <p className="text-muted-foreground text-sm leading-relaxed">{feature.body}</p>
+            <div className="md:col-span-7 grid grid-cols-1 sm:grid-cols-3 gap-px bg-border rounded-md overflow-hidden border border-border">
+              {[
+                { v: "25+", l: "Projects Delivered" },
+                { v: "98%", l: "Client Satisfaction" },
+                { v: "50,000+", l: "Hours Automated" },
+              ].map((s, i) => (
+                <MotionElement key={s.l} animation="slideUp" delay={100 + i * 80}>
+                  <div className="bg-card p-7 h-full">
+                    <p className="text-4xl md:text-5xl font-semibold tracking-tight text-foreground">{s.v}</p>
+                    <p className="text-muted-foreground text-sm mt-3">{s.l}</p>
                   </div>
                 </MotionElement>
+              ))}
+            </div>
+          </div>
+
+          {/* Industries served */}
+          <div className="mt-16 pt-10 border-t border-border/70">
+            <p className="text-[10px] uppercase tracking-[0.22em] text-muted-foreground mb-6">Industries served</p>
+            <div className="flex flex-wrap gap-x-10 gap-y-3 text-muted-foreground text-sm">
+              {["B2B SaaS", "Financial Services", "E-commerce Operations", "Professional Services", "Healthcare", "Logistics"].map((i) => (
+                <span key={i}>{i}</span>
               ))}
             </div>
           </div>
         </div>
       </section>
 
-      {/* Process — horizontal timeline */}
-      <section className="py-24 md:py-32 relative border-t border-border/70">
-        <div className="container mx-auto px-6">
+      {/* ============== SERVICES ============== */}
+      <section id="features" className="py-28 md:py-40">
+        <div className="container mx-auto px-6 lg:px-10">
           <div className={`grid md:grid-cols-12 gap-10 md:gap-16 mb-20 ${isRTL ? "md:[direction:rtl]" : ""}`}>
             <div className="md:col-span-5">
               <MotionElement animation="slideUp">
-                <p className="text-[10px] uppercase tracking-[0.22em] text-muted-foreground mb-4">{t("index.process.label")}</p>
-                <h2 className="!text-5xl md:!text-6xl !leading-[1.0] tracking-[-0.035em] mb-6 max-w-[14ch]">
-                  {t("index.process.title")}
+                <p className="text-[10px] uppercase tracking-[0.22em] text-muted-foreground mb-5">Services</p>
+                <h2 className="!text-4xl md:!text-5xl lg:!text-6xl !leading-[1.05] tracking-[-0.035em] max-w-[16ch] font-semibold">
+                  Enterprise-grade AI, delivered as systems.
                 </h2>
               </MotionElement>
             </div>
-            <div className="md:col-span-6 md:col-start-7 md:pt-6">
+            <div className="md:col-span-6 md:col-start-7 md:pt-4">
               <MotionElement animation="slideUp" delay={120}>
-                <p className="text-muted-foreground text-lg">{t("index.process.subtitle")}</p>
+                <p className="text-muted-foreground text-lg leading-[1.7]">
+                  Four practice areas. One engagement model. Every deliverable owned by your team —
+                  no black boxes, no lock-in.
+                </p>
               </MotionElement>
             </div>
           </div>
 
-          <div className={`grid md:grid-cols-3 md:gap-x-12 md:gap-y-0 md:items-start ${isRTL ? "md:[direction:rtl]" : ""}`}>
-            {steps.map((item, i) => (
-              <MotionElement key={i} animation="slideUp" delay={100 + i * 100} className={i === 1 ? "md:mt-16" : i === 2 ? "md:mt-8" : ""}>
-                <div className={`border-t border-border pt-8 ${isRTL ? "text-right" : ""}`}>
-                  <div className="flex items-baseline justify-between mb-12">
-                    <span className="text-xs font-mono text-muted-foreground tracking-widest">{item.step}</span>
-                    <span className="text-[10px] uppercase tracking-[0.18em] text-muted-foreground/70">{i === 0 ? "Week 1" : i === 1 ? "Week 2" : "Week 3–4"}</span>
+          <div className="grid md:grid-cols-2 gap-px bg-border border border-border rounded-md overflow-hidden">
+            {services.map((s, i) => (
+              <MotionElement key={s.n} animation="slideUp" delay={100 + i * 60}>
+                <div className="bg-card p-8 md:p-10 h-full group transition-colors duration-300 hover:bg-secondary/40">
+                  <div className="flex items-baseline justify-between mb-10">
+                    <span className="text-xs font-mono text-muted-foreground tracking-widest">{s.n}</span>
+                    <span className="text-[10px] uppercase tracking-[0.18em] text-muted-foreground">{s.meta}</span>
                   </div>
-                  <h3 className="!text-2xl md:!text-3xl !leading-[1.1] tracking-tight mb-5">{item.title}</h3>
-                  <p className="text-muted-foreground text-[15px] leading-[1.65] max-w-[34ch]">{item.desc}</p>
+                  <h3 className="!text-2xl md:!text-3xl !leading-[1.15] tracking-tight mb-5 font-semibold">{s.title}</h3>
+                  <p className="text-muted-foreground text-[15px] leading-[1.7] max-w-[42ch]">{s.desc}</p>
                 </div>
               </MotionElement>
             ))}
@@ -320,67 +277,133 @@ const Index = () => {
         </div>
       </section>
 
-      {/* FAQ — editorial */}
-      <section id="faq" className="py-24 md:py-32 relative border-t border-border/70">
-        <div className="container mx-auto px-6">
-          <div className={`grid md:grid-cols-12 gap-10 md:gap-16 ${isRTL ? "md:[direction:rtl] text-right" : ""}`}>
-            <div className="md:col-span-4">
+      {/* ============== CASE STUDIES ============== */}
+      <section className="py-28 md:py-40 border-t border-border bg-card/30">
+        <div className="container mx-auto px-6 lg:px-10">
+          <div className={`grid md:grid-cols-12 gap-10 md:gap-16 mb-20 ${isRTL ? "md:[direction:rtl]" : ""}`}>
+            <div className="md:col-span-5">
               <MotionElement animation="slideUp">
-                <p className="text-[10px] uppercase tracking-[0.22em] text-muted-foreground mb-4">Common questions</p>
-                <h2 className="!text-4xl md:!text-5xl !leading-[1.02] tracking-[-0.035em] max-w-[14ch]">
-                  Things teams ask before we start.
+                <p className="text-[10px] uppercase tracking-[0.22em] text-muted-foreground mb-5">Case Studies</p>
+                <h2 className="!text-4xl md:!text-5xl lg:!text-6xl !leading-[1.05] tracking-[-0.035em] max-w-[16ch] font-semibold">
+                  Outcomes measured the way your CFO measures them.
                 </h2>
               </MotionElement>
             </div>
-            <div className="md:col-span-7 md:col-start-6">
-              <dl className="divide-y divide-border/70 border-y border-border/70">
-                {[
-                  { q: "How long until something is in production?", a: "Four weeks from kickoff for a first workflow. Multi-workflow engagements ship in phases — never as a single big-bang launch." },
-                  { q: "Do you replace our team?", a: "No. We replace repetitive work. Operators shift from execution to oversight, exception handling and higher-leverage work the agents can't do." },
-                  { q: "What happens to our data?", a: "Data stays in your stack. We work read/write against your existing systems with scoped credentials, and document every data path during design." },
-                  { q: "What if the agent gets it wrong?", a: "Every workflow ships with confidence scoring, escalation rules and human checkpoints on anything that touches a customer commitment or money. Autonomy is earned against the metrics in the spec." },
-                  { q: "Do we own what you build?", a: "Yes. Architecture, runbooks, prompts, integrations and credentials are handed over. No black boxes, no lock-in to us." },
-                  { q: "Which industries do you work with?", a: "B2B SaaS, financial services, e-commerce operations and professional services. The common thread is operational complexity, not a vertical." },
-                ].map((item, idx) => (
-                  <div key={idx} className="py-6 grid grid-cols-12 gap-4">
-                    <dt className="col-span-12 md:col-span-5 text-foreground font-medium tracking-tight">{item.q}</dt>
-                    <dd className="col-span-12 md:col-span-7 text-muted-foreground leading-relaxed text-[15px]">{item.a}</dd>
+            <div className="md:col-span-6 md:col-start-7 md:pt-4 flex items-end">
+              <MotionElement animation="slideUp" delay={120}>
+                <Link to="/case-studies" className="text-primary text-sm font-medium inline-flex items-center gap-2 hover:gap-3 transition-all border-b border-primary/40 pb-0.5">
+                  View all case studies <ArrowRight size={14} />
+                </Link>
+              </MotionElement>
+            </div>
+          </div>
+
+          <div className="space-y-px bg-border border border-border rounded-md overflow-hidden">
+            {cases.map((c, i) => (
+              <MotionElement key={c.industry} animation="slideUp" delay={100 + i * 80}>
+                <div className="bg-card grid md:grid-cols-12 gap-8 md:gap-10 p-8 md:p-10 transition-colors hover:bg-secondary/40">
+                  <div className="md:col-span-3">
+                    <p className="text-[10px] uppercase tracking-[0.22em] text-muted-foreground mb-2">Industry</p>
+                    <p className="text-foreground text-base font-medium">{c.industry}</p>
                   </div>
-                ))}
-              </dl>
+                  <div className="md:col-span-4">
+                    <p className="text-[10px] uppercase tracking-[0.22em] text-muted-foreground mb-2">Challenge</p>
+                    <p className="text-muted-foreground text-[14px] leading-[1.65]">{c.challenge}</p>
+                  </div>
+                  <div className="md:col-span-3">
+                    <p className="text-[10px] uppercase tracking-[0.22em] text-muted-foreground mb-2">Solution</p>
+                    <p className="text-muted-foreground text-[14px] leading-[1.65]">{c.solution}</p>
+                  </div>
+                  <div className="md:col-span-2 md:border-l md:border-border md:pl-8">
+                    <p className="text-[10px] uppercase tracking-[0.22em] text-muted-foreground mb-2">Result</p>
+                    <p className="text-3xl font-semibold tracking-tight text-primary">{c.result}</p>
+                    <p className="text-muted-foreground text-xs mt-1.5">{c.resultLabel}</p>
+                  </div>
+                </div>
+              </MotionElement>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ============== ABOUT / FOUNDER ============== */}
+      <section className="py-28 md:py-40 border-t border-border">
+        <div className="container mx-auto px-6 lg:px-10">
+          <div className={`grid md:grid-cols-12 gap-12 md:gap-16 items-start ${isRTL ? "md:[direction:rtl]" : ""}`}>
+            <MotionElement animation="slideUp" className="md:col-span-5">
+              <div className="aspect-[4/5] rounded-md border border-border bg-gradient-to-br from-secondary to-card overflow-hidden relative">
+                <div className="absolute inset-0 flex items-end p-8">
+                  <div>
+                    <p className="text-foreground text-lg font-medium">Tarek Jundi</p>
+                    <p className="text-muted-foreground text-sm mt-1">Founder & Principal</p>
+                  </div>
+                </div>
+                <div className="absolute top-6 left-6 text-[10px] uppercase tracking-[0.22em] text-muted-foreground font-mono">
+                  Enova / 2024
+                </div>
+              </div>
+            </MotionElement>
+
+            <div className="md:col-span-6 md:col-start-7 md:pt-2">
+              <MotionElement animation="slideUp" delay={120}>
+                <p className="text-[10px] uppercase tracking-[0.22em] text-muted-foreground mb-5">About</p>
+                <h2 className="!text-4xl md:!text-5xl !leading-[1.05] tracking-[-0.035em] mb-8 font-semibold max-w-[18ch]">
+                  Built by operators, for operators.
+                </h2>
+                <div className="space-y-5 text-muted-foreground text-[16px] leading-[1.75] max-w-2xl">
+                  <p>
+                    Enova was founded on a simple premise: most companies don't need more AI demos —
+                    they need AI <span className="text-foreground">in production</span>, owned by their team,
+                    integrated into the workflows that actually move revenue.
+                  </p>
+                  <p>
+                    Every engagement is led personally. Every workflow ships with documentation,
+                    runbooks and metrics your operators can act on. No black boxes. No vendor lock-in.
+                  </p>
+                </div>
+
+                <div className="mt-10 pt-8 border-t border-border/70">
+                  <p className="text-[10px] uppercase tracking-[0.22em] text-muted-foreground mb-3">Mission</p>
+                  <p className="text-foreground text-lg leading-[1.5] max-w-[34ch]">
+                    To make operational AI boring — reliable, measurable, owned.
+                  </p>
+                </div>
+              </MotionElement>
             </div>
           </div>
         </div>
       </section>
 
-      {/* CTA — editorial split, no rounded gold block */}
-      <section className="py-28 md:py-40 relative border-t border-border/70">
-        <div className="container mx-auto px-6">
-          <div className={`grid md:grid-cols-12 gap-10 md:gap-16 items-end ${isRTL ? "md:[direction:rtl] text-right" : ""}`}>
+      {/* ============== CTA ============== */}
+      <section className="py-28 md:py-36 border-t border-border bg-card/40">
+        <div className="container mx-auto px-6 lg:px-10">
+          <div className={`grid md:grid-cols-12 gap-12 md:gap-16 items-end ${isRTL ? "md:[direction:rtl] text-right" : ""}`}>
             <MotionElement animation="slideUp" className="md:col-span-8">
               <p className="text-[10px] uppercase tracking-[0.22em] text-muted-foreground mb-6">Next step</p>
-              <h2 className="!text-4xl md:!text-6xl lg:!text-7xl !leading-[1.02] max-w-[18ch]">
-                {t("index.cta.title").split(" systems").map((part, idx, arr) =>
-                  idx === 0 ? (
-                    <span key={idx}>{part}{arr.length > 1 && (<span className="font-serif-accent italic font-light text-primary"> systems</span>)}</span>
-                  ) : (
-                    <span key={idx}>{part}</span>
-                  )
-                )}
+              <h2 className="!text-4xl md:!text-6xl !leading-[1.05] tracking-[-0.035em] font-semibold max-w-[22ch]">
+                Let's discuss your next <span className="text-primary">AI project</span>.
               </h2>
             </MotionElement>
             <MotionElement animation="slideUp" delay={120} className="md:col-span-4 md:pb-2">
-              <p className="text-muted-foreground mb-8 max-w-md">{t("index.cta.subtitle")}</p>
-              <a href="https://cal.com/tarek-jundi/free-consultation" target="_blank" rel="noopener noreferrer" className="inline-block">
-                <Button className="bg-primary text-primary-foreground hover:bg-primary/90 text-sm px-7 py-6 rounded-sm font-medium gap-2 group">
-                  {t("index.cta.button")}
-                  <ArrowRight size={14} className={`transition-transform duration-300 group-hover:translate-x-0.5 ${isRTL ? "rotate-180 group-hover:-translate-x-0.5" : ""}`} />
-                </Button>
-              </a>
+              <p className="text-muted-foreground mb-8 max-w-md leading-[1.7]">
+                Tell us about one workflow you'd like to automate. We'll respond within one business day.
+              </p>
+              <div className="flex flex-wrap gap-3">
+                <a href="https://cal.com/tarek-jundi/free-consultation" target="_blank" rel="noopener noreferrer">
+                  <Button className="bg-primary text-primary-foreground hover:bg-primary/90 text-sm px-7 h-12 rounded-md font-medium gap-2 group">
+                    Book a Consultation
+                    <ArrowRight size={14} className={`transition-transform duration-300 group-hover:translate-x-0.5 ${isRTL ? "rotate-180" : ""}`} />
+                  </Button>
+                </a>
+                <Link to="/contact">
+                  <Button variant="ghost" className="text-foreground hover:text-primary hover:bg-transparent text-sm px-5 h-12 rounded-md font-medium border border-border hover:border-primary/50">
+                    Send a brief
+                  </Button>
+                </Link>
+              </div>
             </MotionElement>
           </div>
         </div>
-
       </section>
 
       <Footer />

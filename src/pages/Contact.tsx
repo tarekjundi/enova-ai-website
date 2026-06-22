@@ -12,11 +12,11 @@ import { useLanguage } from "@/contexts/LanguageContext";
 const Contact = () => {
   const { isRTL } = useLanguage();
   const [formData, setFormData] = useState({
-    name: "", email: "", company: "", phone: "", message: "",
+    name: "", email: "", company: "", budget: "", message: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
@@ -30,10 +30,10 @@ const Contact = () => {
         { method: "POST", mode: "no-cors", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ ...formData, timestamp: new Date().toISOString() }) }
       );
       toast({ title: "Thanks — we'll be in touch.", description: "We typically respond within one business day." });
-      setFormData({ name: "", email: "", company: "", phone: "", message: "" });
+      setFormData({ name: "", email: "", company: "", budget: "", message: "" });
     } catch {
       toast({ title: "Thanks — we'll be in touch.", description: "We typically respond within one business day." });
-      setFormData({ name: "", email: "", company: "", phone: "", message: "" });
+      setFormData({ name: "", email: "", company: "", budget: "", message: "" });
     } finally {
       setIsSubmitting(false);
     }
@@ -58,9 +58,8 @@ const Contact = () => {
             </div>
             <div className="md:col-span-8">
               <MotionElement animation="slideUp" delay={100}>
-                <h1 className="!text-5xl md:!text-6xl lg:!text-7xl !leading-[1.02] tracking-[-0.04em] mb-8 max-w-[20ch]">
-                  Tell us about one workflow you'd like to{" "}
-                  <span className="font-serif-accent italic font-light text-primary">automate</span>.
+                <h1 className="!text-5xl md:!text-6xl lg:!text-7xl !leading-[1.05] tracking-[-0.035em] mb-8 max-w-[22ch] font-semibold">
+                  Let's discuss your next <span className="text-primary">AI project</span>.
                 </h1>
               </MotionElement>
               <MotionElement animation="slideUp" delay={180}>
@@ -134,8 +133,14 @@ const Contact = () => {
                       <input id="company" name="company" type="text" value={formData.company} onChange={handleChange} className={fieldClass} disabled={isSubmitting} placeholder="Company name" />
                     </div>
                     <div>
-                      <label htmlFor="phone" className={labelClass}>Phone <span className="text-muted-foreground/60 normal-case tracking-normal">(optional)</span></label>
-                      <input id="phone" name="phone" type="tel" value={formData.phone} onChange={handleChange} className={fieldClass} disabled={isSubmitting} dir="ltr" placeholder="+1 555 000 0000" />
+                      <label htmlFor="budget" className={labelClass}>Estimated budget</label>
+                      <select id="budget" name="budget" value={formData.budget} onChange={handleChange} className={fieldClass} disabled={isSubmitting}>
+                        <option value="" className="bg-card">Select a range</option>
+                        <option value="<25k" className="bg-card">Under $25k</option>
+                        <option value="25-50k" className="bg-card">$25k – $50k</option>
+                        <option value="50-100k" className="bg-card">$50k – $100k</option>
+                        <option value="100k+" className="bg-card">$100k+</option>
+                      </select>
                     </div>
                   </div>
                   <div>
