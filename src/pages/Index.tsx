@@ -36,43 +36,33 @@ const Index = () => {
           <div className={`grid lg:grid-cols-12 gap-12 lg:gap-16 items-center ${isRTL ? "lg:[direction:rtl]" : ""}`}>
             {/* LEFT */}
             <div className={`lg:col-span-6 ${isRTL ? "text-right" : ""}`}>
-              <MotionElement animation="slideUp" delay={0}>
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-border bg-secondary/40 text-xs uppercase tracking-[0.16em] text-muted-foreground mb-8">
-                  <span className="w-1.5 h-1.5 rounded-full bg-primary" />
-                  {t("index.hero.eyebrow")}
-                </div>
-              </MotionElement>
               <MotionElement animation="slideUp" delay={100}>
-                <h1 className="mb-8 text-foreground !text-5xl md:!text-7xl lg:!text-[80px] !leading-[0.98] tracking-[-0.045em]">
+                <h1 className="mb-10 text-foreground !text-[56px] sm:!text-[72px] lg:!text-[88px] !leading-[0.95] tracking-[-0.035em] font-bold">
                   {t("index.hero.title1")}
                   <br />
                   {t("index.hero.title2")}{" "}
-                  <span className="font-serif-accent italic font-light text-primary">
+                  <span className="font-serif-accent italic font-normal text-primary tracking-normal">
                     {t("index.hero.title_highlight")}
                   </span>
                 </h1>
               </MotionElement>
               <MotionElement animation="slideUp" delay={180}>
-                <p className="text-muted-foreground text-lg max-w-xl mb-10">
+                <p className="text-muted-foreground text-xl leading-relaxed max-w-xl mb-12 font-light">
                   {t("index.hero.subtitle")}
                 </p>
               </MotionElement>
               <MotionElement animation="slideUp" delay={260}>
-                <div className={`flex flex-col sm:flex-row gap-3 ${isRTL ? "sm:flex-row-reverse justify-end" : ""}`}>
+                <div className={`flex ${isRTL ? "justify-end" : ""}`}>
                   <a href="https://cal.com/tarek-jundi/free-consultation" target="_blank" rel="noopener noreferrer">
-                    <Button className="bg-primary text-primary-foreground hover:bg-primary/90 text-sm px-6 py-5 rounded-sm font-medium gap-2 group">
+                    <Button className="bg-primary text-primary-foreground hover:bg-primary/90 text-sm px-7 py-6 rounded-sm font-semibold gap-2 group">
                       {t("index.hero.cta")}
                       <ArrowRight size={14} className={`transition-transform duration-300 group-hover:translate-x-0.5 ${isRTL ? "rotate-180 group-hover:-translate-x-0.5" : ""}`} />
-                    </Button>
-                  </a>
-                  <a href="#features">
-                    <Button variant="outline" className="border-border bg-transparent text-foreground hover:bg-secondary/40 hover:border-border text-sm px-6 py-5 rounded-sm font-medium">
-                      {t("index.hero.cta2")}
                     </Button>
                   </a>
                 </div>
               </MotionElement>
             </div>
+
 
             {/* RIGHT — Dashboard mockup */}
             <div className="lg:col-span-6">
