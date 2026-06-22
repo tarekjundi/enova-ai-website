@@ -12,7 +12,7 @@ import { useLanguage } from "@/contexts/LanguageContext";
 const Contact = () => {
   const { isRTL } = useLanguage();
   const [formData, setFormData] = useState({
-    name: "", email: "", company: "", phone: "", message: "",
+    name: "", email: "", company: "", budget: "", message: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
 
