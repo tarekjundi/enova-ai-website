@@ -165,30 +165,30 @@
 @layer utilities {
   .text-gradient {
     @apply bg-clip-text text-transparent;
-    background-image: linear-gradient(135deg, #f8fafc 0%, #cbd5e1 100%);
+    background-image: linear-gradient(135deg, #F6D5A0 0%, #d9b483 100%);
   }
 
   .glass {
-    background: hsla(220, 39%, 11%, 0.92);
-    border: 1px solid hsla(220, 25%, 22%, 0.6);
+    background: hsla(36, 55%, 13%, 0.92);
+    border: 1px solid hsla(36, 35%, 25%, 0.6);
   }
 
   @media (min-width: 768px) {
     .glass {
-      background: hsla(222, 39%, 7%, 0.7);
+      background: hsla(36, 58%, 10%, 0.7);
       backdrop-filter: blur(20px);
       -webkit-backdrop-filter: blur(20px);
     }
   }
 
   .glass-strong {
-    background: hsla(222, 39%, 7%, 0.95);
-    border-bottom: 1px solid hsla(220, 25%, 18%, 0.8);
+    background: hsla(36, 58%, 10%, 0.95);
+    border-bottom: 1px solid hsla(36, 35%, 22%, 0.8);
   }
 
   @media (min-width: 768px) {
     .glass-strong {
-      background: hsla(222, 39%, 7%, 0.78);
+      background: hsla(36, 58%, 10%, 0.78);
       backdrop-filter: blur(24px);
       -webkit-backdrop-filter: blur(24px);
     }
@@ -196,8 +196,8 @@
 
   .grid-bg {
     background-image:
-      linear-gradient(hsla(210, 40%, 98%, 0.02) 1px, transparent 1px),
-      linear-gradient(90deg, hsla(210, 40%, 98%, 0.02) 1px, transparent 1px);
+      linear-gradient(hsla(35, 83%, 80%, 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, hsla(35, 83%, 80%, 0.03) 1px, transparent 1px);
     background-size: 72px 72px;
     mask-image: linear-gradient(180deg, black 0%, black 35%, transparent 90%);
     -webkit-mask-image: linear-gradient(180deg, black 0%, black 35%, transparent 90%);
