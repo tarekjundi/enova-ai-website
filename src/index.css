@@ -9,13 +9,13 @@
   :root {
     /* Palette — bg #281D0B (deep brown), accent/text #F6D5A0 (warm cream) */
     --background: 36 58% 10%;
-    --foreground: 35 83% 80%;
+    --foreground: 36 90% 92%;
 
-    --card: 36 55% 13%;
-    --card-foreground: 35 83% 80%;
+    --card: 36 50% 14%;
+    --card-foreground: 36 90% 92%;
 
-    --popover: 36 55% 13%;
-    --popover-foreground: 35 83% 80%;
+    --popover: 36 50% 14%;
+    --popover-foreground: 36 90% 92%;
 
     --primary: 35 83% 80%;
     --primary-foreground: 36 60% 10%;
@@ -24,7 +24,7 @@
     --secondary-foreground: 35 83% 80%;
 
     --muted: 36 40% 18%;
-    --muted-foreground: 35 40% 68%;
+    --muted-foreground: 36 55% 82%;
 
     --accent: 35 83% 80%;
     --accent-foreground: 36 60% 10%;
