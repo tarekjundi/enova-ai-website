@@ -200,38 +200,37 @@ const Index = () => {
       </section>
 
       {/* ============== TRUST BAND ============== */}
-      <section className="border-y border-border bg-card/30">
-        <div className="container mx-auto px-6 lg:px-10 py-20 md:py-24">
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-8 items-end">
-            <MotionElement animation="slideUp" className="md:col-span-5">
-              <p className="text-[10px] uppercase tracking-[0.22em] text-muted-foreground mb-5">Proven Results</p>
-              <h2 className="!text-3xl md:!text-4xl lg:!text-5xl !leading-[1.08] tracking-[-0.03em] max-w-[18ch] font-semibold">
-                Built for businesses that measure outcomes.
-              </h2>
-            </MotionElement>
+      <section className="border-t border-border/60 bg-gradient-to-b from-background to-card/20">
+        <div className="container mx-auto px-6 lg:px-10 py-28 md:py-36">
+          <MotionElement animation="slideUp">
+            <p className="text-[10px] uppercase tracking-[0.28em] text-primary/80 mb-6">Proven Results</p>
+            <h2 className="!text-4xl md:!text-6xl lg:!text-7xl !leading-[1.02] tracking-[-0.04em] max-w-[20ch] font-semibold mb-20">
+              Built for businesses that <span className="font-serif-accent text-primary">measure outcomes.</span>
+            </h2>
+          </MotionElement>
 
-            <div className="md:col-span-7 grid grid-cols-1 sm:grid-cols-3 gap-px bg-border rounded-md overflow-hidden border border-border">
-              {[
-                { v: "25+", l: "Projects Delivered" },
-                { v: "98%", l: "Client Satisfaction" },
-                { v: "50,000+", l: "Hours Automated" },
-              ].map((s, i) => (
-                <MotionElement key={s.l} animation="slideUp" delay={100 + i * 80}>
-                  <div className="bg-card p-7 h-full">
-                    <p className="text-4xl md:text-5xl font-semibold tracking-tight text-foreground">{s.v}</p>
-                    <p className="text-muted-foreground text-sm mt-3">{s.l}</p>
-                  </div>
-                </MotionElement>
-              ))}
-            </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-20">
+            {[
+              { v: "25+", l: "Projects Delivered" },
+              { v: "98%", l: "Client Satisfaction" },
+              { v: "50K+", l: "Hours Automated" },
+            ].map((s, i) => (
+              <MotionElement key={s.l} animation="slideUp" delay={100 + i * 100}>
+                <div>
+                  <p className="!text-6xl md:!text-7xl lg:!text-8xl font-semibold tracking-[-0.045em] text-foreground leading-none mb-5">{s.v}</p>
+                  <div className="w-10 h-px bg-primary/60 mb-4" />
+                  <p className="text-muted-foreground text-sm tracking-wide">{s.l}</p>
+                </div>
+              </MotionElement>
+            ))}
           </div>
 
           {/* Industries served */}
-          <div className="mt-16 pt-10 border-t border-border/70">
-            <p className="text-[10px] uppercase tracking-[0.22em] text-muted-foreground mb-6">Industries served</p>
-            <div className="flex flex-wrap gap-x-10 gap-y-3 text-muted-foreground text-sm">
+          <div className="mt-28">
+            <p className="text-[10px] uppercase tracking-[0.28em] text-muted-foreground mb-8">Industries served</p>
+            <div className="flex flex-wrap gap-x-8 gap-y-4">
               {["B2B SaaS", "Financial Services", "E-commerce Operations", "Professional Services", "Healthcare", "Logistics"].map((i) => (
-                <span key={i}>{i}</span>
+                <span key={i} className="text-foreground/90 text-base md:text-lg font-medium">{i}</span>
               ))}
             </div>
           </div>
@@ -239,37 +238,46 @@ const Index = () => {
       </section>
 
       {/* ============== SERVICES ============== */}
-      <section id="features" className="py-28 md:py-40">
+      <section id="features" className="py-32 md:py-48">
         <div className="container mx-auto px-6 lg:px-10">
-          <div className={`grid md:grid-cols-12 gap-10 md:gap-16 mb-20 ${isRTL ? "md:[direction:rtl]" : ""}`}>
-            <div className="md:col-span-5">
+          <div className={`grid md:grid-cols-12 gap-10 md:gap-16 mb-24 ${isRTL ? "md:[direction:rtl]" : ""}`}>
+            <div className="md:col-span-7">
               <MotionElement animation="slideUp">
-                <p className="text-[10px] uppercase tracking-[0.22em] text-muted-foreground mb-5">Services</p>
-                <h2 className="!text-4xl md:!text-5xl lg:!text-6xl !leading-[1.05] tracking-[-0.035em] max-w-[16ch] font-semibold">
-                  Enterprise-grade AI, delivered as systems.
+                <p className="text-[10px] uppercase tracking-[0.28em] text-primary/80 mb-6">Services</p>
+                <h2 className="!text-4xl md:!text-6xl lg:!text-7xl !leading-[1.02] tracking-[-0.04em] max-w-[16ch] font-semibold">
+                  Enterprise-grade AI, <span className="font-serif-accent text-primary">delivered as systems.</span>
                 </h2>
               </MotionElement>
             </div>
-            <div className="md:col-span-6 md:col-start-7 md:pt-4">
+            <div className="md:col-span-4 md:col-start-9 md:pt-6">
               <MotionElement animation="slideUp" delay={120}>
-                <p className="text-muted-foreground text-lg leading-[1.7]">
-                  Four practice areas. One engagement model. Every deliverable owned by your team —
-                  no black boxes, no lock-in.
+                <p className="text-muted-foreground text-base md:text-lg leading-[1.7]">
+                  Four practice areas. One engagement model. Every deliverable owned by your team — no black boxes, no lock-in.
                 </p>
               </MotionElement>
             </div>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-px bg-border border border-border rounded-md overflow-hidden">
+          <div className="space-y-px">
             {services.map((s, i) => (
-              <MotionElement key={s.n} animation="slideUp" delay={100 + i * 60}>
-                <div className="bg-card p-8 md:p-10 h-full group transition-colors duration-300 hover:bg-secondary/40">
-                  <div className="flex items-baseline justify-between mb-10">
-                    <span className="text-xs font-mono text-muted-foreground tracking-widest">{s.n}</span>
-                    <span className="text-[10px] uppercase tracking-[0.18em] text-muted-foreground">{s.meta}</span>
+              <MotionElement key={s.n} animation="slideUp" delay={80 + i * 60}>
+                <div className="group relative py-10 md:py-14 border-t border-border/60 last:border-b last:border-border/60 transition-colors hover:bg-card/40">
+                  <div className="container-fluid grid md:grid-cols-12 gap-6 md:gap-10 items-start">
+                    <div className="md:col-span-1">
+                      <span className="text-xs font-mono text-primary/70 tracking-widest">{s.n}</span>
+                    </div>
+                    <div className="md:col-span-5">
+                      <h3 className="!text-3xl md:!text-5xl !leading-[1.05] tracking-[-0.035em] font-semibold text-foreground group-hover:text-primary transition-colors">
+                        {s.title}
+                      </h3>
+                    </div>
+                    <div className="md:col-span-4">
+                      <p className="text-muted-foreground text-[15px] md:text-base leading-[1.7]">{s.desc}</p>
+                    </div>
+                    <div className="md:col-span-2 md:text-right">
+                      <span className="text-[10px] uppercase tracking-[0.22em] text-muted-foreground/80">{s.meta}</span>
+                    </div>
                   </div>
-                  <h3 className="!text-2xl md:!text-3xl !leading-[1.15] tracking-tight mb-5 font-semibold">{s.title}</h3>
-                  <p className="text-muted-foreground text-[15px] leading-[1.7] max-w-[42ch]">{s.desc}</p>
                 </div>
               </MotionElement>
             ))}
@@ -278,46 +286,47 @@ const Index = () => {
       </section>
 
       {/* ============== CASE STUDIES ============== */}
-      <section className="py-28 md:py-40 border-t border-border bg-card/30">
+      <section className="py-32 md:py-48 bg-card/30 border-t border-border/60">
         <div className="container mx-auto px-6 lg:px-10">
-          <div className={`grid md:grid-cols-12 gap-10 md:gap-16 mb-20 ${isRTL ? "md:[direction:rtl]" : ""}`}>
-            <div className="md:col-span-5">
+          <div className={`grid md:grid-cols-12 gap-10 md:gap-16 mb-24 ${isRTL ? "md:[direction:rtl]" : ""}`}>
+            <div className="md:col-span-8">
               <MotionElement animation="slideUp">
-                <p className="text-[10px] uppercase tracking-[0.22em] text-muted-foreground mb-5">Case Studies</p>
-                <h2 className="!text-4xl md:!text-5xl lg:!text-6xl !leading-[1.05] tracking-[-0.035em] max-w-[16ch] font-semibold">
-                  Outcomes measured the way your CFO measures them.
+                <p className="text-[10px] uppercase tracking-[0.28em] text-primary/80 mb-6">Case Studies</p>
+                <h2 className="!text-4xl md:!text-6xl lg:!text-7xl !leading-[1.02] tracking-[-0.04em] max-w-[18ch] font-semibold">
+                  Outcomes measured the way <span className="font-serif-accent text-primary">your CFO measures them.</span>
                 </h2>
               </MotionElement>
             </div>
-            <div className="md:col-span-6 md:col-start-7 md:pt-4 flex items-end">
+            <div className="md:col-span-3 md:col-start-10 md:pt-6 flex items-start md:items-end">
               <MotionElement animation="slideUp" delay={120}>
                 <Link to="/case-studies" className="text-primary text-sm font-medium inline-flex items-center gap-2 hover:gap-3 transition-all border-b border-primary/40 pb-0.5">
-                  View all case studies <ArrowRight size={14} />
+                  View all <ArrowRight size={14} />
                 </Link>
               </MotionElement>
             </div>
           </div>
 
-          <div className="space-y-px bg-border border border-border rounded-md overflow-hidden">
+          <div className="space-y-6 md:space-y-8">
             {cases.map((c, i) => (
               <MotionElement key={c.industry} animation="slideUp" delay={100 + i * 80}>
-                <div className="bg-card grid md:grid-cols-12 gap-8 md:gap-10 p-8 md:p-10 transition-colors hover:bg-secondary/40">
-                  <div className="md:col-span-3">
-                    <p className="text-[10px] uppercase tracking-[0.22em] text-muted-foreground mb-2">Industry</p>
-                    <p className="text-foreground text-base font-medium">{c.industry}</p>
-                  </div>
-                  <div className="md:col-span-4">
-                    <p className="text-[10px] uppercase tracking-[0.22em] text-muted-foreground mb-2">Challenge</p>
-                    <p className="text-muted-foreground text-[14px] leading-[1.65]">{c.challenge}</p>
-                  </div>
-                  <div className="md:col-span-3">
-                    <p className="text-[10px] uppercase tracking-[0.22em] text-muted-foreground mb-2">Solution</p>
-                    <p className="text-muted-foreground text-[14px] leading-[1.65]">{c.solution}</p>
-                  </div>
-                  <div className="md:col-span-2 md:border-l md:border-border md:pl-8">
-                    <p className="text-[10px] uppercase tracking-[0.22em] text-muted-foreground mb-2">Result</p>
-                    <p className="text-3xl font-semibold tracking-tight text-primary">{c.result}</p>
-                    <p className="text-muted-foreground text-xs mt-1.5">{c.resultLabel}</p>
+                <div className="group bg-background/40 hover:bg-background/70 transition-colors rounded-lg p-8 md:p-12 border border-border/40">
+                  <div className="grid md:grid-cols-12 gap-8 md:gap-12 items-center">
+                    <div className="md:col-span-3 md:border-r md:border-border/40 md:pr-8">
+                      <p className="text-[10px] uppercase tracking-[0.28em] text-muted-foreground mb-3">Industry</p>
+                      <p className="text-foreground text-xl md:text-2xl font-semibold tracking-tight">{c.industry}</p>
+                    </div>
+                    <div className="md:col-span-5">
+                      <p className="text-muted-foreground text-[15px] leading-[1.7] mb-3">
+                        <span className="text-foreground/90 font-medium">Challenge.</span> {c.challenge}
+                      </p>
+                      <p className="text-muted-foreground text-[15px] leading-[1.7]">
+                        <span className="text-foreground/90 font-medium">Solution.</span> {c.solution}
+                      </p>
+                    </div>
+                    <div className="md:col-span-4 md:text-right md:border-l md:border-border/40 md:pl-8">
+                      <p className="!text-5xl md:!text-7xl font-semibold tracking-[-0.045em] text-primary leading-none">{c.result}</p>
+                      <p className="text-muted-foreground text-sm mt-3">{c.resultLabel}</p>
+                    </div>
                   </div>
                 </div>
               </MotionElement>
@@ -325,6 +334,8 @@ const Index = () => {
           </div>
         </div>
       </section>
+
+
 
       {/* ============== ABOUT / FOUNDER ============== */}
       <section className="py-28 md:py-40 border-t border-border">
