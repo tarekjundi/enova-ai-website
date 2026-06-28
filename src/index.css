@@ -214,9 +214,6 @@
   .hover-lift:hover {
     border-color: hsla(35, 83%, 80%, 0.4);
   }
-  .hover-lift:hover {
-    border-color: hsla(262, 83%, 58%, 0.35);
-  }
 
 
   .animate-fade-in {
