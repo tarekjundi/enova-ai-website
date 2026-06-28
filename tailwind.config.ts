@@ -32,8 +32,8 @@ export default {
         'serif-accent': ['Instrument Serif', 'Times New Roman', 'serif'],
       },
       colors: {
-        neonGreen: '#e1bb80',
-        darkTeal: '#352208',
+        neonGreen: '#F6D5A0',
+        darkTeal: '#281D0B',
         border: 'hsl(var(--border))',
         input: 'hsl(var(--input))',
         ring: 'hsl(var(--ring))',
