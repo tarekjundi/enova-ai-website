@@ -66,6 +66,7 @@ const PHASES: Phase[] = [
     inputs: ["Approved workflow specifications", "Security + compliance constraints", "Existing infrastructure baseline"],
     activities: ["Model + provider selection", "Retrieval + memory design", "Guardrails + human-checkpoint design", "Cost + latency budgeting"],
     outputs: ["Reference architecture", "Model + provider plan", "Eval harness", "Security + cost review"],
+    Icon: Cube,
   },
   {
     num: "04",
