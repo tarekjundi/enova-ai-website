@@ -98,9 +98,7 @@ const Navbar = () => {
       {mobileMenuOpen && (
         <div className="md:hidden glass-strong mt-2 mx-4 rounded-2xl p-6 animate-fade-in">
           <div className="flex flex-col gap-2">
-            <div className="flex justify-end mb-2">
-              <LanguageToggle />
-            </div>
+
             {navLinks.map((link) => (
               <Link
                 key={link.to}
