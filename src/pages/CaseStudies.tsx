@@ -247,23 +247,23 @@ const CaseStudies = () => {
                   </div>
 
                   {/* Before / After */}
-                  <div className="grid md:grid-cols-2 gap-px bg-border border border-border" style={{ direction: "ltr" }}>
-                    <div className="bg-card p-6">
+                  <div className="grid md:grid-cols-2 gap-6" style={{ direction: "ltr" }}>
+                    <div className="p-6 rounded-lg bg-card/40">
                       <p className="text-[10px] uppercase tracking-[0.22em] text-muted-foreground/70 mb-4">Before</p>
                       <dl className="space-y-3">
                         {c.before.map((m, idx) => (
-                          <div key={idx} className="flex items-baseline justify-between gap-4 border-b border-border/40 pb-2 last:border-0">
+                          <div key={idx} className="flex items-baseline justify-between gap-4">
                             <dt className="text-sm text-muted-foreground">{m.label}</dt>
                             <dd className="text-sm font-mono text-foreground/80">{m.value}</dd>
                           </div>
                         ))}
                       </dl>
                     </div>
-                    <div className="bg-card p-6">
+                    <div className="p-6 rounded-lg bg-card/60 ring-1 ring-primary/20">
                       <p className="text-[10px] uppercase tracking-[0.22em] text-primary mb-4">After</p>
                       <dl className="space-y-3">
                         {c.after.map((m, idx) => (
-                          <div key={idx} className="flex items-baseline justify-between gap-4 border-b border-border/40 pb-2 last:border-0">
+                          <div key={idx} className="flex items-baseline justify-between gap-4">
                             <dt className="text-sm text-muted-foreground">{m.label}</dt>
                             <dd className="text-sm font-mono text-foreground">{m.value}</dd>
                           </div>
@@ -271,6 +271,7 @@ const CaseStudies = () => {
                       </dl>
                     </div>
                   </div>
+
 
                   {/* Outcomes strip */}
                   <div className="grid grid-cols-3 gap-px bg-border border border-border">
