@@ -43,6 +43,7 @@ const PHASES: Phase[] = [
     inputs: ["Org chart + tool inventory", "Access to CRM, support and ops tools (read-only)", "30–60 min interviews with 4–6 operators"],
     activities: ["Workflow shadowing across teams", "Quantitative time-on-task analysis", "Stack + data-flow mapping", "Risk + compliance review"],
     outputs: ["Workflow inventory (typically 25–60 workflows)", "Ranked opportunity list", "Quick-win shortlist", "Audit report"],
+    Icon: MagnifyingGlass,
   },
   {
     num: "02",
