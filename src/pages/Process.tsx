@@ -88,6 +88,7 @@ const PHASES: Phase[] = [
     inputs: ["Live production metrics", "User + operator feedback", "Quarterly business review inputs"],
     activities: ["Eval re-runs against new data", "Prompt + retrieval tuning", "Cost + latency optimisation", "New workflow intake"],
     outputs: ["Monthly performance report", "Tuned production system", "Updated runbooks", "Roadmap for next quarter"],
+    Icon: ChartLineUp,
   },
 ];
 
