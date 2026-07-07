@@ -77,6 +77,7 @@ const PHASES: Phase[] = [
     inputs: ["Approved architecture", "Production credentials (scoped)", "Test cohort + rollback plan"],
     activities: ["Build + integration", "Eval against real historical data", "Shadow-mode rollout", "Gradual cutover with feature flags"],
     outputs: ["Production system", "Observability dashboard", "Runbooks", "Handover documentation"],
+    Icon: Rocket,
   },
   {
     num: "05",
