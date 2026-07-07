@@ -311,10 +311,10 @@ const Index = () => {
           <div className="space-y-6 md:space-y-8">
             {cases.map((c, i) => (
               <MotionElement key={c.industry} animation="slideUp" delay={100 + i * 80}>
-                <div className="group bg-background/40 hover:bg-background/70 transition-colors rounded-lg p-8 md:p-12 border border-border/40">
+                <div className="group bg-background/40 hover:bg-background/70 transition-all duration-500 rounded-xl p-8 md:p-12 hover:-translate-y-1">
                   <div className="grid md:grid-cols-12 gap-8 md:gap-12 items-center">
-                    <div className="md:col-span-3 md:border-r md:border-border/40 md:pr-8">
-                      <p className="text-[10px] uppercase tracking-[0.28em] text-muted-foreground mb-3">Industry</p>
+                    <div className="md:col-span-3">
+                      <p className="text-[10px] uppercase tracking-[0.28em] text-primary/70 mb-3">Industry</p>
                       <p className="text-foreground text-xl md:text-2xl font-semibold tracking-tight">{c.industry}</p>
                     </div>
                     <div className="md:col-span-5">
@@ -325,10 +325,12 @@ const Index = () => {
                         <span className="text-foreground/90 font-medium">Solution.</span> {c.solution}
                       </p>
                     </div>
-                    <div className="md:col-span-4 md:text-right md:border-l md:border-border/40 md:pl-8">
-                      <p className="!text-5xl md:!text-7xl font-semibold tracking-[-0.045em] text-primary leading-none">{c.result}</p>
-                      <p className="text-muted-foreground text-sm mt-3">{c.resultLabel}</p>
+                    <div className="md:col-span-4 md:text-right">
+                      <p className="!text-5xl md:!text-7xl font-semibold tracking-[-0.045em] text-primary leading-none transition-transform duration-500 group-hover:-translate-y-1">{c.result}</p>
+                      <div className="w-10 h-px bg-primary/50 md:ml-auto my-4" />
+                      <p className="text-muted-foreground text-sm">{c.resultLabel}</p>
                     </div>
+
                   </div>
                 </div>
               </MotionElement>
