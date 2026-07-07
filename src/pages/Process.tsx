@@ -55,6 +55,7 @@ const PHASES: Phase[] = [
     inputs: ["Selected workflow shortlist", "Sample data (anonymised) for each workflow", "Stakeholder interviews per workflow"],
     activities: ["End-to-end workflow diagramming", "Decision-point + escalation modelling", "SLA + ownership definition", "Eval criteria per workflow"],
     outputs: ["Per-workflow specification", "Eval rubric", "Integration matrix", "Sign-off from workflow owners"],
+    Icon: FlowArrow,
   },
   {
     num: "03",
