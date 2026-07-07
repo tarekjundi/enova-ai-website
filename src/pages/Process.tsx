@@ -29,7 +29,9 @@ type Phase = {
   inputs: string[];
   activities: string[];
   outputs: string[];
+  Icon: React.ComponentType<{ size?: number; weight?: "thin" | "light" | "regular" | "bold" | "fill" | "duotone" }>;
 };
+
 
 const PHASES: Phase[] = [
   {
