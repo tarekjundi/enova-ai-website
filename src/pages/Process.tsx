@@ -7,15 +7,16 @@ import {
   ArrowRight,
   MagnifyingGlass,
   FlowArrow,
-  CircuitBoard,
+  Cube,
   Rocket,
   ChartLineUp,
   FileText,
   Database,
   ShieldCheck,
   Gauge,
-  HandshakeIcon,
+  Handshake,
 } from "@phosphor-icons/react";
+
 import { useLanguage } from "@/contexts/LanguageContext";
 
 
