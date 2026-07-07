@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import { LinkedinLogo } from "@phosphor-icons/react";
+import { LinkedinLogo, InstagramLogo, XLogo } from "@phosphor-icons/react";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 const Footer = () => {
