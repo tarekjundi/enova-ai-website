@@ -3,8 +3,21 @@ import Footer from "@/components/Footer";
 import ScrollToTop from "@/components/ScrollToTop";
 import { Button } from "@/components/ui/button";
 import { MotionElement } from "@/components/MotionElements";
-import { ArrowRight } from "@phosphor-icons/react";
+import {
+  ArrowRight,
+  MagnifyingGlass,
+  FlowArrow,
+  CircuitBoard,
+  Rocket,
+  ChartLineUp,
+  FileText,
+  Database,
+  ShieldCheck,
+  Gauge,
+  HandshakeIcon,
+} from "@phosphor-icons/react";
 import { useLanguage } from "@/contexts/LanguageContext";
+
 
 type Phase = {
   num: string;
