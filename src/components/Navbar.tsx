@@ -2,14 +2,14 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, X, List, Globe } from "@phosphor-icons/react";
+import { ArrowRight, X, List } from "@phosphor-icons/react";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
-  const { language, setLanguage, t, isRTL } = useLanguage();
+  const { t, isRTL } = useLanguage();
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
@@ -32,20 +32,8 @@ const Navbar = () => {
 
   const isActive = (path: string) => location.pathname === path;
 
-  const toggleLanguage = () => {
-    setLanguage(language === "en" ? "ar" : "en");
-  };
 
-  const LanguageToggle = ({ className = "" }: { className?: string }) => (
-    <button
-      onClick={toggleLanguage}
-      className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full text-sm font-medium transition-all duration-300 border border-border/50 hover:border-primary/30 hover:bg-primary/5 text-foreground/70 hover:text-primary ${className}`}
-      aria-label="Toggle language"
-    >
-      <Globe size={14} />
-      <span>{language === "en" ? "AR" : "EN"}</span>
-    </button>
-  );
+
 
   return (
     <nav
@@ -82,7 +70,7 @@ const Navbar = () => {
               {link.label}
             </Link>
           ))}
-          <LanguageToggle className="ml-2" />
+          
           <a
             href="https://cal.com/tarek-jundi/free-consultation"
             target="_blank"
@@ -110,9 +98,7 @@ const Navbar = () => {
       {mobileMenuOpen && (
         <div className="md:hidden glass-strong mt-2 mx-4 rounded-2xl p-6 animate-fade-in">
           <div className="flex flex-col gap-2">
-            <div className="flex justify-end mb-2">
-              <LanguageToggle />
-            </div>
+
             {navLinks.map((link) => (
               <Link
                 key={link.to}

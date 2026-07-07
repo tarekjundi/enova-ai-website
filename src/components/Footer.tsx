@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import { LinkedinLogo } from "@phosphor-icons/react";
+import { LinkedinLogo, InstagramLogo, XLogo } from "@phosphor-icons/react";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 const Footer = () => {
@@ -71,6 +71,17 @@ const Footer = () => {
                   <LinkedinLogo size={16} weight="fill" /> LinkedIn
                 </a>
               </li>
+              <li>
+                <a href="https://www.instagram.com/enovaagency/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors">
+                  <InstagramLogo size={16} weight="fill" /> Instagram
+                </a>
+              </li>
+              <li>
+                <a href="https://x.com/enovaagency" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors">
+                  <XLogo size={16} weight="fill" /> X (Twitter)
+                </a>
+              </li>
+
             </ul>
           </div>
         </div>

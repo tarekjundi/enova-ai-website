@@ -74,13 +74,14 @@ const Index = () => {
             {/* LEFT */}
             <div className={`lg:col-span-6 ${isRTL ? "text-right" : ""}`}>
               <MotionElement animation="slideUp" delay={60}>
-                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-border bg-card/60 mb-10">
-                  <span className="w-1.5 h-1.5 rounded-full bg-primary" />
-                  <span className="text-[11px] uppercase tracking-[0.18em] text-muted-foreground font-medium">
-                    AI Consultancy · Est. 2024
+                <div className="inline-flex items-center gap-3 mb-10">
+                  <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
+                  <span className="text-[11px] uppercase tracking-[0.24em] text-muted-foreground font-medium">
+                    AI Consultancy — Est. 2024
                   </span>
                 </div>
               </MotionElement>
+
 
               <MotionElement animation="slideUp" delay={120}>
                 <h1 className="mb-8 text-foreground !text-[52px] sm:!text-[64px] lg:!text-[80px] !leading-[1.02] tracking-[-0.035em] font-semibold">
@@ -275,8 +276,9 @@ const Index = () => {
                       <p className="text-muted-foreground text-[15px] md:text-base leading-[1.7]">{s.desc}</p>
                     </div>
                     <div className="md:col-span-2 md:text-right">
-                      <span className="text-[10px] uppercase tracking-[0.22em] text-muted-foreground/80">{s.meta}</span>
+                      <span className="font-mono text-[11px] tracking-[0.14em] text-primary/70 lowercase">{s.meta.toLowerCase()}</span>
                     </div>
+
                   </div>
                 </div>
               </MotionElement>
@@ -309,10 +311,10 @@ const Index = () => {
           <div className="space-y-6 md:space-y-8">
             {cases.map((c, i) => (
               <MotionElement key={c.industry} animation="slideUp" delay={100 + i * 80}>
-                <div className="group bg-background/40 hover:bg-background/70 transition-colors rounded-lg p-8 md:p-12 border border-border/40">
+                <div className="group bg-background/40 hover:bg-background/70 transition-all duration-500 rounded-xl p-8 md:p-12 hover:-translate-y-1">
                   <div className="grid md:grid-cols-12 gap-8 md:gap-12 items-center">
-                    <div className="md:col-span-3 md:border-r md:border-border/40 md:pr-8">
-                      <p className="text-[10px] uppercase tracking-[0.28em] text-muted-foreground mb-3">Industry</p>
+                    <div className="md:col-span-3">
+                      <p className="text-[10px] uppercase tracking-[0.28em] text-primary/70 mb-3">Industry</p>
                       <p className="text-foreground text-xl md:text-2xl font-semibold tracking-tight">{c.industry}</p>
                     </div>
                     <div className="md:col-span-5">
@@ -323,10 +325,12 @@ const Index = () => {
                         <span className="text-foreground/90 font-medium">Solution.</span> {c.solution}
                       </p>
                     </div>
-                    <div className="md:col-span-4 md:text-right md:border-l md:border-border/40 md:pl-8">
-                      <p className="!text-5xl md:!text-7xl font-semibold tracking-[-0.045em] text-primary leading-none">{c.result}</p>
-                      <p className="text-muted-foreground text-sm mt-3">{c.resultLabel}</p>
+                    <div className="md:col-span-4 md:text-right">
+                      <p className="!text-5xl md:!text-7xl font-semibold tracking-[-0.045em] text-primary leading-none transition-transform duration-500 group-hover:-translate-y-1">{c.result}</p>
+                      <div className="w-10 h-px bg-primary/50 md:ml-auto my-4" />
+                      <p className="text-muted-foreground text-sm">{c.resultLabel}</p>
                     </div>
+
                   </div>
                 </div>
               </MotionElement>
