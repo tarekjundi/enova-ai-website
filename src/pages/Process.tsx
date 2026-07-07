@@ -93,12 +93,13 @@ const PHASES: Phase[] = [
 ];
 
 const PRINCIPLES = [
-  { num: "01", title: "Specification before code", body: "Every workflow is signed off by its owner before a line of integration code is written." },
-  { num: "02", title: "Production data or nothing", body: "Evals run against your real historical data. No sandbox demos." },
-  { num: "03", title: "Human-in-the-loop where it matters", body: "Anything touching a customer commitment or money keeps a human checkpoint until the metrics earn the agent's autonomy." },
-  { num: "04", title: "Observability on day one", body: "Every workflow ships with a dashboard, an owner, and an SLA. If we can't measure it, we don't ship it." },
-  { num: "05", title: "Yours to own", body: "Architecture, runbooks and credentials handed over. No black boxes, no lock-in to us." },
+  { num: "01", title: "Specification before code", body: "Every workflow is signed off by its owner before a line of integration code is written.", Icon: FileText },
+  { num: "02", title: "Production data or nothing", body: "Evals run against your real historical data. No sandbox demos.", Icon: Database },
+  { num: "03", title: "Human-in-the-loop where it matters", body: "Anything touching a customer commitment or money keeps a human checkpoint until the metrics earn the agent's autonomy.", Icon: ShieldCheck },
+  { num: "04", title: "Observability on day one", body: "Every workflow ships with a dashboard, an owner, and an SLA. If we can't measure it, we don't ship it.", Icon: Gauge },
+  { num: "05", title: "Yours to own", body: "Architecture, runbooks and credentials handed over. No black boxes, no lock-in to us.", Icon: Handshake },
 ];
+
 
 const Process = () => {
   const { isRTL } = useLanguage();
