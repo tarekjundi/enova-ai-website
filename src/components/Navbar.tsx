@@ -70,7 +70,7 @@ const Navbar = () => {
               {link.label}
             </Link>
           ))}
-          <LanguageToggle className="ml-2" />
+          
           <a
             href="https://cal.com/tarek-jundi/free-consultation"
             target="_blank"
