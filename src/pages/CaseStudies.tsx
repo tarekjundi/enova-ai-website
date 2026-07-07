@@ -234,15 +234,16 @@ const CaseStudies = () => {
                   {/* The system */}
                   <div>
                     <p className="text-[10px] uppercase tracking-[0.22em] text-muted-foreground/70 mb-4">The system</p>
-                    <div className="grid md:grid-cols-3 gap-px bg-border border border-border">
+                    <div className="grid md:grid-cols-3 gap-6">
                       {c.system.map((b, idx) => (
-                        <div key={idx} className="bg-card p-5">
-                          <p className="text-xs font-mono text-muted-foreground/70 mb-2">0{idx + 1}</p>
+                        <div key={idx} className="p-5 rounded-lg bg-card/60 hover:bg-card transition-colors">
+                          <p className="text-xs font-mono text-primary/70 mb-2">0{idx + 1}</p>
                           <p className="text-sm font-semibold mb-2">{b.title}</p>
                           <p className="text-[13px] text-muted-foreground leading-relaxed">{b.body}</p>
                         </div>
                       ))}
                     </div>
+
                   </div>
 
                   {/* Before / After */}
