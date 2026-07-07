@@ -74,13 +74,14 @@ const Index = () => {
             {/* LEFT */}
             <div className={`lg:col-span-6 ${isRTL ? "text-right" : ""}`}>
               <MotionElement animation="slideUp" delay={60}>
-                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-border bg-card/60 mb-10">
-                  <span className="w-1.5 h-1.5 rounded-full bg-primary" />
-                  <span className="text-[11px] uppercase tracking-[0.18em] text-muted-foreground font-medium">
-                    AI Consultancy · Est. 2024
+                <div className="inline-flex items-center gap-3 mb-10">
+                  <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
+                  <span className="text-[11px] uppercase tracking-[0.24em] text-muted-foreground font-medium">
+                    AI Consultancy — Est. 2024
                   </span>
                 </div>
               </MotionElement>
+
 
               <MotionElement animation="slideUp" delay={120}>
                 <h1 className="mb-8 text-foreground !text-[52px] sm:!text-[64px] lg:!text-[80px] !leading-[1.02] tracking-[-0.035em] font-semibold">
