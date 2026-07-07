@@ -127,36 +127,54 @@ const Process = () => {
         </div>
       </section>
 
-      {/* Timeline strip */}
+      {/* Timeline strip — clean, no table borders */}
       <section className="border-b border-border/60">
-        <div className="container mx-auto px-6 py-10">
-          <div className="grid grid-cols-5 gap-px bg-border border border-border" style={{ direction: "ltr" }}>
-            {PHASES.map((p) => (
-              <a key={p.num} href={`#phase-${p.num}`} className="bg-card px-4 py-5 hover:bg-secondary/40 transition-colors">
-                <div className="text-[10px] font-mono uppercase tracking-[0.18em] text-muted-foreground/70 mb-2">{p.week}</div>
-                <div className="text-xs font-mono text-muted-foreground/70 mb-1">{p.num}</div>
-                <div className="text-sm font-semibold tracking-tight">{p.title}</div>
-              </a>
-            ))}
+        <div className="container mx-auto px-6 py-12 md:py-16">
+          <div className="relative" style={{ direction: "ltr" }}>
+            {/* connecting line */}
+            <div className="hidden md:block absolute top-[26px] left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
+            <div className="grid grid-cols-2 md:grid-cols-5 gap-8 md:gap-4 relative">
+              {PHASES.map((p, i) => (
+                <MotionElement key={p.num} animation="slideUp" delay={80 + i * 70}>
+                  <a href={`#phase-${p.num}`} className="group flex flex-col items-start md:items-center text-left md:text-center">
+                    <div className="w-[52px] h-[52px] rounded-full bg-background border border-primary/40 flex items-center justify-center text-primary mb-4 transition-all duration-500 group-hover:bg-primary group-hover:text-primary-foreground group-hover:scale-110 group-hover:shadow-[0_0_32px_-4px_hsl(var(--primary)/0.4)]">
+                      <p.Icon size={22} weight="regular" />
+                    </div>
+                    <div className="text-[10px] font-mono uppercase tracking-[0.18em] text-muted-foreground/70 mb-1">{p.week}</div>
+                    <div className="text-sm font-semibold tracking-tight group-hover:text-primary transition-colors">{p.title}</div>
+                  </a>
+                </MotionElement>
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
       {/* Phases */}
       <section className="py-20 md:py-28">
-        <div className="container mx-auto px-6 space-y-24 md:space-y-32">
-          {PHASES.map((p) => (
+        <div className="container mx-auto px-6 space-y-20 md:space-y-28">
+          {PHASES.map((p, i) => (
             <MotionElement key={p.num} animation="slideUp">
-              <article id={`phase-${p.num}`} className={`grid md:grid-cols-12 gap-10 md:gap-16 border-t border-border pt-10 md:pt-14 ${isRTL ? "md:[direction:rtl] text-right" : ""}`}>
-                {/* Left: number + title */}
+              <article
+                id={`phase-${p.num}`}
+                className={`group relative grid md:grid-cols-12 gap-10 md:gap-16 pt-10 md:pt-14 ${isRTL ? "md:[direction:rtl] text-right" : ""}`}
+              >
+                {/* hairline that grows on hover */}
+                <div className="absolute top-0 left-0 h-px w-16 bg-primary/60 transition-all duration-700 group-hover:w-full" />
+
+                {/* Left: icon + number + title */}
                 <div className="md:col-span-4">
-                  <div className="flex items-center gap-3 mb-6">
+                  <div className="flex items-center gap-4 mb-6">
+                    <div className="w-11 h-11 rounded-lg bg-primary/10 flex items-center justify-center text-primary transition-transform duration-500 group-hover:scale-110 group-hover:rotate-3">
+                      <p.Icon size={20} weight="regular" />
+                    </div>
                     <span className="text-xs font-mono text-muted-foreground tracking-widest">{p.num}</span>
-                    <span className="h-px flex-1 bg-border" />
                     <span className="text-[10px] uppercase tracking-[0.18em] text-muted-foreground/70">{p.week}</span>
                   </div>
-                  <h2 className="!text-3xl md:!text-5xl !leading-[1.0] tracking-[-0.03em] mb-6">{p.title}</h2>
-                  <p className="text-foreground/80 italic font-serif-accent font-light leading-relaxed">{p.intent}</p>
+                  <h2 className="!text-3xl md:!text-5xl !leading-[1.0] tracking-[-0.03em] mb-6 transition-colors duration-500 group-hover:text-primary">
+                    {p.title}
+                  </h2>
+                  <p className="text-foreground/80 italic font-serif-accent font-light leading-relaxed text-lg">{p.intent}</p>
                 </div>
 
                 {/* Body */}
@@ -172,7 +190,7 @@ const Process = () => {
                     { label: "Outputs", items: p.outputs },
                   ].map((col) => (
                     <div key={col.label}>
-                      <p className="text-[10px] uppercase tracking-[0.22em] text-muted-foreground/70 mb-2">{col.label}</p>
+                      <p className="text-[10px] uppercase tracking-[0.22em] text-primary/70 mb-2">{col.label}</p>
                       <ul className="space-y-1.5 text-sm text-foreground/80">
                         {col.items.map((it, idx) => (
                           <li key={idx} className="flex items-baseline gap-2">
@@ -190,28 +208,35 @@ const Process = () => {
         </div>
       </section>
 
-      {/* Operating principles */}
-      <section className="py-24 md:py-32 border-t border-border/70">
+      {/* Operating principles — animated card grid */}
+      <section className="py-24 md:py-32 border-t border-border/70 bg-card/20">
         <div className="container mx-auto px-6">
           <div className={`grid md:grid-cols-12 gap-10 md:gap-16 mb-16 ${isRTL ? "md:[direction:rtl] text-right" : ""}`}>
             <div className="md:col-span-5">
-              <p className="text-[10px] uppercase tracking-[0.22em] text-muted-foreground mb-4">Operating principles</p>
-              <h2 className="!text-4xl md:!text-5xl !leading-[1.02] tracking-[-0.03em]">How we work, regardless of the phase.</h2>
+              <p className="text-[10px] uppercase tracking-[0.28em] text-primary/80 mb-6">Operating principles</p>
+              <h2 className="!text-4xl md:!text-6xl !leading-[1.02] tracking-[-0.03em]">
+                How we work, <span className="font-serif-accent italic font-light text-primary">regardless of the phase.</span>
+              </h2>
             </div>
             <div className="md:col-span-6 md:col-start-7 md:pt-4">
               <p className="text-muted-foreground text-lg leading-relaxed">Five operating principles that hold across every engagement. They're the part of the process that doesn't change.</p>
             </div>
           </div>
 
-          <div className="grid md:grid-cols-12 gap-x-12 gap-y-10">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
             {PRINCIPLES.map((p, idx) => (
-              <MotionElement key={p.num} animation="slideUp" delay={60 + idx * 60} className={`md:col-span-4 ${idx === 3 ? "md:col-start-3" : ""}`}>
-                <div className="border-t border-border pt-6">
-                  <div className="flex items-baseline gap-3 mb-3">
-                    <span className="text-xs font-mono text-muted-foreground tracking-widest">{p.num}</span>
-                    <span className="h-px flex-1 bg-border" />
+              <MotionElement key={p.num} animation="slideUp" delay={60 + idx * 80}>
+                <div className="group relative h-full p-8 rounded-xl bg-background/40 hover:bg-background/80 transition-all duration-500 hover:-translate-y-1 overflow-hidden">
+                  {/* accent line */}
+                  <div className="absolute top-0 left-0 h-[2px] w-0 bg-primary transition-all duration-500 group-hover:w-full" />
+
+                  <div className="flex items-center justify-between mb-6">
+                    <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary transition-all duration-500 group-hover:bg-primary group-hover:text-primary-foreground group-hover:scale-110">
+                      <p.Icon size={22} weight="regular" />
+                    </div>
+                    <span className="text-xs font-mono text-muted-foreground/60 tracking-widest">{p.num}</span>
                   </div>
-                  <h3 className="text-lg font-semibold tracking-tight mb-3">{p.title}</h3>
+                  <h3 className="text-xl font-semibold tracking-tight mb-3 group-hover:text-primary transition-colors duration-300">{p.title}</h3>
                   <p className="text-muted-foreground text-sm leading-relaxed">{p.body}</p>
                 </div>
               </MotionElement>
@@ -219,6 +244,7 @@ const Process = () => {
           </div>
         </div>
       </section>
+
 
       {/* CTA */}
       <section className="py-24 md:py-32 border-t border-border/70">
