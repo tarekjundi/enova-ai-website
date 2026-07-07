@@ -276,8 +276,9 @@ const Index = () => {
                       <p className="text-muted-foreground text-[15px] md:text-base leading-[1.7]">{s.desc}</p>
                     </div>
                     <div className="md:col-span-2 md:text-right">
-                      <span className="text-[10px] uppercase tracking-[0.22em] text-muted-foreground/80">{s.meta}</span>
+                      <span className="font-mono text-[11px] tracking-[0.14em] text-primary/70 lowercase">{s.meta.toLowerCase()}</span>
                     </div>
+
                   </div>
                 </div>
               </MotionElement>
