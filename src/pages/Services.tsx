@@ -330,14 +330,16 @@ const Services = () => {
                       ))}
                     </ul>
                   </div>
-                  <div className="grid grid-cols-2 gap-px bg-border border border-border">
+                  <div className="grid grid-cols-2 gap-4">
                     {s.outcomes.map((o, idx) => (
-                      <div key={idx} className="bg-card px-3 py-4">
-                        <div className="text-xl font-bold font-founders tracking-tight">{o.value}</div>
-                        <div className="text-[10px] uppercase tracking-wider text-muted-foreground/70 mt-1">{o.label}</div>
+                      <div key={idx} className="px-3 py-4">
+                        <div className="text-2xl md:text-3xl font-semibold font-founders tracking-[-0.03em] text-primary">{o.value}</div>
+                        <div className="w-8 h-px bg-primary/40 my-2" />
+                        <div className="text-[10px] uppercase tracking-[0.18em] text-muted-foreground/80">{o.label}</div>
                       </div>
                     ))}
                   </div>
+
                 </div>
               </article>
             </MotionElement>
