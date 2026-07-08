@@ -6,9 +6,12 @@ import { MotionElement } from "@/components/MotionElements";
 import {
   ArrowRight,
   MagnifyingGlass,
-  FlowArrow,
+  Compass,
   Cube,
+  Code,
+  TestTube,
   Rocket,
+  GraduationCap,
   ChartLineUp,
   FileText,
   Database,
