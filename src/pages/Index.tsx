@@ -73,14 +73,8 @@ const Index = () => {
           <div className={`grid lg:grid-cols-12 gap-14 lg:gap-20 items-center ${isRTL ? "lg:[direction:rtl]" : ""}`}>
             {/* LEFT */}
             <div className={`lg:col-span-6 ${isRTL ? "text-right" : ""}`}>
-              <MotionElement animation="slideUp" delay={60}>
-                <div className="inline-flex items-center gap-3 mb-10">
-                  <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
-                  <span className="text-[11px] uppercase tracking-[0.24em] text-muted-foreground font-medium">
-                    AI Consultancy — Est. 2024
-                  </span>
-                </div>
-              </MotionElement>
+
+
 
 
               <MotionElement animation="slideUp" delay={120}>
