@@ -163,21 +163,26 @@ const Process = () => {
         </div>
       </section>
 
-      {/* Timeline strip — clean, no table borders */}
+      {/* Timeline strip — 8 stages, animated progression */}
       <section className="border-b border-border/60">
-        <div className="container mx-auto px-6 py-12 md:py-16">
+        <div className="container mx-auto px-6 py-14 md:py-20">
           <div className="relative" style={{ direction: "ltr" }}>
             {/* connecting line */}
-            <div className="hidden md:block absolute top-[26px] left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
-            <div className="grid grid-cols-2 md:grid-cols-5 gap-8 md:gap-4 relative">
+            <div className="hidden md:block absolute top-[30px] left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/40 to-transparent" />
+            <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-y-10 gap-x-4 md:gap-x-2 relative">
               {PHASES.map((p, i) => (
-                <MotionElement key={p.num} animation="slideUp" delay={80 + i * 70}>
+                <MotionElement key={p.num} animation="slideUp" delay={60 + i * 60}>
                   <a href={`#phase-${p.num}`} className="group flex flex-col items-start md:items-center text-left md:text-center">
-                    <div className="w-[52px] h-[52px] rounded-full bg-background border border-primary/40 flex items-center justify-center text-primary mb-4 transition-all duration-500 group-hover:bg-primary group-hover:text-primary-foreground group-hover:scale-110 group-hover:shadow-[0_0_32px_-4px_hsl(var(--primary)/0.4)]">
-                      <p.Icon size={22} weight="regular" />
+                    <div className="relative mb-4">
+                      <span className="absolute inset-0 rounded-full bg-primary/20 opacity-0 group-hover:opacity-100 blur-md transition-opacity duration-500" />
+                      <div className="relative w-[60px] h-[60px] rounded-full bg-background border border-primary/40 flex items-center justify-center text-primary transition-all duration-500 group-hover:bg-primary group-hover:text-primary-foreground group-hover:scale-110 group-hover:border-primary">
+                        <p.Icon size={22} weight="regular" />
+                      </div>
+                      <span className="absolute -top-1 -right-1 w-5 h-5 rounded-full bg-background border border-border/70 flex items-center justify-center text-[9px] font-semibold text-primary/80">
+                        {i + 1}
+                      </span>
                     </div>
-                    <div className="text-[10px] font-mono uppercase tracking-[0.18em] text-muted-foreground/70 mb-1">{p.week}</div>
-                    <div className="text-sm font-semibold tracking-tight group-hover:text-primary transition-colors">{p.title}</div>
+                    <div className="text-sm font-semibold tracking-tight leading-tight group-hover:text-primary transition-colors px-1">{p.title}</div>
                   </a>
                 </MotionElement>
               ))}
