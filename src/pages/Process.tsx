@@ -149,9 +149,9 @@ const Process = () => {
         <div className="container mx-auto px-6">
           <div className={`grid md:grid-cols-12 gap-10 md:gap-16 items-end ${isRTL ? "md:[direction:rtl] text-right" : ""}`}>
             <MotionElement animation="slideUp" className="md:col-span-7">
-              <p className="text-[10px] uppercase tracking-[0.22em] text-muted-foreground mb-6">Process — five phases</p>
+              <p className="text-[10px] uppercase tracking-[0.22em] text-muted-foreground mb-6">Process — eight stages</p>
               <h1 className="!text-5xl md:!text-7xl !leading-[0.98] tracking-[-0.04em] max-w-[18ch]">
-                From audit to production, in <span className="font-serif-accent italic font-light text-primary">four weeks</span>.
+                From discovery to continuous improvement, <span className="font-serif-accent italic font-light text-primary">a process built to ship</span>.
               </h1>
             </MotionElement>
             <MotionElement animation="slideUp" delay={120} className="md:col-span-4 md:col-start-9 md:pb-3">
