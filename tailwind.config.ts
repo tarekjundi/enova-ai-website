@@ -26,10 +26,10 @@ export default {
     },
     extend: {
       fontFamily: {
-        'founders': ['Instrument Sans', 'system-ui', 'sans-serif'], // Editorial professional sans
-        'null': ['Inter', 'system-ui', 'sans-serif'], // Body text
-        'sans': ['Inter', 'system-ui', 'sans-serif'],
-        'serif-accent': ['Instrument Serif', 'Times New Roman', 'serif'],
+        'founders': ['DM Sans', 'system-ui', 'sans-serif'],
+        'null': ['DM Sans', 'system-ui', 'sans-serif'],
+        'sans': ['DM Sans', 'system-ui', 'sans-serif'],
+        'serif-accent': ['DM Sans', 'system-ui', 'sans-serif'],
       },
       colors: {
         neonGreen: '#F6D5A0',
