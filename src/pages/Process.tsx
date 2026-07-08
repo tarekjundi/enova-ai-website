@@ -6,9 +6,12 @@ import { MotionElement } from "@/components/MotionElements";
 import {
   ArrowRight,
   MagnifyingGlass,
-  FlowArrow,
+  Compass,
   Cube,
+  Code,
+  TestTube,
   Rocket,
+  GraduationCap,
   ChartLineUp,
   FileText,
   Database,
@@ -37,57 +40,90 @@ type Phase = {
 const PHASES: Phase[] = [
   {
     num: "01",
-    week: "Week 1",
-    title: "Audit",
-    intent: "Understand the business, the stack, and where time and revenue actually leak.",
-    body: "We sit with operators — not just leadership — and rebuild the picture from the ground up. The outcome is a ranked list of automations by hours saved, revenue impact and implementation risk, plus a clear answer on what not to automate.",
-    inputs: ["Org chart + tool inventory", "Access to CRM, support and ops tools (read-only)", "30–60 min interviews with 4–6 operators"],
-    activities: ["Workflow shadowing across teams", "Quantitative time-on-task analysis", "Stack + data-flow mapping", "Risk + compliance review"],
-    outputs: ["Workflow inventory (typically 25–60 workflows)", "Ranked opportunity list", "Quick-win shortlist", "Audit report"],
+    week: "Discovery",
+    title: "Discovery",
+    intent: "Understand business goals, workflows, and where time and revenue actually leak.",
+    body: "We sit with operators — not just leadership — and rebuild the picture from the ground up. The outcome is a clear map of goals, constraints, and the workflows worth touching first.",
+    inputs: ["Access to CRM, support and ops tools (read-only)", "Interviews with 4–6 operators", "Tool + data inventory"],
+    activities: ["Stakeholder interviews", "Workflow shadowing", "Stack + data-flow mapping"],
+    outputs: ["Workflow inventory", "Prioritised pain-points", "Discovery report"],
     Icon: MagnifyingGlass,
   },
   {
     num: "02",
-    week: "Week 2",
-    title: "Workflow Mapping",
-    intent: "Turn the chosen workflows into precise, end-to-end specifications.",
-    body: "Each selected workflow gets mapped as a directed graph: triggers, decisions, owners, SLAs, escalation paths, failure modes. This is the artifact that makes design and deployment fast — and the artifact your team keeps after we leave.",
-    inputs: ["Selected workflow shortlist", "Sample data (anonymised) for each workflow", "Stakeholder interviews per workflow"],
-    activities: ["End-to-end workflow diagramming", "Decision-point + escalation modelling", "SLA + ownership definition", "Eval criteria per workflow"],
-    outputs: ["Per-workflow specification", "Eval rubric", "Integration matrix", "Sign-off from workflow owners"],
-    Icon: FlowArrow,
+    week: "Strategy",
+    title: "Strategy",
+    intent: "Identify high-impact AI opportunities and define a practical roadmap.",
+    body: "We rank opportunities by hours saved, revenue impact and implementation risk — and produce a phased roadmap with a clear answer on what not to automate.",
+    inputs: ["Discovery report", "Business KPIs", "Budget + timeline constraints"],
+    activities: ["Opportunity scoring", "Roadmap sequencing", "ROI + risk modelling"],
+    outputs: ["Ranked opportunity list", "Phased roadmap", "Success metrics per initiative"],
+    Icon: Compass,
   },
   {
     num: "03",
-    week: "Week 2–3",
-    title: "AI Systems Design",
-    intent: "Architect the system the way a serious engineering team would.",
-    body: "Model selection, routing, retrieval, guardrails, observability, cost ceilings. We choose boring where boring works and bespoke where it doesn't. Every design decision is documented with the trade-off behind it.",
-    inputs: ["Approved workflow specifications", "Security + compliance constraints", "Existing infrastructure baseline"],
-    activities: ["Model + provider selection", "Retrieval + memory design", "Guardrails + human-checkpoint design", "Cost + latency budgeting"],
-    outputs: ["Reference architecture", "Model + provider plan", "Eval harness", "Security + cost review"],
+    week: "Solution Design",
+    title: "Solution Design",
+    intent: "Design custom AI workflows and system architecture the way a serious engineering team would.",
+    body: "Model selection, routing, retrieval, guardrails, observability, cost ceilings. Boring where boring works, bespoke where it doesn't. Every decision documented with the trade-off behind it.",
+    inputs: ["Approved roadmap", "Security + compliance constraints", "Existing infrastructure baseline"],
+    activities: ["Workflow diagramming", "Reference architecture", "Guardrails + human-checkpoint design"],
+    outputs: ["Per-workflow specification", "Reference architecture", "Integration matrix"],
     Icon: Cube,
   },
   {
     num: "04",
-    week: "Week 3–4",
-    title: "Deployment",
-    intent: "Ship to production against real data, not a sandbox.",
-    body: "Build, integrate, test against real traffic, and ship behind a feature flag with monitoring on day one. Human-in-the-loop on anything that touches customers or money until we've seen the metrics we agreed on in the spec.",
-    inputs: ["Approved architecture", "Production credentials (scoped)", "Test cohort + rollback plan"],
-    activities: ["Build + integration", "Eval against real historical data", "Shadow-mode rollout", "Gradual cutover with feature flags"],
-    outputs: ["Production system", "Observability dashboard", "Runbooks", "Handover documentation"],
-    Icon: Rocket,
+    week: "Development",
+    title: "Development",
+    intent: "Build, integrate, and configure the solution against your real stack.",
+    body: "We engineer the automations, agents and integrations to spec — with clean code, scoped credentials, and infrastructure your team can maintain long after we leave.",
+    inputs: ["Approved architecture", "Scoped production credentials", "Sample data for evals"],
+    activities: ["Build + integration", "Prompt + retrieval implementation", "Eval harness construction"],
+    outputs: ["Working system in staging", "Version-controlled codebase", "Initial eval results"],
+    Icon: Code,
   },
   {
     num: "05",
-    week: "Ongoing",
-    title: "Optimization",
-    intent: "Keep the system honest as your business changes.",
-    body: "Workflows drift. Models change. Edge cases surface. Monthly review against the metrics in the original spec, with adjustments to prompts, routing, retrieval and human checkpoints. Owned by your team, supported by ours.",
-    inputs: ["Live production metrics", "User + operator feedback", "Quarterly business review inputs"],
-    activities: ["Eval re-runs against new data", "Prompt + retrieval tuning", "Cost + latency optimisation", "New workflow intake"],
-    outputs: ["Monthly performance report", "Tuned production system", "Updated runbooks", "Roadmap for next quarter"],
+    week: "Testing & Optimization",
+    title: "Testing & Optimization",
+    intent: "Validate, refine, and improve performance against real historical data.",
+    body: "Every workflow is measured against the metrics agreed in the spec — accuracy, latency, cost — with adjustments to prompts, routing, retrieval and human checkpoints until it earns the right to ship.",
+    inputs: ["Real historical data", "Success metrics per workflow", "Operator feedback"],
+    activities: ["Eval runs against production data", "Prompt + retrieval tuning", "Cost + latency optimisation"],
+    outputs: ["Passing eval suite", "Tuned system", "Sign-off from workflow owners"],
+    Icon: TestTube,
+  },
+  {
+    num: "06",
+    week: "Deployment",
+    title: "Deployment",
+    intent: "Launch to production with minimal disruption — behind flags, with monitoring on day one.",
+    body: "Feature-flagged rollouts, shadow mode, and gradual cutovers. Human-in-the-loop on anything that touches customers or money until the metrics earn the agent's autonomy.",
+    inputs: ["Passing eval suite", "Rollback plan", "Test cohort"],
+    activities: ["Shadow-mode rollout", "Gradual cutover", "Observability wiring"],
+    outputs: ["Production system", "Observability dashboard", "Runbooks"],
+    Icon: Rocket,
+  },
+  {
+    num: "07",
+    week: "Training",
+    title: "Training",
+    intent: "Train your team and hand over documentation so the system is genuinely yours.",
+    body: "Live working sessions, written runbooks, and architecture walkthroughs. No black boxes, no lock-in. Your operators leave knowing how to run, debug and extend the system.",
+    inputs: ["Production system", "Operator + admin cohorts", "Handover schedule"],
+    activities: ["Live training sessions", "Runbook walkthroughs", "Admin + escalation training"],
+    outputs: ["Trained team", "Handover documentation", "Support contacts"],
+    Icon: GraduationCap,
+  },
+  {
+    num: "08",
+    week: "Continuous Improvement",
+    title: "Continuous Improvement",
+    intent: "Monitor, optimize and expand the solution as your business changes.",
+    body: "Workflows drift. Models change. Edge cases surface. Monthly reviews against the original metrics, with tuning and new workflow intake — owned by your team, supported by ours.",
+    inputs: ["Live production metrics", "User + operator feedback", "Quarterly business reviews"],
+    activities: ["Eval re-runs against new data", "Prompt + routing tuning", "New workflow intake"],
+    outputs: ["Monthly performance report", "Roadmap for next quarter", "Continually improving system"],
     Icon: ChartLineUp,
   },
 ];
@@ -113,9 +149,9 @@ const Process = () => {
         <div className="container mx-auto px-6">
           <div className={`grid md:grid-cols-12 gap-10 md:gap-16 items-end ${isRTL ? "md:[direction:rtl] text-right" : ""}`}>
             <MotionElement animation="slideUp" className="md:col-span-7">
-              <p className="text-[10px] uppercase tracking-[0.22em] text-muted-foreground mb-6">Process — five phases</p>
+              <p className="text-[10px] uppercase tracking-[0.22em] text-muted-foreground mb-6">Process — eight stages</p>
               <h1 className="!text-5xl md:!text-7xl !leading-[0.98] tracking-[-0.04em] max-w-[18ch]">
-                From audit to production, in <span className="font-serif-accent italic font-light text-primary">four weeks</span>.
+                From discovery to continuous improvement, <span className="font-serif-accent italic font-light text-primary">a process built to ship</span>.
               </h1>
             </MotionElement>
             <MotionElement animation="slideUp" delay={120} className="md:col-span-4 md:col-start-9 md:pb-3">
@@ -127,21 +163,26 @@ const Process = () => {
         </div>
       </section>
 
-      {/* Timeline strip — clean, no table borders */}
+      {/* Timeline strip — 8 stages, animated progression */}
       <section className="border-b border-border/60">
-        <div className="container mx-auto px-6 py-12 md:py-16">
+        <div className="container mx-auto px-6 py-14 md:py-20">
           <div className="relative" style={{ direction: "ltr" }}>
             {/* connecting line */}
-            <div className="hidden md:block absolute top-[26px] left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
-            <div className="grid grid-cols-2 md:grid-cols-5 gap-8 md:gap-4 relative">
+            <div className="hidden md:block absolute top-[30px] left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/40 to-transparent" />
+            <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-y-10 gap-x-4 md:gap-x-2 relative">
               {PHASES.map((p, i) => (
-                <MotionElement key={p.num} animation="slideUp" delay={80 + i * 70}>
+                <MotionElement key={p.num} animation="slideUp" delay={60 + i * 60}>
                   <a href={`#phase-${p.num}`} className="group flex flex-col items-start md:items-center text-left md:text-center">
-                    <div className="w-[52px] h-[52px] rounded-full bg-background border border-primary/40 flex items-center justify-center text-primary mb-4 transition-all duration-500 group-hover:bg-primary group-hover:text-primary-foreground group-hover:scale-110 group-hover:shadow-[0_0_32px_-4px_hsl(var(--primary)/0.4)]">
-                      <p.Icon size={22} weight="regular" />
+                    <div className="relative mb-4">
+                      <span className="absolute inset-0 rounded-full bg-primary/20 opacity-0 group-hover:opacity-100 blur-md transition-opacity duration-500" />
+                      <div className="relative w-[60px] h-[60px] rounded-full bg-background border border-primary/40 flex items-center justify-center text-primary transition-all duration-500 group-hover:bg-primary group-hover:text-primary-foreground group-hover:scale-110 group-hover:border-primary">
+                        <p.Icon size={22} weight="regular" />
+                      </div>
+                      <span className="absolute -top-1 -right-1 w-5 h-5 rounded-full bg-background border border-border/70 flex items-center justify-center text-[9px] font-semibold text-primary/80">
+                        {i + 1}
+                      </span>
                     </div>
-                    <div className="text-[10px] font-mono uppercase tracking-[0.18em] text-muted-foreground/70 mb-1">{p.week}</div>
-                    <div className="text-sm font-semibold tracking-tight group-hover:text-primary transition-colors">{p.title}</div>
+                    <div className="text-sm font-semibold tracking-tight leading-tight group-hover:text-primary transition-colors px-1">{p.title}</div>
                   </a>
                 </MotionElement>
               ))}

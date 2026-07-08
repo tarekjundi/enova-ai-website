@@ -4,7 +4,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ScrollToTop from "@/components/ScrollToTop";
 import { MotionElement } from "@/components/MotionElements";
-import { ArrowRight, ArrowUpRight } from "@phosphor-icons/react";
+import { ArrowRight, ArrowUpRight, Lightning, Robot, FlowArrow, Megaphone, TrendUp, UsersThree, Headset, BookOpen, ChartBar, MagnetStraight, Gear, Code, PlugsConnected, UserGear } from "@phosphor-icons/react";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 const Index = () => {
@@ -12,28 +12,102 @@ const Index = () => {
 
   const services = [
     {
-      n: "01",
       title: "AI Automation",
-      desc: "Automate repetitive workflows and business operations end-to-end — from intake to reporting.",
-      meta: "Workflows · Integrations · Ops",
+      Icon: Lightning,
+      desc: "Automate repetitive, multi-step business processes end-to-end across your existing stack.",
+      bestFor: "Ops-heavy teams drowning in manual, repeatable work.",
+      outcomes: ["30–70% reduction in manual hours", "Fewer human errors", "Faster cycle times", "Scales without headcount"],
     },
     {
-      n: "02",
       title: "AI Agents",
-      desc: "Custom AI assistants for support, sales and internal teams that act on your systems, not just chat.",
-      meta: "Support · Sales · Internal",
+      Icon: Robot,
+      desc: "Custom AI agents that act on your systems — not chatbots, but operators with tools and permissions.",
+      bestFor: "Teams ready to move from copilots to autonomous workflows.",
+      outcomes: ["24/7 execution", "Bounded, auditable actions", "Human-in-the-loop where it matters", "Composable across tools"],
     },
     {
-      n: "03",
-      title: "Custom Software",
-      desc: "Tailored web applications powered by modern AI — built for your stack, owned by your team.",
-      meta: "Web apps · APIs · Dashboards",
+      title: "Workflow Automation",
+      Icon: FlowArrow,
+      desc: "Design and deploy resilient workflows that connect the tools your team already uses.",
+      bestFor: "Companies with fragmented tools and manual handoffs.",
+      outcomes: ["Zero-touch handoffs", "Reliable SLAs", "Observability on day one", "Owned by your team"],
     },
     {
-      n: "04",
-      title: "Data & Analytics",
-      desc: "Turn business data into actionable insights, forecasts and decisions your operators can trust.",
-      meta: "Pipelines · BI · Forecasting",
+      title: "Marketing Automation",
+      Icon: Megaphone,
+      desc: "Content, campaigns, and lifecycle flows powered by AI — personalised at production scale.",
+      bestFor: "Growth teams shipping content and campaigns faster than they can produce.",
+      outcomes: ["Higher engagement", "Lower cost per lead", "Consistent brand voice", "Faster iteration"],
+    },
+    {
+      title: "Sales Automation",
+      Icon: TrendUp,
+      desc: "Automate prospecting, outreach, follow-up and pipeline hygiene without losing your reps' voice.",
+      bestFor: "Revenue teams with strong offers and weak coverage.",
+      outcomes: ["More qualified pipeline", "Faster follow-ups", "Cleaner CRM data", "Higher rep leverage"],
+    },
+    {
+      title: "CRM Automation",
+      Icon: UsersThree,
+      desc: "Keep your CRM in shape automatically — enrichment, routing, scoring, activity capture.",
+      bestFor: "RevOps leaders whose CRM is the source of truth in name only.",
+      outcomes: ["Reliable pipeline data", "Automated enrichment", "Better forecasting", "Less admin for reps"],
+    },
+    {
+      title: "Customer Support AI",
+      Icon: Headset,
+      desc: "Tier-1 automation and agent copilots trained on your product, policies and historical tickets.",
+      bestFor: "Support orgs with growing ticket volume and tight headcount.",
+      outcomes: ["Sub-minute first response", "Higher CSAT", "Lower cost-per-ticket", "Freed-up senior agents"],
+    },
+    {
+      title: "AI Knowledge Base",
+      Icon: BookOpen,
+      desc: "Turn scattered docs, tickets and conversations into a single, retrievable source of truth.",
+      bestFor: "Teams where the answer exists but no one can find it.",
+      outcomes: ["Faster onboarding", "Consistent answers", "Less tribal knowledge", "Continuously updated"],
+    },
+    {
+      title: "Business Intelligence & Analytics",
+      Icon: ChartBar,
+      desc: "Pipelines, dashboards and forecasts your operators actually use to decide.",
+      bestFor: "Leaders making calls on gut instinct because the data isn't ready in time.",
+      outcomes: ["Decision-ready dashboards", "Trusted forecasts", "Faster reporting cycles", "One source of truth"],
+    },
+    {
+      title: "Lead Generation Systems",
+      Icon: MagnetStraight,
+      desc: "End-to-end systems that source, enrich and route qualified leads into your sales motion.",
+      bestFor: "B2B teams that need predictable, high-intent pipeline.",
+      outcomes: ["Consistent lead flow", "Higher lead quality", "Lower CAC", "Repeatable playbooks"],
+    },
+    {
+      title: "Process Optimization",
+      Icon: Gear,
+      desc: "Diagnose bottlenecks across teams and redesign processes before automating them.",
+      bestFor: "Companies scaling past 50 people and feeling operational drag.",
+      outcomes: ["Shorter cycle times", "Clear ownership", "Fewer bottlenecks", "Ready to automate"],
+    },
+    {
+      title: "Custom AI Development",
+      Icon: Code,
+      desc: "Bespoke AI features and applications engineered for your product, users and constraints.",
+      bestFor: "Product teams shipping AI as a core differentiator.",
+      outcomes: ["Production-grade AI features", "Model + cost control", "Owned architecture", "No vendor lock-in"],
+    },
+    {
+      title: "AI Integrations",
+      Icon: PlugsConnected,
+      desc: "Connect AI models, agents and pipelines to your existing tools, data warehouses and APIs.",
+      bestFor: "Teams with mature stacks that need AI to plug in cleanly.",
+      outcomes: ["Seamless data flow", "Secure, scoped access", "Reusable connectors", "Faster time-to-value"],
+    },
+    {
+      title: "Internal AI Assistants",
+      Icon: UserGear,
+      desc: "Private copilots trained on your data — for finance, HR, legal, engineering and operations.",
+      bestFor: "Teams that need AI leverage without leaking data to public tools.",
+      outcomes: ["Private and compliant", "Role-specific workflows", "Faster internal answers", "Measurable adoption"],
     },
   ];
 
@@ -73,14 +147,8 @@ const Index = () => {
           <div className={`grid lg:grid-cols-12 gap-14 lg:gap-20 items-center ${isRTL ? "lg:[direction:rtl]" : ""}`}>
             {/* LEFT */}
             <div className={`lg:col-span-6 ${isRTL ? "text-right" : ""}`}>
-              <MotionElement animation="slideUp" delay={60}>
-                <div className="inline-flex items-center gap-3 mb-10">
-                  <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
-                  <span className="text-[11px] uppercase tracking-[0.24em] text-muted-foreground font-medium">
-                    AI Consultancy — Est. 2024
-                  </span>
-                </div>
-              </MotionElement>
+
+
 
 
               <MotionElement animation="slideUp" delay={120}>
@@ -253,34 +321,54 @@ const Index = () => {
             <div className="md:col-span-4 md:col-start-9 md:pt-6">
               <MotionElement animation="slideUp" delay={120}>
                 <p className="text-muted-foreground text-base md:text-lg leading-[1.7]">
-                  Four practice areas. One engagement model. Every deliverable owned by your team — no black boxes, no lock-in.
+                  Fourteen practice areas. One engagement model. Every deliverable owned by your team — no black boxes, no lock-in.
                 </p>
               </MotionElement>
             </div>
           </div>
 
-          <div className="space-y-px">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
             {services.map((s, i) => (
-              <MotionElement key={s.n} animation="slideUp" delay={80 + i * 60}>
-                <div className="group relative py-10 md:py-14 border-t border-border/60 last:border-b last:border-border/60 transition-colors hover:bg-card/40">
-                  <div className="container-fluid grid md:grid-cols-12 gap-6 md:gap-10 items-start">
-                    <div className="md:col-span-1">
-                      <span className="text-xs font-mono text-primary/70 tracking-widest">{s.n}</span>
-                    </div>
-                    <div className="md:col-span-5">
-                      <h3 className="!text-3xl md:!text-5xl !leading-[1.05] tracking-[-0.035em] font-semibold text-foreground group-hover:text-primary transition-colors">
-                        {s.title}
-                      </h3>
-                    </div>
-                    <div className="md:col-span-4">
-                      <p className="text-muted-foreground text-[15px] md:text-base leading-[1.7]">{s.desc}</p>
-                    </div>
-                    <div className="md:col-span-2 md:text-right">
-                      <span className="font-mono text-[11px] tracking-[0.14em] text-primary/70 lowercase">{s.meta.toLowerCase()}</span>
-                    </div>
-
+              <MotionElement key={s.title} animation="slideUp" delay={40 + (i % 6) * 50}>
+                <article className="group relative h-full flex flex-col bg-card/40 hover:bg-card/70 border border-border/50 hover:border-primary/40 rounded-[18px] p-8 md:p-10 transition-all duration-500 hover:-translate-y-1 hover:shadow-2xl hover:shadow-primary/5">
+                  {/* icon */}
+                  <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary mb-8 transition-all duration-500 group-hover:bg-primary group-hover:text-primary-foreground group-hover:scale-110">
+                    <s.Icon size={22} weight="regular" />
                   </div>
-                </div>
+
+                  <h3 className="!text-[22px] md:!text-2xl font-semibold tracking-[-0.02em] mb-4 leading-[1.15] group-hover:text-primary transition-colors">
+                    {s.title}
+                  </h3>
+
+                  <p className="text-muted-foreground text-[15px] leading-[1.65] mb-6">
+                    {s.desc}
+                  </p>
+
+                  <div className="mb-6">
+                    <p className="text-[10px] uppercase tracking-[0.22em] text-primary/70 mb-2 font-medium">Best for</p>
+                    <p className="text-foreground/85 text-sm leading-[1.55]">{s.bestFor}</p>
+                  </div>
+
+                  <div className="mb-8 flex-1">
+                    <p className="text-[10px] uppercase tracking-[0.22em] text-primary/70 mb-3 font-medium">Outcomes</p>
+                    <ul className="space-y-1.5">
+                      {s.outcomes.map((o) => (
+                        <li key={o} className="flex items-baseline gap-2.5 text-sm text-foreground/80 leading-snug">
+                          <span className="w-1 h-1 rounded-full bg-primary/70 flex-shrink-0 translate-y-[6px]" />
+                          <span>{o}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  <Link
+                    to="/services"
+                    className="inline-flex items-center gap-1.5 text-primary text-sm font-medium mt-auto pt-2 border-t border-border/40 transition-all duration-300 group-hover:gap-2.5"
+                  >
+                    Learn more
+                    <ArrowRight size={13} className="transition-transform duration-300 group-hover:translate-x-0.5" />
+                  </Link>
+                </article>
               </MotionElement>
             ))}
           </div>
