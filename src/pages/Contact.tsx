@@ -240,8 +240,56 @@ const Contact = () => {
         </div>
       </section>
 
+      {/* FAQ */}
+      <section className="border-t border-border/70 py-24 md:py-32">
+        <div className="container mx-auto">
+          <div className={`grid md:grid-cols-12 gap-12 md:gap-16 ${isRTL ? "md:[direction:rtl] text-right" : ""}`}>
+            <div className="md:col-span-4">
+              <MotionElement animation="slideUp">
+                <p className="text-xs uppercase tracking-[0.22em] text-muted-foreground mb-6">FAQ</p>
+                <h2 className="!text-4xl md:!text-5xl !leading-[1.05] tracking-[-0.035em] font-semibold max-w-[16ch]">
+                  Answers before you <span className="font-serif-accent italic font-light text-primary">ask</span>.
+                </h2>
+                <p className="text-muted-foreground text-base md:text-lg leading-relaxed mt-6 max-w-sm">
+                  The questions we get most often, answered plainly. Anything else — send it in the form.
+                </p>
+              </MotionElement>
+            </div>
+
+            <div className="md:col-span-7 md:col-start-6">
+              <MotionElement animation="slideUp" delay={120}>
+                <Accordion type="single" collapsible className="w-full">
+                  {FAQS.map((f, i) => (
+                    <AccordionItem
+                      key={i}
+                      value={`item-${i}`}
+                      className="border-b border-border/50 last:border-b-0"
+                    >
+                      <AccordionTrigger className="group py-6 md:py-7 text-left hover:no-underline [&>svg]:hidden">
+                        <span className="text-lg md:text-xl font-medium tracking-[-0.01em] text-foreground group-hover:text-primary transition-colors pr-6">
+                          {f.q}
+                        </span>
+                        <Plus
+                          size={22}
+                          weight="regular"
+                          className="text-primary flex-shrink-0 transition-transform duration-300 group-data-[state=open]:rotate-45"
+                        />
+                      </AccordionTrigger>
+                      <AccordionContent className="text-muted-foreground text-base md:text-[17px] leading-[1.75] pb-8 pr-8">
+                        {f.a}
+                      </AccordionContent>
+                    </AccordionItem>
+                  ))}
+                </Accordion>
+              </MotionElement>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <Footer />
       <ScrollToTop />
+
     </div>
   );
 };
