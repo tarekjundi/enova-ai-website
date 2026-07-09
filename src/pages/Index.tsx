@@ -336,8 +336,8 @@ const Index = () => {
           </div>
         </div>
       </section>{/* /industries */}
-      {/* legacy anchor removed */}
-      <div className="hidden">
+
+
 
 
       {/* ============== SERVICES ============== */}
