@@ -204,44 +204,23 @@ const Process = () => {
                 <div className="absolute top-0 left-0 h-px w-16 bg-primary/60 transition-all duration-700 group-hover:w-full" />
 
                 {/* Left: icon + number + title */}
-                <div className="md:col-span-4">
+                <div className="md:col-span-5">
                   <div className="flex items-center gap-4 mb-6">
                     <div className="w-11 h-11 rounded-lg bg-primary/10 flex items-center justify-center text-primary transition-transform duration-500 group-hover:scale-110 group-hover:rotate-3">
                       <p.Icon size={20} weight="regular" />
                     </div>
                     <span className="text-xs font-mono text-muted-foreground tracking-widest">{p.num}</span>
-                    <span className="text-[10px] uppercase tracking-[0.18em] text-muted-foreground/70">{p.week}</span>
+                    <span className="text-xs uppercase tracking-[0.18em] text-muted-foreground/70">{p.week}</span>
                   </div>
                   <h2 className="!text-3xl md:!text-5xl !leading-[1.0] tracking-[-0.03em] mb-6 transition-colors duration-500 group-hover:text-primary">
                     {p.title}
                   </h2>
-                  <p className="text-foreground/80 italic font-serif-accent font-light leading-relaxed text-lg">{p.intent}</p>
+                  <p className="text-foreground/85 italic font-serif-accent font-light leading-relaxed text-lg md:text-xl">{p.intent}</p>
                 </div>
 
                 {/* Body */}
-                <div className="md:col-span-5">
+                <div className="md:col-span-6 md:col-start-7">
                   <p className="text-foreground/80 leading-relaxed text-lg max-w-prose">{p.body}</p>
-                </div>
-
-                {/* I/O column */}
-                <div className="md:col-span-3 space-y-6">
-                  {[
-                    { label: "Inputs", items: p.inputs },
-                    { label: "Activities", items: p.activities },
-                    { label: "Outputs", items: p.outputs },
-                  ].map((col) => (
-                    <div key={col.label}>
-                      <p className="text-[10px] uppercase tracking-[0.22em] text-primary/70 mb-2">{col.label}</p>
-                      <ul className="space-y-1.5 text-sm text-foreground/80">
-                        {col.items.map((it, idx) => (
-                          <li key={idx} className="flex items-baseline gap-2">
-                            <span className="text-primary/70 text-xs">—</span>
-                            <span className="leading-snug">{it}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  ))}
                 </div>
               </article>
             </MotionElement>

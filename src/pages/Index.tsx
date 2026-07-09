@@ -294,17 +294,51 @@ const Index = () => {
             ))}
           </div>
 
-          {/* Industries served */}
-          <div className="mt-28">
-            <p className="text-[10px] uppercase tracking-[0.28em] text-muted-foreground mb-8">Industries served</p>
-            <div className="flex flex-wrap gap-x-8 gap-y-4">
-              {["B2B SaaS", "Financial Services", "E-commerce Operations", "Professional Services", "Healthcare", "Logistics"].map((i) => (
-                <span key={i} className="text-foreground/90 text-base md:text-lg font-medium">{i}</span>
-              ))}
-            </div>
-          </div>
         </div>
       </section>
+
+      {/* ============== INDUSTRIES MARQUEE ============== */}
+      <section className="py-20 md:py-28 border-t border-border/40">
+        <div className="container mx-auto px-6 lg:px-10 mb-12">
+          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
+            <div>
+              <p className="text-xs uppercase tracking-[0.28em] text-primary/80 mb-4">Industries Served</p>
+              <h2 className="!text-3xl md:!text-5xl !leading-[1.05] tracking-[-0.03em] max-w-[24ch] font-semibold">
+                Trusted across <span className="font-serif-accent text-primary">twenty industries.</span>
+              </h2>
+            </div>
+            <p className="text-muted-foreground text-base md:text-lg max-w-md">
+              From regulated enterprise to fast-moving operators — the pattern is the same.
+            </p>
+          </div>
+        </div>
+        <div className="marquee-mask overflow-hidden">
+          <div className="marquee">
+            {(() => {
+              const industries = [
+                "Healthcare", "Finance", "Banking", "Insurance", "Real Estate",
+                "Construction", "Manufacturing", "Logistics", "Retail", "E-commerce",
+                "Hospitality", "Restaurants", "Education", "Legal", "Marketing Agencies",
+                "Consulting Firms", "Automotive", "SaaS", "Technology", "Human Resources",
+              ];
+              return [...industries, ...industries].map((name, i) => (
+                <div
+                  key={i}
+                  className="flex items-center gap-6 px-8 py-6 shrink-0"
+                >
+                  <span className="w-1.5 h-1.5 rounded-full bg-primary/50" />
+                  <span className="text-foreground/90 text-xl md:text-2xl font-medium tracking-[-0.01em] whitespace-nowrap">
+                    {name}
+                  </span>
+                </div>
+              ));
+            })()}
+          </div>
+        </div>
+      </section>{/* /industries */}
+
+
+
 
       {/* ============== SERVICES ============== */}
       <section id="features" className="py-32 md:py-48">
