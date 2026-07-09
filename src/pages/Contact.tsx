@@ -130,8 +130,27 @@ const Contact = () => {
                     </a>
                   </div>
                   <div>
-                    <p className="text-[11px] uppercase tracking-[0.2em] text-muted-foreground mb-1.5">Phone</p>
-                    <p className="text-foreground text-[16px]" dir="ltr">+90 540 350 2010</p>
+                    <p className="text-[11px] uppercase tracking-[0.2em] text-muted-foreground mb-3">Social Media</p>
+                    <div className="flex items-center gap-3" dir="ltr">
+                      {[
+                        { Icon: LinkedinLogo, href: "https://www.linkedin.com/company/enovaagency/", label: "LinkedIn" },
+                        { Icon: InstagramLogo, href: "https://www.instagram.com/enovaagency/", label: "Instagram" },
+                        { Icon: XLogo, href: "https://x.com/enovaagency", label: "X" },
+                        { Icon: FacebookLogo, href: "https://www.facebook.com/enovaagency", label: "Facebook" },
+                        { Icon: WhatsappLogo, href: "https://wa.me/905403502010", label: "WhatsApp" },
+                      ].map(({ Icon, href, label }) => (
+                        <a
+                          key={label}
+                          href={href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          aria-label={label}
+                          className="w-10 h-10 rounded-full border border-border/60 flex items-center justify-center text-muted-foreground hover:text-primary-foreground hover:bg-primary hover:border-primary hover:-translate-y-0.5 transition-all duration-300"
+                        >
+                          <Icon size={16} weight="regular" />
+                        </a>
+                      ))}
+                    </div>
                   </div>
                   <div>
                     <p className="text-[11px] uppercase tracking-[0.2em] text-muted-foreground mb-1.5">Strategy call</p>
