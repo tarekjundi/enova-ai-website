@@ -270,7 +270,7 @@
     @apply text-2xl;
   }
   p {
-    font-size: 0.9375rem;
-    line-height: 1.65;
+    font-size: 1rem;
+    line-height: 1.7;
   }
 }
