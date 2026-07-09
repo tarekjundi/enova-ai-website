@@ -83,82 +83,82 @@
 @layer base {
   * {
     @apply border-border;
+    font-family: 'DM Sans', system-ui, sans-serif !important;
   }
 
-  body {
-    @apply bg-background text-foreground font-null;
-    font-feature-settings: "kern" 1, "liga" 1;
-    font-optical-sizing: auto;
-    text-rendering: optimizeLegibility;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  }
-  
   html {
     scroll-behavior: smooth;
     overflow-x: hidden;
   }
 
   body {
+    @apply text-foreground;
     overflow-x: hidden;
+    font-family: 'DM Sans', system-ui, sans-serif;
+    font-feature-settings: "kern" 1, "liga" 1;
+    font-optical-sizing: auto;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    /* Subtle premium depth gradient — near-black brown, no color drift */
+    background-color: hsl(36 58% 8%);
+    background-image:
+      radial-gradient(ellipse 80% 60% at 50% 0%, hsla(36, 45%, 14%, 0.9), transparent 70%),
+      radial-gradient(ellipse 100% 80% at 50% 100%, hsla(30, 30%, 4%, 0.85), transparent 65%),
+      linear-gradient(180deg, hsl(36 55% 9%) 0%, hsl(32 50% 7%) 50%, hsl(28 45% 5%) 100%);
+    background-attachment: fixed;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    @apply font-founders font-semibold;
+    font-weight: 600;
     letter-spacing: -0.03em;
     line-height: 1.05;
   }
 
   h1 {
-    @apply text-5xl md:text-7xl lg:text-8xl font-bold;
+    @apply text-5xl md:text-7xl lg:text-8xl;
+    font-weight: 700;
     letter-spacing: -0.04em;
   }
 
   h2 {
-    @apply text-3xl md:text-5xl font-semibold;
+    @apply text-3xl md:text-5xl;
     letter-spacing: -0.03em;
   }
 
   h3 {
-    @apply text-xl md:text-2xl font-medium;
+    @apply text-xl md:text-2xl;
+    font-weight: 500;
     letter-spacing: -0.02em;
   }
 
+  /* Increased body sizes for readability */
   p {
-    @apply font-null;
-    font-size: 1.0625rem;
+    font-size: 1.125rem;
     line-height: 1.75;
     font-weight: 400;
   }
 
   small, .text-sm {
+    font-size: 0.9375rem !important;
     font-weight: 400;
-    line-height: 1.6;
+    line-height: 1.65;
   }
 
   .text-xs {
+    font-size: 0.8125rem !important;
     font-weight: 500;
     letter-spacing: 0.01em;
   }
 
   .font-serif-accent {
-    font-family: 'DM Sans', system-ui, sans-serif;
     font-style: italic;
     font-weight: 300;
     letter-spacing: -0.02em;
   }
 
-  small, .text-sm, .text-xs {
-    @apply font-null;
-    font-weight: 400;
-  }
-
-  nav {
-    @apply font-founders;
-  }
-
   button {
-    @apply font-founders font-medium;
+    font-weight: 500;
     letter-spacing: -0.01em;
   }
 }
