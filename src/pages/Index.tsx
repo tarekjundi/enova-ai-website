@@ -291,30 +291,45 @@ const Index = () => {
 
       {/* ============== TRUST BAND ============== */}
       <section className="border-t border-border/60 bg-gradient-to-b from-background to-card/20">
-        <div className="container mx-auto px-6 lg:px-10 py-28 md:py-36">
+        <div className="container mx-auto px-6 lg:px-10 py-24 md:py-32">
           <MotionElement animation="slideUp">
             <p className="text-[10px] uppercase tracking-[0.28em] text-primary/80 mb-6">Proven Results</p>
-            <h2 className="!text-4xl md:!text-6xl lg:!text-7xl !leading-[1.02] tracking-[-0.04em] max-w-[20ch] font-semibold mb-20">
+            <h2 className="!text-4xl md:!text-6xl lg:!text-7xl !leading-[1.02] tracking-[-0.04em] max-w-[20ch] font-semibold mb-16">
               Built for businesses that <span className="font-serif-accent text-primary">measure outcomes.</span>
             </h2>
           </MotionElement>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-20">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-20 mb-24">
             {[
-              { v: "25+", l: "Projects Delivered" },
-              { v: "98%", l: "Client Satisfaction" },
-              { v: "50K+", l: "Hours Automated" },
+              { v: "25+", l: "Projects Delivered", d: "Across 12 industries and 4 continents" },
+              { v: "98%", l: "Client Satisfaction", d: "Based on post-engagement reviews" },
+              { v: "50K+", l: "Hours Automated", d: "Manual work removed for our clients" },
             ].map((s, i) => (
               <MotionElement key={s.l} animation="slideUp" delay={100 + i * 100}>
                 <div>
                   <p className="!text-6xl md:!text-7xl lg:!text-8xl font-semibold tracking-[-0.045em] text-foreground leading-none mb-5">{s.v}</p>
                   <div className="w-10 h-px bg-primary/60 mb-4" />
-                  <p className="text-muted-foreground text-sm tracking-wide">{s.l}</p>
+                  <p className="text-foreground text-base font-medium mb-1.5">{s.l}</p>
+                  <p className="text-muted-foreground text-sm leading-relaxed">{s.d}</p>
                 </div>
               </MotionElement>
             ))}
           </div>
 
+          {/* Trusted-by logo strip (placeholders — swap with client logos) */}
+          <MotionElement animation="slideUp" delay={200}>
+            <p className="text-[10px] uppercase tracking-[0.28em] text-muted-foreground/80 mb-8">Trusted by teams at</p>
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-x-8 gap-y-6 items-center">
+              {["Northwind", "Vantage", "Halcyon", "Meridian", "Kestrel", "Ridgeline"].map((name) => (
+                <div
+                  key={name}
+                  className="text-center text-foreground/40 hover:text-foreground/80 transition-colors duration-300 text-lg md:text-xl font-semibold tracking-[-0.02em]"
+                >
+                  {name}
+                </div>
+              ))}
+            </div>
+          </MotionElement>
         </div>
       </section>
 
