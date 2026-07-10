@@ -4,7 +4,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ScrollToTop from "@/components/ScrollToTop";
 import { MotionElement } from "@/components/MotionElements";
-import { ArrowRight, ArrowUpRight, Lightning, Robot, FlowArrow, Megaphone, TrendUp, UsersThree, Headset, BookOpen, ChartBar, MagnetStraight, Gear, Code, PlugsConnected, UserGear } from "@phosphor-icons/react";
+import { ArrowRight, ArrowUpRight, Lightning, Robot, FlowArrow, Megaphone, TrendUp, UsersThree, Headset, BookOpen, ChartBar, MagnetStraight, Gear, Code, PlugsConnected, UserGear, Sparkle, Briefcase, StackSimple, Handshake, PuzzlePiece, ShieldCheck, ChatCircleDots, Compass, Wrench } from "@phosphor-icons/react";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 const Index = () => {
