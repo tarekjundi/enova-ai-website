@@ -593,33 +593,61 @@ const Index = () => {
         </div>
       </section>
 
-      {/* ============== CTA ============== */}
-      <section className="py-28 md:py-36 border-t border-border bg-card/40">
-        <div className="container mx-auto px-6 lg:px-10">
-          <div className={`grid md:grid-cols-12 gap-12 md:gap-16 items-end ${isRTL ? "md:[direction:rtl] text-right" : ""}`}>
-            <MotionElement animation="slideUp" className="md:col-span-8">
-              <p className="text-[10px] uppercase tracking-[0.22em] text-muted-foreground mb-6">Next step</p>
-              <h2 className="!text-4xl md:!text-6xl !leading-[1.05] tracking-[-0.035em] font-semibold max-w-[22ch]">
-                Let's discuss your next <span className="text-primary">AI project</span>.
+      {/* ============== CTA — What happens next ============== */}
+      <section className="py-28 md:py-40 border-t border-border bg-card/40 relative overflow-hidden">
+        <div className="absolute inset-0 grid-bg pointer-events-none opacity-40" />
+        <div className="container mx-auto px-6 lg:px-10 relative">
+          <div className={`grid md:grid-cols-12 gap-12 md:gap-16 ${isRTL ? "md:[direction:rtl] text-right" : ""}`}>
+            <MotionElement animation="slideUp" className="md:col-span-6">
+              <p className="text-[10px] uppercase tracking-[0.28em] text-primary/80 mb-6">Let's Talk</p>
+              <h2 className="!text-4xl md:!text-6xl !leading-[1.05] tracking-[-0.035em] font-semibold max-w-[20ch] mb-6">
+                Start with a <span className="font-serif-accent text-primary">30-minute discovery call.</span>
               </h2>
-            </MotionElement>
-            <MotionElement animation="slideUp" delay={120} className="md:col-span-4 md:pb-2">
-              <p className="text-muted-foreground mb-8 max-w-md leading-[1.7]">
-                Tell us about one workflow you'd like to automate. We'll respond within one business day.
+              <p className="text-muted-foreground text-lg leading-[1.7] max-w-lg mb-10">
+                No pitch, no obligation. We'll listen to your goals, map the highest-impact opportunities,
+                and tell you honestly whether AI is the right lever for the problem you're solving.
               </p>
+
               <div className="flex flex-wrap gap-3">
                 <a href="https://cal.com/tarek-jundi/free-consultation" target="_blank" rel="noopener noreferrer">
-                  <Button className="bg-primary text-primary-foreground hover:bg-primary/90 text-sm px-7 h-12 rounded-md font-medium gap-2 group">
-                    Book a Consultation
+                  <Button className="bg-primary text-primary-foreground hover:bg-primary/90 text-sm px-7 h-12 rounded-md font-medium gap-2 group shadow-lg shadow-primary/10">
+                    Book Your Free Consultation
                     <ArrowRight size={14} className={`transition-transform duration-300 group-hover:translate-x-0.5 ${isRTL ? "rotate-180" : ""}`} />
                   </Button>
                 </a>
                 <Link to="/contact">
                   <Button variant="ghost" className="text-foreground hover:text-primary hover:bg-transparent text-sm px-5 h-12 rounded-md font-medium border border-border hover:border-primary/50">
-                    Send a brief
+                    Send a Brief Instead
                   </Button>
                 </Link>
               </div>
+            </MotionElement>
+
+            <MotionElement animation="slideUp" delay={140} className="md:col-span-5 md:col-start-8">
+              <p className="text-[10px] uppercase tracking-[0.28em] text-muted-foreground mb-6">What Happens Next</p>
+              <ol className="space-y-6">
+                {[
+                  { Icon: ChatCircleDots, title: "Discovery Call", desc: "We listen. You share your goals, constraints, and the workflows slowing your team down." },
+                  { Icon: Compass, title: "Opportunity Map", desc: "Within 48 hours, you get a ranked shortlist of AI opportunities scored by impact and effort." },
+                  { Icon: Wrench, title: "Custom Proposal", desc: "A clear scope, timeline, and pricing — plus the guarantees, ownership terms, and success metrics." },
+                ].map((step, idx) => (
+                  <li key={step.title} className="flex gap-4 group">
+                    <div className="flex-shrink-0 relative">
+                      <div className="w-10 h-10 rounded-full bg-primary/10 border border-primary/25 flex items-center justify-center text-primary transition-all duration-500 group-hover:bg-primary group-hover:text-primary-foreground group-hover:scale-110">
+                        <step.Icon size={16} weight="regular" />
+                      </div>
+                      {idx < 2 && <div className="absolute left-1/2 top-11 -translate-x-1/2 w-px h-8 bg-border" />}
+                    </div>
+                    <div className="pt-1.5">
+                      <p className="text-foreground font-semibold text-[15px] mb-1 tracking-tight">
+                        <span className="text-primary/70 font-mono text-xs mr-2">0{idx + 1}</span>
+                        {step.title}
+                      </p>
+                      <p className="text-muted-foreground text-sm leading-[1.65] max-w-sm">{step.desc}</p>
+                    </div>
+                  </li>
+                ))}
+              </ol>
             </MotionElement>
           </div>
         </div>
