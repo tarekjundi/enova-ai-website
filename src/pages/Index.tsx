@@ -147,40 +147,61 @@ const Index = () => {
           <div className={`grid lg:grid-cols-12 gap-14 lg:gap-20 items-center ${isRTL ? "lg:[direction:rtl]" : ""}`}>
             {/* LEFT */}
             <div className={`lg:col-span-6 ${isRTL ? "text-right" : ""}`}>
-
-
-
+              <MotionElement animation="slideUp" delay={40}>
+                <div className={`inline-flex items-center gap-2.5 mb-8 px-3.5 py-1.5 rounded-full border border-primary/25 bg-primary/5 ${isRTL ? "flex-row-reverse" : ""}`}>
+                  <span className="relative flex h-1.5 w-1.5">
+                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-70" />
+                    <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-primary" />
+                  </span>
+                  <span className="text-[11px] uppercase tracking-[0.22em] text-primary/90 font-medium">
+                    AI Consulting for growing companies
+                  </span>
+                </div>
+              </MotionElement>
 
               <MotionElement animation="slideUp" delay={120}>
-                <h1 className="mb-8 text-foreground !text-[52px] sm:!text-[64px] lg:!text-[80px] !leading-[1.02] tracking-[-0.035em] font-semibold">
-                  AI Systems That{" "}
-                  <span className="text-primary">Save Time</span>,
-                  Cut Costs, and Scale Operations.
+                <h1 className="mb-7 text-foreground !text-[52px] sm:!text-[64px] lg:!text-[80px] !leading-[1.02] tracking-[-0.035em] font-semibold">
+                  Turn manual work into{" "}
+                  <span className="text-primary">measurable growth.</span>
                 </h1>
               </MotionElement>
 
               <MotionElement animation="slideUp" delay={200}>
-                <p className="text-muted-foreground text-lg md:text-xl leading-[1.65] max-w-2xl mb-12">
-                  We build custom AI solutions, intelligent automations, and software systems
-                  that help businesses operate more efficiently and grow faster.
+                <p className="text-muted-foreground text-lg md:text-xl leading-[1.65] max-w-2xl mb-10">
+                  Enova helps operations, sales, and support teams replace repetitive work with custom AI systems —
+                  built to your workflows, integrated into your stack, and owned by your team.
                 </p>
               </MotionElement>
 
-              <MotionElement animation="slideUp" delay={280}>
+              <MotionElement animation="slideUp" delay={260}>
+                <ul className={`flex flex-wrap gap-x-6 gap-y-2.5 mb-10 ${isRTL ? "justify-end" : ""}`}>
+                  {["Custom-built systems", "Ships in weeks", "No vendor lock-in"].map((f) => (
+                    <li key={f} className="flex items-center gap-2 text-sm text-foreground/80">
+                      <ShieldCheck size={14} weight="fill" className="text-primary" />
+                      {f}
+                    </li>
+                  ))}
+                </ul>
+              </MotionElement>
+
+              <MotionElement animation="slideUp" delay={320}>
                 <div className={`flex flex-wrap items-center gap-4 ${isRTL ? "justify-end" : ""}`}>
                   <a href="https://cal.com/tarek-jundi/free-consultation" target="_blank" rel="noopener noreferrer">
-                    <Button className="bg-primary text-primary-foreground hover:bg-primary/90 text-sm px-7 h-12 rounded-md font-medium gap-2 group">
-                      Book a Consultation
+                    <Button className="bg-primary text-primary-foreground hover:bg-primary/90 text-sm px-7 h-12 rounded-md font-medium gap-2 group shadow-lg shadow-primary/10">
+                      Book a Free Consultation
                       <ArrowRight size={14} className={`transition-transform duration-300 group-hover:translate-x-0.5 ${isRTL ? "rotate-180" : ""}`} />
                     </Button>
                   </a>
-                  <Link to="/case-studies">
+                  <Link to="/services">
                     <Button variant="ghost" className="text-foreground hover:text-primary hover:bg-transparent text-sm px-5 h-12 rounded-md font-medium gap-2 group border border-border hover:border-primary/50">
-                      View Our Work
+                      Explore Our Services
                       <ArrowUpRight size={14} className="transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
                     </Button>
                   </Link>
                 </div>
+                <p className="text-xs text-muted-foreground/80 mt-5">
+                  30-minute discovery call · No obligation · Response within one business day
+                </p>
               </MotionElement>
             </div>
 
