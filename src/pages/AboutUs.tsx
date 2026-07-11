@@ -17,12 +17,12 @@ const AboutUs = () => {
     {
       num: "02",
       title: "Operators, not theorists.",
-      desc: "Every engagement is led by people who have run sales, support and finance operations inside real companies. No frameworks for the sake of frameworks.",
+      desc: "Every engagement is led by people who have run sales, support and finance operations inside real companies.",
     },
     {
       num: "03",
       title: "Built into your stack.",
-      desc: "We work inside the tools you already pay for — CRM, helpdesk, billing, inbox — instead of asking teams to migrate to ours.",
+      desc: "We work inside the tools you already pay for — CRM, helpdesk, billing, inbox — instead of asking teams to migrate.",
     },
     {
       num: "04",
@@ -41,7 +41,7 @@ const AboutUs = () => {
           <div className={`grid md:grid-cols-12 gap-10 md:gap-16 ${isRTL ? "md:[direction:rtl] text-right" : ""}`}>
             <div className="md:col-span-4">
               <MotionElement animation="slideUp">
-                <p className="text-[10px] uppercase tracking-[0.22em] text-muted-foreground mb-4">About — Enova</p>
+                <p className="text-[10px] uppercase tracking-[0.22em] text-muted-foreground mb-4">About Enova</p>
               </MotionElement>
             </div>
             <div className="md:col-span-8">
@@ -53,7 +53,7 @@ const AboutUs = () => {
               </MotionElement>
               <MotionElement animation="slideUp" delay={180}>
                 <p className="text-foreground/75 text-lg max-w-2xl leading-[1.7]">
-                  Enova designs and deploys AI systems that take repetitive work off the desk of revenue, support and operations teams — so the people you hired can spend their time on what only people can do.
+                  Enova designs and deploys AI systems that take repetitive work off your revenue, support and operations teams — so your people can focus on what only people can do.
                 </p>
               </MotionElement>
             </div>
@@ -76,7 +76,7 @@ const AboutUs = () => {
             <div className="md:col-span-7 md:col-start-6 space-y-6 text-foreground/80 text-[17px] leading-[1.75]">
               <MotionElement animation="slideUp" delay={120}>
                 <p>
-                  Most companies aren't short on tools — they're short on operational capacity. Tickets pile up, leads go cold, finance chases the same invoices every month. The work isn't strategic. It just won't stop.
+                  Most companies aren't short on tools — they're short on operational capacity. Tickets pile up, leads go cold, finance chases the same invoices every month.
                 </p>
               </MotionElement>
               <MotionElement animation="slideUp" delay={180}>
@@ -86,7 +86,7 @@ const AboutUs = () => {
               </MotionElement>
               <MotionElement animation="slideUp" delay={240}>
                 <p>
-                  No black boxes, no vendor lock-in, no multi-quarter strategy decks. Audit, design, deploy, measure. Then do it again on the next workflow.
+                  No black boxes, no lock-in, no multi-quarter strategy decks. Audit, design, deploy, measure. Then do it again on the next workflow.
                 </p>
               </MotionElement>
             </div>
@@ -140,7 +140,7 @@ const AboutUs = () => {
             </div>
             <div className="md:col-span-4">
               <p className="text-foreground/75 mb-6 max-w-md leading-[1.7]">
-                If you have a workflow that's burning hours every week and a team that's ready to operate differently — start with a 30-minute call.
+                If you have a workflow burning hours every week and a team ready to operate differently, start with a 30-minute call.
               </p>
               <a
                 href="https://cal.com/tarek-jundi/free-consultation"
@@ -148,7 +148,7 @@ const AboutUs = () => {
                 rel="noopener noreferrer"
                 className="text-primary text-sm font-medium border-b border-primary/40 hover:border-primary pb-1 transition-colors"
               >
-                Book a strategy call →
+                Book a Consultation →
               </a>
             </div>
           </div>

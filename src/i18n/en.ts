@@ -7,7 +7,7 @@ export const en: Record<string, string> = {
   "nav.contact": "Contact",
   "nav.solutions": "Services",
   "nav.faq": "FAQ",
-  "nav.lets_talk": "Book a Strategy Call",
+  "nav.lets_talk": "Book a Consultation",
 
   // Index - Hero
   "index.hero.eyebrow": "ENOVA — Operational AI Systems",

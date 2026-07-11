@@ -26,27 +26,27 @@ import { useLanguage } from "@/contexts/LanguageContext";
 const FAQS = [
   {
     q: "How long does implementation take?",
-    a: "Most engagements ship a first working system in 4–8 weeks. Complex, multi-workflow programs run in phased rollouts across a quarter, with a working milestone every two weeks so you never wait months for value.",
+    a: "Most engagements deliver a first working system in 4–8 weeks. Larger, multi-workflow programs run in phased rollouts across a quarter, with a working milestone every two weeks — so you never wait months to see value.",
   },
   {
     q: "Do you work with our existing systems?",
-    a: "Yes. Every engagement is built around your current stack — CRM, support, billing, data warehouse, internal tools. We integrate rather than replace, and we hand over the code, credentials and documentation so your team can maintain and extend the system.",
+    a: "Yes. Every engagement is built around your current stack — CRM, support, billing, data warehouse, internal tools. We integrate rather than replace, and hand over the code, credentials and documentation so your team can maintain and extend the system.",
   },
   {
     q: "Can AI integrate with our CRM?",
-    a: "We work with HubSpot, Salesforce, Pipedrive, Attio, Zoho and custom CRMs. Typical integrations include enrichment on every record, deal scoring, stage-change automation, activity capture and leadership rollups your team actually trusts.",
+    a: "We work with HubSpot, Salesforce, Pipedrive, Attio, Zoho and custom CRMs. Typical integrations include record enrichment, deal scoring, stage-change automation, activity capture and leadership rollups your team can trust.",
   },
   {
-    q: "What industries do you specialize in?",
-    a: "We work across B2B SaaS, financial services, healthcare, real estate, logistics, e-commerce, professional services and legal. The pattern — operational AI built around a real workflow — is portable across industries.",
+    q: "What industries do you serve?",
+    a: "B2B SaaS, financial services, healthcare, real estate, logistics, e-commerce, professional services and legal. The pattern — operational AI built around a real workflow — is portable across industries.",
   },
   {
     q: "How does pricing work?",
-    a: "Fixed-scope, fixed-price per engagement. We scope against a specific workflow, agree on success metrics up front, and quote a single price with a clear timeline. No hourly billing, no vague retainers.",
+    a: "Fixed scope, fixed price per engagement. We scope against a specific workflow, agree on success metrics up front and quote a single price with a clear timeline. No hourly billing, no vague retainers.",
   },
   {
     q: "Do you provide ongoing support?",
-    a: "Every engagement includes 30 days of production support at no extra cost. Beyond that, most clients continue with a monthly retainer for observability, tuning, and new workflow intake — sized to your usage, not fixed.",
+    a: "Every engagement includes 30 days of production support at no extra cost. Beyond that, most clients continue with a monthly retainer for monitoring, tuning and new workflow intake — sized to your usage.",
   },
 ];
 
@@ -71,10 +71,10 @@ const Contact = () => {
         "https://script.google.com/macros/s/AKfycbwwwWkZloxZ6iKjVujFMUTxqh4h_uxVL4uRsm5LKow5TuX1nXsdWideN_mmDuo--UY/exec",
         { method: "POST", mode: "no-cors", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ ...formData, timestamp: new Date().toISOString() }) }
       );
-      toast({ title: "Thanks — we'll be in touch.", description: "We typically respond within one business day." });
+      toast({ title: "Thanks — we'll be in touch.", description: "We typically reply within one business day." });
       setFormData({ name: "", email: "", company: "", budget: "", message: "" });
     } catch {
-      toast({ title: "Thanks — we'll be in touch.", description: "We typically respond within one business day." });
+      toast({ title: "Thanks — we'll be in touch.", description: "We typically reply within one business day." });
       setFormData({ name: "", email: "", company: "", budget: "", message: "" });
     } finally {
       setIsSubmitting(false);
@@ -101,12 +101,12 @@ const Contact = () => {
             <div className="md:col-span-8">
               <MotionElement animation="slideUp" delay={100}>
                 <h1 className="!text-5xl md:!text-6xl lg:!text-7xl !leading-[1.05] tracking-[-0.035em] mb-8 max-w-[22ch] font-semibold">
-                  Let's discuss your next <span className="text-primary">AI project</span>.
+                  Let's talk about your next <span className="text-primary">AI project</span>.
                 </h1>
               </MotionElement>
               <MotionElement animation="slideUp" delay={180}>
                 <p className="text-foreground/75 text-lg max-w-2xl leading-[1.7]">
-                  We review every inbound personally. Expect a reply within one business day — usually with two or three operational questions before we suggest a call.
+                  Every message is reviewed personally. Expect a reply within one business day — usually with a few questions before we suggest a call.
                 </p>
               </MotionElement>
             </div>
@@ -153,7 +153,7 @@ const Contact = () => {
                     </div>
                   </div>
                   <div>
-                    <p className="text-[11px] uppercase tracking-[0.2em] text-muted-foreground mb-1.5">Strategy call</p>
+                    <p className="text-[11px] uppercase tracking-[0.2em] text-muted-foreground mb-1.5">Book a call</p>
                     <a
                       href="https://cal.com/tarek-jundi/free-consultation"
                       target="_blank"
@@ -168,7 +168,7 @@ const Contact = () => {
                 <div className="mt-14 pt-8 border-t border-border/60">
                   <p className="text-[11px] uppercase tracking-[0.2em] text-muted-foreground mb-3">Response time</p>
                   <p className="text-foreground/75 text-[15px] leading-[1.7]">
-                    Within one business day, Monday–Friday. Calls are typically scheduled the same week.
+                    Within one business day, Monday–Friday. Calls are usually scheduled the same week.
                   </p>
                 </div>
               </MotionElement>
@@ -215,7 +215,7 @@ const Contact = () => {
                       onChange={handleChange}
                       className={fieldClass + " resize-none"}
                       disabled={isSubmitting}
-                      placeholder="A short description of the process, the team involved and what's broken about it today."
+                      placeholder="A short description of the process, the team involved and what's not working today."
                     />
                   </div>
                   <div className="pt-4">
@@ -224,13 +224,13 @@ const Contact = () => {
                       disabled={isSubmitting}
                       className="bg-primary text-primary-foreground hover:bg-primary/90 text-sm px-7 py-6 rounded-sm font-medium gap-2 group"
                     >
-                      {isSubmitting ? "Sending…" : "Send brief"}
+                      {isSubmitting ? "Sending…" : "Send Message"}
                       {!isSubmitting && (
                         <ArrowRight size={14} className={`transition-transform duration-300 group-hover:translate-x-0.5 ${isRTL ? "rotate-180 group-hover:-translate-x-0.5" : ""}`} />
                       )}
                     </Button>
                     <p className="text-muted-foreground text-[12px] mt-4 leading-[1.6]">
-                      By submitting, you agree we may contact you about your inquiry. We never share inbound briefs with third parties.
+                      By submitting, you agree we may contact you about your inquiry. We never share your details with third parties.
                     </p>
                   </div>
                 </form>
@@ -251,7 +251,7 @@ const Contact = () => {
                   Answers before you <span className="font-serif-accent italic font-light text-primary">ask</span>.
                 </h2>
                 <p className="text-muted-foreground text-base md:text-lg leading-relaxed mt-6 max-w-sm">
-                  The questions we get most often, answered plainly. Anything else — send it in the form.
+                  The questions we hear most, answered plainly. Anything else — send it in the form.
                 </p>
               </MotionElement>
             </div>

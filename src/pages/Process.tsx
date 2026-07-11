@@ -42,21 +42,21 @@ const PHASES: Phase[] = [
     num: "01",
     week: "Discovery",
     title: "Discovery",
-    intent: "Understand business goals, workflows, and where time and revenue actually leak.",
-    body: "We sit with operators — not just leadership — and rebuild the picture from the ground up. The outcome is a clear map of goals, constraints, and the workflows worth touching first.",
-    inputs: ["Access to CRM, support and ops tools (read-only)", "Interviews with 4–6 operators", "Tool + data inventory"],
-    activities: ["Stakeholder interviews", "Workflow shadowing", "Stack + data-flow mapping"],
-    outputs: ["Workflow inventory", "Prioritised pain-points", "Discovery report"],
+    intent: "Understand your business, workflows and where time and revenue actually leak.",
+    body: "We work directly with your operators — not just leadership — to rebuild the picture from the ground up. The result is a clear map of goals, constraints and the workflows worth touching first.",
+    inputs: ["Read-only access to CRM, support and ops tools", "Interviews with 4–6 operators", "Tool and data inventory"],
+    activities: ["Stakeholder interviews", "Workflow shadowing", "Stack and data-flow mapping"],
+    outputs: ["Workflow inventory", "Prioritised pain points", "Discovery report"],
     Icon: MagnifyingGlass,
   },
   {
     num: "02",
     week: "Strategy",
     title: "Strategy",
-    intent: "Identify high-impact AI opportunities and define a practical roadmap.",
-    body: "We rank opportunities by hours saved, revenue impact and implementation risk — and produce a phased roadmap with a clear answer on what not to automate.",
-    inputs: ["Discovery report", "Business KPIs", "Budget + timeline constraints"],
-    activities: ["Opportunity scoring", "Roadmap sequencing", "ROI + risk modelling"],
+    intent: "Identify the highest-impact opportunities and set a practical roadmap.",
+    body: "We rank opportunities by hours saved, revenue impact and implementation risk — then produce a phased roadmap, including a clear answer on what not to automate.",
+    inputs: ["Discovery report", "Business KPIs", "Budget and timeline constraints"],
+    activities: ["Opportunity scoring", "Roadmap sequencing", "ROI and risk modelling"],
     outputs: ["Ranked opportunity list", "Phased roadmap", "Success metrics per initiative"],
     Icon: Compass,
   },
@@ -64,10 +64,10 @@ const PHASES: Phase[] = [
     num: "03",
     week: "Solution Design",
     title: "Solution Design",
-    intent: "Design custom AI workflows and system architecture the way a serious engineering team would.",
-    body: "Model selection, routing, retrieval, guardrails, observability, cost ceilings. Boring where boring works, bespoke where it doesn't. Every decision documented with the trade-off behind it.",
-    inputs: ["Approved roadmap", "Security + compliance constraints", "Existing infrastructure baseline"],
-    activities: ["Workflow diagramming", "Reference architecture", "Guardrails + human-checkpoint design"],
+    intent: "Design AI workflows and system architecture the way a serious engineering team would.",
+    body: "Model selection, routing, retrieval, guardrails, observability, cost ceilings. Boring where boring works, custom where it doesn't. Every decision documented with the trade-off behind it.",
+    inputs: ["Approved roadmap", "Security and compliance constraints", "Existing infrastructure baseline"],
+    activities: ["Workflow diagramming", "Reference architecture", "Guardrails and checkpoint design"],
     outputs: ["Per-workflow specification", "Reference architecture", "Integration matrix"],
     Icon: Cube,
   },
@@ -75,22 +75,22 @@ const PHASES: Phase[] = [
     num: "04",
     week: "Development",
     title: "Development",
-    intent: "Build, integrate, and configure the solution against your real stack.",
-    body: "We engineer the automations, agents and integrations to spec — with clean code, scoped credentials, and infrastructure your team can maintain long after we leave.",
-    inputs: ["Approved architecture", "Scoped production credentials", "Sample data for evals"],
-    activities: ["Build + integration", "Prompt + retrieval implementation", "Eval harness construction"],
-    outputs: ["Working system in staging", "Version-controlled codebase", "Initial eval results"],
+    intent: "Build, integrate and configure the solution against your real stack.",
+    body: "We engineer the automations, agents and integrations to spec — with clean code, scoped credentials and infrastructure your team can maintain long after we leave.",
+    inputs: ["Approved architecture", "Scoped production credentials", "Sample data for evaluation"],
+    activities: ["Build and integration", "Prompt and retrieval implementation", "Evaluation harness"],
+    outputs: ["Working system in staging", "Version-controlled codebase", "Initial evaluation results"],
     Icon: Code,
   },
   {
     num: "05",
     week: "Testing & Optimization",
     title: "Testing & Optimization",
-    intent: "Validate, refine, and improve performance against real historical data.",
-    body: "Every workflow is measured against the metrics agreed in the spec — accuracy, latency, cost — with adjustments to prompts, routing, retrieval and human checkpoints until it earns the right to ship.",
+    intent: "Validate, refine and improve performance against real historical data.",
+    body: "Every workflow is measured against the accuracy, latency and cost targets set in the spec — with adjustments to prompts, routing, retrieval and human checkpoints until it earns the right to ship.",
     inputs: ["Real historical data", "Success metrics per workflow", "Operator feedback"],
-    activities: ["Eval runs against production data", "Prompt + retrieval tuning", "Cost + latency optimisation"],
-    outputs: ["Passing eval suite", "Tuned system", "Sign-off from workflow owners"],
+    activities: ["Evaluation against production data", "Prompt and retrieval tuning", "Cost and latency optimisation"],
+    outputs: ["Passing evaluation suite", "Tuned system", "Sign-off from workflow owners"],
     Icon: TestTube,
   },
   {
@@ -98,8 +98,8 @@ const PHASES: Phase[] = [
     week: "Deployment",
     title: "Deployment",
     intent: "Launch to production with minimal disruption — behind flags, with monitoring on day one.",
-    body: "Feature-flagged rollouts, shadow mode, and gradual cutovers. Human-in-the-loop on anything that touches customers or money until the metrics earn the agent's autonomy.",
-    inputs: ["Passing eval suite", "Rollback plan", "Test cohort"],
+    body: "Feature-flagged rollouts, shadow mode and gradual cutovers. Human review on anything that touches customers or money until the metrics earn the agent's autonomy.",
+    inputs: ["Passing evaluation suite", "Rollback plan", "Test cohort"],
     activities: ["Shadow-mode rollout", "Gradual cutover", "Observability wiring"],
     outputs: ["Production system", "Observability dashboard", "Runbooks"],
     Icon: Rocket,
@@ -109,9 +109,9 @@ const PHASES: Phase[] = [
     week: "Training",
     title: "Training",
     intent: "Train your team and hand over documentation so the system is genuinely yours.",
-    body: "Live working sessions, written runbooks, and architecture walkthroughs. No black boxes, no lock-in. Your operators leave knowing how to run, debug and extend the system.",
-    inputs: ["Production system", "Operator + admin cohorts", "Handover schedule"],
-    activities: ["Live training sessions", "Runbook walkthroughs", "Admin + escalation training"],
+    body: "Live working sessions, written runbooks and architecture walkthroughs. No black boxes, no lock-in. Your operators leave knowing how to run, debug and extend the system.",
+    inputs: ["Production system", "Operator and admin cohorts", "Handover schedule"],
+    activities: ["Live training sessions", "Runbook walkthroughs", "Admin and escalation training"],
     outputs: ["Trained team", "Handover documentation", "Support contacts"],
     Icon: GraduationCap,
   },
@@ -119,10 +119,10 @@ const PHASES: Phase[] = [
     num: "08",
     week: "Continuous Improvement",
     title: "Continuous Improvement",
-    intent: "Monitor, optimize and expand the solution as your business changes.",
+    intent: "Monitor, refine and expand the solution as your business changes.",
     body: "Workflows drift. Models change. Edge cases surface. Monthly reviews against the original metrics, with tuning and new workflow intake — owned by your team, supported by ours.",
-    inputs: ["Live production metrics", "User + operator feedback", "Quarterly business reviews"],
-    activities: ["Eval re-runs against new data", "Prompt + routing tuning", "New workflow intake"],
+    inputs: ["Live production metrics", "User and operator feedback", "Quarterly business reviews"],
+    activities: ["Evaluation re-runs against new data", "Prompt and routing tuning", "New workflow intake"],
     outputs: ["Monthly performance report", "Roadmap for next quarter", "Continually improving system"],
     Icon: ChartLineUp,
   },
@@ -130,10 +130,10 @@ const PHASES: Phase[] = [
 
 const PRINCIPLES = [
   { num: "01", title: "Specification before code", body: "Every workflow is signed off by its owner before a line of integration code is written.", Icon: FileText },
-  { num: "02", title: "Production data or nothing", body: "Evals run against your real historical data. No sandbox demos.", Icon: Database },
-  { num: "03", title: "Human-in-the-loop where it matters", body: "Anything touching a customer commitment or money keeps a human checkpoint until the metrics earn the agent's autonomy.", Icon: ShieldCheck },
-  { num: "04", title: "Observability on day one", body: "Every workflow ships with a dashboard, an owner, and an SLA. If we can't measure it, we don't ship it.", Icon: Gauge },
-  { num: "05", title: "Yours to own", body: "Architecture, runbooks and credentials handed over. No black boxes, no lock-in to us.", Icon: Handshake },
+  { num: "02", title: "Production data or nothing", body: "We evaluate against your real historical data. No sandbox demos.", Icon: Database },
+  { num: "03", title: "Human review where it matters", body: "Anything touching a customer commitment or money keeps a human checkpoint until the metrics earn autonomy.", Icon: ShieldCheck },
+  { num: "04", title: "Observability on day one", body: "Every workflow ships with a dashboard, an owner and an SLA. If we can't measure it, we don't ship it.", Icon: Gauge },
+  { num: "05", title: "Yours to own", body: "Architecture, runbooks and credentials handed over. No black boxes, no lock-in.", Icon: Handshake },
 ];
 
 
@@ -151,7 +151,7 @@ const Process = () => {
             <MotionElement animation="slideUp" className="md:col-span-7">
               <p className="text-[10px] uppercase tracking-[0.22em] text-muted-foreground mb-6">Process — eight stages</p>
               <h1 className="!text-5xl md:!text-7xl !leading-[0.98] tracking-[-0.04em] max-w-[18ch]">
-                From discovery to continuous improvement, <span className="font-serif-accent italic font-light text-primary">a process built to ship</span>.
+                From discovery to production, <span className="font-serif-accent italic font-light text-primary">a process built to ship</span>.
               </h1>
             </MotionElement>
             <MotionElement animation="slideUp" delay={120} className="md:col-span-4 md:col-start-9 md:pb-3">
@@ -235,11 +235,11 @@ const Process = () => {
             <div className="md:col-span-5">
               <p className="text-[10px] uppercase tracking-[0.28em] text-primary/80 mb-6">Operating principles</p>
               <h2 className="!text-4xl md:!text-6xl !leading-[1.02] tracking-[-0.03em]">
-                How we work, <span className="font-serif-accent italic font-light text-primary">regardless of the phase.</span>
+                How we work, <span className="font-serif-accent italic font-light text-primary">at every stage.</span>
               </h2>
             </div>
             <div className="md:col-span-6 md:col-start-7 md:pt-4">
-              <p className="text-muted-foreground text-lg leading-relaxed">Five operating principles that hold across every engagement. They're the part of the process that doesn't change.</p>
+              <p className="text-muted-foreground text-lg leading-relaxed">Five principles that hold across every engagement — the part of the process that doesn't change.</p>
             </div>
           </div>
 
@@ -271,7 +271,7 @@ const Process = () => {
         <div className="container mx-auto px-6">
           <div className={`grid md:grid-cols-12 gap-10 md:gap-16 items-end ${isRTL ? "md:[direction:rtl] text-right" : ""}`}>
             <div className="md:col-span-8">
-              <p className="text-[10px] uppercase tracking-[0.22em] text-muted-foreground mb-6">Start with phase one</p>
+              <p className="text-[10px] uppercase tracking-[0.22em] text-muted-foreground mb-6">Start with discovery</p>
               <h2 className="!text-4xl md:!text-6xl !leading-[1.02] max-w-[20ch]">
                 Audit first. Then we decide what to <span className="font-serif-accent italic font-light text-primary">build</span>.
               </h2>
@@ -280,7 +280,7 @@ const Process = () => {
               <p className="text-muted-foreground mb-8 max-w-md">30-minute working session to scope an audit against one of your workflows.</p>
               <a href="https://cal.com/tarek-jundi/free-consultation" target="_blank" rel="noopener noreferrer" className="inline-block">
                 <Button className="bg-primary text-primary-foreground hover:bg-primary/90 text-sm px-7 py-6 rounded-sm font-medium gap-2 group">
-                  Book a Strategy Call
+                  Book a Consultation
                   <ArrowRight size={14} className="transition-transform duration-300 group-hover:translate-x-0.5" />
                 </Button>
               </a>

@@ -24,8 +24,7 @@ const Footer = () => {
               ENOVA
             </h3>
             <p className="text-muted-foreground text-sm leading-[1.7] max-w-sm">
-              Custom AI solutions, intelligent automations, and software systems
-              for businesses that measure outcomes.
+              AI systems, automations and custom software for companies that measure outcomes.
             </p>
           </div>
 
