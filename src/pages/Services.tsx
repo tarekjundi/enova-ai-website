@@ -31,7 +31,7 @@ const SERVICES: Service[] = [
   {
     num: "02",
     title: "AI Marketing",
-    tagline: "Compound pipeline without adding headcount.",
+    tagline: "Grow pipeline without adding headcount.",
     Icon: Megaphone,
     subs: ["Lead Generation", "Content Automation", "Email Automation", "Campaign Optimization"],
   },
@@ -45,7 +45,7 @@ const SERVICES: Service[] = [
   {
     num: "04",
     title: "Custom AI Development",
-    tagline: "Bespoke systems where off-the-shelf runs out.",
+    tagline: "Bespoke systems where off-the-shelf falls short.",
     Icon: Code,
     subs: ["Custom Integrations", "Internal Tools", "Dashboards", "API Development"],
   },
@@ -70,7 +70,7 @@ const Services = () => {
             </MotionElement>
             <MotionElement animation="slideUp" delay={120} className="md:col-span-4 md:col-start-9 md:pb-3">
               <p className="text-muted-foreground text-lg leading-relaxed">
-                Four practice areas. Scoped, shipped and handed back to your team with documentation and metrics on day one.
+                Four practice areas. Scoped, delivered and handed to your team with documentation and metrics on day one.
               </p>
             </MotionElement>
           </div>
@@ -134,7 +134,7 @@ const Services = () => {
               <p className="text-muted-foreground mb-8 max-w-md">30-minute working session. We review one of your workflows live and map the system end-to-end.</p>
               <a href="https://cal.com/tarek-jundi/free-consultation" target="_blank" rel="noopener noreferrer" className="inline-block">
                 <Button className="bg-primary text-primary-foreground hover:bg-primary/90 text-sm px-7 py-6 rounded-sm font-medium gap-2 group">
-                  Book a working session
+                  Book a Consultation
                   <ArrowRight size={14} className="transition-transform duration-300 group-hover:translate-x-0.5" />
                 </Button>
               </a>
