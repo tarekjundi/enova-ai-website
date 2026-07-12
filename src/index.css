@@ -1,5 +1,4 @@
-
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Work+Sans:wght@300;400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -7,83 +6,52 @@
 
 @layer base {
   :root {
-    /* Palette — bg #281D0B (deep brown), accent/text #F6D5A0 (warm cream) */
-    --background: 36 58% 10%;
-    --foreground: 36 90% 92%;
+    /* Semantic tokens driven off ENOVA brand palette
+       bg = deep brown #281C0B ; foreground = soft cream #FDEED8 */
+    --background: 33 58% 10%;        /* #281C0B */
+    --foreground: 33 78% 92%;        /* ≈ #FDEED8 */
 
-    --card: 36 50% 14%;
-    --card-foreground: 36 90% 92%;
+    --card: 33 50% 14%;
+    --card-foreground: 33 78% 92%;
 
-    --popover: 36 50% 14%;
-    --popover-foreground: 36 90% 92%;
+    --popover: 33 50% 14%;
+    --popover-foreground: 33 78% 92%;
 
-    --primary: 35 83% 80%;
-    --primary-foreground: 36 60% 10%;
+    --primary: 33 82% 80%;           /* warm gold #F6D3A2 */
+    --primary-foreground: 33 60% 10%;
 
-    --secondary: 36 50% 16%;
-    --secondary-foreground: 35 83% 80%;
+    --secondary: 33 50% 16%;
+    --secondary-foreground: 33 82% 80%;
 
-    --muted: 36 40% 18%;
-    --muted-foreground: 36 55% 82%;
+    --muted: 33 40% 18%;
+    --muted-foreground: 33 45% 78%;
 
-    --accent: 35 83% 80%;
-    --accent-foreground: 36 60% 10%;
+    --accent: 33 82% 80%;
+    --accent-foreground: 33 60% 10%;
 
     --destructive: 0 70% 55%;
-    --destructive-foreground: 35 83% 92%;
+    --destructive-foreground: 33 82% 92%;
 
-    --border: 36 35% 22%;
-    --input: 36 40% 16%;
-    --ring: 35 83% 80%;
+    --border: 33 30% 22%;
+    --input: 33 40% 16%;
+    --ring: 33 82% 80%;
 
-    --radius: 0.625rem;
+    --radius: 0.5rem;
 
-    --sidebar-background: 36 58% 10%;
-    --sidebar-foreground: 35 60% 75%;
-    --sidebar-primary: 35 83% 80%;
-    --sidebar-primary-foreground: 36 60% 10%;
-    --sidebar-accent: 36 50% 16%;
-    --sidebar-accent-foreground: 35 60% 75%;
-    --sidebar-border: 36 35% 22%;
-    --sidebar-ring: 35 83% 80%;
-  }
-
-
-  .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-background: 33 58% 10%;
+    --sidebar-foreground: 33 60% 82%;
+    --sidebar-primary: 33 82% 80%;
+    --sidebar-primary-foreground: 33 60% 10%;
+    --sidebar-accent: 33 50% 16%;
+    --sidebar-accent-foreground: 33 60% 82%;
+    --sidebar-border: 33 30% 22%;
+    --sidebar-ring: 33 82% 80%;
   }
 }
 
 @layer base {
   * {
     @apply border-border;
-    font-family: 'DM Sans', system-ui, sans-serif !important;
   }
 
   html {
@@ -94,183 +62,183 @@
   body {
     @apply text-foreground;
     overflow-x: hidden;
-    font-family: 'DM Sans', system-ui, sans-serif;
-    font-feature-settings: "kern" 1, "liga" 1;
-    font-optical-sizing: auto;
+    font-family: 'Work Sans', system-ui, sans-serif;
+    font-weight: 400;
+    font-feature-settings: "kern" 1, "liga" 1, "ss01" 1;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    /* Subtle premium depth gradient — near-black brown, no color drift */
-    background-color: hsl(36 58% 8%);
-    background-image:
-      radial-gradient(ellipse 80% 60% at 50% 0%, hsla(36, 45%, 14%, 0.9), transparent 70%),
-      radial-gradient(ellipse 100% 80% at 50% 100%, hsla(30, 30%, 4%, 0.85), transparent 65%),
-      linear-gradient(180deg, hsl(36 55% 9%) 0%, hsl(32 50% 7%) 50%, hsl(28 45% 5%) 100%);
-    background-attachment: fixed;
+    background-color: #281C0B;
+    color: #FDEED8;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-weight: 600;
-    letter-spacing: -0.03em;
-    line-height: 1.05;
+    font-family: 'Instrument Serif', Georgia, serif;
+    font-weight: 400;
+    letter-spacing: -0.015em;
+    line-height: 1.02;
   }
 
-  h1 {
-    @apply text-5xl md:text-7xl lg:text-8xl;
-    font-weight: 700;
-    letter-spacing: -0.04em;
-  }
+  h1 { @apply text-5xl md:text-7xl lg:text-[104px]; }
+  h2 { @apply text-4xl md:text-6xl; }
+  h3 { @apply text-2xl md:text-3xl; }
 
-  h2 {
-    @apply text-3xl md:text-5xl;
-    letter-spacing: -0.03em;
-  }
-
-  h3 {
-    @apply text-xl md:text-2xl;
-    font-weight: 500;
-    letter-spacing: -0.02em;
-  }
-
-  /* Increased body sizes for readability */
   p {
-    font-size: 1.125rem;
-    line-height: 1.75;
+    font-family: 'Work Sans', system-ui, sans-serif;
+    font-size: 1.0625rem;      /* 17px desktop */
+    line-height: 1.7;
     font-weight: 400;
   }
 
   small, .text-sm {
     font-size: 0.9375rem !important;
-    font-weight: 400;
     line-height: 1.65;
   }
 
   .text-xs {
     font-size: 0.8125rem !important;
-    font-weight: 500;
     letter-spacing: 0.01em;
   }
 
-  .font-serif-accent {
-    font-style: italic;
-    font-weight: 300;
-    letter-spacing: -0.02em;
-  }
-
-  button {
-    font-weight: 500;
-    letter-spacing: -0.01em;
+  button, input, textarea, select {
+    font-family: 'Work Sans', system-ui, sans-serif;
   }
 }
 
 @layer utilities {
-  .text-gradient {
-    @apply bg-clip-text text-transparent;
-    background-image: linear-gradient(135deg, #F6D5A0 0%, #d9b483 100%);
+  /* --- Editorial type helpers --- */
+  .font-display     { font-family: 'Instrument Serif', Georgia, serif; font-weight: 400; letter-spacing: -0.015em; }
+  .font-display-i   { font-family: 'Instrument Serif', Georgia, serif; font-style: italic; font-weight: 400; }
+  .font-body        { font-family: 'Work Sans', system-ui, sans-serif; }
+  .font-serif-accent{ font-family: 'Instrument Serif', Georgia, serif; font-style: italic; font-weight: 400; letter-spacing: -0.01em; }
+
+  .eyebrow {
+    font-family: 'Work Sans', system-ui, sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.24em;
+    font-size: 0.75rem;
+    font-weight: 500;
   }
 
-  .glass {
-    background: hsla(36, 55%, 13%, 0.92);
-    border: 1px solid hsla(36, 35%, 25%, 0.6);
+  /* --- Section surfaces (no grids, no glow) --- */
+  .surface-deep {
+    background-color: #281C0B;
+    color: #FDEED8;
+  }
+  .surface-deep-grad {
+    background: linear-gradient(180deg, #281C0B 0%, #3A2915 100%);
+    color: #FDEED8;
+  }
+  .surface-cream {
+    background-color: #FDEED8;
+    color: #3A2915;
+  }
+  .surface-ivory {
+    background-color: #FFF9F1;
+    color: #3A2915;
+  }
+  .surface-gold {
+    background-color: #F6D3A2;
+    color: #281C0B;
   }
 
-  @media (min-width: 768px) {
-    .glass {
-      background: hsla(36, 58%, 10%, 0.7);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-    }
-  }
+  /* Text tokens for high-contrast typography */
+  .text-on-deep         { color: #FFF9F1; }
+  .text-on-deep-body    { color: #FDEED8; }
+  .text-on-deep-muted   { color: #C8B59C; }
+  .text-on-cream        { color: #281C0B; }
+  .text-on-cream-body   { color: #3A2915; }
+  .text-on-cream-muted  { color: #6E5940; }
+  .text-copper          { color: #A56735; }
+  .text-gold            { color: #F6D3A2; }
 
-  .glass-strong {
-    background: hsla(36, 58%, 10%, 0.95);
-    border-bottom: 1px solid hsla(36, 35%, 22%, 0.8);
-  }
-
-  @media (min-width: 768px) {
-    .glass-strong {
-      background: hsla(36, 58%, 10%, 0.78);
-      backdrop-filter: blur(24px);
-      -webkit-backdrop-filter: blur(24px);
-    }
-  }
-
-  .grid-bg {
-    background-image:
-      linear-gradient(hsla(35, 83%, 80%, 0.03) 1px, transparent 1px),
-      linear-gradient(90deg, hsla(35, 83%, 80%, 0.03) 1px, transparent 1px);
-    background-size: 72px 72px;
-    mask-image: linear-gradient(180deg, black 0%, black 35%, transparent 90%);
-    -webkit-mask-image: linear-gradient(180deg, black 0%, black 35%, transparent 90%);
-  }
-
-  .section-divider {
+  /* Refined hairline divider */
+  .rule {
     height: 1px;
-    background: linear-gradient(90deg, transparent, hsla(35, 60%, 60%, 0.35), transparent);
+    background: currentColor;
+    opacity: 0.18;
+  }
+  .rule-gold {
+    height: 1px;
+    background: #F6D3A2;
+    opacity: 0.55;
   }
 
-  .hover-lift {
-    @apply transition-colors duration-300 ease-out;
+  /* Buttons — editorial */
+  .btn-primary {
+    display: inline-flex; align-items: center; gap: 0.6rem;
+    background: #F6D3A2; color: #281C0B;
+    padding: 0.95rem 1.6rem;
+    font-weight: 500; font-size: 0.9375rem; letter-spacing: -0.005em;
+    border-radius: 4px;
+    transition: background 200ms ease, transform 200ms ease;
   }
-  .hover-lift:hover {
-    border-color: hsla(35, 83%, 80%, 0.4);
+  .btn-primary:hover { background: #F0C68A; }
+
+  .btn-ghost-on-deep {
+    display: inline-flex; align-items: center; gap: 0.6rem;
+    background: transparent; color: #FFF9F1;
+    padding: 0.9rem 1.55rem;
+    font-weight: 500; font-size: 0.9375rem;
+    border: 1px solid rgba(246,211,162,0.45);
+    border-radius: 4px;
+    transition: border-color 200ms ease, background 200ms ease;
+  }
+  .btn-ghost-on-deep:hover { border-color: #F6D3A2; background: rgba(246,211,162,0.06); }
+
+  .btn-ghost-on-cream {
+    display: inline-flex; align-items: center; gap: 0.6rem;
+    background: transparent; color: #281C0B;
+    padding: 0.9rem 1.55rem;
+    font-weight: 500; font-size: 0.9375rem;
+    border: 1px solid rgba(40,28,11,0.35);
+    border-radius: 4px;
+    transition: border-color 200ms ease, background 200ms ease;
+  }
+  .btn-ghost-on-cream:hover { border-color: #281C0B; background: rgba(40,28,11,0.04); }
+
+  /* Legacy glass utilities retained for other pages */
+  .glass         { background: hsla(33, 55%, 13%, 0.92); border: 1px solid hsla(33, 30%, 22%, 0.6); }
+  .glass-strong  { background: hsla(33, 58%, 10%, 0.94); border-bottom: 1px solid rgba(246,211,162,0.18); }
+  @media (min-width: 768px) {
+    .glass { background: hsla(33, 58%, 10%, 0.7); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); }
+    .glass-strong { background: hsla(33, 58%, 10%, 0.82); backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px); }
   }
 
+  /* Legacy grid-bg neutralised — kept as no-op so old imports don't break */
+  .grid-bg { background-image: none; }
+  .section-divider { height: 1px; background: linear-gradient(90deg, transparent, rgba(246,211,162,0.35), transparent); }
 
-  .animate-fade-in {
-    animation: fadeIn 0.8s ease-out forwards;
-  }
+  .hover-lift { @apply transition-colors duration-300 ease-out; }
+  .hover-lift:hover { border-color: rgba(246,211,162,0.4); }
 
-  .animate-scale-in {
-    animation: scaleIn 0.6s ease-out forwards;
-  }
+  .animate-fade-in { animation: fadeIn 0.8s ease-out forwards; }
+  .animate-scale-in { animation: scaleIn 0.6s ease-out forwards; }
+  .animate-slide-up { animation: slideUp 0.7s ease-out forwards; }
 
-  .animate-slide-up {
-    animation: slideUp 0.7s ease-out forwards;
-  }
-
-  /* Industries marquee */
-  .marquee {
-    display: flex;
-    width: max-content;
-    animation: marquee 45s linear infinite;
-  }
+  .marquee { display: flex; width: max-content; animation: marquee 55s linear infinite; }
   .marquee-mask {
     mask-image: linear-gradient(90deg, transparent 0%, black 8%, black 92%, transparent 100%);
     -webkit-mask-image: linear-gradient(90deg, transparent 0%, black 8%, black 92%, transparent 100%);
   }
 }
 
-@keyframes marquee {
-  from { transform: translateX(0); }
-  to { transform: translateX(-50%); }
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes scaleIn {
-  from { opacity: 0; transform: scale(0.95); }
-  to { opacity: 1; transform: scale(1); }
-}
-
-@keyframes slideUp {
-  from { opacity: 0; transform: translateY(30px); }
-  to { opacity: 1; transform: translateY(0); }
-}
+@keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+@keyframes fadeIn  { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes scaleIn { from { opacity: 0; transform: scale(0.98); } to { opacity: 1; transform: scale(1); } }
+@keyframes slideUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
 
 @media (max-width: 768px) {
-  h1 {
-    @apply text-3xl;
-    letter-spacing: -0.03em;
-  }
-  h2 {
-    @apply text-2xl;
-  }
-  p {
-    font-size: 1rem;
-    line-height: 1.7;
+  h1 { @apply text-4xl; letter-spacing: -0.01em; }
+  h2 { @apply text-3xl; }
+  p  { font-size: 1rem; line-height: 1.7; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }
