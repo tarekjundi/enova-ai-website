@@ -1,290 +1,239 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ScrollToTop from "@/components/ScrollToTop";
-import { Button } from "@/components/ui/button";
+import PageHeader from "@/components/PageHeader";
 import { MotionElement } from "@/components/MotionElements";
-import {
-  ArrowRight,
-  MagnifyingGlass,
-  Compass,
-  Cube,
-  Code,
-  TestTube,
-  Rocket,
-  GraduationCap,
-  ChartLineUp,
-  FileText,
-  Database,
-  ShieldCheck,
-  Gauge,
-  Handshake,
-} from "@phosphor-icons/react";
+import { Link } from "react-router-dom";
+import { ArrowRight } from "@phosphor-icons/react";
 
-import { useLanguage } from "@/contexts/LanguageContext";
-
-
-type Phase = {
-  num: string;
-  week: string;
-  title: string;
-  intent: string;
-  body: string;
-  inputs: string[];
-  activities: string[];
-  outputs: string[];
-  Icon: React.ElementType;
-};
-
-
-
-const PHASES: Phase[] = [
+const STAGES = [
   {
-    num: "01",
-    week: "Discovery",
+    n: "01",
     title: "Discovery",
-    intent: "Understand your business, workflows and where time and revenue actually leak.",
-    body: "We work directly with your operators — not just leadership — to rebuild the picture from the ground up. The result is a clear map of goals, constraints and the workflows worth touching first.",
-    inputs: ["Read-only access to CRM, support and ops tools", "Interviews with 4–6 operators", "Tool and data inventory"],
-    activities: ["Stakeholder interviews", "Workflow shadowing", "Stack and data-flow mapping"],
-    outputs: ["Workflow inventory", "Prioritised pain points", "Discovery report"],
-    Icon: MagnifyingGlass,
+    intent: "Understand the work before touching the tools.",
+    body:
+      "We sit with the people doing the work, follow a real case end to end, and write down where time, context and accuracy leak. Nothing is proposed until the current state is on paper.",
+    outputs: "Workflow map · Time-loss inventory · Stakeholder notes",
   },
   {
-    num: "02",
-    week: "Strategy",
+    n: "02",
     title: "Strategy",
-    intent: "Identify the highest-impact opportunities and set a practical roadmap.",
-    body: "We rank opportunities by hours saved, revenue impact and implementation risk — then produce a phased roadmap, including a clear answer on what not to automate.",
-    inputs: ["Discovery report", "Business KPIs", "Budget and timeline constraints"],
-    activities: ["Opportunity scoring", "Roadmap sequencing", "ROI and risk modelling"],
-    outputs: ["Ranked opportunity list", "Phased roadmap", "Success metrics per initiative"],
-    Icon: Compass,
+    intent: "Decide what is worth building, and in what order.",
+    body:
+      "Every candidate is ranked by impact, effort and payback. We tell you what to leave alone as clearly as what to automate, and agree the success metric before any scope is written.",
+    outputs: "Ranked opportunity list · Success metrics · Sequencing plan",
   },
   {
-    num: "03",
-    week: "Solution Design",
+    n: "03",
     title: "Solution Design",
-    intent: "Design AI workflows and system architecture the way a serious engineering team would.",
-    body: "Model selection, routing, retrieval, guardrails, observability, cost ceilings. Boring where boring works, custom where it doesn't. Every decision documented with the trade-off behind it.",
-    inputs: ["Approved roadmap", "Security and compliance constraints", "Existing infrastructure baseline"],
-    activities: ["Workflow diagramming", "Reference architecture", "Guardrails and checkpoint design"],
-    outputs: ["Per-workflow specification", "Reference architecture", "Integration matrix"],
-    Icon: Cube,
+    intent: "Design the system your team will actually operate.",
+    body:
+      "Data flow, integration points, human checkpoints and failure paths are designed together. We define what the system is allowed to do on its own and where a person stays in the loop.",
+    outputs: "Architecture · Integration plan · Guardrails & escalation rules",
   },
   {
-    num: "04",
-    week: "Development",
+    n: "04",
     title: "Development",
-    intent: "Build, integrate and configure the solution against your real stack.",
-    body: "We engineer the automations, agents and integrations to spec — with clean code, scoped credentials and infrastructure your team can maintain long after we leave.",
-    inputs: ["Approved architecture", "Scoped production credentials", "Sample data for evaluation"],
-    activities: ["Build and integration", "Prompt and retrieval implementation", "Evaluation harness"],
-    outputs: ["Working system in staging", "Version-controlled codebase", "Initial evaluation results"],
-    Icon: Code,
+    intent: "Build in short, visible increments.",
+    body:
+      "You see working software every two weeks, running against real data in a staging environment. No long silences, no reveal at the end.",
+    outputs: "Working increments · Staging environment · Review sessions",
   },
   {
-    num: "05",
-    week: "Testing & Optimization",
-    title: "Testing & Optimization",
-    intent: "Validate, refine and improve performance against real historical data.",
-    body: "Every workflow is measured against the accuracy, latency and cost targets set in the spec — with adjustments to prompts, routing, retrieval and human checkpoints until it earns the right to ship.",
-    inputs: ["Real historical data", "Success metrics per workflow", "Operator feedback"],
-    activities: ["Evaluation against production data", "Prompt and retrieval tuning", "Cost and latency optimisation"],
-    outputs: ["Passing evaluation suite", "Tuned system", "Sign-off from workflow owners"],
-    Icon: TestTube,
+    n: "05",
+    title: "Testing & Optimisation",
+    intent: "Prove it holds under real conditions.",
+    body:
+      "We run the system against historic cases and edge cases your team nominates, tune the thresholds, and only then agree it is ready for live traffic.",
+    outputs: "Test results · Accuracy benchmarks · Tuned thresholds",
   },
   {
-    num: "06",
-    week: "Deployment",
+    n: "06",
     title: "Deployment",
-    intent: "Launch to production with minimal disruption — behind flags, with monitoring on day one.",
-    body: "Feature-flagged rollouts, shadow mode and gradual cutovers. Human review on anything that touches customers or money until the metrics earn the agent's autonomy.",
-    inputs: ["Passing evaluation suite", "Rollback plan", "Test cohort"],
-    activities: ["Shadow-mode rollout", "Gradual cutover", "Observability wiring"],
-    outputs: ["Production system", "Observability dashboard", "Runbooks"],
-    Icon: Rocket,
+    intent: "Go live carefully, not loudly.",
+    body:
+      "Phased rollout with monitoring in place from the first day, a rollback path defined, and a named owner on both sides for the first two weeks.",
+    outputs: "Production release · Monitoring & alerts · Rollback plan",
   },
   {
-    num: "07",
-    week: "Training",
-    title: "Training",
-    intent: "Train your team and hand over documentation so the system is genuinely yours.",
-    body: "Live working sessions, written runbooks and architecture walkthroughs. No black boxes, no lock-in. Your operators leave knowing how to run, debug and extend the system.",
-    inputs: ["Production system", "Operator and admin cohorts", "Handover schedule"],
-    activities: ["Live training sessions", "Runbook walkthroughs", "Admin and escalation training"],
-    outputs: ["Trained team", "Handover documentation", "Support contacts"],
-    Icon: GraduationCap,
+    n: "07",
+    title: "Training & Handover",
+    intent: "Leave your team able to run it without us.",
+    body:
+      "Runbooks, recorded walkthroughs and working sessions with the people who own the process. Credentials, code and documentation are yours.",
+    outputs: "Runbooks · Training sessions · Full handover pack",
   },
   {
-    num: "08",
-    week: "Continuous Improvement",
+    n: "08",
     title: "Continuous Improvement",
-    intent: "Monitor, refine and expand the solution as your business changes.",
-    body: "Workflows drift. Models change. Edge cases surface. Monthly reviews against the original metrics, with tuning and new workflow intake — owned by your team, supported by ours.",
-    inputs: ["Live production metrics", "User and operator feedback", "Quarterly business reviews"],
-    activities: ["Evaluation re-runs against new data", "Prompt and routing tuning", "New workflow intake"],
-    outputs: ["Monthly performance report", "Roadmap for next quarter", "Continually improving system"],
-    Icon: ChartLineUp,
+    intent: "Keep the system honest as the business changes.",
+    body:
+      "Monthly review of the metrics we agreed at the start, tuning where drift appears, and a clear intake path for the next workflow when you are ready.",
+    outputs: "Monthly review · Tuning log · Next-workflow intake",
   },
 ];
 
 const PRINCIPLES = [
-  { num: "01", title: "Specification before code", body: "Every workflow is signed off by its owner before a line of integration code is written.", Icon: FileText },
-  { num: "02", title: "Production data or nothing", body: "We evaluate against your real historical data. No sandbox demos.", Icon: Database },
-  { num: "03", title: "Human review where it matters", body: "Anything touching a customer commitment or money keeps a human checkpoint until the metrics earn autonomy.", Icon: ShieldCheck },
-  { num: "04", title: "Observability on day one", body: "Every workflow ships with a dashboard, an owner and an SLA. If we can't measure it, we don't ship it.", Icon: Gauge },
-  { num: "05", title: "Yours to own", body: "Architecture, runbooks and credentials handed over. No black boxes, no lock-in.", Icon: Handshake },
+  {
+    n: "01",
+    title: "Measure before building",
+    body: "If we cannot state the metric a system should move, we have not understood the problem well enough to build it.",
+  },
+  {
+    n: "02",
+    title: "Fit the existing stack",
+    body: "We integrate with the tools your team already knows. Replacing working software is expensive and rarely necessary.",
+  },
+  {
+    n: "03",
+    title: "Keep a person in the loop",
+    body: "Every system has defined boundaries and an escalation path. Automation handles the routine; judgement stays human.",
+  },
+  {
+    n: "04",
+    title: "Hand over completely",
+    body: "Code, credentials, documentation and training. You should be able to end the engagement and keep the system running.",
+  },
 ];
 
-
 const Process = () => {
-  const { isRTL } = useLanguage();
-
   return (
-    <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
+    <div className="min-h-screen surface-deep overflow-x-hidden" id="top">
       <Navbar />
 
-      {/* Header */}
-      <section className="pt-36 pb-16 md:pb-24 border-b border-border/60">
-        <div className="container mx-auto px-6">
-          <div className={`grid md:grid-cols-12 gap-10 md:gap-16 items-end ${isRTL ? "md:[direction:rtl] text-right" : ""}`}>
-            <MotionElement animation="slideUp" className="md:col-span-7">
-              <p className="text-[10px] uppercase tracking-[0.22em] text-muted-foreground mb-6">Process — eight stages</p>
-              <h1 className="!text-5xl md:!text-7xl !leading-[0.98] tracking-[-0.04em] max-w-[18ch]">
-                From discovery to production, <span className="font-serif-accent italic font-light text-primary">a process built to ship</span>.
-              </h1>
-            </MotionElement>
-            <MotionElement animation="slideUp" delay={120} className="md:col-span-4 md:col-start-9 md:pb-3">
-              <p className="text-muted-foreground text-lg leading-relaxed">
-                No multi-quarter strategy decks. A small, opinionated process that ships working systems against your real data — and hands them back to your team.
-              </p>
-            </MotionElement>
-          </div>
-        </div>
-      </section>
+      <PageHeader
+        eyebrow="The ENOVA Method"
+        title={
+          <>
+            Eight stages from first conversation to{" "}
+            <span className="italic text-[#F6D3A2]">production.</span>
+          </>
+        }
+        intro="No multi-quarter strategy decks. Each stage produces something your team can hold, review and act on."
+        cta={{
+          label: "Book a Consultation",
+          href: "https://cal.com/tarek-jundi/free-consultation",
+          external: true,
+        }}
+        secondary={{ label: "See the work", to: "/case-studies" }}
+        meta="Typical engagement · 4 — 8 weeks"
+      />
 
-      {/* Timeline strip — 8 stages, animated progression */}
-      <section className="border-b border-border/60">
-        <div className="container mx-auto px-6 py-14 md:py-20">
-          <div className="relative" style={{ direction: "ltr" }}>
-            {/* connecting line */}
-            <div className="hidden md:block absolute top-[30px] left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/40 to-transparent" />
-            <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-y-10 gap-x-4 md:gap-x-2 relative">
-              {PHASES.map((p, i) => (
-                <MotionElement key={p.num} animation="slideUp" delay={60 + i * 60}>
-                  <a href={`#phase-${p.num}`} className="group flex flex-col items-start md:items-center text-left md:text-center">
-                    <div className="relative mb-4">
-                      <span className="absolute inset-0 rounded-full bg-primary/20 opacity-0 group-hover:opacity-100 blur-md transition-opacity duration-500" />
-                      <div className="relative w-[60px] h-[60px] rounded-full bg-background border border-primary/40 flex items-center justify-center text-primary transition-all duration-500 group-hover:bg-primary group-hover:text-primary-foreground group-hover:scale-110 group-hover:border-primary">
-                        <p.Icon size={22} weight="regular" />
+      {/* Timeline */}
+      <section className="surface-cream py-24 md:py-36">
+        <div className="container mx-auto px-6 lg:px-10">
+          <div className="relative">
+            {/* vertical thread */}
+            <div
+              className="absolute left-[7px] md:left-[9px] top-2 bottom-2 w-px bg-[#3A2915]/20"
+              aria-hidden
+            />
+
+            <ol className="space-y-16 md:space-y-24">
+              {STAGES.map((s, i) => (
+                <MotionElement key={s.n} animation="slideUp" delay={40 + i * 30}>
+                  <li className="relative pl-10 md:pl-16 group">
+                    {/* node */}
+                    <span className="absolute left-0 top-3 block w-[15px] h-[15px] md:w-[19px] md:h-[19px] rounded-full border border-[#3A2915]/30 bg-[#FDEED8] transition-colors duration-500 group-hover:bg-[#A56735] group-hover:border-[#A56735]" />
+
+                    <div className="grid md:grid-cols-12 gap-6 md:gap-10">
+                      <div className="md:col-span-5">
+                        <p className="eyebrow text-[#A56735] mb-4">Stage {s.n}</p>
+                        <h2 className="font-display text-on-cream !text-[32px] md:!text-[54px] leading-[1.02] tracking-[-0.02em] mb-4 transition-colors duration-500 group-hover:text-[#A56735]">
+                          {s.title}
+                        </h2>
+                        <p className="font-serif-accent text-[#6E5940] text-xl md:text-2xl leading-[1.3] max-w-[26ch]">
+                          {s.intent}
+                        </p>
                       </div>
-                      <span className="absolute -top-1 -right-1 w-5 h-5 rounded-full bg-background border border-border/70 flex items-center justify-center text-[9px] font-semibold text-primary/80">
-                        {i + 1}
-                      </span>
+
+                      <div className="md:col-span-6 md:col-start-7 md:pt-10">
+                        <p className="text-on-cream-body text-[17px] leading-[1.8] max-w-[54ch]">
+                          {s.body}
+                        </p>
+                        <div className="mt-7 pt-5 border-t border-[#3A2915]/20">
+                          <p className="eyebrow text-[#6E5940] mb-2">Deliverables</p>
+                          <p className="text-on-cream text-[15px] leading-[1.7]">{s.outputs}</p>
+                        </div>
+                      </div>
                     </div>
-                    <div className="text-sm font-semibold tracking-tight leading-tight group-hover:text-primary transition-colors px-1">{p.title}</div>
-                  </a>
+                  </li>
                 </MotionElement>
               ))}
-            </div>
+            </ol>
           </div>
         </div>
       </section>
 
-      {/* Phases */}
-      <section className="py-20 md:py-28">
-        <div className="container mx-auto px-6 space-y-20 md:space-y-28">
-          {PHASES.map((p, i) => (
-            <MotionElement key={p.num} animation="slideUp">
-              <article
-                id={`phase-${p.num}`}
-                className={`group relative grid md:grid-cols-12 gap-10 md:gap-16 pt-10 md:pt-14 ${isRTL ? "md:[direction:rtl] text-right" : ""}`}
-              >
-                {/* hairline that grows on hover */}
-                <div className="absolute top-0 left-0 h-px w-16 bg-primary/60 transition-all duration-700 group-hover:w-full" />
-
-                {/* Left: icon + number + title */}
-                <div className="md:col-span-5">
-                  <div className="flex items-center gap-4 mb-6">
-                    <div className="w-11 h-11 rounded-lg bg-primary/10 flex items-center justify-center text-primary transition-transform duration-500 group-hover:scale-110 group-hover:rotate-3">
-                      <p.Icon size={20} weight="regular" />
-                    </div>
-                    <span className="text-xs font-mono text-muted-foreground tracking-widest">{p.num}</span>
-                    <span className="text-xs uppercase tracking-[0.18em] text-muted-foreground/70">{p.week}</span>
-                  </div>
-                  <h2 className="!text-3xl md:!text-5xl !leading-[1.0] tracking-[-0.03em] mb-6 transition-colors duration-500 group-hover:text-primary">
-                    {p.title}
-                  </h2>
-                  <p className="text-foreground/85 italic font-serif-accent font-light leading-relaxed text-lg md:text-xl">{p.intent}</p>
-                </div>
-
-                {/* Body */}
-                <div className="md:col-span-6 md:col-start-7">
-                  <p className="text-foreground/80 leading-relaxed text-lg max-w-prose">{p.body}</p>
-                </div>
-              </article>
-            </MotionElement>
-          ))}
-        </div>
-      </section>
-
-      {/* Operating principles — animated card grid */}
-      <section className="py-24 md:py-32 border-t border-border/70 bg-card/20">
-        <div className="container mx-auto px-6">
-          <div className={`grid md:grid-cols-12 gap-10 md:gap-16 mb-16 ${isRTL ? "md:[direction:rtl] text-right" : ""}`}>
-            <div className="md:col-span-5">
-              <p className="text-[10px] uppercase tracking-[0.28em] text-primary/80 mb-6">Operating principles</p>
-              <h2 className="!text-4xl md:!text-6xl !leading-[1.02] tracking-[-0.03em]">
-                How we work, <span className="font-serif-accent italic font-light text-primary">at every stage.</span>
-              </h2>
-            </div>
-            <div className="md:col-span-6 md:col-start-7 md:pt-4">
-              <p className="text-muted-foreground text-lg leading-relaxed">Five principles that hold across every engagement — the part of the process that doesn't change.</p>
+      {/* Principles */}
+      <section className="surface-deep py-24 md:py-36 border-b border-[#F6D3A2]/12">
+        <div className="container mx-auto px-6 lg:px-10">
+          <div className="grid md:grid-cols-12 gap-10 md:gap-16 mb-14 md:mb-20">
+            <div className="md:col-span-8">
+              <MotionElement animation="slideUp">
+                <p className="eyebrow text-[#C8B59C] mb-6">Operating principles</p>
+                <h2 className="font-display text-[#FFF9F1] !text-[36px] md:!text-[62px] leading-[1.02] tracking-[-0.015em] max-w-[20ch]">
+                  Four rules we{" "}
+                  <span className="italic text-[#F6D3A2]">do not bend.</span>
+                </h2>
+              </MotionElement>
             </div>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-            {PRINCIPLES.map((p, idx) => (
-              <MotionElement key={p.num} animation="slideUp" delay={60 + idx * 80}>
-                <div className="group relative h-full p-8 rounded-xl bg-background/40 hover:bg-background/80 transition-all duration-500 hover:-translate-y-1 overflow-hidden">
-                  {/* accent line */}
-                  <div className="absolute top-0 left-0 h-[2px] w-0 bg-primary transition-all duration-500 group-hover:w-full" />
-
-                  <div className="flex items-center justify-between mb-6">
-                    <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary transition-all duration-500 group-hover:bg-primary group-hover:text-primary-foreground group-hover:scale-110">
-                      <p.Icon size={22} weight="regular" />
-                    </div>
-                    <span className="text-xs font-mono text-muted-foreground/60 tracking-widest">{p.num}</span>
+          <ol className="divide-y divide-[#F6D3A2]/12 border-y border-[#F6D3A2]/12">
+            {PRINCIPLES.map((p, i) => (
+              <MotionElement key={p.n} animation="slideUp" delay={50 + i * 50}>
+                <li className="grid md:grid-cols-12 gap-6 md:gap-10 py-10 md:py-12">
+                  <div className="md:col-span-2">
+                    <span className="font-display italic text-[#F6D3A2] text-4xl md:text-5xl leading-none">
+                      {p.n}
+                    </span>
                   </div>
-                  <h3 className="text-xl font-semibold tracking-tight mb-3 group-hover:text-primary transition-colors duration-300">{p.title}</h3>
-                  <p className="text-muted-foreground text-sm leading-relaxed">{p.body}</p>
-                </div>
+                  <div className="md:col-span-4">
+                    <h3 className="font-display text-[#FFF9F1] text-2xl md:text-4xl leading-[1.05]">
+                      {p.title}
+                    </h3>
+                  </div>
+                  <div className="md:col-span-6">
+                    <p className="text-[#FDEED8] text-[17px] leading-[1.75] max-w-[52ch]">{p.body}</p>
+                  </div>
+                </li>
               </MotionElement>
             ))}
-          </div>
+          </ol>
         </div>
       </section>
 
-
       {/* CTA */}
-      <section className="py-24 md:py-32 border-t border-border/70">
-        <div className="container mx-auto px-6">
-          <div className={`grid md:grid-cols-12 gap-10 md:gap-16 items-end ${isRTL ? "md:[direction:rtl] text-right" : ""}`}>
-            <div className="md:col-span-8">
-              <p className="text-[10px] uppercase tracking-[0.22em] text-muted-foreground mb-6">Start with discovery</p>
-              <h2 className="!text-4xl md:!text-6xl !leading-[1.02] max-w-[20ch]">
-                Audit first. Then we decide what to <span className="font-serif-accent italic font-light text-primary">build</span>.
+      <section className="surface-gold py-24 md:py-32">
+        <div className="container mx-auto px-6 lg:px-10">
+          <div className="grid md:grid-cols-12 gap-10 md:gap-16 items-end">
+            <MotionElement animation="slideUp" className="md:col-span-8">
+              <p className="eyebrow text-[#281C0B]/70 mb-6">Stage one starts here</p>
+              <h2 className="font-display text-on-cream !text-[40px] md:!text-[76px] leading-[1] tracking-[-0.02em] max-w-[16ch]">
+                Discovery begins with{" "}
+                <span className="italic">one conversation.</span>
               </h2>
-            </div>
-            <div className="md:col-span-4 md:pb-2">
-              <p className="text-muted-foreground mb-8 max-w-md">30-minute working session to scope an audit against one of your workflows.</p>
-              <a href="https://cal.com/tarek-jundi/free-consultation" target="_blank" rel="noopener noreferrer" className="inline-block">
-                <Button className="bg-primary text-primary-foreground hover:bg-primary/90 text-sm px-7 py-6 rounded-sm font-medium gap-2 group">
+            </MotionElement>
+            <MotionElement animation="slideUp" delay={140} className="md:col-span-4 md:pb-3">
+              <p className="text-[#281C0B]/85 text-[17px] leading-[1.75] mb-8 max-w-[40ch]">
+                Thirty minutes, no pitch. We listen to how the work runs today and tell you where we would look first.
+              </p>
+              <div className="flex flex-wrap gap-3">
+                <a
+                  href="https://cal.com/tarek-jundi/free-consultation"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-ghost-on-cream group !bg-[#281C0B] !text-[#FFF9F1] !border-[#281C0B] hover:!bg-[#15110C]"
+                >
                   Book a Consultation
-                  <ArrowRight size={14} className="transition-transform duration-300 group-hover:translate-x-0.5" />
-                </Button>
-              </a>
-            </div>
+                  <ArrowRight size={15} className="transition-transform duration-300 group-hover:translate-x-0.5" />
+                </a>
+                <Link to="/contact" className="btn-ghost-on-cream">
+                  Send a Message
+                </Link>
+              </div>
+            </MotionElement>
           </div>
         </div>
       </section>

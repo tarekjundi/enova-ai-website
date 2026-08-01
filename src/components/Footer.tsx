@@ -1,10 +1,9 @@
 import { useNavigate } from "react-router-dom";
 import { LinkedinLogo, InstagramLogo, XLogo, ArrowUpRight } from "@phosphor-icons/react";
-import { useLanguage } from "@/contexts/LanguageContext";
 
 const Footer = () => {
   const navigate = useNavigate();
-  const { isRTL } = useLanguage();
+  const isRTL = false;
 
   const go = (path: string) => {
     navigate(path);
@@ -69,6 +68,8 @@ const Footer = () => {
               <li><button onClick={() => go("/about")} className={linkClass}>About</button></li>
               <li><button onClick={() => go("/case-studies")} className={linkClass}>Work</button></li>
               <li><button onClick={() => go("/process")} className={linkClass}>Process</button></li>
+              <li><button onClick={() => go("/industries")} className={linkClass}>Industries</button></li>
+              <li><button onClick={() => go("/insights")} className={linkClass}>Insights</button></li>
               <li><button onClick={() => go("/contact")} className={linkClass}>Contact</button></li>
             </ul>
           </div>
