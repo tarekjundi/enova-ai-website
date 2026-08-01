@@ -1,320 +1,217 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ScrollToTop from "@/components/ScrollToTop";
-import { Button } from "@/components/ui/button";
+import PageHeader from "@/components/PageHeader";
 import { MotionElement } from "@/components/MotionElements";
+import { Link } from "react-router-dom";
 import { ArrowRight } from "@phosphor-icons/react";
-import { useLanguage } from "@/contexts/LanguageContext";
 
-type Case = {
-  num: string;
-  industry: string;
-  region: string;
-  company: string;
-  headline: string;
-  context: string;
-  problem: string[];
-  system: { title: string; body: string }[];
-  before: { label: string; value: string }[];
-  after: { label: string; value: string }[];
-  outcomes: { value: string; label: string }[];
-  stack: string[];
-  duration: string;
-  quote: { text: string; name: string; role: string };
-};
-
-const CASES: Case[] = [
+const CASES = [
   {
-    num: "01",
-    industry: "B2B SaaS",
-    region: "MENA · EU",
-    company: "Series-B vertical SaaS, ~180 employees",
-    headline: "Inbound support cut from 4 hours to 45 seconds, with 72% Tier-1 resolved automatically.",
-    context: "A vertical SaaS operating across MENA and the EU was handling ~2,400 support tickets per week across email, in-app chat and WhatsApp. Their Tier-1 team was running 6 days a week and still missing SLA on roughly one in four tickets.",
-    problem: [
-      "Median first response of 4h 12m, p95 over 18h",
-      "Knowledge fragmented across Notion, Zendesk macros and senior CSMs",
-      "Repeat questions answered inconsistently by tier-1 agents",
-      "WhatsApp handled manually from a single shared phone with no audit trail",
-    ],
-    system: [
-      { title: "Unified intake", body: "Ingest from email, in-app chat and WhatsApp Business API into a single triage pipeline with intent classification and ICP-aware prioritisation." },
-      { title: "Retrieval layer", body: "All public docs, internal runbooks and resolved tickets indexed into a permissioned KB, re-embedded on every source change." },
-      { title: "Agent + escalation", body: "Agent drafts or auto-sends responses with confidence scoring. Below threshold or commercial topics escalate to a human with full thread context and a suggested reply." },
-    ],
-    before: [
-      { label: "Median first response", value: "4h 12m" },
-      { label: "SLA hit rate", value: "76%" },
-      { label: "Tier-1 deflection", value: "8%" },
-      { label: "WhatsApp coverage", value: "Business hours" },
-    ],
-    after: [
-      { label: "Median first response", value: "45s" },
-      { label: "SLA hit rate", value: "99.1%" },
-      { label: "Tier-1 deflection", value: "72%" },
-      { label: "WhatsApp coverage", value: "24/7" },
-    ],
-    outcomes: [
-      { value: "−98%", label: "Response time" },
-      { value: "72%", label: "Tier-1 deflected" },
-      { value: "+23pts", label: "CSAT" },
-    ],
-    stack: ["Zendesk", "WhatsApp Business API", "Notion", "OpenAI", "Anthropic", "Internal eval harness"],
-    duration: "5 weeks to production",
-    quote: {
-      text: "We stopped staffing for Tier-1 volume. The system handles three quarters of tickets at higher CSAT than our team did, and escalations land with full context.",
-      name: "VP Customer Operations",
-      role: "Series-B SaaS",
-    },
-  },
-  {
-    num: "02",
     industry: "Financial Services",
-    region: "GCC",
-    company: "Wealth advisory, ~60 advisors",
-    headline: "Qualified pipeline grew 3.2× without adding headcount, after rebuilding inbound qualification.",
-    context: "A regional wealth advisory was generating strong inbound from paid social and referrals, but only ~14% of leads ever received a personalised reply. SDRs defaulted to the obviously-large accounts and let the rest go cold.",
-    problem: [
-      "Median first response of 11 hours; nights and weekends entirely unstaffed",
-      "No enrichment — leads went into CRM with form fields only",
-      "ICP scoring lived as a spreadsheet, updated quarterly",
-      "Forecast accuracy below 60% by mid-quarter",
+    client: "A mid-market lender rebuilt its client onboarding",
+    challenge:
+      "Onboarding took eleven days on average. Documents arrived by email, were re-keyed into two systems, and every exception went back to a single senior analyst.",
+    approach:
+      "We mapped the full intake path, replaced re-keying with automated document extraction, and routed only genuine exceptions to a human queue with full audit history.",
+    outcome:
+      "Onboarding now completes in under two days for standard cases, and the analyst team spends its time on the files that actually need judgement.",
+    metric: "82%",
+    metricLabel: "Reduction in onboarding time",
+    stats: [
+      { v: "11 → 2", l: "Days to onboard" },
+      { v: "3.5×", l: "Files per analyst" },
+      { v: "6 wks", l: "Time to production" },
     ],
-    system: [
-      { title: "Enrichment pipeline", body: "Every inbound lead enriched with firmographic and behavioural signals on submission, before any human or agent touches it." },
-      { title: "Scoring model", body: "ICP rubric ported from spreadsheet to a live scoring service, version-controlled and back-tested against 24 months of closed-won data." },
-      { title: "Real-time routing", body: "Top-tier scores auto-book onto an advisor's calendar; mid-tier handed to a nurture sequence operated by the agent; below-threshold disqualified with reason logged." },
-    ],
-    before: [
-      { label: "First response", value: "11h" },
-      { label: "Reply rate", value: "14%" },
-      { label: "Lead → meeting", value: "6.1%" },
-      { label: "Qualified pipeline / mo", value: "$3.2M" },
-    ],
-    after: [
-      { label: "First response", value: "<60s" },
-      { label: "Reply rate", value: "100%" },
-      { label: "Lead → meeting", value: "19.4%" },
-      { label: "Qualified pipeline / mo", value: "$10.3M" },
-    ],
-    outcomes: [
-      { value: "3.2×", label: "Qualified pipeline" },
-      { value: "−99%", label: "First response time" },
-      { value: "+0", label: "Headcount added" },
-    ],
-    stack: ["HubSpot", "Clearbit", "Cal.com", "OpenAI", "Internal scoring service"],
-    duration: "4 weeks to production",
-    quote: {
-      text: "We were leaving the majority of our inbound on the table. The qualification layer pays for itself every week.",
-      name: "Head of Growth",
-      role: "Wealth advisory",
-    },
+    tools: "Salesforce · DocuSign · Snowflake · Internal portal",
   },
   {
-    num: "03",
-    industry: "E-commerce Operations",
-    region: "EU",
-    company: "DTC brand group, 4 brands",
-    headline: "11,200 operations hours returned per year by codifying back-office work into observable systems.",
-    context: "A DTC group running four brands was operating ~40 critical workflows through spreadsheets, shared inboxes and group chat. Nothing was observable, owners were unclear, and a single person being on holiday could break invoicing for a week.",
-    problem: [
-      "70% of recurring ops work was copy-paste between tools",
-      "No SLA or ownership defined for critical workflows",
-      "Invoice follow-up handled in a personal inbox",
-      "Inventory reconciliation done manually every Monday",
+    industry: "B2B SaaS",
+    client: "A support team absorbed 3× volume without hiring",
+    challenge:
+      "Ticket volume tripled after a product launch. Response times slipped past a day, and the same twenty questions accounted for most of the queue.",
+    approach:
+      "A support agent grounded in the product documentation and past resolved tickets, with strict escalation rules and a weekly review loop on every deflected conversation.",
+    outcome:
+      "Most routine questions now resolve without a human, and the team holds a same-hour first response on everything that escalates.",
+    metric: "67%",
+    metricLabel: "Tickets resolved without escalation",
+    stats: [
+      { v: "< 1 hr", l: "First response" },
+      { v: "0", l: "New hires needed" },
+      { v: "4 wks", l: "Time to production" },
     ],
-    system: [
-      { title: "Workflow audit", body: "Mapped 38 workflows across the four brands, ranked by hours consumed and revenue exposure. Selected 14 for the first build phase." },
-      { title: "Codified automations", body: "Each automation shipped with a trigger, an owner, an SLA, and an audit log. Human checkpoints kept on anything touching customer money." },
-      { title: "Observability", body: "Single ops console showing every workflow, last run, success rate and queue depth. Anomalies routed to the right owner on Slack." },
+    tools: "Zendesk · Notion · Segment · Slack",
+  },
+  {
+    industry: "Logistics",
+    client: "An operator turned exception handling into a queue",
+    challenge:
+      "Shipment exceptions were caught by whoever noticed first. Customers often heard about a delay before the operations team did.",
+    approach:
+      "We connected carrier feeds and the order system into one exception queue, with automatic customer notification and a clear owner for every open case.",
+    outcome:
+      "Exceptions are detected and communicated the same hour, and leadership finally has a single view of where shipments stall.",
+    metric: "94%",
+    metricLabel: "Exceptions caught before the customer calls",
+    stats: [
+      { v: "Same hr", l: "Detection to notice" },
+      { v: "1", l: "Source of truth" },
+      { v: "7 wks", l: "Time to production" },
     ],
-    before: [
-      { label: "Ops FTE on copy-paste", value: "6.4" },
-      { label: "Avg. invoice → paid", value: "47 days" },
-      { label: "Workflows with owner", value: "12 / 38" },
-      { label: "Critical-path spreadsheets", value: "23" },
+    tools: "NetSuite · Carrier APIs · Twilio · Looker",
+  },
+  {
+    industry: "Professional Services",
+    client: "A consultancy cut proposal turnaround to a day",
+    challenge:
+      "Every proposal was assembled by hand from past documents. Partners spent evenings formatting rather than scoping.",
+    approach:
+      "A proposal system built on the firm's own past engagements — scoped inputs, generated first drafts, and a partner review step that stayed firmly in the loop.",
+    outcome:
+      "First drafts arrive within an hour of intake, and partners edit instead of assembling from scratch.",
+    metric: "5×",
+    metricLabel: "Faster proposal turnaround",
+    stats: [
+      { v: "1 day", l: "Intake to send" },
+      { v: "100%", l: "Partner reviewed" },
+      { v: "5 wks", l: "Time to production" },
     ],
-    after: [
-      { label: "Ops FTE on copy-paste", value: "1.1" },
-      { label: "Avg. invoice → paid", value: "19 days" },
-      { label: "Workflows with owner", value: "38 / 38" },
-      { label: "Critical-path spreadsheets", value: "0" },
-    ],
-    outcomes: [
-      { value: "11.2k hrs", label: "Returned per year" },
-      { value: "−60%", label: "DSO" },
-      { value: "5.3 FTE", label: "Redeployed" },
-    ],
-    stack: ["Shopify", "Stripe", "Xero", "Notion", "Slack", "Internal workflow runtime"],
-    duration: "9 weeks across two phases",
-    quote: {
-      text: "We didn't fire anyone. We moved five people off invoice chase and put them on merchandising. The business runs on rails now.",
-      name: "COO",
-      role: "DTC brand group",
-    },
+    tools: "HubSpot · Google Workspace · Internal library",
   },
 ];
 
 const CaseStudies = () => {
-  const { isRTL } = useLanguage();
-
   return (
-    <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
+    <div className="min-h-screen surface-deep overflow-x-hidden" id="top">
       <Navbar />
 
-      {/* Header */}
-      <section className="pt-36 pb-16 md:pb-24 border-b border-border/60">
-        <div className="container mx-auto px-6">
-          <div className={`grid md:grid-cols-12 gap-10 md:gap-16 items-end ${isRTL ? "md:[direction:rtl] text-right" : ""}`}>
-            <MotionElement animation="slideUp" className="md:col-span-7">
-              <p className="text-[10px] uppercase tracking-[0.22em] text-muted-foreground mb-6">Case studies — selected work</p>
-              <h1 className="!text-5xl md:!text-7xl !leading-[0.98] tracking-[-0.04em] max-w-[18ch]">
-                Systems shipped into <span className="font-serif-accent italic font-light text-primary">production</span>.
-              </h1>
-            </MotionElement>
-            <MotionElement animation="slideUp" delay={120} className="md:col-span-4 md:col-start-9 md:pb-3">
-              <p className="text-muted-foreground text-lg leading-relaxed">
-                A small set of detailed engagements. Names of customers redacted by request — metrics and architecture are unchanged.
-              </p>
-            </MotionElement>
-          </div>
-        </div>
-      </section>
+      <PageHeader
+        eyebrow="Selected work"
+        title={
+          <>
+            Systems in production, measured the way{" "}
+            <span className="italic text-[#F6D3A2]">your CFO measures.</span>
+          </>
+        }
+        intro="Four engagements, described plainly: what was broken, what we built, and what changed after it shipped."
+        cta={{
+          label: "Book a Consultation",
+          href: "https://cal.com/tarek-jundi/free-consultation",
+          external: true,
+        }}
+        secondary={{ label: "See our process", to: "/process" }}
+        meta="Four engagements · 2024 — 2025"
+      />
 
       {/* Cases */}
-      <section className="py-20 md:py-28">
-        <div className="container mx-auto px-6 space-y-28 md:space-y-40">
-          {CASES.map((c) => (
-            <MotionElement key={c.num} animation="slideUp">
-              <article className={`grid md:grid-cols-12 gap-10 md:gap-16 border-t border-border pt-10 md:pt-14 ${isRTL ? "md:[direction:rtl] text-right" : ""}`}>
-                {/* Meta */}
-                <div className="md:col-span-3 space-y-6">
-                  <div>
-                    <div className="flex items-center gap-3 mb-3">
-                      <span className="text-xs font-mono text-muted-foreground tracking-widest">{c.num}</span>
-                      <span className="text-[10px] uppercase tracking-[0.18em] text-muted-foreground/70">{c.industry}</span>
-                    </div>
-                    <p className="text-[11px] font-mono text-muted-foreground/70">{c.region}</p>
-                    <p className="text-sm text-foreground/70 mt-2">{c.company}</p>
-                  </div>
-                  <div className="space-y-1">
-                    <p className="text-[10px] uppercase tracking-[0.22em] text-muted-foreground/70">Duration</p>
-                    <p className="text-sm text-foreground/80">{c.duration}</p>
-                  </div>
-                  <div className="space-y-2">
-                    <p className="text-[10px] uppercase tracking-[0.22em] text-muted-foreground/70">Stack</p>
-                    <div className="flex flex-wrap gap-x-3 gap-y-1 text-[11px] font-mono text-muted-foreground" style={{ direction: "ltr" }}>
-                      {c.stack.map((s) => <span key={s}>· {s}</span>)}
-                    </div>
-                  </div>
-                </div>
-
-                {/* Body */}
-                <div className="md:col-span-9 space-y-10">
-                  <h2 className="!text-3xl md:!text-5xl !leading-[1.05] tracking-[-0.03em] max-w-[24ch]">{c.headline}</h2>
-
-                  <div className="grid md:grid-cols-12 gap-8">
-                    <div className="md:col-span-7">
-                      <p className="text-[10px] uppercase tracking-[0.22em] text-muted-foreground/70 mb-3">Context</p>
-                      <p className="text-foreground/80 leading-relaxed">{c.context}</p>
-                    </div>
-                    <div className="md:col-span-5">
-                      <p className="text-[10px] uppercase tracking-[0.22em] text-muted-foreground/70 mb-3">Problem</p>
-                      <ul className="space-y-2 text-sm text-foreground/80">
-                        {c.problem.map((p, idx) => (
-                          <li key={idx} className="flex items-baseline gap-2">
-                            <span className="text-primary/70 text-xs">—</span>
-                            <span className="leading-relaxed">{p}</span>
-                          </li>
-                        ))}
-                      </ul>
+      <section className="surface-cream py-24 md:py-36">
+        <div className="container mx-auto px-6 lg:px-10">
+          <div className="space-y-24 md:space-y-36">
+            {CASES.map((c, i) => (
+              <MotionElement key={c.industry} animation="slideUp" delay={60}>
+                <article className="grid md:grid-cols-12 gap-10 md:gap-14 items-start">
+                  {/* Metric block */}
+                  <div className={`md:col-span-5 ${i % 2 === 1 ? "md:order-2" : ""}`}>
+                    <div className="relative aspect-[4/5] overflow-hidden">
+                      <div
+                        className="absolute inset-0"
+                        style={{
+                          background:
+                            i % 3 === 0
+                              ? "linear-gradient(135deg, #281C0B 0%, #3A2915 55%, #6E5940 100%)"
+                              : i % 3 === 1
+                              ? "linear-gradient(135deg, #A56735 0%, #6E5940 60%, #281C0B 100%)"
+                              : "linear-gradient(135deg, #F6D3A2 0%, #C8B59C 60%, #6E5940 100%)",
+                        }}
+                      />
+                      <div className="absolute inset-0 flex flex-col justify-between p-8">
+                        <p className="eyebrow text-[#FFF9F1]/90">Case &middot; 0{i + 1}</p>
+                        <div>
+                          <p className="font-display text-[#FFF9F1] italic text-[80px] md:text-[110px] leading-none tracking-[-0.02em]">
+                            {c.metric}
+                          </p>
+                          <p className="text-[#FFF9F1]/85 text-sm mt-3 max-w-[26ch]">{c.metricLabel}</p>
+                        </div>
+                      </div>
                     </div>
                   </div>
 
-                  {/* The system */}
-                  <div>
-                    <p className="text-[10px] uppercase tracking-[0.22em] text-muted-foreground/70 mb-4">The system</p>
-                    <div className="grid md:grid-cols-3 gap-6">
-                      {c.system.map((b, idx) => (
-                        <div key={idx} className="p-5 rounded-lg bg-card/60 hover:bg-card transition-colors">
-                          <p className="text-xs font-mono text-primary/70 mb-2">0{idx + 1}</p>
-                          <p className="text-sm font-semibold mb-2">{b.title}</p>
-                          <p className="text-[13px] text-muted-foreground leading-relaxed">{b.body}</p>
+                  {/* Copy */}
+                  <div className="md:col-span-7 md:pt-3">
+                    <p className="eyebrow text-[#A56735] mb-4">{c.industry}</p>
+                    <h2 className="font-display text-on-cream !text-[30px] md:!text-[48px] leading-[1.05] tracking-[-0.015em] mb-8 max-w-[22ch]">
+                      {c.client}
+                    </h2>
+
+                    <div className="space-y-5">
+                      <p className="text-on-cream-body text-[17px] leading-[1.75] max-w-[58ch]">
+                        <span className="text-on-cream font-medium">Challenge. </span>
+                        {c.challenge}
+                      </p>
+                      <p className="text-on-cream-body text-[17px] leading-[1.75] max-w-[58ch]">
+                        <span className="text-on-cream font-medium">Approach. </span>
+                        {c.approach}
+                      </p>
+                      <p className="text-on-cream-body text-[17px] leading-[1.75] max-w-[58ch]">
+                        <span className="text-on-cream font-medium">Outcome. </span>
+                        {c.outcome}
+                      </p>
+                    </div>
+
+                    <div className="mt-10 grid grid-cols-3 gap-6 border-t border-[#3A2915]/20 pt-8">
+                      {c.stats.map((s) => (
+                        <div key={s.l}>
+                          <p className="font-display text-on-cream text-3xl md:text-4xl leading-none tracking-[-0.015em]">
+                            {s.v}
+                          </p>
+                          <p className="text-on-cream-muted text-[13px] mt-2 leading-[1.5]">{s.l}</p>
                         </div>
                       ))}
                     </div>
 
-                  </div>
-
-                  {/* Before / After */}
-                  <div className="grid md:grid-cols-2 gap-6" style={{ direction: "ltr" }}>
-                    <div className="p-6 rounded-lg bg-card/40">
-                      <p className="text-[10px] uppercase tracking-[0.22em] text-muted-foreground/70 mb-4">Before</p>
-                      <dl className="space-y-3">
-                        {c.before.map((m, idx) => (
-                          <div key={idx} className="flex items-baseline justify-between gap-4">
-                            <dt className="text-sm text-muted-foreground">{m.label}</dt>
-                            <dd className="text-sm font-mono text-foreground/80">{m.value}</dd>
-                          </div>
-                        ))}
-                      </dl>
-                    </div>
-                    <div className="p-6 rounded-lg bg-card/60 ring-1 ring-primary/20">
-                      <p className="text-[10px] uppercase tracking-[0.22em] text-primary mb-4">After</p>
-                      <dl className="space-y-3">
-                        {c.after.map((m, idx) => (
-                          <div key={idx} className="flex items-baseline justify-between gap-4">
-                            <dt className="text-sm text-muted-foreground">{m.label}</dt>
-                            <dd className="text-sm font-mono text-foreground">{m.value}</dd>
-                          </div>
-                        ))}
-                      </dl>
+                    <div className="mt-8 pt-6 border-t border-[#3A2915]/15 flex flex-wrap gap-x-6 gap-y-2 items-baseline">
+                      <p className="eyebrow text-[#6E5940]">Systems connected</p>
+                      <p className="text-on-cream-body text-[14px] font-medium">{c.tools}</p>
                     </div>
                   </div>
-
-
-                  {/* Outcomes strip */}
-                  <div className="grid grid-cols-3 gap-6">
-                    {c.outcomes.map((o, idx) => (
-                      <div key={idx} className="px-4 py-5">
-                        <div className="text-3xl md:text-4xl font-semibold font-founders tracking-[-0.03em] text-primary">{o.value}</div>
-                        <div className="w-8 h-px bg-primary/40 my-3" />
-                        <div className="text-[10px] uppercase tracking-[0.18em] text-muted-foreground/80">{o.label}</div>
-                      </div>
-                    ))}
-                  </div>
-
-
-                  {/* Quote */}
-                  <blockquote className="border-l-2 border-primary pl-6 py-2">
-                    <p className="text-lg md:text-xl leading-snug text-foreground/90 font-serif-accent italic font-light">"{c.quote.text}"</p>
-                    <footer className="mt-4 text-[11px] font-mono uppercase tracking-[0.18em] text-muted-foreground">{c.quote.name} · {c.quote.role}</footer>
-                  </blockquote>
-                </div>
-              </article>
-            </MotionElement>
-          ))}
+                </article>
+              </MotionElement>
+            ))}
+          </div>
         </div>
       </section>
 
       {/* CTA */}
-      <section className="py-24 md:py-32 border-t border-border/70">
-        <div className="container mx-auto px-6">
-          <div className={`grid md:grid-cols-12 gap-10 md:gap-16 items-end ${isRTL ? "md:[direction:rtl] text-right" : ""}`}>
-            <div className="md:col-span-8">
-              <p className="text-[10px] uppercase tracking-[0.22em] text-muted-foreground mb-6">Want a similar engagement?</p>
-              <h2 className="!text-4xl md:!text-6xl !leading-[1.02] max-w-[20ch]">
-                Bring us one workflow. We'll show you the <span className="font-serif-accent italic font-light text-primary">before / after</span>.
+      <section className="surface-gold py-24 md:py-32">
+        <div className="container mx-auto px-6 lg:px-10">
+          <div className="grid md:grid-cols-12 gap-10 md:gap-16 items-end">
+            <MotionElement animation="slideUp" className="md:col-span-8">
+              <p className="eyebrow text-[#281C0B]/70 mb-6">Start with a conversation</p>
+              <h2 className="font-display text-on-cream !text-[40px] md:!text-[76px] leading-[1] tracking-[-0.02em] max-w-[16ch]">
+                Your workflow could be{" "}
+                <span className="italic">the next one.</span>
               </h2>
-            </div>
-            <div className="md:col-span-4 md:pb-2">
-              <a href="https://cal.com/tarek-jundi/free-consultation" target="_blank" rel="noopener noreferrer" className="inline-block">
-                <Button className="bg-primary text-primary-foreground hover:bg-primary/90 text-sm px-7 py-6 rounded-sm font-medium gap-2 group">
-                  Book a Strategy Call
-                  <ArrowRight size={14} className="transition-transform duration-300 group-hover:translate-x-0.5" />
-                </Button>
-              </a>
-            </div>
+            </MotionElement>
+            <MotionElement animation="slideUp" delay={140} className="md:col-span-4 md:pb-3">
+              <p className="text-[#281C0B]/85 text-[17px] leading-[1.75] mb-8 max-w-[40ch]">
+                Bring one process to a 30-minute call. We&rsquo;ll map it live and tell you where we would begin.
+              </p>
+              <div className="flex flex-wrap gap-3">
+                <a
+                  href="https://cal.com/tarek-jundi/free-consultation"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-ghost-on-cream group !bg-[#281C0B] !text-[#FFF9F1] !border-[#281C0B] hover:!bg-[#15110C]"
+                >
+                  Book a Consultation
+                  <ArrowRight size={15} className="transition-transform duration-300 group-hover:translate-x-0.5" />
+                </a>
+                <Link to="/services" className="btn-ghost-on-cream">
+                  View Services
+                </Link>
+              </div>
+            </MotionElement>
           </div>
         </div>
       </section>
