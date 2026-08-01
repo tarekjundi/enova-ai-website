@@ -4,7 +4,6 @@ import Footer from "@/components/Footer";
 import ScrollToTop from "@/components/ScrollToTop";
 import { MotionElement } from "@/components/MotionElements";
 import { ArrowRight, ArrowUpRight } from "@phosphor-icons/react";
-import { useLanguage } from "@/contexts/LanguageContext";
 
 /* ---------- content ---------- */
 
@@ -147,7 +146,7 @@ const INDUSTRIES = [
 /* ---------- component ---------- */
 
 const Index = () => {
-  const { isRTL } = useLanguage();
+  const isRTL = false;
   const dir = isRTL ? "text-right" : "";
 
   return (

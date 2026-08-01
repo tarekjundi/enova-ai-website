@@ -1,10 +1,9 @@
 import { useNavigate } from "react-router-dom";
 import { LinkedinLogo, InstagramLogo, XLogo, ArrowUpRight } from "@phosphor-icons/react";
-import { useLanguage } from "@/contexts/LanguageContext";
 
 const Footer = () => {
   const navigate = useNavigate();
-  const { isRTL } = useLanguage();
+  const isRTL = false;
 
   const go = (path: string) => {
     navigate(path);
