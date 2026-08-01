@@ -68,6 +68,8 @@ const Footer = () => {
               <li><button onClick={() => go("/about")} className={linkClass}>About</button></li>
               <li><button onClick={() => go("/case-studies")} className={linkClass}>Work</button></li>
               <li><button onClick={() => go("/process")} className={linkClass}>Process</button></li>
+              <li><button onClick={() => go("/industries")} className={linkClass}>Industries</button></li>
+              <li><button onClick={() => go("/insights")} className={linkClass}>Insights</button></li>
               <li><button onClick={() => go("/contact")} className={linkClass}>Contact</button></li>
             </ul>
           </div>
