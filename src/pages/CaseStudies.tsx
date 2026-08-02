@@ -122,7 +122,7 @@ const CaseStudies = () => {
                               ? "linear-gradient(135deg, #281C0B 0%, #3A2915 55%, #6E5940 100%)"
                               : i % 3 === 1
                               ? "linear-gradient(135deg, #A56735 0%, #6E5940 60%, #281C0B 100%)"
-                              : "linear-gradient(135deg, #F6D3A2 0%, #C8B59C 60%, #6E5940 100%)",
+                              : "linear-gradient(135deg, #6E5940 0%, #4A3620 55%, #281C0B 100%)",
                         }}
                       />
                       <div className="absolute inset-0 flex flex-col justify-between p-8">
