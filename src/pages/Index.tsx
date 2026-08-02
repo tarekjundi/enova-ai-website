@@ -4,6 +4,7 @@ import Footer from "@/components/Footer";
 import ScrollToTop from "@/components/ScrollToTop";
 import { MotionElement } from "@/components/MotionElements";
 import { ArrowRight, ArrowUpRight } from "@phosphor-icons/react";
+import tarekPortrait from "@/assets/tarek-jundi.jpg.asset.json";
 
 /* ---------- content ---------- */
 
