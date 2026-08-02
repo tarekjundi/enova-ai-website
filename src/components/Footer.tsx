@@ -11,7 +11,7 @@ const Footer = () => {
   };
 
   const linkClass =
-    "text-[#FDEED8]/75 hover:text-[#F6D3A2] transition-colors duration-300 text-[15px]";
+    "text-[#FDEED8] hover:text-[#F6D3A2] transition-colors duration-300 text-[15px]";
 
   return (
     <footer className="surface-deep border-t border-[#F6D3A2]/12">
@@ -47,7 +47,7 @@ const Footer = () => {
             <p className="font-display text-2xl text-[#FFF9F1] tracking-[-0.01em]" style={{ direction: "ltr" }}>
               ENOVA
             </p>
-            <p className="mt-4 text-[#FDEED8]/75 text-[15px] leading-[1.7] max-w-sm">
+            <p className="mt-4 text-[#FDEED8]/90 text-[15px] leading-[1.7] max-w-sm">
               A consultancy for growing businesses that want simpler operations, connected systems and measurable outcomes.
             </p>
           </div>
@@ -83,17 +83,17 @@ const Footer = () => {
                 </a>
               </li>
               <li>
-                <a href="https://www.linkedin.com/company/enovaagency/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-[#FDEED8]/75 hover:text-[#F6D3A2] transition-colors text-[15px]">
+                <a href="https://www.linkedin.com/company/enovaagency/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-[#FDEED8] hover:text-[#F6D3A2] transition-colors text-[15px]">
                   <LinkedinLogo size={16} weight="regular" /> LinkedIn
                 </a>
               </li>
               <li>
-                <a href="https://www.instagram.com/enovaagency/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-[#FDEED8]/75 hover:text-[#F6D3A2] transition-colors text-[15px]">
+                <a href="https://www.instagram.com/enovaagency/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-[#FDEED8] hover:text-[#F6D3A2] transition-colors text-[15px]">
                   <InstagramLogo size={16} weight="regular" /> Instagram
                 </a>
               </li>
               <li>
-                <a href="https://x.com/enovaagency" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-[#FDEED8]/75 hover:text-[#F6D3A2] transition-colors text-[15px]">
+                <a href="https://x.com/enovaagency" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-[#FDEED8] hover:text-[#F6D3A2] transition-colors text-[15px]">
                   <XLogo size={16} weight="regular" /> X
                 </a>
               </li>
@@ -102,8 +102,8 @@ const Footer = () => {
         </div>
 
         <div className="mt-16 pt-8 border-t border-[#F6D3A2]/10 flex flex-col md:flex-row justify-between items-center gap-3">
-          <p className="text-[#C8B59C] text-[13px]">© 2026 Enova. All rights reserved.</p>
-          <p className="text-[#C8B59C] text-[13px] font-display-i italic">Built for operators.</p>
+          <p className="text-[#D9C6AC] text-[13px]">© 2026 Enova. All rights reserved.</p>
+          <p className="text-[#D9C6AC] text-[13px] font-display-i italic">Built for operators.</p>
         </div>
       </div>
     </footer>

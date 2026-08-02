@@ -4,6 +4,7 @@ import Footer from "@/components/Footer";
 import ScrollToTop from "@/components/ScrollToTop";
 import { MotionElement } from "@/components/MotionElements";
 import { ArrowRight, ArrowUpRight } from "@phosphor-icons/react";
+import tarekPortrait from "@/assets/tarek-jundi.jpg";
 
 /* ---------- content ---------- */
 
@@ -231,7 +232,7 @@ const Index = () => {
           <div className={`grid md:grid-cols-12 gap-10 md:gap-16 mb-16 md:mb-24 ${dir}`}>
             <div className="md:col-span-7">
               <MotionElement animation="slideUp">
-                <p className="eyebrow text-[#6E5940] mb-6">The problem we solve</p>
+                <p className="eyebrow text-[#5C4830] mb-6">The problem we solve</p>
                 <h2 className="font-display text-on-cream !text-[40px] md:!text-[68px] leading-[1.02] tracking-[-0.015em] max-w-[18ch]">
                   Your team should not be the{" "}
                   <span className="italic text-[#A56735]">integration layer.</span>
@@ -281,7 +282,7 @@ const Index = () => {
           <div className={`grid md:grid-cols-12 gap-10 md:gap-16 mb-20 md:mb-28 ${dir}`}>
             <div className="md:col-span-7">
               <MotionElement animation="slideUp">
-                <p className="eyebrow text-[#6E5940] mb-6">What we do</p>
+                <p className="eyebrow text-[#5C4830] mb-6">What we do</p>
                 <h2 className="font-display text-on-cream !text-[40px] md:!text-[68px] leading-[1.02] tracking-[-0.015em] max-w-[18ch]">
                   Five practices,{" "}
                   <span className="italic text-[#A56735]">one operating system.</span>
@@ -399,7 +400,7 @@ const Index = () => {
           <div className={`grid md:grid-cols-12 gap-10 md:gap-16 mb-20 md:mb-28 ${dir}`}>
             <div className="md:col-span-8">
               <MotionElement animation="slideUp">
-                <p className="eyebrow text-[#6E5940] mb-6">Selected work</p>
+                <p className="eyebrow text-[#5C4830] mb-6">Selected work</p>
                 <h2 className="font-display text-on-cream !text-[40px] md:!text-[68px] leading-[1.02] tracking-[-0.015em] max-w-[20ch]">
                   Measured the way{" "}
                   <span className="italic text-[#A56735]">your CFO measures.</span>
@@ -434,19 +435,38 @@ const Index = () => {
                               ? "linear-gradient(135deg, #281C0B 0%, #3A2915 55%, #6E5940 100%)"
                               : i % 3 === 1
                               ? "linear-gradient(135deg, #A56735 0%, #6E5940 60%, #281C0B 100%)"
-                              : "linear-gradient(135deg, #F6D3A2 0%, #C8B59C 60%, #6E5940 100%)",
+                              : "linear-gradient(135deg, #6E5940 0%, #4A3620 55%, #281C0B 100%)",
                         }}
                       />
                       <div className="absolute inset-0 flex flex-col justify-between p-8">
-                        <p className="eyebrow text-[#FFF9F1]/90">Case &middot; 0{i + 1}</p>
+                        <div className="flex items-start justify-between gap-4">
+                          <p className="eyebrow text-[#FFF9F1]">Case &middot; 0{i + 1}</p>
+                          <span className="text-[#FFF9F1] text-[13px] font-medium tracking-wide border border-[#FFF9F1]/40 rounded-full px-3 py-1">
+                            In production
+                          </span>
+                        </div>
+
+                        <div className="space-y-2">
+                          {c.tools.split(" · ").map((t) => (
+                            <div
+                              key={t}
+                              className="flex items-center gap-3 border-b border-[#FFF9F1]/20 pb-2"
+                            >
+                              <span className="h-1.5 w-1.5 rounded-full bg-[#FFF9F1]" />
+                              <span className="text-[#FFF9F1] text-[14px] font-medium">{t}</span>
+                            </div>
+                          ))}
+                        </div>
+
                         <div>
                           <p className="font-display text-[#FFF9F1] italic text-[80px] md:text-[112px] leading-none tracking-[-0.02em]">
                             {c.metric}
                           </p>
-                          <p className="text-[#FFF9F1]/85 text-sm mt-3">{c.metricLabel}</p>
+                          <p className="text-[#FFF9F1] text-sm mt-3">{c.metricLabel}</p>
                         </div>
                       </div>
                     </div>
+
                   </div>
 
                   {/* Copy */}
@@ -468,7 +488,7 @@ const Index = () => {
                     </div>
 
                     <div className="mt-8 pt-6 border-t border-[#3A2915]/20 flex flex-wrap gap-x-6 gap-y-2">
-                      <p className="eyebrow text-[#6E5940]">Systems connected</p>
+                      <p className="eyebrow text-[#5C4830]">Systems connected</p>
                       <p className="text-on-cream-body text-[14px] font-medium">{c.tools}</p>
                     </div>
                   </div>
@@ -549,26 +569,28 @@ const Index = () => {
         <div className="container mx-auto px-6 lg:px-10">
           <div className={`grid md:grid-cols-12 gap-12 md:gap-16 items-start ${dir}`}>
             <MotionElement animation="slideUp" className="md:col-span-5">
-              <div
-                className="aspect-[4/5] w-full"
-                style={{
-                  background:
-                    "linear-gradient(160deg, #281C0B 0%, #3A2915 40%, #6E5940 100%)",
-                }}
-              >
-                <div className="h-full w-full flex flex-col justify-between p-8">
-                  <p className="eyebrow text-[#C8B59C]">Enova &middot; Est. 2024</p>
+              <figure className="relative aspect-[4/5] w-full overflow-hidden bg-[#281C0B]">
+                <img
+                  src={tarekPortrait}
+                  alt="Tarek Jundi, founder and principal of Enova"
+                  loading="lazy"
+                  className="absolute inset-0 h-full w-full object-cover object-top"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#281C0B]/85 via-[#281C0B]/10 to-[#281C0B]/40" />
+                <figcaption className="absolute inset-0 flex flex-col justify-between p-8">
+                  <p className="eyebrow text-[#F6D3A2]">Enova &middot; Est. 2024</p>
                   <div>
                     <p className="font-display text-[#FFF9F1] text-3xl leading-tight">Tarek Jundi</p>
-                    <p className="text-[#FDEED8]/80 text-[14px] mt-1">Founder &amp; Principal</p>
+                    <p className="text-[#FDEED8] text-[14px] mt-1">Founder &amp; Principal</p>
                   </div>
-                </div>
-              </div>
+                </figcaption>
+              </figure>
             </MotionElement>
+
 
             <div className="md:col-span-6 md:col-start-7 md:pt-2">
               <MotionElement animation="slideUp" delay={120}>
-                <p className="eyebrow text-[#6E5940] mb-6">About Enova</p>
+                <p className="eyebrow text-[#5C4830] mb-6">About Enova</p>
                 <h2 className="font-display text-on-cream !text-[40px] md:!text-[60px] leading-[1.03] tracking-[-0.015em] mb-10 max-w-[22ch]">
                   Built by operators, <span className="italic text-[#A56735]">for operators.</span>
                 </h2>
@@ -582,7 +604,7 @@ const Index = () => {
                 </div>
 
                 <div className="mt-12 pt-8 border-t border-[#3A2915]/20">
-                  <p className="eyebrow text-[#6E5940] mb-3">Our commitment</p>
+                  <p className="eyebrow text-[#5C4830] mb-3">Our commitment</p>
                   <p className="font-display italic text-on-cream text-2xl md:text-3xl leading-[1.25] max-w-[30ch]">
                     Make intelligent operations reliable, measurable and owned by your team.
                   </p>
@@ -600,7 +622,7 @@ const Index = () => {
         <div className="container mx-auto px-6 lg:px-10">
           <div className={`grid md:grid-cols-12 gap-10 md:gap-16 items-end ${dir}`}>
             <MotionElement animation="slideUp" className="md:col-span-8">
-              <p className="eyebrow text-[#281C0B]/70 mb-6">Start with a conversation</p>
+              <p className="eyebrow text-[#281C0B]/85 mb-6">Start with a conversation</p>
               <h2 className="font-display text-on-cream !text-[42px] md:!text-[80px] leading-[1] tracking-[-0.02em] max-w-[16ch]">
                 Book a 30-minute{" "}
                 <span className="italic">opportunity audit.</span>

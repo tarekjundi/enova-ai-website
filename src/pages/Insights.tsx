@@ -32,7 +32,7 @@ const Insights = () => {
         <section className="surface-cream py-24 md:py-32">
           <div className="container mx-auto px-6 lg:px-10">
             <MotionElement animation="slideUp">
-              <p className="eyebrow text-[#6E5940] mb-10">Latest</p>
+              <p className="eyebrow text-[#5C4830] mb-10">Latest</p>
               <Link
                 to={`/insights/${featured.id}`}
                 className="group grid md:grid-cols-12 gap-10 md:gap-14 items-start"
@@ -71,7 +71,7 @@ const Insights = () => {
       <section className="surface-ivory py-24 md:py-36">
         <div className="container mx-auto px-6 lg:px-10">
           <MotionElement animation="slideUp">
-            <p className="eyebrow text-[#6E5940] mb-10">All articles</p>
+            <p className="eyebrow text-[#5C4830] mb-10">All articles</p>
           </MotionElement>
 
           <div className="border-t border-[#3A2915]/20">

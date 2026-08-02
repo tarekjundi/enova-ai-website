@@ -49,14 +49,17 @@ const Navbar = () => {
         </Link>
 
         {/* Desktop */}
-        <div className="hidden lg:flex items-center gap-1">
+        <div className="hidden lg:flex items-center gap-1.5">
           {NAV_LINKS.map((link) => (
             <Link
               key={link.to}
               to={link.to}
               onClick={() => window.scrollTo({ top: 0 })}
-              className={`px-3.5 py-2 text-[14px] font-medium tracking-[-0.005em] transition-colors duration-300 ${
-                isActive(link.to) ? "text-[#F6D3A2]" : "text-[#FDEED8]/85 hover:text-[#F6D3A2]"
+              aria-current={isActive(link.to) ? "page" : undefined}
+              className={`relative px-4 py-2 text-[15px] font-medium tracking-[-0.005em] transition-colors duration-300 after:content-[''] after:absolute after:left-4 after:right-4 after:-bottom-0.5 after:h-px after:transition-transform after:duration-300 after:origin-left ${
+                isActive(link.to)
+                  ? "text-[#F6D3A2] after:bg-[#F6D3A2] after:scale-x-100"
+                  : "text-[#FDEED8] hover:text-[#F6D3A2] after:bg-[#F6D3A2]/60 after:scale-x-0 hover:after:scale-x-100"
               }`}
             >
               {link.label}
@@ -67,15 +70,16 @@ const Navbar = () => {
             href="https://cal.com/tarek-jundi/free-consultation"
             target="_blank"
             rel="noopener noreferrer"
-            className="ml-4 btn-primary text-[13px] py-2.5 px-5 group"
+            className="ml-5 btn-primary text-[15px] py-3 px-6 group"
           >
             Book a Consultation
             <ArrowRight
-              size={14}
+              size={15}
               className="transition-transform duration-300 group-hover:translate-x-0.5"
             />
           </a>
         </div>
+
 
         {/* Mobile toggle */}
         <button

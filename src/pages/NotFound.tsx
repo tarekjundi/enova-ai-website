@@ -56,7 +56,7 @@ const NotFound = () => {
               <Link
                 key={l.to}
                 to={l.to}
-                className="text-[#FDEED8]/75 hover:text-[#F6D3A2] transition-colors text-[15px]"
+                className="text-[#FDEED8]/90 hover:text-[#F6D3A2] transition-colors text-[15px]"
               >
                 {l.label}
               </Link>
