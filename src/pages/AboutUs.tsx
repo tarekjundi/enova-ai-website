@@ -5,7 +5,7 @@ import PageHeader from "@/components/PageHeader";
 import { MotionElement } from "@/components/MotionElements";
 import { Link } from "react-router-dom";
 import { ArrowRight } from "@phosphor-icons/react";
-import tarekPortrait from "@/assets/tarek-jundi.jpg.asset.json";
+import tarekPortrait from "@/assets/tarek-jundi.jpg";
 
 const BELIEFS = [
   {
@@ -67,7 +67,7 @@ const AboutUs = () => {
             <MotionElement animation="slideUp" className="md:col-span-5">
               <figure className="relative aspect-[4/5] w-full overflow-hidden bg-[#281C0B]">
                 <img
-                  src={tarekPortrait.url}
+                  src={tarekPortrait}
                   alt="Tarek Jundi, founder and principal of Enova"
                   loading="lazy"
                   className="absolute inset-0 h-full w-full object-cover object-top"
