@@ -129,7 +129,7 @@ const Services = () => {
           <div className="grid md:grid-cols-12 gap-10 md:gap-16 mb-20 md:mb-24">
             <div className="md:col-span-7">
               <MotionElement animation="slideUp">
-                <p className="eyebrow text-[#6E5940] mb-6">What we do</p>
+                <p className="eyebrow text-[#5C4830] mb-6">What we do</p>
                 <h2 className="font-display text-on-cream !text-[40px] md:!text-[68px] leading-[1.02] tracking-[-0.015em] max-w-[18ch]">
                   Four practices,{" "}
                   <span className="italic text-[#A56735]">one operating system.</span>
@@ -172,7 +172,7 @@ const Services = () => {
                   </div>
 
                   <div className="md:col-span-3">
-                    <p className="eyebrow text-[#6E5940] mb-5">Included</p>
+                    <p className="eyebrow text-[#5C4830] mb-5">Included</p>
                     <ul className="space-y-2.5">
                       {p.subs.map((s) => (
                         <li
@@ -235,7 +235,7 @@ const Services = () => {
         <div className="container mx-auto px-6 lg:px-10">
           <div className="grid md:grid-cols-12 gap-10 md:gap-16 items-end">
             <MotionElement animation="slideUp" className="md:col-span-8">
-              <p className="eyebrow text-[#281C0B]/70 mb-6">Next step</p>
+              <p className="eyebrow text-[#281C0B]/85 mb-6">Next step</p>
               <h2 className="font-display text-on-cream !text-[40px] md:!text-[76px] leading-[1] tracking-[-0.02em] max-w-[16ch]">
                 Pick one workflow. We&rsquo;ll show you what to{" "}
                 <span className="italic">automate first.</span>

@@ -92,7 +92,7 @@ const Industries = () => {
           <div className="grid md:grid-cols-12 gap-10 md:gap-16 mb-16 md:mb-24">
             <div className="md:col-span-7">
               <MotionElement animation="slideUp">
-                <p className="eyebrow text-[#6E5940] mb-6">Where we work most</p>
+                <p className="eyebrow text-[#5C4830] mb-6">Where we work most</p>
                 <h2 className="font-display text-on-cream !text-[40px] md:!text-[64px] leading-[1.02] tracking-[-0.015em] max-w-[18ch]">
                   Eight sectors we know{" "}
                   <span className="italic text-[#A56735]">in detail.</span>
@@ -124,7 +124,7 @@ const Industries = () => {
                     <p className="text-on-cream-body text-[17px] leading-[1.75] max-w-[48ch]">{s.body}</p>
                   </div>
                   <div className="md:col-span-3">
-                    <p className="eyebrow text-[#6E5940] mb-4">Typical work</p>
+                    <p className="eyebrow text-[#5C4830] mb-4">Typical work</p>
                     <ul className="space-y-2">
                       {s.work.map((w) => (
                         <li key={w} className="text-on-cream-body text-[15px] leading-[1.6]">
@@ -163,7 +163,7 @@ const Industries = () => {
         <div className="container mx-auto px-6 lg:px-10">
           <div className="grid md:grid-cols-12 gap-10 md:gap-16 items-end">
             <MotionElement animation="slideUp" className="md:col-span-8">
-              <p className="eyebrow text-[#281C0B]/70 mb-6">Your sector not listed?</p>
+              <p className="eyebrow text-[#281C0B]/85 mb-6">Your sector not listed?</p>
               <h2 className="font-display text-on-cream !text-[40px] md:!text-[72px] leading-[1] tracking-[-0.02em] max-w-[18ch]">
                 Tell us the workflow.{" "}
                 <span className="italic">We&rsquo;ll tell you honestly.</span>

@@ -152,7 +152,7 @@ const Process = () => {
                           {s.body}
                         </p>
                         <div className="mt-7 pt-5 border-t border-[#3A2915]/20">
-                          <p className="eyebrow text-[#6E5940] mb-2">Deliverables</p>
+                          <p className="eyebrow text-[#5C4830] mb-2">Deliverables</p>
                           <p className="text-on-cream text-[15px] leading-[1.7]">{s.outputs}</p>
                         </div>
                       </div>
@@ -209,7 +209,7 @@ const Process = () => {
         <div className="container mx-auto px-6 lg:px-10">
           <div className="grid md:grid-cols-12 gap-10 md:gap-16 items-end">
             <MotionElement animation="slideUp" className="md:col-span-8">
-              <p className="eyebrow text-[#281C0B]/70 mb-6">Stage one starts here</p>
+              <p className="eyebrow text-[#281C0B]/85 mb-6">Stage one starts here</p>
               <h2 className="font-display text-on-cream !text-[40px] md:!text-[76px] leading-[1] tracking-[-0.02em] max-w-[16ch]">
                 Discovery begins with{" "}
                 <span className="italic">one conversation.</span>
