@@ -126,15 +126,34 @@ const CaseStudies = () => {
                         }}
                       />
                       <div className="absolute inset-0 flex flex-col justify-between p-8">
-                        <p className="eyebrow text-[#FFF9F1]/90">Case &middot; 0{i + 1}</p>
+                        <div className="flex items-start justify-between gap-4">
+                          <p className="eyebrow text-[#FFF9F1]">Case &middot; 0{i + 1}</p>
+                          <span className="text-[#FFF9F1] text-[13px] font-medium tracking-wide border border-[#FFF9F1]/40 rounded-full px-3 py-1">
+                            In production
+                          </span>
+                        </div>
+
+                        <div className="space-y-2">
+                          {c.tools.split(" · ").map((t) => (
+                            <div
+                              key={t}
+                              className="flex items-center gap-3 border-b border-[#FFF9F1]/20 pb-2"
+                            >
+                              <span className="h-1.5 w-1.5 rounded-full bg-[#FFF9F1]" />
+                              <span className="text-[#FFF9F1] text-[14px] font-medium">{t}</span>
+                            </div>
+                          ))}
+                        </div>
+
                         <div>
                           <p className="font-display text-[#FFF9F1] italic text-[80px] md:text-[110px] leading-none tracking-[-0.02em]">
                             {c.metric}
                           </p>
-                          <p className="text-[#FFF9F1]/85 text-sm mt-3 max-w-[26ch]">{c.metricLabel}</p>
+                          <p className="text-[#FFF9F1] text-sm mt-3 max-w-[26ch]">{c.metricLabel}</p>
                         </div>
                       </div>
                     </div>
+
                   </div>
 
                   {/* Copy */}
