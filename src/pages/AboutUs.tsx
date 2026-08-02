@@ -5,6 +5,7 @@ import PageHeader from "@/components/PageHeader";
 import { MotionElement } from "@/components/MotionElements";
 import { Link } from "react-router-dom";
 import { ArrowRight } from "@phosphor-icons/react";
+import tarekPortrait from "@/assets/tarek-jundi.jpg.asset.json";
 
 const BELIEFS = [
   {
