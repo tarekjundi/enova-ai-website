@@ -64,21 +64,26 @@ const AboutUs = () => {
         <div className="container mx-auto px-6 lg:px-10">
           <div className="grid md:grid-cols-12 gap-12 md:gap-16 items-start">
             <MotionElement animation="slideUp" className="md:col-span-5">
-              <div
-                className="aspect-[4/5] w-full"
-                style={{ background: "linear-gradient(160deg, #281C0B 0%, #3A2915 40%, #6E5940 100%)" }}
-              >
-                <div className="h-full w-full flex flex-col justify-between p-8">
-                  <p className="eyebrow text-[#C8B59C]">Founder &amp; Principal</p>
+              <figure className="relative aspect-[4/5] w-full overflow-hidden bg-[#281C0B]">
+                <img
+                  src={tarekPortrait.url}
+                  alt="Tarek Jundi, founder and principal of Enova"
+                  loading="lazy"
+                  className="absolute inset-0 h-full w-full object-cover object-top"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#281C0B]/85 via-[#281C0B]/10 to-[#281C0B]/40" />
+                <figcaption className="absolute inset-0 flex flex-col justify-between p-8">
+                  <p className="eyebrow text-[#F6D3A2]">Founder &amp; Principal</p>
                   <div>
                     <p className="font-display text-[#FFF9F1] text-4xl leading-tight">Tarek Jundi</p>
-                    <p className="text-[#FDEED8]/80 text-[14px] mt-2">
+                    <p className="text-[#FDEED8] text-[14px] mt-2">
                       Leads every engagement personally
                     </p>
                   </div>
-                </div>
-              </div>
+                </figcaption>
+              </figure>
             </MotionElement>
+
 
             <div className="md:col-span-6 md:col-start-7">
               <MotionElement animation="slideUp" delay={120}>
