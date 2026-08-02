@@ -11,7 +11,7 @@ const Footer = () => {
   };
 
   const linkClass =
-    "text-[#FDEED8]/75 hover:text-[#F6D3A2] transition-colors duration-300 text-[15px]";
+    "text-[#FDEED8] hover:text-[#F6D3A2] transition-colors duration-300 text-[15px]";
 
   return (
     <footer className="surface-deep border-t border-[#F6D3A2]/12">
