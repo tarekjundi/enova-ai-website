@@ -157,20 +157,22 @@ const Index = () => {
       {/* =====================================================
           HERO — deep brown, typography-led, minimal
           ===================================================== */}
-      <section className="surface-deep-grad relative pt-40 md:pt-48 pb-28 md:pb-40">
+      <section className="surface-deep-grad relative pt-32 md:pt-40 pb-20 md:pb-28">
         <div className="container mx-auto px-6 lg:px-10">
           <MotionElement animation="slideUp" delay={40}>
-            <p className={`eyebrow text-[#C8B59C] mb-10 ${dir}`}>
+            <p className={`eyebrow text-[#D8C4A8] mb-7 ${dir}`}>
               Intelligent Operations for Ambitious Businesses
             </p>
           </MotionElement>
 
-          <div className={`grid lg:grid-cols-12 gap-12 lg:gap-16 items-end ${dir}`}>
+          <div className={`grid lg:grid-cols-12 gap-10 lg:gap-16 items-end ${dir}`}>
             {/* Headline */}
             <div className="lg:col-span-8">
               <MotionElement animation="slideUp" delay={120}>
-                <h1 className="font-display text-[#FFF9F1] leading-[0.98] tracking-[-0.02em] !text-[52px] sm:!text-[74px] lg:!text-[110px]">
-                  Turn repetitive work into{" "}
+                <h1 className="font-display text-[#FFF9F1] leading-[1.0] tracking-[-0.02em] !text-[42px] sm:!text-[64px] lg:!text-[104px] break-words">
+                  Turn repetitive work
+                  <br className="hidden sm:block" />{" "}
+                  into{" "}
                   <span className="italic text-[#F6D3A2]">intelligent operations.</span>
                 </h1>
               </MotionElement>
@@ -179,24 +181,24 @@ const Index = () => {
             {/* Body + CTAs */}
             <div className="lg:col-span-4 lg:pb-4">
               <MotionElement animation="slideUp" delay={220}>
-                <p className="text-[#FDEED8] text-[17px] md:text-[19px] leading-[1.7] max-w-md mb-10">
-                  ENOVA helps growing businesses simplify operations, connect their systems and automate the work that slows their teams down.
+                <p className="text-[#FDEED8] text-[17px] md:text-[19px] leading-[1.75] max-w-[46ch] mb-8">
+                  Enova AI designs practical automation systems that connect your tools, remove repetitive work, and help your team operate with greater speed and clarity.
                 </p>
 
-                <div className={`flex flex-wrap items-center gap-3 ${isRTL ? "justify-end" : ""}`}>
+                <div className={`flex flex-col sm:flex-row sm:flex-wrap sm:items-center gap-3 ${isRTL ? "sm:justify-end" : ""}`}>
                   <a
                     href="https://cal.com/tarek-jundi/free-consultation"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="btn-primary group"
+                    className="btn-primary group justify-center sm:justify-start !py-4 !px-7 !text-[16px]"
                   >
-                    Book an AI Opportunity Audit
+                    Book an Opportunity Audit
                     <ArrowRight
                       size={15}
                       className={`transition-transform duration-300 group-hover:translate-x-0.5 ${isRTL ? "rotate-180" : ""}`}
                     />
                   </a>
-                  <Link to="/case-studies" className="btn-ghost-on-deep group">
+                  <Link to="/case-studies" className="btn-ghost-on-deep group justify-center sm:justify-start">
                     Explore Our Work
                     <ArrowUpRight
                       size={15}
@@ -204,18 +206,22 @@ const Index = () => {
                     />
                   </Link>
                 </div>
+
+                <p className="mt-4 text-[#C8B59C] text-[15px] leading-[1.6] max-w-[42ch]">
+                  A focused consultation to identify what your business should automate first.
+                </p>
               </MotionElement>
             </div>
           </div>
 
           {/* Editorial rule + meta line */}
           <MotionElement animation="slideUp" delay={340}>
-            <div className={`mt-24 md:mt-32 grid md:grid-cols-12 gap-6 items-end ${dir}`}>
+            <div className={`mt-16 md:mt-20 grid md:grid-cols-12 gap-6 items-end ${dir}`}>
               <div className="md:col-span-8">
                 <div className="h-px w-full bg-[#F6D3A2]/25 origin-left animate-rule-in" />
               </div>
               <div className="md:col-span-4 flex md:justify-end">
-                <p className="eyebrow text-[#C8B59C]">
+                <p className="eyebrow text-[#D8C4A8]">
                   Est. 2024 &nbsp;·&nbsp; Consulting &amp; Systems
                 </p>
               </div>
@@ -223,6 +229,7 @@ const Index = () => {
           </MotionElement>
         </div>
       </section>
+
 
       {/* =====================================================
           PROBLEM — cream, large numbered editorial list
