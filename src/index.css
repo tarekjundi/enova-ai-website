@@ -59,7 +59,17 @@
     overflow-x: hidden;
   }
 
+  html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+  }
+
+  [id] {
+    scroll-margin-top: 96px;
+  }
+
   body {
+
     @apply text-foreground;
     overflow-x: hidden;
     font-family: 'Work Sans', system-ui, sans-serif;
