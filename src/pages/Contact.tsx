@@ -56,14 +56,53 @@ const SOCIALS = [
   { Icon: WhatsappLogo, label: "WhatsApp", href: "https://wa.me/message/enovaagency" },
 ];
 
+const SHEETS_ENDPOINT =
+  "https://script.google.com/macros/s/AKfycbwwwWkZloxZ6iKjVujFMUTxqh4h_uxVL4uRsm5LKow5TuX1nXsdWideN_mmDuo--UY/exec";
+
+const BUDGETS = [
+  "Under $1,000",
+  "$1,000–$2,500",
+  "$2,500–$5,000",
+  "$5,000–$10,000",
+  "$10,000+",
+  "Not sure yet",
+];
+
+const PROJECT_TYPES = [
+  "Opportunity audit",
+  "Workflow automation",
+  "Knowledge system / internal AI assistant",
+  "Customer support automation",
+  "Data, reporting & dashboards",
+  "CRM / systems integration",
+  "Something else",
+];
+
+const START_TIMES = [
+  "Immediately",
+  "Within 2–4 weeks",
+  "In 1–3 months",
+  "Just exploring",
+];
+
+const EMPTY_FORM = {
+  fullName: "",
+  workEmail: "",
+  companyName: "",
+  phoneNumber: "",
+  companyWebsite: "",
+  projectType: "",
+  estimatedBudget: "",
+  preferredStartTime: "",
+  projectDetails: "",
+};
+
+type FormState = typeof EMPTY_FORM;
+type FormErrors = Partial<Record<keyof FormState, string>>;
+
 const Contact = () => {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    company: "",
-    budget: "",
-    message: "",
-  });
+  const [formData, setFormData] = useState<FormState>(EMPTY_FORM);
+  const [errors, setErrors] = useState<FormErrors>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleChange = (
@@ -71,36 +110,82 @@ const Contact = () => {
   ) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
+    setErrors((prev) => ({ ...prev, [name]: undefined }));
+  };
+
+  const validate = (data: FormState): FormErrors => {
+    const next: FormErrors = {};
+    if (!data.fullName.trim()) next.fullName = "Please enter your full name.";
+    if (!data.workEmail.trim()) next.workEmail = "Please enter your work email.";
+    else if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(data.workEmail.trim()))
+      next.workEmail = "Please enter a valid email address.";
+    if (!data.companyName.trim()) next.companyName = "Please enter your company name.";
+    if (!data.projectType) next.projectType = "Please select a project type.";
+    if (!data.estimatedBudget) next.estimatedBudget = "Please select an estimated budget.";
+    if (!data.preferredStartTime) next.preferredStartTime = "Please select a preferred start time.";
+    if (!data.projectDetails.trim()) next.projectDetails = "Please tell us a little about the project.";
+    return next;
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (isSubmitting) return;
+
+    const nextErrors = validate(formData);
+    setErrors(nextErrors);
+    if (Object.keys(nextErrors).length > 0) {
+      toast({
+        title: "Please complete the required fields.",
+        description: "A few details are still missing.",
+        variant: "destructive",
+      });
+      return;
+    }
+
     setIsSubmitting(true);
     try {
-      await fetch(
-        "https://script.google.com/macros/s/AKfycbwwwWkZloxZ6iKjVujFMUTxqh4h_uxVL4uRsm5LKow5TuX1nXsdWideN_mmDuo--UY/exec",
-        {
-          method: "POST",
-          mode: "no-cors",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ ...formData, timestamp: new Date().toISOString() }),
-        }
-      );
-    } catch {
-      /* no-cors: response is opaque either way */
-    } finally {
-      toast({
-        title: "Thanks — we'll be in touch.",
-        description: "We typically reply within one business day.",
+      await fetch(SHEETS_ENDPOINT, {
+        method: "POST",
+        mode: "no-cors",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          fullName: formData.fullName.trim(),
+          workEmail: formData.workEmail.trim(),
+          companyName: formData.companyName.trim(),
+          phoneNumber: formData.phoneNumber.trim(),
+          companyWebsite: formData.companyWebsite.trim(),
+          projectType: formData.projectType,
+          estimatedBudget: formData.estimatedBudget,
+          preferredStartTime: formData.preferredStartTime,
+          projectDetails: formData.projectDetails.trim(),
+          submittedAt: new Date().toISOString(),
+        }),
       });
-      setFormData({ name: "", email: "", company: "", budget: "", message: "" });
+      toast({
+        title: "Thank you.",
+        description:
+          "Your project details have been received. We will review them and contact you shortly.",
+      });
+      setFormData(EMPTY_FORM);
+      setErrors({});
+    } catch {
+      toast({
+        title: "Something went wrong",
+        description:
+          "We could not send your details. Please check your connection and try again.",
+        variant: "destructive",
+      });
+    } finally {
       setIsSubmitting(false);
     }
   };
 
   const labelClass = "eyebrow text-[#5C4830] mb-3 block";
+  const optionalClass = "ml-2 normal-case tracking-normal text-[13px] text-[#6E5940] font-normal";
   const fieldClass =
-    "w-full bg-transparent border-0 border-b border-[#3A2915]/30 focus:border-[#A56735] focus:outline-none px-0 py-3 text-[#281C0B] placeholder:text-[#6E5940]/60 text-[16px] transition-colors";
+    "w-full max-w-full bg-transparent border-0 border-b border-[#3A2915]/30 focus:border-[#A56735] focus:outline-none px-0 py-3 text-[#281C0B] placeholder:text-[#6E5940]/60 text-[16px] transition-colors";
+  const errorClass = "mt-2 text-[14px] text-[#8C2F1E]";
+
 
   return (
     <div className="min-h-screen surface-deep overflow-x-hidden" id="top">
