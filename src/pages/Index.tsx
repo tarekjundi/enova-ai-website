@@ -207,7 +207,7 @@ const Index = () => {
                   </Link>
                 </div>
 
-                <p className="mt-4 text-[#C8B59C] text-[15px] leading-[1.6] max-w-[42ch]">
+                <p className="mt-4 text-[#D8C4A8] text-[15px] leading-[1.6] max-w-[42ch]">
                   A focused consultation to identify what your business should automate first.
                 </p>
               </MotionElement>
@@ -234,9 +234,9 @@ const Index = () => {
       {/* =====================================================
           PROBLEM — cream, large numbered editorial list
           ===================================================== */}
-      <section className="surface-cream py-28 md:py-40">
+      <section className="surface-cream py-20 md:py-28">
         <div className="container mx-auto px-6 lg:px-10">
-          <div className={`grid md:grid-cols-12 gap-10 md:gap-16 mb-16 md:mb-24 ${dir}`}>
+          <div className={`grid md:grid-cols-12 gap-10 md:gap-16 mb-12 md:mb-16 ${dir}`}>
             <div className="md:col-span-7">
               <MotionElement animation="slideUp">
                 <p className="eyebrow text-[#5C4830] mb-6">The problem we solve</p>
@@ -284,9 +284,9 @@ const Index = () => {
       {/* =====================================================
           SERVICES — cream, refined vertical index
           ===================================================== */}
-      <section className="surface-ivory py-28 md:py-40">
+      <section className="surface-ivory py-20 md:py-28">
         <div className="container mx-auto px-6 lg:px-10">
-          <div className={`grid md:grid-cols-12 gap-10 md:gap-16 mb-20 md:mb-28 ${dir}`}>
+          <div className={`grid md:grid-cols-12 gap-10 md:gap-16 mb-14 md:mb-20 ${dir}`}>
             <div className="md:col-span-7">
               <MotionElement animation="slideUp">
                 <p className="eyebrow text-[#5C4830] mb-6">What we do</p>
@@ -368,7 +368,7 @@ const Index = () => {
           <div className={`grid md:grid-cols-12 gap-8 items-end ${dir}`}>
             <div className="md:col-span-7">
               <MotionElement animation="slideUp">
-                <p className="eyebrow text-[#C8B59C] mb-6">Industries</p>
+                <p className="eyebrow text-[#D8C4A8] mb-6">Industries</p>
                 <h2 className="font-display text-[#FFF9F1] !text-[36px] md:!text-[56px] leading-[1.05] tracking-[-0.015em] max-w-[22ch]">
                   Working across{" "}
                   <span className="italic text-[#F6D3A2]">twenty industries.</span>
@@ -402,9 +402,9 @@ const Index = () => {
       {/* =====================================================
           CASE STUDIES — cream, large editorial features
           ===================================================== */}
-      <section className="surface-cream py-28 md:py-40">
+      <section className="surface-cream py-20 md:py-28">
         <div className="container mx-auto px-6 lg:px-10">
-          <div className={`grid md:grid-cols-12 gap-10 md:gap-16 mb-20 md:mb-28 ${dir}`}>
+          <div className={`grid md:grid-cols-12 gap-10 md:gap-16 mb-14 md:mb-20 ${dir}`}>
             <div className="md:col-span-8">
               <MotionElement animation="slideUp">
                 <p className="eyebrow text-[#5C4830] mb-6">Selected work</p>
@@ -509,12 +509,12 @@ const Index = () => {
       {/* =====================================================
           METHOD — deep, vertical editorial timeline
           ===================================================== */}
-      <section className="surface-deep-grad py-28 md:py-40">
+      <section className="surface-deep-grad py-20 md:py-28">
         <div className="container mx-auto px-6 lg:px-10">
-          <div className={`grid md:grid-cols-12 gap-10 md:gap-16 mb-20 md:mb-28 ${dir}`}>
+          <div className={`grid md:grid-cols-12 gap-10 md:gap-16 mb-14 md:mb-20 ${dir}`}>
             <div className="md:col-span-8">
               <MotionElement animation="slideUp">
-                <p className="eyebrow text-[#C8B59C] mb-6">The ENOVA Method</p>
+                <p className="eyebrow text-[#D8C4A8] mb-6">The ENOVA Method</p>
                 <h2 className="font-display text-[#FFF9F1] !text-[40px] md:!text-[68px] leading-[1.02] tracking-[-0.015em] max-w-[20ch]">
                   A quiet method for{" "}
                   <span className="italic text-[#F6D3A2]">measurable change.</span>
@@ -557,7 +557,7 @@ const Index = () => {
                         {m.body}
                       </p>
                       <div className="pt-5 border-t border-[#F6D3A2]/15">
-                        <p className="eyebrow text-[#C8B59C] mb-2">Deliverables</p>
+                        <p className="eyebrow text-[#D8C4A8] mb-2">Deliverables</p>
                         <p className="text-[#FFF9F1]/90 text-[15px]">{m.outputs}</p>
                       </div>
                     </div>
@@ -572,7 +572,7 @@ const Index = () => {
       {/* =====================================================
           ABOUT / FOUNDER — cream editorial statement
           ===================================================== */}
-      <section className="surface-ivory py-28 md:py-40">
+      <section className="surface-ivory py-20 md:py-28">
         <div className="container mx-auto px-6 lg:px-10">
           <div className={`grid md:grid-cols-12 gap-12 md:gap-16 items-start ${dir}`}>
             <MotionElement animation="slideUp" className="md:col-span-5">
