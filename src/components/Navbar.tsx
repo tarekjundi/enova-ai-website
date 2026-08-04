@@ -33,30 +33,31 @@ const Navbar = () => {
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-colors duration-500 ${
         scrolled
-          ? "bg-[#281C0B]/95 backdrop-blur-md py-3 border-b border-[#F6D3A2]/12"
-          : "py-6 bg-transparent"
+          ? "bg-[#281C0B]/95 backdrop-blur-md py-2.5 border-b border-[#F6D3A2]/12"
+          : "py-4 md:py-5 bg-transparent"
       }`}
     >
-      <div className="container mx-auto px-6 lg:px-10 flex justify-between items-center">
+      <div className="container mx-auto px-6 lg:px-10 flex justify-between items-center gap-4">
         <Link
           to="/"
           onClick={() => window.scrollTo({ top: 0 })}
-          className="transition-opacity duration-300 hover:opacity-80"
+          aria-label="ENOVA — home"
+          className="shrink-0 transition-opacity duration-300 hover:opacity-80"
         >
-          <span className="font-display text-[26px] tracking-[-0.01em] text-[#FFF9F1] leading-none">
+          <span className="font-display text-[34px] sm:text-[38px] lg:text-[42px] tracking-[-0.015em] text-[#FFF9F1] leading-none">
             ENOVA
           </span>
         </Link>
 
         {/* Desktop */}
-        <div className="hidden lg:flex items-center gap-1.5">
+        <div className="hidden lg:flex items-center gap-0.5 xl:gap-1.5">
           {NAV_LINKS.map((link) => (
             <Link
               key={link.to}
               to={link.to}
               onClick={() => window.scrollTo({ top: 0 })}
               aria-current={isActive(link.to) ? "page" : undefined}
-              className={`relative px-4 py-2 text-[15px] font-medium tracking-[-0.005em] transition-colors duration-300 after:content-[''] after:absolute after:left-4 after:right-4 after:-bottom-0.5 after:h-px after:transition-transform after:duration-300 after:origin-left ${
+              className={`relative px-3 xl:px-4 py-2 text-[16px] font-medium tracking-[-0.005em] transition-colors duration-300 after:content-[''] after:absolute after:left-3 after:right-3 xl:after:left-4 xl:after:right-4 after:-bottom-0.5 after:h-px after:transition-transform after:duration-300 after:origin-left ${
                 isActive(link.to)
                   ? "text-[#F6D3A2] after:bg-[#F6D3A2] after:scale-x-100"
                   : "text-[#FDEED8] hover:text-[#F6D3A2] after:bg-[#F6D3A2]/60 after:scale-x-0 hover:after:scale-x-100"
@@ -70,7 +71,7 @@ const Navbar = () => {
             href="https://cal.com/tarek-jundi/free-consultation"
             target="_blank"
             rel="noopener noreferrer"
-            className="ml-5 btn-primary text-[15px] py-3 px-6 group"
+            className="ml-4 xl:ml-6 btn-primary text-[15px] py-3 px-5 xl:px-6 whitespace-nowrap group shadow-[0_0_0_1px_rgba(246,211,162,0.35)]"
           >
             Book a Consultation
             <ArrowRight
@@ -81,19 +82,22 @@ const Navbar = () => {
         </div>
 
 
+
         {/* Mobile toggle */}
         <button
-          className="lg:hidden text-[#F6D3A2] p-2"
+          className="lg:hidden text-[#F6D3A2] p-3 -mr-2"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          aria-label="Toggle menu"
+          aria-expanded={mobileMenuOpen}
+          aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
         >
-          {mobileMenuOpen ? <X size={28} /> : <List size={28} />}
+          {mobileMenuOpen ? <X size={30} /> : <List size={30} />}
         </button>
       </div>
 
       {/* Mobile fullscreen menu */}
       {mobileMenuOpen && (
-        <div className="lg:hidden fixed inset-0 top-[64px] bg-[#281C0B] px-6 pt-8 pb-16 flex flex-col overflow-y-auto animate-fade-in">
+        <div className="lg:hidden fixed inset-0 top-[72px] bg-[#281C0B] px-6 pt-6 pb-16 flex flex-col overflow-y-auto animate-fade-in">
+
           <div className="flex flex-col">
             {NAV_LINKS.map((link) => (
               <Link
