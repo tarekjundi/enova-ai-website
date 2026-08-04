@@ -85,17 +85,19 @@ const Navbar = () => {
 
         {/* Mobile toggle */}
         <button
-          className="lg:hidden text-[#F6D3A2] p-2"
+          className="lg:hidden text-[#F6D3A2] p-3 -mr-2"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          aria-label="Toggle menu"
+          aria-expanded={mobileMenuOpen}
+          aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
         >
-          {mobileMenuOpen ? <X size={28} /> : <List size={28} />}
+          {mobileMenuOpen ? <X size={30} /> : <List size={30} />}
         </button>
       </div>
 
       {/* Mobile fullscreen menu */}
       {mobileMenuOpen && (
-        <div className="lg:hidden fixed inset-0 top-[64px] bg-[#281C0B] px-6 pt-8 pb-16 flex flex-col overflow-y-auto animate-fade-in">
+        <div className="lg:hidden fixed inset-0 top-[72px] bg-[#281C0B] px-6 pt-6 pb-16 flex flex-col overflow-y-auto animate-fade-in">
+
           <div className="flex flex-col">
             {NAV_LINKS.map((link) => (
               <Link
