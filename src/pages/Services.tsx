@@ -124,12 +124,12 @@ const Services = () => {
       />
 
       {/* Practices — editorial index */}
-      <section className="surface-cream py-28 md:py-40">
+      <section className="surface-cream py-20 md:py-24">
         <div className="container mx-auto px-6 lg:px-10">
           <div className="grid md:grid-cols-12 gap-10 md:gap-16 mb-20 md:mb-24">
             <div className="md:col-span-7">
               <MotionElement animation="slideUp">
-                <p className="eyebrow text-[#5C4830] mb-6">What we do</p>
+                <p className="eyebrow text-[#4A3720] mb-6">What we do</p>
                 <h2 className="font-display text-on-cream !text-[40px] md:!text-[68px] leading-[1.02] tracking-[-0.015em] max-w-[18ch]">
                   Four practices,{" "}
                   <span className="italic text-[#A56735]">one operating system.</span>
@@ -148,16 +148,16 @@ const Services = () => {
           <div className="border-t border-[#3A2915]/20">
             {PRACTICES.map((p, i) => (
               <MotionElement key={p.n} animation="slideUp" delay={40 + i * 60}>
-                <article className="border-b border-[#3A2915]/20 grid md:grid-cols-12 gap-8 md:gap-10 py-14 md:py-20 group">
+                <article className="border-b border-[#3A2915]/20 grid md:grid-cols-12 gap-8 md:gap-10 py-10 md:py-14 group">
                   <div className="md:col-span-1">
                     <span className="eyebrow text-[#A56735]">{p.n}</span>
                   </div>
 
                   <div className="md:col-span-4">
-                    <h3 className="font-display text-on-cream text-3xl md:text-5xl leading-[1.02] tracking-[-0.015em] mb-4 transition-colors duration-500 group-hover:text-[#A56735]">
+                    <h3 className="font-display text-on-cream text-3xl md:text-5xl leading-[1.02] tracking-[-0.015em] mb-3 transition-colors duration-500 group-hover:text-[#A56735]">
                       {p.title}
                     </h3>
-                    <p className="font-serif-accent text-[#A56735] text-xl md:text-2xl leading-[1.3] max-w-[24ch]">
+                    <p className="font-body text-[#94572A] text-[16px] font-medium leading-[1.6] max-w-[28ch]">
                       {p.tagline}
                     </p>
                   </div>
@@ -166,14 +166,15 @@ const Services = () => {
                     <p className="text-on-cream-body text-[17px] leading-[1.75] max-w-[46ch]">
                       {p.body}
                     </p>
-                    <p className="text-on-cream-muted text-[15px] leading-[1.7] italic mt-5 max-w-[46ch]">
-                      Best for: {p.fit}
+                    <p className="text-on-cream-muted text-[15px] leading-[1.7] mt-4 max-w-[46ch]">
+                      <span className="font-medium">Best for:</span> {p.fit}
                     </p>
                   </div>
 
                   <div className="md:col-span-3">
-                    <p className="eyebrow text-[#5C4830] mb-5">Included</p>
-                    <ul className="space-y-2.5">
+                    <p className="eyebrow text-[#4A3720] mb-4">Typical use cases</p>
+                    <ul className="space-y-2">
+
                       {p.subs.map((s) => (
                         <li
                           key={s}
@@ -197,7 +198,7 @@ const Services = () => {
           <div className="grid md:grid-cols-12 gap-10 md:gap-16 mb-16 md:mb-20">
             <div className="md:col-span-8">
               <MotionElement animation="slideUp">
-                <p className="eyebrow text-[#C8B59C] mb-6">How we work together</p>
+                <p className="eyebrow text-[#D8C4A8] mb-6">How we work together</p>
                 <h2 className="font-display text-[#FFF9F1] !text-[36px] md:!text-[60px] leading-[1.03] tracking-[-0.015em] max-w-[20ch]">
                   Three ways to{" "}
                   <span className="italic text-[#F6D3A2]">start.</span>
@@ -231,7 +232,7 @@ const Services = () => {
       </section>
 
       {/* CTA */}
-      <section className="surface-gold py-24 md:py-32">
+      <section className="surface-gold py-20 md:py-24">
         <div className="container mx-auto px-6 lg:px-10">
           <div className="grid md:grid-cols-12 gap-10 md:gap-16 items-end">
             <MotionElement animation="slideUp" className="md:col-span-8">

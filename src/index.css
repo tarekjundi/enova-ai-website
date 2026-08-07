@@ -117,11 +117,11 @@
   }
 
   /* Global readability bump — small hardcoded sizes scale up ~12% */
-  .text-\[13px\] { font-size: 15px !important; }
-  .text-\[14px\] { font-size: 16px !important; }
-  .text-\[15px\] { font-size: 16.5px !important; }
-  .text-\[16px\] { font-size: 17px !important; }
-  .text-\[17px\] { font-size: 18.5px !important; }
+  .text-\[13px\] { font-size: 15.5px !important; line-height: 1.6; }
+  .text-\[14px\] { font-size: 16.5px !important; line-height: 1.65; }
+  .text-\[15px\] { font-size: 17px !important; line-height: 1.7; }
+  .text-\[16px\] { font-size: 17.5px !important; line-height: 1.72; }
+  .text-\[17px\] { font-size: 19px !important; line-height: 1.75; }
 
   :focus-visible {
     outline: 2px solid #F6D3A2;
@@ -141,7 +141,7 @@
     font-family: 'Work Sans', system-ui, sans-serif;
     text-transform: uppercase;
     letter-spacing: 0.2em;
-    font-size: 0.8125rem;
+    font-size: 0.8438rem;
     font-weight: 600;
   }
 
@@ -170,11 +170,11 @@
   /* Text tokens for high-contrast typography */
   .text-on-deep         { color: #FFF9F1; }
   .text-on-deep-body    { color: #FDEED8; }
-  .text-on-deep-muted   { color: #C8B59C; }
-  .text-on-cream        { color: #281C0B; }
-  .text-on-cream-body   { color: #3A2915; }
-  .text-on-cream-muted  { color: #5C4830; }
-  .text-copper          { color: #A56735; }
+  .text-on-deep-muted   { color: #D8C4A8; }
+  .text-on-cream        { color: #1F1508; }
+  .text-on-cream-body   { color: #33230F; }
+  .text-on-cream-muted  { color: #4A3720; }
+  .text-copper          { color: #94572A; }
   .text-gold            { color: #F6D3A2; }
 
   /* Refined hairline divider */

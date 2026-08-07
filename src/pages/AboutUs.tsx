@@ -61,7 +61,7 @@ const AboutUs = () => {
       />
 
       {/* Statement */}
-      <section className="surface-cream py-28 md:py-40">
+      <section className="surface-cream py-20 md:py-24">
         <div className="container mx-auto px-6 lg:px-10">
           <div className="grid md:grid-cols-12 gap-12 md:gap-16 items-start">
             <MotionElement animation="slideUp" className="md:col-span-5">
@@ -88,7 +88,7 @@ const AboutUs = () => {
 
             <div className="md:col-span-6 md:col-start-7">
               <MotionElement animation="slideUp" delay={120}>
-                <p className="eyebrow text-[#5C4830] mb-6">Why we exist</p>
+                <p className="eyebrow text-[#4A3720] mb-6">Why we exist</p>
                 <h2 className="font-display text-on-cream !text-[36px] md:!text-[58px] leading-[1.03] tracking-[-0.015em] mb-10 max-w-[20ch]">
                   Working systems, <span className="italic text-[#A56735]">not AI theatre.</span>
                 </h2>
@@ -107,7 +107,7 @@ const AboutUs = () => {
                 </div>
 
                 <div className="mt-12 pt-8 border-t border-[#3A2915]/20">
-                  <p className="eyebrow text-[#5C4830] mb-3">Our commitment</p>
+                  <p className="eyebrow text-[#4A3720] mb-3">Our commitment</p>
                   <p className="font-display italic text-on-cream text-2xl md:text-3xl leading-[1.25] max-w-[30ch]">
                     Make intelligent operations reliable, measurable and owned by your team.
                   </p>
@@ -121,10 +121,10 @@ const AboutUs = () => {
       {/* Beliefs */}
       <section className="surface-ivory py-24 md:py-36">
         <div className="container mx-auto px-6 lg:px-10">
-          <div className="grid md:grid-cols-12 gap-10 md:gap-16 mb-14 md:mb-20">
+          <div className="grid md:grid-cols-12 gap-10 md:gap-16 mb-10 md:mb-14">
             <div className="md:col-span-8">
               <MotionElement animation="slideUp">
-                <p className="eyebrow text-[#5C4830] mb-6">What we believe</p>
+                <p className="eyebrow text-[#4A3720] mb-6">What we believe</p>
                 <h2 className="font-display text-on-cream !text-[36px] md:!text-[62px] leading-[1.02] tracking-[-0.015em] max-w-[20ch]">
                   Four positions we{" "}
                   <span className="italic text-[#A56735]">hold firmly.</span>
@@ -176,7 +176,7 @@ const AboutUs = () => {
       </section>
 
       {/* CTA */}
-      <section className="surface-gold py-24 md:py-32">
+      <section className="surface-gold py-20 md:py-24">
         <div className="container mx-auto px-6 lg:px-10">
           <div className="grid md:grid-cols-12 gap-10 md:gap-16 items-end">
             <MotionElement animation="slideUp" className="md:col-span-8">

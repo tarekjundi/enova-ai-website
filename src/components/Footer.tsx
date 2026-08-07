@@ -15,11 +15,11 @@ const Footer = () => {
 
   return (
     <footer className="surface-deep border-t border-[#F6D3A2]/12">
-      <div className="container mx-auto px-6 lg:px-10 pt-24 pb-14">
+      <div className="container mx-auto px-6 lg:px-10 pt-20 pb-12">
         {/* Editorial statement row */}
-        <div className={`grid md:grid-cols-12 gap-12 pb-16 border-b border-[#F6D3A2]/12 ${isRTL ? "text-right" : ""}`}>
+        <div className={`grid md:grid-cols-12 gap-12 pb-14 border-b border-[#F6D3A2]/12 ${isRTL ? "text-right" : ""}`}>
           <div className="md:col-span-7">
-            <p className="eyebrow text-[#C8B59C] mb-6">Get in touch</p>
+            <p className="eyebrow text-[#D8C4A8] mb-6">Get in touch</p>
             <h2 className="font-display text-4xl md:text-6xl leading-[1.02] tracking-[-0.015em] text-[#FFF9F1] max-w-[16ch]">
               Let&rsquo;s make your operations{" "}
               <span className="italic text-[#F6D3A2]">simpler.</span>
@@ -42,9 +42,9 @@ const Footer = () => {
         </div>
 
         {/* Navigation columns */}
-        <div className={`grid grid-cols-2 md:grid-cols-12 gap-10 md:gap-12 pt-16 ${isRTL ? "text-right" : ""}`}>
+        <div className={`grid grid-cols-2 md:grid-cols-12 gap-10 md:gap-12 pt-14 ${isRTL ? "text-right" : ""}`}>
           <div className="col-span-2 md:col-span-4">
-            <p className="font-display text-2xl text-[#FFF9F1] tracking-[-0.01em]" style={{ direction: "ltr" }}>
+            <p className="font-display text-[44px] md:text-[52px] leading-[0.9] text-[#FFF9F1] tracking-[-0.02em]" style={{ direction: "ltr" }}>
               ENOVA
             </p>
             <p className="mt-4 text-[#FDEED8]/90 text-[15px] leading-[1.7] max-w-sm">
@@ -53,7 +53,7 @@ const Footer = () => {
           </div>
 
           <div className="md:col-span-2 md:col-start-6">
-            <h4 className="eyebrow text-[#C8B59C] mb-5">Services</h4>
+            <h4 className="eyebrow text-[#D8C4A8] mb-5">Services</h4>
             <ul className="space-y-3">
               <li><button onClick={() => go("/services")} className={linkClass}>Opportunity Audit</button></li>
               <li><button onClick={() => go("/services")} className={linkClass}>Workflow Systems</button></li>
@@ -63,7 +63,7 @@ const Footer = () => {
           </div>
 
           <div className="md:col-span-2">
-            <h4 className="eyebrow text-[#C8B59C] mb-5">Company</h4>
+            <h4 className="eyebrow text-[#D8C4A8] mb-5">Company</h4>
             <ul className="space-y-3">
               <li><button onClick={() => go("/about")} className={linkClass}>About</button></li>
               <li><button onClick={() => go("/case-studies")} className={linkClass}>Work</button></li>
@@ -75,7 +75,7 @@ const Footer = () => {
           </div>
 
           <div className="md:col-span-2">
-            <h4 className="eyebrow text-[#C8B59C] mb-5">Connect</h4>
+            <h4 className="eyebrow text-[#D8C4A8] mb-5">Connect</h4>
             <ul className="space-y-3">
               <li>
                 <a href="mailto:tarek@enovaagency.com" className="text-[#FDEED8] hover:text-[#F6D3A2] transition-colors text-[15px]" dir="ltr">
@@ -101,7 +101,7 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="mt-16 pt-8 border-t border-[#F6D3A2]/10 flex flex-col md:flex-row justify-between items-center gap-3">
+        <div className="mt-14 pt-8 border-t border-[#F6D3A2]/10 flex flex-col md:flex-row justify-between items-center gap-3">
           <p className="text-[#D9C6AC] text-[13px]">© 2026 Enova. All rights reserved.</p>
           <p className="text-[#D9C6AC] text-[13px] font-display-i italic">Built for operators.</p>
         </div>

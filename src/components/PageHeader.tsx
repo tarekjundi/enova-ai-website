@@ -17,7 +17,7 @@ const PageHeader = ({ eyebrow, title, intro, cta, secondary, meta }: PageHeaderP
     <section className="surface-deep-grad pt-36 md:pt-44 pb-20 md:pb-28">
       <div className="container mx-auto px-6 lg:px-10">
         <MotionElement animation="slideUp" delay={40}>
-          <p className="eyebrow text-[#C8B59C] mb-8">{eyebrow}</p>
+          <p className="eyebrow text-[#D8C4A8] mb-8">{eyebrow}</p>
         </MotionElement>
 
         <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 items-end">
@@ -84,7 +84,7 @@ const PageHeader = ({ eyebrow, title, intro, cta, secondary, meta }: PageHeaderP
             </div>
             {meta && (
               <div className="md:col-span-4 flex md:justify-end">
-                <p className="eyebrow text-[#C8B59C]">{meta}</p>
+                <p className="eyebrow text-[#D8C4A8]">{meta}</p>
               </div>
             )}
           </div>
