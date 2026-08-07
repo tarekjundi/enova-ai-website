@@ -9,58 +9,58 @@ import { ArrowRight } from "@phosphor-icons/react";
 const SECTORS = [
   {
     n: "01",
-    name: "Financial Services",
-    body: "Client onboarding, KYC document handling, reconciliation and reporting rebuilt as auditable, monitored workflows.",
-    work: ["Onboarding automation", "Document extraction", "Compliance reporting"],
-  },
-  {
-    n: "02",
-    name: "Healthcare & Clinics",
-    body: "Intake, scheduling and follow-up handled without adding front-desk headcount — with strict boundaries on what automation may act on.",
-    work: ["Patient intake", "Scheduling agents", "Records summarisation"],
-  },
-  {
-    n: "03",
-    name: "Real Estate",
-    body: "Lead qualification, listing operations and client communication connected into one pipeline that agents actually use.",
-    work: ["Lead qualification", "Listing operations", "Client follow-up"],
-  },
-  {
-    n: "04",
-    name: "Logistics & Supply Chain",
-    body: "Order flow, exception handling and carrier communication automated so your team manages outliers instead of every shipment.",
-    work: ["Exception handling", "Carrier comms", "Status reporting"],
-  },
-  {
-    n: "05",
     name: "Professional Services",
     body: "Proposals, engagement setup and billing hand-offs standardised, so senior time goes to clients rather than paperwork.",
     work: ["Proposal generation", "Engagement setup", "Time & billing"],
   },
   {
-    n: "06",
-    name: "B2B SaaS",
-    body: "Support deflection, onboarding sequences and revenue reporting built into the product and CRM your team already runs.",
-    work: ["Support deflection", "Onboarding flows", "Revenue reporting"],
+    n: "02",
+    name: "Financial Services",
+    body: "Client onboarding, document handling, reconciliation and reporting rebuilt as auditable, monitored workflows.",
+    work: ["Onboarding automation", "Document extraction", "Compliance reporting"],
   },
   {
-    n: "07",
-    name: "E-Commerce & Retail",
+    n: "03",
+    name: "Healthcare & Clinics",
+    body: "Intake, scheduling and follow-up handled without adding front-desk headcount, with strict limits on what automation may act on.",
+    work: ["Patient intake", "Scheduling agents", "Records summarisation"],
+  },
+  {
+    n: "04",
+    name: "Real Estate",
+    body: "Lead qualification, listing operations and client communication connected into one pipeline agents actually use.",
+    work: ["Lead qualification", "Listing operations", "Client follow-up"],
+  },
+  {
+    n: "05",
+    name: "E-commerce",
     body: "Order support, returns and catalogue operations handled at volume, with escalation to humans where it matters.",
     work: ["Order support", "Returns handling", "Catalogue ops"],
   },
   {
+    n: "06",
+    name: "Hospitality",
+    body: "Bookings, guest messaging and post-stay follow-up run consistently across channels, day and night.",
+    work: ["Booking flow", "Guest messaging", "Review follow-up"],
+  },
+  {
+    n: "07",
+    name: "Education",
+    body: "Admissions, student enquiries and administrative reporting handled without pulling staff away from teaching.",
+    work: ["Admissions intake", "Student enquiries", "Reporting"],
+  },
+  {
     n: "08",
-    name: "Manufacturing",
-    body: "Quotation, procurement and production reporting connected end to end — so leadership sees the floor in real numbers.",
-    work: ["Quotation flow", "Procurement", "Production reporting"],
+    name: "Construction",
+    body: "Quotation, procurement and site reporting connected end to end, so leadership sees progress in real numbers.",
+    work: ["Quotation flow", "Procurement", "Progress reporting"],
   },
 ];
 
 const MORE = [
-  "Legal", "Insurance", "Education", "Hospitality", "Construction", "Energy",
-  "Media & Publishing", "Non-profit", "Recruitment", "Travel", "Automotive",
-  "Telecom", "Agriculture", "Public Sector", "Fitness & Wellness", "Events",
+  "Logistics & Supply Chain", "B2B SaaS", "Manufacturing", "Legal", "Insurance",
+  "Energy", "Media & Publishing", "Non-profit", "Recruitment", "Travel",
+  "Automotive", "Telecom", "Agriculture", "Public Sector", "Fitness & Wellness", "Events",
 ];
 
 const Industries = () => {
