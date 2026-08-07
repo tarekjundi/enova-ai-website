@@ -44,7 +44,7 @@ const Footer = () => {
         {/* Navigation columns */}
         <div className={`grid grid-cols-2 md:grid-cols-12 gap-10 md:gap-12 pt-16 ${isRTL ? "text-right" : ""}`}>
           <div className="col-span-2 md:col-span-4">
-            <p className="font-display text-2xl text-[#FFF9F1] tracking-[-0.01em]" style={{ direction: "ltr" }}>
+            <p className="font-display text-[44px] md:text-[52px] leading-[0.9] text-[#FFF9F1] tracking-[-0.02em]" style={{ direction: "ltr" }}>
               ENOVA
             </p>
             <p className="mt-4 text-[#FDEED8]/90 text-[15px] leading-[1.7] max-w-sm">
