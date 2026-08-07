@@ -15,9 +15,9 @@ const Footer = () => {
 
   return (
     <footer className="surface-deep border-t border-[#F6D3A2]/12">
-      <div className="container mx-auto px-6 lg:px-10 pt-24 pb-14">
+      <div className="container mx-auto px-6 lg:px-10 pt-20 pb-12">
         {/* Editorial statement row */}
-        <div className={`grid md:grid-cols-12 gap-12 pb-16 border-b border-[#F6D3A2]/12 ${isRTL ? "text-right" : ""}`}>
+        <div className={`grid md:grid-cols-12 gap-12 pb-14 border-b border-[#F6D3A2]/12 ${isRTL ? "text-right" : ""}`}>
           <div className="md:col-span-7">
             <p className="eyebrow text-[#C8B59C] mb-6">Get in touch</p>
             <h2 className="font-display text-4xl md:text-6xl leading-[1.02] tracking-[-0.015em] text-[#FFF9F1] max-w-[16ch]">
@@ -42,7 +42,7 @@ const Footer = () => {
         </div>
 
         {/* Navigation columns */}
-        <div className={`grid grid-cols-2 md:grid-cols-12 gap-10 md:gap-12 pt-16 ${isRTL ? "text-right" : ""}`}>
+        <div className={`grid grid-cols-2 md:grid-cols-12 gap-10 md:gap-12 pt-14 ${isRTL ? "text-right" : ""}`}>
           <div className="col-span-2 md:col-span-4">
             <p className="font-display text-[44px] md:text-[52px] leading-[0.9] text-[#FFF9F1] tracking-[-0.02em]" style={{ direction: "ltr" }}>
               ENOVA
@@ -101,7 +101,7 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="mt-16 pt-8 border-t border-[#F6D3A2]/10 flex flex-col md:flex-row justify-between items-center gap-3">
+        <div className="mt-14 pt-8 border-t border-[#F6D3A2]/10 flex flex-col md:flex-row justify-between items-center gap-3">
           <p className="text-[#D9C6AC] text-[13px]">© 2026 Enova. All rights reserved.</p>
           <p className="text-[#D9C6AC] text-[13px] font-display-i italic">Built for operators.</p>
         </div>

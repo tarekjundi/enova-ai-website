@@ -96,7 +96,7 @@ const Navbar = () => {
 
       {/* Mobile fullscreen menu */}
       {mobileMenuOpen && (
-        <div className="lg:hidden fixed inset-0 top-[72px] bg-[#281C0B] px-6 pt-6 pb-16 flex flex-col overflow-y-auto animate-fade-in">
+        <div className="lg:hidden fixed inset-0 top-[80px] bg-[#281C0B] px-6 pt-6 pb-16 flex flex-col overflow-y-auto animate-fade-in">
 
           <div className="flex flex-col">
             {NAV_LINKS.map((link) => (
