@@ -141,22 +141,29 @@ const Industries = () => {
       </section>
 
       {/* Also serving */}
-      <section className="surface-deep py-24 md:py-32 border-b border-[#F6D3A2]/12">
+      <section className="surface-deep py-20 md:py-24 border-b border-[#F6D3A2]/12">
         <div className="container mx-auto px-6 lg:px-10">
           <MotionElement animation="slideUp">
-            <p className="eyebrow text-[#D8C4A8] mb-8">Also serving</p>
+            <p className="eyebrow text-[#D8C4A8] mb-7">Also serving</p>
           </MotionElement>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-x-10 gap-y-0">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-x-10 gap-y-0">
             {MORE.map((m, i) => (
               <MotionElement key={m} animation="slideUp" delay={30 + i * 20}>
-                <p className="font-display text-[#FFF9F1]/90 text-2xl md:text-[28px] py-4 border-b border-[#F6D3A2]/12 tracking-[-0.01em]">
+                <p className="font-body text-[#FDEED8] text-[16px] font-medium py-3.5 border-b border-[#F6D3A2]/12 tracking-[-0.005em]">
                   {m}
                 </p>
               </MotionElement>
             ))}
           </div>
+
+          <MotionElement animation="slideUp" delay={120}>
+            <p className="mt-10 text-[#D8C4A8] text-[15px] leading-[1.75] max-w-[62ch]">
+              If your sector is not listed, start with the workflow. If the process is repetitive and rule-based, there is likely an automation opportunity.
+            </p>
+          </MotionElement>
         </div>
       </section>
+
 
       {/* CTA */}
       <section className="surface-gold py-24 md:py-32">
