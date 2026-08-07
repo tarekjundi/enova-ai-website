@@ -16,7 +16,7 @@ const InsightPost = () => {
       <div className="min-h-screen surface-deep" id="top">
         <Navbar />
         <section className="container mx-auto px-6 lg:px-10 pt-48 pb-40">
-          <p className="eyebrow text-[#C8B59C] mb-6">Not found</p>
+          <p className="eyebrow text-[#D8C4A8] mb-6">Not found</p>
           <h1 className="font-display text-[#FFF9F1] !text-[40px] md:!text-[72px] leading-[1.02] mb-10">
             That article no longer exists.
           </h1>
@@ -39,7 +39,7 @@ const InsightPost = () => {
           <MotionElement animation="slideUp">
             <Link
               to="/insights"
-              className="inline-flex items-center gap-2 eyebrow text-[#C8B59C] hover:text-[#F6D3A2] transition-colors mb-10"
+              className="inline-flex items-center gap-2 eyebrow text-[#D8C4A8] hover:text-[#F6D3A2] transition-colors mb-10"
             >
               <ArrowLeft size={14} /> All insights
             </Link>
@@ -56,7 +56,7 @@ const InsightPost = () => {
 
           <MotionElement animation="slideUp" delay={180}>
             <div className="mt-14 pt-6 border-t border-[#F6D3A2]/20 flex flex-wrap gap-x-8 gap-y-2">
-              <p className="eyebrow text-[#C8B59C]">{post.date}</p>
+              <p className="eyebrow text-[#D8C4A8]">{post.date}</p>
               <p className="text-[#FDEED8]/80 text-[15px] max-w-[60ch]">{post.excerpt}</p>
             </div>
           </MotionElement>

@@ -190,7 +190,7 @@ const CaseStudies = () => {
                     </div>
 
                     <div className="mt-8 pt-6 border-t border-[#3A2915]/15 flex flex-wrap gap-x-6 gap-y-2 items-baseline">
-                      <p className="eyebrow text-[#5C4830]">Systems connected</p>
+                      <p className="eyebrow text-[#4A3720]">Systems connected</p>
                       <p className="text-on-cream-body text-[14px] font-medium">{c.tools}</p>
                     </div>
                   </div>

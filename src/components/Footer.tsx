@@ -19,7 +19,7 @@ const Footer = () => {
         {/* Editorial statement row */}
         <div className={`grid md:grid-cols-12 gap-12 pb-14 border-b border-[#F6D3A2]/12 ${isRTL ? "text-right" : ""}`}>
           <div className="md:col-span-7">
-            <p className="eyebrow text-[#C8B59C] mb-6">Get in touch</p>
+            <p className="eyebrow text-[#D8C4A8] mb-6">Get in touch</p>
             <h2 className="font-display text-4xl md:text-6xl leading-[1.02] tracking-[-0.015em] text-[#FFF9F1] max-w-[16ch]">
               Let&rsquo;s make your operations{" "}
               <span className="italic text-[#F6D3A2]">simpler.</span>
@@ -53,7 +53,7 @@ const Footer = () => {
           </div>
 
           <div className="md:col-span-2 md:col-start-6">
-            <h4 className="eyebrow text-[#C8B59C] mb-5">Services</h4>
+            <h4 className="eyebrow text-[#D8C4A8] mb-5">Services</h4>
             <ul className="space-y-3">
               <li><button onClick={() => go("/services")} className={linkClass}>Opportunity Audit</button></li>
               <li><button onClick={() => go("/services")} className={linkClass}>Workflow Systems</button></li>
@@ -63,7 +63,7 @@ const Footer = () => {
           </div>
 
           <div className="md:col-span-2">
-            <h4 className="eyebrow text-[#C8B59C] mb-5">Company</h4>
+            <h4 className="eyebrow text-[#D8C4A8] mb-5">Company</h4>
             <ul className="space-y-3">
               <li><button onClick={() => go("/about")} className={linkClass}>About</button></li>
               <li><button onClick={() => go("/case-studies")} className={linkClass}>Work</button></li>
@@ -75,7 +75,7 @@ const Footer = () => {
           </div>
 
           <div className="md:col-span-2">
-            <h4 className="eyebrow text-[#C8B59C] mb-5">Connect</h4>
+            <h4 className="eyebrow text-[#D8C4A8] mb-5">Connect</h4>
             <ul className="space-y-3">
               <li>
                 <a href="mailto:tarek@enovaagency.com" className="text-[#FDEED8] hover:text-[#F6D3A2] transition-colors text-[15px]" dir="ltr">

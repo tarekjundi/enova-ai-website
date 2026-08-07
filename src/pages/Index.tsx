@@ -157,7 +157,7 @@ const Index = () => {
       {/* =====================================================
           HERO — deep brown, typography-led, minimal
           ===================================================== */}
-      <section className="surface-deep-grad relative pt-32 md:pt-40 pb-20 md:pb-28">
+      <section className="surface-deep-grad relative pt-28 md:pt-32 pb-16 md:pb-20">
         <div className="container mx-auto px-6 lg:px-10">
           <MotionElement animation="slideUp" delay={40}>
             <p className={`eyebrow text-[#D8C4A8] mb-7 ${dir}`}>
@@ -216,7 +216,7 @@ const Index = () => {
 
           {/* Editorial rule + meta line */}
           <MotionElement animation="slideUp" delay={340}>
-            <div className={`mt-16 md:mt-20 grid md:grid-cols-12 gap-6 items-end ${dir}`}>
+            <div className={`mt-12 md:mt-14 grid md:grid-cols-12 gap-6 items-end ${dir}`}>
               <div className="md:col-span-8">
                 <div className="h-px w-full bg-[#F6D3A2]/25 origin-left animate-rule-in" />
               </div>
@@ -236,10 +236,10 @@ const Index = () => {
           ===================================================== */}
       <section className="surface-cream py-20 md:py-28">
         <div className="container mx-auto px-6 lg:px-10">
-          <div className={`grid md:grid-cols-12 gap-10 md:gap-16 mb-12 md:mb-16 ${dir}`}>
+          <div className={`grid md:grid-cols-12 gap-10 md:gap-16 mb-10 md:mb-12 ${dir}`}>
             <div className="md:col-span-7">
               <MotionElement animation="slideUp">
-                <p className="eyebrow text-[#5C4830] mb-6">The problem we solve</p>
+                <p className="eyebrow text-[#4A3720] mb-6">The problem we solve</p>
                 <h2 className="font-display text-on-cream !text-[40px] md:!text-[68px] leading-[1.02] tracking-[-0.015em] max-w-[18ch]">
                   Your team should not be the{" "}
                   <span className="italic text-[#A56735]">integration layer.</span>
@@ -258,7 +258,7 @@ const Index = () => {
           <ol className="divide-y divide-[#3A2915]/15 border-y border-[#3A2915]/15">
             {PROBLEMS.map((p, i) => (
               <MotionElement key={p.n} animation="slideUp" delay={60 + i * 60}>
-                <li className={`grid md:grid-cols-12 gap-6 md:gap-10 py-10 md:py-12 group ${dir}`}>
+                <li className={`grid md:grid-cols-12 gap-6 md:gap-10 py-8 md:py-10 group ${dir}`}>
                   <div className="md:col-span-2">
                     <span className="font-display italic text-[#A56735] text-4xl md:text-5xl leading-none">
                       {p.n}
@@ -286,10 +286,10 @@ const Index = () => {
           ===================================================== */}
       <section className="surface-ivory py-20 md:py-28">
         <div className="container mx-auto px-6 lg:px-10">
-          <div className={`grid md:grid-cols-12 gap-10 md:gap-16 mb-14 md:mb-20 ${dir}`}>
+          <div className={`grid md:grid-cols-12 gap-10 md:gap-16 mb-10 md:mb-14 ${dir}`}>
             <div className="md:col-span-7">
               <MotionElement animation="slideUp">
-                <p className="eyebrow text-[#5C4830] mb-6">What we do</p>
+                <p className="eyebrow text-[#4A3720] mb-6">What we do</p>
                 <h2 className="font-display text-on-cream !text-[40px] md:!text-[68px] leading-[1.02] tracking-[-0.015em] max-w-[18ch]">
                   Five practices,{" "}
                   <span className="italic text-[#A56735]">one operating system.</span>
@@ -311,7 +311,7 @@ const Index = () => {
                 <article className="border-b border-[#3A2915]/20">
                   <Link
                     to="/services"
-                    className={`group grid md:grid-cols-12 gap-6 md:gap-10 py-12 md:py-16 items-start hover:bg-[#281C0B]/[0.03] transition-colors duration-500 -mx-4 md:-mx-6 px-4 md:px-6 ${dir}`}
+                    className={`group grid md:grid-cols-12 gap-6 md:gap-10 py-9 md:py-12 items-start hover:bg-[#281C0B]/[0.03] transition-colors duration-500 -mx-4 md:-mx-6 px-4 md:px-6 ${dir}`}
                   >
                     <div className="md:col-span-1">
                       <span className="eyebrow text-[#A56735]">{s.n}</span>
@@ -363,7 +363,7 @@ const Index = () => {
       {/* =====================================================
           INDUSTRIES — deep, quiet marquee band
           ===================================================== */}
-      <section className="surface-deep py-24 md:py-32 border-y border-[#F6D3A2]/12">
+      <section className="surface-deep py-20 md:py-24 border-y border-[#F6D3A2]/12">
         <div className="container mx-auto px-6 lg:px-10 mb-14">
           <div className={`grid md:grid-cols-12 gap-8 items-end ${dir}`}>
             <div className="md:col-span-7">
@@ -404,10 +404,10 @@ const Index = () => {
           ===================================================== */}
       <section className="surface-cream py-20 md:py-28">
         <div className="container mx-auto px-6 lg:px-10">
-          <div className={`grid md:grid-cols-12 gap-10 md:gap-16 mb-14 md:mb-20 ${dir}`}>
+          <div className={`grid md:grid-cols-12 gap-10 md:gap-16 mb-10 md:mb-14 ${dir}`}>
             <div className="md:col-span-8">
               <MotionElement animation="slideUp">
-                <p className="eyebrow text-[#5C4830] mb-6">Selected work</p>
+                <p className="eyebrow text-[#4A3720] mb-6">Selected work</p>
                 <h2 className="font-display text-on-cream !text-[40px] md:!text-[68px] leading-[1.02] tracking-[-0.015em] max-w-[20ch]">
                   Measured the way{" "}
                   <span className="italic text-[#A56735]">your CFO measures.</span>
@@ -427,7 +427,7 @@ const Index = () => {
             </div>
           </div>
 
-          <div className="space-y-20 md:space-y-28">
+          <div className="space-y-16 md:space-y-20">
             {CASES.map((c, i) => (
               <MotionElement key={c.industry} animation="slideUp" delay={80 + i * 60}>
                 <article className={`grid md:grid-cols-12 gap-10 md:gap-14 items-start ${dir}`}>
@@ -495,7 +495,7 @@ const Index = () => {
                     </div>
 
                     <div className="mt-8 pt-6 border-t border-[#3A2915]/20 flex flex-wrap gap-x-6 gap-y-2">
-                      <p className="eyebrow text-[#5C4830]">Systems connected</p>
+                      <p className="eyebrow text-[#4A3720]">Systems connected</p>
                       <p className="text-on-cream-body text-[14px] font-medium">{c.tools}</p>
                     </div>
                   </div>
@@ -511,7 +511,7 @@ const Index = () => {
           ===================================================== */}
       <section className="surface-deep-grad py-20 md:py-28">
         <div className="container mx-auto px-6 lg:px-10">
-          <div className={`grid md:grid-cols-12 gap-10 md:gap-16 mb-14 md:mb-20 ${dir}`}>
+          <div className={`grid md:grid-cols-12 gap-10 md:gap-16 mb-10 md:mb-14 ${dir}`}>
             <div className="md:col-span-8">
               <MotionElement animation="slideUp">
                 <p className="eyebrow text-[#D8C4A8] mb-6">The ENOVA Method</p>
@@ -534,7 +534,7 @@ const Index = () => {
             {/* vertical thread */}
             <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-px bg-[#F6D3A2]/20" aria-hidden />
 
-            <ol className="space-y-20 md:space-y-28">
+            <ol className="space-y-16 md:space-y-20">
               {METHOD.map((m, i) => (
                 <MotionElement key={m.n} animation="slideUp" delay={60 + i * 60}>
                   <li className={`relative grid md:grid-cols-12 gap-10 items-start ${dir}`}>
@@ -597,7 +597,7 @@ const Index = () => {
 
             <div className="md:col-span-6 md:col-start-7 md:pt-2">
               <MotionElement animation="slideUp" delay={120}>
-                <p className="eyebrow text-[#5C4830] mb-6">About Enova</p>
+                <p className="eyebrow text-[#4A3720] mb-6">About Enova</p>
                 <h2 className="font-display text-on-cream !text-[40px] md:!text-[60px] leading-[1.03] tracking-[-0.015em] mb-10 max-w-[22ch]">
                   Built by operators, <span className="italic text-[#A56735]">for operators.</span>
                 </h2>
@@ -611,7 +611,7 @@ const Index = () => {
                 </div>
 
                 <div className="mt-12 pt-8 border-t border-[#3A2915]/20">
-                  <p className="eyebrow text-[#5C4830] mb-3">Our commitment</p>
+                  <p className="eyebrow text-[#4A3720] mb-3">Our commitment</p>
                   <p className="font-display italic text-on-cream text-2xl md:text-3xl leading-[1.25] max-w-[30ch]">
                     Make intelligent operations reliable, measurable and owned by your team.
                   </p>
@@ -625,7 +625,7 @@ const Index = () => {
       {/* =====================================================
           FINAL CTA — gold band, high contrast
           ===================================================== */}
-      <section className="surface-gold py-24 md:py-32">
+      <section className="surface-gold py-20 md:py-24">
         <div className="container mx-auto px-6 lg:px-10">
           <div className={`grid md:grid-cols-12 gap-10 md:gap-16 items-end ${dir}`}>
             <MotionElement animation="slideUp" className="md:col-span-8">

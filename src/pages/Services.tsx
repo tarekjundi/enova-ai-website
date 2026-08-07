@@ -129,7 +129,7 @@ const Services = () => {
           <div className="grid md:grid-cols-12 gap-10 md:gap-16 mb-20 md:mb-24">
             <div className="md:col-span-7">
               <MotionElement animation="slideUp">
-                <p className="eyebrow text-[#5C4830] mb-6">What we do</p>
+                <p className="eyebrow text-[#4A3720] mb-6">What we do</p>
                 <h2 className="font-display text-on-cream !text-[40px] md:!text-[68px] leading-[1.02] tracking-[-0.015em] max-w-[18ch]">
                   Four practices,{" "}
                   <span className="italic text-[#A56735]">one operating system.</span>
@@ -172,7 +172,7 @@ const Services = () => {
                   </div>
 
                   <div className="md:col-span-3">
-                    <p className="eyebrow text-[#5C4830] mb-5">Included</p>
+                    <p className="eyebrow text-[#4A3720] mb-5">Included</p>
                     <ul className="space-y-2.5">
                       {p.subs.map((s) => (
                         <li
@@ -197,7 +197,7 @@ const Services = () => {
           <div className="grid md:grid-cols-12 gap-10 md:gap-16 mb-16 md:mb-20">
             <div className="md:col-span-8">
               <MotionElement animation="slideUp">
-                <p className="eyebrow text-[#C8B59C] mb-6">How we work together</p>
+                <p className="eyebrow text-[#D8C4A8] mb-6">How we work together</p>
                 <h2 className="font-display text-[#FFF9F1] !text-[36px] md:!text-[60px] leading-[1.03] tracking-[-0.015em] max-w-[20ch]">
                   Three ways to{" "}
                   <span className="italic text-[#F6D3A2]">start.</span>

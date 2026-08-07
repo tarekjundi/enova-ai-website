@@ -152,7 +152,7 @@ const Process = () => {
                           {s.body}
                         </p>
                         <div className="mt-7 pt-5 border-t border-[#3A2915]/20">
-                          <p className="eyebrow text-[#5C4830] mb-2">Deliverables</p>
+                          <p className="eyebrow text-[#4A3720] mb-2">Deliverables</p>
                           <p className="text-on-cream text-[15px] leading-[1.7]">{s.outputs}</p>
                         </div>
                       </div>
@@ -171,7 +171,7 @@ const Process = () => {
           <div className="grid md:grid-cols-12 gap-10 md:gap-16 mb-14 md:mb-20">
             <div className="md:col-span-8">
               <MotionElement animation="slideUp">
-                <p className="eyebrow text-[#C8B59C] mb-6">Operating principles</p>
+                <p className="eyebrow text-[#D8C4A8] mb-6">Operating principles</p>
                 <h2 className="font-display text-[#FFF9F1] !text-[36px] md:!text-[62px] leading-[1.02] tracking-[-0.015em] max-w-[20ch]">
                   Four rules we{" "}
                   <span className="italic text-[#F6D3A2]">do not bend.</span>

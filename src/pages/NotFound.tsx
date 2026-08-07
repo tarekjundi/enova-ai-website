@@ -17,7 +17,7 @@ const NotFound = () => {
 
       <main className="flex-1 flex items-center">
         <div className="container mx-auto px-6 lg:px-10 pt-40 pb-28">
-          <p className="eyebrow text-[#C8B59C] mb-8">Error 404</p>
+          <p className="eyebrow text-[#D8C4A8] mb-8">Error 404</p>
 
           <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 items-end">
             <div className="lg:col-span-7">
