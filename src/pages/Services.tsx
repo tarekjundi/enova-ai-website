@@ -148,16 +148,16 @@ const Services = () => {
           <div className="border-t border-[#3A2915]/20">
             {PRACTICES.map((p, i) => (
               <MotionElement key={p.n} animation="slideUp" delay={40 + i * 60}>
-                <article className="border-b border-[#3A2915]/20 grid md:grid-cols-12 gap-8 md:gap-10 py-14 md:py-20 group">
+                <article className="border-b border-[#3A2915]/20 grid md:grid-cols-12 gap-8 md:gap-10 py-10 md:py-14 group">
                   <div className="md:col-span-1">
                     <span className="eyebrow text-[#A56735]">{p.n}</span>
                   </div>
 
                   <div className="md:col-span-4">
-                    <h3 className="font-display text-on-cream text-3xl md:text-5xl leading-[1.02] tracking-[-0.015em] mb-4 transition-colors duration-500 group-hover:text-[#A56735]">
+                    <h3 className="font-display text-on-cream text-3xl md:text-5xl leading-[1.02] tracking-[-0.015em] mb-3 transition-colors duration-500 group-hover:text-[#A56735]">
                       {p.title}
                     </h3>
-                    <p className="font-serif-accent text-[#A56735] text-xl md:text-2xl leading-[1.3] max-w-[24ch]">
+                    <p className="font-body text-[#94572A] text-[16px] font-medium leading-[1.6] max-w-[28ch]">
                       {p.tagline}
                     </p>
                   </div>
@@ -166,14 +166,15 @@ const Services = () => {
                     <p className="text-on-cream-body text-[17px] leading-[1.75] max-w-[46ch]">
                       {p.body}
                     </p>
-                    <p className="text-on-cream-muted text-[15px] leading-[1.7] italic mt-5 max-w-[46ch]">
-                      Best for: {p.fit}
+                    <p className="text-on-cream-muted text-[15px] leading-[1.7] mt-4 max-w-[46ch]">
+                      <span className="font-medium">Best for:</span> {p.fit}
                     </p>
                   </div>
 
                   <div className="md:col-span-3">
-                    <p className="eyebrow text-[#4A3720] mb-5">Included</p>
-                    <ul className="space-y-2.5">
+                    <p className="eyebrow text-[#4A3720] mb-4">Typical use cases</p>
+                    <ul className="space-y-2">
+
                       {p.subs.map((s) => (
                         <li
                           key={s}
