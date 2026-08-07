@@ -124,7 +124,7 @@ const Services = () => {
       />
 
       {/* Practices — editorial index */}
-      <section className="surface-cream py-28 md:py-40">
+      <section className="surface-cream py-20 md:py-24">
         <div className="container mx-auto px-6 lg:px-10">
           <div className="grid md:grid-cols-12 gap-10 md:gap-16 mb-20 md:mb-24">
             <div className="md:col-span-7">
@@ -231,7 +231,7 @@ const Services = () => {
       </section>
 
       {/* CTA */}
-      <section className="surface-gold py-24 md:py-32">
+      <section className="surface-gold py-20 md:py-24">
         <div className="container mx-auto px-6 lg:px-10">
           <div className="grid md:grid-cols-12 gap-10 md:gap-16 items-end">
             <MotionElement animation="slideUp" className="md:col-span-8">

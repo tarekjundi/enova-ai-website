@@ -64,7 +64,7 @@ const InsightPost = () => {
       </section>
 
       {/* Body */}
-      <section className="surface-cream py-24 md:py-32">
+      <section className="surface-cream py-20 md:py-24">
         <div className="container mx-auto px-6 lg:px-10">
           <div className="grid md:grid-cols-12">
             <article
@@ -82,7 +82,7 @@ const InsightPost = () => {
 
       {/* More */}
       {others.length > 0 && (
-        <section className="surface-ivory py-24 md:py-32">
+        <section className="surface-ivory py-20 md:py-24">
           <div className="container mx-auto px-6 lg:px-10">
             <p className="eyebrow text-[#6E5940] mb-10">Keep reading</p>
             <div className="border-t border-[#3A2915]/20">

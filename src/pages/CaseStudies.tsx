@@ -202,7 +202,7 @@ const CaseStudies = () => {
       </section>
 
       {/* CTA */}
-      <section className="surface-gold py-24 md:py-32">
+      <section className="surface-gold py-20 md:py-24">
         <div className="container mx-auto px-6 lg:px-10">
           <div className="grid md:grid-cols-12 gap-10 md:gap-16 items-end">
             <MotionElement animation="slideUp" className="md:col-span-8">

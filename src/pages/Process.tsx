@@ -168,7 +168,7 @@ const Process = () => {
       {/* Principles */}
       <section className="surface-deep py-24 md:py-36 border-b border-[#F6D3A2]/12">
         <div className="container mx-auto px-6 lg:px-10">
-          <div className="grid md:grid-cols-12 gap-10 md:gap-16 mb-14 md:mb-20">
+          <div className="grid md:grid-cols-12 gap-10 md:gap-16 mb-10 md:mb-14">
             <div className="md:col-span-8">
               <MotionElement animation="slideUp">
                 <p className="eyebrow text-[#D8C4A8] mb-6">Operating principles</p>
@@ -205,7 +205,7 @@ const Process = () => {
       </section>
 
       {/* CTA */}
-      <section className="surface-gold py-24 md:py-32">
+      <section className="surface-gold py-20 md:py-24">
         <div className="container mx-auto px-6 lg:px-10">
           <div className="grid md:grid-cols-12 gap-10 md:gap-16 items-end">
             <MotionElement animation="slideUp" className="md:col-span-8">

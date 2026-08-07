@@ -29,7 +29,7 @@ const Insights = () => {
 
       {/* Featured */}
       {featured && (
-        <section className="surface-cream py-24 md:py-32">
+        <section className="surface-cream py-20 md:py-24">
           <div className="container mx-auto px-6 lg:px-10">
             <MotionElement animation="slideUp">
               <p className="eyebrow text-[#4A3720] mb-10">Latest</p>

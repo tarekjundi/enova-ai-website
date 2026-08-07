@@ -87,9 +87,9 @@ const Industries = () => {
       />
 
       {/* Core sectors */}
-      <section className="surface-cream py-28 md:py-40">
+      <section className="surface-cream py-20 md:py-24">
         <div className="container mx-auto px-6 lg:px-10">
-          <div className="grid md:grid-cols-12 gap-10 md:gap-16 mb-16 md:mb-24">
+          <div className="grid md:grid-cols-12 gap-10 md:gap-16 mb-10 md:mb-14">
             <div className="md:col-span-7">
               <MotionElement animation="slideUp">
                 <p className="eyebrow text-[#4A3720] mb-6">Where we work most</p>
@@ -111,7 +111,7 @@ const Industries = () => {
           <ol className="border-t border-[#3A2915]/20">
             {SECTORS.map((s, i) => (
               <MotionElement key={s.n} animation="slideUp" delay={40 + i * 40}>
-                <li className="border-b border-[#3A2915]/20 grid md:grid-cols-12 gap-6 md:gap-10 py-10 md:py-14 group hover:bg-[#281C0B]/[0.03] transition-colors duration-500">
+                <li className="border-b border-[#3A2915]/20 grid md:grid-cols-12 gap-6 md:gap-10 py-8 md:py-11 group hover:bg-[#281C0B]/[0.03] transition-colors duration-500">
                   <div className="md:col-span-1">
                     <span className="eyebrow text-[#A56735]">{s.n}</span>
                   </div>
@@ -166,7 +166,7 @@ const Industries = () => {
 
 
       {/* CTA */}
-      <section className="surface-gold py-24 md:py-32">
+      <section className="surface-gold py-20 md:py-24">
         <div className="container mx-auto px-6 lg:px-10">
           <div className="grid md:grid-cols-12 gap-10 md:gap-16 items-end">
             <MotionElement animation="slideUp" className="md:col-span-8">

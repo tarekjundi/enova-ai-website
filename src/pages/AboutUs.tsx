@@ -61,7 +61,7 @@ const AboutUs = () => {
       />
 
       {/* Statement */}
-      <section className="surface-cream py-28 md:py-40">
+      <section className="surface-cream py-20 md:py-24">
         <div className="container mx-auto px-6 lg:px-10">
           <div className="grid md:grid-cols-12 gap-12 md:gap-16 items-start">
             <MotionElement animation="slideUp" className="md:col-span-5">
@@ -121,7 +121,7 @@ const AboutUs = () => {
       {/* Beliefs */}
       <section className="surface-ivory py-24 md:py-36">
         <div className="container mx-auto px-6 lg:px-10">
-          <div className="grid md:grid-cols-12 gap-10 md:gap-16 mb-14 md:mb-20">
+          <div className="grid md:grid-cols-12 gap-10 md:gap-16 mb-10 md:mb-14">
             <div className="md:col-span-8">
               <MotionElement animation="slideUp">
                 <p className="eyebrow text-[#4A3720] mb-6">What we believe</p>
@@ -176,7 +176,7 @@ const AboutUs = () => {
       </section>
 
       {/* CTA */}
-      <section className="surface-gold py-24 md:py-32">
+      <section className="surface-gold py-20 md:py-24">
         <div className="container mx-auto px-6 lg:px-10">
           <div className="grid md:grid-cols-12 gap-10 md:gap-16 items-end">
             <MotionElement animation="slideUp" className="md:col-span-8">
