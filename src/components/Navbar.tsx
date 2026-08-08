@@ -73,7 +73,7 @@ const Navbar = () => {
             rel="noopener noreferrer"
             className="ml-4 xl:ml-6 btn-primary text-[15px] py-3 px-5 xl:px-6 whitespace-nowrap group shadow-[0_0_0_1px_rgba(246,211,162,0.35)]"
           >
-            Book a Consultation
+            Discuss a Workflow
             <ArrowRight
               size={15}
               className="transition-transform duration-300 group-hover:translate-x-0.5"
@@ -123,7 +123,7 @@ const Navbar = () => {
             onClick={() => setMobileMenuOpen(false)}
             className="btn-primary justify-center mt-10 w-full"
           >
-            Book a Consultation
+            Discuss a Workflow
             <ArrowRight size={14} />
           </a>
         </div>
