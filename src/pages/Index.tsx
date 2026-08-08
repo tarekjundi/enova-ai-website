@@ -285,18 +285,18 @@ const Index = () => {
       <section className="surface-ivory py-20 md:py-28">
         <div className="container mx-auto px-6 lg:px-10">
           <div className={`grid md:grid-cols-12 gap-10 md:gap-16 mb-10 md:mb-14 ${dir}`}>
-            <div className="md:col-span-7">
+            <div className="md:col-span-6">
               <MotionElement animation="slideUp">
                 <p className="eyebrow text-[#4A3720] mb-6">What we do</p>
-                <h2 className="font-display text-on-cream !text-[40px] md:!text-[68px] leading-[1.02] tracking-[-0.015em] max-w-[18ch]">
+                <h2 className="font-display text-on-cream !text-[clamp(34px,4.4vw,56px)] leading-[1.05] tracking-[-0.015em] max-w-[18ch]">
                   Five practices,{" "}
                   <span className="italic text-[#A56735]">one operating system.</span>
                 </h2>
               </MotionElement>
             </div>
-            <div className="md:col-span-4 md:col-start-9 md:pt-4">
+            <div className="md:col-span-5 md:col-start-8 md:pt-6">
               <MotionElement animation="slideUp" delay={140}>
-                <p className="text-on-cream-body text-[17px] leading-[1.75] max-w-[44ch]">
+                <p className="text-on-cream-body text-[18px] leading-[1.75] max-w-[62ch]">
                   Every engagement is scoped, built and documented for your team &mdash; delivered as systems your people can own, not black boxes they rent.
                 </p>
               </MotionElement>
@@ -308,27 +308,27 @@ const Index = () => {
               <MotionElement key={s.n} animation="slideUp" delay={40 + i * 60}>
                 <article className="border-b border-[#3A2915]/20">
                   <Link
-                    to="/services"
-                    className={`group grid md:grid-cols-12 gap-6 md:gap-10 py-9 md:py-12 items-start hover:bg-[#281C0B]/[0.03] transition-colors duration-500 -mx-4 md:-mx-6 px-4 md:px-6 ${dir}`}
+                    to={`/services#${s.slug}`}
+                    className={`group grid md:grid-cols-12 gap-5 md:gap-8 py-9 md:py-12 items-start hover:bg-[#281C0B]/[0.03] transition-colors duration-500 -mx-4 md:-mx-6 px-4 md:px-6 ${dir}`}
                   >
                     <div className="md:col-span-1">
                       <span className="eyebrow text-[#A56735]">{s.n}</span>
                     </div>
-                    <div className="md:col-span-4">
-                      <h3 className="font-display text-on-cream text-3xl md:text-5xl leading-[1.02] tracking-[-0.015em] group-hover:text-[#A56735] transition-colors duration-500">
+                    <div className="md:col-span-3">
+                      <h3 className="font-display text-on-cream text-[30px] md:text-[38px] leading-[1.05] tracking-[-0.015em] group-hover:text-[#A56735] transition-colors duration-500">
                         {s.title}
                       </h3>
                     </div>
-                    <div className="md:col-span-6 space-y-5">
-                      <p className="text-on-cream-body text-[17px] leading-[1.75] max-w-[54ch]">
-                        <span className="text-on-cream font-medium">The problem &mdash; </span>
+                    <div className="md:col-span-7 space-y-4">
+                      <p className="text-on-cream-body text-[17px] leading-[1.75] max-w-[66ch]">
+                        <span className="text-on-cream font-semibold">The problem &mdash; </span>
                         {s.problem}
                       </p>
-                      <p className="text-on-cream-body text-[17px] leading-[1.75] max-w-[54ch]">
-                        <span className="text-on-cream font-medium">What we deliver &mdash; </span>
+                      <p className="text-on-cream-body text-[17px] leading-[1.75] max-w-[66ch]">
+                        <span className="text-on-cream font-semibold">What we deliver &mdash; </span>
                         {s.delivers}
                       </p>
-                      <p className="text-on-cream-muted text-[15px] leading-[1.7] italic max-w-[54ch]">
+                      <p className="text-on-cream-muted text-[14px] leading-[1.65] max-w-[66ch]">
                         Best for: {s.fit}
                       </p>
                     </div>
@@ -343,6 +343,7 @@ const Index = () => {
               </MotionElement>
             ))}
           </div>
+
 
           <MotionElement animation="slideUp" delay={200}>
             <div className={`mt-14 ${isRTL ? "text-right" : ""}`}>
