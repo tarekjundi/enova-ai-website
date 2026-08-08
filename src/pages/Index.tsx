@@ -708,8 +708,6 @@ const Index = () => {
                 </a>
               </div>
             </MotionElement>
-
-            </MotionElement>
           </div>
         </div>
       </section>
