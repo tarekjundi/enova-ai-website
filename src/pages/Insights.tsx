@@ -23,7 +23,6 @@ const Insights = () => {
           </>
         }
         intro="Short, practical pieces on what actually works when AI meets a real business process — and what quietly does not."
-        secondary={{ label: "See the work", to: "/case-studies" }}
         meta={`${blogPosts.length} articles`}
       />
 

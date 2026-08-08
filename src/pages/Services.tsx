@@ -274,13 +274,9 @@ const Services = () => {
                   rel="noopener noreferrer"
                   className="btn-ghost-on-cream group !bg-[#281C0B] !text-[#FFF9F1] !border-[#281C0B] hover:!bg-[#15110C]"
                 >
-                  Book a Consultation
+                  Discuss Your Workflow
                   <ArrowRight size={15} className="transition-transform duration-300 group-hover:translate-x-0.5" />
                 </a>
-                <Link to="/contact" className="btn-ghost-on-cream group">
-                  Send a Message
-                  <ArrowUpRight size={15} className="transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
-                </Link>
               </div>
             </MotionElement>
           </div>

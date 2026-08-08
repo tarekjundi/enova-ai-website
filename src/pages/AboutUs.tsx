@@ -52,11 +52,10 @@ const AboutUs = () => {
         }
         intro="A small consultancy for growing businesses that want simpler operations, connected systems and outcomes their leadership can measure."
         cta={{
-          label: "Book a Consultation",
+          label: "Tell Us What You’re Building",
           href: "https://cal.com/tarek-jundi/free-consultation",
           external: true,
         }}
-        secondary={{ label: "See the work", to: "/case-studies" }}
         meta="Est. 2024 · Consulting & Systems"
       />
 
@@ -197,12 +196,9 @@ const AboutUs = () => {
                   rel="noopener noreferrer"
                   className="btn-ghost-on-cream group !bg-[#281C0B] !text-[#FFF9F1] !border-[#281C0B] hover:!bg-[#15110C]"
                 >
-                  Book a Consultation
+                  Tell Us What You&rsquo;re Building
                   <ArrowRight size={15} className="transition-transform duration-300 group-hover:translate-x-0.5" />
                 </a>
-                <Link to="/contact" className="btn-ghost-on-cream">
-                  Send a Message
-                </Link>
               </div>
             </MotionElement>
           </div>
