@@ -8,6 +8,7 @@ import { ArrowRight, ArrowUpRight } from "@phosphor-icons/react";
 
 type Practice = {
   n: string;
+  slug: string;
   title: string;
   tagline: string;
   body: string;
@@ -18,10 +19,28 @@ type Practice = {
 const PRACTICES: Practice[] = [
   {
     n: "01",
-    title: "AI Automation",
-    tagline: "Codify the workflows your business already runs on.",
+    slug: "opportunity-audit",
+    title: "Opportunity Audit",
+    tagline: "Know what to automate before you build anything.",
     body:
-      "We map the repetitive, multi-step work that moves between your tools and rebuild it as reliable automation — with observability, guardrails and clean handoffs back to your team.",
+      "A structured review of how work actually moves through your business, ending in a ranked shortlist of automations scored by impact, effort and payback.",
+    fit: "Leadership teams evaluating where to invest first.",
+    subs: [
+      "Workflow Mapping",
+      "Automation Shortlist",
+      "Impact & Payback Modelling",
+      "Tooling & Data Review",
+      "Delivery Roadmap",
+      "Risk & Governance Notes",
+    ],
+  },
+  {
+    n: "02",
+    slug: "workflow-systems",
+    title: "Workflow Systems",
+    tagline: "Codify the processes your business already runs on.",
+    body:
+      "We rebuild repetitive, multi-step work as reliable automation across your existing tools — with observability, guardrails and clean handoffs back to your team.",
     fit: "Operations and RevOps teams scaling past the copy-paste stage.",
     subs: [
       "Workflow Automation",
@@ -33,51 +52,54 @@ const PRACTICES: Practice[] = [
     ],
   },
   {
-    n: "02",
-    title: "AI Marketing & Sales",
-    tagline: "Grow pipeline without adding headcount.",
-    body:
-      "Research, enrichment, sequencing and reporting built into one system, so your commercial team spends its hours on conversations instead of admin.",
-    fit: "Founder-led sales teams and marketing leads under pipeline pressure.",
-    subs: [
-      "Lead Generation & Enrichment",
-      "Content Operations",
-      "Email & Outbound Automation",
-      "Campaign Measurement",
-      "Proposal Generation",
-      "Attribution Reporting",
-    ],
-  },
-  {
     n: "03",
-    title: "AI Agents",
-    tagline: "Autonomous operators, scoped tightly to your stack.",
+    slug: "knowledge-systems",
+    title: "Knowledge Systems",
+    tagline: "Make institutional knowledge findable in seconds.",
     body:
-      "Assistants that answer, triage and act inside your systems — with defined boundaries, escalation paths and a full audit trail of every action taken.",
-    fit: "Support, service and internal teams drowning in repeat requests.",
+      "Private assistants and searchable knowledge bases grounded in your documents, tickets and history — with sources cited and access scoped to the right people.",
+    fit: "Teams onboarding fast or drowning in repeated internal questions.",
     subs: [
-      "Customer Support Agents",
-      "Sales & Qualification Agents",
       "Internal Assistants",
       "Knowledge Assistants",
-      "Escalation & Routing",
-      "Voice & Chat Interfaces",
+      "Document Search & Retrieval",
+      "SOP & Policy Capture",
+      "Onboarding Enablement",
+      "Access & Permissions",
     ],
   },
   {
     n: "04",
-    title: "Custom AI Development",
-    tagline: "Bespoke systems where off-the-shelf falls short.",
+    slug: "customer-operations",
+    title: "Customer Operations",
+    tagline: "Autonomous operators, scoped tightly to your stack.",
     body:
-      "When the tool you need does not exist, we build it — integrated with your data, deployed to your infrastructure and documented for your engineers.",
-    fit: "Teams with a workflow no vendor has solved properly.",
+      "Assistants that answer, triage and act inside your systems — with defined boundaries, escalation paths and a full audit trail of every action taken.",
+    fit: "Support, success and revenue teams under sustained volume.",
     subs: [
-      "Custom Integrations",
-      "Internal Tools",
+      "Customer Support Agents",
+      "Sales & Qualification Agents",
+      "Escalation & Routing",
+      "Voice & Chat Interfaces",
+      "Lifecycle & Outbound Flows",
+      "Lead Enrichment",
+    ],
+  },
+  {
+    n: "05",
+    slug: "business-intelligence",
+    title: "Business Intelligence",
+    tagline: "Reporting that arrives before the decision does.",
+    body:
+      "Pipelines, dashboards and forecasts your leaders trust — one source of truth, refreshed automatically and integrated with the systems that generate the data.",
+    fit: "Founders and executives making calls without clean data.",
+    subs: [
       "Dashboards & Analytics",
-      "API Development",
       "Data Pipelines",
-      "Model Evaluation",
+      "Reporting Automation",
+      "Attribution Reporting",
+      "Custom Integrations",
+      "API Development",
     ],
   },
 ];
@@ -113,14 +135,13 @@ const Services = () => {
             <span className="italic text-[#F6D3A2]">your stack.</span>
           </>
         }
-        intro="Four practices. Every engagement is scoped, built and handed to your team with documentation and measurement in place."
+        intro="Five practices. Every engagement is scoped, built and handed to your team with documentation and measurement in place."
         cta={{
-          label: "Book a Consultation",
+          label: "Discuss Your Workflow",
           href: "https://cal.com/tarek-jundi/free-consultation",
           external: true,
         }}
-        secondary={{ label: "See the work", to: "/case-studies" }}
-        meta="Four practices · Fixed scope"
+        meta="Five practices · Fixed scope"
       />
 
       {/* Practices — editorial index */}
@@ -131,7 +152,7 @@ const Services = () => {
               <MotionElement animation="slideUp">
                 <p className="eyebrow text-[#4A3720] mb-6">What we do</p>
                 <h2 className="font-display text-on-cream !text-[40px] md:!text-[68px] leading-[1.02] tracking-[-0.015em] max-w-[18ch]">
-                  Four practices,{" "}
+                  Five practices,{" "}
                   <span className="italic text-[#A56735]">one operating system.</span>
                 </h2>
               </MotionElement>
@@ -148,7 +169,7 @@ const Services = () => {
           <div className="border-t border-[#3A2915]/20">
             {PRACTICES.map((p, i) => (
               <MotionElement key={p.n} animation="slideUp" delay={40 + i * 60}>
-                <article className="border-b border-[#3A2915]/20 grid md:grid-cols-12 gap-8 md:gap-10 py-10 md:py-14 group">
+                <article id={p.slug} className="scroll-mt-28 border-b border-[#3A2915]/20 grid md:grid-cols-12 gap-8 md:gap-10 py-10 md:py-14 group">
                   <div className="md:col-span-1">
                     <span className="eyebrow text-[#A56735]">{p.n}</span>
                   </div>
