@@ -371,6 +371,53 @@ const Index = () => {
       </section>
 
       {/* =====================================================
+          TECHNOLOGY — understated supporting infrastructure
+          ===================================================== */}
+      <section className="surface-cream py-16 md:py-24 border-t border-[#3A2915]/15">
+        <div className="container mx-auto px-6 lg:px-10">
+          <div className={`grid md:grid-cols-12 gap-8 md:gap-16 mb-10 md:mb-14 ${dir}`}>
+            <div className="md:col-span-6">
+              <MotionElement animation="slideUp">
+                <h2 className="font-display text-on-cream !text-[clamp(30px,3.8vw,48px)] leading-[1.08] tracking-[-0.015em] max-w-[20ch]">
+                  Built around the tools your business{" "}
+                  <span className="italic text-[#A56735]">already uses.</span>
+                </h2>
+              </MotionElement>
+            </div>
+            <div className="md:col-span-5 md:col-start-8 md:pt-3">
+              <MotionElement animation="slideUp" delay={120}>
+                <p className="text-on-cream-body text-[17px] leading-[1.75] max-w-[62ch]">
+                  We choose technology based on the workflow, not the trend. Enova connects established business platforms with AI, automation and custom software where it creates measurable operational value.
+                </p>
+              </MotionElement>
+            </div>
+          </div>
+
+          <div className="border-t border-[#3A2915]/15">
+            {STACK.map((s, i) => (
+              <MotionElement key={s.group} animation="slideUp" delay={40 + i * 50}>
+                <div className={`grid md:grid-cols-12 gap-4 md:gap-8 py-6 border-b border-[#3A2915]/15 items-baseline ${dir}`}>
+                  <p className="md:col-span-3 eyebrow text-[#4A3720]">{s.group}</p>
+                  <ul className="md:col-span-9 flex flex-wrap gap-x-8 gap-y-3">
+                    {s.items.map((t) => (
+                      <li
+                        key={t}
+                        className="text-on-cream-body text-[16px] tracking-[-0.005em]"
+                      >
+                        {t}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </MotionElement>
+            ))}
+          </div>
+        </div>
+      </section>
+
+
+
+      {/* =====================================================
           INDUSTRIES — deep, quiet marquee band
           ===================================================== */}
       <section className="surface-deep py-20 md:py-24 border-y border-[#F6D3A2]/12">
