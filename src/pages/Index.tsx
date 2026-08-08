@@ -686,7 +686,6 @@ const Index = () => {
         <div className="container mx-auto px-6 lg:px-10">
           <div className={`grid md:grid-cols-12 gap-10 md:gap-16 items-end ${dir}`}>
             <MotionElement animation="slideUp" className="md:col-span-8">
-              <p className="eyebrow text-[#281C0B]/85 mb-6">Start with a conversation</p>
               <h2 className="font-display text-on-cream !text-[clamp(34px,5vw,64px)] leading-[1] tracking-[-0.02em] max-w-[16ch]">
                 Book a 30-minute{" "}
                 <span className="italic">opportunity audit.</span>
@@ -694,7 +693,7 @@ const Index = () => {
             </MotionElement>
 
             <MotionElement animation="slideUp" delay={140} className="md:col-span-4 md:pb-3">
-              <p className="text-[#281C0B]/85 text-[17px] leading-[1.75] mb-8 max-w-[40ch]">
+              <p className="text-[#281C0B]/85 text-[17px] leading-[1.75] mb-8 max-w-[52ch]">
                 No pitch, no obligation. We&rsquo;ll listen to your goals, review one workflow live, and tell you honestly where we&rsquo;d start.
               </p>
               <div className={`flex flex-wrap gap-3 ${isRTL ? "justify-end" : ""}`}>
@@ -704,14 +703,12 @@ const Index = () => {
                   rel="noopener noreferrer"
                   className="btn-ghost-on-cream group !bg-[#281C0B] !text-[#FFF9F1] !border-[#281C0B] hover:!bg-[#15110C]"
                 >
-                  Book an AI Opportunity Audit
+                  Book an Opportunity Audit
                   <ArrowRight size={15} className={`transition-transform duration-300 group-hover:translate-x-0.5 ${isRTL ? "rotate-180" : ""}`} />
                 </a>
-                <Link to="/contact" className="btn-ghost-on-cream group">
-                  Send a Message
-                  <ArrowUpRight size={15} className="transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
-                </Link>
               </div>
+            </MotionElement>
+
             </MotionElement>
           </div>
         </div>
