@@ -159,31 +159,24 @@ const Index = () => {
           ===================================================== */}
       <section className="surface-deep-grad relative pt-28 md:pt-32 pb-16 md:pb-20">
         <div className="container mx-auto px-6 lg:px-10">
-          <MotionElement animation="slideUp" delay={40}>
-            <p className={`eyebrow text-[#D8C4A8] mb-7 ${dir}`}>
-              Intelligent Operations for Ambitious Businesses
-            </p>
-          </MotionElement>
-
-          <div className={`grid lg:grid-cols-12 gap-10 lg:gap-16 items-end ${dir}`}>
+          <div className={`grid lg:grid-cols-12 gap-10 lg:gap-14 items-end ${dir}`}>
             {/* Headline */}
-            <div className="lg:col-span-8">
-              <MotionElement animation="slideUp" delay={120}>
-                <h1 className="font-display text-[#FFF9F1] leading-[1.0] tracking-[-0.02em] !text-[42px] sm:!text-[64px] lg:!text-[104px] break-words">
-                  Turn repetitive work
-                  <br className="hidden sm:block" />{" "}
-                  into{" "}
+            <div className="lg:col-span-7">
+              <MotionElement animation="slideUp" delay={80}>
+                <h1 className="font-display text-[#FFF9F1] leading-[1.04] tracking-[-0.02em] !text-[clamp(38px,7vw,76px)] break-words max-w-[15ch]">
+                  Turn repetitive work into{" "}
                   <span className="italic text-[#F6D3A2]">intelligent operations.</span>
                 </h1>
               </MotionElement>
             </div>
 
             {/* Body + CTAs */}
-            <div className="lg:col-span-4 lg:pb-4">
-              <MotionElement animation="slideUp" delay={220}>
-                <p className="text-[#FDEED8] text-[17px] md:text-[19px] leading-[1.75] max-w-[46ch] mb-8">
+            <div className="lg:col-span-5 lg:pb-3">
+              <MotionElement animation="slideUp" delay={180}>
+                <p className="text-[#FDEED8] text-[18px] md:text-[20px] leading-[1.7] max-w-[62ch] mb-8">
                   Enova AI designs practical automation systems that connect your tools, remove repetitive work, and help your team operate with greater speed and clarity.
                 </p>
+
 
                 <div className={`flex flex-col sm:flex-row sm:flex-wrap sm:items-center gap-3 ${isRTL ? "sm:justify-end" : ""}`}>
                   <a
