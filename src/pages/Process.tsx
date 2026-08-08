@@ -3,7 +3,6 @@ import Footer from "@/components/Footer";
 import ScrollToTop from "@/components/ScrollToTop";
 import PageHeader from "@/components/PageHeader";
 import { MotionElement } from "@/components/MotionElements";
-import { Link } from "react-router-dom";
 import { ArrowRight } from "@phosphor-icons/react";
 
 const STAGES = [
@@ -111,11 +110,10 @@ const Process = () => {
         }
         intro="No multi-quarter strategy decks. Each stage produces something your team can hold, review and act on."
         cta={{
-          label: "Book a Consultation",
+          label: "Start With One Workflow",
           href: "https://cal.com/tarek-jundi/free-consultation",
           external: true,
         }}
-        secondary={{ label: "See the work", to: "/case-studies" }}
         meta="Typical engagement · 4 — 8 weeks"
       />
 
@@ -226,12 +224,9 @@ const Process = () => {
                   rel="noopener noreferrer"
                   className="btn-ghost-on-cream group !bg-[#281C0B] !text-[#FFF9F1] !border-[#281C0B] hover:!bg-[#15110C]"
                 >
-                  Book a Consultation
+                  Start With One Workflow
                   <ArrowRight size={15} className="transition-transform duration-300 group-hover:translate-x-0.5" />
                 </a>
-                <Link to="/contact" className="btn-ghost-on-cream">
-                  Send a Message
-                </Link>
               </div>
             </MotionElement>
           </div>

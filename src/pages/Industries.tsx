@@ -3,7 +3,6 @@ import Footer from "@/components/Footer";
 import ScrollToTop from "@/components/ScrollToTop";
 import PageHeader from "@/components/PageHeader";
 import { MotionElement } from "@/components/MotionElements";
-import { Link } from "react-router-dom";
 import { ArrowRight } from "@phosphor-icons/react";
 
 const SECTORS = [
@@ -78,11 +77,10 @@ const Industries = () => {
         }
         intro="We work across regulated enterprises and fast-moving operators. The tools change; the discipline of scoping, building and measuring does not."
         cta={{
-          label: "Book a Consultation",
+          label: "Tell Us About Your Process",
           href: "https://cal.com/tarek-jundi/free-consultation",
           external: true,
         }}
-        secondary={{ label: "See the work", to: "/case-studies" }}
         meta="20+ sectors served"
       />
 
@@ -186,7 +184,7 @@ const Industries = () => {
                 rel="noopener noreferrer"
                 className="btn-ghost-on-cream group !bg-[#281C0B] !text-[#FFF9F1] !border-[#281C0B] hover:!bg-[#15110C]"
               >
-                Book a Consultation
+                Tell Us About Your Process
                 <ArrowRight size={15} className="transition-transform duration-300 group-hover:translate-x-0.5" />
               </a>
             </MotionElement>

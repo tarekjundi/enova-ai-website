@@ -34,6 +34,7 @@ const PROBLEMS = [
 const SERVICES = [
   {
     n: "01",
+    slug: "opportunity-audit",
     title: "Opportunity Audit",
     problem: "You suspect AI could help, but don't know where to begin.",
     delivers:
@@ -42,6 +43,7 @@ const SERVICES = [
   },
   {
     n: "02",
+    slug: "workflow-systems",
     title: "Workflow Systems",
     problem: "Manual, multi-step processes running across too many tools.",
     delivers:
@@ -50,6 +52,7 @@ const SERVICES = [
   },
   {
     n: "03",
+    slug: "knowledge-systems",
     title: "Knowledge Systems",
     problem: "The answer exists somewhere in your company — no one can find it.",
     delivers:
@@ -58,6 +61,7 @@ const SERVICES = [
   },
   {
     n: "04",
+    slug: "customer-operations",
     title: "Customer Operations",
     problem: "Rising ticket volume, flat headcount, slipping response times.",
     delivers:
@@ -66,6 +70,7 @@ const SERVICES = [
   },
   {
     n: "05",
+    slug: "business-intelligence",
     title: "Business Intelligence",
     problem: "Reports arrive too late to change the decision.",
     delivers:
@@ -137,7 +142,18 @@ const METHOD = [
   },
 ];
 
+const STACK = [
+  { group: "AI", items: ["OpenAI", "Claude"] },
+  { group: "Automation", items: ["Make", "n8n"] },
+  {
+    group: "Business systems",
+    items: ["HubSpot", "Odoo", "Google Workspace", "Slack", "Notion", "Airtable"],
+  },
+  { group: "Engineering", items: ["Supabase", "React", "Python"] },
+];
+
 const INDUSTRIES = [
+
   "Healthcare", "Finance", "Banking", "Insurance", "Real Estate",
   "Construction", "Manufacturing", "Logistics", "Retail", "E-commerce",
   "Hospitality", "Restaurants", "Education", "Legal", "Marketing Agencies",
@@ -157,33 +173,26 @@ const Index = () => {
       {/* =====================================================
           HERO — deep brown, typography-led, minimal
           ===================================================== */}
-      <section className="surface-deep-grad relative pt-28 md:pt-32 pb-16 md:pb-20">
+      <section className="surface-deep-grad relative pt-32 md:pt-40 pb-16 md:pb-20">
         <div className="container mx-auto px-6 lg:px-10">
-          <MotionElement animation="slideUp" delay={40}>
-            <p className={`eyebrow text-[#D8C4A8] mb-7 ${dir}`}>
-              Intelligent Operations for Ambitious Businesses
-            </p>
-          </MotionElement>
-
-          <div className={`grid lg:grid-cols-12 gap-10 lg:gap-16 items-end ${dir}`}>
+          <div className={`grid lg:grid-cols-12 gap-10 lg:gap-14 items-end ${dir}`}>
             {/* Headline */}
-            <div className="lg:col-span-8">
-              <MotionElement animation="slideUp" delay={120}>
-                <h1 className="font-display text-[#FFF9F1] leading-[1.0] tracking-[-0.02em] !text-[42px] sm:!text-[64px] lg:!text-[104px] break-words">
-                  Turn repetitive work
-                  <br className="hidden sm:block" />{" "}
-                  into{" "}
+            <div className="lg:col-span-7">
+              <MotionElement animation="slideUp" delay={80}>
+                <h1 className="font-display text-[#FFF9F1] leading-[1.04] tracking-[-0.02em] !text-[clamp(38px,7vw,76px)] break-words max-w-[15ch]">
+                  Turn repetitive work into{" "}
                   <span className="italic text-[#F6D3A2]">intelligent operations.</span>
                 </h1>
               </MotionElement>
             </div>
 
             {/* Body + CTAs */}
-            <div className="lg:col-span-4 lg:pb-4">
-              <MotionElement animation="slideUp" delay={220}>
-                <p className="text-[#FDEED8] text-[17px] md:text-[19px] leading-[1.75] max-w-[46ch] mb-8">
+            <div className="lg:col-span-5 lg:pb-3">
+              <MotionElement animation="slideUp" delay={180}>
+                <p className="text-[#FDEED8] text-[18px] md:text-[20px] leading-[1.7] max-w-[62ch] mb-8">
                   Enova AI designs practical automation systems that connect your tools, remove repetitive work, and help your team operate with greater speed and clarity.
                 </p>
+
 
                 <div className={`flex flex-col sm:flex-row sm:flex-wrap sm:items-center gap-3 ${isRTL ? "sm:justify-end" : ""}`}>
                   <a
@@ -240,7 +249,7 @@ const Index = () => {
             <div className="md:col-span-7">
               <MotionElement animation="slideUp">
                 <p className="eyebrow text-[#4A3720] mb-6">The problem we solve</p>
-                <h2 className="font-display text-on-cream !text-[40px] md:!text-[68px] leading-[1.02] tracking-[-0.015em] max-w-[18ch]">
+                <h2 className="font-display text-on-cream !text-[clamp(34px,4.6vw,58px)] leading-[1.02] tracking-[-0.015em] max-w-[18ch]">
                   Your team should not be the{" "}
                   <span className="italic text-[#A56735]">integration layer.</span>
                 </h2>
@@ -287,18 +296,18 @@ const Index = () => {
       <section className="surface-ivory py-20 md:py-28">
         <div className="container mx-auto px-6 lg:px-10">
           <div className={`grid md:grid-cols-12 gap-10 md:gap-16 mb-10 md:mb-14 ${dir}`}>
-            <div className="md:col-span-7">
+            <div className="md:col-span-6">
               <MotionElement animation="slideUp">
                 <p className="eyebrow text-[#4A3720] mb-6">What we do</p>
-                <h2 className="font-display text-on-cream !text-[40px] md:!text-[68px] leading-[1.02] tracking-[-0.015em] max-w-[18ch]">
+                <h2 className="font-display text-on-cream !text-[clamp(34px,4.4vw,56px)] leading-[1.05] tracking-[-0.015em] max-w-[18ch]">
                   Five practices,{" "}
                   <span className="italic text-[#A56735]">one operating system.</span>
                 </h2>
               </MotionElement>
             </div>
-            <div className="md:col-span-4 md:col-start-9 md:pt-4">
+            <div className="md:col-span-5 md:col-start-8 md:pt-6">
               <MotionElement animation="slideUp" delay={140}>
-                <p className="text-on-cream-body text-[17px] leading-[1.75] max-w-[44ch]">
+                <p className="text-on-cream-body text-[18px] leading-[1.75] max-w-[62ch]">
                   Every engagement is scoped, built and documented for your team &mdash; delivered as systems your people can own, not black boxes they rent.
                 </p>
               </MotionElement>
@@ -310,27 +319,27 @@ const Index = () => {
               <MotionElement key={s.n} animation="slideUp" delay={40 + i * 60}>
                 <article className="border-b border-[#3A2915]/20">
                   <Link
-                    to="/services"
-                    className={`group grid md:grid-cols-12 gap-6 md:gap-10 py-9 md:py-12 items-start hover:bg-[#281C0B]/[0.03] transition-colors duration-500 -mx-4 md:-mx-6 px-4 md:px-6 ${dir}`}
+                    to={`/services#${s.slug}`}
+                    className={`group grid md:grid-cols-12 gap-5 md:gap-8 py-9 md:py-12 items-start hover:bg-[#281C0B]/[0.03] transition-colors duration-500 -mx-4 md:-mx-6 px-4 md:px-6 ${dir}`}
                   >
                     <div className="md:col-span-1">
                       <span className="eyebrow text-[#A56735]">{s.n}</span>
                     </div>
-                    <div className="md:col-span-4">
-                      <h3 className="font-display text-on-cream text-3xl md:text-5xl leading-[1.02] tracking-[-0.015em] group-hover:text-[#A56735] transition-colors duration-500">
+                    <div className="md:col-span-3">
+                      <h3 className="font-display text-on-cream text-[30px] md:text-[38px] leading-[1.05] tracking-[-0.015em] group-hover:text-[#A56735] transition-colors duration-500">
                         {s.title}
                       </h3>
                     </div>
-                    <div className="md:col-span-6 space-y-5">
-                      <p className="text-on-cream-body text-[17px] leading-[1.75] max-w-[54ch]">
-                        <span className="text-on-cream font-medium">The problem &mdash; </span>
+                    <div className="md:col-span-7 space-y-4">
+                      <p className="text-on-cream-body text-[17px] leading-[1.75] max-w-[66ch]">
+                        <span className="text-on-cream font-semibold">The problem &mdash; </span>
                         {s.problem}
                       </p>
-                      <p className="text-on-cream-body text-[17px] leading-[1.75] max-w-[54ch]">
-                        <span className="text-on-cream font-medium">What we deliver &mdash; </span>
+                      <p className="text-on-cream-body text-[17px] leading-[1.75] max-w-[66ch]">
+                        <span className="text-on-cream font-semibold">What we deliver &mdash; </span>
                         {s.delivers}
                       </p>
-                      <p className="text-on-cream-muted text-[15px] leading-[1.7] italic max-w-[54ch]">
+                      <p className="text-on-cream-muted text-[14px] leading-[1.65] max-w-[66ch]">
                         Best for: {s.fit}
                       </p>
                     </div>
@@ -345,6 +354,7 @@ const Index = () => {
               </MotionElement>
             ))}
           </div>
+
 
           <MotionElement animation="slideUp" delay={200}>
             <div className={`mt-14 ${isRTL ? "text-right" : ""}`}>
@@ -361,6 +371,53 @@ const Index = () => {
       </section>
 
       {/* =====================================================
+          TECHNOLOGY — understated supporting infrastructure
+          ===================================================== */}
+      <section className="surface-cream py-16 md:py-24 border-t border-[#3A2915]/15">
+        <div className="container mx-auto px-6 lg:px-10">
+          <div className={`grid md:grid-cols-12 gap-8 md:gap-16 mb-10 md:mb-14 ${dir}`}>
+            <div className="md:col-span-6">
+              <MotionElement animation="slideUp">
+                <h2 className="font-display text-on-cream !text-[clamp(30px,3.8vw,48px)] leading-[1.08] tracking-[-0.015em] max-w-[20ch]">
+                  Built around the tools your business{" "}
+                  <span className="italic text-[#A56735]">already uses.</span>
+                </h2>
+              </MotionElement>
+            </div>
+            <div className="md:col-span-5 md:col-start-8 md:pt-3">
+              <MotionElement animation="slideUp" delay={120}>
+                <p className="text-on-cream-body text-[17px] leading-[1.75] max-w-[62ch]">
+                  We choose technology based on the workflow, not the trend. Enova connects established business platforms with AI, automation and custom software where it creates measurable operational value.
+                </p>
+              </MotionElement>
+            </div>
+          </div>
+
+          <div className="border-t border-[#3A2915]/15">
+            {STACK.map((s, i) => (
+              <MotionElement key={s.group} animation="slideUp" delay={40 + i * 50}>
+                <div className={`grid md:grid-cols-12 gap-4 md:gap-8 py-6 border-b border-[#3A2915]/15 items-baseline ${dir}`}>
+                  <p className="md:col-span-3 eyebrow text-[#4A3720]">{s.group}</p>
+                  <ul className="md:col-span-9 flex flex-wrap gap-x-8 gap-y-3">
+                    {s.items.map((t) => (
+                      <li
+                        key={t}
+                        className="text-on-cream-body text-[16px] tracking-[-0.005em]"
+                      >
+                        {t}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </MotionElement>
+            ))}
+          </div>
+        </div>
+      </section>
+
+
+
+      {/* =====================================================
           INDUSTRIES — deep, quiet marquee band
           ===================================================== */}
       <section className="surface-deep py-20 md:py-24 border-y border-[#F6D3A2]/12">
@@ -369,7 +426,7 @@ const Index = () => {
             <div className="md:col-span-7">
               <MotionElement animation="slideUp">
                 <p className="eyebrow text-[#D8C4A8] mb-6">Industries</p>
-                <h2 className="font-display text-[#FFF9F1] !text-[36px] md:!text-[56px] leading-[1.05] tracking-[-0.015em] max-w-[22ch]">
+                <h2 className="font-display text-[#FFF9F1] !text-[clamp(32px,4.2vw,52px)] leading-[1.05] tracking-[-0.015em] max-w-[22ch]">
                   Working across{" "}
                   <span className="italic text-[#F6D3A2]">twenty industries.</span>
                 </h2>
@@ -408,7 +465,7 @@ const Index = () => {
             <div className="md:col-span-8">
               <MotionElement animation="slideUp">
                 <p className="eyebrow text-[#4A3720] mb-6">Selected work</p>
-                <h2 className="font-display text-on-cream !text-[40px] md:!text-[68px] leading-[1.02] tracking-[-0.015em] max-w-[20ch]">
+                <h2 className="font-display text-on-cream !text-[clamp(34px,4.6vw,58px)] leading-[1.02] tracking-[-0.015em] max-w-[20ch]">
                   Measured the way{" "}
                   <span className="italic text-[#A56735]">your CFO measures.</span>
                 </h2>
@@ -515,7 +572,7 @@ const Index = () => {
             <div className="md:col-span-8">
               <MotionElement animation="slideUp">
                 <p className="eyebrow text-[#D8C4A8] mb-6">The ENOVA Method</p>
-                <h2 className="font-display text-[#FFF9F1] !text-[40px] md:!text-[68px] leading-[1.02] tracking-[-0.015em] max-w-[20ch]">
+                <h2 className="font-display text-[#FFF9F1] !text-[clamp(34px,4.6vw,58px)] leading-[1.02] tracking-[-0.015em] max-w-[20ch]">
                   A quiet method for{" "}
                   <span className="italic text-[#F6D3A2]">measurable change.</span>
                 </h2>
@@ -546,7 +603,7 @@ const Index = () => {
                     {/* Left cell */}
                     <div className={`md:col-span-5 pl-12 md:pl-0 ${i % 2 === 0 ? "" : "md:order-2 md:pl-16"} ${i % 2 === 0 ? "md:pr-16 md:text-right" : ""}`}>
                       <p className="eyebrow text-[#F6D3A2] mb-4">Stage {m.n}</p>
-                      <h3 className="font-display text-[#FFF9F1] text-5xl md:text-7xl leading-none tracking-[-0.015em]">
+                      <h3 className="font-display text-[#FFF9F1] text-[44px] md:text-[64px] leading-none tracking-[-0.015em]">
                         {m.title}
                       </h3>
                     </div>
@@ -598,7 +655,7 @@ const Index = () => {
             <div className="md:col-span-6 md:col-start-7 md:pt-2">
               <MotionElement animation="slideUp" delay={120}>
                 <p className="eyebrow text-[#4A3720] mb-6">About Enova</p>
-                <h2 className="font-display text-on-cream !text-[40px] md:!text-[60px] leading-[1.03] tracking-[-0.015em] mb-10 max-w-[22ch]">
+                <h2 className="font-display text-on-cream !text-[clamp(32px,4.2vw,52px)] leading-[1.03] tracking-[-0.015em] mb-10 max-w-[22ch]">
                   Built by operators, <span className="italic text-[#A56735]">for operators.</span>
                 </h2>
                 <div className="space-y-6 text-on-cream-body text-[17px] leading-[1.8] max-w-[56ch]">
@@ -629,15 +686,14 @@ const Index = () => {
         <div className="container mx-auto px-6 lg:px-10">
           <div className={`grid md:grid-cols-12 gap-10 md:gap-16 items-end ${dir}`}>
             <MotionElement animation="slideUp" className="md:col-span-8">
-              <p className="eyebrow text-[#281C0B]/85 mb-6">Start with a conversation</p>
-              <h2 className="font-display text-on-cream !text-[42px] md:!text-[80px] leading-[1] tracking-[-0.02em] max-w-[16ch]">
+              <h2 className="font-display text-on-cream !text-[clamp(34px,5vw,64px)] leading-[1] tracking-[-0.02em] max-w-[16ch]">
                 Book a 30-minute{" "}
                 <span className="italic">opportunity audit.</span>
               </h2>
             </MotionElement>
 
             <MotionElement animation="slideUp" delay={140} className="md:col-span-4 md:pb-3">
-              <p className="text-[#281C0B]/85 text-[17px] leading-[1.75] mb-8 max-w-[40ch]">
+              <p className="text-[#281C0B]/85 text-[17px] leading-[1.75] mb-8 max-w-[52ch]">
                 No pitch, no obligation. We&rsquo;ll listen to your goals, review one workflow live, and tell you honestly where we&rsquo;d start.
               </p>
               <div className={`flex flex-wrap gap-3 ${isRTL ? "justify-end" : ""}`}>
@@ -647,13 +703,9 @@ const Index = () => {
                   rel="noopener noreferrer"
                   className="btn-ghost-on-cream group !bg-[#281C0B] !text-[#FFF9F1] !border-[#281C0B] hover:!bg-[#15110C]"
                 >
-                  Book an AI Opportunity Audit
+                  Book an Opportunity Audit
                   <ArrowRight size={15} className={`transition-transform duration-300 group-hover:translate-x-0.5 ${isRTL ? "rotate-180" : ""}`} />
                 </a>
-                <Link to="/contact" className="btn-ghost-on-cream group">
-                  Send a Message
-                  <ArrowUpRight size={15} className="transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
-                </Link>
               </div>
             </MotionElement>
           </div>

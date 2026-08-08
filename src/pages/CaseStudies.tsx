@@ -3,7 +3,6 @@ import Footer from "@/components/Footer";
 import ScrollToTop from "@/components/ScrollToTop";
 import PageHeader from "@/components/PageHeader";
 import { MotionElement } from "@/components/MotionElements";
-import { Link } from "react-router-dom";
 import { ArrowRight } from "@phosphor-icons/react";
 
 const CASES = [
@@ -96,11 +95,10 @@ const CaseStudies = () => {
         }
         intro="Four engagements, described plainly: what was broken, what we built, and what changed after it shipped."
         cta={{
-          label: "Book a Consultation",
+          label: "Discuss a Similar System",
           href: "https://cal.com/tarek-jundi/free-consultation",
           external: true,
         }}
-        secondary={{ label: "See our process", to: "/process" }}
         meta="Four engagements · 2024 — 2025"
       />
 
@@ -223,12 +221,9 @@ const CaseStudies = () => {
                   rel="noopener noreferrer"
                   className="btn-ghost-on-cream group !bg-[#281C0B] !text-[#FFF9F1] !border-[#281C0B] hover:!bg-[#15110C]"
                 >
-                  Book a Consultation
+                  Discuss a Similar System
                   <ArrowRight size={15} className="transition-transform duration-300 group-hover:translate-x-0.5" />
                 </a>
-                <Link to="/services" className="btn-ghost-on-cream">
-                  View Services
-                </Link>
               </div>
             </MotionElement>
           </div>

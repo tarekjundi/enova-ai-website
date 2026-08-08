@@ -200,11 +200,6 @@ const Contact = () => {
           </>
         }
         intro="Every message is read personally. Expect a reply within one business day — usually with a few questions before we suggest a call."
-        cta={{
-          label: "Book a Consultation",
-          href: "https://cal.com/tarek-jundi/free-consultation",
-          external: true,
-        }}
         meta="Reply within one business day"
       />
 
