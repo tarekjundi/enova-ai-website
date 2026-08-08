@@ -3,7 +3,6 @@ import Footer from "@/components/Footer";
 import ScrollToTop from "@/components/ScrollToTop";
 import PageHeader from "@/components/PageHeader";
 import { MotionElement } from "@/components/MotionElements";
-import { Link } from "react-router-dom";
 import { ArrowRight } from "@phosphor-icons/react";
 
 const CASES = [
