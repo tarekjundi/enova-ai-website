@@ -3,8 +3,9 @@ import Footer from "@/components/Footer";
 import ScrollToTop from "@/components/ScrollToTop";
 import PageHeader from "@/components/PageHeader";
 import { MotionElement } from "@/components/MotionElements";
-import { Link } from "react-router-dom";
-import { ArrowRight, ArrowUpRight } from "@phosphor-icons/react";
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
+import { ArrowRight } from "@phosphor-icons/react";
 
 type Practice = {
   n: string;
@@ -123,6 +124,18 @@ const ENGAGEMENT = [
 ];
 
 const Services = () => {
+  const { hash } = useLocation();
+
+  useEffect(() => {
+    if (!hash) return;
+    const el = document.getElementById(hash.slice(1));
+    if (el) {
+      requestAnimationFrame(() =>
+        el.scrollIntoView({ behavior: "smooth", block: "start" })
+      );
+    }
+  }, [hash]);
+
   return (
     <div className="min-h-screen surface-deep overflow-x-hidden" id="top">
       <Navbar />

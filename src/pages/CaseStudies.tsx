@@ -100,7 +100,6 @@ const CaseStudies = () => {
           href: "https://cal.com/tarek-jundi/free-consultation",
           external: true,
         }}
-        secondary={{ label: "See our process", to: "/process" }}
         meta="Four engagements · 2024 — 2025"
       />
 
