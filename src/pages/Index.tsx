@@ -249,7 +249,7 @@ const Index = () => {
             <div className="md:col-span-7">
               <MotionElement animation="slideUp">
                 <p className="eyebrow text-[#4A3720] mb-6">The problem we solve</p>
-                <h2 className="font-display text-on-cream !text-[40px] md:!text-[68px] leading-[1.02] tracking-[-0.015em] max-w-[18ch]">
+                <h2 className="font-display text-on-cream !text-[clamp(34px,4.6vw,58px)] leading-[1.02] tracking-[-0.015em] max-w-[18ch]">
                   Your team should not be the{" "}
                   <span className="italic text-[#A56735]">integration layer.</span>
                 </h2>
@@ -426,7 +426,7 @@ const Index = () => {
             <div className="md:col-span-7">
               <MotionElement animation="slideUp">
                 <p className="eyebrow text-[#D8C4A8] mb-6">Industries</p>
-                <h2 className="font-display text-[#FFF9F1] !text-[36px] md:!text-[56px] leading-[1.05] tracking-[-0.015em] max-w-[22ch]">
+                <h2 className="font-display text-[#FFF9F1] !text-[clamp(32px,4.2vw,52px)] leading-[1.05] tracking-[-0.015em] max-w-[22ch]">
                   Working across{" "}
                   <span className="italic text-[#F6D3A2]">twenty industries.</span>
                 </h2>
@@ -465,7 +465,7 @@ const Index = () => {
             <div className="md:col-span-8">
               <MotionElement animation="slideUp">
                 <p className="eyebrow text-[#4A3720] mb-6">Selected work</p>
-                <h2 className="font-display text-on-cream !text-[40px] md:!text-[68px] leading-[1.02] tracking-[-0.015em] max-w-[20ch]">
+                <h2 className="font-display text-on-cream !text-[clamp(34px,4.6vw,58px)] leading-[1.02] tracking-[-0.015em] max-w-[20ch]">
                   Measured the way{" "}
                   <span className="italic text-[#A56735]">your CFO measures.</span>
                 </h2>
@@ -572,7 +572,7 @@ const Index = () => {
             <div className="md:col-span-8">
               <MotionElement animation="slideUp">
                 <p className="eyebrow text-[#D8C4A8] mb-6">The ENOVA Method</p>
-                <h2 className="font-display text-[#FFF9F1] !text-[40px] md:!text-[68px] leading-[1.02] tracking-[-0.015em] max-w-[20ch]">
+                <h2 className="font-display text-[#FFF9F1] !text-[clamp(34px,4.6vw,58px)] leading-[1.02] tracking-[-0.015em] max-w-[20ch]">
                   A quiet method for{" "}
                   <span className="italic text-[#F6D3A2]">measurable change.</span>
                 </h2>
@@ -603,7 +603,7 @@ const Index = () => {
                     {/* Left cell */}
                     <div className={`md:col-span-5 pl-12 md:pl-0 ${i % 2 === 0 ? "" : "md:order-2 md:pl-16"} ${i % 2 === 0 ? "md:pr-16 md:text-right" : ""}`}>
                       <p className="eyebrow text-[#F6D3A2] mb-4">Stage {m.n}</p>
-                      <h3 className="font-display text-[#FFF9F1] text-5xl md:text-7xl leading-none tracking-[-0.015em]">
+                      <h3 className="font-display text-[#FFF9F1] text-[44px] md:text-[64px] leading-none tracking-[-0.015em]">
                         {m.title}
                       </h3>
                     </div>
@@ -655,7 +655,7 @@ const Index = () => {
             <div className="md:col-span-6 md:col-start-7 md:pt-2">
               <MotionElement animation="slideUp" delay={120}>
                 <p className="eyebrow text-[#4A3720] mb-6">About Enova</p>
-                <h2 className="font-display text-on-cream !text-[40px] md:!text-[60px] leading-[1.03] tracking-[-0.015em] mb-10 max-w-[22ch]">
+                <h2 className="font-display text-on-cream !text-[clamp(32px,4.2vw,52px)] leading-[1.03] tracking-[-0.015em] mb-10 max-w-[22ch]">
                   Built by operators, <span className="italic text-[#A56735]">for operators.</span>
                 </h2>
                 <div className="space-y-6 text-on-cream-body text-[17px] leading-[1.8] max-w-[56ch]">
@@ -687,7 +687,7 @@ const Index = () => {
           <div className={`grid md:grid-cols-12 gap-10 md:gap-16 items-end ${dir}`}>
             <MotionElement animation="slideUp" className="md:col-span-8">
               <p className="eyebrow text-[#281C0B]/85 mb-6">Start with a conversation</p>
-              <h2 className="font-display text-on-cream !text-[42px] md:!text-[80px] leading-[1] tracking-[-0.02em] max-w-[16ch]">
+              <h2 className="font-display text-on-cream !text-[clamp(34px,5vw,64px)] leading-[1] tracking-[-0.02em] max-w-[16ch]">
                 Book a 30-minute{" "}
                 <span className="italic">opportunity audit.</span>
               </h2>
