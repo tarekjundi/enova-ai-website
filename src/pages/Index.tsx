@@ -34,6 +34,7 @@ const PROBLEMS = [
 const SERVICES = [
   {
     n: "01",
+    slug: "opportunity-audit",
     title: "Opportunity Audit",
     problem: "You suspect AI could help, but don't know where to begin.",
     delivers:
@@ -42,6 +43,7 @@ const SERVICES = [
   },
   {
     n: "02",
+    slug: "workflow-systems",
     title: "Workflow Systems",
     problem: "Manual, multi-step processes running across too many tools.",
     delivers:
@@ -50,6 +52,7 @@ const SERVICES = [
   },
   {
     n: "03",
+    slug: "knowledge-systems",
     title: "Knowledge Systems",
     problem: "The answer exists somewhere in your company — no one can find it.",
     delivers:
@@ -58,6 +61,7 @@ const SERVICES = [
   },
   {
     n: "04",
+    slug: "customer-operations",
     title: "Customer Operations",
     problem: "Rising ticket volume, flat headcount, slipping response times.",
     delivers:
@@ -66,6 +70,7 @@ const SERVICES = [
   },
   {
     n: "05",
+    slug: "business-intelligence",
     title: "Business Intelligence",
     problem: "Reports arrive too late to change the decision.",
     delivers:
