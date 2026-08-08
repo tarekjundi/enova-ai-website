@@ -142,7 +142,18 @@ const METHOD = [
   },
 ];
 
+const STACK = [
+  { group: "AI", items: ["OpenAI", "Claude"] },
+  { group: "Automation", items: ["Make", "n8n"] },
+  {
+    group: "Business systems",
+    items: ["HubSpot", "Odoo", "Google Workspace", "Slack", "Notion", "Airtable"],
+  },
+  { group: "Engineering", items: ["Supabase", "React", "Python"] },
+];
+
 const INDUSTRIES = [
+
   "Healthcare", "Finance", "Banking", "Insurance", "Real Estate",
   "Construction", "Manufacturing", "Logistics", "Retail", "E-commerce",
   "Hospitality", "Restaurants", "Education", "Legal", "Marketing Agencies",
