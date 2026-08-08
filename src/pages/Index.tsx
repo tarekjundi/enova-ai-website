@@ -157,7 +157,7 @@ const Index = () => {
       {/* =====================================================
           HERO — deep brown, typography-led, minimal
           ===================================================== */}
-      <section className="surface-deep-grad relative pt-28 md:pt-32 pb-16 md:pb-20">
+      <section className="surface-deep-grad relative pt-32 md:pt-40 pb-16 md:pb-20">
         <div className="container mx-auto px-6 lg:px-10">
           <div className={`grid lg:grid-cols-12 gap-10 lg:gap-14 items-end ${dir}`}>
             {/* Headline */}
