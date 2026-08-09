@@ -50,11 +50,6 @@ const AboutUs = () => {
           </>
         }
         intro="A small consultancy for growing businesses that want simpler operations, connected systems and outcomes their leadership can measure."
-        cta={{
-          label: "Tell Us What You’re Building",
-          href: "https://cal.com/tarek-jundi/free-consultation",
-          external: true,
-        }}
         meta="Est. 2024 · Consulting & Systems"
       />
 

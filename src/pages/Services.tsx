@@ -149,11 +149,6 @@ const Services = () => {
           </>
         }
         intro="Five practices. Every engagement is scoped, built and handed to your team with documentation and measurement in place."
-        cta={{
-          label: "Discuss Your Workflow",
-          href: "https://cal.com/tarek-jundi/free-consultation",
-          external: true,
-        }}
         meta="Five practices · Fixed scope"
       />
 

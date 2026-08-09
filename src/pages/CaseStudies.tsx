@@ -94,11 +94,6 @@ const CaseStudies = () => {
           </>
         }
         intro="Four engagements, described plainly: what was broken, what we built, and what changed after it shipped."
-        cta={{
-          label: "Discuss a Similar System",
-          href: "https://cal.com/tarek-jundi/free-consultation",
-          external: true,
-        }}
         meta="Four engagements · 2024 — 2025"
       />
 

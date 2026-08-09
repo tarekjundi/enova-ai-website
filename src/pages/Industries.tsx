@@ -76,11 +76,6 @@ const Industries = () => {
           </>
         }
         intro="We work across regulated enterprises and fast-moving operators. The tools change; the discipline of scoping, building and measuring does not."
-        cta={{
-          label: "Tell Us About Your Process",
-          href: "https://cal.com/tarek-jundi/free-consultation",
-          external: true,
-        }}
         meta="20+ sectors served"
       />
 

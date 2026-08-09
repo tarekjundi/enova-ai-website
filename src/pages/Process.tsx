@@ -109,11 +109,6 @@ const Process = () => {
           </>
         }
         intro="No multi-quarter strategy decks. Each stage produces something your team can hold, review and act on."
-        cta={{
-          label: "Start With One Workflow",
-          href: "https://cal.com/tarek-jundi/free-consultation",
-          external: true,
-        }}
         meta="Typical engagement · 4 — 8 weeks"
       />
 
