@@ -5,7 +5,6 @@ import PageHeader from "@/components/PageHeader";
 import { MotionElement } from "@/components/MotionElements";
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
-import { ArrowRight } from "@phosphor-icons/react";
 
 type Practice = {
   n: string;
