@@ -22,7 +22,7 @@ export const FlowDiagram = ({
   className?: string;
 }) => {
   const t = tones[tone];
-  const step = 620 / (labels.length - 1);
+  const step = 500 / (labels.length - 1);
 
   return (
     <svg
@@ -31,9 +31,9 @@ export const FlowDiagram = ({
       aria-label={`System flow: ${labels.join(" to ")}`}
       className={`w-full h-auto ${className}`}
     >
-      <line x1="20" y1="60" x2="640" y2="60" stroke={t.line} strokeWidth="1" />
+      <line x1="80" y1="60" x2="580" y2="60" stroke={t.line} strokeWidth="1" />
       {labels.map((l, i) => {
-        const x = 20 + i * step;
+        const x = 80 + i * step;
         const isHuman = i === labels.length - 2 && labels.length > 2;
         return (
           <g key={l}>
@@ -65,7 +65,7 @@ export const FlowDiagram = ({
           </g>
         );
       })}
-      <path d="M632 55 L640 60 L632 65" fill="none" stroke={t.accent} strokeWidth="1" />
+      <path d="M572 55 L580 60 L572 65" fill="none" stroke={t.accent} strokeWidth="1" />
     </svg>
   );
 };

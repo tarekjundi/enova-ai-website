@@ -144,7 +144,7 @@ const Index = () => {
       <Navbar />
 
       {/* ============ HERO — Composition A: editorial split ============ */}
-      <section className="surface-deep-grad pt-32 md:pt-36 pb-16 md:pb-20 md:min-h-[76vh] flex items-center">
+      <section className="surface-deep-grad pt-32 md:pt-36 pb-16 md:pb-20">
         <div className="container mx-auto px-6 lg:px-10 w-full">
           <div className="measure-page grid lg:grid-cols-12 gap-10 lg:gap-16 items-end">
             <div className="lg:col-span-7">
@@ -183,7 +183,7 @@ const Index = () => {
           </div>
 
           <MotionElement animation="slideUp" delay={280}>
-            <div className="measure-page mt-16 md:mt-20 max-w-[760px]">
+            <div className="measure-page mt-14 md:mt-16 max-w-[720px]">
               <FlowDiagram tone="deep" labels={["Trigger", "Logic", "Human review", "Action"]} />
             </div>
           </MotionElement>
