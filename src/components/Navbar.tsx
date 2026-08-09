@@ -50,7 +50,7 @@ const Navbar = () => {
         </Link>
 
         {/* Desktop */}
-        <div className="hidden lg:flex items-center gap-0.5 xl:gap-1.5">
+        <div className="hidden lg:flex items-center gap-1 xl:gap-2">
           {NAV_LINKS.map((link) => (
             <Link
               key={link.to}
@@ -66,20 +66,8 @@ const Navbar = () => {
               {link.label}
             </Link>
           ))}
-
-          <a
-            href="https://cal.com/tarek-jundi/free-consultation"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="ml-4 xl:ml-6 btn-primary text-[15px] py-3 px-5 xl:px-6 whitespace-nowrap group shadow-[0_0_0_1px_rgba(246,211,162,0.35)]"
-          >
-            Discuss a Workflow
-            <ArrowRight
-              size={15}
-              className="transition-transform duration-300 group-hover:translate-x-0.5"
-            />
-          </a>
         </div>
+
 
 
 
