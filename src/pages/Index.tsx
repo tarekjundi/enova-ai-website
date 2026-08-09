@@ -213,17 +213,17 @@ const Index = () => {
               </div>
             </div>
 
-            <ol className="grid md:grid-cols-2 gap-x-16 gap-y-12">
+            <div className="grid md:grid-cols-2 gap-x-16 gap-y-12">
               {PROBLEMS.map((p, i) => (
                 <MotionElement key={p.n} animation="slideUp" delay={60 + i * 50}>
-                  <li>
+                  <div>
                     <span className="eyebrow text-[#A56735]">{p.n}</span>
                     <h3 className="font-display text-on-cream t-item mt-3 mb-3">{p.title}</h3>
                     <p className="text-on-cream-body t-body-sm max-w-[46ch]">{p.body}</p>
-                  </li>
+                  </div>
                 </MotionElement>
               ))}
-            </ol>
+            </div>
           </div>
         </div>
       </section>
@@ -414,10 +414,10 @@ const Index = () => {
 
             <div className="relative max-w-[900px]">
               <div className="absolute left-[6px] top-2 bottom-2 w-px bg-[#3A2915]/20" aria-hidden />
-              <ol className="space-y-12">
+              <div className="space-y-12">
                 {METHOD.map((m, i) => (
                   <MotionElement key={m.n} animation="slideUp" delay={50 + i * 50}>
-                    <li className="relative pl-10 md:pl-14">
+                    <div className="relative pl-10 md:pl-14">
                       <span className="absolute left-0 top-2.5 block w-[13px] h-[13px] rounded-full border border-[#3A2915]/35 bg-[#FFF9F1]" />
                       <div className="grid md:grid-cols-12 gap-4 md:gap-10">
                         <div className="md:col-span-4">
@@ -432,10 +432,10 @@ const Index = () => {
                           </p>
                         </div>
                       </div>
-                    </li>
+                    </div>
                   </MotionElement>
                 ))}
-              </ol>
+              </div>
             </div>
 
             <MotionElement animation="slideUp" delay={200}>
