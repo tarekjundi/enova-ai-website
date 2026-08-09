@@ -168,37 +168,6 @@ const AboutUs = () => {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="surface-gold py-20 md:py-24">
-        <div className="container mx-auto px-6 lg:px-10">
-          <div className="grid md:grid-cols-12 gap-10 md:gap-16 items-end">
-            <MotionElement animation="slideUp" className="md:col-span-8">
-              <p className="eyebrow text-[#281C0B]/85 mb-6">Work with us</p>
-              <h2 className="font-display text-on-cream !text-[40px] md:!text-[76px] leading-[1] tracking-[-0.02em] max-w-[16ch]">
-                A short conversation is{" "}
-                <span className="italic">the whole commitment.</span>
-              </h2>
-            </MotionElement>
-            <MotionElement animation="slideUp" delay={140} className="md:col-span-4 md:pb-3">
-              <p className="text-[#281C0B]/85 text-[17px] leading-[1.75] mb-8 max-w-[40ch]">
-                Tell us how the work runs today. We&rsquo;ll tell you honestly whether we are the right people for it.
-              </p>
-              <div className="flex flex-wrap gap-3">
-                <a
-                  href="https://cal.com/tarek-jundi/free-consultation"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn-ghost-on-cream group !bg-[#281C0B] !text-[#FFF9F1] !border-[#281C0B] hover:!bg-[#15110C]"
-                >
-                  Tell Us What You&rsquo;re Building
-                  <ArrowRight size={15} className="transition-transform duration-300 group-hover:translate-x-0.5" />
-                </a>
-              </div>
-            </MotionElement>
-          </div>
-        </div>
-      </section>
-
       <Footer />
       <ScrollToTop />
     </div>
