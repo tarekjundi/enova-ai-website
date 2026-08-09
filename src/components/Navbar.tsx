@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { ArrowRight, X, List } from "@phosphor-icons/react";
+import { X, List } from "@phosphor-icons/react";
 
 const NAV_LINKS = [
   { to: "/services", label: "Services" },
