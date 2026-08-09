@@ -103,17 +103,12 @@ const Navbar = () => {
               </Link>
             ))}
           </div>
+          <p className="mt-10 text-[#D8C4A8] text-[15px] leading-[1.6]">
+            <a href="mailto:tarek@enovaagency.com" className="hover:text-[#F6D3A2] transition-colors" dir="ltr">
+              tarek@enovaagency.com
+            </a>
+          </p>
 
-          <a
-            href="https://cal.com/tarek-jundi/free-consultation"
-            target="_blank"
-            rel="noopener noreferrer"
-            onClick={() => setMobileMenuOpen(false)}
-            className="btn-primary justify-center mt-10 w-full"
-          >
-            Discuss a Workflow
-            <ArrowRight size={14} />
-          </a>
         </div>
       )}
     </nav>
