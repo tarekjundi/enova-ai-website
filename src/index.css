@@ -137,13 +137,37 @@
   .font-body        { font-family: 'Work Sans', system-ui, sans-serif; }
   .font-serif-accent{ font-family: 'Instrument Serif', Georgia, serif; font-style: italic; font-weight: 400; letter-spacing: -0.01em; }
 
+  /* --- Type scale (one system, used everywhere) --- */
+  .t-hero    { font-size: clamp(42px, 6.6vw, 96px)  !important; line-height: 0.96; letter-spacing: -0.022em; }
+  .t-page    { font-size: clamp(36px, 5vw, 74px)    !important; line-height: 1.0;  letter-spacing: -0.02em; }
+  .t-section { font-size: clamp(30px, 3.9vw, 58px)  !important; line-height: 1.04; letter-spacing: -0.018em; }
+  .t-item    { font-size: clamp(26px, 2.4vw, 36px)  !important; line-height: 1.1;  letter-spacing: -0.015em; }
+  .t-body    { font-size: clamp(17px, 1.15vw, 20px); line-height: 1.62; }
+  .t-body-sm { font-size: clamp(16px, 0.95vw, 18px); line-height: 1.62; }
+  .t-meta    { font-size: 13px; line-height: 1.5; }
+
+  /* --- Spacing system --- */
+  .pad-section  { padding-top: 72px; padding-bottom: 72px; }
+  .pad-compact  { padding-top: 56px; padding-bottom: 56px; }
+  .pad-large    { padding-top: 80px; padding-bottom: 80px; }
+  @media (min-width: 768px)  { .pad-section { padding-top: 96px;  padding-bottom: 96px; }
+                               .pad-compact { padding-top: 76px;  padding-bottom: 76px; }
+                               .pad-large   { padding-top: 112px; padding-bottom: 112px; } }
+  @media (min-width: 1280px) { .pad-section { padding-top: 112px; padding-bottom: 112px; }
+                               .pad-compact { padding-top: 88px;  padding-bottom: 88px; }
+                               .pad-large   { padding-top: 132px; padding-bottom: 132px; } }
+
+  /* Controlled editorial measure so content never stretches a 1920 monitor */
+  .measure-page { max-width: 1180px; margin-left: auto; margin-right: auto; }
+
   .eyebrow {
     font-family: 'Work Sans', system-ui, sans-serif;
     text-transform: uppercase;
-    letter-spacing: 0.2em;
-    font-size: 0.8438rem;
+    letter-spacing: 0.16em;
+    font-size: 0.8125rem;
     font-weight: 600;
   }
+
 
   /* --- Section surfaces (no grids, no glow) --- */
   .surface-deep {
@@ -189,38 +213,51 @@
     opacity: 0.55;
   }
 
-  /* Buttons — editorial */
+
+  /* Buttons — editorial, restrained */
   .btn-primary {
-    display: inline-flex; align-items: center; gap: 0.6rem;
+    display: inline-flex; align-items: center; gap: 0.55rem;
     background: #F6D3A2; color: #281C0B;
-    padding: 0.95rem 1.6rem;
+    height: 48px; padding: 0 1.35rem;
     font-weight: 500; font-size: 0.9375rem; letter-spacing: -0.005em;
-    border-radius: 4px;
-    transition: background 200ms ease, transform 200ms ease;
+    border-radius: 3px;
+    transition: background 200ms ease;
   }
   .btn-primary:hover { background: #F0C68A; }
 
   .btn-ghost-on-deep {
-    display: inline-flex; align-items: center; gap: 0.6rem;
+    display: inline-flex; align-items: center; gap: 0.55rem;
     background: transparent; color: #FFF9F1;
-    padding: 0.9rem 1.55rem;
+    height: 48px; padding: 0 1.3rem;
     font-weight: 500; font-size: 0.9375rem;
     border: 1px solid rgba(246,211,162,0.45);
-    border-radius: 4px;
+    border-radius: 3px;
     transition: border-color 200ms ease, background 200ms ease;
   }
   .btn-ghost-on-deep:hover { border-color: #F6D3A2; background: rgba(246,211,162,0.06); }
 
   .btn-ghost-on-cream {
-    display: inline-flex; align-items: center; gap: 0.6rem;
+    display: inline-flex; align-items: center; gap: 0.55rem;
     background: transparent; color: #281C0B;
-    padding: 0.9rem 1.55rem;
+    height: 48px; padding: 0 1.3rem;
     font-weight: 500; font-size: 0.9375rem;
     border: 1px solid rgba(40,28,11,0.35);
-    border-radius: 4px;
+    border-radius: 3px;
     transition: border-color 200ms ease, background 200ms ease;
   }
   .btn-ghost-on-cream:hover { border-color: #281C0B; background: rgba(40,28,11,0.04); }
+
+  /* Quiet text links — the default action across the site */
+  .link-quiet {
+    display: inline-flex; align-items: center; gap: 0.45rem;
+    font-size: 0.9375rem; font-weight: 500;
+    padding-bottom: 2px;
+    border-bottom: 1px solid currentColor;
+    opacity: 0.9;
+    transition: opacity 200ms ease, color 200ms ease;
+  }
+  .link-quiet:hover { opacity: 1; }
+
 
   /* Legacy glass utilities retained for other pages */
   .glass         { background: hsla(33, 55%, 13%, 0.92); border: 1px solid hsla(33, 30%, 22%, 0.6); }
