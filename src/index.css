@@ -213,27 +213,6 @@
     opacity: 0.55;
   }
 
-  /* Buttons — editorial */
-  .btn-primary {
-    display: inline-flex; align-items: center; gap: 0.6rem;
-    background: #F6D3A2; color: #281C0B;
-    padding: 0.95rem 1.6rem;
-    font-weight: 500; font-size: 0.9375rem; letter-spacing: -0.005em;
-    border-radius: 4px;
-    transition: background 200ms ease, transform 200ms ease;
-  }
-  .btn-primary:hover { background: #F0C68A; }
-
-  .btn-ghost-on-deep {
-    display: inline-flex; align-items: center; gap: 0.6rem;
-    background: transparent; color: #FFF9F1;
-    padding: 0.9rem 1.55rem;
-    font-weight: 500; font-size: 0.9375rem;
-    border: 1px solid rgba(246,211,162,0.45);
-    border-radius: 4px;
-    transition: border-color 200ms ease, background 200ms ease;
-  }
-  .btn-ghost-on-deep:hover { border-color: #F6D3A2; background: rgba(246,211,162,0.06); }
 
   /* Buttons — editorial, restrained */
   .btn-primary {
