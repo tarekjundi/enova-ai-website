@@ -94,6 +94,11 @@ const CaseStudies = () => {
           </>
         }
         intro="Four engagements, described plainly: what was broken, what we built, and what changed after it shipped."
+        cta={{
+          label: "Discuss a Similar System",
+          href: "https://cal.com/tarek-jundi/free-consultation",
+          external: true,
+        }}
         meta="Four engagements · 2024 — 2025"
       />
 
@@ -194,19 +199,33 @@ const CaseStudies = () => {
         </div>
       </section>
 
-      {/* One contextual action, after the proof */}
-      <section className="surface-cream pb-20 md:pb-28">
+      {/* CTA */}
+      <section className="surface-gold py-20 md:py-24">
         <div className="container mx-auto px-6 lg:px-10">
-          <div className="measure-page border-t border-[#3A2915]/20 pt-10">
-            <a
-              href="https://cal.com/tarek-jundi/free-consultation"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="link-quiet text-on-cream hover:text-[#A56735]"
-            >
-              Discuss a similar system
-              <ArrowRight size={15} />
-            </a>
+          <div className="grid md:grid-cols-12 gap-10 md:gap-16 items-end">
+            <MotionElement animation="slideUp" className="md:col-span-8">
+              <p className="eyebrow text-[#281C0B]/85 mb-6">Start with a conversation</p>
+              <h2 className="font-display text-on-cream !text-[40px] md:!text-[76px] leading-[1] tracking-[-0.02em] max-w-[16ch]">
+                Your workflow could be{" "}
+                <span className="italic">the next one.</span>
+              </h2>
+            </MotionElement>
+            <MotionElement animation="slideUp" delay={140} className="md:col-span-4 md:pb-3">
+              <p className="text-[#281C0B]/85 text-[17px] leading-[1.75] mb-8 max-w-[40ch]">
+                Bring one process to a 30-minute call. We&rsquo;ll map it live and tell you where we would begin.
+              </p>
+              <div className="flex flex-wrap gap-3">
+                <a
+                  href="https://cal.com/tarek-jundi/free-consultation"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-ghost-on-cream group !bg-[#281C0B] !text-[#FFF9F1] !border-[#281C0B] hover:!bg-[#15110C]"
+                >
+                  Discuss a Similar System
+                  <ArrowRight size={15} className="transition-transform duration-300 group-hover:translate-x-0.5" />
+                </a>
+              </div>
+            </MotionElement>
           </div>
         </div>
       </section>

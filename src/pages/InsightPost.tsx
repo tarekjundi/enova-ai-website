@@ -3,7 +3,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ScrollToTop from "@/components/ScrollToTop";
 import { MotionElement } from "@/components/MotionElements";
-import { ArrowLeft } from "@phosphor-icons/react";
+import { ArrowLeft, ArrowRight } from "@phosphor-icons/react";
 import { blogPosts } from "@/data/blogPosts";
 
 const InsightPost = () => {
@@ -102,6 +102,31 @@ const InsightPost = () => {
           </div>
         </section>
       )}
+
+      {/* CTA */}
+      <section className="surface-gold py-20 md:py-28">
+        <div className="container mx-auto px-6 lg:px-10">
+          <div className="grid md:grid-cols-12 gap-10 items-end">
+            <div className="md:col-span-8">
+              <h2 className="font-display text-on-cream !text-[34px] md:!text-[62px] leading-[1.02] tracking-[-0.02em] max-w-[18ch]">
+                Want this applied to{" "}
+                <span className="italic">your operation?</span>
+              </h2>
+            </div>
+            <div className="md:col-span-4 md:pb-2">
+              <a
+                href="https://cal.com/tarek-jundi/free-consultation"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-ghost-on-cream group !bg-[#281C0B] !text-[#FFF9F1] !border-[#281C0B] hover:!bg-[#15110C]"
+              >
+                Discuss a Workflow
+                <ArrowRight size={15} className="transition-transform duration-300 group-hover:translate-x-0.5" />
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
 
       <Footer />
       <ScrollToTop />

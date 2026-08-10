@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { X, List } from "@phosphor-icons/react";
+import { ArrowRight, X, List } from "@phosphor-icons/react";
 
 const NAV_LINKS = [
   { to: "/services", label: "Services" },
@@ -50,7 +50,7 @@ const Navbar = () => {
         </Link>
 
         {/* Desktop */}
-        <div className="hidden lg:flex items-center gap-1 xl:gap-2">
+        <div className="hidden lg:flex items-center gap-0.5 xl:gap-1.5">
           {NAV_LINKS.map((link) => (
             <Link
               key={link.to}
@@ -66,8 +66,20 @@ const Navbar = () => {
               {link.label}
             </Link>
           ))}
-        </div>
 
+          <a
+            href="https://cal.com/tarek-jundi/free-consultation"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="ml-4 xl:ml-6 btn-primary text-[15px] py-3 px-5 xl:px-6 whitespace-nowrap group shadow-[0_0_0_1px_rgba(246,211,162,0.35)]"
+          >
+            Discuss a Workflow
+            <ArrowRight
+              size={15}
+              className="transition-transform duration-300 group-hover:translate-x-0.5"
+            />
+          </a>
+        </div>
 
 
 
@@ -103,12 +115,17 @@ const Navbar = () => {
               </Link>
             ))}
           </div>
-          <p className="mt-10 text-[#D8C4A8] text-[15px] leading-[1.6]">
-            <a href="mailto:tarek@enovaagency.com" className="hover:text-[#F6D3A2] transition-colors" dir="ltr">
-              tarek@enovaagency.com
-            </a>
-          </p>
 
+          <a
+            href="https://cal.com/tarek-jundi/free-consultation"
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={() => setMobileMenuOpen(false)}
+            className="btn-primary justify-center mt-10 w-full"
+          >
+            Discuss a Workflow
+            <ArrowRight size={14} />
+          </a>
         </div>
       )}
     </nav>
