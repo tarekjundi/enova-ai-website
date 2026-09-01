@@ -687,15 +687,16 @@ const Index = () => {
           <div className={`grid md:grid-cols-12 gap-10 md:gap-16 items-end ${dir}`}>
             <MotionElement animation="slideUp" className="md:col-span-8">
               <h2 className="font-display text-on-cream !text-[clamp(34px,5vw,64px)] leading-[1] tracking-[-0.02em] max-w-[16ch]">
-                Book a 30-minute{" "}
-                <span className="italic">opportunity audit.</span>
+                Ready to build a{" "}
+                <span className="italic">smarter business?</span>
               </h2>
             </MotionElement>
 
             <MotionElement animation="slideUp" delay={140} className="md:col-span-4 md:pb-3">
               <p className="text-[#281C0B]/85 text-[17px] leading-[1.75] mb-8 max-w-[52ch]">
-                No pitch, no obligation. We&rsquo;ll listen to your goals, review one workflow live, and tell you honestly where we&rsquo;d start.
+                The first conversation is about understanding how your business runs and identifying where automation and AI would create the biggest impact. No pitch, no obligation.
               </p>
+
               <div className={`flex flex-wrap gap-3 ${isRTL ? "justify-end" : ""}`}>
                 <a
                   href="https://cal.com/tarek-jundi/free-consultation"
