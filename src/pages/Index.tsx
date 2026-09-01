@@ -704,7 +704,8 @@ const Index = () => {
                   rel="noopener noreferrer"
                   className="btn-ghost-on-cream group !bg-[#281C0B] !text-[#FFF9F1] !border-[#281C0B] hover:!bg-[#15110C]"
                 >
-                  Book an Opportunity Audit
+                  Book a Consultation
+
                   <ArrowRight size={15} className={`transition-transform duration-300 group-hover:translate-x-0.5 ${isRTL ? "rotate-180" : ""}`} />
                 </a>
               </div>
