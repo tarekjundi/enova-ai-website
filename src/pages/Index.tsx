@@ -79,41 +79,63 @@ const SERVICES = [
   },
 ];
 
-const CASES = [
-  {
-    industry: "B2B SaaS",
-    client: "Series B software company",
-    challenge:
-      "Support tier-1 tickets averaged 8-hour first-response times. The backlog grew faster than headcount and CSAT slipped for two quarters in a row.",
-    solution:
-      "Deployed a support assistant trained on the product docs and 24 months of ticket history. Wrote clear escalation rules so senior agents only see the exchanges that matter.",
-    tools: "Intercom · Zendesk · Notion · Anthropic",
-    metric: "67%",
-    metricLabel: "faster first response",
-  },
-  {
-    industry: "Financial Services",
-    client: "Mid-market accounting firm",
-    challenge:
-      "Accounts receivable team spent twelve hours a week chasing invoices across 400+ accounts. Aging balances kept climbing while cash flow tightened.",
-    solution:
-      "Automated the collections workflow with tone-aware reminders, escalation paths and payment plan offers routed through Stripe and Gmail.",
-    tools: "Stripe · Gmail · HubSpot · OpenAI",
-    metric: "$182k",
-    metricLabel: "recovered in 90 days",
-  },
-  {
-    industry: "E-commerce Operations",
-    client: "DTC retail brand, 30 SKUs",
-    challenge:
-      "Inventory forecasting lived in spreadsheets. Top SKUs stocked out several times a month while slow movers tied up cash.",
-    solution:
-      "Built a forecasting pipeline that watches sales velocity and seasonality, with reorder agents that write proposed POs back to the ERP for human approval.",
-    tools: "Shopify · NetSuite · Python · dbt",
-    metric: "31%",
-    metricLabel: "fewer stockouts",
-  },
+const APPROACH = [
+  { title: "Understand", body: "We map how your business actually operates today — the people, the handoffs, the tools and the friction between them." },
+  { title: "Identify", body: "We rank the opportunities by business impact, effort and payback, so the first build is the one worth doing." },
+  { title: "Design", body: "We architect the system around your existing operation: triggers, data flow, guardrails and human checkpoints." },
+  { title: "Build", body: "We implement inside the tools your team already uses, ship to production, and document how it runs." },
+  { title: "Optimize", body: "We measure, refine and extend the system as the business changes — improvement, not handover and goodbye." },
 ];
+
+const CHAIN = [
+  { title: "Marketing", body: "Campaigns and content that feed a measurable pipeline." },
+  { title: "Lead generation", body: "Capture, qualification and routing without manual triage." },
+  { title: "Sales", body: "Follow-up, proposals and reminders that never slip." },
+  { title: "CRM", body: "One clean record instead of five conflicting versions." },
+  { title: "Operations", body: "Delivery, admin and reporting running on rails." },
+  { title: "Customer experience", body: "Faster answers, consistent tone, fewer dropped threads." },
+];
+
+const RESULT_FRAME = [
+  { n: "01", label: "Challenge & context", body: "The client, their industry, and the operational problem in plain business terms — before any technology is mentioned." },
+  { n: "02", label: "System delivered", body: "What we designed and built, which tools it connects, and where the human checkpoints sit." },
+  { n: "03", label: "Measured outcome", body: "Time recovered, response times, conversion or cost — recorded against a documented baseline, never estimated." },
+];
+
+const WHY = [
+  { n: "01", title: "Business first", body: "We begin with your business challenges, not the technology. The stack is chosen last." },
+  { n: "02", title: "Custom built", body: "Systems are designed around your existing workflows and goals — not a template forced onto your operation." },
+  { n: "03", title: "Connected systems", body: "We link tools, teams and workflows so information moves through the business without manual handoffs." },
+  { n: "04", title: "Built to scale", body: "What we build keeps supporting the business as volume, headcount and complexity grow." },
+  { n: "05", title: "Long-term partnership", body: "We stay for optimization and improvement, not just delivery day." },
+  { n: "06", title: "Owned by your team", body: "Documentation, runbooks and training so your people run the system without depending on us." },
+];
+
+const FIT_YES = [
+  "You want to improve efficiency across day-to-day operations",
+  "You are ready to modernize how your business runs",
+  "You want long-term systems instead of quick fixes",
+  "You value automation and intelligent, measurable processes",
+  "You want marketing and operations working together, not in silos",
+];
+
+const FIT_NO = [
+  "You only want a single quick automation with no wider strategy",
+  "You are looking for generic AI tools with no customization",
+  "You are not ready to review or adapt existing processes",
+];
+
+const FAQS = [
+  { q: "How do we know where AI can actually help our business?", a: "That is the first thing we work out together. We review how your operation runs, then rank the opportunities by impact, effort and payback so you can see exactly where to start." },
+  { q: "How long does implementation take?", a: "A focused first system typically moves from discovery to production in a few weeks. Larger, multi-department systems are delivered in stages so value arrives early." },
+  { q: "Can Enova work with our existing tools?", a: "Yes. We build around the platforms you already run — CRM, inbox, spreadsheets, accounting, support and internal tools — rather than asking you to replace them." },
+  { q: "Do you provide ongoing support?", a: "Yes. Every system ships with documentation and monitoring, and most clients continue with review and optimization cycles as the business changes." },
+  { q: "What industries do you work with?", a: "Professional services, healthcare, finance, real estate, e-commerce, hospitality, education, construction and more. The operational patterns repeat across sectors." },
+  { q: "Do we need technical knowledge?", a: "No. We handle the technical work and hand over systems your team can operate with normal business tools." },
+  { q: "Can you integrate with our CRM?", a: "Yes — HubSpot, Odoo, Salesforce and similar platforms, along with the tools connected around them." },
+  { q: "How does pricing work?", a: "Engagements are scoped and quoted per project after the initial consultation, based on the systems involved. Ongoing optimization is a separate, optional retainer." },
+];
+
 
 const METHOD = [
   {
