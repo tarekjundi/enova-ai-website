@@ -680,6 +680,64 @@ const Index = () => {
       </section>
 
       {/* =====================================================
+          FAQ — cream, quiet accordion
+          ===================================================== */}
+      <section className="surface-cream py-20 md:py-28">
+        <div className="container mx-auto px-6 lg:px-10">
+          <div className="grid md:grid-cols-12 gap-10 md:gap-16">
+            <div className="md:col-span-4">
+              <MotionElement animation="slideUp">
+                <p className="eyebrow text-[#4A3720] mb-6">Questions</p>
+                <h2 className="font-display text-on-cream !text-[clamp(32px,4.2vw,52px)] leading-[1.04] tracking-[-0.015em] max-w-[14ch]">
+                  Before we <span className="italic text-[#A56735]">talk.</span>
+                </h2>
+              </MotionElement>
+            </div>
+
+            <div className="md:col-span-7 md:col-start-6">
+              <div className="border-t border-[#3A2915]/20">
+                {FAQS.map((f, i) => {
+                  const open = openFaq === i;
+                  return (
+                    <MotionElement key={f.q} animation="slideUp" delay={30 + i * 40}>
+                      <div className="border-b border-[#3A2915]/20">
+                        <button
+                          type="button"
+                          onClick={() => setOpenFaq(open ? null : i)}
+                          aria-expanded={open}
+                          className="w-full flex items-start justify-between gap-6 py-6 text-left group"
+                        >
+                          <span className="font-display text-on-cream text-[22px] md:text-[26px] leading-[1.25] group-hover:text-[#A56735] transition-colors duration-300">
+                            {f.q}
+                          </span>
+                          <span className="relative mt-2 h-4 w-4 shrink-0">
+                            <span className="absolute inset-x-0 top-1/2 h-px bg-[#A56735]" />
+                            <span
+                              className={`absolute inset-y-0 left-1/2 w-px bg-[#A56735] transition-transform duration-300 ${open ? "scale-y-0" : "scale-y-100"}`}
+                            />
+                          </span>
+                        </button>
+                        <div
+                          className={`grid transition-all duration-500 ease-out ${open ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"}`}
+                        >
+                          <div className="overflow-hidden">
+                            <p className="text-on-cream-body text-[17px] leading-[1.8] max-w-[62ch] pb-7">
+                              {f.a}
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </MotionElement>
+                  );
+                })}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      {/* =====================================================
           FINAL CTA — gold band, high contrast
           ===================================================== */}
       <section className="surface-gold py-20 md:py-24">
