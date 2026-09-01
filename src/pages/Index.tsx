@@ -627,6 +627,87 @@ const Index = () => {
       </section>
 
       {/* =====================================================
+          WHY ENOVA — ivory, editorial differentiators
+          ===================================================== */}
+      <section className="surface-ivory py-20 md:py-28">
+        <div className="container mx-auto px-6 lg:px-10">
+          <div className="grid md:grid-cols-12 gap-10 md:gap-16 mb-12 md:mb-16">
+            <div className="md:col-span-7">
+              <MotionElement animation="slideUp">
+                <p className="eyebrow text-[#4A3720] mb-6">Why Enova</p>
+                <h2 className="font-display text-on-cream !text-[clamp(34px,4.6vw,58px)] leading-[1.03] tracking-[-0.015em] max-w-[18ch]">
+                  A partner, not a{" "}
+                  <span className="italic text-[#A56735]">tool vendor.</span>
+                </h2>
+              </MotionElement>
+            </div>
+            <div className="md:col-span-4 md:col-start-9 md:pt-4">
+              <MotionElement animation="slideUp" delay={120}>
+                <p className="text-on-cream-body text-[17px] leading-[1.75] max-w-[42ch]">
+                  Technology is the engine. The work is understanding the business it has to run.
+                </p>
+              </MotionElement>
+            </div>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-px bg-[#3A2915]/15 border border-[#3A2915]/15">
+            {WHY.map((w, i) => (
+              <MotionElement key={w.title} animation="slideUp" delay={40 + i * 60}>
+                <div className="h-full bg-[#FFF9F1] p-8 md:p-10 transition-colors duration-500 hover:bg-[#F8EFE1]">
+                  <p className="eyebrow text-[#A56735] mb-6">{w.n}</p>
+                  <h3 className="font-display text-on-cream text-[26px] md:text-[30px] leading-[1.15] mb-4">
+                    {w.title}
+                  </h3>
+                  <p className="text-on-cream-body text-[16px] leading-[1.75]">{w.body}</p>
+                </div>
+              </MotionElement>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* =====================================================
+          FIT — deep, two-sided honesty
+          ===================================================== */}
+      <section className="surface-deep py-20 md:py-28 border-y border-[#F6D3A2]/12">
+        <div className="container mx-auto px-6 lg:px-10">
+          <MotionElement animation="slideUp">
+            <p className="eyebrow text-[#D8C4A8] mb-6">Fit</p>
+            <h2 className="font-display text-[#FFF9F1] !text-[clamp(34px,4.6vw,58px)] leading-[1.03] tracking-[-0.015em] max-w-[18ch] mb-12 md:mb-16">
+              Is Enova <span className="italic text-[#F6D3A2]">right for you?</span>
+            </h2>
+          </MotionElement>
+
+          <div className="grid md:grid-cols-2 gap-12 md:gap-20">
+            <MotionElement animation="slideUp" delay={80}>
+              <p className="eyebrow text-[#F6D3A2] mb-8">A strong fit if you</p>
+              <ul className="space-y-5">
+                {FIT_YES.map((t) => (
+                  <li key={t} className="flex gap-4 border-b border-[#F6D3A2]/15 pb-5">
+                    <span className="mt-2.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[#F6D3A2]" />
+                    <span className="text-[#FDEED8] text-[17px] leading-[1.7]">{t}</span>
+                  </li>
+                ))}
+              </ul>
+            </MotionElement>
+
+            <MotionElement animation="slideUp" delay={160}>
+              <p className="eyebrow text-[#D8C4A8] mb-8">Probably not a fit if you</p>
+              <ul className="space-y-5">
+                {FIT_NO.map((t) => (
+                  <li key={t} className="flex gap-4 border-b border-[#F6D3A2]/10 pb-5">
+                    <span className="mt-2.5 h-1.5 w-4 shrink-0 bg-[#D8C4A8]/40" />
+                    <span className="text-[#D8C4A8] text-[17px] leading-[1.7]">{t}</span>
+                  </li>
+                ))}
+              </ul>
+            </MotionElement>
+          </div>
+        </div>
+      </section>
+
+
+      {/* =====================================================
           ABOUT / FOUNDER — cream editorial statement
           ===================================================== */}
       <section className="surface-ivory py-20 md:py-28">
