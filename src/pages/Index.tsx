@@ -190,7 +190,7 @@ const Index = () => {
             <div className="lg:col-span-5 lg:pb-3">
               <MotionElement animation="slideUp" delay={180}>
                 <p className="text-[#FDEED8] text-[18px] md:text-[20px] leading-[1.7] max-w-[62ch] mb-8">
-                  Enova AI designs practical automation systems that connect your tools, remove repetitive work, and help your team operate with greater speed and clarity.
+                  Enova AI implements automation and intelligent marketing systems that remove repetitive work, connect your tools, and help your business grow with less friction.
                 </p>
 
 
@@ -201,14 +201,14 @@ const Index = () => {
                     rel="noopener noreferrer"
                     className="btn-primary group justify-center sm:justify-start !py-4 !px-7 !text-[16px]"
                   >
-                    Book an Opportunity Audit
+                    Book a Consultation
                     <ArrowRight
                       size={15}
                       className={`transition-transform duration-300 group-hover:translate-x-0.5 ${isRTL ? "rotate-180" : ""}`}
                     />
                   </a>
-                  <Link to="/case-studies" className="btn-ghost-on-deep group justify-center sm:justify-start">
-                    Explore Our Work
+                  <Link to="/services" className="btn-ghost-on-deep group justify-center sm:justify-start">
+                    Explore Our Solutions
                     <ArrowUpRight
                       size={15}
                       className="transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
@@ -217,8 +217,9 @@ const Index = () => {
                 </div>
 
                 <p className="mt-4 text-[#D8C4A8] text-[15px] leading-[1.6] max-w-[42ch]">
-                  A focused consultation to identify what your business should automate first.
+                  A focused conversation to understand your operation and identify where AI creates the biggest impact.
                 </p>
+
               </MotionElement>
             </div>
           </div>
