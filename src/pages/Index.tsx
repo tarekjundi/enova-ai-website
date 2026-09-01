@@ -291,6 +291,49 @@ const Index = () => {
       </section>
 
       {/* =====================================================
+          THE ENOVA APPROACH — deep gradient, staged rail
+          ===================================================== */}
+      <section className="surface-deep-grad py-20 md:py-28">
+        <div className="container mx-auto px-6 lg:px-10">
+          <div className={`grid md:grid-cols-12 gap-10 md:gap-16 mb-12 md:mb-16 ${dir}`}>
+            <div className="md:col-span-7">
+              <MotionElement animation="slideUp">
+                <p className="eyebrow text-[#D8C4A8] mb-6">The Enova approach</p>
+                <h2 className="font-display text-[#FFF9F1] !text-[clamp(34px,4.6vw,58px)] leading-[1.03] tracking-[-0.015em] max-w-[18ch]">
+                  We study the business{" "}
+                  <span className="italic text-[#F6D3A2]">before the technology.</span>
+                </h2>
+              </MotionElement>
+            </div>
+            <div className="md:col-span-4 md:col-start-9 md:pt-4">
+              <MotionElement animation="slideUp" delay={120}>
+                <p className="text-[#FDEED8] text-[17px] leading-[1.75] max-w-[40ch]">
+                  AI is the engine. The value comes from pointing it at the right part of your operation.
+                </p>
+              </MotionElement>
+            </div>
+          </div>
+
+          <ol className="relative border-t border-[#F6D3A2]/20">
+            {APPROACH.map((a, i) => (
+              <MotionElement key={a.title} animation="slideUp" delay={40 + i * 70}>
+                <li className="group grid md:grid-cols-12 gap-4 md:gap-10 items-baseline py-7 md:py-8 border-b border-[#F6D3A2]/20 transition-colors duration-500 hover:bg-[#F6D3A2]/[0.04] -mx-4 md:-mx-6 px-4 md:px-6">
+                  <span className="md:col-span-1 eyebrow text-[#F6D3A2]">0{i + 1}</span>
+                  <h3 className="md:col-span-4 font-display text-[#FFF9F1] text-[30px] md:text-[42px] leading-[1.05] tracking-[-0.015em] transition-transform duration-500 md:group-hover:translate-x-1">
+                    {a.title}
+                  </h3>
+                  <p className="md:col-span-7 text-[#FDEED8] text-[17px] leading-[1.75] max-w-[56ch]">
+                    {a.body}
+                  </p>
+                </li>
+              </MotionElement>
+            ))}
+          </ol>
+        </div>
+      </section>
+
+
+      {/* =====================================================
           SERVICES — cream, refined vertical index
           ===================================================== */}
       <section className="surface-ivory py-20 md:py-28">
