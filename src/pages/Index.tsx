@@ -371,6 +371,56 @@ const Index = () => {
       </section>
 
       {/* =====================================================
+          CONNECTED SYSTEM — deep, one business, one chain
+          ===================================================== */}
+      <section className="surface-deep py-20 md:py-28">
+        <div className="container mx-auto px-6 lg:px-10">
+          <div className={`grid md:grid-cols-12 gap-10 md:gap-16 mb-12 md:mb-16 ${dir}`}>
+            <div className="md:col-span-7">
+              <MotionElement animation="slideUp">
+                <p className="eyebrow text-[#D8C4A8] mb-6">One connected system</p>
+                <h2 className="font-display text-[#FFF9F1] !text-[clamp(32px,4.4vw,56px)] leading-[1.04] tracking-[-0.015em] max-w-[18ch]">
+                  Not another tool. A business that{" "}
+                  <span className="italic text-[#F6D3A2]">talks to itself.</span>
+                </h2>
+              </MotionElement>
+            </div>
+            <div className="md:col-span-4 md:col-start-9 md:pt-4">
+              <MotionElement animation="slideUp" delay={120}>
+                <p className="text-[#FDEED8] text-[17px] leading-[1.75] max-w-[40ch]">
+                  Most stacks break at the handoffs. We connect the stages so information moves without anyone re-typing it.
+                </p>
+              </MotionElement>
+            </div>
+          </div>
+
+          <ol className="grid sm:grid-cols-2 lg:grid-cols-6 gap-px bg-[#F6D3A2]/15 border border-[#F6D3A2]/15">
+            {CHAIN.map((c, i) => (
+              <MotionElement key={c.title} animation="slideUp" delay={40 + i * 70}>
+                <li className="group relative h-full bg-[#281C0B] p-7 lg:p-6 transition-colors duration-500 hover:bg-[#31230F]">
+                  <span className="block h-px w-full bg-[#F6D3A2]/30 mb-6">
+                    <span className="block h-px w-0 bg-[#F6D3A2] transition-all duration-700 group-hover:w-full" />
+                  </span>
+                  <p className="eyebrow text-[#F6D3A2] mb-4">0{i + 1}</p>
+                  <h3 className="font-display text-[#FFF9F1] text-[24px] leading-[1.15] mb-3">
+                    {c.title}
+                  </h3>
+                  <p className="text-[#D8C4A8] text-[15px] leading-[1.7]">{c.body}</p>
+                </li>
+              </MotionElement>
+            ))}
+          </ol>
+
+          <MotionElement animation="slideUp" delay={260}>
+            <p className="mt-10 font-display italic text-[#F6D3A2] text-2xl md:text-3xl leading-[1.3] max-w-[34ch]">
+              One chain. Every stage aware of the one before it.
+            </p>
+          </MotionElement>
+        </div>
+      </section>
+
+
+      {/* =====================================================
           TECHNOLOGY — understated supporting infrastructure
           ===================================================== */}
       <section className="surface-cream py-16 md:py-24 border-t border-[#3A2915]/15">
