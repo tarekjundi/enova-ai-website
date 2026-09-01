@@ -79,41 +79,63 @@ const SERVICES = [
   },
 ];
 
-const CASES = [
-  {
-    industry: "B2B SaaS",
-    client: "Series B software company",
-    challenge:
-      "Support tier-1 tickets averaged 8-hour first-response times. The backlog grew faster than headcount and CSAT slipped for two quarters in a row.",
-    solution:
-      "Deployed a support assistant trained on the product docs and 24 months of ticket history. Wrote clear escalation rules so senior agents only see the exchanges that matter.",
-    tools: "Intercom · Zendesk · Notion · Anthropic",
-    metric: "67%",
-    metricLabel: "faster first response",
-  },
-  {
-    industry: "Financial Services",
-    client: "Mid-market accounting firm",
-    challenge:
-      "Accounts receivable team spent twelve hours a week chasing invoices across 400+ accounts. Aging balances kept climbing while cash flow tightened.",
-    solution:
-      "Automated the collections workflow with tone-aware reminders, escalation paths and payment plan offers routed through Stripe and Gmail.",
-    tools: "Stripe · Gmail · HubSpot · OpenAI",
-    metric: "$182k",
-    metricLabel: "recovered in 90 days",
-  },
-  {
-    industry: "E-commerce Operations",
-    client: "DTC retail brand, 30 SKUs",
-    challenge:
-      "Inventory forecasting lived in spreadsheets. Top SKUs stocked out several times a month while slow movers tied up cash.",
-    solution:
-      "Built a forecasting pipeline that watches sales velocity and seasonality, with reorder agents that write proposed POs back to the ERP for human approval.",
-    tools: "Shopify · NetSuite · Python · dbt",
-    metric: "31%",
-    metricLabel: "fewer stockouts",
-  },
+const APPROACH = [
+  { title: "Understand", body: "We map how your business actually operates today — the people, the handoffs, the tools and the friction between them." },
+  { title: "Identify", body: "We rank the opportunities by business impact, effort and payback, so the first build is the one worth doing." },
+  { title: "Design", body: "We architect the system around your existing operation: triggers, data flow, guardrails and human checkpoints." },
+  { title: "Build", body: "We implement inside the tools your team already uses, ship to production, and document how it runs." },
+  { title: "Optimize", body: "We measure, refine and extend the system as the business changes — improvement, not handover and goodbye." },
 ];
+
+const CHAIN = [
+  { title: "Marketing", body: "Campaigns and content that feed a measurable pipeline." },
+  { title: "Lead generation", body: "Capture, qualification and routing without manual triage." },
+  { title: "Sales", body: "Follow-up, proposals and reminders that never slip." },
+  { title: "CRM", body: "One clean record instead of five conflicting versions." },
+  { title: "Operations", body: "Delivery, admin and reporting running on rails." },
+  { title: "Customer experience", body: "Faster answers, consistent tone, fewer dropped threads." },
+];
+
+const RESULT_FRAME = [
+  { n: "01", label: "Challenge & context", body: "The client, their industry, and the operational problem in plain business terms — before any technology is mentioned." },
+  { n: "02", label: "System delivered", body: "What we designed and built, which tools it connects, and where the human checkpoints sit." },
+  { n: "03", label: "Measured outcome", body: "Time recovered, response times, conversion or cost — recorded against a documented baseline, never estimated." },
+];
+
+const WHY = [
+  { n: "01", title: "Business first", body: "We begin with your business challenges, not the technology. The stack is chosen last." },
+  { n: "02", title: "Custom built", body: "Systems are designed around your existing workflows and goals — not a template forced onto your operation." },
+  { n: "03", title: "Connected systems", body: "We link tools, teams and workflows so information moves through the business without manual handoffs." },
+  { n: "04", title: "Built to scale", body: "What we build keeps supporting the business as volume, headcount and complexity grow." },
+  { n: "05", title: "Long-term partnership", body: "We stay for optimization and improvement, not just delivery day." },
+  { n: "06", title: "Owned by your team", body: "Documentation, runbooks and training so your people run the system without depending on us." },
+];
+
+const FIT_YES = [
+  "You want to improve efficiency across day-to-day operations",
+  "You are ready to modernize how your business runs",
+  "You want long-term systems instead of quick fixes",
+  "You value automation and intelligent, measurable processes",
+  "You want marketing and operations working together, not in silos",
+];
+
+const FIT_NO = [
+  "You only want a single quick automation with no wider strategy",
+  "You are looking for generic AI tools with no customization",
+  "You are not ready to review or adapt existing processes",
+];
+
+const FAQS = [
+  { q: "How do we know where AI can actually help our business?", a: "That is the first thing we work out together. We review how your operation runs, then rank the opportunities by impact, effort and payback so you can see exactly where to start." },
+  { q: "How long does implementation take?", a: "A focused first system typically moves from discovery to production in a few weeks. Larger, multi-department systems are delivered in stages so value arrives early." },
+  { q: "Can Enova work with our existing tools?", a: "Yes. We build around the platforms you already run — CRM, inbox, spreadsheets, accounting, support and internal tools — rather than asking you to replace them." },
+  { q: "Do you provide ongoing support?", a: "Yes. Every system ships with documentation and monitoring, and most clients continue with review and optimization cycles as the business changes." },
+  { q: "What industries do you work with?", a: "Professional services, healthcare, finance, real estate, e-commerce, hospitality, education, construction and more. The operational patterns repeat across sectors." },
+  { q: "Do we need technical knowledge?", a: "No. We handle the technical work and hand over systems your team can operate with normal business tools." },
+  { q: "Can you integrate with our CRM?", a: "Yes — HubSpot, Odoo, Salesforce and similar platforms, along with the tools connected around them." },
+  { q: "How does pricing work?", a: "Engagements are scoped and quoted per project after the initial consultation, based on the systems involved. Ongoing optimization is a separate, optional retainer." },
+];
+
 
 const METHOD = [
   {
@@ -190,7 +212,7 @@ const Index = () => {
             <div className="lg:col-span-5 lg:pb-3">
               <MotionElement animation="slideUp" delay={180}>
                 <p className="text-[#FDEED8] text-[18px] md:text-[20px] leading-[1.7] max-w-[62ch] mb-8">
-                  Enova AI designs practical automation systems that connect your tools, remove repetitive work, and help your team operate with greater speed and clarity.
+                  Enova AI implements automation and intelligent marketing systems that remove repetitive work, connect your tools, and help your business grow with less friction.
                 </p>
 
 
@@ -201,14 +223,14 @@ const Index = () => {
                     rel="noopener noreferrer"
                     className="btn-primary group justify-center sm:justify-start !py-4 !px-7 !text-[16px]"
                   >
-                    Book an Opportunity Audit
+                    Book a Consultation
                     <ArrowRight
                       size={15}
                       className={`transition-transform duration-300 group-hover:translate-x-0.5 ${isRTL ? "rotate-180" : ""}`}
                     />
                   </a>
-                  <Link to="/case-studies" className="btn-ghost-on-deep group justify-center sm:justify-start">
-                    Explore Our Work
+                  <Link to="/services" className="btn-ghost-on-deep group justify-center sm:justify-start">
+                    Explore Our Solutions
                     <ArrowUpRight
                       size={15}
                       className="transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
@@ -217,8 +239,9 @@ const Index = () => {
                 </div>
 
                 <p className="mt-4 text-[#D8C4A8] text-[15px] leading-[1.6] max-w-[42ch]">
-                  A focused consultation to identify what your business should automate first.
+                  A focused conversation to understand your operation and identify where AI creates the biggest impact.
                 </p>
+
               </MotionElement>
             </div>
           </div>
@@ -289,6 +312,49 @@ const Index = () => {
           </ol>
         </div>
       </section>
+
+      {/* =====================================================
+          THE ENOVA APPROACH — deep gradient, staged rail
+          ===================================================== */}
+      <section className="surface-deep-grad py-20 md:py-28">
+        <div className="container mx-auto px-6 lg:px-10">
+          <div className={`grid md:grid-cols-12 gap-10 md:gap-16 mb-12 md:mb-16 ${dir}`}>
+            <div className="md:col-span-7">
+              <MotionElement animation="slideUp">
+                <p className="eyebrow text-[#D8C4A8] mb-6">The Enova approach</p>
+                <h2 className="font-display text-[#FFF9F1] !text-[clamp(34px,4.6vw,58px)] leading-[1.03] tracking-[-0.015em] max-w-[18ch]">
+                  We study the business{" "}
+                  <span className="italic text-[#F6D3A2]">before the technology.</span>
+                </h2>
+              </MotionElement>
+            </div>
+            <div className="md:col-span-4 md:col-start-9 md:pt-4">
+              <MotionElement animation="slideUp" delay={120}>
+                <p className="text-[#FDEED8] text-[17px] leading-[1.75] max-w-[40ch]">
+                  AI is the engine. The value comes from pointing it at the right part of your operation.
+                </p>
+              </MotionElement>
+            </div>
+          </div>
+
+          <ol className="relative border-t border-[#F6D3A2]/20">
+            {APPROACH.map((a, i) => (
+              <MotionElement key={a.title} animation="slideUp" delay={40 + i * 70}>
+                <li className="group grid md:grid-cols-12 gap-4 md:gap-10 items-baseline py-7 md:py-8 border-b border-[#F6D3A2]/20 transition-colors duration-500 hover:bg-[#F6D3A2]/[0.04] -mx-4 md:-mx-6 px-4 md:px-6">
+                  <span className="md:col-span-1 eyebrow text-[#F6D3A2]">0{i + 1}</span>
+                  <h3 className="md:col-span-4 font-display text-[#FFF9F1] text-[30px] md:text-[42px] leading-[1.05] tracking-[-0.015em] transition-transform duration-500 md:group-hover:translate-x-1">
+                    {a.title}
+                  </h3>
+                  <p className="md:col-span-7 text-[#FDEED8] text-[17px] leading-[1.75] max-w-[56ch]">
+                    {a.body}
+                  </p>
+                </li>
+              </MotionElement>
+            ))}
+          </ol>
+        </div>
+      </section>
+
 
       {/* =====================================================
           SERVICES — cream, refined vertical index
@@ -369,6 +435,56 @@ const Index = () => {
           </MotionElement>
         </div>
       </section>
+
+      {/* =====================================================
+          CONNECTED SYSTEM — deep, one business, one chain
+          ===================================================== */}
+      <section className="surface-deep py-20 md:py-28">
+        <div className="container mx-auto px-6 lg:px-10">
+          <div className={`grid md:grid-cols-12 gap-10 md:gap-16 mb-12 md:mb-16 ${dir}`}>
+            <div className="md:col-span-7">
+              <MotionElement animation="slideUp">
+                <p className="eyebrow text-[#D8C4A8] mb-6">One connected system</p>
+                <h2 className="font-display text-[#FFF9F1] !text-[clamp(32px,4.4vw,56px)] leading-[1.04] tracking-[-0.015em] max-w-[18ch]">
+                  Not another tool. A business that{" "}
+                  <span className="italic text-[#F6D3A2]">talks to itself.</span>
+                </h2>
+              </MotionElement>
+            </div>
+            <div className="md:col-span-4 md:col-start-9 md:pt-4">
+              <MotionElement animation="slideUp" delay={120}>
+                <p className="text-[#FDEED8] text-[17px] leading-[1.75] max-w-[40ch]">
+                  Most stacks break at the handoffs. We connect the stages so information moves without anyone re-typing it.
+                </p>
+              </MotionElement>
+            </div>
+          </div>
+
+          <ol className="grid sm:grid-cols-2 lg:grid-cols-6 gap-px bg-[#F6D3A2]/15 border border-[#F6D3A2]/15">
+            {CHAIN.map((c, i) => (
+              <MotionElement key={c.title} animation="slideUp" delay={40 + i * 70}>
+                <li className="group relative h-full bg-[#281C0B] p-7 lg:p-6 transition-colors duration-500 hover:bg-[#31230F]">
+                  <span className="block h-px w-full bg-[#F6D3A2]/30 mb-6">
+                    <span className="block h-px w-0 bg-[#F6D3A2] transition-all duration-700 group-hover:w-full" />
+                  </span>
+                  <p className="eyebrow text-[#F6D3A2] mb-4">0{i + 1}</p>
+                  <h3 className="font-display text-[#FFF9F1] text-[24px] leading-[1.15] mb-3">
+                    {c.title}
+                  </h3>
+                  <p className="text-[#D8C4A8] text-[15px] leading-[1.7]">{c.body}</p>
+                </li>
+              </MotionElement>
+            ))}
+          </ol>
+
+          <MotionElement animation="slideUp" delay={260}>
+            <p className="mt-10 font-display italic text-[#F6D3A2] text-2xl md:text-3xl leading-[1.3] max-w-[34ch]">
+              One chain. Every stage aware of the one before it.
+            </p>
+          </MotionElement>
+        </div>
+      </section>
+
 
       {/* =====================================================
           TECHNOLOGY — understated supporting infrastructure
@@ -464,104 +580,55 @@ const Index = () => {
           <div className={`grid md:grid-cols-12 gap-10 md:gap-16 mb-10 md:mb-14 ${dir}`}>
             <div className="md:col-span-8">
               <MotionElement animation="slideUp">
-                <p className="eyebrow text-[#4A3720] mb-6">Selected work</p>
+                <p className="eyebrow text-[#4A3720] mb-6">Results</p>
                 <h2 className="font-display text-on-cream !text-[clamp(34px,4.6vw,58px)] leading-[1.02] tracking-[-0.015em] max-w-[20ch]">
                   Measured the way{" "}
                   <span className="italic text-[#A56735]">your CFO measures.</span>
                 </h2>
               </MotionElement>
             </div>
-            <div className="md:col-span-3 md:col-start-10 md:pt-4 flex md:justify-end">
+            <div className="md:col-span-3 md:col-start-10 md:pt-4">
               <MotionElement animation="slideUp" delay={140}>
-                <Link
-                  to="/case-studies"
-                  className="inline-flex items-center gap-2 text-on-cream text-[15px] font-medium border-b border-[#3A2915]/40 hover:border-[#A56735] hover:text-[#A56735] transition-colors duration-300 pb-1"
-                >
-                  All work
-                  <ArrowRight size={14} />
-                </Link>
+                <p className="text-on-cream-body text-[16px] leading-[1.7] max-w-[36ch]">
+                  Every engagement is documented against the same five questions &mdash; and published only once the numbers are real.
+                </p>
               </MotionElement>
             </div>
           </div>
 
-          <div className="space-y-16 md:space-y-20">
-            {CASES.map((c, i) => (
-              <MotionElement key={c.industry} animation="slideUp" delay={80 + i * 60}>
-                <article className={`grid md:grid-cols-12 gap-10 md:gap-14 items-start ${dir}`}>
-                  {/* Visual composition — cropped material-like block, alternating side */}
-                  <div className={`md:col-span-5 ${i % 2 === 1 ? "md:order-2" : ""}`}>
-                    <div className="relative aspect-[4/5] overflow-hidden">
-                      <div
-                        className="absolute inset-0"
-                        style={{
-                          background:
-                            i % 3 === 0
-                              ? "linear-gradient(135deg, #281C0B 0%, #3A2915 55%, #6E5940 100%)"
-                              : i % 3 === 1
-                              ? "linear-gradient(135deg, #A56735 0%, #6E5940 60%, #281C0B 100%)"
-                              : "linear-gradient(135deg, #6E5940 0%, #4A3620 55%, #281C0B 100%)",
-                        }}
-                      />
-                      <div className="absolute inset-0 flex flex-col justify-between p-8">
-                        <div className="flex items-start justify-between gap-4">
-                          <p className="eyebrow text-[#FFF9F1]">Case &middot; 0{i + 1}</p>
-                          <span className="text-[#FFF9F1] text-[13px] font-medium tracking-wide border border-[#FFF9F1]/40 rounded-full px-3 py-1">
-                            In production
-                          </span>
-                        </div>
-
-                        <div className="space-y-2">
-                          {c.tools.split(" · ").map((t) => (
-                            <div
-                              key={t}
-                              className="flex items-center gap-3 border-b border-[#FFF9F1]/20 pb-2"
-                            >
-                              <span className="h-1.5 w-1.5 rounded-full bg-[#FFF9F1]" />
-                              <span className="text-[#FFF9F1] text-[14px] font-medium">{t}</span>
-                            </div>
-                          ))}
-                        </div>
-
-                        <div>
-                          <p className="font-display text-[#FFF9F1] italic text-[80px] md:text-[112px] leading-none tracking-[-0.02em]">
-                            {c.metric}
-                          </p>
-                          <p className="text-[#FFF9F1] text-sm mt-3">{c.metricLabel}</p>
-                        </div>
-                      </div>
-                    </div>
-
-                  </div>
-
-                  {/* Copy */}
-                  <div className="md:col-span-7 md:pt-4">
-                    <p className="eyebrow text-[#A56735] mb-4">{c.industry}</p>
-                    <h3 className="font-display text-on-cream text-3xl md:text-5xl leading-[1.05] tracking-[-0.015em] mb-8 max-w-[22ch]">
-                      {c.client}
-                    </h3>
-
-                    <div className="space-y-5">
-                      <p className="text-on-cream-body text-[17px] leading-[1.75] max-w-[58ch]">
-                        <span className="text-on-cream font-medium">Challenge. </span>
-                        {c.challenge}
-                      </p>
-                      <p className="text-on-cream-body text-[17px] leading-[1.75] max-w-[58ch]">
-                        <span className="text-on-cream font-medium">Approach. </span>
-                        {c.solution}
-                      </p>
-                    </div>
-
-                    <div className="mt-8 pt-6 border-t border-[#3A2915]/20 flex flex-wrap gap-x-6 gap-y-2">
-                      <p className="eyebrow text-[#4A3720]">Systems connected</p>
-                      <p className="text-on-cream-body text-[14px] font-medium">{c.tools}</p>
-                    </div>
-                  </div>
-                </article>
+          <div className="grid md:grid-cols-3 gap-px bg-[#3A2915]/15 border border-[#3A2915]/15">
+            {RESULT_FRAME.map((r, i) => (
+              <MotionElement key={r.label} animation="slideUp" delay={40 + i * 60}>
+                <div className="h-full bg-[#FDEED8] p-8 md:p-10">
+                  <p className="eyebrow text-[#A56735] mb-5">{r.n}</p>
+                  <h3 className="font-display text-on-cream text-[26px] md:text-[30px] leading-[1.15] mb-4">
+                    {r.label}
+                  </h3>
+                  <p className="text-on-cream-body text-[16px] leading-[1.75]">{r.body}</p>
+                </div>
               </MotionElement>
             ))}
           </div>
+
+          <MotionElement animation="slideUp" delay={220}>
+            <div className="mt-10 grid md:grid-cols-12 gap-6 items-center border-t border-[#3A2915]/20 pt-8">
+              <p className="md:col-span-8 text-on-cream-body text-[17px] leading-[1.75] max-w-[62ch]">
+                Detailed engagement write-ups are published as client permissions are granted. In the meantime, we&rsquo;re happy to walk through the systems live.
+              </p>
+              <div className="md:col-span-4 md:text-right">
+                <Link
+                  to="/case-studies"
+                  className="inline-flex items-center gap-2 text-on-cream text-[15px] font-medium border-b border-[#3A2915]/40 hover:border-[#A56735] hover:text-[#A56735] transition-colors duration-300 pb-1"
+                >
+                  See how we work
+                  <ArrowRight size={14} />
+                </Link>
+              </div>
+            </div>
+          </MotionElement>
         </div>
       </section>
+
 
       {/* =====================================================
           METHOD — deep, vertical editorial timeline
@@ -627,6 +694,87 @@ const Index = () => {
       </section>
 
       {/* =====================================================
+          WHY ENOVA — ivory, editorial differentiators
+          ===================================================== */}
+      <section className="surface-ivory py-20 md:py-28">
+        <div className="container mx-auto px-6 lg:px-10">
+          <div className="grid md:grid-cols-12 gap-10 md:gap-16 mb-12 md:mb-16">
+            <div className="md:col-span-7">
+              <MotionElement animation="slideUp">
+                <p className="eyebrow text-[#4A3720] mb-6">Why Enova</p>
+                <h2 className="font-display text-on-cream !text-[clamp(34px,4.6vw,58px)] leading-[1.03] tracking-[-0.015em] max-w-[18ch]">
+                  A partner, not a{" "}
+                  <span className="italic text-[#A56735]">tool vendor.</span>
+                </h2>
+              </MotionElement>
+            </div>
+            <div className="md:col-span-4 md:col-start-9 md:pt-4">
+              <MotionElement animation="slideUp" delay={120}>
+                <p className="text-on-cream-body text-[17px] leading-[1.75] max-w-[42ch]">
+                  Technology is the engine. The work is understanding the business it has to run.
+                </p>
+              </MotionElement>
+            </div>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-px bg-[#3A2915]/15 border border-[#3A2915]/15">
+            {WHY.map((w, i) => (
+              <MotionElement key={w.title} animation="slideUp" delay={40 + i * 60}>
+                <div className="h-full bg-[#FFF9F1] p-8 md:p-10 transition-colors duration-500 hover:bg-[#F8EFE1]">
+                  <p className="eyebrow text-[#A56735] mb-6">{w.n}</p>
+                  <h3 className="font-display text-on-cream text-[26px] md:text-[30px] leading-[1.15] mb-4">
+                    {w.title}
+                  </h3>
+                  <p className="text-on-cream-body text-[16px] leading-[1.75]">{w.body}</p>
+                </div>
+              </MotionElement>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* =====================================================
+          FIT — deep, two-sided honesty
+          ===================================================== */}
+      <section className="surface-deep py-20 md:py-28 border-y border-[#F6D3A2]/12">
+        <div className="container mx-auto px-6 lg:px-10">
+          <MotionElement animation="slideUp">
+            <p className="eyebrow text-[#D8C4A8] mb-6">Fit</p>
+            <h2 className="font-display text-[#FFF9F1] !text-[clamp(34px,4.6vw,58px)] leading-[1.03] tracking-[-0.015em] max-w-[18ch] mb-12 md:mb-16">
+              Is Enova <span className="italic text-[#F6D3A2]">right for you?</span>
+            </h2>
+          </MotionElement>
+
+          <div className="grid md:grid-cols-2 gap-12 md:gap-20">
+            <MotionElement animation="slideUp" delay={80}>
+              <p className="eyebrow text-[#F6D3A2] mb-8">A strong fit if you</p>
+              <ul className="space-y-5">
+                {FIT_YES.map((t) => (
+                  <li key={t} className="flex gap-4 border-b border-[#F6D3A2]/15 pb-5">
+                    <span className="mt-2.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[#F6D3A2]" />
+                    <span className="text-[#FDEED8] text-[17px] leading-[1.7]">{t}</span>
+                  </li>
+                ))}
+              </ul>
+            </MotionElement>
+
+            <MotionElement animation="slideUp" delay={160}>
+              <p className="eyebrow text-[#D8C4A8] mb-8">Probably not a fit if you</p>
+              <ul className="space-y-5">
+                {FIT_NO.map((t) => (
+                  <li key={t} className="flex gap-4 border-b border-[#F6D3A2]/10 pb-5">
+                    <span className="mt-2.5 h-1.5 w-4 shrink-0 bg-[#D8C4A8]/40" />
+                    <span className="text-[#D8C4A8] text-[17px] leading-[1.7]">{t}</span>
+                  </li>
+                ))}
+              </ul>
+            </MotionElement>
+          </div>
+        </div>
+      </section>
+
+
+      {/* =====================================================
           ABOUT / FOUNDER — cream editorial statement
           ===================================================== */}
       <section className="surface-ivory py-20 md:py-28">
@@ -680,6 +828,64 @@ const Index = () => {
       </section>
 
       {/* =====================================================
+          FAQ — cream, quiet accordion
+          ===================================================== */}
+      <section className="surface-cream py-20 md:py-28">
+        <div className="container mx-auto px-6 lg:px-10">
+          <div className="grid md:grid-cols-12 gap-10 md:gap-16">
+            <div className="md:col-span-4">
+              <MotionElement animation="slideUp">
+                <p className="eyebrow text-[#4A3720] mb-6">Questions</p>
+                <h2 className="font-display text-on-cream !text-[clamp(32px,4.2vw,52px)] leading-[1.04] tracking-[-0.015em] max-w-[14ch]">
+                  Before we <span className="italic text-[#A56735]">talk.</span>
+                </h2>
+              </MotionElement>
+            </div>
+
+            <div className="md:col-span-7 md:col-start-6">
+              <div className="border-t border-[#3A2915]/20">
+                {FAQS.map((f, i) => {
+                  const open = openFaq === i;
+                  return (
+                    <MotionElement key={f.q} animation="slideUp" delay={30 + i * 40}>
+                      <div className="border-b border-[#3A2915]/20">
+                        <button
+                          type="button"
+                          onClick={() => setOpenFaq(open ? null : i)}
+                          aria-expanded={open}
+                          className="w-full flex items-start justify-between gap-6 py-6 text-left group"
+                        >
+                          <span className="font-display text-on-cream text-[22px] md:text-[26px] leading-[1.25] group-hover:text-[#A56735] transition-colors duration-300">
+                            {f.q}
+                          </span>
+                          <span className="relative mt-2 h-4 w-4 shrink-0">
+                            <span className="absolute inset-x-0 top-1/2 h-px bg-[#A56735]" />
+                            <span
+                              className={`absolute inset-y-0 left-1/2 w-px bg-[#A56735] transition-transform duration-300 ${open ? "scale-y-0" : "scale-y-100"}`}
+                            />
+                          </span>
+                        </button>
+                        <div
+                          className={`grid transition-all duration-500 ease-out ${open ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"}`}
+                        >
+                          <div className="overflow-hidden">
+                            <p className="text-on-cream-body text-[17px] leading-[1.8] max-w-[62ch] pb-7">
+                              {f.a}
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </MotionElement>
+                  );
+                })}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      {/* =====================================================
           FINAL CTA — gold band, high contrast
           ===================================================== */}
       <section className="surface-gold py-20 md:py-24">
@@ -687,15 +893,16 @@ const Index = () => {
           <div className={`grid md:grid-cols-12 gap-10 md:gap-16 items-end ${dir}`}>
             <MotionElement animation="slideUp" className="md:col-span-8">
               <h2 className="font-display text-on-cream !text-[clamp(34px,5vw,64px)] leading-[1] tracking-[-0.02em] max-w-[16ch]">
-                Book a 30-minute{" "}
-                <span className="italic">opportunity audit.</span>
+                Ready to build a{" "}
+                <span className="italic">smarter business?</span>
               </h2>
             </MotionElement>
 
             <MotionElement animation="slideUp" delay={140} className="md:col-span-4 md:pb-3">
               <p className="text-[#281C0B]/85 text-[17px] leading-[1.75] mb-8 max-w-[52ch]">
-                No pitch, no obligation. We&rsquo;ll listen to your goals, review one workflow live, and tell you honestly where we&rsquo;d start.
+                The first conversation is about understanding how your business runs and identifying where automation and AI would create the biggest impact. No pitch, no obligation.
               </p>
+
               <div className={`flex flex-wrap gap-3 ${isRTL ? "justify-end" : ""}`}>
                 <a
                   href="https://cal.com/tarek-jundi/free-consultation"
@@ -703,7 +910,8 @@ const Index = () => {
                   rel="noopener noreferrer"
                   className="btn-ghost-on-cream group !bg-[#281C0B] !text-[#FFF9F1] !border-[#281C0B] hover:!bg-[#15110C]"
                 >
-                  Book an Opportunity Audit
+                  Book a Consultation
+
                   <ArrowRight size={15} className={`transition-transform duration-300 group-hover:translate-x-0.5 ${isRTL ? "rotate-180" : ""}`} />
                 </a>
               </div>
