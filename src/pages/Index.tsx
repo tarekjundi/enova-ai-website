@@ -185,6 +185,7 @@ const INDUSTRIES = [
 /* ---------- component ---------- */
 
 const Index = () => {
+  const [openFaq, setOpenFaq] = useState<number | null>(0);
   const isRTL = false;
   const dir = isRTL ? "text-right" : "";
 
