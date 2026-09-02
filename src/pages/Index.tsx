@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -185,6 +186,7 @@ const INDUSTRIES = [
 /* ---------- component ---------- */
 
 const Index = () => {
+  const [openFaq, setOpenFaq] = useState<number | null>(0);
   const isRTL = false;
   const dir = isRTL ? "text-right" : "";
 
