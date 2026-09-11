@@ -1,48 +1,59 @@
-## Why "nothing changed" visually
+# ENOVA — "Hundred Million Dollar Company" Rebuild
 
-The earlier migration only swapped imports in 6 main files (Navbar, Footer, Index, AboutUs, Solutions, Contact). Three things prevent the user from seeing any visible difference:
+A full rebuild of every page around one idea: fewer words, bigger statements, one obvious next step. Same brown-and-cream brand, entirely new typographic system and structure.
 
-1. **Inline hand-coded SVGs are still there** in `src/pages/Careers.tsx` (9 SVGs), `src/pages/BlogPost.tsx` (3 SVGs), and the floating `src/components/ScrollToTop.tsx` button (the up-arrow the user is looking at on every page).
-2. **shadcn UI primitives still import lucide-react internally** — these render the visible chevrons/checks on Contact's accordion (FAQ +/- is Phosphor, but the underlying AccordionTrigger chevron from shadcn is lucide), Select arrows, Checkbox tick, etc.
-3. **Light weight isn't visually obvious on logo glyphs** (FacebookLogo, XLogo, etc. are filled marks — weight doesn't affect them). The user mostly sees those plus the small `ArrowRight` (size 14–16) where the stroke difference is hard to notice.
+## The look
 
-## What to change
+- **Colours (unchanged):** deep brown `#281D0B`, secondary brown `#3A2B14`, warm cream `#F6D5A0`, light cream `#FDEED8`.
+- **Type (new):** Inter Tight for headlines (bold, tight tracking, very large), Roboto for body copy, JetBrains Mono for labels, numbers and metadata, Fraunces reserved for rare single-word emphasis. Instrument Serif and Work Sans are removed everywhere.
+- **Feel:** confident and quiet. Big type, hard-edged sections, thin rules, generous but disciplined spacing. No cards-on-cards, no glow, no glass, no fake logos or invented testimonials.
 
-### 1. Replace remaining inline SVGs with Phosphor Light icons
-- **`src/pages/Careers.tsx`** — replace all 9 inline SVGs with appropriate Phosphor icons (e.g. `Lightbulb`, `Users`, `Rocket`, `Briefcase`, `MapPin`, `Clock`, `CurrencyDollar`, `GraduationCap`, `Heart`).
-- **`src/pages/BlogPost.tsx`** — replace the 3 social-share inline SVGs with `XLogo`, `LinkedinLogo`, `LinkSimple` (or `Copy`).
-- **`src/components/ScrollToTop.tsx`** — replace the inline up-arrow SVG with Phosphor `ArrowUp` (size 20, weight inherits Light from context). This is the most visible change for the user since the button shows on every page.
+## Simpler navigation
 
-### 2. Swap lucide-react inside shadcn primitives that are actually used on the site
-Audit shows these are rendered:
-- `src/components/ui/accordion.tsx` → `ChevronDown` (used on Contact FAQ) → swap to Phosphor `CaretDown` with `weight="light"`.
-- `src/components/ui/checkbox.tsx` → `Check` → swap to Phosphor `Check`.
-- `src/components/ui/select.tsx` → `ChevronDown`, `ChevronUp`, `Check` → swap to Phosphor equivalents.
-- `src/components/ui/dialog.tsx` / `sheet.tsx` → `X` close button → swap to Phosphor `X`.
-- `src/components/ui/toast.tsx` → `X` → swap to Phosphor `X`.
+Cut from eight destinations to five:
 
-Leave unused shadcn primitives (sidebar, command, carousel, breadcrumb, etc.) alone to limit risk of breakage.
+- **Home** — the full story in one scroll
+- **Solutions** (Services)
+- **Work** (Case Studies)
+- **About** (About + Process merged into one page)
+- **Contact** — single call-to-action, "Book a Consultation"
 
-### 3. Make Light weight take effect explicitly
-The `IconContext.Provider` in `App.tsx` already sets `{ size: 24, weight: "light" }`, but for shadcn primitives swapped above, pass `weight="light"` directly on the icon to be safe — the context provider works only inside its tree and some Radix portals (Dialog, Toast, Select content) render outside it.
+Industries and Insights become sections on Home and About rather than separate pages. Old links keep working via redirects, so nothing breaks for anyone who has bookmarked or shared them.
 
-### 4. Keep sizes consistent
-Match the existing per-icon `size` props (e.g. accordion chevron = 16, dialog X = 16, toast X = 16). Do not introduce a blanket 24px override that would break tightly-spaced UI controls.
+## Page by page
 
-## Files to edit
+**Home** — one clear flow, each section short:
+1. Hero: one sentence of what Enova does, one button.
+2. The problem, in three lines.
+3. What we build — four solutions, plain names, one line each.
+4. How it works — five steps, numbered, no filler.
+5. Industries — compact list, no marquee.
+6. Why Enova — three reasons, not six.
+7. Results framework — kept, tightened, honest.
+8. FAQ — trimmed to five questions.
+9. Closing call to action.
 
-- `src/pages/Careers.tsx`
-- `src/pages/BlogPost.tsx`
-- `src/components/ScrollToTop.tsx`
-- `src/components/ui/accordion.tsx`
-- `src/components/ui/checkbox.tsx`
-- `src/components/ui/select.tsx`
-- `src/components/ui/dialog.tsx`
-- `src/components/ui/sheet.tsx`
-- `src/components/ui/toast.tsx`
+**Solutions** — one page, five practices, each with the problem, what gets delivered, and who it suits. Anchors from the homepage keep working.
 
-## Out of scope
-- Other shadcn primitives that aren't currently rendered (sidebar, command, breadcrumb, carousel, pagination, etc.).
-- Removing `lucide-react` from `package.json` — leave installed since some primitives still reference it.
+**Work** — case studies presented as evidence: challenge, system, outcome, tools used. Same content, stronger presentation.
 
-After this, the visible difference (thinner strokes on chevrons, scroll-to-top arrow, share icons, careers cards, FAQ +/- caret) should be immediately apparent on the Contact page and across the site.
+**About** — founder portrait and story, then the process timeline folded in below, then contact.
+
+**Contact** — form kept exactly as it works today, including the budget field and the Google Sheets connection. Only the visual layer changes.
+
+## What stays untouched
+
+- The contact form's data flow and Google Sheets integration.
+- The founder photo and all real case-study content.
+- The brown/cream colour identity.
+
+## Technical notes
+
+- Load Inter Tight, Roboto, JetBrains Mono and Fraunces via Google Fonts; rewrite `fontFamily` tokens in `tailwind.config.ts` (`display`, `sans`, `body`, `mono`, `accent`) and remove the stale aliases (`serif-accent`, `founders`, `null`).
+- Rework `src/index.css` type scale: headline sizes on `clamp()`, body at 17–18px with tighter measure, mono labels at 12–13px uppercase with wide tracking.
+- Rewrite `Index.tsx` (currently 931 lines) as a lean page composed of small section components; rebuild `Services.tsx`, `CaseStudies.tsx`, `AboutUs.tsx` (absorbing `Process.tsx`), `Navbar.tsx`, `Footer.tsx`, `PageHeader.tsx`.
+- Delete `Industries.tsx`, `Process.tsx`, `Insights.tsx`, `InsightPost.tsx`; add `<Navigate>` redirects for `/industries`, `/process`, `/insights`, `/insights/:id`.
+- Keep `Contact.tsx` logic and `GoogleSheetsSetup.tsx` intact; restyle markup only.
+- Motion: fade plus small translate on scroll only, via existing `FadeInSection`.
+- Update `index.html` title and meta description to match the new positioning.
+- Verify: clean build, no horizontal overflow at 390px, all nav and anchor links resolve, contact form still submits.
