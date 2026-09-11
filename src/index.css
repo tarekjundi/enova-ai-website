@@ -1,15 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Work+Sans:wght@300;400;500;600;700&display=swap');
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
   :root {
-    /* Semantic tokens driven off ENOVA brand palette
-       bg = deep brown #281C0B ; foreground = soft cream #FDEED8 */
-    --background: 33 58% 10%;        /* #281C0B */
-    --foreground: 33 78% 92%;        /* ≈ #FDEED8 */
+    /* ENOVA brand: deep brown background, warm cream foreground */
+    --background: 33 58% 10%;        /* #281D0B */
+    --foreground: 33 78% 92%;        /* #FDEED8 */
 
     --card: 33 50% 14%;
     --card-foreground: 33 78% 92%;
@@ -17,7 +14,7 @@
     --popover: 33 50% 14%;
     --popover-foreground: 33 78% 92%;
 
-    --primary: 33 82% 80%;           /* warm gold #F6D3A2 */
+    --primary: 33 82% 80%;           /* #F6D5A0 */
     --primary-foreground: 33 60% 10%;
 
     --secondary: 33 50% 16%;
@@ -36,7 +33,7 @@
     --input: 33 40% 16%;
     --ring: 33 82% 80%;
 
-    --radius: 0.5rem;
+    --radius: 0.25rem;
 
     --sidebar-background: 33 58% 10%;
     --sidebar-foreground: 33 60% 82%;
@@ -59,208 +56,161 @@
     overflow-x: hidden;
   }
 
-  html {
-    scroll-behavior: smooth;
-    overflow-x: hidden;
-  }
-
   [id] {
-    scroll-margin-top: 96px;
+    scroll-margin-top: 104px;
   }
 
   body {
-
     @apply text-foreground;
     overflow-x: hidden;
-    font-family: 'Work Sans', system-ui, sans-serif;
+    font-family: 'Roboto', system-ui, sans-serif;
     font-weight: 400;
-    font-feature-settings: "kern" 1, "liga" 1, "ss01" 1;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    background-color: #281C0B;
+    background-color: #281D0B;
     color: #FDEED8;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Instrument Serif', Georgia, serif;
-    font-weight: 400;
-    letter-spacing: -0.015em;
-    line-height: 1.02;
+    font-family: 'Inter Tight', system-ui, sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.035em;
+    line-height: 0.98;
   }
 
-  h1 { @apply text-5xl md:text-7xl lg:text-[104px]; }
-  h2 { @apply text-4xl md:text-6xl; }
-  h3 { @apply text-2xl md:text-3xl; }
+  h1 { font-size: clamp(44px, 8vw, 108px); }
+  h2 { font-size: clamp(34px, 5vw, 68px); }
+  h3 { font-size: clamp(22px, 2.6vw, 34px); }
 
   p {
-    font-family: 'Work Sans', system-ui, sans-serif;
-    font-size: 1.1875rem;      /* 19px desktop */
-    line-height: 1.7;
-    font-weight: 400;
-  }
-
-  small, .text-sm {
-    font-size: 1rem !important;
+    font-family: 'Roboto', system-ui, sans-serif;
+    font-size: 1.0625rem;      /* 17px */
     line-height: 1.65;
-    font-weight: 450;
-  }
-
-  .text-xs {
-    font-size: 0.875rem !important;
-    letter-spacing: 0.01em;
-    font-weight: 500;
+    font-weight: 400;
   }
 
   button, input, textarea, select {
-    font-family: 'Work Sans', system-ui, sans-serif;
+    font-family: 'Roboto', system-ui, sans-serif;
   }
 
-  /* Global readability bump — small hardcoded sizes scale up ~12% */
-  .text-\[13px\] { font-size: 15.5px !important; line-height: 1.6; }
-  .text-\[14px\] { font-size: 16.5px !important; line-height: 1.65; }
-  .text-\[15px\] { font-size: 17px !important; line-height: 1.7; }
-  .text-\[16px\] { font-size: 17.5px !important; line-height: 1.72; }
-  .text-\[17px\] { font-size: 19px !important; line-height: 1.75; }
-
   :focus-visible {
-    outline: 2px solid #F6D3A2;
+    outline: 2px solid #F6D5A0;
     outline-offset: 3px;
     border-radius: 2px;
   }
 }
 
 @layer utilities {
-  /* --- Editorial type helpers --- */
-  .font-display     { font-family: 'Instrument Serif', Georgia, serif; font-weight: 400; letter-spacing: -0.015em; }
-  .font-display-i   { font-family: 'Instrument Serif', Georgia, serif; font-style: italic; font-weight: 400; }
-  .font-body        { font-family: 'Work Sans', system-ui, sans-serif; }
-  .font-serif-accent{ font-family: 'Instrument Serif', Georgia, serif; font-style: italic; font-weight: 400; letter-spacing: -0.01em; }
+  /* --- Type helpers --- */
+  .font-display      { font-family: 'Inter Tight', system-ui, sans-serif; font-weight: 700; letter-spacing: -0.035em; }
+  .font-display-i,
+  .font-serif-accent { font-family: 'Fraunces', Georgia, serif; font-style: italic; font-weight: 300; letter-spacing: -0.01em; }
+  .font-accent       { font-family: 'Fraunces', Georgia, serif; font-style: italic; font-weight: 300; letter-spacing: -0.01em; }
+  .font-body         { font-family: 'Roboto', system-ui, sans-serif; }
+  .font-mono-label   { font-family: 'JetBrains Mono', ui-monospace, monospace; }
 
   .eyebrow {
-    font-family: 'Work Sans', system-ui, sans-serif;
+    font-family: 'JetBrains Mono', ui-monospace, monospace;
     text-transform: uppercase;
-    letter-spacing: 0.2em;
-    font-size: 0.8438rem;
-    font-weight: 600;
+    letter-spacing: 0.14em;
+    font-size: 0.75rem;
+    font-weight: 500;
   }
 
-  /* --- Section surfaces (no grids, no glow) --- */
-  .surface-deep {
-    background-color: #281C0B;
-    color: #FDEED8;
-  }
-  .surface-deep-grad {
-    background: linear-gradient(180deg, #281C0B 0%, #3A2915 100%);
-    color: #FDEED8;
-  }
-  .surface-cream {
-    background-color: #FDEED8;
-    color: #3A2915;
-  }
-  .surface-ivory {
-    background-color: #FFF9F1;
-    color: #3A2915;
-  }
-  .surface-gold {
-    background-color: #F6D3A2;
-    color: #281C0B;
+  .num {
+    font-family: 'JetBrains Mono', ui-monospace, monospace;
+    font-weight: 400;
+    letter-spacing: -0.02em;
+    font-variant-numeric: tabular-nums;
   }
 
-  /* Text tokens for high-contrast typography */
+  /* --- Surfaces --- */
+  .surface-deep       { background-color: #281D0B; color: #FDEED8; }
+  .surface-deep-grad  { background: linear-gradient(180deg, #201708 0%, #281D0B 55%, #33240E 100%); color: #FDEED8; }
+  .surface-cream      { background-color: #FDEED8; color: #33230F; }
+  .surface-ivory      { background-color: #FFF9F1; color: #33230F; }
+  .surface-gold       { background-color: #F6D5A0; color: #281D0B; }
+
+  /* --- Text tokens --- */
   .text-on-deep         { color: #FFF9F1; }
   .text-on-deep-body    { color: #FDEED8; }
-  .text-on-deep-muted   { color: #D8C4A8; }
+  .text-on-deep-muted   { color: #C9B393; }
   .text-on-cream        { color: #1F1508; }
-  .text-on-cream-body   { color: #33230F; }
-  .text-on-cream-muted  { color: #4A3720; }
+  .text-on-cream-body   { color: #3A2915; }
+  .text-on-cream-muted  { color: #6B5335; }
   .text-copper          { color: #94572A; }
-  .text-gold            { color: #F6D3A2; }
+  .text-gold            { color: #F6D5A0; }
 
-  /* Refined hairline divider */
-  .rule {
-    height: 1px;
-    background: currentColor;
-    opacity: 0.18;
-  }
-  .rule-gold {
-    height: 1px;
-    background: #F6D3A2;
-    opacity: 0.55;
-  }
+  .rule       { height: 1px; background: currentColor; opacity: 0.16; }
+  .rule-gold  { height: 1px; background: #F6D5A0; opacity: 0.5; }
 
-  /* Buttons — editorial */
+  /* --- Buttons --- */
   .btn-primary {
-    display: inline-flex; align-items: center; gap: 0.6rem;
-    background: #F6D3A2; color: #281C0B;
-    padding: 0.95rem 1.6rem;
-    font-weight: 500; font-size: 0.9375rem; letter-spacing: -0.005em;
-    border-radius: 4px;
-    transition: background 200ms ease, transform 200ms ease;
+    display: inline-flex; align-items: center; gap: 0.55rem;
+    background: #F6D5A0; color: #281D0B;
+    padding: 0.9rem 1.5rem;
+    font-weight: 500; font-size: 0.9375rem; letter-spacing: -0.01em;
+    border-radius: 2px;
+    transition: background 200ms ease, color 200ms ease;
   }
-  .btn-primary:hover { background: #F0C68A; }
+  .btn-primary:hover { background: #FFF9F1; }
 
   .btn-ghost-on-deep {
-    display: inline-flex; align-items: center; gap: 0.6rem;
+    display: inline-flex; align-items: center; gap: 0.55rem;
     background: transparent; color: #FFF9F1;
-    padding: 0.9rem 1.55rem;
+    padding: 0.9rem 1.45rem;
     font-weight: 500; font-size: 0.9375rem;
-    border: 1px solid rgba(246,211,162,0.45);
-    border-radius: 4px;
+    border: 1px solid rgba(246,213,160,0.35);
+    border-radius: 2px;
     transition: border-color 200ms ease, background 200ms ease;
   }
-  .btn-ghost-on-deep:hover { border-color: #F6D3A2; background: rgba(246,211,162,0.06); }
+  .btn-ghost-on-deep:hover { border-color: #F6D5A0; background: rgba(246,213,160,0.07); }
 
   .btn-ghost-on-cream {
-    display: inline-flex; align-items: center; gap: 0.6rem;
-    background: transparent; color: #281C0B;
-    padding: 0.9rem 1.55rem;
+    display: inline-flex; align-items: center; gap: 0.55rem;
+    background: transparent; color: #281D0B;
+    padding: 0.9rem 1.45rem;
     font-weight: 500; font-size: 0.9375rem;
-    border: 1px solid rgba(40,28,11,0.35);
-    border-radius: 4px;
+    border: 1px solid rgba(40,29,11,0.3);
+    border-radius: 2px;
     transition: border-color 200ms ease, background 200ms ease;
   }
-  .btn-ghost-on-cream:hover { border-color: #281C0B; background: rgba(40,28,11,0.04); }
+  .btn-ghost-on-cream:hover { border-color: #281D0B; background: rgba(40,29,11,0.05); }
 
-  /* Legacy glass utilities retained for other pages */
+  .btn-dark {
+    display: inline-flex; align-items: center; gap: 0.55rem;
+    background: #281D0B; color: #FFF9F1;
+    padding: 0.9rem 1.5rem;
+    font-weight: 500; font-size: 0.9375rem;
+    border-radius: 2px;
+    transition: background 200ms ease;
+  }
+  .btn-dark:hover { background: #15110C; }
+
+  /* Legacy utilities kept so untouched pages still render */
   .glass         { background: hsla(33, 55%, 13%, 0.92); border: 1px solid hsla(33, 30%, 22%, 0.6); }
-  .glass-strong  { background: hsla(33, 58%, 10%, 0.94); border-bottom: 1px solid rgba(246,211,162,0.18); }
+  .glass-strong  { background: hsla(33, 58%, 10%, 0.94); border-bottom: 1px solid rgba(246,213,160,0.16); }
   @media (min-width: 768px) {
     .glass { background: hsla(33, 58%, 10%, 0.7); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); }
     .glass-strong { background: hsla(33, 58%, 10%, 0.82); backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px); }
   }
-
-  /* Legacy grid-bg neutralised — kept as no-op so old imports don't break */
   .grid-bg { background-image: none; }
-  .section-divider { height: 1px; background: linear-gradient(90deg, transparent, rgba(246,211,162,0.35), transparent); }
-
+  .section-divider { height: 1px; background: linear-gradient(90deg, transparent, rgba(246,213,160,0.3), transparent); }
   .hover-lift { @apply transition-colors duration-300 ease-out; }
-  .hover-lift:hover { border-color: rgba(246,211,162,0.4); }
+  .hover-lift:hover { border-color: rgba(246,213,160,0.4); }
 
-  .animate-fade-in { animation: fadeIn 0.8s ease-out forwards; }
+  .animate-fade-in  { animation: fadeIn 0.7s ease-out forwards; }
   .animate-scale-in { animation: scaleIn 0.6s ease-out forwards; }
   .animate-slide-up { animation: slideUp 0.7s ease-out forwards; }
-
-  .marquee { display: flex; width: max-content; animation: marquee 55s linear infinite; }
-  .marquee-mask {
-    mask-image: linear-gradient(90deg, transparent 0%, black 8%, black 92%, transparent 100%);
-    -webkit-mask-image: linear-gradient(90deg, transparent 0%, black 8%, black 92%, transparent 100%);
-  }
 }
 
-@keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
-@keyframes fadeIn  { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes fadeIn  { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
 @keyframes scaleIn { from { opacity: 0; transform: scale(0.98); } to { opacity: 1; transform: scale(1); } }
-@keyframes slideUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes slideUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
 
 @media (max-width: 768px) {
-  h1 { @apply text-4xl; letter-spacing: -0.01em; }
-  h2 { @apply text-3xl; }
-  p  { font-size: 1.0625rem; line-height: 1.68; }
-  .text-\[13px\] { font-size: 14.5px !important; }
-  .text-\[14px\] { font-size: 15.5px !important; }
-  .text-\[15px\] { font-size: 16px !important; }
-  .text-\[17px\] { font-size: 17px !important; }
+  p { font-size: 1rem; line-height: 1.65; }
 }
 
 @media (prefers-reduced-motion: reduce) {
