@@ -25,16 +25,21 @@ export default {
     },
     extend: {
       fontFamily: {
-        // Editorial serif for headlines and emphasis
-        display: ['"Instrument Serif"', 'Georgia', 'serif'],
-        'serif-accent': ['"Instrument Serif"', 'Georgia', 'serif'],
-        // Body / UI
-        sans: ['"Work Sans"', 'system-ui', 'sans-serif'],
-        body: ['"Work Sans"', 'system-ui', 'sans-serif'],
+        // Headlines — Inter Tight, bold and tight
+        display: ['"Inter Tight"', 'system-ui', 'sans-serif'],
+        // Body — Roboto
+        sans: ['Roboto', 'system-ui', 'sans-serif'],
+        body: ['Roboto', 'system-ui', 'sans-serif'],
+        // Labels, numerals, metadata
+        mono: ['"JetBrains Mono"', 'ui-monospace', 'monospace'],
+        // Rare emphasis
+        accent: ['Fraunces', 'Georgia', 'serif'],
         // Legacy aliases retained so existing components keep rendering
-        founders: ['"Work Sans"', 'system-ui', 'sans-serif'],
-        null: ['"Work Sans"', 'system-ui', 'sans-serif'],
+        'serif-accent': ['Fraunces', 'Georgia', 'serif'],
+        founders: ['"Inter Tight"', 'system-ui', 'sans-serif'],
+        null: ['Roboto', 'system-ui', 'sans-serif'],
       },
+
       colors: {
         // ENOVA brand palette
         brand: {
