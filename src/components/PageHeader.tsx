@@ -1,6 +1,6 @@
 import { ReactNode } from "react";
 import { Link } from "react-router-dom";
-import { ArrowRight, ArrowUpRight } from "@phosphor-icons/react";
+import { ArrowRight } from "@phosphor-icons/react";
 import { MotionElement } from "@/components/MotionElements";
 
 interface PageHeaderProps {
@@ -12,63 +12,41 @@ interface PageHeaderProps {
   meta?: string;
 }
 
-const PageHeader = ({ eyebrow, title, intro, cta, secondary, meta }: PageHeaderProps) => {
+const PageHeader = ({ eyebrow, title, intro, cta, meta }: PageHeaderProps) => {
   return (
-    <section className="surface-deep-grad pt-36 md:pt-44 pb-20 md:pb-28">
+    <section className="surface-deep-grad pt-36 md:pt-44 pb-16 md:pb-20">
       <div className="container mx-auto px-6 lg:px-10">
         <MotionElement animation="slideUp" delay={40}>
-          <p className="eyebrow text-[#D8C4A8] mb-8">{eyebrow}</p>
+          <div className="flex items-center gap-4 mb-10">
+            <span className="h-px w-10 bg-[#F6D5A0]/60" />
+            <p className="eyebrow text-[#F6D5A0]">{eyebrow}</p>
+          </div>
         </MotionElement>
 
         <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 items-end">
           <div className="lg:col-span-7">
-            <MotionElement animation="slideUp" delay={110}>
-              <h1 className="font-display text-[#FFF9F1] leading-[1.02] tracking-[-0.02em] !text-[42px] sm:!text-[58px] lg:!text-[80px] max-w-[16ch]">
+            <MotionElement animation="slideUp" delay={100}>
+              <h1 className="font-display text-[#FFF9F1] leading-[0.96] !text-[clamp(40px,6.5vw,84px)] max-w-[15ch]">
                 {title}
               </h1>
             </MotionElement>
           </div>
 
           <div className="lg:col-span-4 lg:col-start-9 lg:pb-3">
-            <MotionElement animation="slideUp" delay={200}>
-              <p className="text-[#FDEED8] text-[17px] leading-[1.75] max-w-[44ch]">{intro}</p>
+            <MotionElement animation="slideUp" delay={180}>
+              <p className="text-[#FDEED8]/85 max-w-[44ch]">{intro}</p>
 
-              {(cta || secondary) && (
-                <div className="flex flex-wrap items-center gap-3 mt-9">
-                  {cta &&
-                    (cta.external ? (
-                      <a
-                        href={cta.href}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="btn-primary group"
-                      >
-                        {cta.label}
-                        <ArrowRight
-                          size={15}
-                          className="transition-transform duration-300 group-hover:translate-x-0.5"
-                        />
-                      </a>
-                    ) : (
-                      <Link to={cta.href} className="btn-primary group">
-                        {cta.label}
-                        <ArrowRight
-                          size={15}
-                          className="transition-transform duration-300 group-hover:translate-x-0.5"
-                        />
-                      </Link>
-                    ))}
-
-                  {secondary && (
-                    <Link
-                      to={secondary.to}
-                      className="inline-flex items-center gap-2 text-[#FFF9F1] text-[15px] font-medium border-b border-[#F6D3A2]/40 hover:border-[#F6D3A2] hover:text-[#F6D3A2] transition-colors duration-300 pb-1 group"
-                    >
-                      {secondary.label}
-                      <ArrowUpRight
-                        size={14}
-                        className="transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
-                      />
+              {cta && (
+                <div className="mt-8">
+                  {cta.external ? (
+                    <a href={cta.href} target="_blank" rel="noopener noreferrer" className="btn-primary group">
+                      {cta.label}
+                      <ArrowRight size={15} className="transition-transform duration-300 group-hover:translate-x-0.5" />
+                    </a>
+                  ) : (
+                    <Link to={cta.href} className="btn-primary group">
+                      {cta.label}
+                      <ArrowRight size={15} className="transition-transform duration-300 group-hover:translate-x-0.5" />
                     </Link>
                   )}
                 </div>
@@ -77,18 +55,13 @@ const PageHeader = ({ eyebrow, title, intro, cta, secondary, meta }: PageHeaderP
           </div>
         </div>
 
-        <MotionElement animation="slideUp" delay={300}>
-          <div className="mt-20 md:mt-24 grid md:grid-cols-12 gap-6 items-end">
-            <div className="md:col-span-8">
-              <div className="h-px w-full bg-[#F6D3A2]/25" />
+        {meta && (
+          <MotionElement animation="slideUp" delay={260}>
+            <div className="mt-16 pt-6 border-t border-[#F6D5A0]/20">
+              <p className="eyebrow text-[#C9B393]">{meta}</p>
             </div>
-            {meta && (
-              <div className="md:col-span-4 flex md:justify-end">
-                <p className="eyebrow text-[#D8C4A8]">{meta}</p>
-              </div>
-            )}
-          </div>
-        </MotionElement>
+          </MotionElement>
+        )}
       </div>
     </section>
   );
