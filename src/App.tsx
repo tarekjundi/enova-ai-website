@@ -8,11 +8,7 @@ import PageTransition from "./components/PageTransition";
 import Index from "./pages/Index";
 import AboutUs from "./pages/AboutUs";
 import Services from "./pages/Services";
-import Industries from "./pages/Industries";
 import CaseStudies from "./pages/CaseStudies";
-import Process from "./pages/Process";
-import Insights from "./pages/Insights";
-import InsightPost from "./pages/InsightPost";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 import Privacy from "./pages/Privacy";
@@ -31,14 +27,14 @@ const App = () => (
               <Route path="/" element={<Index />} />
               <Route path="/services" element={<Services />} />
               <Route path="/solutions" element={<Navigate to="/services" replace />} />
-              <Route path="/industries" element={<Industries />} />
               <Route path="/case-studies" element={<CaseStudies />} />
               <Route path="/work" element={<Navigate to="/case-studies" replace />} />
-              <Route path="/process" element={<Process />} />
-              <Route path="/insights" element={<Insights />} />
-              <Route path="/insights/:id" element={<InsightPost />} />
-              <Route path="/blog" element={<Navigate to="/insights" replace />} />
               <Route path="/about" element={<AboutUs />} />
+              <Route path="/process" element={<Navigate to="/about#process" replace />} />
+              <Route path="/industries" element={<Navigate to="/services" replace />} />
+              <Route path="/insights" element={<Navigate to="/" replace />} />
+              <Route path="/insights/:id" element={<Navigate to="/" replace />} />
+              <Route path="/blog" element={<Navigate to="/" replace />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="/privacy" element={<Privacy />} />
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}

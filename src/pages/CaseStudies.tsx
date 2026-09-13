@@ -5,6 +5,8 @@ import PageHeader from "@/components/PageHeader";
 import { MotionElement } from "@/components/MotionElements";
 import { ArrowRight } from "@phosphor-icons/react";
 
+const CAL = "https://cal.com/tarek-jundi/free-consultation";
+
 const CASES = [
   {
     industry: "Financial Services",
@@ -87,109 +89,77 @@ const CaseStudies = () => {
 
       <PageHeader
         eyebrow="Selected work"
-        title={
-          <>
-            Systems in production, measured the way{" "}
-            <span className="italic text-[#F6D3A2]">your CFO measures.</span>
-          </>
-        }
-        intro="Four engagements, described plainly: what was broken, what we built, and what changed after it shipped."
-        cta={{
-          label: "Discuss a Similar System",
-          href: "https://cal.com/tarek-jundi/free-consultation",
-          external: true,
-        }}
+        title="Systems in production, measured plainly."
+        intro="Four engagements: what was broken, what we built, and what changed after it shipped."
+        cta={{ label: "Book a Consultation", href: CAL, external: true }}
         meta="Four engagements · 2024 — 2025"
       />
 
-      {/* Cases */}
-      <section className="surface-cream py-24 md:py-36">
+      <section className="surface-cream py-16 md:py-24">
         <div className="container mx-auto px-6 lg:px-10">
-          <div className="space-y-24 md:space-y-36">
+          <div className="border-t border-[#3A2915]/15">
             {CASES.map((c, i) => (
-              <MotionElement key={c.industry} animation="slideUp" delay={60}>
-                <article className="grid md:grid-cols-12 gap-10 md:gap-14 items-start">
-                  {/* Metric block */}
+              <MotionElement key={c.industry} animation="slideUp" delay={40}>
+                <article className="grid md:grid-cols-12 gap-10 md:gap-14 items-start py-14 md:py-20 border-b border-[#3A2915]/15">
+                  {/* Metric panel */}
                   <div className={`md:col-span-5 ${i % 2 === 1 ? "md:order-2" : ""}`}>
-                    <div className="relative aspect-[4/5] overflow-hidden">
-                      <div
-                        className="absolute inset-0"
-                        style={{
-                          background:
-                            i % 3 === 0
-                              ? "linear-gradient(135deg, #281C0B 0%, #3A2915 55%, #6E5940 100%)"
-                              : i % 3 === 1
-                              ? "linear-gradient(135deg, #A56735 0%, #6E5940 60%, #281C0B 100%)"
-                              : "linear-gradient(135deg, #6E5940 0%, #4A3620 55%, #281C0B 100%)",
-                        }}
-                      />
-                      <div className="absolute inset-0 flex flex-col justify-between p-8">
-                        <div className="flex items-start justify-between gap-4">
-                          <p className="eyebrow text-[#FFF9F1]">Case &middot; 0{i + 1}</p>
-                          <span className="text-[#FFF9F1] text-[13px] font-medium tracking-wide border border-[#FFF9F1]/40 rounded-full px-3 py-1">
-                            In production
-                          </span>
-                        </div>
+                    <div className="bg-[#281D0B] p-8 md:p-10 flex flex-col justify-between min-h-[420px]">
+                      <div className="flex items-start justify-between gap-4">
+                        <p className="eyebrow text-[#F6D5A0]">Case {String(i + 1).padStart(2, "0")}</p>
+                        <span className="eyebrow text-[#FFF9F1]/80 border border-[#FFF9F1]/30 px-3 py-1">
+                          In production
+                        </span>
+                      </div>
 
+                      <div className="py-10">
+                        <p className="font-display text-[#F6D5A0] text-[76px] md:text-[104px] leading-[0.85]">
+                          {c.metric}
+                        </p>
+                        <p className="text-[#FDEED8]/85 text-[15px] mt-4 max-w-[24ch]">{c.metricLabel}</p>
+                      </div>
+
+                      <div>
+                        <p className="eyebrow text-[#C9B393] mb-3">Systems connected</p>
                         <div className="space-y-2">
                           {c.tools.split(" · ").map((t) => (
-                            <div
-                              key={t}
-                              className="flex items-center gap-3 border-b border-[#FFF9F1]/20 pb-2"
-                            >
-                              <span className="h-1.5 w-1.5 rounded-full bg-[#FFF9F1]" />
-                              <span className="text-[#FFF9F1] text-[14px] font-medium">{t}</span>
+                            <div key={t} className="flex items-center justify-between border-b border-[#FFF9F1]/15 pb-2">
+                              <span className="text-[#FDEED8] text-[14px]">{t}</span>
                             </div>
                           ))}
                         </div>
-
-                        <div>
-                          <p className="font-display text-[#FFF9F1] italic text-[80px] md:text-[110px] leading-none tracking-[-0.02em]">
-                            {c.metric}
-                          </p>
-                          <p className="text-[#FFF9F1] text-sm mt-3 max-w-[26ch]">{c.metricLabel}</p>
-                        </div>
                       </div>
                     </div>
-
                   </div>
 
                   {/* Copy */}
-                  <div className="md:col-span-7 md:pt-3">
-                    <p className="eyebrow text-[#A56735] mb-4">{c.industry}</p>
-                    <h2 className="font-display text-on-cream !text-[30px] md:!text-[48px] leading-[1.05] tracking-[-0.015em] mb-8 max-w-[22ch]">
+                  <div className="md:col-span-7">
+                    <p className="eyebrow text-[#94572A] mb-5">{c.industry}</p>
+                    <h2 className="font-display text-on-cream !text-[clamp(28px,3.6vw,46px)] leading-[1] mb-8 max-w-[20ch]">
                       {c.client}
                     </h2>
 
-                    <div className="space-y-5">
-                      <p className="text-on-cream-body text-[17px] leading-[1.75] max-w-[58ch]">
-                        <span className="text-on-cream font-medium">Challenge. </span>
-                        {c.challenge}
-                      </p>
-                      <p className="text-on-cream-body text-[17px] leading-[1.75] max-w-[58ch]">
-                        <span className="text-on-cream font-medium">Approach. </span>
-                        {c.approach}
-                      </p>
-                      <p className="text-on-cream-body text-[17px] leading-[1.75] max-w-[58ch]">
-                        <span className="text-on-cream font-medium">Outcome. </span>
-                        {c.outcome}
-                      </p>
-                    </div>
+                    <dl className="space-y-6 border-t border-[#3A2915]/15 pt-7">
+                      <div>
+                        <dt className="eyebrow text-[#6B5335] mb-2">Challenge</dt>
+                        <dd className="text-on-cream-body text-[17px] leading-[1.65] max-w-[56ch]">{c.challenge}</dd>
+                      </div>
+                      <div>
+                        <dt className="eyebrow text-[#6B5335] mb-2">Approach</dt>
+                        <dd className="text-on-cream-body text-[17px] leading-[1.65] max-w-[56ch]">{c.approach}</dd>
+                      </div>
+                      <div>
+                        <dt className="eyebrow text-[#6B5335] mb-2">Outcome</dt>
+                        <dd className="text-on-cream-body text-[17px] leading-[1.65] max-w-[56ch]">{c.outcome}</dd>
+                      </div>
+                    </dl>
 
-                    <div className="mt-10 grid grid-cols-3 gap-6 border-t border-[#3A2915]/20 pt-8">
+                    <div className="mt-9 grid grid-cols-3 gap-6 border-t border-[#3A2915]/15 pt-7">
                       {c.stats.map((s) => (
                         <div key={s.l}>
-                          <p className="font-display text-on-cream text-3xl md:text-4xl leading-none tracking-[-0.015em]">
-                            {s.v}
-                          </p>
+                          <p className="font-display text-on-cream text-[26px] md:text-[34px] leading-none">{s.v}</p>
                           <p className="text-on-cream-muted text-[13px] mt-2 leading-[1.5]">{s.l}</p>
                         </div>
                       ))}
-                    </div>
-
-                    <div className="mt-8 pt-6 border-t border-[#3A2915]/15 flex flex-wrap gap-x-6 gap-y-2 items-baseline">
-                      <p className="eyebrow text-[#4A3720]">Systems connected</p>
-                      <p className="text-on-cream-body text-[14px] font-medium">{c.tools}</p>
                     </div>
                   </div>
                 </article>
@@ -199,32 +169,22 @@ const CaseStudies = () => {
         </div>
       </section>
 
-      {/* CTA */}
       <section className="surface-gold py-20 md:py-24">
         <div className="container mx-auto px-6 lg:px-10">
           <div className="grid md:grid-cols-12 gap-10 md:gap-16 items-end">
-            <MotionElement animation="slideUp" className="md:col-span-8">
-              <p className="eyebrow text-[#281C0B]/85 mb-6">Start with a conversation</p>
-              <h2 className="font-display text-on-cream !text-[40px] md:!text-[76px] leading-[1] tracking-[-0.02em] max-w-[16ch]">
-                Your workflow could be{" "}
-                <span className="italic">the next one.</span>
+            <MotionElement animation="slideUp" className="md:col-span-7">
+              <h2 className="font-display text-[#281D0B] !text-[clamp(36px,5.5vw,76px)] leading-[0.94] max-w-[13ch]">
+                Your workflow could be the next one.
               </h2>
             </MotionElement>
-            <MotionElement animation="slideUp" delay={140} className="md:col-span-4 md:pb-3">
-              <p className="text-[#281C0B]/85 text-[17px] leading-[1.75] mb-8 max-w-[40ch]">
-                Bring one process to a 30-minute call. We&rsquo;ll map it live and tell you where we would begin.
+            <MotionElement animation="slideUp" delay={120} className="md:col-span-4 md:col-start-9">
+              <p className="text-[#281D0B]/80 mb-8 max-w-[38ch]">
+                Bring one process to a 30-minute call. We&rsquo;ll map it live and tell you where we&rsquo;d begin.
               </p>
-              <div className="flex flex-wrap gap-3">
-                <a
-                  href="https://cal.com/tarek-jundi/free-consultation"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn-ghost-on-cream group !bg-[#281C0B] !text-[#FFF9F1] !border-[#281C0B] hover:!bg-[#15110C]"
-                >
-                  Discuss a Similar System
-                  <ArrowRight size={15} className="transition-transform duration-300 group-hover:translate-x-0.5" />
-                </a>
-              </div>
+              <a href={CAL} target="_blank" rel="noopener noreferrer" className="btn-dark group">
+                Book a Consultation
+                <ArrowRight size={15} className="transition-transform duration-300 group-hover:translate-x-0.5" />
+              </a>
             </MotionElement>
           </div>
         </div>

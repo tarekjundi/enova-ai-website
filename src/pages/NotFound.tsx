@@ -46,13 +46,12 @@ const NotFound = () => {
 
           <div className="mt-20 pt-8 border-t border-[#F6D3A2]/20 flex flex-wrap gap-x-8 gap-y-3">
             {[
-              { to: "/services", label: "Services" },
-              { to: "/industries", label: "Industries" },
+              { to: "/services", label: "Solutions" },
               { to: "/case-studies", label: "Work" },
-              { to: "/process", label: "Process" },
-              { to: "/insights", label: "Insights" },
               { to: "/about", label: "About" },
+              { to: "/contact", label: "Contact" },
             ].map((l) => (
+
               <Link
                 key={l.to}
                 to={l.to}

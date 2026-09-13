@@ -6,6 +6,8 @@ import { MotionElement } from "@/components/MotionElements";
 import { ArrowRight } from "@phosphor-icons/react";
 import tarekPortrait from "@/assets/tarek-jundi.jpg";
 
+const CAL = "https://cal.com/tarek-jundi/free-consultation";
+
 const BELIEFS = [
   {
     n: "01",
@@ -25,13 +27,24 @@ const BELIEFS = [
   {
     n: "04",
     title: "Honesty over scope",
-    body: "When automation is the wrong answer we say so early, even when it costs us the engagement. Reputation compounds faster than revenue.",
+    body: "When automation is the wrong answer we say so early, even when it costs us the engagement.",
   },
+];
+
+const STAGES = [
+  { n: "01", title: "Discovery", body: "We follow a real case end to end and write down where time, context and accuracy leak.", outputs: "Workflow map · Time-loss inventory" },
+  { n: "02", title: "Strategy", body: "Every candidate is ranked by impact, effort and payback. We agree the success metric before scope is written.", outputs: "Ranked list · Success metrics" },
+  { n: "03", title: "Solution design", body: "Data flow, integrations, human checkpoints and failure paths designed together, on paper first.", outputs: "Architecture · Guardrails" },
+  { n: "04", title: "Development", body: "Working software every two weeks, running against real data in staging. No reveal at the end.", outputs: "Increments · Review sessions" },
+  { n: "05", title: "Testing", body: "Run against historic and edge cases your team nominates, thresholds tuned before live traffic.", outputs: "Benchmarks · Tuned thresholds" },
+  { n: "06", title: "Deployment", body: "Phased rollout, monitoring from day one, rollback path defined, named owner on both sides.", outputs: "Production release · Alerts" },
+  { n: "07", title: "Handover", body: "Runbooks, recorded walkthroughs and working sessions. Credentials, code and docs are yours.", outputs: "Runbooks · Training" },
+  { n: "08", title: "Improvement", body: "Monthly review against the metrics we agreed, tuning where drift appears, intake for the next workflow.", outputs: "Monthly review · Tuning log" },
 ];
 
 const FACTS = [
   { v: "2024", l: "Founded" },
-  { v: "4 — 8", l: "Weeks to production" },
+  { v: "4—8", l: "Weeks to production" },
   { v: "20+", l: "Industries served" },
   { v: "100%", l: "Documented handover" },
 ];
@@ -43,70 +56,59 @@ const AboutUs = () => {
 
       <PageHeader
         eyebrow="About Enova"
-        title={
-          <>
-            Built by operators,{" "}
-            <span className="italic text-[#F6D3A2]">for operators.</span>
-          </>
-        }
-        intro="A small consultancy for growing businesses that want simpler operations, connected systems and outcomes their leadership can measure."
-        cta={{
-          label: "Tell Us What You’re Building",
-          href: "https://cal.com/tarek-jundi/free-consultation",
-          external: true,
-        }}
-        meta="Est. 2024 · Consulting & Systems"
+        title="Built by operators, for operators."
+        intro="A small consultancy for growing businesses that want simpler operations, connected systems and outcomes leadership can measure."
+        cta={{ label: "Book a Consultation", href: CAL, external: true }}
+        meta="Est. 2024 · Led personally on every engagement"
       />
 
-      {/* Statement */}
-      <section className="surface-cream py-20 md:py-24">
+      {/* Founder */}
+      <section className="surface-cream py-20 md:py-28">
         <div className="container mx-auto px-6 lg:px-10">
           <div className="grid md:grid-cols-12 gap-12 md:gap-16 items-start">
             <MotionElement animation="slideUp" className="md:col-span-5">
-              <figure className="relative aspect-[4/5] w-full overflow-hidden bg-[#281C0B]">
+              <figure className="relative aspect-[4/5] w-full overflow-hidden bg-[#281D0B]">
                 <img
                   src={tarekPortrait}
                   alt="Tarek Jundi, founder and principal of Enova"
                   loading="lazy"
                   className="absolute inset-0 h-full w-full object-cover object-top"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#281C0B]/85 via-[#281C0B]/10 to-[#281C0B]/40" />
-                <figcaption className="absolute inset-0 flex flex-col justify-between p-8">
-                  <p className="eyebrow text-[#F6D3A2]">Founder &amp; Principal</p>
-                  <div>
-                    <p className="font-display text-[#FFF9F1] text-4xl leading-tight">Tarek Jundi</p>
-                    <p className="text-[#FDEED8] text-[14px] mt-2">
-                      Leads every engagement personally
-                    </p>
-                  </div>
+                <div className="absolute inset-0 bg-gradient-to-t from-[#281D0B]/90 via-transparent to-[#281D0B]/25" />
+                <figcaption className="absolute inset-x-0 bottom-0 p-8">
+                  <p className="eyebrow text-[#F6D5A0] mb-3">Founder &amp; Principal</p>
+                  <p className="font-display text-[#FFF9F1] text-[38px] leading-none">Tarek Jundi</p>
+                  <p className="text-[#FDEED8]/80 text-[14px] mt-2">Leads every engagement personally</p>
                 </figcaption>
               </figure>
             </MotionElement>
 
-
             <div className="md:col-span-6 md:col-start-7">
               <MotionElement animation="slideUp" delay={120}>
-                <p className="eyebrow text-[#4A3720] mb-6">Why we exist</p>
-                <h2 className="font-display text-on-cream !text-[36px] md:!text-[58px] leading-[1.03] tracking-[-0.015em] mb-10 max-w-[20ch]">
-                  Working systems, <span className="italic text-[#A56735]">not AI theatre.</span>
+                <p className="eyebrow text-[#94572A] mb-6">Why we exist</p>
+                <h2 className="font-display text-on-cream !text-[clamp(32px,4.4vw,56px)] leading-[0.98] mb-9 max-w-[15ch]">
+                  Working systems, not AI theatre.
                 </h2>
 
-                <div className="space-y-6 text-on-cream-body text-[17px] leading-[1.8] max-w-[56ch]">
+                <div className="space-y-5 text-on-cream-body text-[17px] md:text-[19px] leading-[1.65] max-w-[54ch]">
                   <p>
-                    ENOVA was founded after watching capable teams buy impressive AI pilots that never reached production. The technology was rarely the problem. The work around it — scoping, integration, measurement, handover — was where projects quietly died.
+                    Enova was founded after watching capable teams buy impressive AI pilots that never reached
+                    production. The technology was rarely the problem — the scoping, integration, measurement and
+                    handover around it was where projects quietly died.
                   </p>
                   <p>
-                    We run the opposite way. Every engagement starts with a real workflow and a metric attached to it, and ends with a system{" "}
-                    <span className="text-on-cream font-medium">in production</span>, owned by your team, connected to the tools they already use.
+                    We run the opposite way. Every engagement starts with a real workflow and a metric attached to
+                    it, and ends with a system in production, owned by your team, connected to the tools they
+                    already use.
                   </p>
                   <p>
-                    We stay small on purpose. Fewer clients, each led personally, with the same person in discovery and in handover.
+                    We stay small on purpose. Fewer clients, each led personally, with the same person in discovery
+                    and in handover.
                   </p>
                 </div>
 
-                <div className="mt-12 pt-8 border-t border-[#3A2915]/20">
-                  <p className="eyebrow text-[#4A3720] mb-3">Our commitment</p>
-                  <p className="font-display italic text-on-cream text-2xl md:text-3xl leading-[1.25] max-w-[30ch]">
+                <div className="mt-10 pt-7 border-t border-[#3A2915]/20">
+                  <p className="font-accent text-on-cream text-[24px] md:text-[30px] leading-[1.3] max-w-[28ch]">
                     Make intelligent operations reliable, measurable and owned by your team.
                   </p>
                 </div>
@@ -117,37 +119,58 @@ const AboutUs = () => {
       </section>
 
       {/* Beliefs */}
-      <section className="surface-ivory py-24 md:py-36">
+      <section className="surface-ivory py-20 md:py-28">
         <div className="container mx-auto px-6 lg:px-10">
-          <div className="grid md:grid-cols-12 gap-10 md:gap-16 mb-10 md:mb-14">
-            <div className="md:col-span-8">
-              <MotionElement animation="slideUp">
-                <p className="eyebrow text-[#4A3720] mb-6">What we believe</p>
-                <h2 className="font-display text-on-cream !text-[36px] md:!text-[62px] leading-[1.02] tracking-[-0.015em] max-w-[20ch]">
-                  Four positions we{" "}
-                  <span className="italic text-[#A56735]">hold firmly.</span>
-                </h2>
+          <MotionElement animation="slideUp">
+            <p className="eyebrow text-[#94572A] mb-6">What we believe</p>
+            <h2 className="font-display text-on-cream !text-[clamp(32px,4.6vw,60px)] leading-[0.98] max-w-[15ch] mb-12">
+              Four positions we hold firmly.
+            </h2>
+          </MotionElement>
+
+          <div className="grid md:grid-cols-2 gap-px bg-[#3A2915]/15 border border-[#3A2915]/15">
+            {BELIEFS.map((b, i) => (
+              <MotionElement key={b.n} animation="slideUp" delay={40 + i * 60}>
+                <div className="bg-[#FFF9F1] h-full p-8 md:p-10">
+                  <p className="num text-[#94572A] text-[13px] mb-7">{b.n}</p>
+                  <h3 className="font-display text-on-cream !text-[clamp(22px,2.6vw,30px)] leading-[1.05] mb-4 max-w-[16ch]">
+                    {b.title}
+                  </h3>
+                  <p className="text-on-cream-muted max-w-[46ch]">{b.body}</p>
+                </div>
               </MotionElement>
-            </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Process */}
+      <section id="process" className="surface-deep py-20 md:py-28">
+        <div className="container mx-auto px-6 lg:px-10">
+          <div className="grid md:grid-cols-12 gap-10 md:gap-16 mb-12">
+            <MotionElement animation="slideUp" className="md:col-span-6">
+              <p className="eyebrow text-[#F6D5A0] mb-6">How we work</p>
+              <h2 className="font-display text-[#FFF9F1] !text-[clamp(32px,4.6vw,60px)] leading-[0.98] max-w-[15ch]">
+                Eight stages from first call to production.
+              </h2>
+            </MotionElement>
+            <MotionElement animation="slideUp" delay={120} className="md:col-span-4 md:col-start-9 md:pt-4">
+              <p className="text-[#FDEED8]/80 max-w-[38ch]">
+                No multi-quarter strategy decks. Each stage produces something your team can hold, review and act on.
+              </p>
+            </MotionElement>
           </div>
 
-          <ol className="divide-y divide-[#3A2915]/15 border-y border-[#3A2915]/15">
-            {BELIEFS.map((b, i) => (
-              <MotionElement key={b.n} animation="slideUp" delay={50 + i * 50}>
-                <li className="grid md:grid-cols-12 gap-6 md:gap-10 py-10 md:py-12">
-                  <div className="md:col-span-2">
-                    <span className="font-display italic text-[#A56735] text-4xl md:text-5xl leading-none">
-                      {b.n}
-                    </span>
-                  </div>
-                  <div className="md:col-span-4">
-                    <h3 className="font-display text-on-cream text-2xl md:text-4xl leading-[1.05]">
-                      {b.title}
-                    </h3>
-                  </div>
-                  <div className="md:col-span-6">
-                    <p className="text-on-cream-body text-[17px] leading-[1.75] max-w-[52ch]">{b.body}</p>
-                  </div>
+          <ol className="border-t border-[#F6D5A0]/15">
+            {STAGES.map((s, i) => (
+              <MotionElement key={s.n} animation="slideUp" delay={30 + i * 40}>
+                <li className="group grid md:grid-cols-12 gap-3 md:gap-10 items-baseline py-7 border-b border-[#F6D5A0]/15 transition-colors duration-300 hover:bg-[#F6D5A0]/[0.05] -mx-4 md:-mx-6 px-4 md:px-6">
+                  <span className="num text-[#F6D5A0]/70 text-[13px] md:col-span-1">{s.n}</span>
+                  <h3 className="md:col-span-3 font-display text-[#FFF9F1] !text-[clamp(22px,2.4vw,30px)] leading-[1] transition-colors duration-300 group-hover:text-[#F6D5A0]">
+                    {s.title}
+                  </h3>
+                  <p className="md:col-span-5 text-[#FDEED8]/80 max-w-[48ch]">{s.body}</p>
+                  <p className="md:col-span-3 eyebrow text-[#C9B393] leading-[1.7]">{s.outputs}</p>
                 </li>
               </MotionElement>
             ))}
@@ -156,16 +179,14 @@ const AboutUs = () => {
       </section>
 
       {/* Facts */}
-      <section className="surface-deep py-20 md:py-28 border-b border-[#F6D3A2]/12">
+      <section className="surface-gold py-14 md:py-16">
         <div className="container mx-auto px-6 lg:px-10">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-10 md:gap-8">
             {FACTS.map((f, i) => (
               <MotionElement key={f.l} animation="slideUp" delay={40 + i * 50}>
                 <div>
-                  <p className="font-display text-[#F6D3A2] text-[52px] md:text-[76px] leading-none tracking-[-0.02em]">
-                    {f.v}
-                  </p>
-                  <p className="text-[#FDEED8]/90 text-[14px] mt-4">{f.l}</p>
+                  <p className="font-display text-[#281D0B] text-[48px] md:text-[68px] leading-none">{f.v}</p>
+                  <p className="eyebrow text-[#281D0B]/70 mt-3">{f.l}</p>
                 </div>
               </MotionElement>
             ))}
@@ -174,31 +195,22 @@ const AboutUs = () => {
       </section>
 
       {/* CTA */}
-      <section className="surface-gold py-20 md:py-24">
+      <section className="surface-deep-grad py-20 md:py-24">
         <div className="container mx-auto px-6 lg:px-10">
           <div className="grid md:grid-cols-12 gap-10 md:gap-16 items-end">
-            <MotionElement animation="slideUp" className="md:col-span-8">
-              <p className="eyebrow text-[#281C0B]/85 mb-6">Work with us</p>
-              <h2 className="font-display text-on-cream !text-[40px] md:!text-[76px] leading-[1] tracking-[-0.02em] max-w-[16ch]">
-                A short conversation is{" "}
-                <span className="italic">the whole commitment.</span>
+            <MotionElement animation="slideUp" className="md:col-span-7">
+              <h2 className="font-display text-[#FFF9F1] !text-[clamp(36px,5.5vw,76px)] leading-[0.94] max-w-[13ch]">
+                A short conversation is the whole commitment.
               </h2>
             </MotionElement>
-            <MotionElement animation="slideUp" delay={140} className="md:col-span-4 md:pb-3">
-              <p className="text-[#281C0B]/85 text-[17px] leading-[1.75] mb-8 max-w-[40ch]">
-                Tell us how the work runs today. We&rsquo;ll tell you honestly whether we are the right people for it.
+            <MotionElement animation="slideUp" delay={120} className="md:col-span-4 md:col-start-9">
+              <p className="text-[#FDEED8]/80 mb-8 max-w-[38ch]">
+                Tell us how the work runs today. We&rsquo;ll tell you honestly whether we&rsquo;re the right people for it.
               </p>
-              <div className="flex flex-wrap gap-3">
-                <a
-                  href="https://cal.com/tarek-jundi/free-consultation"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn-ghost-on-cream group !bg-[#281C0B] !text-[#FFF9F1] !border-[#281C0B] hover:!bg-[#15110C]"
-                >
-                  Tell Us What You&rsquo;re Building
-                  <ArrowRight size={15} className="transition-transform duration-300 group-hover:translate-x-0.5" />
-                </a>
-              </div>
+              <a href={CAL} target="_blank" rel="noopener noreferrer" className="btn-primary group">
+                Book a Consultation
+                <ArrowRight size={15} className="transition-transform duration-300 group-hover:translate-x-0.5" />
+              </a>
             </MotionElement>
           </div>
         </div>
