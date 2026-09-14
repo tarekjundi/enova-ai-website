@@ -212,7 +212,7 @@ const Contact = () => {
               <p className="eyebrow text-[#4A3720] mb-6">Direct</p>
               <a
                 href="mailto:tarek@enovaagency.com"
-                className="font-display text-on-cream text-2xl md:text-[34px] leading-[1.1] tracking-[-0.015em] hover:text-[#A56735] transition-colors break-words"
+                className="font-display text-on-cream text-xl md:text-[26px] lg:text-[30px] leading-[1.15] tracking-[-0.015em] hover:text-[#A56735] transition-colors break-all"
               >
                 tarek@enovaagency.com
               </a>
