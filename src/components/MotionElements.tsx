@@ -49,7 +49,6 @@ const MotionElement: React.FC<MotionElementProps> = ({
   }, [delay, threshold]);
 
   const getAnimationClasses = () => {
-    const safeDuration = Math.min(duration, 700);
     const baseClasses = `transition-all ease-out relative z-auto`;
     
     if (!isVisible) {
