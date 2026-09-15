@@ -105,8 +105,8 @@ const CaseStudies = () => {
                   <div className={`md:col-span-5 ${i % 2 === 1 ? "md:order-2" : ""}`}>
                     <div className="bg-[#281D0B] p-8 md:p-10 flex flex-col justify-between min-h-[420px]">
                       <div className="flex items-start justify-between gap-4">
-                        <p className="eyebrow text-[#F6D5A0]">Case {String(i + 1).padStart(2, "0")}</p>
-                        <span className="eyebrow text-[#FFF9F1]/80 border border-[#FFF9F1]/30 px-3 py-1">
+                        <p className="text-[#F6D5A0] text-[14px] font-medium">Case {String(i + 1).padStart(2, "0")}</p>
+                        <span className="text-[#FFF9F1]/80 text-[13px] font-medium">
                           In production
                         </span>
                       </div>
@@ -119,7 +119,7 @@ const CaseStudies = () => {
                       </div>
 
                       <div>
-                        <p className="eyebrow text-[#C9B393] mb-3">Systems connected</p>
+                        <p className="text-[#C9B393] text-[14px] font-medium mb-3">Systems connected</p>
                         <div className="space-y-2">
                           {c.tools.split(" · ").map((t) => (
                             <div key={t} className="flex items-center justify-between border-b border-[#FFF9F1]/15 pb-2">
@@ -133,22 +133,22 @@ const CaseStudies = () => {
 
                   {/* Copy */}
                   <div className="md:col-span-7">
-                    <p className="eyebrow text-[#94572A] mb-5">{c.industry}</p>
+                    <p className="text-[#94572A] text-[15px] font-medium mb-5">{c.industry}</p>
                     <h2 className="font-display text-on-cream !text-[clamp(28px,3.6vw,46px)] leading-[1] mb-8 max-w-[20ch]">
                       {c.client}
                     </h2>
 
                     <dl className="space-y-6 border-t border-[#3A2915]/15 pt-7">
                       <div>
-                        <dt className="eyebrow text-[#6B5335] mb-2">Challenge</dt>
+                        <dt className="text-[#3A2915] text-[15px] font-bold mb-2">Challenge</dt>
                         <dd className="text-on-cream-body text-[17px] leading-[1.65] max-w-[56ch]">{c.challenge}</dd>
                       </div>
                       <div>
-                        <dt className="eyebrow text-[#6B5335] mb-2">Approach</dt>
+                        <dt className="text-[#3A2915] text-[15px] font-bold mb-2">Approach</dt>
                         <dd className="text-on-cream-body text-[17px] leading-[1.65] max-w-[56ch]">{c.approach}</dd>
                       </div>
                       <div>
-                        <dt className="eyebrow text-[#6B5335] mb-2">Outcome</dt>
+                        <dt className="text-[#3A2915] text-[15px] font-bold mb-2">Outcome</dt>
                         <dd className="text-on-cream-body text-[17px] leading-[1.65] max-w-[56ch]">{c.outcome}</dd>
                       </div>
                     </dl>

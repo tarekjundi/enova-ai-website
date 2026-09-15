@@ -56,10 +56,9 @@ const STEPS = [
 ];
 
 const PROOF = [
-  { v: "82%", l: "Faster client onboarding", c: "Financial services" },
-  { v: "67%", l: "Tickets resolved without escalation", c: "B2B SaaS" },
-  { v: "5×", l: "Faster proposal turnaround", c: "Professional services" },
-  { v: "4—8", l: "Weeks from first call to production", c: "Typical engagement" },
+  { v: "82%", l: "faster client onboarding", c: "Financial services", detail: "Eleven days reduced to under two through automated document intake and exception routing." },
+  { v: "67%", l: "of tickets resolved without escalation", c: "B2B SaaS", detail: "A support system grounded in product documentation absorbed three times the usual volume." },
+  { v: "5×", l: "faster proposal turnaround", c: "Professional services", detail: "First drafts moved from manual assembly to under one hour, with partner review retained." },
 ];
 
 const WHY = [
@@ -99,13 +98,6 @@ const Index = () => {
       {/* ================= HERO ================= */}
       <section className="surface-deep-grad pt-36 md:pt-48 pb-16 md:pb-24">
         <div className="container mx-auto px-6 lg:px-10">
-          <MotionElement animation="slideUp" delay={40}>
-            <div className="flex items-center gap-4 mb-10">
-              <span className="h-px w-10 bg-[#F6D5A0]/60" />
-              <p className="eyebrow text-[#F6D5A0]">AI systems &amp; automation</p>
-            </div>
-          </MotionElement>
-
           <MotionElement animation="slideUp" delay={100}>
             <h1 className="font-display text-[#FFF9F1] leading-[0.94] !text-[clamp(46px,9vw,126px)] max-w-[13ch]">
               We put your operations on rails.
@@ -140,16 +132,25 @@ const Index = () => {
         </div>
       </section>
 
-      {/* ================= PROOF BAR ================= */}
-      <section className="surface-gold py-12 md:py-14">
+      {/* ================= RESULTS ================= */}
+      <section className="surface-gold py-16 md:py-20">
         <div className="container mx-auto px-6 lg:px-10">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8">
+          <MotionElement animation="slideUp">
+            <div className="flex items-end justify-between gap-8 mb-12">
+              <h2 className="font-display text-[#281D0B] !text-[clamp(32px,4.4vw,58px)] leading-[0.98]">Selected results</h2>
+              <Link to="/case-studies" className="text-[#281D0B] text-[15px] font-medium inline-flex items-center gap-2">
+                Read the work <ArrowRight size={16} />
+              </Link>
+            </div>
+          </MotionElement>
+          <div className="grid md:grid-cols-3 gap-10 md:gap-12">
             {PROOF.map((p, i) => (
               <MotionElement key={p.l} animation="slideUp" delay={40 + i * 60}>
                 <div>
                   <p className="font-display text-[#281D0B] text-[44px] md:text-[60px] leading-none">{p.v}</p>
-                  <p className="text-[#281D0B] text-[15px] leading-[1.5] mt-3 max-w-[22ch] font-medium">{p.l}</p>
-                  <p className="eyebrow text-[#281D0B]/60 mt-2">{p.c}</p>
+                  <p className="text-[#281D0B] text-[18px] leading-[1.4] mt-3 max-w-[28ch] font-medium">{p.l}</p>
+                  <p className="text-[#281D0B]/70 text-[15px] leading-[1.6] mt-4 max-w-[36ch]">{p.detail}</p>
+                  <p className="text-[#281D0B]/60 text-[13px] mt-5">{p.c}</p>
                 </div>
               </MotionElement>
             ))}
@@ -163,7 +164,6 @@ const Index = () => {
           <div className="grid md:grid-cols-12 gap-10 md:gap-16 items-start">
             <div className="md:col-span-5">
               <MotionElement animation="slideUp">
-                <p className="eyebrow text-[#94572A] mb-6">The problem</p>
                 <h2 className="font-display text-on-cream !text-[clamp(32px,4.4vw,58px)] leading-[0.98] max-w-[14ch]">
                   Your team shouldn&rsquo;t be the integration layer.
                 </h2>
@@ -234,7 +234,6 @@ const Index = () => {
       <section className="surface-ivory py-20 md:py-28">
         <div className="container mx-auto px-6 lg:px-10">
           <MotionElement animation="slideUp">
-            <p className="eyebrow text-[#94572A] mb-6">How it works</p>
             <h2 className="font-display text-on-cream !text-[clamp(32px,4.6vw,62px)] leading-[0.98] max-w-[16ch] mb-14">
               Five steps, four to eight weeks.
             </h2>
@@ -262,7 +261,6 @@ const Index = () => {
           <div className="grid md:grid-cols-12 gap-10 md:gap-16">
             <div className="md:col-span-4">
               <MotionElement animation="slideUp">
-                <p className="eyebrow text-[#F6D5A0] mb-6">Why Enova</p>
                 <h2 className="font-display text-[#FFF9F1] !text-[clamp(32px,4.4vw,56px)] leading-[0.98] max-w-[12ch]">
                   Three reasons clients stay.
                 </h2>
@@ -295,7 +293,6 @@ const Index = () => {
           <div className="grid md:grid-cols-12 gap-14 md:gap-16">
             <div className="md:col-span-6">
               <MotionElement animation="slideUp">
-                <p className="eyebrow text-[#94572A] mb-6">Who we help</p>
                 <h2 className="font-display text-on-cream !text-[clamp(28px,3.4vw,44px)] leading-[1] mb-8 max-w-[16ch]">
                   Sectors where the patterns repeat.
                 </h2>
@@ -317,7 +314,6 @@ const Index = () => {
 
             <div className="md:col-span-5 md:col-start-8">
               <MotionElement animation="slideUp" delay={120}>
-                <p className="eyebrow text-[#94572A] mb-6">What we build on</p>
                 <h2 className="font-display text-on-cream !text-[clamp(28px,3.4vw,44px)] leading-[1] mb-8 max-w-[16ch]">
                   The tools your business already uses.
                 </h2>
@@ -341,7 +337,6 @@ const Index = () => {
           <div className="grid md:grid-cols-12 gap-10 md:gap-16">
             <div className="md:col-span-4">
               <MotionElement animation="slideUp">
-                <p className="eyebrow text-[#F6D5A0] mb-6">Questions</p>
                 <h2 className="font-display text-[#FFF9F1] !text-[clamp(32px,4.4vw,56px)] leading-[0.98] max-w-[12ch]">
                   Before you book.
                 </h2>

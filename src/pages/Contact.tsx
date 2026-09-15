@@ -180,7 +180,7 @@ const Contact = () => {
     }
   };
 
-  const labelClass = "eyebrow text-[#4A3720] mb-3 block";
+  const labelClass = "text-[#281C0B] text-[15px] font-bold mb-3 block";
   const optionalClass = "ml-2 normal-case tracking-normal text-[13px] text-[#6E5940] font-normal";
   const fieldClass =
     "w-full max-w-full bg-transparent border-0 border-b border-[#3A2915]/30 focus:border-[#A56735] focus:outline-none px-0 py-3 text-[#281C0B] placeholder:text-[#6E5940]/60 text-[16px] transition-colors";
@@ -209,7 +209,7 @@ const Contact = () => {
           <div className="grid md:grid-cols-12 gap-14 md:gap-20">
             {/* Details */}
             <MotionElement animation="slideUp" className="md:col-span-4">
-              <p className="eyebrow text-[#4A3720] mb-6">Direct</p>
+              <p className="text-[#281C0B] text-[15px] font-bold mb-6">Direct</p>
               <a
                 href="mailto:tarek@enovaagency.com"
                 className="font-display text-on-cream text-xl md:text-[26px] lg:text-[30px] leading-[1.15] tracking-[-0.015em] hover:text-[#A56735] transition-colors break-all"
@@ -218,7 +218,7 @@ const Contact = () => {
               </a>
 
               <div className="mt-12 pt-8 border-t border-[#3A2915]/20">
-                <p className="eyebrow text-[#4A3720] mb-5">Social</p>
+                <p className="text-[#281C0B] text-[15px] font-bold mb-5">Social</p>
                 <div className="flex flex-wrap gap-3">
                   {SOCIALS.map(({ Icon, label, href }) => (
                     <a
@@ -236,7 +236,7 @@ const Contact = () => {
               </div>
 
               <div className="mt-12 pt-8 border-t border-[#3A2915]/20">
-                <p className="eyebrow text-[#4A3720] mb-4">Prefer to talk?</p>
+                <p className="text-[#281C0B] text-[15px] font-bold mb-4">Prefer to talk?</p>
                 <p className="text-on-cream-body text-[16px] leading-[1.75] mb-6 max-w-[38ch]">
                   Book a 30-minute session and we&rsquo;ll review one workflow live.
                 </p>
@@ -254,7 +254,7 @@ const Contact = () => {
 
             {/* Form */}
             <MotionElement animation="slideUp" delay={120} className="md:col-span-7 md:col-start-6">
-              <p className="eyebrow text-[#4A3720] mb-5">Send a message</p>
+              <p className="text-[#281C0B] text-[17px] font-bold mb-5">Send a message</p>
               <p className="text-on-cream-body text-[17px] leading-[1.75] max-w-[54ch] mb-10">
                 Tell us what your team is doing manually, where information gets stuck, and what a better process would look like.
               </p>
@@ -397,7 +397,6 @@ const Contact = () => {
         <div className="container mx-auto px-6 lg:px-10">
           <div className="grid md:grid-cols-12 gap-12 md:gap-16">
             <MotionElement animation="slideUp" className="md:col-span-4">
-              <p className="eyebrow text-[#4A3720] mb-6">Common questions</p>
               <h2 className="font-display text-on-cream !text-[34px] md:!text-[52px] leading-[1.03] tracking-[-0.02em] max-w-[14ch]">
                 Answered{" "}
                 <span className="italic text-[#A56735]">plainly.</span>

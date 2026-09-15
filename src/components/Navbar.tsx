@@ -30,8 +30,8 @@ const Navbar = () => {
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-[#281D0B]/95 backdrop-blur-md py-3 border-b border-[#F6D5A0]/12"
-          : "py-5 bg-transparent"
+          ? "bg-[#281D0B]/95 backdrop-blur-md py-4 border-b border-[#F6D5A0]/10"
+          : "py-6 bg-transparent"
       }`}
     >
       <div className="container mx-auto px-6 lg:px-10 flex justify-between items-center gap-8">
@@ -39,9 +39,9 @@ const Navbar = () => {
           to="/"
           onClick={() => window.scrollTo({ top: 0 })}
           aria-label="ENOVA — home"
-          className="shrink-0 transition-opacity duration-300 hover:opacity-75"
+          className="shrink-0 transition-opacity duration-300 hover:opacity-75 lg:-ml-3"
         >
-          <span className="font-display text-[30px] sm:text-[34px] lg:text-[38px] tracking-[-0.05em] text-[#FFF9F1] leading-none block">
+          <span className="font-display text-[38px] sm:text-[42px] lg:text-[48px] tracking-[-0.05em] text-[#FFF9F1] leading-none block">
             ENOVA
           </span>
         </Link>
@@ -91,7 +91,7 @@ const Navbar = () => {
 
       {/* Mobile fullscreen menu */}
       {mobileMenuOpen && (
-        <div className="lg:hidden fixed inset-0 top-[72px] bg-[#281D0B] px-6 pt-8 pb-16 flex flex-col overflow-y-auto animate-fade-in">
+        <div className="lg:hidden fixed inset-0 top-[88px] bg-[#281D0B] px-6 pt-8 pb-16 flex flex-col overflow-y-auto animate-fade-in">
           <div className="flex flex-col">
             {NAV_LINKS.map((link) => (
               <Link
