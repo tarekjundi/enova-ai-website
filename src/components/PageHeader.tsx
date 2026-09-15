@@ -4,7 +4,7 @@ import { ArrowRight } from "@phosphor-icons/react";
 import { MotionElement } from "@/components/MotionElements";
 
 interface PageHeaderProps {
-  eyebrow: string;
+  eyebrow?: string;
   title: ReactNode;
   intro: string;
   cta?: { label: string; href: string; external?: boolean };
@@ -12,17 +12,10 @@ interface PageHeaderProps {
   meta?: string;
 }
 
-const PageHeader = ({ eyebrow, title, intro, cta, meta }: PageHeaderProps) => {
+const PageHeader = ({ title, intro, cta, meta }: PageHeaderProps) => {
   return (
     <section className="surface-deep-grad pt-36 md:pt-44 pb-16 md:pb-20">
       <div className="container mx-auto px-6 lg:px-10">
-        <MotionElement animation="slideUp" delay={40}>
-          <div className="flex items-center gap-4 mb-10">
-            <span className="h-px w-10 bg-[#F6D5A0]/60" />
-            <p className="eyebrow text-[#F6D5A0]">{eyebrow}</p>
-          </div>
-        </MotionElement>
-
         <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 items-end">
           <div className="lg:col-span-7">
             <MotionElement animation="slideUp" delay={100}>
@@ -57,8 +50,8 @@ const PageHeader = ({ eyebrow, title, intro, cta, meta }: PageHeaderProps) => {
 
         {meta && (
           <MotionElement animation="slideUp" delay={260}>
-            <div className="mt-16 pt-6 border-t border-[#F6D5A0]/20">
-              <p className="eyebrow text-[#C9B393]">{meta}</p>
+            <div className="mt-14">
+              <p className="text-[#C9B393] text-[14px]">{meta}</p>
             </div>
           </MotionElement>
         )}

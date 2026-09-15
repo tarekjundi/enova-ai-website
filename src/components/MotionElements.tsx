@@ -22,10 +22,16 @@ const MotionElement: React.FC<MotionElementProps> = ({
   const elementRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      setIsVisible(true);
+      return;
+    }
+
+    let timer: ReturnType<typeof setTimeout> | undefined;
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          setTimeout(() => setIsVisible(true), delay);
+          timer = setTimeout(() => setIsVisible(true), Math.min(delay, 240));
           observer.unobserve(entry.target);
         }
       },
@@ -36,11 +42,14 @@ const MotionElement: React.FC<MotionElementProps> = ({
       observer.observe(elementRef.current);
     }
 
-    return () => observer.disconnect();
+    return () => {
+      observer.disconnect();
+      if (timer) clearTimeout(timer);
+    };
   }, [delay, threshold]);
 
   const getAnimationClasses = () => {
-    const baseClasses = `transition-all duration-${duration} ease-out relative z-auto`;
+    const baseClasses = `transition-all ease-out relative z-auto`;
     
     if (!isVisible) {
       switch (animation) {
@@ -65,7 +74,7 @@ const MotionElement: React.FC<MotionElementProps> = ({
   };
 
   return (
-    <div ref={elementRef} className={`${getAnimationClasses()} ${className}`}>
+      <div ref={elementRef} style={{ transitionDuration: `${Math.min(duration, 700)}ms` }} className={`${getAnimationClasses()} ${className}`}>
       {children}
     </div>
   );

@@ -85,7 +85,6 @@ const AboutUs = () => {
 
             <div className="md:col-span-6 md:col-start-7">
               <MotionElement animation="slideUp" delay={120}>
-                <p className="eyebrow text-[#94572A] mb-6">Why we exist</p>
                 <h2 className="font-display text-on-cream !text-[clamp(32px,4.4vw,56px)] leading-[0.98] mb-9 max-w-[15ch]">
                   Working systems, not AI theatre.
                 </h2>
@@ -122,7 +121,6 @@ const AboutUs = () => {
       <section className="surface-ivory py-20 md:py-28">
         <div className="container mx-auto px-6 lg:px-10">
           <MotionElement animation="slideUp">
-            <p className="eyebrow text-[#94572A] mb-6">What we believe</p>
             <h2 className="font-display text-on-cream !text-[clamp(32px,4.6vw,60px)] leading-[0.98] max-w-[15ch] mb-12">
               Four positions we hold firmly.
             </h2>
@@ -149,7 +147,6 @@ const AboutUs = () => {
         <div className="container mx-auto px-6 lg:px-10">
           <div className="grid md:grid-cols-12 gap-10 md:gap-16 mb-12">
             <MotionElement animation="slideUp" className="md:col-span-6">
-              <p className="eyebrow text-[#F6D5A0] mb-6">How we work</p>
               <h2 className="font-display text-[#FFF9F1] !text-[clamp(32px,4.6vw,60px)] leading-[0.98] max-w-[15ch]">
                 Eight stages from first call to production.
               </h2>

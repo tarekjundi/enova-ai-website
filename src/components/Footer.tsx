@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import { LinkedinLogo, InstagramLogo, XLogo, ArrowRight } from "@phosphor-icons/react";
+import { LinkedinLogo, InstagramLogo, XLogo } from "@phosphor-icons/react";
 
 const Footer = () => {
   const navigate = useNavigate();
@@ -13,33 +13,10 @@ const Footer = () => {
     "text-[#FDEED8]/85 hover:text-[#F6D5A0] transition-colors duration-200 text-[15px]";
 
   return (
-    <footer className="surface-deep border-t border-[#F6D5A0]/12">
-      <div className="container mx-auto px-6 lg:px-10 pt-20 pb-10">
-        {/* Closing statement */}
-        <div className="grid md:grid-cols-12 gap-10 pb-16 border-b border-[#F6D5A0]/12">
-          <div className="md:col-span-7">
-            <h2 className="font-display text-[#FFF9F1] !text-[clamp(34px,5vw,64px)] leading-[0.98] max-w-[14ch]">
-              Let&rsquo;s make your operations simpler.
-            </h2>
-          </div>
-          <div className="md:col-span-5 md:pt-3 flex flex-col justify-between gap-7">
-            <p className="text-[#FDEED8]/85 max-w-[40ch]">
-              Bring one process to a 30-minute call. We&rsquo;ll map it live and tell you where we&rsquo;d start.
-            </p>
-            <a
-              href="https://cal.com/tarek-jundi/free-consultation"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-primary self-start group"
-            >
-              Book a Consultation
-              <ArrowRight size={15} className="transition-transform duration-300 group-hover:translate-x-0.5" />
-            </a>
-          </div>
-        </div>
-
+    <footer className="surface-deep">
+      <div className="container mx-auto px-6 lg:px-10 pt-14 pb-10">
         {/* Columns */}
-        <div className="grid grid-cols-2 md:grid-cols-12 gap-10 md:gap-12 pt-14">
+        <div className="grid grid-cols-2 md:grid-cols-12 gap-10 md:gap-12">
           <div className="col-span-2 md:col-span-5">
             <p className="font-display text-[40px] md:text-[48px] leading-none text-[#FFF9F1] tracking-[-0.05em]">
               ENOVA
@@ -50,7 +27,7 @@ const Footer = () => {
           </div>
 
           <div className="md:col-span-2 md:col-start-7">
-            <h4 className="eyebrow text-[#C9B393] mb-5">Site</h4>
+            <h4 className="text-[#C9B393] text-[14px] font-medium mb-5">Site</h4>
             <ul className="space-y-3">
               <li><button onClick={() => go("/services")} className={linkClass}>Solutions</button></li>
               <li><button onClick={() => go("/case-studies")} className={linkClass}>Work</button></li>
@@ -60,7 +37,7 @@ const Footer = () => {
           </div>
 
           <div className="md:col-span-2">
-            <h4 className="eyebrow text-[#C9B393] mb-5">Solutions</h4>
+            <h4 className="text-[#C9B393] text-[14px] font-medium mb-5">Solutions</h4>
             <ul className="space-y-3">
               <li><button onClick={() => go("/services")} className={linkClass}>Opportunity Audit</button></li>
               <li><button onClick={() => go("/services")} className={linkClass}>Workflow Systems</button></li>
@@ -71,7 +48,7 @@ const Footer = () => {
           </div>
 
           <div className="md:col-span-2">
-            <h4 className="eyebrow text-[#C9B393] mb-5">Connect</h4>
+            <h4 className="text-[#C9B393] text-[14px] font-medium mb-5">Connect</h4>
             <ul className="space-y-3">
               <li>
                 <a href="mailto:tarek@enovaagency.com" className={linkClass}>

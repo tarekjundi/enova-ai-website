@@ -136,7 +136,7 @@ const Services = () => {
                     </p>
 
                     <div className="mt-9 pt-6 border-t border-[#3A2915]/15">
-                      <p className="eyebrow text-[#6B5335] mb-4">Typical use cases</p>
+                      <p className="text-[#3A2915] text-[15px] font-bold mb-4">Typical use cases</p>
                       <ul className="grid sm:grid-cols-2 gap-x-8 gap-y-3">
                         {p.uses.map((u) => (
                           <li key={u} className="flex gap-3 text-on-cream-body text-[15px] leading-[1.55]">
@@ -148,7 +148,7 @@ const Services = () => {
                     </div>
 
                     <div className="mt-7 pt-5 border-t border-[#3A2915]/15 flex flex-wrap gap-x-4 gap-y-1 items-baseline">
-                      <p className="eyebrow text-[#6B5335]">Best for</p>
+                      <p className="text-[#3A2915] text-[15px] font-bold">Best for</p>
                       <p className="text-on-cream-muted text-[15px]">{p.fit}</p>
                     </div>
                   </div>
