@@ -14,7 +14,7 @@ const MotionElement: React.FC<MotionElementProps> = ({
   children, 
   animation = 'slideUp', 
   delay = 0, 
-  duration = 800,
+  duration = 560,
   threshold = 0.1,
   className = ''
 }) => {
@@ -28,10 +28,11 @@ const MotionElement: React.FC<MotionElementProps> = ({
     }
 
     let timer: ReturnType<typeof setTimeout> | undefined;
+    const mobile = window.matchMedia('(max-width: 767px)').matches;
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          timer = setTimeout(() => setIsVisible(true), Math.min(delay, 240));
+          timer = setTimeout(() => setIsVisible(true), Math.min(delay, mobile ? 80 : 180));
           observer.unobserve(entry.target);
         }
       },
@@ -49,16 +50,16 @@ const MotionElement: React.FC<MotionElementProps> = ({
   }, [delay, threshold]);
 
   const getAnimationClasses = () => {
-    const baseClasses = `transition-all ease-out relative z-auto`;
+    const baseClasses = `motion-reveal relative z-auto`;
     
     if (!isVisible) {
       switch (animation) {
         case 'slideUp':
-          return `${baseClasses} opacity-0 translate-y-4`;
+          return `${baseClasses} opacity-0 translate-y-3`;
         case 'slideLeft':
-          return `${baseClasses} opacity-0 -translate-x-4`;
+          return `${baseClasses} opacity-0 -translate-x-3`;
         case 'slideRight':
-          return `${baseClasses} opacity-0 translate-x-4`;
+          return `${baseClasses} opacity-0 translate-x-3`;
         case 'scale':
           return `${baseClasses} opacity-0 scale-98`;
         case 'rotate':
@@ -74,7 +75,7 @@ const MotionElement: React.FC<MotionElementProps> = ({
   };
 
   return (
-      <div ref={elementRef} style={{ transitionDuration: `${Math.min(duration, 700)}ms` }} className={`${getAnimationClasses()} ${className}`}>
+      <div ref={elementRef} style={{ transitionDuration: `${Math.min(duration, 600)}ms` }} className={`${getAnimationClasses()} ${className}`}>
       {children}
     </div>
   );

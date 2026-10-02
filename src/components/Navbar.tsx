@@ -54,7 +54,7 @@ const Navbar = () => {
               to={link.to}
               onClick={() => window.scrollTo({ top: 0 })}
               aria-current={isActive(link.to) ? "page" : undefined}
-              className={`relative px-4 py-2 text-[15px] font-medium tracking-[-0.01em] transition-colors duration-200 ${
+              className={`nav-link relative px-4 py-2 text-[15px] font-medium tracking-[-0.01em] transition-colors duration-200 ${
                 isActive(link.to)
                   ? "text-[#F6D5A0]"
                   : "text-[#FDEED8]/85 hover:text-[#FFF9F1]"
