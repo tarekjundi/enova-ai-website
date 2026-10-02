@@ -8,3 +8,4 @@
 - [x] Add restrained, responsive, reduced-motion-safe animation site-wide.
 - [x] Add detailed case evidence to the homepage Results section.
 - [x] Verify desktop and mobile rendering, links, and forms.
+- [x] Add subtle page, scroll, and interactive animations without changing layout or colors; verify reduced motion and mobile.

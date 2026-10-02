@@ -152,7 +152,7 @@
     padding: 0.9rem 1.5rem;
     font-weight: 500; font-size: 0.9375rem; letter-spacing: -0.01em;
     border-radius: 2px;
-    transition: background 200ms ease, color 200ms ease;
+    transition: background 200ms ease, color 200ms ease, transform 250ms ease;
   }
   .btn-primary:hover { background: #FFF9F1; }
 
@@ -163,7 +163,7 @@
     font-weight: 500; font-size: 0.9375rem;
     border: 1px solid rgba(246,213,160,0.35);
     border-radius: 2px;
-    transition: border-color 200ms ease, background 200ms ease;
+    transition: border-color 200ms ease, background 200ms ease, transform 250ms ease;
   }
   .btn-ghost-on-deep:hover { border-color: #F6D5A0; background: rgba(246,213,160,0.07); }
 
@@ -174,7 +174,7 @@
     font-weight: 500; font-size: 0.9375rem;
     border: 1px solid rgba(40,29,11,0.3);
     border-radius: 2px;
-    transition: border-color 200ms ease, background 200ms ease;
+    transition: border-color 200ms ease, background 200ms ease, transform 250ms ease;
   }
   .btn-ghost-on-cream:hover { border-color: #281D0B; background: rgba(40,29,11,0.05); }
 
@@ -184,9 +184,35 @@
     padding: 0.9rem 1.5rem;
     font-weight: 500; font-size: 0.9375rem;
     border-radius: 2px;
-    transition: background 200ms ease;
+    transition: background 200ms ease, transform 250ms ease;
   }
   .btn-dark:hover { background: #15110C; }
+
+  .motion-reveal {
+    transition-property: opacity, transform;
+    transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .page-enter { animation: pageEnter 320ms ease-out both; }
+
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 3px;
+    left: 1rem;
+    right: 1rem;
+    height: 1px;
+    background: currentColor;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 250ms ease;
+  }
+  .nav-link:hover::after, .nav-link:focus-visible::after, .nav-link[aria-current='page']::after { transform: scaleX(1); }
+
+  @media (hover: hover) {
+    .btn-primary:hover, .btn-ghost-on-deep:hover, .btn-ghost-on-cream:hover, .btn-dark:hover { transform: translateY(-2px); }
+  }
+  .btn-primary:active, .btn-ghost-on-deep:active, .btn-ghost-on-cream:active, .btn-dark:active { transform: translateY(0); }
 
   /* Legacy utilities kept so untouched pages still render */
   .glass         { background: hsla(33, 55%, 13%, 0.92); border: 1px solid hsla(33, 30%, 22%, 0.6); }
@@ -208,12 +234,17 @@
 @keyframes fadeIn  { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
 @keyframes scaleIn { from { opacity: 0; transform: scale(0.98); } to { opacity: 1; transform: scale(1); } }
 @keyframes slideUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes pageEnter { from { opacity: 0; } to { opacity: 1; } }
 
 @media (max-width: 768px) {
   p { font-size: 1rem; line-height: 1.65; }
+  .motion-reveal { transition-duration: 340ms !important; }
+  .page-enter { animation-duration: 200ms; }
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .page-enter { animation: none; }
+  .motion-reveal { opacity: 1; transform: none; }
   *, *::before, *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
