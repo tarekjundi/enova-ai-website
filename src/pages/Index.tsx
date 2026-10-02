@@ -4,6 +4,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ScrollToTop from "@/components/ScrollToTop";
 import { MotionElement } from "@/components/MotionElements";
+import WorkflowDiagnostic from "@/components/WorkflowDiagnostic";
 import { ArrowRight, ArrowUpRight, Minus, Plus } from "@phosphor-icons/react";
 
 const CAL = "https://cal.com/tarek-jundi/free-consultation";
@@ -190,6 +191,8 @@ const Index = () => {
           </div>
         </div>
       </section>
+
+      <WorkflowDiagnostic />
 
       {/* ================= WHAT WE BUILD ================= */}
       <section className="surface-deep py-20 md:py-28">
