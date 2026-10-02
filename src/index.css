@@ -266,3 +266,4 @@
   .panel-lift:hover { transform: translateY(-3px); box-shadow: 0 2px 4px rgba(40,29,11,0.08), 0 20px 40px -20px rgba(40,29,11,0.35); }
 }
 .field-input:-webkit-autofill { -webkit-box-shadow: 0 0 0 40px #FFF9F1 inset; -webkit-text-fill-color: #281C0B; }
+select.field-input, input.field-input { height: 54px; }
