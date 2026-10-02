@@ -100,6 +100,10 @@ export default {
         neonGreen: '#F6D3A2',
         darkTeal: '#281C0B',
       },
+      boxShadow: {
+        'soft': '0 1px 2px rgba(40,29,11,0.06), 0 8px 24px -12px rgba(40,29,11,0.18)',
+        'lift': '0 2px 4px rgba(40,29,11,0.08), 0 20px 40px -20px rgba(40,29,11,0.35)',
+      },
       borderRadius: {
         lg: 'var(--radius)',
         md: 'calc(var(--radius) - 2px)',

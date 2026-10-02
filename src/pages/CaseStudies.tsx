@@ -95,7 +95,7 @@ const CaseStudies = () => {
         meta="Four engagements · 2024 — 2025"
       />
 
-      <section className="surface-cream py-16 md:py-24">
+      <section className="surface-cream py-20 md:py-28">
         <div className="container mx-auto px-6 lg:px-10">
           <div className="border-t border-[#3A2915]/15">
             {CASES.map((c, i) => (
@@ -103,7 +103,7 @@ const CaseStudies = () => {
                 <article className="grid md:grid-cols-12 gap-10 md:gap-14 items-start py-14 md:py-20 border-b border-[#3A2915]/15">
                   {/* Metric panel */}
                   <div className={`md:col-span-5 ${i % 2 === 1 ? "md:order-2" : ""}`}>
-                    <div className="bg-[#281D0B] p-8 md:p-10 flex flex-col justify-between min-h-[420px]">
+                    <div className="panel-lift bg-[#281D0B] p-8 md:p-10 flex flex-col justify-between min-h-[420px]">
                       <div className="flex items-start justify-between gap-4">
                         <p className="text-[#F6D5A0] text-[14px] font-medium">Case {String(i + 1).padStart(2, "0")}</p>
                         <span className="text-[#FFF9F1]/80 text-[13px] font-medium">

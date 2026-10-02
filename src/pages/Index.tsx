@@ -134,7 +134,7 @@ const Index = () => {
       </section>
 
       {/* ================= RESULTS ================= */}
-      <section className="surface-gold py-16 md:py-20">
+      <section className="surface-gold py-20 md:py-24">
         <div className="container mx-auto px-6 lg:px-10">
           <MotionElement animation="slideUp">
             <div className="flex items-end justify-between gap-8 mb-12">

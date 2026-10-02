@@ -183,7 +183,7 @@ const Contact = () => {
   const labelClass = "text-[#281C0B] text-[15px] font-bold mb-3 block";
   const optionalClass = "ml-2 normal-case tracking-normal text-[13px] text-[#6E5940] font-normal";
   const fieldClass =
-    "w-full max-w-full bg-transparent border-0 border-b border-[#3A2915]/30 focus:border-[#A56735] focus:outline-none px-0 py-3 text-[#281C0B] placeholder:text-[#6E5940]/60 text-[16px] transition-colors";
+    "field-input w-full max-w-full bg-[#FFF9F1] border border-[#3A2915]/20 rounded-[3px] px-4 py-3.5 text-[#281C0B] placeholder:text-[#6E5940]/60 text-[16px] transition-[border-color,box-shadow,background-color] duration-200 hover:border-[#3A2915]/40 focus:border-[#94572A] focus:outline-none focus:ring-2 focus:ring-[#94572A]/15";
   const errorClass = "mt-2 text-[14px] text-[#8C2F1E]";
 
 

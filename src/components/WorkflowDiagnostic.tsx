@@ -77,7 +77,7 @@ const WorkflowDiagnostic = () => {
 
           <div className="md:col-span-6 md:col-start-7">
             <MotionElement animation="slideUp" delay={160}>
-              <div className="bg-[#281D0B] p-8 md:p-12">
+              <div className="bg-[#281D0B] p-8 md:p-12 shadow-lift">
                 <p className="text-[#C9B393] text-[14px] font-medium">Yearly cost of manual work</p>
                 <p className="font-display text-[#F6D5A0] text-[64px] md:text-[96px] leading-[0.9] mt-4 tabular-nums" aria-live="polite">
                   {money(cost)}
