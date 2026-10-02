@@ -252,3 +252,10 @@
     scroll-behavior: auto !important;
   }
 }
+
+/* Workflow diagnostic slider */
+.diag-range { -webkit-appearance: none; appearance: none; height: 3px; border-radius: 0; outline: none; cursor: pointer; touch-action: pan-y; }
+.diag-range::-webkit-slider-thumb { -webkit-appearance: none; width: 20px; height: 20px; border-radius: 9999px; background: #281D0B; border: 3px solid #FFF9F1; box-shadow: 0 0 0 1px #94572A; transition: transform .15s ease; }
+.diag-range::-webkit-slider-thumb:hover { transform: scale(1.12); }
+.diag-range::-moz-range-thumb { width: 20px; height: 20px; border-radius: 9999px; background: #281D0B; border: 3px solid #FFF9F1; box-shadow: 0 0 0 1px #94572A; }
+.diag-range:focus-visible::-webkit-slider-thumb { box-shadow: 0 0 0 3px #94572A; }
