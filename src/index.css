@@ -259,3 +259,10 @@
 .diag-range::-webkit-slider-thumb:hover { transform: scale(1.12); }
 .diag-range::-moz-range-thumb { width: 20px; height: 20px; border-radius: 9999px; background: #281D0B; border: 3px solid #FFF9F1; box-shadow: 0 0 0 1px #94572A; }
 .diag-range:focus-visible::-webkit-slider-thumb { box-shadow: 0 0 0 3px #94572A; }
+
+/* Polish: consistent elevation and focus on interactive panels */
+@media (hover: hover) {
+  .panel-lift { transition: transform 300ms cubic-bezier(0.22,1,0.36,1), box-shadow 300ms ease; }
+  .panel-lift:hover { transform: translateY(-3px); box-shadow: 0 2px 4px rgba(40,29,11,0.08), 0 20px 40px -20px rgba(40,29,11,0.35); }
+}
+.field-input:-webkit-autofill { -webkit-box-shadow: 0 0 0 40px #FFF9F1 inset; -webkit-text-fill-color: #281C0B; }

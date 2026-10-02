@@ -111,7 +111,7 @@ const Services = () => {
         meta="Typical engagement · 4 — 8 weeks to production"
       />
 
-      <section className="surface-cream py-16 md:py-24">
+      <section className="surface-cream py-20 md:py-28">
         <div className="container mx-auto px-6 lg:px-10">
           <div className="border-t border-[#3A2915]/15">
             {PRACTICES.map((p, i) => (
