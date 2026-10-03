@@ -59,7 +59,6 @@ const AboutUs = () => {
         title="Built by operators, for operators."
         intro="A small consultancy for growing businesses that want simpler operations, connected systems and outcomes leadership can measure."
         cta={{ label: "Book a Consultation", href: CAL, external: true }}
-        meta="Est. 2024 · Led personally on every engagement"
       />
 
       {/* Founder */}

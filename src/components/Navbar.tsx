@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { ArrowRight, X, List } from "@phosphor-icons/react";
+import { createPortal } from "react-dom";
 
 const NAV_LINKS = [
   { to: "/services", label: "Solutions" },
@@ -24,12 +25,19 @@ const Navbar = () => {
     setMobileMenuOpen(false);
   }, [location]);
 
+  useEffect(() => {
+    if (!mobileMenuOpen) return;
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => { document.body.style.overflow = previousOverflow; };
+  }, [mobileMenuOpen]);
+
   const isActive = (path: string) => location.pathname === path;
 
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled
+        scrolled || mobileMenuOpen
           ? "bg-[#281D0B]/95 backdrop-blur-md py-4 border-b border-[#F6D5A0]/10"
           : "py-6 bg-transparent"
       }`}
@@ -90,8 +98,8 @@ const Navbar = () => {
       </div>
 
       {/* Mobile fullscreen menu */}
-      {mobileMenuOpen && (
-        <div className="lg:hidden fixed inset-0 top-[88px] bg-[#281D0B] px-6 pt-8 pb-16 flex flex-col overflow-y-auto animate-fade-in">
+      {mobileMenuOpen && createPortal(
+        <div className="lg:hidden fixed inset-x-0 bottom-0 top-[88px] z-40 bg-background px-6 pt-8 pb-16 flex flex-col overflow-y-auto animate-fade-in" aria-label="Mobile navigation">
           <div className="flex flex-col">
             {NAV_LINKS.map((link) => (
               <Link
@@ -120,7 +128,7 @@ const Navbar = () => {
             Book a Consultation
             <ArrowRight size={15} />
           </a>
-        </div>
+        </div>, document.body
       )}
     </nav>
   );

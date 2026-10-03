@@ -108,7 +108,6 @@ const Services = () => {
         title="Five ways we take work off your team."
         intro="Each practice starts from a workflow you already run and ends with a system in production, owned by your people."
         cta={{ label: "Book a Consultation", href: CAL, external: true }}
-        meta="Typical engagement · 4 — 8 weeks to production"
       />
 
       <section className="surface-cream py-20 md:py-28">

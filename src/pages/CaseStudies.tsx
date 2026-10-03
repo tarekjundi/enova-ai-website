@@ -92,7 +92,6 @@ const CaseStudies = () => {
         title="Systems in production, measured plainly."
         intro="Four engagements: what was broken, what we built, and what changed after it shipped."
         cta={{ label: "Book a Consultation", href: CAL, external: true }}
-        meta="Four engagements · 2024 — 2025"
       />
 
       <section className="surface-cream py-20 md:py-28">

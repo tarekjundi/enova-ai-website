@@ -199,8 +199,7 @@ const Contact = () => {
             <span className="italic text-[#F6D3A2]">today.</span>
           </>
         }
-        intro="Every message is read personally. Expect a reply within one business day — usually with a few questions before we suggest a call."
-        meta="Reply within one business day"
+        intro="Tell us what your team is doing manually, where information gets stuck, and what a better process would look like."
       />
 
       {/* Form + details */}
@@ -256,7 +255,7 @@ const Contact = () => {
             <MotionElement animation="slideUp" delay={120} className="md:col-span-7 md:col-start-6">
               <p className="text-[#281C0B] text-[17px] font-bold mb-5">Send a message</p>
               <p className="text-on-cream-body text-[17px] leading-[1.75] max-w-[54ch] mb-10">
-                Tell us what your team is doing manually, where information gets stuck, and what a better process would look like.
+                Every message is read personally. Expect a reply within one business day — usually with a few questions before we suggest a call.
               </p>
               <form onSubmit={handleSubmit} noValidate className="space-y-9">
                 <div className="grid sm:grid-cols-2 gap-9">
