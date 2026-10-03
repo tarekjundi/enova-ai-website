@@ -53,7 +53,6 @@ const Privacy = () => {
           </>
         }
         intro="We collect as little as possible, use it only to do the work you asked for, and delete it whenever you ask."
-        meta="Last updated · 2025"
       />
 
       <section className="surface-cream py-24 md:py-36">
