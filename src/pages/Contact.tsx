@@ -196,14 +196,14 @@ const Contact = () => {
         title={
           <>
             Tell us how the work runs{" "}
-            <span className="italic text-[#F6D3A2]">today.</span>
+            <span className="italic text-copper">today.</span>
           </>
         }
         intro="Tell us what your team is doing manually, where information gets stuck, and what a better process would look like."
       />
 
       {/* Form + details */}
-      <section className="surface-cream py-24 md:py-36">
+      <section className="surface-ivory py-20 md:py-28">
         <div className="container mx-auto px-6 lg:px-10">
           <div className="grid md:grid-cols-12 gap-14 md:gap-20">
             {/* Details */}
@@ -254,7 +254,7 @@ const Contact = () => {
             {/* Form */}
             <MotionElement animation="slideUp" delay={120} className="md:col-span-7 md:col-start-6">
               <p className="text-[#281C0B] text-[17px] font-bold mb-5">Send a message</p>
-              <p className="text-on-cream-body text-[17px] leading-[1.75] max-w-[54ch] mb-10">
+              <p className="text-on-cream-body text-[17px] leading-[1.75] max-w-[54ch] mb-10 border-l-2 border-primary pl-5">
                 Every message is read personally. Expect a reply within one business day — usually with a few questions before we suggest a call.
               </p>
               <form onSubmit={handleSubmit} noValidate className="space-y-9">

@@ -13,12 +13,12 @@ interface PageHeaderProps {
 
 const PageHeader = ({ title, intro, cta }: PageHeaderProps) => {
   return (
-    <section className="surface-deep-grad pt-36 md:pt-44 pb-16 md:pb-20">
+    <section className="surface-cream pt-36 md:pt-44 pb-16 md:pb-24">
       <div className="container mx-auto px-6 lg:px-10">
         <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 items-end">
           <div className="lg:col-span-7">
             <MotionElement animation="slideUp" delay={100}>
-              <h1 className="font-display text-[#FFF9F1] leading-[0.96] !text-[clamp(40px,6.5vw,84px)] max-w-[15ch]">
+              <h1 className="font-display text-on-cream leading-[0.96] !text-[clamp(40px,6.5vw,84px)] max-w-[15ch]">
                 {title}
               </h1>
             </MotionElement>
@@ -26,7 +26,7 @@ const PageHeader = ({ title, intro, cta }: PageHeaderProps) => {
 
           <div className="lg:col-span-4 lg:col-start-9 lg:pb-3">
             <MotionElement animation="slideUp" delay={180}>
-              <p className="text-[#FDEED8]/85 max-w-[44ch]">{intro}</p>
+              <p className="text-on-cream-body max-w-[44ch]">{intro}</p>
 
               {cta && (
                 <div className="mt-8">

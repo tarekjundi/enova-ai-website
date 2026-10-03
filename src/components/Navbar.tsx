@@ -99,7 +99,7 @@ const Navbar = () => {
 
       {/* Mobile fullscreen menu */}
       {mobileMenuOpen && createPortal(
-        <div className="lg:hidden fixed inset-x-0 bottom-0 top-[88px] z-40 bg-background px-6 pt-8 pb-16 flex flex-col overflow-y-auto animate-fade-in" aria-label="Mobile navigation">
+        <div className="lg:hidden fixed inset-x-0 bottom-0 top-[85px] z-40 bg-background px-6 pt-8 pb-16 flex flex-col overflow-y-auto menu-enter" aria-label="Mobile navigation">
           <div className="flex flex-col">
             {NAV_LINKS.map((link) => (
               <Link
