@@ -97,7 +97,7 @@ const Index = () => {
       <Navbar />
 
       {/* ================= HERO ================= */}
-      <section className="surface-deep-grad pt-36 md:pt-48 pb-16 md:pb-24">
+      <section className="surface-deep-grad pt-36 md:pt-48 pb-40 md:pb-72 min-h-[78vh] md:min-h-[92vh]">
         <div className="container mx-auto px-6 lg:px-10">
           <MotionElement animation="slideUp" delay={100}>
             <h1 className="font-display text-[#FFF9F1] leading-[0.94] !text-[clamp(46px,9vw,126px)] max-w-[13ch]">
