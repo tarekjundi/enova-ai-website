@@ -62,7 +62,7 @@ const AboutUs = () => {
       />
 
       {/* Founder */}
-      <section className="surface-cream py-20 md:py-28">
+      <section className="surface-ivory py-20 md:py-28">
         <div className="container mx-auto px-6 lg:px-10">
           <div className="grid md:grid-cols-12 gap-12 md:gap-16 items-start">
             <MotionElement animation="slideUp" className="md:col-span-5">

@@ -110,7 +110,7 @@ const Services = () => {
         cta={{ label: "Book a Consultation", href: CAL, external: true }}
       />
 
-      <section className="surface-cream py-20 md:py-28">
+      <section className="surface-ivory py-20 md:py-28">
         <div className="container mx-auto px-6 lg:px-10">
           <div className="border-t border-[#3A2915]/15">
             {PRACTICES.map((p, i) => (

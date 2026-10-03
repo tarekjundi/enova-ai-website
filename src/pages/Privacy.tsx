@@ -49,13 +49,13 @@ const Privacy = () => {
         title={
           <>
             Privacy, stated{" "}
-            <span className="italic text-[#F6D3A2]">without the legalese.</span>
+            <span className="italic text-copper">without the legalese.</span>
           </>
         }
         intro="We collect as little as possible, use it only to do the work you asked for, and delete it whenever you ask."
       />
 
-      <section className="surface-cream py-24 md:py-36">
+      <section className="surface-ivory py-20 md:py-28">
         <div className="container mx-auto px-6 lg:px-10">
           <ol className="border-t border-[#3A2915]/20">
             {SECTIONS.map((s, i) => (
