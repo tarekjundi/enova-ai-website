@@ -1,0 +1,2 @@
+Keep the mobile navigation overlay portaled to document.body so it remains viewport-fixed when page transitions transform the page wrapper.
+Keep interior page intros in the shared PageHeader and substantive content in cream-toned full-width sections so metadata does not create a redundant header subsection.

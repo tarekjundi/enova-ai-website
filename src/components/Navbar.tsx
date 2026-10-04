@@ -14,6 +14,7 @@ const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
+  const lightOpening = location.pathname !== "/" && !scrolled && !mobileMenuOpen;
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 16);
@@ -49,7 +50,7 @@ const Navbar = () => {
           aria-label="ENOVA — home"
           className="shrink-0 transition-opacity duration-300 hover:opacity-75 lg:-ml-3"
         >
-          <span className="font-display text-[38px] sm:text-[42px] lg:text-[48px] tracking-[-0.05em] text-[#FFF9F1] leading-none block">
+          <span className={`font-display text-[38px] sm:text-[42px] lg:text-[48px] tracking-[-0.05em] leading-none block ${lightOpening ? "text-on-cream" : "text-on-deep"}`}>
             ENOVA
           </span>
         </Link>
@@ -64,8 +65,8 @@ const Navbar = () => {
               aria-current={isActive(link.to) ? "page" : undefined}
               className={`nav-link relative px-4 py-2 text-[15px] font-medium tracking-[-0.01em] transition-colors duration-200 ${
                 isActive(link.to)
-                  ? "text-[#F6D5A0]"
-                  : "text-[#FDEED8]/85 hover:text-[#FFF9F1]"
+                  ? lightOpening ? "text-copper" : "text-gold"
+                  : lightOpening ? "text-on-cream-body hover:text-copper" : "text-on-deep-body hover:text-on-deep"
               }`}
             >
               {link.label}
@@ -88,7 +89,7 @@ const Navbar = () => {
 
         {/* Mobile toggle */}
         <button
-          className="lg:hidden text-[#F6D5A0] p-3 -mr-2"
+          className={`lg:hidden p-3 -mr-2 ${lightOpening ? "text-on-cream" : "text-gold"}`}
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           aria-expanded={mobileMenuOpen}
           aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
