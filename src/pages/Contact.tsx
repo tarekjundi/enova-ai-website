@@ -49,11 +49,10 @@ const FAQS = [
 ];
 
 const SOCIALS = [
-  { Icon: LinkedinLogo, label: "LinkedIn", href: "https://www.linkedin.com/company/enovaagency/" },
-  { Icon: InstagramLogo, label: "Instagram", href: "https://www.instagram.com/enovaagency/" },
-  { Icon: XLogo, label: "X", href: "https://x.com/enovaagency" },
-  { Icon: FacebookLogo, label: "Facebook", href: "https://www.facebook.com/enovaagency" },
-  { Icon: WhatsappLogo, label: "WhatsApp", href: "https://wa.me/message/enovaagency" },
+  { Icon: LinkedinLogo, label: "LinkedIn", href: "https://www.linkedin.com/company/enovaai/" },
+  { Icon: InstagramLogo, label: "Instagram", href: "https://www.instagram.com/enova.ai/" },
+  { Icon: XLogo, label: "X", href: "https://x.com/enovaai" },
+  { Icon: FacebookLogo, label: "Facebook", href: "https://www.facebook.com/profile.php?id=61550985059945" },
 ];
 
 const SHEETS_ENDPOINT =
