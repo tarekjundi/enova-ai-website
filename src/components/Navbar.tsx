@@ -65,8 +65,8 @@ const Navbar = () => {
               aria-current={isActive(link.to) ? "page" : undefined}
               className={`nav-link relative px-4 py-2 text-[15px] font-medium tracking-[-0.01em] transition-colors duration-200 ${
                 isActive(link.to)
-                  ? "text-[#F6D5A0]"
-                   : lightOpening ? "text-on-cream-body hover:text-copper" : "text-[#FDEED8]/85 hover:text-[#FFF9F1]"
+                  ? lightOpening ? "text-copper" : "text-gold"
+                  : lightOpening ? "text-on-cream-body hover:text-copper" : "text-on-deep-body hover:text-on-deep"
               }`}
             >
               {link.label}
