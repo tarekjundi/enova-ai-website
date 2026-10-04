@@ -207,7 +207,7 @@ const Contact = () => {
         <div className="container mx-auto px-6 lg:px-10">
           <div className="grid md:grid-cols-12 gap-14 md:gap-20">
             {/* Details */}
-            <MotionElement animation="slideUp" className="md:col-span-4">
+            <MotionElement animation="slideUp" className="md:col-span-4 order-2 md:order-1">
               <p className="text-[#281C0B] text-[15px] font-bold mb-6">Direct</p>
               <a
                 href="mailto:tarek@enovaagency.com"
@@ -252,7 +252,7 @@ const Contact = () => {
             </MotionElement>
 
             {/* Form */}
-            <MotionElement animation="slideUp" delay={120} className="md:col-span-7 md:col-start-6">
+            <MotionElement animation="slideUp" delay={120} className="md:col-span-7 md:col-start-6 order-1 md:order-2">
               <p className="text-[#281C0B] text-[17px] font-bold mb-5">Send a message</p>
               <p className="text-on-cream-body text-[17px] leading-[1.75] max-w-[54ch] mb-10 border-l-2 border-primary pl-5">
                 Every message is read personally. Expect a reply within one business day — usually with a few questions before we suggest a call.
