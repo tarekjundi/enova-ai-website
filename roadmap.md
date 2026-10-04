@@ -9,6 +9,6 @@
 - [x] Add detailed case evidence to the homepage Results section.
 - [x] Verify desktop and mobile rendering, links, and forms.
 - [x] Add subtle page, scroll, and interactive animations without changing layout or colors; verify reduced motion and mobile.
-- [ ] Fix the mobile page menu when opened after scrolling.
-- [ ] Refine the overall editorial design and interactive motion while preserving ENOVA's brand identity.
-- [ ] Remove the redundant second subsection on non-home pages and place useful details, including the reply-time note, more naturally.
+- [x] Fix the mobile page menu when opened after scrolling.
+- [x] Refine the overall editorial design and interactive motion while preserving ENOVA's brand identity.
+- [x] Remove the redundant second subsection on non-home pages and place useful details, including the reply-time note, more naturally.
