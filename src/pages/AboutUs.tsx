@@ -45,7 +45,7 @@ const STAGES = [
 const FACTS = [
   { v: "2024", l: "Founded" },
   { v: "4—8", l: "Weeks to production" },
-  { v: "20+", l: "Industries served" },
+  { v: "1", l: "Founder leads every project" },
   { v: "100%", l: "Documented handover" },
 ];
 

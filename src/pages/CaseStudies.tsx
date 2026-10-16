@@ -10,13 +10,13 @@ const CAL = "https://cal.com/tarek-jundi/free-consultation";
 const CASES = [
   {
     industry: "Financial Services",
-    client: "A mid-market lender rebuilt its client onboarding",
+    client: "Cutting client onboarding for a mid-market lender",
     challenge:
       "Onboarding took eleven days on average. Documents arrived by email, were re-keyed into two systems, and every exception went back to a single senior analyst.",
     approach:
       "We mapped the full intake path, replaced re-keying with automated document extraction, and routed only genuine exceptions to a human queue with full audit history.",
     outcome:
-      "Onboarding now completes in under two days for standard cases, and the analyst team spends its time on the files that actually need judgement.",
+      "Standard onboarding should complete in under two days for standard cases, and the analyst team spends its time on the files that actually need judgement.",
     metric: "82%",
     metricLabel: "Reduction in onboarding time",
     stats: [
@@ -28,13 +28,13 @@ const CASES = [
   },
   {
     industry: "B2B SaaS",
-    client: "A support team absorbed 3× volume without hiring",
+    client: "Absorbing a support volume spike without hiring",
     challenge:
       "Ticket volume tripled after a product launch. Response times slipped past a day, and the same twenty questions accounted for most of the queue.",
     approach:
       "A support agent grounded in the product documentation and past resolved tickets, with strict escalation rules and a weekly review loop on every deflected conversation.",
     outcome:
-      "Most routine questions now resolve without a human, and the team holds a same-hour first response on everything that escalates.",
+      "Routine questions are designed to resolve without a human, and the team holds a same-hour first response on everything that escalates.",
     metric: "67%",
     metricLabel: "Tickets resolved without escalation",
     stats: [
@@ -46,13 +46,13 @@ const CASES = [
   },
   {
     industry: "Logistics",
-    client: "An operator turned exception handling into a queue",
+    client: "Turning shipment exceptions into one owned queue",
     challenge:
       "Shipment exceptions were caught by whoever noticed first. Customers often heard about a delay before the operations team did.",
     approach:
       "We connected carrier feeds and the order system into one exception queue, with automatic customer notification and a clear owner for every open case.",
     outcome:
-      "Exceptions are detected and communicated the same hour, and leadership finally has a single view of where shipments stall.",
+      "Exceptions are detected and communicated within the hour, giving leadership a single view of where shipments stall.",
     metric: "94%",
     metricLabel: "Exceptions caught before the customer calls",
     stats: [
@@ -64,13 +64,13 @@ const CASES = [
   },
   {
     industry: "Professional Services",
-    client: "A consultancy cut proposal turnaround to a day",
+    client: "Shortening proposal turnaround for a consultancy",
     challenge:
       "Every proposal was assembled by hand from past documents. Partners spent evenings formatting rather than scoping.",
     approach:
       "A proposal system built on the firm's own past engagements — scoped inputs, generated first drafts, and a partner review step that stayed firmly in the loop.",
     outcome:
-      "First drafts arrive within an hour of intake, and partners edit instead of assembling from scratch.",
+      "First drafts are designed to arrive within an hour of intake, and partners edit instead of assembling from scratch.",
     metric: "5×",
     metricLabel: "Faster proposal turnaround",
     stats: [
@@ -89,8 +89,8 @@ const CaseStudies = () => {
 
       <PageHeader
         eyebrow="Selected work"
-        title="Systems in production, measured plainly."
-        intro="Four engagements: what was broken, what we built, and what changed after it shipped."
+        title="Example engagements, explained step by step."
+        intro="Four illustrative scenarios based on common workflow problems. They show how we scope and build a system. Figures are target outcomes, not reported client results."
         cta={{ label: "Book a Consultation", href: CAL, external: true }}
       />
 
@@ -104,21 +104,21 @@ const CaseStudies = () => {
                   <div className={`md:col-span-5 ${i % 2 === 1 ? "md:order-2" : ""}`}>
                     <div className="panel-lift bg-[#281D0B] p-8 md:p-10 flex flex-col justify-between min-h-[420px]">
                       <div className="flex items-start justify-between gap-4">
-                        <p className="text-[#F6D5A0] text-[14px] font-medium">Case {String(i + 1).padStart(2, "0")}</p>
-                        <span className="text-[#FFF9F1]/80 text-[13px] font-medium">
-                          In production
+                        <p className="text-[#F6D5A0] text-[14px] font-medium">Scenario {String(i + 1).padStart(2, "0")}</p>
+                        <span className="border border-[#F6D5A0]/40 text-[#F6D5A0] text-[12px] font-medium px-2.5 py-1">
+                          Illustrative
                         </span>
                       </div>
 
                       <div className="py-10">
-                        <p className="font-display text-[#F6D5A0] text-[76px] md:text-[104px] leading-[0.85]">
+                        <p className="font-display text-[#F6D5A0] text-[64px] md:text-[84px] leading-[0.9]">
                           {c.metric}
                         </p>
-                        <p className="text-[#FDEED8]/85 text-[15px] mt-4 max-w-[24ch]">{c.metricLabel}</p>
+                        <p className="text-[#FDEED8]/90 text-[15px] mt-4 max-w-[26ch]">Target: {c.metricLabel.toLowerCase()}</p>
                       </div>
 
                       <div>
-                        <p className="text-[#C9B393] text-[14px] font-medium mb-3">Systems connected</p>
+                        <p className="text-[#C9B393] text-[14px] font-medium mb-3">Typical systems involved</p>
                         <div className="space-y-2">
                           {c.tools.split(" · ").map((t) => (
                             <div key={t} className="flex items-center justify-between border-b border-[#FFF9F1]/15 pb-2">
@@ -147,16 +147,17 @@ const CaseStudies = () => {
                         <dd className="text-on-cream-body text-[17px] leading-[1.65] max-w-[56ch]">{c.approach}</dd>
                       </div>
                       <div>
-                        <dt className="text-[#3A2915] text-[15px] font-bold mb-2">Outcome</dt>
+                        <dt className="text-[#3A2915] text-[15px] font-bold mb-2">Intended outcome</dt>
                         <dd className="text-on-cream-body text-[17px] leading-[1.65] max-w-[56ch]">{c.outcome}</dd>
                       </div>
                     </dl>
 
-                    <div className="mt-9 grid grid-cols-3 gap-6 border-t border-[#3A2915]/15 pt-7">
+                    <p className="mt-9 text-on-cream-muted text-[13px]">Target figures for this scenario</p>
+                    <div className="mt-3 grid grid-cols-3 gap-6 border-t border-[#3A2915]/15 pt-7">
                       {c.stats.map((s) => (
                         <div key={s.l}>
                           <p className="font-display text-on-cream text-[26px] md:text-[34px] leading-none">{s.v}</p>
-                          <p className="text-on-cream-muted text-[13px] mt-2 leading-[1.5]">{s.l}</p>
+                          <p className="text-on-cream-body text-[14px] mt-2 leading-[1.5]">{s.l}</p>
                         </div>
                       ))}
                     </div>
@@ -173,7 +174,7 @@ const CaseStudies = () => {
           <div className="grid md:grid-cols-12 gap-10 md:gap-16 items-end">
             <MotionElement animation="slideUp" className="md:col-span-7">
               <h2 className="font-display text-[#281D0B] !text-[clamp(36px,5.5vw,76px)] leading-[0.94] max-w-[13ch]">
-                Your workflow could be the next one.
+                Have a workflow like one of these?
               </h2>
             </MotionElement>
             <MotionElement animation="slideUp" delay={120} className="md:col-span-4 md:col-start-9">

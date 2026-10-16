@@ -20,51 +20,51 @@ const SOLUTIONS = [
     n: "01",
     slug: "opportunity-audit",
     title: "Opportunity Audit",
-    body: "A ranked shortlist of what to automate first, scored by impact, effort and payback.",
+    body: "Two weeks reviewing your workflows. You get a written shortlist of what to automate, the estimated hours saved and a fixed quote for each.",
   },
   {
     n: "02",
     slug: "workflow-systems",
     title: "Workflow Systems",
-    body: "End-to-end processes built into your existing tools, with guardrails and clean handoffs.",
+    body: "Lead routing, onboarding, invoicing or approvals rebuilt in Make, n8n or code — connected to your CRM and inbox, with error alerts.",
   },
   {
     n: "03",
     slug: "knowledge-systems",
     title: "Knowledge Systems",
-    body: "Private assistants trained on your documents, tickets and history — answers in seconds.",
+    body: "A private search assistant over your policies, contracts and past tickets, so staff find the right answer with the source linked.",
   },
   {
     n: "04",
     slug: "customer-operations",
     title: "Customer Operations",
-    body: "Tier-1 automation and agent copilots designed around your policies and your voice.",
+    body: "Drafted replies, ticket triage and FAQ handling for support and sales inboxes, with a human approving anything uncertain.",
   },
   {
     n: "05",
     slug: "business-intelligence",
     title: "Business Intelligence",
-    body: "One source of truth, refreshed automatically, so decisions stop waiting on reports.",
+    body: "Data from your CRM, accounting and spreadsheets pulled into one dashboard that refreshes itself instead of being rebuilt weekly.",
   },
 ];
 
 const STEPS = [
-  { n: "01", title: "Understand", body: "We map how the business actually runs today." },
-  { n: "02", title: "Identify", body: "We rank opportunities by impact, effort and payback." },
-  { n: "03", title: "Design", body: "We architect the system around your existing operation." },
-  { n: "04", title: "Build", body: "We ship to production inside the tools your team uses." },
-  { n: "05", title: "Optimise", body: "We measure, tune and extend as the business changes." },
+  { n: "01", title: "Understand", body: "Interviews and screen-shares with the people doing the work." },
+  { n: "02", title: "Identify", body: "Each opportunity scored on hours saved, effort and risk." },
+  { n: "03", title: "Design", body: "A written spec you approve before anything is built." },
+  { n: "04", title: "Build", body: "Built in your accounts, tested on real cases with your team." },
+  { n: "05", title: "Optimise", body: "30 days of support, then an optional monthly retainer." },
 ];
 
 const PROOF = [
-  { v: "82%", l: "faster client onboarding", c: "Financial services", detail: "Eleven days reduced to under two through automated document intake and exception routing." },
-  { v: "67%", l: "of tickets resolved without escalation", c: "B2B SaaS", detail: "A support system grounded in product documentation absorbed three times the usual volume." },
-  { v: "5×", l: "faster proposal turnaround", c: "Professional services", detail: "First drafts moved from manual assembly to under one hour, with partner review retained." },
+  { v: "Week 1", l: "Process map and shortlist", c: "Discovery", detail: "A written map of how the workflow runs today, where time is lost, and which steps are worth automating first." },
+  { v: "Weeks 2–6", l: "A working system in your tools", c: "Build", detail: "Automations, integrations and any AI steps built against your real data, tested with the people who will use them." },
+  { v: "Handover", l: "Documentation and training", c: "Ownership", detail: "Runbooks, credentials, a recorded walkthrough and 30 days of support. You keep everything if you stop working with us." },
 ];
 
 const WHY = [
-  { n: "01", title: "Business first", body: "We start with your operation, not the technology. The stack is chosen last." },
-  { n: "02", title: "In production", body: "A demo proves nothing. We ship systems that run on real data, with monitoring." },
+  { n: "01", title: "Business first", body: "We start from the process and its cost. If a spreadsheet rule solves it, we tell you — tools are chosen last." },
+  { n: "02", title: "In production", body: "Systems run on your real data, with logging and alerts, so failures are visible instead of silent." },
   { n: "03", title: "Owned by you", body: "Code, credentials, runbooks and training. You can end the engagement and keep the system." },
 ];
 
@@ -100,17 +100,18 @@ const Index = () => {
       <section className="surface-deep-grad pt-32 md:pt-40 pb-28 md:pb-32 min-h-[100vh] md:min-h-[110vh] flex items-center">
         <div className="container mx-auto px-6 lg:px-10">
           <MotionElement animation="slideUp" delay={100}>
-            <h1 className="font-display text-[#FFF9F1] leading-[0.94] !text-[clamp(46px,9vw,126px)] max-w-[13ch]">
-              We put your operations on rails.
+            <h1 className="font-display text-[#FFF9F1] leading-[0.94] !text-[clamp(40px,6.4vw,88px)] max-w-[17ch]">
+              Automation for the work that happens between your tools.
             </h1>
           </MotionElement>
 
           <div className="grid lg:grid-cols-12 gap-8 lg:gap-16 mt-12 md:mt-16 items-end">
             <div className="lg:col-span-6">
               <MotionElement animation="slideUp" delay={180}>
-                <p className="text-[#FDEED8]/85 text-[18px] md:text-[20px] leading-[1.6] max-w-[48ch]">
-                  Enova designs and builds AI systems that remove repetitive work, connect your
-                  tools and give your team back its time.
+                <p className="text-[#FDEED8]/90 text-[18px] md:text-[20px] leading-[1.65] max-w-[54ch]">
+                  We map one manual process — intake, follow-ups, reporting, support replies — then
+                  build and hand over a working system inside the CRM, inbox and spreadsheets you
+                  already use. Fixed scope, documented, owned by you.
                 </p>
               </MotionElement>
             </div>
@@ -119,7 +120,7 @@ const Index = () => {
               <MotionElement animation="slideUp" delay={260}>
                 <div className="flex flex-col sm:flex-row gap-3">
                   <a href={CAL} target="_blank" rel="noopener noreferrer" className="btn-primary group justify-center !py-4 !px-7">
-                    Book a Consultation
+                    Book a 30-min call
                     <ArrowRight size={15} className="transition-transform duration-300 group-hover:translate-x-0.5" />
                   </a>
                   <Link to="/services" className="btn-ghost-on-deep group justify-center !py-4">
@@ -138,9 +139,9 @@ const Index = () => {
         <div className="container mx-auto px-6 lg:px-10">
           <MotionElement animation="slideUp">
             <div className="flex items-end justify-between gap-8 mb-12">
-              <h2 className="font-display text-[#281D0B] !text-[clamp(32px,4.4vw,58px)] leading-[0.98]">Selected results</h2>
+              <h2 className="font-display text-[#281D0B] !text-[clamp(32px,4.4vw,58px)] leading-[0.98]">What an engagement delivers</h2>
               <Link to="/case-studies" className="text-[#281D0B] text-[15px] font-medium inline-flex items-center gap-2">
-                Read the work <ArrowRight size={16} />
+                See example engagements <ArrowRight size={16} />
               </Link>
             </div>
           </MotionElement>
@@ -148,10 +149,10 @@ const Index = () => {
             {PROOF.map((p, i) => (
               <MotionElement key={p.l} animation="slideUp" delay={40 + i * 60}>
                 <div>
-                  <p className="font-display text-[#281D0B] text-[44px] md:text-[60px] leading-none">{p.v}</p>
+                  <p className="font-display text-[#281D0B] text-[32px] md:text-[40px] leading-none">{p.v}</p>
                   <p className="text-[#281D0B] text-[18px] leading-[1.4] mt-3 max-w-[28ch] font-medium">{p.l}</p>
-                  <p className="text-[#281D0B]/70 text-[15px] leading-[1.6] mt-4 max-w-[36ch]">{p.detail}</p>
-                  <p className="text-[#281D0B]/60 text-[13px] mt-5">{p.c}</p>
+                  <p className="text-[#281D0B]/80 text-[16px] leading-[1.65] mt-4 max-w-[38ch]">{p.detail}</p>
+                  <p className="text-[#281D0B]/70 text-[13px] mt-5 font-medium">{p.c}</p>
                 </div>
               </MotionElement>
             ))}
@@ -219,10 +220,10 @@ const Index = () => {
                   className="group grid md:grid-cols-12 gap-3 md:gap-10 items-baseline py-7 md:py-8 border-b border-[#F6D5A0]/15 transition-colors duration-300 hover:bg-[#F6D5A0]/[0.05] -mx-4 md:-mx-6 px-4 md:px-6"
                 >
                   <span className="num text-[#F6D5A0]/70 text-[13px] md:col-span-1">{s.n}</span>
-                  <h3 className="md:col-span-4 font-display text-[#FFF9F1] !text-[clamp(26px,3vw,38px)] leading-[1] transition-colors duration-300 group-hover:text-[#F6D5A0]">
+                  <h3 className="md:col-span-4 font-display text-[#FFF9F1] !text-[clamp(22px,2.4vw,30px)] leading-[1.1] transition-colors duration-300 group-hover:text-[#F6D5A0]">
                     {s.title}
                   </h3>
-                  <p className="md:col-span-6 text-[#FDEED8]/80 max-w-[52ch]">{s.body}</p>
+                  <p className="md:col-span-6 text-[#FDEED8]/90 text-[17px] leading-[1.65] max-w-[56ch]">{s.body}</p>
                   <span className="md:col-span-1 hidden md:flex justify-end text-[#F6D5A0] opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     <ArrowUpRight size={22} />
                   </span>
@@ -238,7 +239,7 @@ const Index = () => {
         <div className="container mx-auto px-6 lg:px-10">
           <MotionElement animation="slideUp">
             <h2 className="font-display text-on-cream !text-[clamp(32px,4.6vw,62px)] leading-[0.98] max-w-[16ch] mb-14">
-              Five steps, four to eight weeks.
+              Five steps, typically four to eight weeks.
             </h2>
           </MotionElement>
 
@@ -250,7 +251,7 @@ const Index = () => {
                   <h3 className="font-display text-on-cream !text-[24px] md:!text-[28px] leading-none mb-3">
                     {s.title}
                   </h3>
-                  <p className="text-on-cream-muted text-[15px] leading-[1.6]">{s.body}</p>
+                  <p className="text-on-cream-body text-[16px] leading-[1.6]">{s.body}</p>
                 </div>
               </MotionElement>
             ))}
@@ -265,7 +266,7 @@ const Index = () => {
             <div className="md:col-span-4">
               <MotionElement animation="slideUp">
                 <h2 className="font-display text-[#FFF9F1] !text-[clamp(32px,4.4vw,56px)] leading-[0.98] max-w-[12ch]">
-                  Three reasons clients stay.
+                  How we work.
                 </h2>
               </MotionElement>
             </div>
@@ -280,7 +281,7 @@ const Index = () => {
                           {w.title}
                         </h3>
                       </div>
-                      <p className="text-[#FDEED8]/80 md:pl-[3.1rem] max-w-[54ch]">{w.body}</p>
+                      <p className="text-[#FDEED8]/90 md:pl-[3.1rem] max-w-[56ch]">{w.body}</p>
                     </div>
                   </MotionElement>
                 ))}
@@ -297,7 +298,7 @@ const Index = () => {
             <div className="md:col-span-6">
               <MotionElement animation="slideUp">
                 <h2 className="font-display text-on-cream !text-[clamp(28px,3.4vw,44px)] leading-[1] mb-8 max-w-[16ch]">
-                  Sectors where the patterns repeat.
+                  Sectors we design for.
                 </h2>
                 <ul className="flex flex-wrap gap-x-3 gap-y-3">
                   {INDUSTRIES.map((ind) => (
@@ -368,7 +369,7 @@ const Index = () => {
                       }`}
                     >
                       <div className="overflow-hidden">
-                        <p className="text-[#FDEED8]/80 max-w-[58ch] pr-10">{f.a}</p>
+                        <p className="text-[#FDEED8]/90 max-w-[58ch] pr-10">{f.a}</p>
                       </div>
                     </div>
                   </div>
@@ -384,13 +385,13 @@ const Index = () => {
         <div className="container mx-auto px-6 lg:px-10">
           <div className="grid md:grid-cols-12 gap-10 md:gap-16 items-end">
             <MotionElement animation="slideUp" className="md:col-span-7">
-              <h2 className="font-display text-[#281D0B] !text-[clamp(36px,6vw,82px)] leading-[0.94] max-w-[13ch]">
+              <h2 className="font-display text-[#281D0B] !text-[clamp(34px,4.8vw,64px)] leading-[0.98] max-w-[14ch]">
                 Start with one workflow.
               </h2>
             </MotionElement>
             <MotionElement animation="slideUp" delay={120} className="md:col-span-4 md:col-start-9">
               <p className="text-[#281D0B]/80 mb-8 max-w-[38ch]">
-                Thirty minutes, no pitch. We&rsquo;ll map one process live and tell you where we&rsquo;d begin.
+                A 30-minute video call with Tarek. Bring one process; you&rsquo;ll leave knowing whether it&rsquo;s worth automating and roughly what it would take.
               </p>
               <a href={CAL} target="_blank" rel="noopener noreferrer" className="btn-dark group">
                 Book a Consultation
