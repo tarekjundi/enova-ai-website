@@ -97,7 +97,7 @@ const WorkflowDiagnostic = () => {
                 <div className="mt-8 pt-8 border-t border-[#F6D5A0]/15">
                   <p className="text-[#FDEED8]/85 text-[16px] leading-[1.6]">
                     About <span className="text-[#F6D5A0] font-semibold">{money(recoverable)}</span> a year
-                    could come back to your team, assuming a conservative 65% of this work is automated.
+                    could come back to your team, assuming 65% of this work can be automated — an illustrative assumption; your audit gives the real figure.
                   </p>
                   <a href={CAL} target="_blank" rel="noopener noreferrer" className="btn-primary group justify-center !py-4 !px-7 mt-8 w-full sm:w-auto">
                     Book an Opportunity Audit
