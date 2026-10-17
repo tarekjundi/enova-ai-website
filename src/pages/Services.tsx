@@ -14,9 +14,9 @@ const PRACTICES = [
     n: "01",
     id: "opportunity-audit",
     title: "Opportunity Audit",
-    problem: "You suspect AI could help, but don't know where to begin.",
+    problem: "You have several manual processes, but no evidence for which to automate first.",
     delivers:
-      "A structured review of your workflows and a ranked shortlist of automations, scored by impact, effort and payback — with the first build agreed before we start.",
+      "We interview the people doing the work, map the steps and check volumes, time spent and exceptions. You receive a process map, a ranked opportunity list and a scoped proposal for the first build.",
     uses: [
       "Workflow mapping across a department",
       "Time-loss inventory with real numbers",
@@ -31,7 +31,7 @@ const PRACTICES = [
     title: "Workflow Systems",
     problem: "Manual, multi-step processes running across too many tools.",
     delivers:
-      "End-to-end workflows built into your existing stack, with observability, guardrails and clean handoffs between software and people.",
+      "We connect your CRM, inbox and business tools using Make, n8n or custom code. The build includes field mapping, approval steps, error alerts and a runbook for restarting failed jobs.",
     uses: [
       "Lead capture, qualification and routing",
       "Quote, proposal and contract generation",
@@ -46,7 +46,7 @@ const PRACTICES = [
     title: "Knowledge Systems",
     problem: "The answer exists somewhere in your company — no one can find it.",
     delivers:
-      "Private assistants and searchable knowledge bases trained on your own documents, tickets and history, with sources cited on every answer.",
+      "We index approved documents and build a search assistant that retrieves relevant passages and links to their sources. Access rules, document updates and unanswered questions are tested before rollout; your documents are not used to train a new model.",
     uses: [
       "Internal assistant over policies and SOPs",
       "Sales enablement and past-proposal search",
@@ -61,7 +61,7 @@ const PRACTICES = [
     title: "Customer Operations",
     problem: "Rising volume, flat headcount, slipping response times.",
     delivers:
-      "Tier-1 automation, agent copilots and lifecycle flows designed around your policies and your tone of voice, with defined escalation to a person.",
+      "We connect your support inbox to approved answers, classify incoming tickets and draft replies. Your team reviews uncertain cases, with clear escalation rules and a log of automated actions.",
     uses: [
       "First-response and triage automation",
       "Agent copilots with suggested replies",
@@ -76,7 +76,7 @@ const PRACTICES = [
     title: "Business Intelligence",
     problem: "Reports arrive too late to change the decision.",
     delivers:
-      "Pipelines, dashboards and forecasts your leadership trusts — one source of truth, refreshed automatically instead of assembled by hand.",
+      "We bring CRM, accounting and spreadsheet data into a scheduled reporting pipeline. You receive agreed metric definitions, a dashboard, data-quality checks and alerts when a refresh fails.",
     uses: [
       "Unified reporting across systems",
       "Executive dashboards and alerts",
@@ -94,7 +94,11 @@ const Services = () => {
     if (location.hash) {
       const el = document.getElementById(location.hash.slice(1));
       if (el) {
-        setTimeout(() => el.scrollIntoView({ behavior: "smooth", block: "start" }), 120);
+        const timer = setTimeout(() => el.scrollIntoView({
+          behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? "instant" : "smooth",
+          block: "start",
+        }), 120);
+        return () => clearTimeout(timer);
       }
     }
   }, [location]);
@@ -105,9 +109,9 @@ const Services = () => {
 
       <PageHeader
         eyebrow="Solutions"
-        title="Five ways we take work off your team."
-        intro="Each practice starts from a workflow you already run and ends with a system in production, owned by your people."
-        cta={{ label: "Book a Consultation", href: CAL, external: true }}
+        title="Workflow automation, search and reporting."
+        intro="For operations, support and revenue teams working across disconnected tools. Start with an audit or bring a defined workflow to build."
+        cta={{ label: "Book a 30-min call", href: CAL, external: true }}
       />
 
       <section className="surface-ivory py-20 md:py-28">
@@ -171,7 +175,7 @@ const Services = () => {
                 That&rsquo;s what the first conversation is for. Describe the work, and we&rsquo;ll tell you where to start.
               </p>
               <a href={CAL} target="_blank" rel="noopener noreferrer" className="btn-dark group">
-                Book a Consultation
+                Book a 30-min call
                 <ArrowRight size={15} className="transition-transform duration-300 group-hover:translate-x-0.5" />
               </a>
             </MotionElement>

@@ -35,7 +35,7 @@ const STAGES = [
   { n: "01", title: "Discovery", body: "We follow a real case end to end and write down where time, context and accuracy leak.", outputs: "Workflow map · Time-loss inventory" },
   { n: "02", title: "Strategy", body: "Every candidate is ranked by impact, effort and payback. We agree the success metric before scope is written.", outputs: "Ranked list · Success metrics" },
   { n: "03", title: "Solution design", body: "Data flow, integrations, human checkpoints and failure paths designed together, on paper first.", outputs: "Architecture · Guardrails" },
-  { n: "04", title: "Development", body: "Working software every two weeks, running against real data in staging. No reveal at the end.", outputs: "Increments · Review sessions" },
+  { n: "04", title: "Development", body: "Working increments reviewed with your team in staging before deployment.", outputs: "Increments · Review sessions" },
   { n: "05", title: "Testing", body: "Run against historic and edge cases your team nominates, thresholds tuned before live traffic.", outputs: "Benchmarks · Tuned thresholds" },
   { n: "06", title: "Deployment", body: "Phased rollout, monitoring from day one, rollback path defined, named owner on both sides.", outputs: "Production release · Alerts" },
   { n: "07", title: "Handover", body: "Runbooks, recorded walkthroughs and working sessions. Credentials, code and docs are yours.", outputs: "Runbooks · Training" },
@@ -43,10 +43,10 @@ const STAGES = [
 ];
 
 const FACTS = [
-  { v: "2024", l: "Founded" },
-  { v: "4—8", l: "Weeks to production" },
-  { v: "1", l: "Founder leads every project" },
-  { v: "100%", l: "Documented handover" },
+  { v: "Founder-led", l: "A named project owner" },
+  { v: "Scoped", l: "Timeline agreed before build" },
+  { v: "Tested", l: "Review with your team" },
+  { v: "Documented", l: "Code, access and runbooks" },
 ];
 
 const AboutUs = () => {
@@ -56,9 +56,9 @@ const AboutUs = () => {
 
       <PageHeader
         eyebrow="About Enova"
-        title="Built by operators, for operators."
+        title="Automation led by Tarek Jundi."
         intro="A small consultancy for growing businesses that want simpler operations, connected systems and outcomes leadership can measure."
-        cta={{ label: "Book a Consultation", href: CAL, external: true }}
+        cta={{ label: "Book a 30-min call", href: CAL, external: true }}
       />
 
       {/* Founder */}
@@ -85,14 +85,14 @@ const AboutUs = () => {
             <div className="md:col-span-6 md:col-start-7">
               <MotionElement animation="slideUp" delay={120}>
                 <h2 className="font-display text-on-cream !text-[clamp(32px,4.4vw,56px)] leading-[0.98] mb-9 max-w-[15ch]">
-                  Working systems, not AI theatre.
+                  One workflow, from discovery to handover.
                 </h2>
 
                 <div className="space-y-5 text-on-cream-body text-[17px] md:text-[19px] leading-[1.65] max-w-[54ch]">
                   <p>
-                    Enova was founded after watching capable teams buy impressive AI pilots that never reached
-                    production. The technology was rarely the problem — the scoping, integration, measurement and
-                    handover around it was where projects quietly died.
+                    Tarek Jundi is Enova’s founder and leads each engagement personally. The work covers
+                    process mapping, connections between business tools, testing and documentation — not just
+                    an AI prototype.
                   </p>
                   <p>
                     We run the opposite way. Every engagement starts with a real workflow and a metric attached to
@@ -107,7 +107,7 @@ const AboutUs = () => {
 
                 <div className="mt-10 pt-7 border-t border-[#3A2915]/20">
                   <p className="font-accent text-on-cream text-[24px] md:text-[30px] leading-[1.3] max-w-[28ch]">
-                    Make intelligent operations reliable, measurable and owned by your team.
+                    You receive the workflow, its documentation and the access needed to operate it.
                   </p>
                 </div>
               </MotionElement>
@@ -181,7 +181,7 @@ const AboutUs = () => {
             {FACTS.map((f, i) => (
               <MotionElement key={f.l} animation="slideUp" delay={40 + i * 50}>
                 <div>
-                  <p className="font-display text-[#281D0B] text-[48px] md:text-[68px] leading-none">{f.v}</p>
+                  <p className="font-display text-[#281D0B] text-[26px] md:text-[34px] leading-none">{f.v}</p>
                   <p className="eyebrow text-[#281D0B]/70 mt-3">{f.l}</p>
                 </div>
               </MotionElement>
@@ -204,7 +204,7 @@ const AboutUs = () => {
                 Tell us how the work runs today. We&rsquo;ll tell you honestly whether we&rsquo;re the right people for it.
               </p>
               <a href={CAL} target="_blank" rel="noopener noreferrer" className="btn-primary group">
-                Book a Consultation
+                Book a 30-min call
                 <ArrowRight size={15} className="transition-transform duration-300 group-hover:translate-x-0.5" />
               </a>
             </MotionElement>

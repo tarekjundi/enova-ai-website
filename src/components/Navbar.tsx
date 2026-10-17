@@ -79,7 +79,7 @@ const Navbar = () => {
             rel="noopener noreferrer"
             className="ml-5 btn-primary group whitespace-nowrap"
           >
-            Book a Consultation
+            Book a 30-min call
             <ArrowRight
               size={15}
               className="transition-transform duration-300 group-hover:translate-x-0.5"
@@ -126,7 +126,7 @@ const Navbar = () => {
             onClick={() => setMobileMenuOpen(false)}
             className="btn-primary justify-center mt-10 w-full !py-4"
           >
-            Book a Consultation
+            Book a 30-min call
             <ArrowRight size={15} />
           </a>
         </div>, document.body

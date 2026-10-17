@@ -1,13 +1,12 @@
 import { useState } from "react";
 import { ArrowRight } from "@phosphor-icons/react";
 import { MotionElement } from "@/components/MotionElements";
+import { estimateWorkflow, formatEstimateMoney as money } from "@/lib/workflow-estimate";
 
 const CAL = "https://cal.com/tarek-jundi/free-consultation";
-const RECOVERY = 0.65;
+
 
 const fmt = (n: number) => Math.round(n).toLocaleString("en-US");
-const money = (n: number) =>
-  n >= 1_000_000 ? `$${(n / 1_000_000).toFixed(1)}M` : `$${fmt(Math.round(n / 1000))}k`;
 
 type SliderProps = {
   label: string;
@@ -47,10 +46,7 @@ const WorkflowDiagnostic = () => {
   const [hours, setHours] = useState(8);
   const [rate, setRate] = useState(50);
 
-  const hoursLost = team * hours * 52;
-  const cost = hoursLost * rate;
-  const recoverable = cost * RECOVERY;
-  const fte = (hoursLost * RECOVERY) / 1800;
+  const { annualHours: hoursLost, annualCost: cost, capacityValue: recoverable, roleEquivalent: fte } = estimateWorkflow(team, hours, rate);
 
   return (
     <section className="surface-ivory py-20 md:py-28">
@@ -63,7 +59,7 @@ const WorkflowDiagnostic = () => {
               </h2>
               <p className="mt-6 text-on-cream-muted max-w-[44ch]">
                 Re-keying data, chasing status, checking spreadsheets. Move the sliders to see the
-                yearly cost of the work your team does by hand.
+                estimated yearly labor cost of the work your team does by hand. All amounts are in USD.
               </p>
             </MotionElement>
             <MotionElement animation="slideUp" delay={120}>
@@ -78,32 +74,32 @@ const WorkflowDiagnostic = () => {
           <div className="md:col-span-6 md:col-start-7">
             <MotionElement animation="slideUp" delay={160}>
               <div className="bg-[#281D0B] p-8 md:p-12 shadow-lift">
-                <p className="text-[#C9B393] text-[14px] font-medium">Yearly cost of manual work</p>
-                <p className="font-display text-[#F6D5A0] text-[64px] md:text-[96px] leading-[0.9] mt-4 tabular-nums" aria-live="polite">
+                <p className="text-[#C9B393] text-[14px] font-medium">Estimated annual labor cost (USD)</p>
+                <p className="font-display text-[#F6D5A0] text-[44px] lg:text-[64px] leading-[0.9] mt-4 tabular-nums" aria-live="polite">
                   {money(cost)}
                 </p>
 
                 <div className="grid grid-cols-2 gap-8 mt-10 pt-8 border-t border-[#F6D5A0]/15">
                   <div>
                     <p className="font-display text-[#FFF9F1] text-[30px] md:text-[38px] leading-none tabular-nums">{fmt(hoursLost)}</p>
-                    <p className="text-[#FDEED8]/70 text-[14px] mt-2">Hours lost per year</p>
+                    <p className="text-[#FDEED8]/70 text-[14px] mt-2">Manual hours per year</p>
                   </div>
                   <div>
                     <p className="font-display text-[#FFF9F1] text-[30px] md:text-[38px] leading-none tabular-nums">{fte.toFixed(1)}</p>
-                    <p className="text-[#FDEED8]/70 text-[14px] mt-2">Full-time roles you could free up</p>
+                    <p className="text-[#FDEED8]/70 text-[14px] mt-2">Role-equivalent capacity, at 65%</p>
                   </div>
                 </div>
 
                 <div className="mt-8 pt-8 border-t border-[#F6D5A0]/15">
                   <p className="text-[#FDEED8]/85 text-[16px] leading-[1.6]">
                     About <span className="text-[#F6D5A0] font-semibold">{money(recoverable)}</span> a year
-                    could come back to your team, assuming 65% of this work can be automated — an illustrative assumption; your audit gives the real figure.
+                    of capacity value if 65% of this work were automated. That share is hypothetical, not a measured Enova result. This is not cash savings or ROI: implementation, software and maintenance costs are excluded.
                   </p>
                   <a href={CAL} target="_blank" rel="noopener noreferrer" className="btn-primary group justify-center !py-4 !px-7 mt-8 w-full sm:w-auto">
-                    Book an Opportunity Audit
+                    Book a 30-min call
                     <ArrowRight size={15} className="transition-transform duration-300 group-hover:translate-x-0.5" />
                   </a>
-                  <p className="text-[#FDEED8]/50 text-[12px] mt-5">Estimate only. Based on 52 weeks and 1,800 working hours per role.</p>
+                  <p className="text-on-deep-muted text-[14px] mt-5">Assumptions: 52 weeks per year, 1,800 hours per role. Actual recoverable time depends on the workflow.</p>
                 </div>
               </div>
             </MotionElement>

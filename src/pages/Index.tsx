@@ -20,7 +20,7 @@ const SOLUTIONS = [
     n: "01",
     slug: "opportunity-audit",
     title: "Opportunity Audit",
-    body: "Two weeks reviewing your workflows. You get a written shortlist of what to automate, the estimated hours saved and a fixed quote for each.",
+    body: "A review of your workflows. You get a written shortlist of what to automate, the estimated hours saved and a fixed quote for each.",
   },
   {
     n: "02",
@@ -53,13 +53,13 @@ const STEPS = [
   { n: "02", title: "Identify", body: "Each opportunity scored on hours saved, effort and risk." },
   { n: "03", title: "Design", body: "A written spec you approve before anything is built." },
   { n: "04", title: "Build", body: "Built in your accounts, tested on real cases with your team." },
-  { n: "05", title: "Optimise", body: "30 days of support, then an optional monthly retainer." },
+  { n: "05", title: "Optimise", body: "Monitoring and support agreed in the project scope." },
 ];
 
 const PROOF = [
-  { v: "Week 1", l: "Process map and shortlist", c: "Discovery", detail: "A written map of how the workflow runs today, where time is lost, and which steps are worth automating first." },
-  { v: "Weeks 2–6", l: "A working system in your tools", c: "Build", detail: "Automations, integrations and any AI steps built against your real data, tested with the people who will use them." },
-  { v: "Handover", l: "Documentation and training", c: "Ownership", detail: "Runbooks, credentials, a recorded walkthrough and 30 days of support. You keep everything if you stop working with us." },
+  { v: "Discovery", l: "Process map and shortlist", c: "Discovery", detail: "A written map of how the workflow runs today, where time is lost, and which steps are worth automating first." },
+  { v: "Build", l: "A working system in your tools", c: "Build", detail: "Automations, integrations and any AI steps built against your real data, tested with the people who will use them." },
+  { v: "Handover", l: "Documentation and training", c: "Ownership", detail: "Runbooks, credentials, a recorded walkthrough and an agreed support plan. You keep everything if you stop working with us." },
 ];
 
 const WHY = [
@@ -83,7 +83,7 @@ const STACK = [
 
 const FAQS = [
   { q: "Where do we start?", a: "With a 30-minute conversation about one workflow. We review how it runs today and tell you honestly whether automation is the right answer." },
-  { q: "How long does it take?", a: "A focused first system typically goes from discovery to production in four to eight weeks. Larger programmes ship in stages so value arrives early." },
+  { q: "How long does it take?", a: "We agree the timeline after checking the workflow, data access and integrations. Larger builds are split into reviewable stages." },
   { q: "Will it work with our current tools?", a: "Yes. We build around the platforms you already run — CRM, inbox, spreadsheets, accounting and support — instead of replacing them." },
   { q: "Do we need technical people?", a: "No. We handle the build and hand over a system your team operates with normal business tools." },
   { q: "How does pricing work?", a: "Each engagement is scoped and quoted after the first consultation. Ongoing optimisation is a separate, optional retainer." },
@@ -138,7 +138,7 @@ const Index = () => {
       <section className="surface-gold py-20 md:py-24">
         <div className="container mx-auto px-6 lg:px-10">
           <MotionElement animation="slideUp">
-            <div className="flex items-end justify-between gap-8 mb-12">
+            <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
               <h2 className="font-display text-[#281D0B] !text-[clamp(32px,4.4vw,58px)] leading-[0.98]">What an engagement delivers</h2>
               <Link to="/case-studies" className="text-[#281D0B] text-[15px] font-medium inline-flex items-center gap-2">
                 See example engagements <ArrowRight size={16} />
@@ -239,7 +239,7 @@ const Index = () => {
         <div className="container mx-auto px-6 lg:px-10">
           <MotionElement animation="slideUp">
             <h2 className="font-display text-on-cream !text-[clamp(32px,4.6vw,62px)] leading-[0.98] max-w-[16ch] mb-14">
-              Five steps, typically four to eight weeks.
+              From workflow map to working system.
             </h2>
           </MotionElement>
 
@@ -354,6 +354,7 @@ const Index = () => {
                     <button
                       onClick={() => setOpenFaq(openFaq === i ? null : i)}
                       aria-expanded={openFaq === i}
+                      aria-controls={`home-faq-${i}`}
                       className="w-full flex items-start justify-between gap-6 py-6 text-left group"
                     >
                       <span className="font-display text-[#FFF9F1] text-[20px] md:text-[26px] leading-[1.15] transition-colors duration-200 group-hover:text-[#F6D5A0]">
@@ -364,6 +365,8 @@ const Index = () => {
                       </span>
                     </button>
                     <div
+                      id={`home-faq-${i}`}
+                      aria-hidden={openFaq !== i}
                       className={`grid transition-all duration-300 ease-out ${
                         openFaq === i ? "grid-rows-[1fr] opacity-100 pb-7" : "grid-rows-[0fr] opacity-0"
                       }`}
@@ -394,7 +397,7 @@ const Index = () => {
                 A 30-minute video call with Tarek. Bring one process; you&rsquo;ll leave knowing whether it&rsquo;s worth automating and roughly what it would take.
               </p>
               <a href={CAL} target="_blank" rel="noopener noreferrer" className="btn-dark group">
-                Book a Consultation
+                Book a 30-min call
                 <ArrowRight size={15} className="transition-transform duration-300 group-hover:translate-x-0.5" />
               </a>
             </MotionElement>

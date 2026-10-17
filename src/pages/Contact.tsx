@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Button } from "@/components/ui/button";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ScrollToTop from "@/components/ScrollToTop";
@@ -24,7 +25,7 @@ import {
 const FAQS = [
   {
     q: "How long does implementation take?",
-    a: "Most engagements deliver a first working system in four to eight weeks. Larger programs run in phased rollouts across a quarter, with a working milestone every two weeks — so you never wait months to see value.",
+    a: "Timing depends on the workflow, data access and integrations. We agree milestones and a delivery schedule before the build begins.",
   },
   {
     q: "Do you work with our existing systems?",
@@ -40,11 +41,11 @@ const FAQS = [
   },
   {
     q: "How does pricing work?",
-    a: "Fixed scope, fixed price per engagement. We scope against a specific workflow, agree on success metrics up front, and quote a single price with a clear timeline. No hourly billing, no vague retainers.",
+    a: "We scope a specific workflow and provide a written quote with deliverables, assumptions and a timeline. Any ongoing support is agreed separately.",
   },
   {
     q: "Do you provide ongoing support?",
-    a: "Every engagement includes thirty days of production support at no extra cost. Beyond that, most clients continue with a monthly retainer for monitoring, tuning and new workflow intake — sized to your usage.",
+    a: "Monitoring, fixes and future changes can be included in an agreed support plan. The scope and cost are confirmed in your proposal.",
   },
 ];
 
@@ -138,6 +139,8 @@ const Contact = () => {
         description: "A few details are still missing.",
         variant: "destructive",
       });
+      const firstInvalid = Object.keys(nextErrors)[0];
+      if (firstInvalid) document.getElementById(firstInvalid)?.focus();
       return;
     }
 
@@ -161,9 +164,9 @@ const Contact = () => {
         }),
       });
       toast({
-        title: "Thank you.",
+        title: "Message sent.",
         description:
-          "Your project details have been received. We will review them and contact you shortly.",
+          "Your details have been sent for review. Delivery cannot be confirmed here; if you do not hear back, email tarek@enovaagency.com.",
       });
       setFormData(EMPTY_FORM);
       setErrors({});
@@ -244,7 +247,7 @@ const Contact = () => {
                   rel="noopener noreferrer"
                   className="btn-ghost-on-cream group"
                 >
-                  Book a Consultation
+                  Book a 30-min call
                   <ArrowRight size={15} className="transition-transform duration-300 group-hover:translate-x-0.5" />
                 </a>
               </div>
@@ -263,9 +266,10 @@ const Contact = () => {
                     <input
                       id="fullName" name="fullName" value={formData.fullName} onChange={handleChange}
                       aria-invalid={!!errors.fullName}
+                      aria-describedby={errors.fullName ? "fullName-error" : undefined}
                       placeholder="Your full name" className={fieldClass}
                     />
-                    {errors.fullName && <p className={errorClass}>{errors.fullName}</p>}
+                    {errors.fullName && <p id="fullName-error" role="alert" className={errorClass}>{errors.fullName}</p>}
                   </div>
                   <div>
                     <label htmlFor="workEmail" className={labelClass}>Work email</label>
@@ -273,9 +277,10 @@ const Contact = () => {
                       id="workEmail" name="workEmail" type="email" inputMode="email"
                       value={formData.workEmail} onChange={handleChange}
                       aria-invalid={!!errors.workEmail}
+                      aria-describedby={errors.workEmail ? "workEmail-error" : undefined}
                       placeholder="you@company.com" className={fieldClass}
                     />
-                    {errors.workEmail && <p className={errorClass}>{errors.workEmail}</p>}
+                    {errors.workEmail && <p id="workEmail-error" role="alert" className={errorClass}>{errors.workEmail}</p>}
                   </div>
                 </div>
 
@@ -285,9 +290,10 @@ const Contact = () => {
                     <input
                       id="companyName" name="companyName" value={formData.companyName} onChange={handleChange}
                       aria-invalid={!!errors.companyName}
+                      aria-describedby={errors.companyName ? "companyName-error" : undefined}
                       placeholder="Company name" className={fieldClass}
                     />
-                    {errors.companyName && <p className={errorClass}>{errors.companyName}</p>}
+                    {errors.companyName && <p id="companyName-error" role="alert" className={errorClass}>{errors.companyName}</p>}
                   </div>
                   <div>
                     <label htmlFor="phoneNumber" className={labelClass}>
@@ -316,6 +322,7 @@ const Contact = () => {
                     <select
                       id="projectType" name="projectType" value={formData.projectType} onChange={handleChange}
                       aria-invalid={!!errors.projectType}
+                      aria-describedby={errors.projectType ? "projectType-error" : undefined}
                       className={`${fieldClass} cursor-pointer`}
                     >
                       <option value="">Select a project type</option>
@@ -323,7 +330,7 @@ const Contact = () => {
                         <option key={t} value={t}>{t}</option>
                       ))}
                     </select>
-                    {errors.projectType && <p className={errorClass}>{errors.projectType}</p>}
+                    {errors.projectType && <p id="projectType-error" role="alert" className={errorClass}>{errors.projectType}</p>}
                   </div>
                 </div>
 
@@ -333,6 +340,7 @@ const Contact = () => {
                     <select
                       id="estimatedBudget" name="estimatedBudget" value={formData.estimatedBudget} onChange={handleChange}
                       aria-invalid={!!errors.estimatedBudget}
+                      aria-describedby={errors.estimatedBudget ? "estimatedBudget-error" : undefined}
                       className={`${fieldClass} cursor-pointer`}
                     >
                       <option value="">Select an estimated budget</option>
@@ -340,13 +348,14 @@ const Contact = () => {
                         <option key={b} value={b}>{b}</option>
                       ))}
                     </select>
-                    {errors.estimatedBudget && <p className={errorClass}>{errors.estimatedBudget}</p>}
+                    {errors.estimatedBudget && <p id="estimatedBudget-error" role="alert" className={errorClass}>{errors.estimatedBudget}</p>}
                   </div>
                   <div>
                     <label htmlFor="preferredStartTime" className={labelClass}>Preferred start time</label>
                     <select
                       id="preferredStartTime" name="preferredStartTime" value={formData.preferredStartTime} onChange={handleChange}
                       aria-invalid={!!errors.preferredStartTime}
+                      aria-describedby={errors.preferredStartTime ? "preferredStartTime-error" : undefined}
                       className={`${fieldClass} cursor-pointer`}
                     >
                       <option value="">Select a start time</option>
@@ -354,7 +363,7 @@ const Contact = () => {
                         <option key={s} value={s}>{s}</option>
                       ))}
                     </select>
-                    {errors.preferredStartTime && <p className={errorClass}>{errors.preferredStartTime}</p>}
+                    {errors.preferredStartTime && <p id="preferredStartTime-error" role="alert" className={errorClass}>{errors.preferredStartTime}</p>}
                   </div>
                 </div>
 
@@ -364,21 +373,23 @@ const Contact = () => {
                     id="projectDetails" name="projectDetails" rows={5}
                     value={formData.projectDetails} onChange={handleChange}
                     aria-invalid={!!errors.projectDetails}
+                      aria-describedby={errors.projectDetails ? "projectDetails-error" : undefined}
                     placeholder="Describe the workflow, where it slows down, and who it affects."
                     className={`${fieldClass} resize-none`}
                   />
-                  {errors.projectDetails && <p className={errorClass}>{errors.projectDetails}</p>}
+                  {errors.projectDetails && <p id="projectDetails-error" role="alert" className={errorClass}>{errors.projectDetails}</p>}
                 </div>
 
                 <div className="space-y-5">
-                  <button
+                  <Button
+                    variant="unstyled"
                     type="submit"
                     disabled={isSubmitting}
                     className="btn-ghost-on-cream group w-full sm:w-auto justify-center !bg-[#281C0B] !text-[#FFF9F1] !border-[#281C0B] hover:!bg-[#15110C] disabled:opacity-60 disabled:cursor-not-allowed"
                   >
-                    {isSubmitting ? "Sending…" : "Send My Project Details"}
+                    {isSubmitting ? "Sending…" : "Send project details"}
                     <ArrowRight size={15} className="transition-transform duration-300 group-hover:translate-x-0.5" />
-                  </button>
+                  </Button>
                   <p className="text-on-cream-muted text-[15px] leading-[1.7]">
                     Your information will only be used to respond to your inquiry.
                   </p>

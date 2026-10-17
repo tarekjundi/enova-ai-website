@@ -1,14 +1,7 @@
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { LinkedinLogo, InstagramLogo, XLogo } from "@phosphor-icons/react";
 
 const Footer = () => {
-  const navigate = useNavigate();
-
-  const go = (path: string) => {
-    navigate(path);
-    setTimeout(() => window.scrollTo({ top: 0 }), 40);
-  };
-
   const linkClass =
     "text-[#FDEED8]/85 hover:text-[#F6D5A0] transition-colors duration-200 text-[15px]";
 
@@ -29,21 +22,21 @@ const Footer = () => {
           <div className="md:col-span-2 md:col-start-7">
             <h4 className="text-[#C9B393] text-[14px] font-medium mb-5">Site</h4>
             <ul className="space-y-3">
-              <li><button onClick={() => go("/services")} className={linkClass}>Solutions</button></li>
-              <li><button onClick={() => go("/case-studies")} className={linkClass}>Work</button></li>
-              <li><button onClick={() => go("/about")} className={linkClass}>About</button></li>
-              <li><button onClick={() => go("/contact")} className={linkClass}>Contact</button></li>
+              <li><Link to="/services" className={linkClass}>Solutions</Link></li>
+              <li><Link to="/case-studies" className={linkClass}>Work</Link></li>
+              <li><Link to="/about" className={linkClass}>About</Link></li>
+              <li><Link to="/contact" className={linkClass}>Contact</Link></li>
             </ul>
           </div>
 
           <div className="md:col-span-2">
             <h4 className="text-[#C9B393] text-[14px] font-medium mb-5">Solutions</h4>
             <ul className="space-y-3">
-              <li><button onClick={() => go("/services")} className={linkClass}>Opportunity Audit</button></li>
-              <li><button onClick={() => go("/services")} className={linkClass}>Workflow Systems</button></li>
-              <li><button onClick={() => go("/services")} className={linkClass}>Knowledge Systems</button></li>
-              <li><button onClick={() => go("/services")} className={linkClass}>Customer Operations</button></li>
-              <li><button onClick={() => go("/services")} className={linkClass}>Business Intelligence</button></li>
+              <li><Link to="/services#opportunity-audit" className={linkClass}>Opportunity Audit</Link></li>
+              <li><Link to="/services#workflow-systems" className={linkClass}>Workflow Systems</Link></li>
+              <li><Link to="/services#knowledge-systems" className={linkClass}>Knowledge Systems</Link></li>
+              <li><Link to="/services#customer-operations" className={linkClass}>Customer Operations</Link></li>
+              <li><Link to="/services#business-intelligence" className={linkClass}>Business Intelligence</Link></li>
             </ul>
           </div>
 
@@ -51,7 +44,7 @@ const Footer = () => {
             <h4 className="text-[#C9B393] text-[14px] font-medium mb-5">Connect</h4>
             <ul className="space-y-3">
               <li>
-                <a href="mailto:tarek@enovaagency.com" className={linkClass}>
+                <a href="mailto:tarek@enovaagency.com" className={`${linkClass} break-all`}>
                   tarek@enovaagency.com
                 </a>
               </li>
@@ -76,9 +69,9 @@ const Footer = () => {
 
         <div className="mt-16 pt-7 border-t border-[#F6D5A0]/10 flex flex-col md:flex-row justify-between items-center gap-3">
           <p className="eyebrow text-[#C9B393]/70">© 2026 Enova</p>
-          <button onClick={() => go("/privacy")} className="eyebrow text-[#C9B393]/70 hover:text-[#F6D5A0] transition-colors">
+          <Link to="/privacy" className="eyebrow text-[#C9B393]/70 hover:text-[#F6D5A0] transition-colors">
             Privacy
-          </button>
+          </Link>
         </div>
       </div>
     </footer>
