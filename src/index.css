@@ -99,6 +99,9 @@
     outline-offset: 3px;
     border-radius: 2px;
   }
+  .surface-cream :focus-visible, .surface-ivory :focus-visible, .surface-gold :focus-visible {
+    outline-color: #94572A;
+  }
 }
 
 @layer utilities {

@@ -94,7 +94,11 @@ const Services = () => {
     if (location.hash) {
       const el = document.getElementById(location.hash.slice(1));
       if (el) {
-        setTimeout(() => el.scrollIntoView({ behavior: "smooth", block: "start" }), 120);
+        const timer = setTimeout(() => el.scrollIntoView({
+          behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? "instant" : "smooth",
+          block: "start",
+        }), 120);
+        return () => clearTimeout(timer);
       }
     }
   }, [location]);
