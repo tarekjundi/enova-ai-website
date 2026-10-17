@@ -1,5 +1,9 @@
 # Roadmap
 
+- [ ] Refine remaining service copy and remove unsupported results and founder claims without rebuilding.
+- [ ] Standardize booking labels, clarify calculator assumptions and contact confirmation, and repair section links.
+- [ ] Verify all pages on desktop, tablet and mobile, keyboard navigation, reduced motion and form states.
+
 - [x] Preserve current colors and content placement while refining spacing and borders.
 - [x] Enlarge the header and logo, shifting the logo slightly left.
 - [x] Remove repetitive eyebrow labels and decorative divider lines.
