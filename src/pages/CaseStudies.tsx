@@ -91,7 +91,7 @@ const CaseStudies = () => {
         eyebrow="Selected work"
         title="Example engagements, explained step by step."
         intro="Four illustrative scenarios based on common workflow problems. They show how we scope and build a system. Figures are target outcomes, not reported client results."
-        cta={{ label: "Book a Consultation", href: CAL, external: true }}
+        cta={{ label: "Book a 30-min call", href: CAL, external: true }}
       />
 
       <section className="surface-ivory py-20 md:py-28">
@@ -182,7 +182,7 @@ const CaseStudies = () => {
                 Bring one process to a 30-minute call. We&rsquo;ll map it live and tell you where we&rsquo;d begin.
               </p>
               <a href={CAL} target="_blank" rel="noopener noreferrer" className="btn-dark group">
-                Book a Consultation
+                Book a 30-min call
                 <ArrowRight size={15} className="transition-transform duration-300 group-hover:translate-x-0.5" />
               </a>
             </MotionElement>
