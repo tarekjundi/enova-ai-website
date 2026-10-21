@@ -274,3 +274,7 @@
 }
 .field-input:-webkit-autofill { -webkit-box-shadow: 0 0 0 40px #FFF9F1 inset; -webkit-text-fill-color: #281C0B; }
 select.field-input, input.field-input { height: 54px; }
+
+@keyframes hero-zoom { from { transform: scale(1.08); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+.hero-img { animation: hero-zoom 1.6s cubic-bezier(.2,.7,.2,1) both; }
+@media (prefers-reduced-motion: reduce) { .hero-img { animation: none; } }
