@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import ScrollToTop from "@/components/ScrollToTop";
 import { MotionElement } from "@/components/MotionElements";
 import WorkflowDiagnostic from "@/components/WorkflowDiagnostic";
+import heroImg from "@/assets/hero-office.jpg";
 import { ArrowRight, ArrowUpRight, Minus, Plus } from "@phosphor-icons/react";
 
 const CAL = "https://cal.com/tarek-jundi/free-consultation";
@@ -20,31 +21,31 @@ const SOLUTIONS = [
     n: "01",
     slug: "opportunity-audit",
     title: "Opportunity Audit",
-    body: "A review of your workflows. You get a written shortlist of what to automate, the estimated hours saved and a fixed quote for each.",
+    body: "A written shortlist of what to automate, hours saved and a fixed quote.",
   },
   {
     n: "02",
     slug: "workflow-systems",
     title: "Workflow Systems",
-    body: "Lead routing, onboarding, invoicing or approvals rebuilt in Make, n8n or code — connected to your CRM and inbox, with error alerts.",
+    body: "Lead routing, onboarding, invoicing and approvals — connected to your CRM and inbox.",
   },
   {
     n: "03",
     slug: "knowledge-systems",
     title: "Knowledge Systems",
-    body: "A private search assistant over your policies, contracts and past tickets, so staff find the right answer with the source linked.",
+    body: "Private search over your policies, contracts and tickets, with sources linked.",
   },
   {
     n: "04",
     slug: "customer-operations",
     title: "Customer Operations",
-    body: "Drafted replies, ticket triage and FAQ handling for support and sales inboxes, with a human approving anything uncertain.",
+    body: "Drafted replies and ticket triage, with a human approving anything uncertain.",
   },
   {
     n: "05",
     slug: "business-intelligence",
     title: "Business Intelligence",
-    body: "Data from your CRM, accounting and spreadsheets pulled into one dashboard that refreshes itself instead of being rebuilt weekly.",
+    body: "CRM, accounting and spreadsheets in one self-refreshing dashboard.",
   },
 ];
 
@@ -53,19 +54,7 @@ const STEPS = [
   { n: "02", title: "Identify", body: "Each opportunity scored on hours saved, effort and risk." },
   { n: "03", title: "Design", body: "A written spec you approve before anything is built." },
   { n: "04", title: "Build", body: "Built in your accounts, tested on real cases with your team." },
-  { n: "05", title: "Optimise", body: "Monitoring and support agreed in the project scope." },
-];
-
-const PROOF = [
-  { v: "Discovery", l: "Process map and shortlist", c: "Discovery", detail: "A written map of how the workflow runs today, where time is lost, and which steps are worth automating first." },
-  { v: "Build", l: "A working system in your tools", c: "Build", detail: "Automations, integrations and any AI steps built against your real data, tested with the people who will use them." },
-  { v: "Handover", l: "Documentation and training", c: "Ownership", detail: "Runbooks, credentials, a recorded walkthrough and an agreed support plan. You keep everything if you stop working with us." },
-];
-
-const WHY = [
-  { n: "01", title: "Business first", body: "We start from the process and its cost. If a spreadsheet rule solves it, we tell you — tools are chosen last." },
-  { n: "02", title: "In production", body: "Systems run on your real data, with logging and alerts, so failures are visible instead of silent." },
-  { n: "03", title: "Owned by you", body: "Code, credentials, runbooks and training. You can end the engagement and keep the system." },
+  { n: "05", title: "Optimise", body: "Monitoring, documentation and handover — you own it." },
 ];
 
 const INDUSTRIES = [
@@ -85,7 +74,6 @@ const FAQS = [
   { q: "Where do we start?", a: "With a 30-minute conversation about one workflow. We review how it runs today and tell you honestly whether automation is the right answer." },
   { q: "How long does it take?", a: "We agree the timeline after checking the workflow, data access and integrations. Larger builds are split into reviewable stages." },
   { q: "Will it work with our current tools?", a: "Yes. We build around the platforms you already run — CRM, inbox, spreadsheets, accounting and support — instead of replacing them." },
-  { q: "Do we need technical people?", a: "No. We handle the build and hand over a system your team operates with normal business tools." },
   { q: "How does pricing work?", a: "Each engagement is scoped and quoted after the first consultation. Ongoing optimisation is a separate, optional retainer." },
 ];
 
@@ -97,7 +85,9 @@ const Index = () => {
       <Navbar />
 
       {/* ================= HERO ================= */}
-      <section className="surface-deep-grad pt-32 md:pt-40 pb-28 md:pb-32 min-h-[100vh] md:min-h-[110vh] flex items-center">
+      <section className="relative isolate surface-deep pt-32 md:pt-40 pb-20 md:pb-24 min-h-[100vh] flex items-end overflow-hidden">
+        <img src={heroImg} alt="" aria-hidden="true" width={1920} height={1088} fetchPriority="high" className="absolute inset-0 -z-10 h-full w-full object-cover object-center hero-img" />
+        <div aria-hidden="true" className="absolute inset-0 -z-10 bg-gradient-to-t from-[#281D0B] via-[#281D0B]/75 to-[#281D0B]/40" />
         <div className="container mx-auto px-6 lg:px-10">
           <MotionElement animation="slideUp" delay={100}>
             <h1 className="font-display text-[#FFF9F1] leading-[0.94] !text-[clamp(40px,6.4vw,88px)] max-w-[17ch]">
@@ -109,9 +99,8 @@ const Index = () => {
             <div className="lg:col-span-6">
               <MotionElement animation="slideUp" delay={180}>
                 <p className="text-[#FDEED8]/90 text-[18px] md:text-[20px] leading-[1.65] max-w-[54ch]">
-                  We map one manual process — intake, follow-ups, reporting, support replies — then
-                  build and hand over a working system inside the CRM, inbox and spreadsheets you
-                  already use. Fixed scope, documented, owned by you.
+                  We map one manual process, then build a working system inside the tools you already
+                  use. Fixed scope, documented, owned by you.
                 </p>
               </MotionElement>
             </div>
@@ -120,7 +109,7 @@ const Index = () => {
               <MotionElement animation="slideUp" delay={260}>
                 <div className="flex flex-col sm:flex-row gap-3">
                   <a href={CAL} target="_blank" rel="noopener noreferrer" className="btn-primary group justify-center !py-4 !px-7">
-                    Book a 30-min call
+                    Book a Consultation
                     <ArrowRight size={15} className="transition-transform duration-300 group-hover:translate-x-0.5" />
                   </a>
                   <Link to="/services" className="btn-ghost-on-deep group justify-center !py-4">
@@ -130,32 +119,6 @@ const Index = () => {
                 </div>
               </MotionElement>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ================= RESULTS ================= */}
-      <section className="surface-gold py-20 md:py-24">
-        <div className="container mx-auto px-6 lg:px-10">
-          <MotionElement animation="slideUp">
-            <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
-              <h2 className="font-display text-[#281D0B] !text-[clamp(32px,4.4vw,58px)] leading-[0.98]">What an engagement delivers</h2>
-              <Link to="/case-studies" className="text-[#281D0B] text-[15px] font-medium inline-flex items-center gap-2">
-                See example engagements <ArrowRight size={16} />
-              </Link>
-            </div>
-          </MotionElement>
-          <div className="grid md:grid-cols-3 gap-10 md:gap-12">
-            {PROOF.map((p, i) => (
-              <MotionElement key={p.l} animation="slideUp" delay={40 + i * 60}>
-                <div>
-                  <p className="font-display text-[#281D0B] text-[32px] md:text-[40px] leading-none">{p.v}</p>
-                  <p className="text-[#281D0B] text-[18px] leading-[1.4] mt-3 max-w-[28ch] font-medium">{p.l}</p>
-                  <p className="text-[#281D0B]/80 text-[16px] leading-[1.65] mt-4 max-w-[38ch]">{p.detail}</p>
-                  <p className="text-[#281D0B]/70 text-[13px] mt-5 font-medium">{p.c}</p>
-                </div>
-              </MotionElement>
-            ))}
           </div>
         </div>
       </section>
@@ -182,12 +145,6 @@ const Index = () => {
                   </MotionElement>
                 ))}
               </ol>
-              <MotionElement animation="slideUp" delay={320}>
-                <p className="mt-8 text-on-cream-muted max-w-[46ch]">
-                  Most growing businesses don&rsquo;t have a technology problem. They have a workflow
-                  problem hidden inside their tools.
-                </p>
-              </MotionElement>
             </div>
           </div>
         </div>
@@ -259,38 +216,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* ================= WHY ENOVA ================= */}
-      <section className="surface-deep-grad py-20 md:py-28">
-        <div className="container mx-auto px-6 lg:px-10">
-          <div className="grid md:grid-cols-12 gap-10 md:gap-16">
-            <div className="md:col-span-4">
-              <MotionElement animation="slideUp">
-                <h2 className="font-display text-[#FFF9F1] !text-[clamp(32px,4.4vw,56px)] leading-[0.98] max-w-[12ch]">
-                  How we work.
-                </h2>
-              </MotionElement>
-            </div>
-            <div className="md:col-span-7 md:col-start-6">
-              <div className="border-t border-[#F6D5A0]/15">
-                {WHY.map((w, i) => (
-                  <MotionElement key={w.n} animation="slideUp" delay={60 + i * 80}>
-                    <div className="py-8 border-b border-[#F6D5A0]/15">
-                      <div className="flex items-baseline gap-5 mb-3">
-                        <span className="num text-[#F6D5A0]/70 text-[13px]">{w.n}</span>
-                        <h3 className="font-display text-[#FFF9F1] !text-[clamp(24px,2.8vw,34px)] leading-none">
-                          {w.title}
-                        </h3>
-                      </div>
-                      <p className="text-[#FDEED8]/90 md:pl-[3.1rem] max-w-[56ch]">{w.body}</p>
-                    </div>
-                  </MotionElement>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* ================= INDUSTRIES + STACK ================= */}
       <section className="surface-cream py-20 md:py-28">
         <div className="container mx-auto px-6 lg:px-10">
@@ -310,9 +235,6 @@ const Index = () => {
                     </li>
                   ))}
                 </ul>
-                <p className="mt-6 text-on-cream-muted text-[15px] max-w-[44ch]">
-                  Not listed? The operational patterns are usually the same — tell us how your work runs.
-                </p>
               </MotionElement>
             </div>
 
@@ -394,10 +316,10 @@ const Index = () => {
             </MotionElement>
             <MotionElement animation="slideUp" delay={120} className="md:col-span-4 md:col-start-9">
               <p className="text-[#281D0B]/80 mb-8 max-w-[38ch]">
-                A 30-minute video call with Tarek. Bring one process; you&rsquo;ll leave knowing whether it&rsquo;s worth automating and roughly what it would take.
+                30 minutes with Tarek. Bring one process; leave knowing if it&rsquo;s worth automating.
               </p>
               <a href={CAL} target="_blank" rel="noopener noreferrer" className="btn-dark group">
-                Book a 30-min call
+                Book a Consultation
                 <ArrowRight size={15} className="transition-transform duration-300 group-hover:translate-x-0.5" />
               </a>
             </MotionElement>
