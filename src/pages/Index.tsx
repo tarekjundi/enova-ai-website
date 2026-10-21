@@ -109,7 +109,7 @@ const Index = () => {
               <MotionElement animation="slideUp" delay={260}>
                 <div className="flex flex-col sm:flex-row gap-3">
                   <a href={CAL} target="_blank" rel="noopener noreferrer" className="btn-primary group justify-center !py-4 !px-7">
-                    Book a Consultation
+                    Book a 30-min call
                     <ArrowRight size={15} className="transition-transform duration-300 group-hover:translate-x-0.5" />
                   </a>
                   <Link to="/services" className="btn-ghost-on-deep group justify-center !py-4">
@@ -319,7 +319,7 @@ const Index = () => {
                 30 minutes with Tarek. Bring one process; leave knowing if it&rsquo;s worth automating.
               </p>
               <a href={CAL} target="_blank" rel="noopener noreferrer" className="btn-dark group">
-                Book a Consultation
+                Book a 30-min call
                 <ArrowRight size={15} className="transition-transform duration-300 group-hover:translate-x-0.5" />
               </a>
             </MotionElement>
