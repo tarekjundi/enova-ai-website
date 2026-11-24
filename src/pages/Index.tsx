@@ -5,7 +5,6 @@ import Footer from "@/components/Footer";
 import ScrollToTop from "@/components/ScrollToTop";
 import { MotionElement } from "@/components/MotionElements";
 import WorkflowDiagnostic from "@/components/WorkflowDiagnostic";
-import heroImg from "@/assets/hero-office.jpg";
 import { ArrowRight, ArrowUpRight, Minus, Plus } from "@phosphor-icons/react";
 
 const CAL = "https://cal.com/tarek-jundi/free-consultation";
@@ -57,6 +56,12 @@ const STEPS = [
   { n: "05", title: "Optimise", body: "Monitoring, documentation and handover — you own it." },
 ];
 
+const FLOW = [
+  { label: "Comes in", items: ["Web forms", "Shared inbox", "Support tickets"] },
+  { label: "Enova logic", items: ["Route and enrich", "Draft and summarise", "Human approval when unsure"] },
+  { label: "Lands in", items: ["Your CRM", "Slack or Teams", "Sheets and dashboards"] },
+];
+
 const INDUSTRIES = [
   "Professional Services", "Financial Services", "Healthcare & Clinics", "Real Estate",
   "E-commerce", "Hospitality", "Education", "Construction",
@@ -85,66 +90,51 @@ const Index = () => {
       <Navbar />
 
       {/* ================= HERO ================= */}
-      <section className="relative isolate surface-deep pt-32 md:pt-40 pb-20 md:pb-24 min-h-[100vh] flex items-end overflow-hidden">
-        <img src={heroImg} alt="" aria-hidden="true" width={1920} height={1088} fetchPriority="high" className="absolute inset-0 -z-10 h-full w-full object-cover object-center hero-img" />
-        <div aria-hidden="true" className="absolute inset-0 -z-10 bg-gradient-to-t from-[#281D0B] via-[#281D0B]/75 to-[#281D0B]/40" />
+      <section className="surface-deep pt-40 md:pt-52 pb-20 md:pb-28">
         <div className="container mx-auto px-6 lg:px-10">
           <MotionElement animation="slideUp" delay={100}>
-            <h1 className="font-display text-[#FFF9F1] leading-[0.94] !text-[clamp(40px,6.4vw,88px)] max-w-[17ch]">
-              Automation for the work that happens between your tools.
+            <h1 className="font-display text-[#FFF9F1] leading-[0.95] !text-[clamp(42px,7vw,104px)] max-w-[15ch]">
+              Automation for the work that happens{" "}
+              <span className="font-accent italic font-normal text-[#F6D5A0]">between</span> your tools.
             </h1>
           </MotionElement>
-
-          <div className="grid lg:grid-cols-12 gap-8 lg:gap-16 mt-12 md:mt-16 items-end">
-            <div className="lg:col-span-6">
-              <MotionElement animation="slideUp" delay={180}>
-                <p className="text-[#FDEED8]/90 text-[18px] md:text-[20px] leading-[1.65] max-w-[54ch]">
-                  We map one manual process, then build a working system inside the tools you already
-                  use. Fixed scope, documented, owned by you.
-                </p>
-              </MotionElement>
-            </div>
-
-            <div className="lg:col-span-5 lg:col-start-8">
-              <MotionElement animation="slideUp" delay={260}>
-                <div className="flex flex-col sm:flex-row gap-3">
-                  <a href={CAL} target="_blank" rel="noopener noreferrer" className="btn-primary group justify-center !py-4 !px-7">
-                    Book a 30-min call
-                    <ArrowRight size={15} className="transition-transform duration-300 group-hover:translate-x-0.5" />
-                  </a>
-                  <Link to="/services" className="btn-ghost-on-deep group justify-center !py-4">
-                    See what we build
-                    <ArrowUpRight size={15} className="transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
-                  </Link>
-                </div>
-              </MotionElement>
-            </div>
+          <div className="mt-14 md:mt-20 pt-8 border-t border-[#F6D5A0]/15 grid lg:grid-cols-12 gap-8 items-end">
+            <MotionElement animation="slideUp" delay={180} className="lg:col-span-6">
+              <p className="text-[#FDEED8]/85 text-[18px] md:text-[20px] leading-[1.6] max-w-[48ch]">
+                We map one manual process and build a working system inside the tools you already use. Fixed scope, owned by you.
+              </p>
+            </MotionElement>
+            <MotionElement animation="slideUp" delay={260} className="lg:col-span-5 lg:col-start-8">
+              <div className="flex flex-col sm:flex-row gap-3 lg:justify-end">
+                <a href={CAL} target="_blank" rel="noopener noreferrer" className="btn-primary group justify-center !py-4 !px-7">
+                  Book a Consultation
+                  <ArrowRight size={15} className="transition-transform duration-300 group-hover:translate-x-0.5" />
+                </a>
+                <Link to="/services" className="btn-ghost-on-deep group justify-center !py-4">
+                  See what we build
+                  <ArrowUpRight size={15} className="transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+                </Link>
+              </div>
+            </MotionElement>
           </div>
         </div>
       </section>
 
       {/* ================= PROBLEM ================= */}
-      <section className="surface-cream py-20 md:py-28">
+      <section className="surface-deep pb-24 md:pb-32">
         <div className="container mx-auto px-6 lg:px-10">
           <div className="grid md:grid-cols-12 gap-10 md:gap-16 items-start">
-            <div className="md:col-span-5">
-              <MotionElement animation="slideUp">
-                <h2 className="font-display text-on-cream !text-[clamp(32px,4.4vw,58px)] leading-[0.98] max-w-[14ch]">
-                  Your team shouldn&rsquo;t be the integration layer.
-                </h2>
-              </MotionElement>
-            </div>
-            <div className="md:col-span-6 md:col-start-7">
-              <ol className="border-t border-[#3A2915]/15">
-                {PROBLEMS.map((p, i) => (
-                  <MotionElement key={p} animation="slideUp" delay={80 + i * 80}>
-                    <li className="flex gap-6 py-7 border-b border-[#3A2915]/15">
-                      <span className="num text-[#94572A] text-[14px] pt-2 shrink-0">0{i + 1}</span>
-                      <p className="text-on-cream-body text-[19px] md:text-[22px] leading-[1.45] max-w-[36ch]">{p}</p>
-                    </li>
-                  </MotionElement>
-                ))}
-              </ol>
+            <MotionElement animation="slideUp" className="md:col-span-6">
+              <h2 className="font-display text-[#FFF9F1] !text-[clamp(30px,3.8vw,52px)] leading-[1] max-w-[14ch]">
+                Your team shouldn&rsquo;t be the integration layer.
+              </h2>
+            </MotionElement>
+            <div className="md:col-span-5 md:col-start-8 space-y-8">
+              {PROBLEMS.map((p, i) => (
+                <MotionElement key={p} animation="slideUp" delay={80 + i * 80}>
+                  <p className="text-[#FDEED8]/80 text-[18px] md:text-[20px] leading-[1.5] pl-5 border-l border-[#F6D5A0]/30">{p}</p>
+                </MotionElement>
+              ))}
             </div>
           </div>
         </div>
@@ -153,66 +143,88 @@ const Index = () => {
       <WorkflowDiagnostic />
 
       {/* ================= WHAT WE BUILD ================= */}
-      <section className="surface-deep py-20 md:py-28">
+      <section className="surface-ivory pt-24 md:pt-32 pb-16 md:pb-20">
         <div className="container mx-auto px-6 lg:px-10">
-          <MotionElement animation="slideUp">
-            <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12 md:mb-16">
-              <h2 className="font-display text-[#FFF9F1] !text-[clamp(32px,4.6vw,62px)] leading-[0.98] max-w-[16ch]">
-                What we build
-              </h2>
-              <Link
-                to="/services"
-                className="eyebrow text-[#F6D5A0] inline-flex items-center gap-2 hover:gap-3 transition-all duration-200"
-              >
-                All solutions <ArrowRight size={14} />
-              </Link>
-            </div>
-          </MotionElement>
-
-          <div className="border-t border-[#F6D5A0]/15">
-            {SOLUTIONS.map((s, i) => (
-              <MotionElement key={s.slug} animation="slideUp" delay={40 + i * 50}>
-                <Link
-                  to={`/services#${s.slug}`}
-                  className="group grid md:grid-cols-12 gap-3 md:gap-10 items-baseline py-7 md:py-8 border-b border-[#F6D5A0]/15 transition-colors duration-300 hover:bg-[#F6D5A0]/[0.05] -mx-4 md:-mx-6 px-4 md:px-6"
-                >
-                  <span className="num text-[#F6D5A0]/70 text-[13px] md:col-span-1">{s.n}</span>
-                  <h3 className="md:col-span-4 font-display text-[#FFF9F1] !text-[clamp(22px,2.4vw,30px)] leading-[1.1] transition-colors duration-300 group-hover:text-[#F6D5A0]">
-                    {s.title}
-                  </h3>
-                  <p className="md:col-span-6 text-[#FDEED8]/90 text-[17px] leading-[1.65] max-w-[56ch]">{s.body}</p>
-                  <span className="md:col-span-1 hidden md:flex justify-end text-[#F6D5A0] opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <ArrowUpRight size={22} />
-                  </span>
+          <div className="grid md:grid-cols-12 gap-10 md:gap-16">
+            <MotionElement animation="slideUp" className="md:col-span-4">
+              <div className="md:sticky md:top-32">
+                <h2 className="font-display text-on-cream !text-[clamp(32px,4.2vw,56px)] leading-[0.98]">What we build</h2>
+                <Link to="/services" className="mt-6 eyebrow text-[#94572A] inline-flex items-center gap-2 hover:gap-3 transition-all duration-200">
+                  All solutions <ArrowRight size={14} />
                 </Link>
-              </MotionElement>
-            ))}
+              </div>
+            </MotionElement>
+            <div className="md:col-span-8">
+              {SOLUTIONS.map((s, i) => (
+                <MotionElement key={s.slug} animation="slideUp" delay={40 + i * 50}>
+                  <Link to={`/services#${s.slug}`} className="group flex items-baseline gap-6 py-6 md:py-7 border-b border-[#3A2915]/10 last:border-b-0">
+                    <span className="num text-[#94572A] text-[12px] shrink-0 w-6">{s.n}</span>
+                    <div className="flex-1">
+                      <h3 className="font-display text-on-cream !text-[clamp(24px,2.8vw,38px)] leading-[1.05] transition-colors duration-300 group-hover:text-[#94572A]">
+                        {s.title}
+                      </h3>
+                      <p className="mt-2 text-on-cream-body text-[16px] leading-[1.6] max-w-[52ch]">{s.body}</p>
+                    </div>
+                    <ArrowUpRight size={22} className="text-[#94572A] shrink-0 opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300" />
+                  </Link>
+                </MotionElement>
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
-      {/* ================= HOW IT WORKS ================= */}
-      <section className="surface-ivory py-20 md:py-28">
+      {/* ================= SYSTEM DIAGRAM ================= */}
+      <section className="surface-ivory py-16 md:py-20">
         <div className="container mx-auto px-6 lg:px-10">
           <MotionElement animation="slideUp">
-            <h2 className="font-display text-on-cream !text-[clamp(32px,4.6vw,62px)] leading-[0.98] max-w-[16ch] mb-14">
+            <h2 className="font-display text-on-cream !text-[clamp(28px,3.4vw,44px)] leading-[1] mb-10 max-w-[20ch]">
+              One connected flow, built on your stack.
+            </h2>
+          </MotionElement>
+          <MotionElement animation="slideUp" delay={100}>
+            <div className="grid md:grid-cols-[1fr_auto_1.2fr_auto_1fr] items-stretch gap-4 md:gap-0">
+              {FLOW.map((col, i) => (
+                <div key={col.label} className="contents">
+                  <div className={`p-6 md:p-8 border ${i === 1 ? "bg-[#281D0B] border-[#281D0B]" : "border-[#3A2915]/15"}`}>
+                    <p className={`eyebrow mb-5 ${i === 1 ? "text-[#F6D5A0]" : "text-[#94572A]"}`}>{col.label}</p>
+                    <ul className="space-y-2">
+                      {col.items.map((it) => (
+                        <li key={it} className={`text-[16px] ${i === 1 ? "text-[#FDEED8]" : "text-on-cream-body"}`}>{it}</li>
+                      ))}
+                    </ul>
+                  </div>
+                  {i < FLOW.length - 1 && (
+                    <div aria-hidden="true" className="flex items-center justify-center md:px-4 text-[#94572A]">
+                      <ArrowRight size={18} className="rotate-90 md:rotate-0" />
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
+          </MotionElement>
+        </div>
+      </section>
+
+      {/* ================= HOW IT WORKS ================= */}
+      <section className="surface-ivory pt-16 md:pt-20 pb-24 md:pb-32">
+        <div className="container mx-auto px-6 lg:px-10">
+          <MotionElement animation="slideUp">
+            <h2 className="font-display text-on-cream !text-[clamp(28px,3.4vw,44px)] leading-[1] max-w-[20ch] mb-12">
               From workflow map to working system.
             </h2>
           </MotionElement>
-
-          <div className="grid md:grid-cols-5 gap-px bg-[#3A2915]/15 border border-[#3A2915]/15">
+          <ol className="grid md:grid-cols-5 gap-10 md:gap-8">
             {STEPS.map((s, i) => (
               <MotionElement key={s.n} animation="slideUp" delay={40 + i * 60}>
-                <div className="bg-[#FFF9F1] h-full p-7 md:p-8 transition-colors duration-300 hover:bg-[#FDEED8]">
-                  <p className="num text-[#94572A] text-[13px] mb-8">{s.n}</p>
-                  <h3 className="font-display text-on-cream !text-[24px] md:!text-[28px] leading-none mb-3">
-                    {s.title}
-                  </h3>
-                  <p className="text-on-cream-body text-[16px] leading-[1.6]">{s.body}</p>
-                </div>
+                <li className="pt-5 border-t-2 border-[#281D0B]">
+                  <p className="num text-[#94572A] text-[12px] mb-4">{s.n}</p>
+                  <h3 className="font-display text-on-cream !text-[22px] leading-none mb-3">{s.title}</h3>
+                  <p className="text-on-cream-body text-[15px] leading-[1.6]">{s.body}</p>
+                </li>
               </MotionElement>
             ))}
-          </div>
+          </ol>
         </div>
       </section>
 
@@ -258,7 +270,7 @@ const Index = () => {
       </section>
 
       {/* ================= FAQ ================= */}
-      <section className="surface-deep py-20 md:py-28">
+      <section className="surface-deep border-t border-[#F6D5A0]/10 py-20 md:py-28">
         <div className="container mx-auto px-6 lg:px-10">
           <div className="grid md:grid-cols-12 gap-10 md:gap-16">
             <div className="md:col-span-4">
