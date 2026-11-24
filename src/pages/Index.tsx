@@ -83,7 +83,7 @@ const Index = () => {
       <Navbar />
 
       {/* ================= HERO ================= */}
-      <section className="surface-deep pt-40 md:pt-52 pb-20 md:pb-28">
+      <section className="surface-deep min-h-[88vh] flex items-center pt-36 md:pt-40 pb-20 md:pb-28">
         <div className="container mx-auto px-6 lg:px-10">
           <MotionElement animation="slideUp" delay={100}>
             <h1 className="font-display text-[#FFF9F1] leading-[0.95] !text-[clamp(42px,7vw,104px)] max-w-[15ch]">
@@ -91,25 +91,18 @@ const Index = () => {
               <span className="font-accent italic font-normal text-[#F6D5A0]">between</span> your tools.
             </h1>
           </MotionElement>
-          <div className="mt-14 md:mt-20 pt-8 border-t border-[#F6D5A0]/15 grid lg:grid-cols-12 gap-8 items-end">
-            <MotionElement animation="slideUp" delay={180} className="lg:col-span-6">
-              <p className="text-[#FDEED8]/85 text-[18px] md:text-[20px] leading-[1.6] max-w-[48ch]">
-                We map one manual process and build a working system inside the tools you already use. Fixed scope, owned by you.
-              </p>
-            </MotionElement>
-            <MotionElement animation="slideUp" delay={260} className="lg:col-span-5 lg:col-start-8">
-              <div className="flex flex-col sm:flex-row gap-3 lg:justify-end">
-                <a href={CAL} target="_blank" rel="noopener noreferrer" className="btn-primary group justify-center !py-4 !px-7">
-                  Book a Consultation
-                  <ArrowRight size={15} className="transition-transform duration-300 group-hover:translate-x-0.5" />
-                </a>
-                <Link to="/services" className="btn-ghost-on-deep group justify-center !py-4">
-                  See what we build
-                  <ArrowUpRight size={15} className="transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
-                </Link>
-              </div>
-            </MotionElement>
-          </div>
+          <MotionElement animation="slideUp" delay={200}>
+            <div className="mt-12 md:mt-14 flex flex-col sm:flex-row gap-3">
+              <a href={CAL} target="_blank" rel="noopener noreferrer" className="btn-primary group justify-center !py-4 !px-7">
+                Book a 30-min call
+                <ArrowRight size={15} className="transition-transform duration-300 group-hover:translate-x-0.5" />
+              </a>
+              <Link to="/services" className="btn-ghost-on-deep group justify-center !py-4">
+                See what we build
+                <ArrowUpRight size={15} className="transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+              </Link>
+            </div>
+          </MotionElement>
         </div>
       </section>
 
