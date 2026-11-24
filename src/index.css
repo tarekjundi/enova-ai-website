@@ -278,3 +278,10 @@ select.field-input, input.field-input { height: 54px; }
 @keyframes hero-zoom { from { transform: scale(1.08); opacity: 0; } to { transform: scale(1); opacity: 1; } }
 .hero-img { animation: hero-zoom 1.6s cubic-bezier(.2,.7,.2,1) both; }
 @media (prefers-reduced-motion: reduce) { .hero-img { animation: none; } }
+
+/* Sectors marquee */
+.sector-marquee { overflow: hidden; mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); }
+.sector-track { display: flex; width: max-content; animation: sector-roll 45s linear infinite; }
+.sector-marquee:hover .sector-track { animation-play-state: paused; }
+@keyframes sector-roll { to { transform: translateX(-50%); } }
+@media (prefers-reduced-motion: reduce) { .sector-track { animation: none; flex-wrap: wrap; width: auto; } }

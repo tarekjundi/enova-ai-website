@@ -67,12 +67,6 @@ const INDUSTRIES = [
   "Logistics", "Legal", "Manufacturing", "SaaS",
 ];
 
-const STACK = [
-  { group: "AI", items: "OpenAI · Claude" },
-  { group: "Automation", items: "Make · n8n" },
-  { group: "Business systems", items: "HubSpot · Odoo · Google Workspace · Slack · Notion · Airtable" },
-  { group: "Engineering", items: "Supabase · React · Python" },
-];
 
 const FAQS = [
   { q: "Where do we start?", a: "With a 30-minute conversation about one workflow. We review how it runs today and tell you honestly whether automation is the right answer." },
@@ -220,43 +214,23 @@ const Index = () => {
         </div>
       </section>
 
-      {/* ================= INDUSTRIES + STACK ================= */}
-      <section className="surface-cream py-20 md:py-28">
+      {/* ================= SECTORS ================= */}
+      <section className="surface-cream py-20 md:py-24 overflow-hidden">
         <div className="container mx-auto px-6 lg:px-10">
-          <div className="grid md:grid-cols-12 gap-14 md:gap-16">
-            <div className="md:col-span-6">
-              <MotionElement animation="slideUp">
-                <h2 className="font-display text-on-cream !text-[clamp(28px,3.4vw,44px)] leading-[1] mb-8 max-w-[16ch]">
-                  Sectors we design for.
-                </h2>
-                <ul className="flex flex-wrap gap-x-2 gap-y-1 font-display text-on-cream !text-[clamp(20px,2vw,26px)] leading-[1.4]">
-                  {INDUSTRIES.map((ind) => (
-                    <li
-                      key={ind}
-                      className="after:content-['/'] after:ml-2 after:text-[#94572A]/50 last:after:content-none"
-                    >
-                      {ind}
-                    </li>
-                  ))}
-                </ul>
-              </MotionElement>
-            </div>
-
-            <div className="md:col-span-5 md:col-start-8">
-              <MotionElement animation="slideUp" delay={120}>
-                <h2 className="font-display text-on-cream !text-[clamp(28px,3.4vw,44px)] leading-[1] mb-8 max-w-[16ch]">
-                  The tools your business already uses.
-                </h2>
-                <dl className="border-t border-[#3A2915]/15">
-                  {STACK.map((s) => (
-                    <div key={s.group} className="py-5 border-b border-[#3A2915]/15">
-                      <dt className="eyebrow text-[#6B5335] mb-2">{s.group}</dt>
-                      <dd className="text-on-cream-body text-[16px] leading-[1.6]">{s.items}</dd>
-                    </div>
-                  ))}
-                </dl>
-              </MotionElement>
-            </div>
+          <MotionElement animation="slideUp">
+            <h2 className="font-display text-on-cream !text-[clamp(28px,3.4vw,44px)] leading-[1] mb-10 max-w-[16ch]">
+              Sectors we design for.
+            </h2>
+          </MotionElement>
+        </div>
+        <div className="sector-marquee group" aria-label={INDUSTRIES.join(", ")}>
+          <div className="sector-track" aria-hidden="true">
+            {[...INDUSTRIES, ...INDUSTRIES].map((ind, i) => (
+              <span key={i} className="font-display text-on-cream !text-[clamp(28px,3.6vw,52px)] leading-none whitespace-nowrap px-6 md:px-10 flex items-center gap-12 md:gap-20">
+                {ind}
+                <span className="text-[#94572A]/50 font-accent italic font-normal">/</span>
+              </span>
+            ))}
           </div>
         </div>
       </section>
