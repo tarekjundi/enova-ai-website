@@ -2,7 +2,6 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import ScrollToTop from "@/components/ScrollToTop";
 import { MotionElement } from "@/components/MotionElements";
 import WorkflowDiagnostic from "@/components/WorkflowDiagnostic";
 import { ArrowRight, ArrowUpRight, Minus, Plus } from "@phosphor-icons/react";
@@ -57,9 +56,9 @@ const STEPS = [
 ];
 
 const FLOW = [
-  { label: "Comes in", items: ["Web forms", "Shared inbox", "Support tickets"] },
-  { label: "Enova logic", items: ["Route and enrich", "Draft and summarise", "Human approval when unsure"] },
-  { label: "Lands in", items: ["Your CRM", "Slack or Teams", "Sheets and dashboards"] },
+  { label: "Comes in", items: ["Web forms", "shared inbox", "support tickets"] },
+  { label: "Enova logic", items: ["Route and enrich", "draft and summarise", "human approval when unsure"] },
+  { label: "Lands in", items: ["Your CRM", "Slack or Teams", "sheets and dashboards"] },
 ];
 
 const INDUSTRIES = [
@@ -132,7 +131,7 @@ const Index = () => {
             <div className="md:col-span-5 md:col-start-8 space-y-8">
               {PROBLEMS.map((p, i) => (
                 <MotionElement key={p} animation="slideUp" delay={80 + i * 80}>
-                  <p className="text-[#FDEED8]/80 text-[18px] md:text-[20px] leading-[1.5] pl-5 border-l border-[#F6D5A0]/30">{p}</p>
+                  <p className="text-[#FDEED8]/80 text-[18px] md:text-[20px] leading-[1.5] ">{p}</p>
                 </MotionElement>
               ))}
             </div>
@@ -183,22 +182,15 @@ const Index = () => {
             </h2>
           </MotionElement>
           <MotionElement animation="slideUp" delay={100}>
-            <div className="grid md:grid-cols-[1fr_auto_1.2fr_auto_1fr] items-stretch gap-4 md:gap-0">
+            <div className="relative grid md:grid-cols-3 gap-12 md:gap-0">
+              <div aria-hidden="true" className="hidden md:block absolute left-0 right-0 top-[7px] h-px bg-[#3A2915]/20" />
               {FLOW.map((col, i) => (
-                <div key={col.label} className="contents">
-                  <div className={`p-6 md:p-8 border ${i === 1 ? "bg-[#281D0B] border-[#281D0B]" : "border-[#3A2915]/15"}`}>
-                    <p className={`eyebrow mb-5 ${i === 1 ? "text-[#F6D5A0]" : "text-[#94572A]"}`}>{col.label}</p>
-                    <ul className="space-y-2">
-                      {col.items.map((it) => (
-                        <li key={it} className={`text-[16px] ${i === 1 ? "text-[#FDEED8]" : "text-on-cream-body"}`}>{it}</li>
-                      ))}
-                    </ul>
-                  </div>
-                  {i < FLOW.length - 1 && (
-                    <div aria-hidden="true" className="flex items-center justify-center md:px-4 text-[#94572A]">
-                      <ArrowRight size={18} className="rotate-90 md:rotate-0" />
-                    </div>
-                  )}
+                <div key={col.label} className="relative md:pr-10">
+                  <span aria-hidden="true" className={`block w-[15px] h-[15px] rounded-full mb-7 ${i === 1 ? "bg-[#94572A]" : "bg-[#FFF9F1] border border-[#3A2915]/40"}`} />
+                  <p className={`num text-[12px] mb-3 ${i === 1 ? "text-[#94572A]" : "text-[#6E5940]"}`}>0{i + 1} — {col.label}</p>
+                  <p className="font-display text-on-cream !text-[clamp(20px,2vw,26px)] leading-[1.25] max-w-[22ch]">
+                    {col.items.join(", ")}.
+                  </p>
                 </div>
               ))}
             </div>
@@ -237,11 +229,11 @@ const Index = () => {
                 <h2 className="font-display text-on-cream !text-[clamp(28px,3.4vw,44px)] leading-[1] mb-8 max-w-[16ch]">
                   Sectors we design for.
                 </h2>
-                <ul className="flex flex-wrap gap-x-3 gap-y-3">
+                <ul className="flex flex-wrap gap-x-2 gap-y-1 font-display text-on-cream !text-[clamp(20px,2vw,26px)] leading-[1.4]">
                   {INDUSTRIES.map((ind) => (
                     <li
                       key={ind}
-                      className="border border-[#3A2915]/25 px-4 py-2 text-[14px] text-on-cream-body transition-colors duration-200 hover:border-[#3A2915] hover:bg-[#3A2915] hover:text-[#FDEED8]"
+                      className="after:content-['/'] after:ml-2 after:text-[#94572A]/50 last:after:content-none"
                     >
                       {ind}
                     </li>
@@ -340,7 +332,7 @@ const Index = () => {
       </section>
 
       <Footer />
-      <ScrollToTop />
+      
     </div>
   );
 };
